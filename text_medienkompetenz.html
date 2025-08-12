@@ -1,0 +1,1239 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text- & Medienkompetenz - Englisch Abitur 2026</title>
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --secondary-color: #3498db;
+            --accent-color: #e74c3c;
+            --success-color: #27ae60;
+            --warning-color: #f39c12;
+            --info-color: #9b59b6;
+            --bg-color: #ecf0f1;
+            --card-bg: #ffffff;
+            --text-color: #2c3e50;
+            --border-color: #bdc3c7;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, var(--bg-color) 0%, #d5dbdb 100%);
+            color: var(--text-color);
+            line-height: 1.6;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+            background: var(--card-bg);
+            padding: 25px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            border-top: 5px solid var(--info-color);
+        }
+
+        .nav-breadcrumb {
+            margin-bottom: 20px;
+            padding: 15px;
+            background: var(--card-bg);
+            border-radius: 10px;
+            border-left: 4px solid var(--secondary-color);
+        }
+
+        .nav-breadcrumb a {
+            color: var(--secondary-color);
+            text-decoration: none;
+            margin-right: 10px;
+        }
+
+        .nav-breadcrumb a:hover {
+            text-decoration: underline;
+        }
+
+        .content-grid {
+            display: grid;
+            grid-template-columns: 1fr 300px;
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+
+        .main-content {
+            background: var(--card-bg);
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+        }
+
+        .sidebar {
+            background: var(--card-bg);
+            border-radius: 15px;
+            padding: 25px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+            height: fit-content;
+            position: sticky;
+            top: 20px;
+        }
+
+        .section {
+            margin-bottom: 40px;
+            padding-bottom: 30px;
+            border-bottom: 2px solid #ecf0f1;
+        }
+
+        .section:last-child {
+            border-bottom: none;
+        }
+
+        .section h2 {
+            color: var(--primary-color);
+            margin-bottom: 20px;
+            font-size: 1.8em;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            border-bottom: 3px solid var(--info-color);
+            padding-bottom: 10px;
+        }
+
+        .section h3 {
+            color: var(--secondary-color);
+            margin: 25px 0 15px 0;
+            font-size: 1.4em;
+            padding-left: 20px;
+            border-left: 4px solid var(--secondary-color);
+        }
+
+        .section h4 {
+            color: var(--info-color);
+            margin: 20px 0 10px 0;
+            font-size: 1.2em;
+        }
+
+        .intro-box {
+            background: linear-gradient(135deg, #e8f4fd 0%, #f0f8ff 100%);
+            border: 2px solid var(--info-color);
+            border-radius: 15px;
+            padding: 25px;
+            margin: 25px 0;
+            position: relative;
+        }
+
+        .intro-box::before {
+            content: '💡';
+            position: absolute;
+            top: -15px;
+            left: 20px;
+            background: var(--card-bg);
+            padding: 5px 10px;
+            border-radius: 50%;
+            font-size: 1.5em;
+        }
+
+        .intro-box h3 {
+            color: var(--info-color);
+            margin-bottom: 15px;
+            border: none;
+            padding: 0;
+        }
+
+        .definition-box {
+            background: linear-gradient(135deg, #e8f5e8 0%, #f0f8f0 100%);
+            border-left: 6px solid var(--success-color);
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 10px;
+            position: relative;
+        }
+
+        .definition-box::before {
+            content: '📖';
+            position: absolute;
+            top: -10px;
+            left: 15px;
+            background: var(--card-bg);
+            padding: 5px;
+            border-radius: 50%;
+        }
+
+        .definition-box h4 {
+            color: var(--success-color);
+            margin-bottom: 10px;
+            font-size: 1.1em;
+        }
+
+        .example-box {
+            background: linear-gradient(135deg, #fff9e6 0%, #fffbf0 100%);
+            border: 2px solid var(--warning-color);
+            border-radius: 10px;
+            padding: 20px;
+            margin: 20px 0;
+            position: relative;
+        }
+
+        .example-box::before {
+            content: '✏️';
+            position: absolute;
+            top: -10px;
+            left: 15px;
+            background: var(--card-bg);
+            padding: 5px;
+            border-radius: 50%;
+        }
+
+        .example-box h4 {
+            color: var(--warning-color);
+            margin-bottom: 15px;
+        }
+
+        .text-types-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            margin: 25px 0;
+        }
+
+        .text-type-card {
+            background: var(--card-bg);
+            border: 2px solid #e9ecef;
+            border-radius: 12px;
+            padding: 20px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+        }
+
+        .text-type-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+            border-color: var(--secondary-color);
+        }
+
+        .text-type-card h4 {
+            color: var(--primary-color);
+            margin-bottom: 15px;
+            font-size: 1.2em;
+            border-bottom: 2px solid var(--secondary-color);
+            padding-bottom: 8px;
+        }
+
+        .text-type-card .category {
+            background: var(--secondary-color);
+            color: white;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.8em;
+            display: inline-block;
+            margin-bottom: 10px;
+        }
+
+        .features-list {
+            list-style: none;
+            margin: 15px 0;
+        }
+
+        .features-list li {
+            margin: 8px 0;
+            padding: 8px 12px;
+            background: #f8f9fa;
+            border-radius: 6px;
+            border-left: 3px solid var(--success-color);
+            position: relative;
+            padding-left: 30px;
+        }
+
+        .features-list li::before {
+            content: '✓';
+            position: absolute;
+            left: 10px;
+            color: var(--success-color);
+            font-weight: bold;
+        }
+
+        .stylistic-devices-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            background: var(--card-bg);
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+        }
+
+        .stylistic-devices-table th {
+            background: linear-gradient(45deg, var(--info-color), #8e44ad);
+            color: white;
+            padding: 15px;
+            text-align: left;
+            font-weight: 600;
+        }
+
+        .stylistic-devices-table td {
+            padding: 15px;
+            border-bottom: 1px solid #ecf0f1;
+            vertical-align: top;
+        }
+
+        .stylistic-devices-table tr:nth-child(even) {
+            background: #fafbfc;
+        }
+
+        .stylistic-devices-table tr:hover {
+            background: #e8f4fd;
+        }
+
+        .device-name {
+            font-weight: bold;
+            color: var(--info-color);
+        }
+
+        .device-example {
+            font-style: italic;
+            color: var(--accent-color);
+            margin-top: 5px;
+        }
+
+        .analysis-steps {
+            background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+            border: 2px solid var(--primary-color);
+            border-radius: 15px;
+            padding: 25px;
+            margin: 25px 0;
+        }
+
+        .analysis-steps h4 {
+            color: var(--primary-color);
+            margin-bottom: 20px;
+            text-align: center;
+            font-size: 1.3em;
+        }
+
+        .step {
+            display: flex;
+            align-items: flex-start;
+            margin: 20px 0;
+            padding: 15px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+
+        .step-number {
+            background: var(--primary-color);
+            color: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            margin-right: 15px;
+            flex-shrink: 0;
+        }
+
+        .step-content h5 {
+            color: var(--primary-color);
+            margin-bottom: 8px;
+            font-size: 1.1em;
+        }
+
+        .practice-section {
+            background: linear-gradient(135deg, #fff3cd 0%, #fef9e7 100%);
+            border: 2px solid var(--warning-color);
+            border-radius: 15px;
+            padding: 25px;
+            margin: 30px 0;
+        }
+
+        .practice-section h4 {
+            color: var(--warning-color);
+            margin-bottom: 20px;
+            text-align: center;
+            font-size: 1.3em;
+        }
+
+        .interactive-element {
+            background: white;
+            border-radius: 10px;
+            padding: 20px;
+            margin: 15px 0;
+            border: 1px solid #dee2e6;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 25px;
+            background: linear-gradient(45deg, var(--secondary-color), #2980b9);
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            margin: 5px;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(52, 152, 219, 0.3);
+        }
+
+        .btn-success {
+            background: linear-gradient(45dx, var(--success-color), #229954);
+        }
+
+        .btn-warning {
+            background: linear-gradient(45deg, var(--warning-color), #e67e22);
+        }
+
+        .btn-info {
+            background: linear-gradient(45deg, var(--info-color), #8e44ad);
+        }
+
+        .quick-links {
+            background: #f8f9fa;
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+
+        .quick-links h4 {
+            margin-bottom: 15px;
+            color: var(--primary-color);
+        }
+
+        .quick-links ul {
+            list-style: none;
+        }
+
+        .quick-links li {
+            margin: 8px 0;
+        }
+
+        .quick-links a {
+            color: var(--secondary-color);
+            text-decoration: none;
+            padding: 8px 0;
+            display: block;
+            border-bottom: 1px solid transparent;
+            transition: all 0.3s ease;
+        }
+
+        .quick-links a:hover {
+            color: var(--primary-color);
+            border-bottom-color: var(--secondary-color);
+            padding-left: 10px;
+        }
+
+        .highlight {
+            background: #fff9c4;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-weight: 500;
+        }
+
+        .important-note {
+            background: linear-gradient(135deg, #ffe6e6 0%, #fff0f0 100%);
+            border-left: 6px solid var(--accent-color);
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 10px;
+        }
+
+        .important-note h5 {
+            color: var(--accent-color);
+            margin-bottom: 10px;
+            font-size: 1.1em;
+        }
+
+        @media (max-width: 968px) {
+            .content-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .sidebar {
+                position: static;
+                order: -1;
+            }
+
+            .text-types-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .container {
+                padding: 15px;
+            }
+        }
+
+        .quiz-container {
+            background: white;
+            border-radius: 10px;
+            padding: 20px;
+            margin: 20px 0;
+            border: 2px solid var(--info-color);
+        }
+
+        .quiz-question {
+            margin-bottom: 15px;
+            font-weight: 500;
+        }
+
+        .quiz-options {
+            list-style: none;
+        }
+
+        .quiz-options li {
+            margin: 10px 0;
+            padding: 10px;
+            background: #f8f9fa;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .quiz-options li:hover {
+            background: #e3f2fd;
+        }
+
+        .quiz-options li.correct {
+            background: #d4edda;
+            border: 2px solid var(--success-color);
+        }
+
+        .quiz-options li.wrong {
+            background: #f8d7da;
+            border: 2px solid var(--accent-color);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="nav-breadcrumb">
+            <a href="index.html">🏠 Hauptübersicht</a> / 
+            <span>📖 Text- & Medienkompetenz</span>
+        </div>
+
+        <div class="header">
+            <h1>📖 Text- & Medienkompetenz</h1>
+            <p>Analyse und Interpretation literarischer und nicht-literarischer Texte für das Englisch-Abitur 2026</p>
+        </div>
+
+        <div class="content-grid">
+            <div class="main-content">
+                
+                <div class="intro-box">
+                    <h3>Was ist Text- & Medienkompetenz?</h3>
+                    <p>Text- und Medienkompetenz bedeutet, dass du verschiedene Arten von Texten und Medien <strong>verstehen</strong>, <strong>analysieren</strong> und <strong>interpretieren</strong> kannst. Im Englisch-Abitur musst du nicht nur englische Texte lesen und verstehen, sondern auch erklären können, <em>wie</em> sie aufgebaut sind, <em>warum</em> der Autor bestimmte Techniken verwendet hat und <em>was</em> die Texte aussagen wollen.</p>
+                    
+                    <p>Denk daran wie bei einem Film: Du schaust ihn nicht nur an, sondern erkennst auch, wie Musik, Kamerawinkel und Farben deine Gefühle beeinflussen. Genauso analysierst du Texte!</p>
+                </div>
+
+                <section class="section">
+                    <h2>🎯 Was gehört zur Text- & Medienkompetenz?</h2>
+                    
+                    <div class="definition-box">
+                        <h4>Erweiterter Textbegriff</h4>
+                        <p>Im Englischunterricht verstehen wir unter "Text" nicht nur geschriebene Wörter. <strong>Alles, was Informationen oder Bedeutungen vermittelt, ist ein Text:</strong></p>
+                        <ul class="features-list">
+                            <li>Schriftliche Texte (Romane, Zeitungsartikel, Gedichte)</li>
+                            <li>Mündliche Texte (Reden, Podcasts, Interviews)</li>
+                            <li>Visuelle Texte (Bilder, Filme, Werbung)</li>
+                            <li>Digitale Texte (Websites, Social Media Posts)</li>
+                            <li>Multimediale Texte (Videos mit Text und Ton)</li>
+                        </ul>
+                    </div>
+
+                    <h3>Die drei Hauptbereiche</h3>
+                    
+                    <div class="text-types-grid">
+                        <div class="text-type-card">
+                            <div class="category">REZEPTION</div>
+                            <h4>Verstehen & Erfassen</h4>
+                            <p><strong>Das bedeutet:</strong> Den Inhalt und die Hauptaussagen eines Textes verstehen.</p>
+                            <ul class="features-list">
+                                <li>Worum geht es in dem Text?</li>
+                                <li>Was sind die wichtigsten Informationen?</li>
+                                <li>Welche Atmosphäre wird geschaffen?</li>
+                                <li>Wer sind die Charaktere/Personen?</li>
+                            </ul>
+                        </div>
+
+                        <div class="text-type-card">
+                            <div class="category">ANALYSE</div>
+                            <h4>Wie ist der Text gemacht?</h4>
+                            <p><strong>Das bedeutet:</strong> Untersuchen, mit welchen Mitteln der Autor seine Ziele erreicht.</p>
+                            <ul class="features-list">
+                                <li>Welche Sprachtechniken werden verwendet?</li>
+                                <li>Wie ist der Text strukturiert?</li>
+                                <li>Welche Stilmittel kommen vor?</li>
+                                <li>Wie wirken Bilder/Videos/Musik?</li>
+                            </ul>
+                        </div>
+
+                        <div class="text-type-card">
+                            <div class="category">INTERPRETATION</div>
+                            <h4>Was will der Text aussagen?</h4>
+                            <p><strong>Das bedeutet:</strong> Die tiefere Bedeutung und Absicht des Textes erklären.</p>
+                            <ul class="features-list">
+                                <li>Welche Botschaft vermittelt der Text?</li>
+                                <li>Was wollte der Autor erreichen?</li>
+                                <li>Wie bezieht sich der Text auf die Gesellschaft?</li>
+                                <li>Welche Werte werden vermittelt?</li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="section" id="textarten">
+                    <h2>📚 Textarten verstehen</h2>
+                    
+                    <h3>Literarische Texte (Fiction)</h3>
+                    
+                    <div class="text-types-grid">
+                        <div class="text-type-card">
+                            <h4>🏠 Novel (Roman)</h4>
+                            <p><strong>Länger Geschichte mit komplexen Charakteren</strong></p>
+                            <div class="example-box">
+                                <h4>Beispiele:</h4>
+                                <p>"To Kill a Mockingbird", "1984", "The Great Gatsby"</p>
+                            </div>
+                            <ul class="features-list">
+                                <li>Mehrere Kapitel</li>
+                                <li>Entwicklung der Charaktere</li>
+                                <li>Komplexe Handlung</li>
+                                <li>Verschiedene Themen</li>
+                            </ul>
+                        </div>
+
+                        <div class="text-type-card">
+                            <h4>📄 Short Story</h4>
+                            <p><strong>Kurze Geschichte mit wenigen Charakteren</strong></p>
+                            <div class="example-box">
+                                <h4>Beispiele:</h4>
+                                <p>"The Gift of the Magi", "A Sound of Thunder"</p>
+                            </div>
+                            <ul class="features-list">
+                                <li>Ein Hauptereignis</li>
+                                <li>Wenige Charaktere</li>
+                                <li>Überraschender Schluss</li>
+                                <li>Ein zentrales Thema</li>
+                            </ul>
+                        </div>
+
+                        <div class="text-type-card">
+                            <h4>🎭 Drama/Play</h4>
+                            <p><strong>Theaterstück mit Dialogen und Bühnenanweisungen</strong></p>
+                            <div class="example-box">
+                                <h4>Beispiele:</h4>
+                                <p>"Romeo and Juliet", "Death of a Salesman"</p>
+                            </div>
+                            <ul class="features-list">
+                                <li>Dialoge zwischen Charakteren</li>
+                                <li>Bühnenanweisungen</li>
+                                <li>Akte und Szenen</li>
+                                <li>Für Aufführung geschrieben</li>
+                            </ul>
+                        </div>
+
+                        <div class="text-type-card">
+                            <h4>🎵 Poetry (Gedichte)</h4>
+                            <p><strong>Verdichtete Sprache mit Rhythmus und Bildern</strong></p>
+                            <div class="example-box">
+                                <h4>Beispiele:</h4>
+                                <p>"The Road Not Taken", "Shall I Compare Thee"</p>
+                            </div>
+                            <ul class="features-list">
+                                <li>Verse und Strophen</li>
+                                <li>Rhythmus und Reimschema</li>
+                                <li>Metaphern und Bilder</li>
+                                <li>Emotionale Sprache</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <h3>Nicht-literarische Texte (Non-Fiction)</h3>
+                    
+                    <div class="text-types-grid">
+                        <div class="text-type-card">
+                            <h4>📰 Newspaper Article</h4>
+                            <p><strong>Nachrichtentexte über aktuelle Ereignisse</strong></p>
+                            <ul class="features-list">
+                                <li>Objektive Berichterstattung</li>
+                                <li>Fakten und Informationen</li>
+                                <li>Headline (Überschrift)</li>
+                                <li>Lead (wichtigste Info zuerst)</li>
+                            </ul>
+                        </div>
+
+                        <div class="text-type-card">
+                            <h4>💭 Opinion Article/Editorial</h4>
+                            <p><strong>Meinungstexte zu aktuellen Themen</strong></p>
+                            <ul class="features-list">
+                                <li>Subjektive Meinung</li>
+                                <li>Argumente und Beispiele</li>
+                                <li>Überzeugen des Lesers</li>
+                                <li>Klare Position</li>
+                            </ul>
+                        </div>
+
+                        <div class="text-type-card">
+                            <h4>🎤 Speech</h4>
+                            <p><strong>Rede vor einem Publikum</strong></p>
+                            <ul class="features-list">
+                                <li>Direkte Ansprache</li>
+                                <li>Rhetorische Mittel</li>
+                                <li>Emotionale Wirkung</li>
+                                <li>Klare Struktur</li>
+                            </ul>
+                        </div>
+
+                        <div class="text-type-card">
+                            <h4>📊 Infographic/Chart</h4>
+                            <p><strong>Visuelle Darstellung von Informationen</strong></p>
+                            <ul class="features-list">
+                                <li>Zahlen und Statistiken</li>
+                                <li>Grafische Elemente</li>
+                                <li>Schnelle Informationsvermittlung</li>
+                                <li>Vergleiche möglich</li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="section" id="stilmittel">
+                    <h2>🎨 Stylistic Devices (Stilmittel)</h2>
+                    
+                    <div class="intro-box">
+                        <h3>Warum sind Stilmittel wichtig?</h3>
+                        <p>Stilmittel sind wie <strong>Werkzeuge</strong> für Autoren. Sie helfen dabei, Texte interessanter, emotionaler oder überzeugender zu machen. Wenn du sie erkennst und erklären kannst, verstehst du viel besser, was ein Text erreichen will!</p>
+                    </div>
+
+                    <div class="stylistic-devices-table">
+                        <thead>
+                            <tr>
+                                <th>Stilmittel</th>
+                                <th>Definition</th>
+                                <th>Beispiel</th>
+                                <th>Wirkung</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><span class="device-name">Metaphor</span></td>
+                                <td>Direkter Vergleich ohne "like" oder "as"</td>
+                                <td><span class="device-example">"Life is a journey"</span></td>
+                                <td>Macht abstrakte Ideen verständlicher</td>
+                            </tr>
+                            <tr>
+                                <td><span class="device-name">Simile</span></td>
+                                <td>Vergleich mit "like" oder "as"</td>
+                                <td><span class="device-example">"Brave as a lion"</span></td>
+                                <td>Verdeutlicht Eigenschaften</td>
+                            </tr>
+                            <tr>
+                                <td><span class="device-name">Personification</span></td>
+                                <td>Gegenstände bekommen menschliche Eigenschaften</td>
+                                <td><span class="device-example">"The wind whispered"</span></td>
+                                <td>Macht Beschreibungen lebendiger</td>
+                            </tr>
+                            <tr>
+                                <td><span class="device-name">Alliteration</span></td>
+                                <td>Wiederholung von Anfangsbuchstaben</td>
+                                <td><span class="device-example">"Peter Piper picked"</span></td>
+                                <td>Macht Texte einprägsam</td>
+                            </tr>
+                            <tr>
+                                <td><span class="device-name">Repetition</span></td>
+                                <td>Wiederholung von Wörtern oder Sätzen</td>
+                                <td><span class="device-example">"I have a dream... I have a dream"</span></td>
+                                <td>Betont wichtige Punkte</td>
+                            </tr>
+                            <tr>
+                                <td><span class="device-name">Rhetorical Question</span></td>
+                                <td>Frage, die keine Antwort erwartet</td>
+                                <td><span class="device-example">"Isn't it obvious?"</span></td>
+                                <td>Regt zum Nachdenken an</td>
+                            </tr>
+                            <tr>
+                                <td><span class="device-name">Hyperbole</span></td>
+                                <td>Starke Übertreibung</td>
+                                <td><span class="device-example">"I've told you a million times"</span></td>
+                                <td>Verstärkt Emotionen</td>
+                            </tr>
+                            <tr>
+                                <td><span class="device-name">Irony</span></td>
+                                <td>Das Gegenteil von dem, was gemeint ist</td>
+                                <td><span class="device-example">"What a beautiful day!" (bei Regen)</span></td>
+                                <td>Erzeugt Humor oder Kritik</td>
+                            </tr>
+                            <tr>
+                                <td><span class="device-name">Symbol</span></td>
+                                <td>Gegenstand steht für eine größere Idee</td>
+                                <td><span class="device-example">Dove = Peace</span></td>
+                                <td>Vermittelt tiefere Bedeutungen</td>
+                            </tr>
+                            <tr>
+                                <td><span class="device-name">Contrast/Antithesis</span></td>
+                                <td>Gegenüberstellung von Gegensätzen</td>
+                                <td><span class="device-example">"Ask not what your country can do for you—ask what you can do for your country"</span></td>
+                                <td>Hebt Unterschiede hervor</td>
+                            </tr>
+                        </tbody>
+                    </div>
+
+                    <div class="important-note">
+                        <h5>⚠️ Wichtiger Tipp!</h5>
+                        <p>Es reicht nicht, nur die Stilmittel zu erkennen! Du musst auch erklären können, <strong>warum</strong> der Autor sie verwendet hat und <strong>welche Wirkung</strong> sie auf den Leser haben. Frage dich immer: "Was will der Autor damit erreichen?"</p>
+                    </div>
+                </section>
+
+                <section class="section" id="analyse">
+                    <h2>🔍 Schritt-für-Schritt Textanalyse</h2>
+                    
+                    <div class="analysis-steps">
+                        <h4>So analysierst du jeden Text systematisch:</h4>
+                        
+                        <div class="step">
+                            <div class="step-number">1</div>
+                            <div class="step-content">
+                                <h5>Ersten Eindruck sammeln</h5>
+                                <p><strong>Lies den Text einmal komplett durch.</strong> Notiere dir:</p>
+                                <ul>
+                                    <li>Worum geht es grundsätzlich?</li>
+                                    <li>Welches Gefühl hast du beim Lesen?</li>
+                                    <li>Was fällt dir spontan auf?</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="step">
+                            <div class="step-number">2</div>
+                            <div class="step-content">
+                                <h5>Grundinformationen klären</h5>
+                                <p><strong>Bestimme die wichtigsten Fakten:</strong></p>
+                                <ul>
+                                    <li><span class="highlight">Textsorte:</span> Roman, Gedicht, Artikel, Rede...?</li>
+                                    <li><span class="highlight">Autor/Quelle:</span> Wer hat den Text geschrieben?</li>
+                                    <li><span class="highlight">Entstehungszeit:</span> Wann wurde er verfasst?</li>
+                                    <li><span class="highlight">Thema:</span> Worum geht es hauptsächlich?</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="step">
+                            <div class="step-number">3</div>
+                            <div class="step-content">
+                                <h5>Inhalt strukturiert erfassen</h5>
+                                <p><strong>Teile den Text in sinnvolle Abschnitte:</strong></p>
+                                <ul>
+                                    <li>Welche Hauptpunkte werden behandelt?</li>
+                                    <li>Wie ist der Text aufgebaut? (Einleitung, Hauptteil, Schluss)</li>
+                                    <li>Gibt es eine Entwicklung oder Steigerung?</li>
+                                    <li>Wer sind die wichtigsten Personen/Charaktere?</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="step">
+                            <div class="step-number">4</div>
+                            <div class="step-content">
+                                <h5>Sprachliche Mittel analysieren</h5>
+                                <p><strong>Untersuche, WIE der Autor schreibt:</strong></p>
+                                <ul>
+                                    <li><span class="highlight">Stilmittel:</span> Metaphern, Vergleiche, Wiederholungen...</li>
+                                    <li><span class="highlight">Wortwahl:</span> Formell oder umgangssprachlich? Emotional oder sachlich?</li>
+                                    <li><span class="highlight">Satzstruktur:</span> Kurze oder lange Sätze? Fragen? Ausrufe?</li>
+                                    <li><span class="highlight">Zeitform:</span> Präsens, Vergangenheit, Futur?</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="step">
+                            <div class="step-number">5</div>
+                            <div class="step-content">
+                                <h5>Wirkung und Intention interpretieren</h5>
+                                <p><strong>Erkläre die tiefere Bedeutung:</strong></p>
+                                <ul>
+                                    <li>Was will der Autor mit dem Text erreichen?</li>
+                                    <li>Welche Botschaft wird vermittelt?</li>
+                                    <li>Wie soll der Leser beeinflusst werden?</li>
+                                    <li>Bezug zu gesellschaftlichen Themen?</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="step">
+                            <div class="step-number">6</div>
+                            <div class="step-content">
+                                <h5>Kontext einbeziehen</h5>
+                                <p><strong>Setze den Text in einen größeren Zusammenhang:</strong></p>
+                                <ul>
+                                    <li>Historischer Hintergrund</li>
+                                    <li>Biografische Informationen zum Autor</li>
+                                    <li>Gesellschaftliche Situation zur Entstehungszeit</li>
+                                    <li>Verbindung zu anderen Texten/Themen</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="section" id="medien">
+                    <h2>🎬 Medienanalyse verstehen</h2>
+                    
+                    <div class="intro-box">
+                        <h3>Was ist Medienanalyse?</h3>
+                        <p>Medienanalyse bedeutet, dass du nicht nur Texte, sondern auch <strong>Filme, Bilder, Werbung oder Websites</strong> analysieren kannst. Dabei schaust du, wie verschiedene Elemente zusammenwirken, um eine bestimmte Wirkung zu erzielen.</p>
+                    </div>
+
+                    <h3>Visuelle Medien analysieren</h3>
+                    
+                    <div class="text-types-grid">
+                        <div class="text-type-card">
+                            <h4>🎥 Film/Video</h4>
+                            <p><strong>Cinematic Devices (Filmtechniken)</strong></p>
+                            <ul class="features-list">
+                                <li><span class="highlight">Camera angles:</span> Vogelperspektive, Froschperspektive</li>
+                                <li><span class="highlight">Camera movements:</span> Zoom, Pan, Tilt</li>
+                                <li><span class="highlight">Lighting:</span> Hell/dunkel, Schatten</li>
+                                <li><span class="highlight">Sound:</span> Musik, Geräusche, Stille</li>
+                                <li><span class="highlight">Editing:</span> Schnitte, Tempo</li>
+                                <li><span class="highlight">Mise-en-scène:</span> Was ist im Bild zu sehen?</li>
+                            </ul>
+                        </div>
+
+                        <div class="text-type-card">
+                            <h4>🖼️ Bilder/Fotos</h4>
+                            <p><strong>Visual Elements (Bildsprache)</strong></p>
+                            <ul class="features-list">
+                                <li><span class="highlight">Composition:</span> Anordnung der Elemente</li>
+                                <li><span class="highlight">Colors:</span> Warm/kalt, kontrastreich</li>
+                                <li><span class="highlight">Perspective:</span> Blickwinkel des Betrachters</li>
+                                <li><span class="highlight">Symbols:</span> Bedeutungsträger im Bild</li>
+                                <li><span class="highlight">Focus:</span> Was steht im Vordergrund?</li>
+                            </ul>
+                        </div>
+
+                        <div class="text-type-card">
+                            <h4>📱 Digital Media</h4>
+                            <p><strong>Websites, Apps, Social Media</strong></p>
+                            <ul class="features-list">
+                                <li><span class="highlight">Layout:</span> Anordnung von Text und Bildern</li>
+                                <li><span class="highlight">Navigation:</span> Wie bewegt man sich durch die Seite?</li>
+                                <li><span class="highlight">Interactivity:</span> Klicks, Likes, Kommentare</li>
+                                <li><span class="highlight">Typography:</span> Schriftarten und -größen</li>
+                                <li><span class="highlight">User Experience:</span> Wie fühlt sich die Nutzung an?</li>
+                            </ul>
+                        </div>
+
+                        <div class="text-type-card">
+                            <h4>📺 Advertising</h4>
+                            <p><strong>Werbung und Marketing</strong></p>
+                            <ul class="features-list">
+                                <li><span class="highlight">Target audience:</span> Für wen ist die Werbung?</li>
+                                <li><span class="highlight">Persuasive techniques:</span> Überzeugungsstrategien</li>
+                                <li><span class="highlight">Emotional appeals:</span> Gefühle ansprechen</li>
+                                <li><span class="highlight">Brand identity:</span> Markenimage</li>
+                                <li><span class="highlight">Call to action:</span> Was soll der Betrachter tun?</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="example-box">
+                        <h4>Beispiel: Werbeanzeige analysieren</h4>
+                        <p><strong>Stelle dir vor, du siehst eine Werbung für Sportschuhe:</strong></p>
+                        <ul>
+                            <li><span class="highlight">Bild:</span> Junger Sportler springt hoch, Himmel im Hintergrund</li>
+                            <li><span class="highlight">Farben:</span> Blau (Himmel) = Freiheit, Rot (Logo) = Energie</li>
+                            <li><span class="highlight">Text:</span> "Just Do It" = Motivation, kurz und einprägsam</li>
+                            <li><span class="highlight">Zielgruppe:</span> Junge, sportliche Menschen</li>
+                            <li><span class="highlight">Wirkung:</span> "Mit diesen Schuhen kannst du alles erreichen!"</li>
+                        </ul>
+                    </div>
+                </section>
+
+                <section class="section" id="formen">
+                    <h2>✍️ Verschiedene Analyseformen</h2>
+                    
+                    <h3>Summary (Zusammenfassung)</h3>
+                    <div class="definition-box">
+                        <h4>Was ist eine Summary?</h4>
+                        <p>Eine Summary fasst die <strong>wichtigsten Inhalte</strong> eines Textes in eigenen Worten zusammen. Sie ist <strong>objektiv</strong> (keine eigene Meinung) und <strong>viel kürzer</strong> als der Originaltext.</p>
+                        
+                        <p><strong>Struktur einer Summary:</strong></p>
+                        <ul class="features-list">
+                            <li><strong>Introduction:</strong> Titel, Autor, Textsorte, Hauptthema</li>
+                            <li><strong>Main Body:</strong> Wichtigste Punkte in chronologischer Reihenfolge</li>
+                            <li><strong>Conclusion:</strong> Zentrale Aussage des Textes</li>
+                        </ul>
+                    </div>
+
+                    <div class="example-box">
+                        <h4>Summary-Beispiel (Einleitung):</h4>
+                        <p><em>"The newspaper article 'Climate Change and Young People' by Sarah Johnson, published in The Guardian on March 15, 2024, discusses how climate change affects the mental health of teenagers and young adults."</em></p>
+                    </div>
+
+                    <h3>Analysis (Analyse)</h3>
+                    <div class="definition-box">
+                        <h4>Was ist eine Analysis?</h4>
+                        <p>Eine Analysis untersucht, <strong>wie</strong> ein Text aufgebaut ist und <strong>welche sprachlichen Mittel</strong> verwendet werden. Du erklärst die Techniken des Autors und ihre Wirkung.</p>
+                        
+                        <p><strong>Struktur einer Analysis:</strong></p>
+                        <ul class="features-list">
+                            <li><strong>Introduction:</strong> Grundinformationen zum Text</li>
+                            <li><strong>Main Body:</strong> Analyse von Struktur, Sprache, Stilmitteln</li>
+                            <li><strong>Conclusion:</strong> Gesamtwirkung der verwendeten Mittel</li>
+                        </ul>
+                    </div>
+
+                    <h3>Interpretation</h3>
+                    <div class="definition-box">
+                        <h4>Was ist eine Interpretation?</h4>
+                        <p>Eine Interpretation erklärt die <strong>tiefere Bedeutung</strong> eines Textes. Du deutest, was der Autor wirklich sagen wollte und beziehst den Text auf größere Zusammenhänge.</p>
+                        
+                        <p><strong>Struktur einer Interpretation:</strong></p>
+                        <ul class="features-list">
+                            <li><strong>Introduction:</strong> These zur Bedeutung des Textes</li>
+                            <li><strong>Main Body:</strong> Begründung mit Textbelegen</li>
+                            <li><strong>Context:</strong> Historischer/gesellschaftlicher Hintergrund</li>
+                            <li><strong>Conclusion:</strong> Bewertung der Bedeutung</li>
+                        </ul>
+                    </div>
+
+                    <div class="important-note">
+                        <h5>🔑 Der Unterschied:</h5>
+                        <ul>
+                            <li><strong>Summary:</strong> "Was passiert?" (Inhalt wiedergeben)</li>
+                            <li><strong>Analysis:</strong> "Wie ist es gemacht?" (Techniken untersuchen)</li>
+                            <li><strong>Interpretation:</strong> "Was bedeutet es?" (Sinn deuten)</li>
+                        </ul>
+                    </div>
+                </section>
+
+                <section class="section" id="tipps">
+                    <h2>💡 Praktische Tipps für die Prüfung</h2>
+                    
+                    <div class="practice-section">
+                        <h4>🎯 Checkliste für jede Textanalyse</h4>
+                        
+                        <div class="interactive-element">
+                            <h5>Vor dem Schreiben:</h5>
+                            <ul class="features-list">
+                                <li>Text mindestens 2x lesen</li>
+                                <li>Unbekannte Wörter markieren (aber nicht alle nachschlagen!)</li>
+                                <li>Wichtige Textstellen unterstreichen</li>
+                                <li>Kurze Notizen am Rand machen</li>
+                                <li>Struktur des Textes erkennen</li>
+                            </ul>
+                        </div>
+
+                        <div class="interactive-element">
+                            <h5>Beim Schreiben:</h5>
+                            <ul class="features-list">
+                                <li>Immer mit einer klaren Introduction beginnen</li>
+                                <li>Jeder Absatz = ein Hauptpunkt</li>
+                                <li>Zitate aus dem Text verwenden</li>
+                                <li>Eigene Meinung nur bei Comment/Interpretation</li>
+                                <li>Connectives verwenden (however, furthermore, in addition...)</li>
+                            </ul>
+                        </div>
+
+                        <div class="interactive-element">
+                            <h5>Häufige Fehler vermeiden:</h5>
+                            <ul class="features-list">
+                                <li>❌ Den Text einfach nacherzählen</li>
+                                <li>❌ Stilmittel nur auflisten ohne Wirkung zu erklären</li>
+                                <li>❌ Zu viele unwichtige Details</li>
+                                <li>❌ Keine Textbelege verwenden</li>
+                                <li>❌ Present tense vergessen (Summary immer in Gegenwart!)</li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="section" id="uebung">
+                    <h2>🧠 Interaktive Übungen</h2>
+                    
+                    <div class="quiz-container">
+                        <h4>📝 Quick Quiz: Stilmittel erkennen</h4>
+                        
+                        <div class="interactive-element">
+                            <div class="quiz-question">
+                                <strong>1. "The classroom was a zoo."</strong><br>
+                                Welches Stilmittel wird hier verwendet?
+                            </div>
+                            <ul class="quiz-options">
+                                <li onclick="checkAnswer(this, false)">a) Simile</li>
+                                <li onclick="checkAnswer(this, true)">b) Metaphor</li>
+                                <li onclick="checkAnswer(this, false)">c) Personification</li>
+                                <li onclick="checkAnswer(this, false)">d) Hyperbole</li>
+                            </ul>
+                        </div>
+
+                        <div class="interactive-element">
+                            <div class="quiz-question">
+                                <strong>2. "Peter Piper picked a peck of pickled peppers."</strong><br>
+                                Welches Stilmittel wird hier verwendet?
+                            </div>
+                            <ul class="quiz-options">
+                                <li onclick="checkAnswer(this, true)">a) Alliteration</li>
+                                <li onclick="checkAnswer(this, false)">b) Repetition</li>
+                                <li onclick="checkAnswer(this, false)">c) Rhyme</li>
+                                <li onclick="checkAnswer(this, false)">d) Irony</li>
+                            </ul>
+                        </div>
+
+                        <div class="interactive-element">
+                            <div class="quiz-question">
+                                <strong>3. "Isn't it ironic that it's raining on her wedding day?"</strong><br>
+                                Welches Stilmittel wird hier verwendet?
+                            </div>
+                            <ul class="quiz-options">
+                                <li onclick="checkAnswer(this, false)">a) Metaphor</li>
+                                <li onclick="checkAnswer(this, true)">b) Rhetorical Question</li>
+                                <li onclick="checkAnswer(this, false)">c) Alliteration</li>
+                                <li onclick="checkAnswer(this, false)">d) Symbol</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="practice-section">
+                        <h4>✏️ Übung: Kurze Textanalyse</h4>
+                        <div class="interactive-element">
+                            <p><strong>Analysiere diesen kurzen Text:</strong></p>
+                            <div style="background: #f8f9fa; padding: 15px; border-left: 4px solid var(--info-color); font-style: italic; margin: 15px 0;">
+                                "The old oak tree stood silently in the moonlight, its ancient branches reaching towards the stars like desperate arms searching for hope. Time had carved deep scars into its bark, yet it remained standing, a testament to resilience."
+                            </div>
+                            
+                            <p><strong>Fragen zum Üben:</strong></p>
+                            <ul class="features-list">
+                                <li>Welche Stilmittel findest du? (Mindestens 3)</li>
+                                <li>Welche Stimmung wird erzeugt?</li>
+                                <li>Was könnte der Baum symbolisieren?</li>
+                                <li>Wie wirkt die Wortwahl auf dich?</li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+
+            </div>
+
+            <div class="sidebar">
+                <div class="quick-links">
+                    <h4>📋 Schnellnavigation</h4>
+                    <ul>
+                        <li><a href="#textarten">🎭 Textarten verstehen</a></li>
+                        <li><a href="#stilmittel">🎨 Stylistic Devices</a></li>
+                        <li><a href="#analyse">🔍 Textanalyse</a></li>
+                        <li><a href="#medien">🎬 Medienanalyse</a></li>
+                        <li><a href="#formen">✍️ Analyseformen</a></li>
+                        <li><a href="#tipps">💡 Prüfungstipps</a></li>
+                        <li><a href="#uebung">🧠 Übungen</a></li>
+                    </ul>
+                </div>
+
+                <div style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; border-radius: 10px; padding: 20px; margin: 20px 0;">
+                    <h4>🎯 Prüfungsrelevant</h4>
+                    <ul style="list-style: none; margin: 15px 0;">
+                        <li style="margin: 8px 0;">✓ Summary schreiben</li>
+                        <li style="margin: 8px 0;">✓ Analysis verfassen</li>
+                        <li style="margin: 8px 0;">✓ Stilmittel erkennen</li>
+                        <li style="margin: 8px 0;">✓ Medien interpretieren</li>
+                        <li style="margin: 8px 0;">✓ Context einbeziehen</li>
+                    </ul>
+                </div>
+
+                <div style="background: #f8f9fa; border-radius: 10px; padding: 20px; margin-bottom: 20px;">
+                    <h4>📚 Nützliche Phrases</h4>
+                    <div style="font-size: 0.9em; line-height: 1.8;">
+                        <p><strong>Analysis:</strong><br>
+                        "The author uses..."<br>
+                        "This creates the effect of..."<br>
+                        "The metaphor suggests..."</p>
+                        
+                        <p><strong>Summary:</strong><br>
+                        "The text deals with..."<br>
+                        "According to the author..."<br>
+                        "The main point is..."</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Navigation Buttons at the bottom -->
+        <div style="text-align: center; margin: 40px 0; padding: 25px; background: var(--card-bg); border-radius: 15px; box-shadow: 0 8px 25px rgba(0,0,0,0.1);">
+            <a href="index.html" class="btn" style="margin: 10px;">🏠 Zurück zur Übersicht</a>
+        </div>
+    </div>
+
+    <script>
+        function checkAnswer(element, isCorrect) {
+            // Remove previous styling
+            element.parentNode.querySelectorAll('li').forEach(li => {
+                li.classList.remove('correct', 'wrong');
+            });
+            
+            // Add appropriate styling
+            if (isCorrect) {
+                element.classList.add('correct');
+                element.innerHTML += ' ✓ Richtig!';
+            } else {
+                element.classList.add('wrong');
+                element.innerHTML += ' ✗ Falsch';
+                // Show correct answer
+                const correctAnswer = element.parentNode.querySelector('li');
+                // Find the correct answer and highlight it
+                element.parentNode.querySelectorAll('li').forEach(li => {
+                    if (li.onclick.toString().includes('true')) {
+                        li.classList.add('correct');
+                    }
+                });
+            }
+            
+            // Disable further clicking
+            element.parentNode.querySelectorAll('li').forEach(li => {
+                li.onclick = null;
+                li.style.cursor = 'default';
+            });
+        }
+
+        // Add smooth scrolling for navigation links
+        document.addEventListener('DOMContentLoaded', function() {
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        target.scrollIntoView({
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+            
+            // Track page visit
+            let visitedPages = JSON.parse(localStorage.getItem('visitedPages') || '[]');
+            if (!visitedPages.includes('text_medienkompetenz')) {
+                visitedPages.push('text_medienkompetenz');
+                localStorage.setItem('visitedPages', JSON.stringify(visitedPages));
+            }
+        });
+    </script>
+</body>
+</html>

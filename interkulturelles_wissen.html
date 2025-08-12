@@ -1,0 +1,1122 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🌍 Interkulturelles Wissen - Englisch Abitur 2026</title>
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --secondary-color: #3498db;
+            --accent-color: #e74c3c;
+            --success-color: #27ae60;
+            --warning-color: #f39c12;
+            --info-color: #9b59b6;
+            --bg-color: #ecf0f1;
+            --card-bg: #ffffff;
+            --text-color: #2c3e50;
+            --border-color: #bdc3c7;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, var(--bg-color) 0%, #d5dbdb 100%);
+            color: var(--text-color);
+            line-height: 1.6;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .nav-breadcrumb {
+            margin-bottom: 20px;
+            padding: 15px;
+            background: var(--card-bg);
+            border-radius: 10px;
+            border-left: 4px solid var(--secondary-color);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        .nav-breadcrumb a {
+            color: var(--secondary-color);
+            text-decoration: none;
+            margin-right: 10px;
+            font-weight: 500;
+        }
+
+        .nav-breadcrumb a:hover {
+            text-decoration: underline;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+            background: var(--card-bg);
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 5px;
+            background: linear-gradient(90deg, #3498db, #27ae60, #f39c12, #e74c3c);
+        }
+
+        .header h1 {
+            color: var(--primary-color);
+            font-size: 2.5em;
+            margin-bottom: 15px;
+        }
+
+        .header p {
+            color: #7f8c8d;
+            font-size: 1.2em;
+            margin-bottom: 20px;
+        }
+
+        .overview-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            margin-bottom: 40px;
+        }
+
+        .overview-card {
+            background: var(--card-bg);
+            border-radius: 15px;
+            padding: 25px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+            border-left: 5px solid var(--secondary-color);
+            transition: all 0.3s ease;
+        }
+
+        .overview-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+        }
+
+        .overview-card h3 {
+            color: var(--primary-color);
+            margin-bottom: 15px;
+            font-size: 1.3em;
+        }
+
+        .main-content {
+            display: grid;
+            grid-template-columns: 1fr 350px;
+            gap: 30px;
+        }
+
+        .content-area {
+            background: var(--card-bg);
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+        }
+
+        .sidebar {
+            background: var(--card-bg);
+            border-radius: 15px;
+            padding: 25px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+            height: fit-content;
+            position: sticky;
+            top: 20px;
+        }
+
+        .section {
+            margin-bottom: 50px;
+            padding-bottom: 40px;
+            border-bottom: 2px solid #ecf0f1;
+        }
+
+        .section:last-child {
+            border-bottom: none;
+        }
+
+        .section h2 {
+            color: var(--primary-color);
+            margin-bottom: 25px;
+            font-size: 2em;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            border-bottom: 3px solid var(--secondary-color);
+            padding-bottom: 10px;
+        }
+
+        .section h3 {
+            color: var(--secondary-color);
+            margin: 30px 0 20px 0;
+            font-size: 1.4em;
+            border-left: 4px solid var(--secondary-color);
+            padding-left: 15px;
+        }
+
+        .section h4 {
+            color: var(--info-color);
+            margin: 20px 0 15px 0;
+            font-size: 1.2em;
+        }
+
+        .cultural-comparison {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 25px;
+            margin: 25px 0;
+        }
+
+        .country-card {
+            background: #f8f9fa;
+            border-radius: 15px;
+            padding: 25px;
+            border: 2px solid transparent;
+            transition: all 0.3s ease;
+        }
+
+        .uk-card {
+            border-color: #e74c3c;
+            background: linear-gradient(135deg, #fff5f5 0%, #ffeaea 100%);
+        }
+
+        .usa-card {
+            border-color: #3498db;
+            background: linear-gradient(135deg, #f0f8ff 0%, #e6f3ff 100%);
+        }
+
+        .country-card h4 {
+            margin-bottom: 15px;
+            font-size: 1.3em;
+        }
+
+        .uk-card h4 {
+            color: #c0392b;
+        }
+
+        .usa-card h4 {
+            color: #2980b9;
+        }
+
+        .info-box {
+            background: linear-gradient(135deg, #e8f5e8 0%, #f0f8f0 100%);
+            border-left: 5px solid var(--success-color);
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 10px;
+        }
+
+        .warning-box {
+            background: linear-gradient(135deg, #fff3cd 0%, #fef9e7 100%);
+            border-left: 5px solid var(--warning-color);
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 10px;
+        }
+
+        .definition-box {
+            background: linear-gradient(135deg, #f3e5f5 0%, #faf5fb 100%);
+            border-left: 5px solid var(--info-color);
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 10px;
+        }
+
+        .vocab-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            background: var(--card-bg);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        .vocab-table th {
+            background: linear-gradient(45deg, var(--info-color), #8e44ad);
+            color: white;
+            padding: 15px;
+            text-align: left;
+            font-weight: 600;
+        }
+
+        .vocab-table td {
+            padding: 12px 15px;
+            border-bottom: 1px solid #ecf0f1;
+            vertical-align: top;
+        }
+
+        .vocab-table tr:nth-child(even) {
+            background: #f8f9fa;
+        }
+
+        .vocab-table tr:hover {
+            background: #e8f4fd;
+        }
+
+        .timeline {
+            position: relative;
+            padding: 20px 0;
+            margin: 30px 0;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 50px;
+            top: 0;
+            bottom: 0;
+            width: 3px;
+            background: var(--secondary-color);
+        }
+
+        .timeline-item {
+            position: relative;
+            margin: 30px 0;
+            padding-left: 90px;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: 39px;
+            top: 10px;
+            width: 15px;
+            height: 15px;
+            border-radius: 50%;
+            background: var(--secondary-color);
+            border: 3px solid white;
+            box-shadow: 0 0 0 3px var(--secondary-color);
+        }
+
+        .timeline-content {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        .timeline-date {
+            font-weight: bold;
+            color: var(--secondary-color);
+            margin-bottom: 10px;
+        }
+
+        .example-text {
+            background: #f8f9fa;
+            padding: 15px;
+            border-left: 4px solid var(--success-color);
+            border-radius: 5px;
+            margin: 15px 0;
+            font-style: italic;
+        }
+
+        .quick-nav {
+            background: #f8f9fa;
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 25px;
+        }
+
+        .quick-nav h4 {
+            margin-bottom: 15px;
+            color: var(--primary-color);
+        }
+
+        .quick-nav ul {
+            list-style: none;
+        }
+
+        .quick-nav li {
+            margin: 8px 0;
+        }
+
+        .quick-nav a {
+            color: var(--secondary-color);
+            text-decoration: none;
+            padding: 5px 0;
+            display: block;
+            transition: all 0.3s ease;
+        }
+
+        .quick-nav a:hover {
+            color: var(--primary-color);
+            padding-left: 10px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 25px;
+            background: linear-gradient(45deg, var(--secondary-color), #2980b9);
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            margin: 5px;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(52, 152, 219, 0.3);
+        }
+
+        .practice-section {
+            background: linear-gradient(135deg, #e8f5e8 0%, #f0f8f0 100%);
+            border-radius: 15px;
+            padding: 25px;
+            margin: 30px 0;
+        }
+
+        .practice-section h4 {
+            color: var(--success-color);
+            margin-bottom: 20px;
+        }
+
+        .quiz-question {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 15px 0;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        .quiz-options {
+            list-style: none;
+            margin: 15px 0;
+        }
+
+        .quiz-options li {
+            margin: 8px 0;
+            padding: 10px;
+            background: #f8f9fa;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        .quiz-options li:hover {
+            background: #e9ecef;
+        }
+
+        @media (max-width: 1200px) {
+            .main-content {
+                grid-template-columns: 1fr;
+            }
+            
+            .sidebar {
+                position: static;
+                order: -1;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .cultural-comparison {
+                grid-template-columns: 1fr;
+            }
+            
+            .container {
+                padding: 15px;
+            }
+            
+            .header h1 {
+                font-size: 2em;
+            }
+            
+            .section h2 {
+                font-size: 1.5em;
+            }
+        }
+
+        .highlight {
+            background: #fff9c4;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-weight: 500;
+        }
+
+        .key-term {
+            background: #e3f2fd;
+            color: #1976d2;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-weight: 600;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="nav-breadcrumb">
+            <a href="index.html">🏠 Hauptübersicht</a> / 
+            <span>🌍 Interkulturelles Wissen</span>
+        </div>
+
+        <div class="header">
+            <h1>🌍 Interkulturelles Wissen</h1>
+            <p>Soziokulturelles Orientierungswissen für das Englisch-Abitur 2026</p>
+            <div style="background: linear-gradient(45deg, var(--info-color), #8e44ad); color: white; padding: 15px; border-radius: 10px; margin-top: 20px;">
+                <strong>Was ist interkulturelles Wissen?</strong><br>
+                Dies ist das Wissen über Gesellschaft, Politik, Geschichte und Kultur der englischsprachigen Länder, 
+                besonders Großbritannien und USA. Es hilft dir, in internationalen Situationen angemessen zu handeln 
+                und verschiedene Perspektiven zu verstehen.
+            </div>
+        </div>
+
+        <div class="overview-grid">
+            <div class="overview-card">
+                <h3>🇬🇧 Vereinigtes Königreich</h3>
+                <p>Geschichte, Politik, Gesellschaft und Kultur Großbritanniens. Von der Monarchie bis zum Brexit - verstehe die britische Identität.</p>
+            </div>
+            <div class="overview-card">
+                <h3>🇺🇸 Vereinigte Staaten</h3>
+                <p>Der American Dream, politische Systeme und gesellschaftliche Herausforderungen der USA von den Anfängen bis heute.</p>
+            </div>
+            <div class="overview-card">
+                <h3>🌐 Globale Themen</h3>
+                <p>Umwelt, Technologie, Konsum und andere internationale Herausforderungen, die alle englischsprachigen Länder betreffen.</p>
+            </div>
+            <div class="overview-card">
+                <h3>🤝 Interkulturelle Kompetenz</h3>
+                <p>Wie man respektvoll mit Menschen aus anderen Kulturen interagiert und kulturelle Unterschiede erkennt.</p>
+            </div>
+        </div>
+
+        <div class="main-content">
+            <div class="content-area">
+                
+                <div class="section" id="usa">
+                    <h2>🇺🇸 Die Vereinigten Staaten von Amerika</h2>
+                    
+                    <div class="definition-box">
+                        <h4>Was musst du über die USA wissen?</h4>
+                        <p>Die USA sind ein föderales präsidiales System mit 50 Bundesstaaten. Das Land wurde durch Einwanderung geprägt und sieht sich als "Land der unbegrenzten Möglichkeiten". Zentral ist der <span class="key-term">American Dream</span> - die Idee, dass jeder durch harte Arbeit erfolgreich werden kann.</p>
+                    </div>
+
+                    <h3>Der American Dream</h3>
+                    <div class="info-box">
+                        <h4>💭 Was ist der American Dream?</h4>
+                        <p>Der American Dream ist die zentrale Idee der USA: <strong>Jeder Mensch kann es durch harte Arbeit und Entschlossenheit zu Wohlstand und Erfolg bringen</strong>, unabhängig von seiner Herkunft oder seinem sozialen Status.</p>
+                        
+                        <h4>Historische Entwicklung:</h4>
+                        <ul style="margin: 15px 0; padding-left: 20px;">
+                            <li><strong>1600er-1800er:</strong> Pioniergeist und Besiedlung des Westens</li>
+                            <li><strong>19./20. Jahrhundert:</strong> Massive Einwanderung, Industrialisierung</li>
+                            <li><strong>Nach 1945:</strong> Wirtschaftsboom, Vorstädte, Mittelschicht</li>
+                            <li><strong>Heute:</strong> Kritische Diskussion über Realität vs. Mythos</li>
+                        </ul>
+                    </div>
+
+                    <h4>Kritische Betrachtung des American Dream heute:</h4>
+                    <div class="cultural-comparison">
+                        <div class="country-card usa-card">
+                            <h4>✅ Positive Aspekte</h4>
+                            <ul style="padding-left: 20px;">
+                                <li>Motivation und Optimismus</li>
+                                <li>Unternehmergeist</li>
+                                <li>Bildungschancen</li>
+                                <li>Viele Erfolgsgeschichten</li>
+                                <li>Soziale Mobilität möglich</li>
+                            </ul>
+                        </div>
+                        <div class="country-card" style="border-color: #e74c3c; background: linear-gradient(135deg, #fff5f5 0%, #ffeaea 100%);">
+                            <h4 style="color: #c0392b;">❌ Kritikpunkte</h4>
+                            <ul style="padding-left: 20px;">
+                                <li>Wachsende Ungleichheit</li>
+                                <li>Rassismus und Diskriminierung</li>
+                                <li>Hohe Bildungskosten</li>
+                                <li>Gesundheitssystem</li>
+                                <li>Klassengrenzen schwer überwindbar</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <h3>Politisches System der USA</h3>
+                    <div class="info-box">
+                        <h4>🏛️ Checks and Balances</h4>
+                        <p>Das amerikanische System basiert auf <span class="key-term">Gewaltenteilung</span> (separation of powers) mit gegenseitiger Kontrolle:</p>
+                        
+                        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; margin: 20px 0;">
+                            <div style="background: white; padding: 15px; border-radius: 8px;">
+                                <h4 style="color: #3498db; margin-bottom: 10px;">Executive Branch</h4>
+                                <p><strong>Präsident</strong><br>
+                                Führt Gesetze aus, Oberbefehlshaber, Außenpolitik</p>
+                            </div>
+                            <div style="background: white; padding: 15px; border-radius: 8px;">
+                                <h4 style="color: #27ae60; margin-bottom: 10px;">Legislative Branch</h4>
+                                <p><strong>Kongress</strong> (Senat + Repräsentantenhaus)<br>
+                                Macht Gesetze, kontrolliert Budget</p>
+                            </div>
+                            <div style="background: white; padding: 15px; border-radius: 8px;">
+                                <h4 style="color: #e74c3c; margin-bottom: 10px;">Judicial Branch</h4>
+                                <p><strong>Supreme Court</strong><br>
+                                Interpretiert Gesetze, Verfassungsrecht</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <h3>Gesellschaftliche Herausforderungen</h3>
+                    
+                    <h4>🏘️ Multikulturelle Gesellschaft</h4>
+                    <div class="example-text">
+                        <strong>Beispiel:</strong> Die USA werden oft als "melting pot" (Schmelztiegel) oder "salad bowl" (Salatschüssel) beschrieben. 
+                        Während der melting pot bedeutet, dass alle Kulturen zu einer verschmelzen, steht salad bowl dafür, 
+                        dass verschiedene Kulturen nebeneinander existieren und ihre Eigenarten behalten.
+                    </div>
+
+                    <div class="vocab-table">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Englisch</th>
+                                    <th>Deutsch</th>
+                                    <th>Erklärung/Beispiel</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><strong>diversity</strong></td>
+                                    <td>Vielfalt</td>
+                                    <td>The USA prides itself on its cultural diversity.</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>immigration</strong></td>
+                                    <td>Einwanderung</td>
+                                    <td>Immigration has shaped American society for centuries.</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>ethnic minorities</strong></td>
+                                    <td>ethnische Minderheiten</td>
+                                    <td>African Americans, Hispanic Americans, Asian Americans</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>discrimination</strong></td>
+                                    <td>Diskriminierung</td>
+                                    <td>Fighting discrimination is an ongoing challenge.</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>civil rights</strong></td>
+                                    <td>Bürgerrechte</td>
+                                    <td>The Civil Rights Movement of the 1960s</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>segregation</strong></td>
+                                    <td>Rassentrennung</td>
+                                    <td>Legal separation ended in the 1960s</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>affirmative action</strong></td>
+                                    <td>positive Diskriminierung</td>
+                                    <td>Policies to increase opportunities for minorities</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="section" id="uk">
+                    <h2>🇬🇧 Das Vereinigte Königreich</h2>
+                    
+                    <div class="definition-box">
+                        <h4>Was ist das Vereinigte Königreich?</h4>
+                        <p>Das United Kingdom (UK) besteht aus <strong>England, Schottland, Wales und Nordirland</strong>. 
+                        Es ist eine konstitutionelle Monarchie mit einem parlamentarischen System. 
+                        Die Queen/King ist Staatsoberhaupt, aber der Prime Minister führt die Regierung.</p>
+                    </div>
+
+                    <h3>Das britische Politiksystem</h3>
+                    <div class="info-box">
+                        <h4>👑 Constitutional Monarchy</h4>
+                        <p>Großbritannien hat ein <span class="key-term">Westminster-System</span> mit diesen Besonderheiten:</p>
+                        
+                        <ul style="margin: 15px 0; padding-left: 20px;">
+                            <li><strong>Monarch:</strong> Zeremonielle Rolle, "reigns but does not rule"</li>
+                            <li><strong>Parliament:</strong> House of Commons (gewählt) + House of Lords (ernannt)</li>
+                            <li><strong>Prime Minister:</strong> Regierungschef, meist Führer der stärksten Partei</li>
+                            <li><strong>First Past the Post:</strong> Wahlsystem - wer die meisten Stimmen hat, gewinnt</li>
+                        </ul>
+                    </div>
+
+                    <h3>Britische Geschichte und Identität</h3>
+                    
+                    <h4>🌍 Das British Empire</h4>
+                    <div class="timeline">
+                        <div class="timeline-item">
+                            <div class="timeline-content">
+                                <div class="timeline-date">16.-19. Jahrhundert</div>
+                                <h4>Aufbau des Empire</h4>
+                                <p>Großbritannien wird zur Weltmacht durch Seefahrt, Handel und Kolonisation. "The sun never sets on the British Empire"</p>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-content">
+                                <div class="timeline-date">20. Jahrhundert</div>
+                                <h4>Dekolonisation</h4>
+                                <p>Nach zwei Weltkriegen verliert Großbritannien seine Kolonien. Entstehung des Commonwealth als Nachfolger.</p>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-content">
+                                <div class="timeline-date">1973-2020</div>
+                                <h4>EU-Mitgliedschaft und Brexit</h4>
+                                <p>Großbritannien tritt der EG bei, bleibt aber skeptisch. 2016 Brexit-Referendum, 2020 EU-Austritt.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <h4>🏴󠁧󠁢󠁥󠁮󠁧󠁿 Das Commonwealth</h4>
+                    <div class="example-text">
+                        <strong>Was ist das Commonwealth?</strong><br>
+                        Eine freiwillige Vereinigung von 54 unabhängigen Ländern, die meisten ehemalige britische Kolonien. 
+                        Länder wie Kanada, Australien, Indien und viele afrikanische Staaten gehören dazu. 
+                        Es ist kein politisches Bündnis, sondern fördert Zusammenarbeit in Bereichen wie Bildung, Sport und Handel.
+                    </div>
+
+                    <h3>Brexit und seine Folgen</h3>
+                    <div class="warning-box">
+                        <h4>🚪 Was war der Brexit?</h4>
+                        <p><strong>Brexit = Britain + Exit</strong> - Großbritanniens Austritt aus der Europäischen Union nach dem Referendum 2016.</p>
+                        
+                        <h4>Hauptargumente:</h4>
+                        <div class="cultural-comparison">
+                            <div class="country-card" style="border-color: #27ae60; background: linear-gradient(135deg, #e8f5e8 0%, #f0f8f0 100%);">
+                                <h4 style="color: #229954;">Leave-Kampagne</h4>
+                                <ul style="padding-left: 20px;">
+                                    <li>Mehr nationale Souveränität</li>
+                                    <li>Kontrolle über Einwanderung</li>
+                                    <li>Weniger EU-Bürokratie</li>
+                                    <li>"Take back control"</li>
+                                </ul>
+                            </div>
+                            <div class="country-card" style="border-color: #3498db; background: linear-gradient(135deg, #f0f8ff 0%, #e6f3ff 100%);">
+                                <h4 style="color: #2980b9;">Remain-Kampagne</h4>
+                                <ul style="padding-left: 20px;">
+                                    <li>Wirtschaftliche Vorteile der EU</li>
+                                    <li>Freier Handel</li>
+                                    <li>Internationale Zusammenarbeit</li>
+                                    <li>"Stronger together"</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="section" id="global-issues">
+                    <h2>🌐 Globale Themen und Herausforderungen</h2>
+                    
+                    <h3>Umwelt und Klimawandel</h3>
+                    <div class="info-box">
+                        <h4>🌡️ Global Warming</h4>
+                        <p>Der <span class="key-term">Klimawandel</span> ist eine der größten globalen Herausforderungen. 
+                        Englischsprachige Länder spielen sowohl als Verursacher als auch als Lösungsanbieter eine wichtige Rolle.</p>
+                        
+                        <h4>Wichtige Umweltthemen:</h4>
+                        <ul style="margin: 15px 0; padding-left: 20px;">
+                            <li><strong>Carbon emissions:</strong> CO2-Ausstoß durch Industrie und Verkehr</li>
+                            <li><strong>Renewable energy:</strong> Wind, Solar, Wasserkraft als Alternativen</li>
+                            <li><strong>Biodiversity loss:</strong> Artensterben und Naturschutz</li>
+                            <li><strong>Plastic pollution:</strong> Müll in den Ozeanen</li>
+                            <li><strong>Sustainable development:</strong> Nachhaltiges Wirtschaften</li>
+                        </ul>
+                    </div>
+
+                    <div class="vocab-table">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Englisch</th>
+                                    <th>Deutsch</th>
+                                    <th>Kontext/Beispiel</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><strong>climate change</strong></td>
+                                    <td>Klimawandel</td>
+                                    <td>Climate change affects weather patterns globally.</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>greenhouse gases</strong></td>
+                                    <td>Treibhausgase</td>
+                                    <td>CO2, methane, and other greenhouse gases</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>carbon footprint</strong></td>
+                                    <td>CO2-Fußabdruck</td>
+                                    <td>Reduce your carbon footprint by using public transport.</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>renewable energy</strong></td>
+                                    <td>erneuerbare Energie</td>
+                                    <td>Solar and wind power are renewable energy sources.</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>sustainability</strong></td>
+                                    <td>Nachhaltigkeit</td>
+                                    <td>Sustainability is key to environmental protection.</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>recycling</strong></td>
+                                    <td>Recycling</td>
+                                    <td>Recycling helps reduce waste and save resources.</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <h3>Technologie und digitale Gesellschaft</h3>
+                    <div class="warning-box">
+                        <h4>💻 Die digitale Revolution</h4>
+                        <p>Moderne Technologien verändern die Gesellschaft grundlegend. Von <span class="key-term">Artificial Intelligence</span> 
+                        bis zu <span class="key-term">Social Media</span> - verstehe die Auswirkungen auf unser Leben.</p>
+                        
+                        <h4>Wichtige Technologie-Themen:</h4>
+                        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 15px; margin: 20px 0;">
+                            <div style="background: white; padding: 15px; border-radius: 8px;">
+                                <h4 style="color: #3498db;">🤖 Artificial Intelligence</h4>
+                                <p>AI verändert Arbeitsplätze, Medizin, Transport. Chancen und Risiken für die Gesellschaft.</p>
+                            </div>
+                            <div style="background: white; padding: 15px; border-radius: 8px;">
+                                <h4 style="color: #27ae60;">📱 Social Media</h4>
+                                <p>Facebook, Instagram, TikTok beeinflussen Kommunikation, Politik und Meinungsbildung.</p>
+                            </div>
+                            <div style="background: white; padding: 15px; border-radius: 8px;">
+                                <h4 style="color: #e74c3c;">🔒 Privacy & Security</h4>
+                                <p>Datenschutz, Überwachung und Cybersicherheit in der digitalen Welt.</p>
+                            </div>
+                            <div style="background: white; padding: 15px; border-radius: 8px;">
+                                <h4 style="color: #f39c12;">🏠 Smart Technology</h4>
+                                <p>Smart homes, Internet of Things, automatisierte Systeme im Alltag.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <h3>Konsum und Gesellschaft</h3>
+                    <div class="definition-box">
+                        <h4>🛍️ Consumer Society</h4>
+                        <p>Die <span class="key-term">Konsumgesellschaft</span> ist besonders in englischsprachigen Ländern ausgeprägt. 
+                        Verstehe die Auswirkungen von Werbung, Konsumverhalten und wirtschaftlichen Entscheidungen.</p>
+                        
+                        <div class="example-text">
+                            <strong>Beispiel - Black Friday:</strong><br>
+                            Ursprünglich amerikanischer Shopping-Tag nach Thanksgiving, der sich global ausgebreitet hat. 
+                            Zeigt sowohl die Macht des Konsums als auch kritische Fragen zu Nachhaltigkeit und Verschwendung.
+                        </div>
+                        
+                        <h4>Kritische Konsumthemen:</h4>
+                        <ul style="margin: 15px 0; padding-left: 20px;">
+                            <li><strong>Advertising influence:</strong> Wie Werbung unser Verhalten beeinflusst</li>
+                            <li><strong>Fast fashion:</strong> Billige Mode und ihre Umweltfolgen</li>
+                            <li><strong>Planned obsolescence:</strong> Geplante Veralterung von Produkten</li>
+                            <li><strong>Ethical consumption:</strong> Bewusste Kaufentscheidungen</li>
+                            <li><strong>Corporate responsibility:</strong> Verantwortung der Unternehmen</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="section" id="multicultural-society">
+                    <h2>🤝 Identität und multikulturelle Gesellschaft</h2>
+                    
+                    <div class="definition-box">
+                        <h4>Was bedeutet multikulturelle Gesellschaft?</h4>
+                        <p>Eine <span class="key-term">multikulturelle Gesellschaft</span> ist eine Gesellschaft, in der Menschen verschiedener 
+                        ethnischer, religiöser und kultureller Hintergründe zusammenleben. Dies bringt sowohl Bereicherung als auch Herausforderungen mit sich.</p>
+                    </div>
+
+                    <h3>Modelle des Zusammenlebens</h3>
+                    <div class="cultural-comparison">
+                        <div class="country-card" style="border-color: #3498db; background: linear-gradient(135deg, #f0f8ff 0%, #e6f3ff 100%);">
+                            <h4 style="color: #2980b9;">🫕 Melting Pot</h4>
+                            <p><strong>Konzept:</strong> Alle Kulturen verschmelzen zu einer neuen, gemeinsamen Kultur.</p>
+                            <p><strong>Beispiel:</strong> Traditionell USA - "aus vielen wird eins" (e pluribus unum)</p>
+                            <p><strong>Kritik:</strong> Minderheitenkulturen können ihre Identität verlieren.</p>
+                        </div>
+                        <div class="country-card" style="border-color: #27ae60; background: linear-gradient(135deg, #e8f5e8 0%, #f0f8f0 100%);">
+                            <h4 style="color: #229954;">🥗 Salad Bowl</h4>
+                            <p><strong>Konzept:</strong> Verschiedene Kulturen existieren nebeneinander und behalten ihre Eigenarten.</p>
+                            <p><strong>Beispiel:</strong> Moderne multikulturelle Städte wie London oder Toronto</p>
+                            <p><strong>Vorteil:</strong> Kulturelle Vielfalt bleibt erhalten.</p>
+                        </div>
+                    </div>
+
+                    <h3>Herausforderungen der Multikulturalität</h3>
+                    <div class="info-box">
+                        <h4>⚖️ Integration vs. Parallel Societies</h4>
+                        <p>Ein zentrales Spannungsfeld in multikulturellen Gesellschaften:</p>
+                        
+                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin: 20px 0;">
+                            <div>
+                                <h4 style="color: #27ae60;">✅ Erfolgreiche Integration</h4>
+                                <ul style="padding-left: 20px;">
+                                    <li>Spracherwerb</li>
+                                    <li>Bildungsteilhabe</li>
+                                    <li>Arbeitsmarktintegration</li>
+                                    <li>Sozialer Zusammenhalt</li>
+                                    <li>Respekt für gemeinsame Werte</li>
+                                </ul>
+                            </div>
+                            <div>
+                                <h4 style="color: #e74c3c;">❌ Parallel Societies</h4>
+                                <ul style="padding-left: 20px;">
+                                    <li>Isolation von der Mehrheitsgesellschaft</li>
+                                    <li>Mangelnde Sprachkenntnisse</li>
+                                    <li>Separate Gemeinschaften</li>
+                                    <li>Konflikte zwischen Wertesystemen</li>
+                                    <li>Soziale Spannungen</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <h3>Stereotypen und nationale Identität</h3>
+                    <div class="warning-box">
+                        <h4>🎭 Nationale Stereotypen verstehen</h4>
+                        <p>Stereotypen sind vereinfachte, oft überholte Vorstellungen über andere Kulturen. 
+                        Als interkulturell kompetente Person musst du sie erkennen und hinterfragen.</p>
+                        
+                        <div class="example-text">
+                            <strong>Beispiele für Stereotypen:</strong><br>
+                            • Briten: höflich, konservativ, trinken viel Tee<br>
+                            • Amerikaner: laut, oberflächlich, fast food-essend<br>
+                            • Deutsche: pünktlich, diszipliniert, humorlos<br><br>
+                            <strong>Warum sind Stereotypen problematisch?</strong> Sie reduzieren komplexe Kulturen auf einfache Klischees 
+                            und verhindern echtes Verständnis zwischen Menschen.
+                        </div>
+                    </div>
+
+                    <h3>Interkulturelle Kommunikation</h3>
+                    <div class="vocab-table">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Situation</th>
+                                    <th>Britischer Stil</th>
+                                    <th>Amerikanischer Stil</th>
+                                    <th>Deutscher Stil</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><strong>Begrüßung</strong></td>
+                                    <td>Zurückhaltend, formell: "How do you do?"</td>
+                                    <td>Freundlich, offen: "Hi, how are you?"</td>
+                                    <td>Direkt, formell: "Guten Tag"</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Small Talk</strong></td>
+                                    <td>Wetter, sehr wichtig für Beziehungsaufbau</td>
+                                    <td>Persönliche Themen, Sport, Hobbys</td>
+                                    <td>Weniger üblich, eher sachbezogen</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Kritik äußern</strong></td>
+                                    <td>Indirekt: "Perhaps we might consider..."</td>
+                                    <td>Konstruktiv: "I think we could improve..."</td>
+                                    <td>Direkt: "Das ist falsch, weil..."</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Höflichkeit</strong></td>
+                                    <td>Understatement, "please" und "sorry"</td>
+                                    <td>Positive Sprache, "awesome", "great"</td>
+                                    <td>Ehrlichkeit wird geschätzt</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="practice-section">
+                    <h4>🎯 Übungen zum Interkulturellen Wissen</h4>
+                    
+                    <div class="quiz-question">
+                        <h4>Frage 1: American Dream</h4>
+                        <p>Welche Aussage beschreibt den American Dream am besten?</p>
+                        <ul class="quiz-options">
+                            <li onclick="checkAnswer(this, false)">A) Jeder Amerikaner wird automatisch reich</li>
+                            <li onclick="checkAnswer(this, true)">B) Durch harte Arbeit kann jeder erfolgreich werden</li>
+                            <li onclick="checkAnswer(this, false)">C) Nur weiße Menschen können den American Dream erreichen</li>
+                            <li onclick="checkAnswer(this, false)">D) Der American Dream ist heute nicht mehr relevant</li>
+                        </ul>
+                        <div class="answer-explanation" style="display: none; margin-top: 15px; padding: 15px; background: #e8f5e8; border-radius: 5px;">
+                            <strong>Richtig! B) Durch harte Arbeit kann jeder erfolgreich werden</strong><br>
+                            Das ist die Kernidee des American Dream - unabhängig von Herkunft oder sozialem Status 
+                            kann jeder durch Anstrengung und Entschlossenheit Erfolg haben.
+                        </div>
+                    </div>
+
+                    <div class="quiz-question">
+                        <h4>Frage 2: Brexit</h4>
+                        <p>Was war das Hauptargument der Leave-Kampagne beim Brexit?</p>
+                        <ul class="quiz-options">
+                            <li onclick="checkAnswer(this, false)">A) Mehr Geld für die EU zahlen</li>
+                            <li onclick="checkAnswer(this, true)">B) "Take back control" - mehr nationale Souveränität</li>
+                            <li onclick="checkAnswer(this, false)">C) Stärkere Bindungen zu Europa</li>
+                            <li onclick="checkAnswer(this, false)">D) Offenere Grenzen für Einwanderer</li>
+                        </ul>
+                        <div class="answer-explanation" style="display: none; margin-top: 15px; padding: 15px; background: #e8f5e8; border-radius: 5px;">
+                            <strong>Richtig! B) "Take back control"</strong><br>
+                            Die Leave-Kampagne argumentierte, dass Großbritannien die Kontrolle über seine 
+                            Gesetze, Grenzen und Geld zurückgewinnen sollte.
+                        </div>
+                    </div>
+
+                    <div class="quiz-question">
+                        <h4>Frage 3: Multikulturelle Gesellschaft</h4>
+                        <p>Was ist der Unterschied zwischen "Melting Pot" und "Salad Bowl"?</p>
+                        <ul class="quiz-options">
+                            <li onclick="checkAnswer(this, true)">A) Melting Pot = Kulturen verschmelzen, Salad Bowl = Kulturen bleiben getrennt</li>
+                            <li onclick="checkAnswer(this, false)">B) Beide Begriffe bedeuten dasselbe</li>
+                            <li onclick="checkAnswer(this, false)">C) Melting Pot ist nur für die USA, Salad Bowl nur für Europa</li>
+                            <li onclick="checkAnswer(this, false)">D) Salad Bowl = Kulturen verschmelzen, Melting Pot = Kulturen bleiben getrennt</li>
+                        </ul>
+                        <div class="answer-explanation" style="display: none; margin-top: 15px; padding: 15px; background: #e8f5e8; border-radius: 5px;">
+                            <strong>Richtig! A) Melting Pot = Verschmelzung, Salad Bowl = separate Koexistenz</strong><br>
+                            Im Melting Pot entstehen neue, gemischte Kulturen, während im Salad Bowl 
+                            verschiedene Kulturen ihre Eigenarten beibehalten.
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="sidebar">
+                <div class="quick-nav">
+                    <h4>📍 Schnellnavigation</h4>
+                    <ul>
+                        <li><a href="#usa">🇺🇸 USA & American Dream</a></li>
+                        <li><a href="#uk">🇬🇧 Vereinigtes Königreich</a></li>
+                        <li><a href="#global-issues">🌐 Globale Themen</a></li>
+                        <li><a href="#multicultural-society">🤝 Multikulturelle Gesellschaft</a></li>
+                    </ul>
+                </div>
+
+                <div style="background: #f8f9fa; border-radius: 10px; padding: 20px; margin-bottom: 25px;">
+                    <h4 style="color: var(--primary-color); margin-bottom: 15px;">📚 Prüfungsrelevant</h4>
+                    <p style="font-size: 0.9em; line-height: 1.5;">
+                        <strong>Für das Abitur musst du:</strong><br>
+                        ✓ Kulturelle Phänomene erkennen und erklären<br>
+                        ✓ Gemeinsamkeiten und Unterschiede zur deutschen Kultur beschreiben<br>
+                        ✓ Historische Bezüge herstellen<br>
+                        ✓ Verschiedene Perspektiven einnehmen<br>
+                        ✓ Interkulturell angemessen kommunizieren
+                    </p>
+                </div>
+
+                <div style="background: linear-gradient(135deg, #e8f5e8 0%, #f0f8f0 100%); border-radius: 10px; padding: 20px; margin-bottom: 25px;">
+                    <h4 style="color: var(--success-color); margin-bottom: 15px;">💡 Lerntipps</h4>
+                    <ul style="font-size: 0.9em; line-height: 1.5; padding-left: 20px;">
+                        <li>Lies englischsprachige Nachrichten (BBC, CNN)</li>
+                        <li>Schaue Dokumentationen über UK/USA</li>
+                        <li>Folge aktuellen politischen Entwicklungen</li>
+                        <li>Diskutiere über kulturelle Unterschiede</li>
+                        <li>Übe interkulturelle Szenarien</li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+
+        <div style="text-align: center; margin-top: 40px; padding: 30px; background: var(--card-bg); border-radius: 15px; box-shadow: 0 8px 25px rgba(0,0,0,0.1);">
+            <h3 style="color: var(--primary-color); margin-bottom: 20px;">📚 Weiterlernen</h3>
+            <p style="color: #7f8c8d; margin-bottom: 25px;">Du hast das Interkulturelle Wissen durchgearbeitet! Gehe zurück zur Übersicht oder lerne weiter mit Textproduktion.</p>
+            <a href="index.html" class="btn" style="margin: 10px;">🏠 Zurück zur Übersicht</a>
+            <a href="textproduktion.html" class="btn" style="background: linear-gradient(45deg, var(--success-color), #229954); margin: 10px;">✍️ Weiter zu Textproduktion</a>
+        </div>
+    </div>
+
+    <script>
+        function checkAnswer(element, isCorrect) {
+            const options = element.parentNode.children;
+            const explanation = element.parentNode.parentNode.querySelector('.answer-explanation');
+            
+            // Reset all options
+            for (let option of options) {
+                option.style.background = '#f8f9fa';
+                option.style.color = '#333';
+            }
+            
+            // Mark the clicked answer
+            if (isCorrect) {
+                element.style.background = '#d4edda';
+                element.style.color = '#155724';
+            } else {
+                element.style.background = '#f8d7da';
+                element.style.color = '#721c24';
+                
+                // Also highlight the correct answer
+                for (let option of options) {
+                    if (option.onclick.toString().includes('true')) {
+                        option.style.background = '#d4edda';
+                        option.style.color = '#155724';
+                    }
+                }
+            }
+            
+            // Show explanation
+            explanation.style.display = 'block';
+        }
+
+        // Track page visit for progress
+        trackPageVisit('interkulturelles_wissen');
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('.quick-nav a').forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+        });
+
+        // Highlight current section in navigation
+        window.addEventListener('scroll', function() {
+            const sections = document.querySelectorAll('.section');
+            const navLinks = document.querySelectorAll('.quick-nav a');
+            
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.getBoundingClientRect().top;
+                if (sectionTop <= 100) {
+                    current = section.getAttribute('id');
+                }
+            });
+            
+            navLinks.forEach(link => {
+                link.style.fontWeight = 'normal';
+                link.style.color = 'var(--secondary-color)';
+                if (link.getAttribute('href') === '#' + current) {
+                    link.style.fontWeight = 'bold';
+                    link.style.color = 'var(--primary-color)';
+                }
+            });
+        });
+
+        function trackPageVisit(page) {
+            let visitedPages = JSON.parse(localStorage.getItem('visitedPages') || '[]');
+            if (!visitedPages.includes(page)) {
+                visitedPages.push(page);
+                localStorage.setItem('visitedPages', JSON.stringify(visitedPages));
+            }
+        }
+    </script>
+</body>
+</html>

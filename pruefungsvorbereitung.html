@@ -1,0 +1,1192 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prüfungsvorbereitung - Englisch Abitur 2026</title>
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --secondary-color: #3498db;
+            --accent-color: #e74c3c;
+            --success-color: #27ae60;
+            --warning-color: #f39c12;
+            --bg-color: #ecf0f1;
+            --card-bg: #ffffff;
+            --text-color: #2c3e50;
+            --border-color: #bdc3c7;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, var(--bg-color) 0%, #d5dbdb 100%);
+            color: var(--text-color);
+            line-height: 1.7;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .nav-breadcrumb {
+            margin-bottom: 20px;
+            padding: 15px;
+            background: var(--card-bg);
+            border-radius: 10px;
+            border-left: 4px solid var(--secondary-color);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+
+        .nav-breadcrumb a {
+            color: var(--secondary-color);
+            text-decoration: none;
+            margin-right: 10px;
+            font-weight: 500;
+        }
+
+        .nav-breadcrumb a:hover {
+            text-decoration: underline;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+            background: linear-gradient(135deg, var(--accent-color) 0%, #c0392b 100%);
+            color: white;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 15px 35px rgba(231, 76, 60, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .header::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+            transform: rotate(45deg);
+        }
+
+        .header h1 {
+            font-size: 3em;
+            margin-bottom: 15px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .header p {
+            font-size: 1.3em;
+            margin-bottom: 20px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .exam-info {
+            background: rgba(255,255,255,0.2);
+            padding: 20px;
+            border-radius: 15px;
+            margin-top: 25px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .content-grid {
+            display: grid;
+            grid-template-columns: 1fr 350px;
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+
+        .main-content {
+            background: var(--card-bg);
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        .sidebar {
+            background: var(--card-bg);
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            height: fit-content;
+            position: sticky;
+            top: 20px;
+        }
+
+        .section {
+            margin-bottom: 50px;
+            padding-bottom: 40px;
+            border-bottom: 3px solid #ecf0f1;
+        }
+
+        .section:last-child {
+            border-bottom: none;
+        }
+
+        .section h2 {
+            color: var(--primary-color);
+            margin-bottom: 25px;
+            font-size: 2.2em;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            border-bottom: 3px solid var(--secondary-color);
+            padding-bottom: 15px;
+        }
+
+        .section h3 {
+            color: var(--secondary-color);
+            margin: 30px 0 20px 0;
+            font-size: 1.6em;
+            border-left: 5px solid var(--secondary-color);
+            padding-left: 15px;
+            background: #f8f9fa;
+            padding: 15px;
+            border-radius: 8px;
+        }
+
+        .section h4 {
+            color: var(--primary-color);
+            margin: 25px 0 15px 0;
+            font-size: 1.3em;
+            font-weight: 600;
+        }
+
+        .icon {
+            font-size: 1.8em;
+            color: var(--accent-color);
+        }
+
+        .exam-structure {
+            background: linear-gradient(135deg, #e8f5e8 0%, #f0f8f0 100%);
+            border: 2px solid var(--success-color);
+            border-radius: 15px;
+            padding: 25px;
+            margin: 25px 0;
+        }
+
+        .exam-structure h4 {
+            color: var(--success-color);
+            margin-bottom: 20px;
+            font-size: 1.4em;
+        }
+
+        .exam-parts {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin: 20px 0;
+        }
+
+        .exam-part {
+            background: white;
+            border: 2px solid #e9ecef;
+            border-radius: 12px;
+            padding: 20px;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .exam-part:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            border-color: var(--secondary-color);
+        }
+
+        .exam-part h5 {
+            color: var(--primary-color);
+            margin-bottom: 15px;
+            font-size: 1.2em;
+            font-weight: 700;
+        }
+
+        .exam-part .duration {
+            background: var(--warning-color);
+            color: white;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.9em;
+            font-weight: 600;
+            position: absolute;
+            top: 15px;
+            right: 15px;
+        }
+
+        .operators-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 25px 0;
+            background: var(--card-bg);
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+        }
+
+        .operators-table th {
+            background: linear-gradient(45deg, var(--primary-color), #34495e);
+            color: white;
+            padding: 18px 15px;
+            text-align: left;
+            font-weight: 700;
+            font-size: 1.1em;
+        }
+
+        .operators-table td {
+            padding: 15px;
+            border-bottom: 1px solid #ecf0f1;
+            vertical-align: top;
+        }
+
+        .operators-table tr:nth-child(even) {
+            background: #f8f9fa;
+        }
+
+        .operators-table tr:hover {
+            background: #e3f2fd;
+        }
+
+        .operator {
+            font-weight: 700;
+            color: var(--accent-color);
+            font-size: 1.1em;
+        }
+
+        .afb {
+            background: var(--secondary-color);
+            color: white;
+            padding: 4px 8px;
+            border-radius: 15px;
+            font-size: 0.8em;
+            font-weight: 600;
+        }
+
+        .example-box {
+            background: linear-gradient(135deg, #fff3cd 0%, #fef9e7 100%);
+            border-left: 5px solid var(--warning-color);
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 10px;
+        }
+
+        .example-box h4 {
+            color: var(--warning-color);
+            margin-bottom: 15px;
+            font-size: 1.2em;
+        }
+
+        .tips-box {
+            background: linear-gradient(135deg, #e3f2fd 0%, #f0f8ff 100%);
+            border-left: 5px solid var(--secondary-color);
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 10px;
+        }
+
+        .tips-box h4 {
+            color: var(--secondary-color);
+            margin-bottom: 15px;
+            font-size: 1.2em;
+        }
+
+        .strategy-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            margin: 25px 0;
+        }
+
+        .strategy-card {
+            background: white;
+            border: 2px solid #e9ecef;
+            border-radius: 15px;
+            padding: 25px;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .strategy-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 5px;
+            background: linear-gradient(90deg, var(--secondary-color), var(--success-color));
+        }
+
+        .strategy-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+        }
+
+        .strategy-card h4 {
+            color: var(--primary-color);
+            margin-bottom: 15px;
+            font-size: 1.3em;
+        }
+
+        .strategy-card ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .strategy-card li {
+            margin: 10px 0;
+            padding-left: 25px;
+            position: relative;
+        }
+
+        .strategy-card li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--success-color);
+            font-weight: bold;
+            font-size: 1.2em;
+        }
+
+        .timeline {
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            border-radius: 15px;
+            padding: 30px;
+            margin: 25px 0;
+            position: relative;
+        }
+
+        .timeline h4 {
+            color: var(--primary-color);
+            margin-bottom: 25px;
+            font-size: 1.4em;
+            text-align: center;
+        }
+
+        .timeline-item {
+            background: white;
+            border-left: 4px solid var(--secondary-color);
+            margin: 20px 0;
+            padding: 20px;
+            border-radius: 10px;
+            position: relative;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -8px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 16px;
+            height: 16px;
+            background: var(--secondary-color);
+            border-radius: 50%;
+        }
+
+        .timeline-period {
+            font-weight: 700;
+            color: var(--secondary-color);
+            font-size: 1.1em;
+            margin-bottom: 10px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 15px 30px;
+            background: linear-gradient(45deg, var(--secondary-color), #2980b9);
+            color: white;
+            text-decoration: none;
+            border-radius: 10px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            margin: 8px;
+            font-size: 1em;
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(52, 152, 219, 0.4);
+            background: linear-gradient(45deg, #2980b9, var(--secondary-color));
+        }
+
+        .btn-success {
+            background: linear-gradient(45deg, var(--success-color), #229954);
+        }
+
+        .btn-success:hover {
+            background: linear-gradient(45deg, #229954, var(--success-color));
+            box-shadow: 0 10px 25px rgba(39, 174, 96, 0.4);
+        }
+
+        .btn-warning {
+            background: linear-gradient(45deg, var(--warning-color), #e67e22);
+        }
+
+        .btn-warning:hover {
+            background: linear-gradient(45deg, #e67e22, var(--warning-color));
+            box-shadow: 0 10px 25px rgba(243, 156, 18, 0.4);
+        }
+
+        .quick-nav {
+            background: #f8f9fa;
+            border-radius: 15px;
+            padding: 25px;
+            margin-bottom: 25px;
+        }
+
+        .quick-nav h4 {
+            margin-bottom: 20px;
+            color: var(--primary-color);
+            font-size: 1.2em;
+        }
+
+        .quick-nav ul {
+            list-style: none;
+        }
+
+        .quick-nav li {
+            margin: 8px 0;
+        }
+
+        .quick-nav a {
+            color: var(--secondary-color);
+            text-decoration: none;
+            padding: 8px 0;
+            display: block;
+            border-bottom: 1px solid transparent;
+            transition: all 0.3s ease;
+            font-weight: 500;
+        }
+
+        .quick-nav a:hover {
+            color: var(--primary-color);
+            border-bottom-color: var(--secondary-color);
+            padding-left: 10px;
+        }
+
+        .highlight {
+            background: linear-gradient(45deg, #fff9c4, #fef5e7);
+            padding: 4px 8px;
+            border-radius: 5px;
+            font-weight: 600;
+        }
+
+        .important {
+            background: linear-gradient(135deg, #ffe6e6 0%, #fff0f0 100%);
+            border: 2px solid var(--accent-color);
+            border-radius: 10px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+
+        .important h4 {
+            color: var(--accent-color);
+            margin-bottom: 15px;
+        }
+
+        @media (max-width: 968px) {
+            .content-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .sidebar {
+                position: static;
+                order: -1;
+            }
+
+            .header h1 {
+                font-size: 2.2em;
+            }
+
+            .exam-parts {
+                grid-template-columns: 1fr;
+            }
+
+            .strategy-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="nav-breadcrumb">
+            <a href="index.html">🏠 Hauptübersicht</a> / 
+            <span>🎯 Prüfungsvorbereitung</span>
+        </div>
+
+        <div class="header">
+            <h1>🎯 Prüfungsvorbereitung</h1>
+            <p>Dein umfassender Guide für das Englisch-Abitur 2026</p>
+            <div class="exam-info">
+                <strong>Zielniveau:</strong> B2/C1 (GER) | <strong>Basis:</strong> Bildungsplan 2021 BG Baden-Württemberg
+            </div>
+        </div>
+
+        <div class="content-grid">
+            <div class="main-content">
+                
+                <!-- Grundlagen der Abiturprüfung -->
+                <div class="section">
+                    <h2><span class="icon">📋</span>Grundlagen der Abiturprüfung</h2>
+                    
+                    <h3>Was ist das Abitur in Englisch?</h3>
+                    <p>Das Englisch-Abitur am Beruflichen Gymnasium in Baden-Württemberg ist eine zentrale Prüfung, die deine sprachlichen Fähigkeiten auf dem Niveau B2/C1 des Gemeinsamen Europäischen Referenzrahmens (GER) testet. Die Prüfung besteht aus einem <strong>schriftlichen Teil</strong> und optional einem <strong>mündlichen Teil</strong>.</p>
+
+                    <div class="important">
+                        <h4>🎯 Wichtig zu wissen:</h4>
+                        <p>Das Abitur prüft nicht nur dein Englisch, sondern auch deine Fähigkeit, komplexe Texte zu verstehen, eigene Texte zu verfassen, kulturelle Zusammenhänge zu erkennen und sprachlich angemessen zu reagieren. Es ist eine <strong>Kompetenzprüfung</strong>, nicht nur eine Sprachprüfung!</p>
+                    </div>
+
+                    <h3>Aufbau der schriftlichen Prüfung</h3>
+                    <div class="exam-structure">
+                        <h4>📝 Schriftliche Prüfung (240 Minuten = 4 Stunden)</h4>
+                        
+                        <div class="exam-parts">
+                            <div class="exam-part">
+                                <div class="duration">90 Min</div>
+                                <h5>Teil A: Textaufgabe</h5>
+                                <p><strong>Was wird geprüft:</strong> Leseverstehen, Textanalyse und Textproduktion</p>
+                                <ul>
+                                    <li>Analyse eines Sachtextes oder literarischen Textes</li>
+                                    <li>Beantwortung von Verständnisfragen</li>
+                                    <li>Verfassen eines eigenen Textes (Essay, Comment, etc.)</li>
+                                </ul>
+                                <p><strong>Gewichtung:</strong> 50% der schriftlichen Note</p>
+                            </div>
+
+                            <div class="exam-part">
+                                <div class="duration">60 Min</div>
+                                <h5>Teil B: Sprachmittlung</h5>
+                                <p><strong>Was wird geprüft:</strong> Übertragung von Informationen zwischen Deutsch und Englisch</p>
+                                <ul>
+                                    <li>Deutscher Text → englische Zusammenfassung</li>
+                                    <li>oder: Englischer Text → deutsche Zusammenfassung</li>
+                                    <li>Adressatengerechte und situationsangemessene Übertragung</li>
+                                </ul>
+                                <p><strong>Gewichtung:</strong> 25% der schriftlichen Note</p>
+                            </div>
+
+                            <div class="exam-part">
+                                <div class="duration">90 Min</div>
+                                <h5>Teil C: Hörverstehen</h5>
+                                <p><strong>Was wird geprüft:</strong> Verstehen gesprochener englischer Texte</p>
+                                <ul>
+                                    <li>Multiple-Choice-Aufgaben</li>
+                                    <li>Kurze schriftliche Antworten</li>
+                                    <li>Zusammenfassungen</li>
+                                </ul>
+                                <p><strong>Gewichtung:</strong> 25% der schriftlichen Note</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <h3>Mündliche Prüfung (Optional)</h3>
+                    <p>Falls deine schriftliche Note nicht zufriedenstellend ist oder du deine Note verbessern möchtest, kannst du eine mündliche Prüfung ablegen:</p>
+                    
+                    <div class="exam-structure">
+                        <h4>🗣️ Mündliche Prüfung (ca. 20 Minuten)</h4>
+                        <ul>
+                            <li><strong>Vorbereitungszeit:</strong> 20 Minuten</li>
+                            <li><strong>Prüfungsgespräch:</strong> 20 Minuten</li>
+                            <li><strong>Inhalte:</strong> Text- oder bildgestützte Aufgaben, freies Gespräch</li>
+                            <li><strong>Gewichtung:</strong> 50:50 mit der schriftlichen Note</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Operatoren verstehen -->
+                <div class="section">
+                    <h2><span class="icon">🔍</span>Operatoren verstehen - Die Sprache der Aufgaben</h2>
+                    
+                    <h3>Was sind Operatoren?</h3>
+                    <p>Operatoren sind <strong>handlungsleitende Verben</strong> in Prüfungsaufgaben. Sie sagen dir ganz genau, <strong>was</strong> du machen sollst und <strong>wie tief</strong> du in ein Thema einsteigen musst. Ohne die Operatoren zu verstehen, kannst du auch bei perfektem Englisch an einer Aufgabe vorbeischreiben!</p>
+
+                    <div class="example-box">
+                        <h4>🎯 Beispiel:</h4>
+                        <p><strong>"Describe"</strong> bedeutet: Sachverhalte objektiv darstellen<br>
+                        <strong>"Comment on"</strong> bedeutet: Kritisch bewerten und die eigene Meinung begründen</p>
+                        <p>Das sind zwei völlig verschiedene Aufgabentypen!</p>
+                    </div>
+
+                    <h3>Die wichtigsten Operatoren im Detail</h3>
+                    <table class="operators-table">
+                        <thead>
+                            <tr>
+                                <th>Operator</th>
+                                <th>AFB</th>
+                                <th>Was du machen musst</th>
+                                <th>Beispiel</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="operator">describe</td>
+                                <td><span class="afb">I-II</span></td>
+                                <td>Sachverhalte, Personen oder Vorgänge <strong>objektiv und sachlich</strong> darstellen, ohne zu bewerten</td>
+                                <td>"Describe the main character's appearance and behavior"</td>
+                            </tr>
+                            <tr>
+                                <td class="operator">analyse</td>
+                                <td><span class="afb">II-III</span></td>
+                                <td>Inhalte und sprachliche Mittel <strong>systematisch untersuchen</strong> und erklären</td>
+                                <td>"Analyse the author's use of rhetorical devices"</td>
+                            </tr>
+                            <tr>
+                                <td class="operator">comment on</td>
+                                <td><span class="afb">II-III</span></td>
+                                <td>Eine Fragestellung <strong>kritisch bewerten</strong> und die eigene Meinung begründet darlegen</td>
+                                <td>"Comment on the effectiveness of social media campaigns"</td>
+                            </tr>
+                            <tr>
+                                <td class="operator">erörtern/discuss</td>
+                                <td><span class="afb">III</span></td>
+                                <td>Pro- und Contra-Argumente <strong>abwägen</strong> und zu einem begründeten Urteil kommen</td>
+                                <td>"Discuss whether online learning can replace traditional education"</td>
+                            </tr>
+                            <tr>
+                                <td class="operator">explain</td>
+                                <td><span class="afb">II</span></td>
+                                <td>Sachverhalte so darstellen, dass <strong>Zusammenhänge deutlich</strong> werden</td>
+                                <td>"Explain why the Industrial Revolution started in Britain"</td>
+                            </tr>
+                            <tr>
+                                <td class="operator">characterize</td>
+                                <td><span class="afb">I-II</span></td>
+                                <td>Personen oder Figuren anhand ihrer <strong>Eigenschaften und Verhaltensweisen</strong> beschreiben</td>
+                                <td>"Characterize the protagonist's development throughout the story"</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <div class="tips-box">
+                        <h4>💡 Profi-Tipp: AFB verstehen</h4>
+                        <p><strong>AFB I:</strong> Wiedergeben und beschreiben (einfach)<br>
+                        <strong>AFB II:</strong> Anwenden und erklären (mittelschwer)<br>
+                        <strong>AFB III:</strong> Bewerten und beurteilen (schwer)</p>
+                        <p>Je höher der AFB, desto mehr eigene Denkleistung ist gefragt!</p>
+                    </div>
+                </div>
+
+                <!-- Strategien für jeden Aufgabenteil -->
+                <div class="section">
+                    <h2><span class="icon">🎲</span>Strategien für jeden Prüfungsteil</h2>
+
+                    <div class="strategy-grid">
+                        <div class="strategy-card">
+                            <h4>📖 Teil A: Textaufgabe meistern</h4>
+                            <ul>
+                                <li>Text mindestens 2x lesen (1x Überblick, 1x Details)</li>
+                                <li>Wichtige Textstellen markieren</li>
+                                <li>Unbekannte Wörter aus dem Kontext erschließen</li>
+                                <li>Bei Analysen: Stylistic devices identifizieren</li>
+                                <li>Structure deines Essays planen (Introduction-Main-Conclusion)</li>
+                                <li>Textbelege für Argumente sammeln</li>
+                                <li>Zeit einteilen: 30 Min Lesen/Planen, 60 Min Schreiben</li>
+                            </ul>
+                        </div>
+
+                        <div class="strategy-card">
+                            <h4>🔄 Teil B: Sprachmittlung erfolgreich</h4>
+                            <ul>
+                                <li>Zielsprache und Adressat beachten</li>
+                                <li>Nicht wörtlich übersetzen!</li>
+                                <li>Kernaussagen identifizieren</li>
+                                <li>Kulturelle Anpassungen vornehmen</li>
+                                <li>Register beachten (formal/informal)</li>
+                                <li>Logische Struktur beibehalten</li>
+                                <li>Eigene Worte verwenden, nicht abschreiben</li>
+                            </ul>
+                        </div>
+
+                        <div class="strategy-card">
+                            <h4>👂 Teil C: Hörverstehen optimieren</h4>
+                            <ul>
+                                <li>Vor dem Hören: Aufgaben durchlesen</li>
+                                <li>Beim 1. Hören: Überblick verschaffen</li>
+                                <li>Beim 2. Hören: Details notieren</li>
+                                <li>Keywords und Namen sofort notieren</li>
+                                <li>Bei Multiple Choice: Distractors ausschließen</li>
+                                <li>Nie Lücken lassen - immer raten!</li>
+                                <li>Pause zwischen den Hörvorgängen nutzen</li>
+                            </ul>
+                        </div>
+
+                        <div class="strategy-card">
+                            <h4>🗣️ Mündliche Prüfung rocken</h4>
+                            <ul>
+                                <li>Vorbereitungszeit strukturiert nutzen</li>
+                                <li>Mind-Map oder Stichpunkte erstellen</li>
+                                <li>Einleitung und Schluss vorbereiten</li>
+                                <li>Ruhig und deutlich sprechen</li>
+                                <li>Bei Unsicherheit nachfragen: "Could you repeat the question?"</li>
+                                <li>Pausen sind okay - denken ist erlaubt!</li>
+                                <li>Beispiele und eigene Erfahrungen einbringen</li>
+                                <li>Blickkontakt mit den Prüfern halten</li>
+                                <li>Positive Körpersprache zeigen</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Zeitmanagement -->
+                <div class="section">
+                    <h2><span class="icon">⏰</span>Zeitmanagement in der Prüfung</h2>
+                    
+                    <h3>Die 240 Minuten optimal nutzen</h3>
+                    <p>Zeit ist in der Abiturprüfung dein wertvollstes Gut. Hier ist dein detaillierter Zeitplan:</p>
+
+                    <div class="timeline">
+                        <h4>🕐 Dein Prüfungs-Zeitplan</h4>
+                        
+                        <div class="timeline-item">
+                            <div class="timeline-period">0-15 Min: Ankommen & Überblick</div>
+                            <ul>
+                                <li>Alle Aufgaben durchlesen</li>
+                                <li>Entscheiden: Welchen Teil zuerst?</li>
+                                <li>Material organisieren</li>
+                                <li>Tief durchatmen und fokussieren</li>
+                            </ul>
+                        </div>
+
+                        <div class="timeline-item">
+                            <div class="timeline-period">15-105 Min: Teil A - Textaufgabe (90 Min)</div>
+                            <ul>
+                                <li><strong>15-35 Min:</strong> Text gründlich lesen und verstehen</li>
+                                <li><strong>35-45 Min:</strong> Antworten auf Verständnisfragen planen</li>
+                                <li><strong>45-75 Min:</strong> Essay/Comment schreiben</li>
+                                <li><strong>75-90 Min:</strong> Korrektur und Überarbeitung</li>
+                            </ul>
+                        </div>
+
+                        <div class="timeline-item">
+                            <div class="timeline-period">105-165 Min: Teil B - Sprachmittlung (60 Min)</div>
+                            <ul>
+                                <li><strong>105-125 Min:</strong> Ausgangstexte verstehen</li>
+                                <li><strong>125-135 Min:</strong> Struktur und Kernpunkte planen</li>
+                                <li><strong>135-155 Min:</strong> Sprachmittlung schreiben</li>
+                                <li><strong>155-165 Min:</strong> Überprüfung und Feinschliff</li>
+                            </ul>
+                        </div>
+
+                        <div class="timeline-item">
+                            <div class="timeline-period">165-255 Min: Teil C - Hörverstehen (90 Min)</div>
+                            <ul>
+                                <li><strong>165-175 Min:</strong> Aufgaben vorlesen und vorbereiten</li>
+                                <li><strong>175-235 Min:</strong> Höraufgaben bearbeiten</li>
+                                <li><strong>235-255 Min:</strong> Antworten überprüfen und vervollständigen</li>
+                            </ul>
+                        </div>
+
+                        <div class="timeline-item">
+                            <div class="timeline-period">255-270 Min: Finale Überprüfung (15 Min)</div>
+                            <ul>
+                                <li>Alle Teile nochmals durchgehen</li>
+                                <li>Rechtschreibung und Grammatik prüfen</li>
+                                <li>Vollständigkeit kontrollieren</li>
+                                <li>Entspannt abgeben</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="tips-box">
+                        <h4>💡 Zeitmanagement-Tricks</h4>
+                        <ul>
+                            <li><strong>Uhr im Blick behalten:</strong> Alle 30 Minuten kurz checken</li>
+                            <li><strong>Bei Zeitnot:</strong> Lieber alle Teile bearbeiten als einen perfekt</li>
+                            <li><strong>Pufferzeiten einplanen:</strong> Immer 10 Min Reserve lassen</li>
+                            <li><strong>Schwierige Aufgaben überspringen:</strong> Erst die einfachen lösen</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Typische Aufgabenformate -->
+                <div class="section">
+                    <h2><span class="icon">📝</span>Typische Aufgabenformate und Lösungsstrategien</h2>
+
+                    <h3>Textanalyse (Analysis)</h3>
+                    <div class="example-box">
+                        <h4>📋 Typische Aufgabenstellung:</h4>
+                        <p><em>"Analyse the author's use of language and stylistic devices. Show how they contribute to the overall message of the text."</em></p>
+                    </div>
+
+                    <h4>So gehst du vor:</h4>
+                    <div class="strategy-card">
+                        <h4>🔍 Schritt-für-Schritt Analyse</h4>
+                        <ul>
+                            <li><strong>1. Text strukturieren:</strong> Abschnitte identifizieren</li>
+                            <li><strong>2. Stylistic devices finden:</strong> Metapher, Alliteration, etc.</li>
+                            <li><strong>3. Funktion erklären:</strong> Was bewirkt das device?</li>
+                            <li><strong>4. Verbindung zur Aussage:</strong> Wie unterstützt es die message?</li>
+                            <li><strong>5. Textbelege nutzen:</strong> Immer mit Zitaten arbeiten</li>
+                        </ul>
+                    </div>
+
+                    <div class="tips-box">
+                        <h4>💡 Wichtige Stylistic Devices für die Analyse</h4>
+                        <ul>
+                            <li><strong>Metaphor:</strong> Direkter Vergleich ohne "like/as"</li>
+                            <li><strong>Simile:</strong> Vergleich mit "like/as"</li>
+                            <li><strong>Alliteration:</strong> Wiederholung von Anfangsbuchstaben</li>
+                            <li><strong>Repetition:</strong> Wiederholung von Wörtern/Phrasen</li>
+                            <li><strong>Rhetorical question:</strong> Frage ohne erwartete Antwort</li>
+                            <li><strong>Irony:</strong> Gegenteil von dem was gemeint ist</li>
+                        </ul>
+                    </div>
+
+                    <h3>Comment/Essay schreiben</h3>
+                    <div class="example-box">
+                        <h4>📋 Typische Aufgabenstellung:</h4>
+                        <p><em>"Comment on the statement: 'Social media has more negative than positive effects on young people.' Refer to the text and your own knowledge."</em></p>
+                    </div>
+
+                    <div class="strategy-card">
+                        <h4>📝 Essay-Struktur (bewährt!)</h4>
+                        <ul>
+                            <li><strong>Introduction (10%):</strong> Hook + thesis statement</li>
+                            <li><strong>Main body (80%):</strong> 2-3 Argumente mit Beispielen</li>
+                            <li><strong>Conclusion (10%):</strong> Zusammenfassung + eigene Meinung</li>
+                        </ul>
+                    </div>
+
+                    <h4>Musterparagraph für Arguments:</h4>
+                    <div class="example-box">
+                        <h4>🎯 PEEL-Methode verwenden:</h4>
+                        <p><strong>P</strong>oint: Hauptargument nennen<br>
+                        <strong>E</strong>vidence: Beweis/Beispiel bringen<br>
+                        <strong>E</strong>xplain: Erklären warum das wichtig ist<br>
+                        <strong>L</strong>ink: Verbindung zum nächsten Punkt/zur thesis</p>
+                    </div>
+
+                    <h3>Sprachmittlung meistern</h3>
+                    <p>Sprachmittlung ist <strong>keine Übersetzung!</strong> Du sollst Informationen sinngemäß und adressatengerecht übertragen.</p>
+
+                    <div class="strategy-card">
+                        <h4>🔄 Sprachmittlung Schritt für Schritt</h4>
+                        <ul>
+                            <li><strong>1. Situation analysieren:</strong> Wer ist der Adressat?</li>
+                            <li><strong>2. Kerninfos identifizieren:</strong> Was ist wirklich wichtig?</li>
+                            <li><strong>3. Register wählen:</strong> Formal oder informal?</li>
+                            <li><strong>4. Kulturell anpassen:</strong> Deutsche Konzepte erklären</li>
+                            <li><strong>5. Strukturiert übertragen:</strong> Logische Reihenfolge</li>
+                            <li><strong>6. Eigene Worte nutzen:</strong> Nicht wörtlich übernehmen</li>
+                        </ul>
+                    </div>
+
+                    <div class="important">
+                        <h4>⚠️ Häufige Sprachmittlung-Fehler vermeiden:</h4>
+                        <ul>
+                            <li><strong>Nicht:</strong> Wort-für-Wort übersetzen</li>
+                            <li><strong>Nicht:</strong> Eigene Meinungen hinzufügen</li>
+                            <li><strong>Nicht:</strong> Wichtige Infos weglassen</li>
+                            <li><strong>Sondern:</strong> Sinngemäß und vollständig übertragen</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Häufige Fehler -->
+                <div class="section">
+                    <h2><span class="icon">⚠️</span>Häufige Fehler und wie du sie vermeidest</h2>
+
+                    <div class="strategy-grid">
+                        <div class="strategy-card">
+                            <h4>❌ Sprachliche Fehler</h4>
+                            <ul>
+                                <li><strong>False friends:</strong> "become" ≠ bekommen</li>
+                                <li><strong>Germanisms:</strong> "I become hungry" → "I get hungry"</li>
+                                <li><strong>Word order:</strong> Adverbs richtig platzieren</li>
+                                <li><strong>Articles:</strong> "the" vs. zero article</li>
+                                <li><strong>Prepositions:</strong> "interested in" nicht "for"</li>
+                            </ul>
+                        </div>
+
+                        <div class="strategy-card">
+                            <h4>❌ Strukturelle Fehler</h4>
+                            <ul>
+                                <li><strong>Keine klare thesis:</strong> Position nicht deutlich</li>
+                                <li><strong>Abschweifungen:</strong> Nicht beim Thema bleiben</li>
+                                <li><strong>Fehlende Übergänge:</strong> Connectives vergessen</li>
+                                <li><strong>Schwacher Schluss:</strong> Conclusion zu kurz</li>
+                                <li><strong>Zeitverschwendung:</strong> Zu perfektionistisch sein</li>
+                            </ul>
+                        </div>
+
+                        <div class="strategy-card">
+                            <h4>❌ Inhaltliche Fehler</h4>
+                            <ul>
+                                <li><strong>Aufgabe nicht erfasst:</strong> Operatoren ignoriert</li>
+                                <li><strong>Textbezug fehlt:</strong> Keine Belege verwendet</li>
+                                <li><strong>Oberflächlich:</strong> Argumente nicht ausgeführt</li>
+                                <li><strong>Einseitig:</strong> Nur Pro oder nur Contra</li>
+                                <li><strong>Irrelevant:</strong> Nicht zur Frage passend</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <h3>Checkliste vor Abgabe</h3>
+                    <div class="tips-box">
+                        <h4>✅ Das solltest du noch mal prüfen:</h4>
+                        <ul>
+                            <li><strong>Alle Aufgabenteile bearbeitet?</strong></li>
+                            <li><strong>Wortanzahl erreicht?</strong> (meist 200-300 Wörter pro Teil)</li>
+                            <li><strong>Rechtschreibung gecheckt?</strong> Besonders Namen und Fachbegriffe</li>
+                            <li><strong>Grammatik korrekt?</strong> Subject-verb agreement, tenses</li>
+                            <li><strong>Textsorte beachtet?</strong> Essay, email, report etc.</li>
+                            <li><strong>Register angemessen?</strong> Formal/informal je nach Situation</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Lernplan erstellen -->
+                <div class="section">
+                    <h2><span class="icon">📅</span>Dein persönlicher Lernplan</h2>
+
+                    <h3>12 Monate vor dem Abitur</h3>
+                    <div class="timeline">
+                        <h4>🗓️ Langfristige Vorbereitung</h4>
+                        
+                        <div class="timeline-item">
+                            <div class="timeline-period">12-9 Monate vorher: Grundlagen festigen</div>
+                            <ul>
+                                <li>Grammatik systematisch wiederholen</li>
+                                <li>Grundwortschatz erweitern (2000+ Wörter)</li>
+                                <li>Lesegewohnheiten entwickeln (englische Texte täglich)</li>
+                                <li>Erste Analysen und Essays schreiben</li>
+                            </ul>
+                        </div>
+
+                        <div class="timeline-item">
+                            <div class="timeline-period">9-6 Monate vorher: Vertiefung</div>
+                            <ul>
+                                <li>Alle Textsorten üben (analysis, comment, etc.)</li>
+                                <li>Stylistic devices intensiv lernen</li>
+                                <li>Sprachmittlung regelmäßig trainieren</li>
+                                <li>Hörverstehen mit authentischen Materialien</li>
+                                <li>Abiturthemen systematisch erarbeiten</li>
+                            </ul>
+                        </div>
+
+                        <div class="timeline-item">
+                            <div class="timeline-period">6-3 Monate vorher: Intensive Phase</div>
+                            <ul>
+                                <li>Alte Abituraufgaben unter Zeitdruck lösen</li>
+                                <li>Schwachstellen identifizieren und gezielt üben</li>
+                                <li>Argumentationsstrukturen perfektionieren</li>
+                                <li>Mündliche Prüfung vorbereiten</li>
+                                <li>Prüfungsstrategien einüben</li>
+                            </ul>
+                        </div>
+
+                        <div class="timeline-item">
+                            <div class="timeline-period">3-1 Monat vorher: Feinschliff</div>
+                            <ul>
+                                <li>Komplette Abiturprüfungen simulieren</li>
+                                <li>Zeitmanagement perfektionieren</li>
+                                <li>Letzte inhaltliche Lücken schließen</li>
+                                <li>Entspannungstechniken einüben</li>
+                                <li>Materialien für Prüfung vorbereiten</li>
+                            </ul>
+                        </div>
+
+                        <div class="timeline-item">
+                            <div class="timeline-period">1 Woche vorher: Tapering</div>
+                            <ul>
+                                <li>Nicht mehr viel Neues lernen</li>
+                                <li>Bekanntes wiederholen</li>
+                                <li>Ausreichend schlafen</li>
+                                <li>Prüfungsort und -zeit checken</li>
+                                <li>Selbstvertrauen stärken</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <h3>Wochenplan (Beispiel für intensive Phase)</h3>
+                    <div class="strategy-card">
+                        <h4>📋 Deine Woche im Überblick</h4>
+                        <ul>
+                            <li><strong>Montag:</strong> Grammar + Vocabulary (1h)</li>
+                            <li><strong>Dienstag:</strong> Reading + Analysis practice (1.5h)</li>
+                            <li><strong>Mittwoch:</strong> Essay writing (1h)</li>
+                            <li><strong>Donnerstag:</strong> Listening comprehension (1h)</li>
+                            <li><strong>Freitag:</strong> Sprachmittlung (1h)</li>
+                            <li><strong>Samstag:</strong> Complete mock exam (4h)</li>
+                            <li><strong>Sonntag:</strong> Review + relaxation</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Materialien und Ressourcen -->
+                <div class="section">
+                    <h2><span class="icon">📚</span>Empfohlene Materialien und Ressourcen</h2>
+
+                    <div class="strategy-grid">
+                        <div class="strategy-card">
+                            <h4>📖 Bücher und Lehrwerke</h4>
+                            <ul>
+                                <li><strong>Stark Abitur-Training Englisch</strong> (BW spezifisch)</li>
+                                <li><strong>Klett Abi-Lernbox Englisch</strong></li>
+                                <li><strong>Fit fürs Abi: Englisch</strong></li>
+                                <li><strong>English Grammar in Use</strong> (Murphy)</li>
+                                <li><strong>Macmillan Collocations Dictionary</strong></li>
+                            </ul>
+                        </div>
+
+                        <div class="strategy-card">
+                            <h4>🌐 Online-Ressourcen</h4>
+                            <ul>
+                                <li><strong>BBC Learning English</strong> (free podcasts)</li>
+                                <li><strong>TED Talks</strong> (für listening practice)</li>
+                                <li><strong>The Guardian/BBC News</strong> (aktuelle Texte)</li>
+                                <li><strong>Cambridge Dictionary</strong> (online)</li>
+                                <li><strong>Grammarly</strong> (Schreibhilfe)</li>
+                                <li><strong>YouTube:</strong> English with Lucy, etc.</li>
+                            </ul>
+                        </div>
+
+                        <div class="strategy-card">
+                            <h4>📱 Apps für unterwegs</h4>
+                            <ul>
+                                <li><strong>Anki</strong> (Vokabelkarten)</li>
+                                <li><strong>BBC Learning English App</strong></li>
+                                <li><strong>Cambridge Dictionary App</strong></li>
+                                <li><strong>TED App</strong> (mit Untertiteln)</li>
+                                <li><strong>Spotify/Apple Podcasts</strong> (English podcasts)</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="important">
+                        <h4>🎯 Tipp: Authentische Materialien nutzen!</h4>
+                        <p>Je mehr du mit echten englischen Texten, Videos und Podcasts arbeitest, desto besser wirst du. Das Abitur verwendet auch authentische Materialien - gewöhn dich daran!</p>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="sidebar">
+                <div class="quick-nav">
+                    <h4>🚀 Schnellnavigation</h4>
+                    <ul>
+                        <li><a href="#grundlagen">Grundlagen der Prüfung</a></li>
+                        <li><a href="#operatoren">Operatoren verstehen</a></li>
+                        <li><a href="#strategien">Strategien je Prüfungsteil</a></li>
+                        <li><a href="#zeitmanagement">Zeitmanagement</a></li>
+                        <li><a href="#aufgabenformate">Typische Aufgaben</a></li>
+                        <li><a href="#fehler">Häufige Fehler</a></li>
+                        <li><a href="#lernplan">Lernplan erstellen</a></li>
+                        <li><a href="#materialien">Materialien & Ressourcen</a></li>
+                    </ul>
+                </div>
+
+                <div class="quick-nav">
+                    <h4>🔗 Prüfungshilfen</h4>
+                    <ul>
+                        <li><a href="operators_guide.html">Operatoren-Guide</a></li>
+                        <li><a href="stylistic_devices.html">Stylistic Devices</a></li>
+                        <li><a href="essay_templates.html">Essay Templates</a></li>
+                        <li><a href="useful_phrases.html">Useful Phrases</a></li>
+                        <li><a href="mock_exams.html">Mock Exams</a></li>
+                        <li><a href="vocab_lists.html">Prüfungswortschatz</a></li>
+                    </ul>
+                </div>
+
+                <div class="tips-box">
+                    <h4>💪 Motivations-Boost</h4>
+                    <p><strong>Du schaffst das!</strong> Jeder kann das Englisch-Abitur bestehen mit der richtigen Vorbereitung. Bleib dran, übe regelmäßig und glaube an dich!</p>
+                </div>
+
+                <div class="exam-structure">
+                    <h4>📊 Notenschlüssel (ca.)</h4>
+                    <ul>
+                        <li><strong>15-13 P:</strong> 90-100%</li>
+                        <li><strong>12-10 P:</strong> 80-89%</li>
+                        <li><strong>09-07 P:</strong> 65-79%</li>
+                        <li><strong>06-05 P:</strong> 50-64%</li>
+                        <li><strong>04-00 P:</strong> unter 50%</li>
+                    </ul>
+                    <p><small>Exakte Werte variieren je nach Prüfung</small></p>
+                </div>
+            </div>
+        </div>
+
+        <div style="text-align: center; margin-top: 40px; padding: 25px; background: var(--card-bg); border-radius: 20px; box-shadow: 0 8px 25px rgba(0,0,0,0.1);">
+            <h3 style="color: var(--primary-color); margin-bottom: 15px;">🎓 Du bist startklar!</h3>
+            <p style="color: #7f8c8d; margin-bottom: 20px;">
+                Mit diesem Leitfaden hast du alle wichtigen Informationen für eine erfolgreiche Abiturprüfung in Englisch. 
+                Jetzt liegt es an dir - nutze die Zeit, übe regelmäßig und gehe selbstbewusst in die Prüfung!
+            </p>
+            <a href="index.html" class="btn btn-success">🏠 Zurück zur Übersicht</a>
+            <a href="vokabeltrainer.html" class="btn">📱 Zum Vokabeltrainer</a>
+            <a href="mock_exam.html" class="btn btn-warning">🎯 Mock Exam starten</a>
+        </div>
+    </div>
+
+    <script>
+        // Smooth scrolling for anchor links
+        document.addEventListener('DOMContentLoaded', function() {
+            const navLinks = document.querySelectorAll('.quick-nav a[href^="#"]');
+            
+            navLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href');
+                    const targetElement = document.querySelector(targetId);
+                    
+                    if (targetElement) {
+                        targetElement.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                });
+            });
+
+            // Add IDs to sections for navigation
+            const sections = document.querySelectorAll('.section');
+            const sectionIds = ['grundlagen', 'operatoren', 'strategien', 'zeitmanagement', 'aufgabenformate', 'fehler', 'lernplan', 'materialien'];
+            
+            sections.forEach((section, index) => {
+                if (sectionIds[index]) {
+                    section.id = sectionIds[index];
+                }
+            });
+
+            // Progress tracking
+            const currentPage = 'pruefungsvorbereitung';
+            let visitedPages = JSON.parse(localStorage.getItem('visitedPages') || '[]');
+            if (!visitedPages.includes(currentPage)) {
+                visitedPages.push(currentPage);
+                localStorage.setItem('visitedPages', JSON.stringify(visitedPages));
+            }
+
+            // Add interactive features to cards
+            const cards = document.querySelectorAll('.strategy-card, .exam-part');
+            cards.forEach(card => {
+                card.addEventListener('mouseenter', function() {
+                    this.style.transform = 'translateY(-8px) scale(1.02)';
+                });
+                
+                card.addEventListener('mouseleave', function() {
+                    this.style.transform = 'translateY(0) scale(1)';
+                });
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,1561 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weitere Ressourcen - Englisch Abitur 2026</title>
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --secondary-color: #3498db;
+            --accent-color: #e74c3c;
+            --success-color: #27ae60;
+            --warning-color: #f39c12;
+            --bg-color: #ecf0f1;
+            --card-bg: #ffffff;
+            --text-color: #2c3e50;
+            --border-color: #bdc3c7;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, var(--bg-color) 0%, #d5dbdb 100%);
+            color: var(--text-color);
+            line-height: 1.8;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+            background: var(--card-bg);
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 5px;
+            background: linear-gradient(90deg, var(--secondary-color), var(--accent-color), var(--success-color));
+        }
+
+        .nav-breadcrumb {
+            margin-bottom: 20px;
+            padding: 15px;
+            background: var(--card-bg);
+            border-radius: 10px;
+            border-left: 4px solid var(--secondary-color);
+        }
+
+        .nav-breadcrumb a {
+            color: var(--secondary-color);
+            text-decoration: none;
+            margin-right: 10px;
+        }
+
+        .nav-breadcrumb a:hover {
+            text-decoration: underline;
+        }
+
+        .main-content {
+            background: var(--card-bg);
+            border-radius: 15px;
+            padding: 40px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+            margin-bottom: 30px;
+        }
+
+        .resource-category {
+            margin-bottom: 50px;
+            padding-bottom: 30px;
+            border-bottom: 2px solid #ecf0f1;
+        }
+
+        .resource-category:last-child {
+            border-bottom: none;
+        }
+
+        .resource-category h2 {
+            color: var(--primary-color);
+            margin-bottom: 25px;
+            font-size: 2em;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            border-bottom: 3px solid var(--secondary-color);
+            padding-bottom: 15px;
+        }
+
+        .resource-category h3 {
+            color: var(--secondary-color);
+            margin: 30px 0 20px 0;
+            font-size: 1.4em;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .resource-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 25px;
+            margin: 25px 0;
+        }
+
+        .resource-card {
+            background: #f8f9fa;
+            border: 2px solid #e9ecef;
+            border-radius: 12px;
+            padding: 25px;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .resource-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--secondary-color), var(--success-color));
+        }
+
+        .resource-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+            border-color: var(--secondary-color);
+        }
+
+        .resource-card h4 {
+            color: var(--primary-color);
+            margin-bottom: 15px;
+            font-size: 1.2em;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .resource-card p {
+            margin-bottom: 15px;
+            color: #6c757d;
+        }
+
+        .features-list {
+            list-style: none;
+            margin: 15px 0;
+        }
+
+        .features-list li {
+            margin: 8px 0;
+            padding-left: 25px;
+            position: relative;
+            color: #495057;
+        }
+
+        .features-list li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--success-color);
+            font-weight: bold;
+            font-size: 1.1em;
+        }
+
+        .pro-tip {
+            background: linear-gradient(135deg, #e8f5e8 0%, #f0f8f0 100%);
+            border-left: 5px solid var(--success-color);
+            padding: 20px;
+            margin: 25px 0;
+            border-radius: 8px;
+        }
+
+        .pro-tip h4 {
+            color: var(--success-color);
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .warning-box {
+            background: linear-gradient(135fff, #fff3cd 0%, #fef9e7 100%);
+            border: 2px solid var(--warning-color);
+            border-radius: 10px;
+            padding: 20px;
+            margin: 25px 0;
+        }
+
+        .warning-box h4 {
+            color: var(--warning-color);
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .learning-path {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border-radius: 15px;
+            padding: 30px;
+            margin: 30px 0;
+        }
+
+        .learning-path h3 {
+            margin-bottom: 20px;
+            color: white;
+        }
+
+        .path-steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .step-card {
+            background: rgba(255,255,255,0.1);
+            border-radius: 10px;
+            padding: 20px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+
+        .step-card h4 {
+            color: white;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .step-number {
+            background: var(--accent-color);
+            color: white;
+            border-radius: 50%;
+            width: 25px;
+            height: 25px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.9em;
+            font-weight: bold;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 25px;
+            background: linear-gradient(45deg, var(--secondary-color), #2980b9);
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            margin: 8px 5px;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(52, 152, 219, 0.3);
+        }
+
+        .btn-external {
+            background: linear-gradient(45deg, var(--success-color), #229954);
+        }
+
+        .btn-external:hover {
+            box-shadow: 0 8px 20px rgba(39, 174, 96, 0.3);
+        }
+
+        .study-schedule {
+            background: #f8f9fa;
+            border-radius: 12px;
+            padding: 25px;
+            margin: 25px 0;
+            border: 2px solid #e9ecef;
+        }
+
+        .schedule-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+
+        .schedule-table th {
+            background: var(--primary-color);
+            color: white;
+            padding: 12px;
+            text-align: left;
+        }
+
+        .schedule-table td {
+            padding: 12px;
+            border-bottom: 1px solid #dee2e6;
+        }
+
+        .schedule-table tr:nth-child(even) {
+            background: white;
+        }
+
+        .difficulty-badge {
+            display: inline-block;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.8em;
+            font-weight: 600;
+            margin-left: 10px;
+        }
+
+        .difficulty-beginner {
+            background: #d4edda;
+            color: #155724;
+        }
+
+        .difficulty-intermediate {
+            background: #fff3cd;
+            color: #856404;
+        }
+
+        .difficulty-advanced {
+            background: #f8d7da;
+            color: #721c24;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 15px;
+            }
+            
+            .main-content {
+                padding: 25px;
+            }
+            
+            .resource-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .path-steps {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="nav-breadcrumb">
+            <a href="index.html">🏠 Hauptübersicht</a> / 
+            <span>🔍 Weitere Ressourcen</span>
+        </div>
+
+        <div class="header">
+            <h1>🔍 Weitere Ressourcen</h1>
+            <p>Umfassende Sammlung zusätzlicher Lernmaterialien, Tools und Strategien für dein Englisch-Abitur 2026</p>
+        </div>
+
+        <div class="main-content">
+            <div class="resource-category">
+                <h2>🌐 Online-Lernplattformen & Websites</h2>
+                <p>Diese Plattformen bieten strukturierte Kurse und Übungen, die perfekt auf das deutsche Abitur abgestimmt sind. Sie helfen dir dabei, deine Sprachkenntnisse systematisch zu verbessern und gezielt Schwachstellen zu bearbeiten.</p>
+                
+                <h3>📚 Abitur-spezifische Plattformen</h3>
+                <div class="resource-grid">
+                    <div class="resource-card">
+                        <h4>🎯 Abiweb.de - Englisch</h4>
+                        <p>Speziell für das deutsche Abitur entwickelte Online-Kurse mit allen prüfungsrelevanten Themen.</p>
+                        <ul class="features-list">
+                            <li>Komplette Abiturvorbereitung nach Bildungsplan</li>
+                            <li>Interaktive Übungen zu Grammatik und Textanalyse</li>
+                            <li>Originalprüfungen der letzten Jahre</li>
+                            <li>Detaillierte Lösungserklärungen</li>
+                            <li>Persönlicher Lernfortschritt</li>
+                        </ul>
+                        <span class="difficulty-badge difficulty-intermediate">Mittel bis Fortgeschritten</span>
+                    </div>
+
+                    <div class="resource-card">
+                        <h4>📖 Stark Verlag Online</h4>
+                        <p>Die bewährten Stark-Bücher jetzt auch digital mit zusätzlichen interaktiven Features.</p>
+                        <ul class="features-list">
+                            <li>Alle Abiturthemen systematisch aufbereitet</li>
+                            <li>Musterklausuren mit Bewertungsschema</li>
+                            <li>Audio-Dateien für Listening Comprehension</li>
+                            <li>Tipps für mündliche Prüfungen</li>
+                            <li>Regelmäßige Updates bei Änderungen</li>
+                        </ul>
+                        <span class="difficulty-badge difficulty-beginner">Anfänger bis Fortgeschritten</span>
+                    </div>
+
+                    <div class="resource-card">
+                        <h4>🏫 Learnattack (Duden)</h4>
+                        <p>Professionelle Nachhilfe-Plattform mit Lehrplan-Bezug für Baden-Württemberg.</p>
+                        <ul class="features-list">
+                            <li>Videos von erfahrenen Lehrern</li>
+                            <li>Schritt-für-Schritt Erklärungen</li>
+                            <li>Übungen nach Schwierigkeitsgrad</li>
+                            <li>Klassenarbeits-Trainer</li>
+                            <li>Chat-Support bei Fragen</li>
+                        </ul>
+                        <span class="difficulty-badge difficulty-beginner">Alle Niveaus</span>
+                    </div>
+                </div>
+
+                <h3>🌍 Internationale Lernplattformen</h3>
+                <div class="resource-grid">
+                    <div class="resource-card">
+                        <h4>🎓 Khan Academy</h4>
+                        <p>Kostenlose, weltklasse Bildung mit hervorragenden Englisch-Kursen und Grammatik-Übungen.</p>
+                        <ul class="features-list">
+                            <li>Völlig kostenlos und werbefrei</li>
+                            <li>Adaptives Lernsystem passt sich an dich an</li>
+                            <li>Detaillierte Erklärvideos</li>
+                            <li>Sofortiges Feedback bei Übungen</li>
+                            <li>Fortschrittsverfolgung</li>
+                        </ul>
+                        <span class="difficulty-badge difficulty-beginner">Anfänger bis Mittel</span>
+                    </div>
+
+                    <div class="resource-card">
+                        <h4>📱 Duolingo (Advanced)</h4>
+                        <p>Nicht nur für Anfänger! Die fortgeschrittenen Kurse sind perfekt zur Wiederholung und Festigung.</p>
+                        <ul class="features-list">
+                            <li>Tägliche Streak-Motivation</li>
+                            <li>Kurze, effektive Lerneinheiten</li>
+                            <li>Stories für authentische Texte</li>
+                            <li>Podcast-Integration</li>
+                            <li>Leaderboards für Wettbewerb</li>
+                        </ul>
+                        <span class="difficulty-badge difficulty-beginner">Alle Niveaus</span>
+                    </div>
+
+                    <div class="resource-card">
+                        <h4>🎯 Coursera & edX</h4>
+                        <p>Universitätskurse von Top-Universitäten, besonders gut für Advanced Writing und Critical Thinking.</p>
+                        <ul class="features-list">
+                            <li>Kurse von Harvard, MIT, Oxford</li>
+                            <li>Zertifikate für den Lebenslauf</li>
+                            <li>Peer-Review System</li>
+                            <li>Flexible Zeitplanung</li>
+                            <li>Kostenlose Audit-Option</li>
+                        </ul>
+                        <span class="difficulty-badge difficulty-advanced">Fortgeschritten</span>
+                    </div>
+                </div>
+
+                <div class="pro-tip">
+                    <h4>💡 Pro-Tipp: Kombiniertes Lernen</h4>
+                    <p>Nutze <strong>mehrere Plattformen gleichzeitig</strong>! Zum Beispiel: Khan Academy für Grundlagen, Abiweb für abiturspezifische Inhalte und Duolingo für tägliche Routine. So deckst du alle Bereiche ab und langweilst dich nicht.</p>
+                </div>
+            </div>
+
+            <div class="resource-category">
+                <h2>📚 Bücher & Printmaterialien</h2>
+                <p>Trotz digitaler Revolution sind Bücher immer noch unverzichtbar für tiefes Lernen. Diese Auswahl deckt alle Bereiche des Englisch-Abiturs ab und wurde speziell für deutsche Schüler entwickelt.</p>
+
+                <h3>📖 Standardwerke für das Abitur</h3>
+                <div class="resource-grid">
+                    <div class="resource-card">
+                        <h4>📘 Stark Abitur-Training Englisch</h4>
+                        <p>DAS Standardwerk für die Abiturvorbereitung in Baden-Württemberg. Jeder Englisch-Lehrer kennt und empfiehlt es.</p>
+                        <ul class="features-list">
+                            <li>Vollständige Abdeckung aller Prüfungsthemen</li>
+                            <li>Originalklausuren der letzten 10 Jahre</li>
+                            <li>Schritt-für-Schritt Lösungsstrategien</li>
+                            <li>Bewertungskriterien erklärt</li>
+                            <li>Audio-CD für Hörverstehen</li>
+                            <li>Separate Bände für LK und GK</li>
+                        </ul>
+                        <p><strong>Warum wichtig:</strong> Bietet den direktesten Weg zum Abitur mit echten Prüfungsaufgaben.</p>
+                    </div>
+
+                    <div class="resource-card">
+                        <h4>📗 Klett Green Line Oberstufe</h4>
+                        <p>Das Lehrwerk, das an vielen Schulen verwendet wird. Perfekt abgestimmt auf den Bildungsplan 2021.</p>
+                        <ul class="features-list">
+                            <li>Systematischer Kompetenzaufbau</li>
+                            <li>Authentische Texte und Materialien</li>
+                            <li>Integrierte Methodenschulung</li>
+                            <li>Intercultural Competence</li>
+                            <li>Skills File für alle Fertigkeiten</li>
+                            <li>Digital Book verfügbar</li>
+                        </ul>
+                        <p><strong>Warum wichtig:</strong> Entspricht exakt dem, was in der Schule behandelt wird.</p>
+                    </div>
+
+                    <div class="resource-card">
+                        <h4>📙 Cornelsen Fokus Englisch</h4>
+                        <p>Speziell für die Oberstufe entwickelt mit Fokus auf Textarbeit und Sprachreflexion.</p>
+                        <ul class="features-list">
+                            <li>Intensive Textanalyse-Schulung</li>
+                            <li>Creative Writing Workshop</li>
+                            <li>Extensive Grammar Section</li>
+                            <li>Cultural Studies integriert</li>
+                            <li>Exam Strategies ausführlich</li>
+                            <li>Online-Extras inklusive</li>
+                        </ul>
+                        <p><strong>Warum wichtig:</strong> Besonders stark bei Textinterpretation und Essay Writing.</p>
+                    </div>
+                </div>
+
+                <h3>📑 Spezialliteratur & Nachschlagewerke</h3>
+                <div class="resource-grid">
+                    <div class="resource-card">
+                        <h4>📕 Oxford Advanced Learner's Dictionary</h4>
+                        <p>Das beste einsprachige Wörterbuch für Oberstufenschüler. Ein Muss für jeden Englisch-Lernenden!</p>
+                        <ul class="features-list">
+                            <li>Über 185.000 Wörter und Phrasen</li>
+                            <li>Phonetische Aussprache (IPA)</li>
+                            <li>Beispielsätze aus authentischen Quellen</li>
+                            <li>Kollokationen und Wortfamilien</li>
+                            <li>App mit Sprachausgabe</li>
+                            <li>Academic Word Lists</li>
+                        </ul>
+                        <p><strong>Warum wichtig:</strong> Trainiert das Denken auf Englisch statt Übersetzen.</p>
+                    </div>
+
+                    <div class="resource-card">
+                        <h4>📔 Cambridge Grammar in Use (Advanced)</h4>
+                        <p>Der Goldstandard für Grammatik-Lernen. Selbsterklärend und mit hunderten von Übungen.</p>
+                        <ul class="features-list">
+                            <li>100 Units zu allen Grammatikthemen</li>
+                            <li>Linke Seite: Erklärung, Rechte Seite: Übungen</li>
+                            <li>Antwortschlüssel für Selbstkontrolle</li>
+                            <li>eBook mit interaktiven Übungen</li>
+                            <li>Kann als Nachschlagewerk genutzt werden</li>
+                            <li>Unterschiedliche Niveaus verfügbar</li>
+                        </ul>
+                        <p><strong>Warum wichtig:</strong> Systematischste Grammatik-Aufbereitung weltweit.</p>
+                    </div>
+
+                    <div class="resource-card">
+                        <h4>📓 Longman Dictionary of Contemporary English</h4>
+                        <p>Perfekt für Kollokationen und natürliches Englisch. Zeigt, wie Wörter wirklich verwendet werden.</p>
+                        <ul class="features-list">
+                            <li>Collocations Dictionary integriert</li>
+                            <li>Register Labels (formal/informal)</li>
+                            <li>Häufigkeitsmarkierungen</li>
+                            <li>Academic Vocabulary highlighted</li>
+                            <li>Error Notes für deutsche Lerner</li>
+                            <li>Online Portal mit Extras</li>
+                        </ul>
+                        <p><strong>Warum wichtig:</strong> Hilft bei natürlichem, idiomatischem Englisch.</p>
+                    </div>
+                </div>
+
+                <div class="warning-box">
+                    <h4>⚠️ Wichtiger Hinweis zu Büchern</h4>
+                    <p>Achte immer auf die <strong>neueste Auflage</strong>! Der Bildungsplan 2021 brachte Änderungen mit sich. Bücher vor 2020 können veraltete Informationen enthalten. Prüfe auch, ob deine Schule spezielle Empfehlungen hat.</p>
+                </div>
+            </div>
+
+            <div class="resource-category">
+                <h2>🎧 Audio & Video Ressourcen</h2>
+                <p>Hörverstehen und Aussprache sind crucial für das Abitur. Diese Ressourcen trainieren dein Ohr für verschiedene Akzente und Sprechgeschwindigkeiten, die in der Prüfung vorkommen können.</p>
+
+                <h3>🎙️ Podcasts für verschiedene Niveaus</h3>
+                <div class="resource-grid">
+                    <div class="resource-card">
+                        <h4>🎯 BBC Learning English</h4>
+                        <p>DER Klassiker für deutschsprachige Englisch-Lerner. Täglich neue, kurze Episoden.</p>
+                        <ul class="features-list">
+                            <li>"6 Minute English" - perfekte Länge</li>
+                            <li>"The English We Speak" - Idioms</li>
+                            <li>"News Review" - aktuelle Themen</li>
+                            <li>Transcripts verfügbar</li>
+                            <li>Verschiedene Schwierigkeitsgrade</li>
+                            <li>Kostenlos und werbefrei</li>
+                        </ul>
+                        <p><strong>Empfehlung:</strong> Täglich 6 Minuten = großer Fortschritt!</p>
+                    </div>
+
+                    <div class="resource-card">
+                        <h4>📻 NPR (National Public Radio)</h4>
+                        <p>Amerikanisches Radio mit exzellenten Nachrichten und Features. Training für authentisches Amerikanisch.</p>
+                        <ul class="features-list">
+                            <li>"Up First" - tägliche Nachrichten (15 min)</li>
+                            <li>"Planet Money" - Wirtschaftsthemen</li>
+                            <li>"This American Life" - Storytelling</li>
+                            <li>Hochqualitative Produktion</li>
+                            <li>Verschiedene Sprecher und Akzente</li>
+                            <li>App mit Download-Funktion</li>
+                        </ul>
+                        <p><strong>Empfehlung:</strong> Start mit "Up First" für tägliche News.</p>
+                    </div>
+
+                    <div class="resource-card">
+                        <h4>🎪 TED Talks</h4>
+                        <p>Inspirierend und lehrreich. Perfekt für Advanced-Level und kulturelle Themen.</p>
+                        <ul class="features-list">
+                            <li>18-Minuten-Format, ideal konzentriert</li>
+                            <li>Untertitel in mehreren Sprachen</li>
+                            <li>Verschiedene Akzente weltweit</li>
+                            <li>Intellectual Content</li>
+                            <li>Interactive Transcripts</li>
+                            <li>Mobile Apps verfügbar</li>
+                        </ul>
+                        <p><strong>Empfehlung:</strong> 2-3 Talks pro Woche, mit Notizen.</p>
+                    </div>
+                </div>
+
+                <h3>📺 YouTube Channels für Englisch-Lerner</h3>
+                <div class="resource-grid">
+                    <div class="resource-card">
+                        <h4>🎬 English with Lucy</h4>
+                        <p>Sehr beliebter Channel mit klaren Erklärungen und britischem Akzent.</p>
+                        <ul class="features-list">
+                            <li>Grammatik einfach erklärt</li>
+                            <li>Pronunciation Training</li>
+                            <li>British Culture Videos</li>
+                            <li>Untertitel immer verfügbar</li>
+                            <li>Kostenlose PDFs zu den Videos</li>
+                            <li>Regelmäßige Live-Streams</li>
+                        </ul>
+                        <span class="difficulty-badge difficulty-intermediate">Mittel</span>
+                    </div>
+
+                    <div class="resource-card">
+                        <h4>📖 Crash Course Literature</h4>
+                        <p>Perfekt für literarische Texte und Textanalyse. Macht komplexe Literatur verständlich.</p>
+                        <ul class="features-list">
+                            <li>Klassische und moderne Literatur</li>
+                            <li>Analyse-Techniken erklärt</li>
+                            <li>Unterhaltsam und informativ</li>
+                            <li>Hochqualitative Animation</li>
+                            <li>Vollständige Playlists</li>
+                            <li>Academic Level</li>
+                        </ul>
+                        <span class="difficulty-badge difficulty-advanced">Fortgeschritten</span>
+                    </div>
+
+                    <div class="resource-card">
+                        <h4>🗣️ Rachel's English</h4>
+                        <p>Die beste Ressource für amerikanische Aussprache und Intonation.</p>
+                        <ul class="features-list">
+                            <li>Detailed Pronunciation Training</li>
+                            <li>Mouth Close-ups für Artikulation</li>
+                            <li>American Accent Course</li>
+                            <li>Shadowing Exercises</li>
+                            <li>IPA Integration</li>
+                            <li>Free Course Materials</li>
+                        </ul>
+                        <span class="difficulty-badge difficulty-intermediate">Mittel bis Fortgeschritten</span>
+                    </div>
+                </div>
+
+                <div class="pro-tip">
+                    <h4>🎧 Audio-Lernstrategie</h4>
+                    <p><strong>3-Stufen-Methode:</strong></p>
+                    <ol style="margin-left: 20px; margin-top: 10px;">
+                        <li><strong>Blind Listening:</strong> Erst ohne Untertitel hören - wie viel verstehst du?</li>
+                        <li><strong>Supported Listening:</strong> Mit Untertiteln - neue Wörter notieren</li>
+                        <li><strong>Active Listening:</strong> Nochmal ohne Untertitel - Fortschritt messen</li>
+                    </ol>
+                </div>
+            </div>
+
+            <div class="resource-category">
+                <h2>📱 Apps & Mobile Learning</h2>
+                <p>Nutze deine toten Zeiten optimal! Diese Apps verwandeln Bus- und Bahnfahrten, Warteschlangen und Pausen in produktive Lernzeit. Alle Apps sind kostenlos oder haben sehr günstige Premium-Versionen.</p>
+
+                <h3>📚 Wortschatz & Vokabeln</h3>
+                <div class="resource-grid">
+                    <div class="resource-card">
+                        <h4>🧠 Anki (Spaced Repetition)</h4>
+                        <p>Das mächtigste Tool für langfristiges Vokabellernen. Basiert auf wissenschaftlichen Erkenntnissen zum Gedächtnis.</p>
+                        <ul class="features-list">
+                            <li>Algorithmus passt Wiederholungen an dein Gedächtnis an</li>
+                            <li>Shared Decks mit Abitur-Vokabeln verfügbar</li>
+                            <li>Audio, Bilder und Cloze-Tests möglich</li>
+                            <li>Synchronisation zwischen Geräten</li>
+                            <li>Statistiken zeigen deinen Fortschritt</li>
+                            <li>Kostenlos auf Desktop, günstig auf Mobile</li>
+                        </ul>
+                        <p><strong>Was ist Spaced Repetition?</strong> Das System zeigt dir Vokabeln genau dann wieder, wenn du sie fast vergessen hättest. So gelangen sie ins Langzeitgedächtnis.</p>
+                    </div>
+
+                    <div class="resource-card">
+                        <h4>📝 Quizlet</h4>
+                        <p>Benutzerfreundlicher als Anki, mit vorgefertigten Sets für das deutsche Abitur.</p>
+                        <ul class="features-list">
+                            <li>Millionen von Lernsets verfügbar</li>
+                            <li>Verschiedene Lernmodi (Karteikarten, Quiz, Match)</li>
+                            <li>Audio-Aussprache integriert</li>
+                            <li>Offline-Modus verfügbar</li>
+                            <li>Klassengruppen für Teamwork</li>
+                            <li>Einfache Set-Erstellung</li>
+                        </ul>
+                        <p><strong>Tipp:</strong> Suche nach "Englisch Abitur Baden-Württemberg" für fertige Vokabelsets.</p>
+                    </div>
+
+                    <div class="resource-card">
+                        <h4>🎯 Memrise</h4>
+                        <p>Gamifiziertes Vokabellernen mit Video-Clips von Muttersprachlern.</p>
+                        <ul class="features-list">
+                            <li>Echte Menschen sprechen die Wörter</li>
+                            <li>Verschiedene Akzente und Dialekte</li>
+                            <li>Streaks und Achievements</li>
+                            <li>Community-erstellte Kurse</li>
+                            <li>Offline Download möglich</li>
+                            <li>Speed Review für schnelles Wiederholen</li>
+                        </ul>
+                        <p><strong>Besonderheit:</strong> Du hörst, wie echte Menschen die Wörter in verschiedenen Situationen verwenden.</p>
+                    </div>
+                </div>
+
+                <h3>📖 Reading & News Apps</h3>
+                <div class="resource-grid">
+                    <div class="resource-card">
+                        <h4>📰 BBC News App</h4>
+                        <p>Perfekt für authentische, aktuelle Texte. Die Artikel sind meist gut strukturiert und nicht zu lang.</p>
+                        <ul class="features-list">
+                            <li>Täglich neue Artikel</li>
+                            <li>Verschiedene Kategorien</li>
+                            <li>Audio-Versionen vieler Artikel</li>
+                            <li>Offline Reading möglich</li>
+                            <li>Breaking News Benachrichtigungen</li>
+                            <li>Video-Content integriert</li>
+                        </ul>
+                        <p><strong>Lernstrategie:</strong> Lies täglich einen Artikel, notiere 5 neue Wörter und ihre Übersetzung.</p>
+                    </div>
+
+                    <div class="resource-card">
+                        <h4>📖 Medium</h4>
+                        <p>Hochqualitative Artikel zu allen Themen. Perfekt für Advanced Reading und Critical Thinking.</p>
+                        <ul class="features-list">
+                            <li>Millionen von Artikeln zu allen Themen</li>
+                            <li>Geschätzte Lesezeit angegeben</li>
+                            <li>Highlight-Funktion für wichtige Stellen</li>
+                            <li>Personalisierte Empfehlungen</li>
+                            <li>Offline Reading verfügbar</li>
+                            <li>Audio-Versionen von vielen Artikeln</li>
+                        </ul>
+                        <p><strong>Tipp:</strong> Folge Channels zu deinen Abitur-Themen (Politics, Environment, Technology).</p>
+                    </div>
+
+                    <div class="resource-card">
+                        <h4>📚 Kindle App</h4>
+                        <p>E-Books lesen mit integriertem Wörterbuch. Perfekt für literarische Texte des Abiturs.</p>
+                        <ul class="features-list">
+                            <li>Instant Dictionary Lookup</li>
+                            <li>Highlight und Notes Sync</li>
+                            <li>Adjustable Font Size</li>
+                            <li>Offline Reading</li>
+                            <li>Free Classics verfügbar</li>
+                            <li>Vocabulary Builder Feature</li>
+                        </ul>
+                        <p><strong>Abitur-Hack:</strong> Lade kostenlose Klassiker herunter und lies sie mit Wörterbuch-Unterstützung.</p>
+                    </div>
+                </div>
+
+                <h3>🎧 Listening & Speaking Apps</h3>
+                <div class="resource-grid">
+                    <div class="resource-card">
+                        <h4>🎙️ Speechify</h4>
+                        <p>Verwandelt jeden Text in Audio. Perfekt für auditive Lerner und multitasking.</p>
+                        <ul class="features-list">
+                            <li>Text-to-Speech mit natürlichen Stimmen</li>
+                            <li>Geschwindigkeit anpassbar</li>
+                            <li>Verschiedene Akzente verfügbar</li>
+                            <li>PDF und Web-Artikel scannen</li>
+                            <li>Synchronisation zwischen Geräten</li>
+                            <li>Highlighting während des Abspielens</li>
+                        </ul>
+                        <p><strong>Perfekt für:</strong> Abitur-Texte anhören während Sport, Hausarbeit oder Pendeln.</p>
+                    </div>
+
+                    <div class="resource-card">
+                        <h4>🗣️ HelloTalk</h4>
+                        <p>Chat mit Muttersprachlern weltweit. Authentisches Sprechen und kultureller Austausch.</p>
+                        <ul class="features-list">
+                            <li>Sprachtandem mit echten Menschen</li>
+                            <li>Text-, Audio- und Video-Chat</li>
+                            <li>Korrekturfunktion integriert</li>
+                            <li>Cultural Exchange</li>
+                            <li>Voice-to-Text Feature</li>
+                            <li>Timeline mit Posts von Muttersprachlern</li>
+                        </ul>
+                        <p><strong>Sicherheitstipp:</strong> Bleibe bei Sprach-Learning-Themen und teile keine persönlichen Daten.</p>
+                    </div>
+
+                    <div class="resource-card">
+                        <h4>🎵 Lyrics Training</h4>
+                        <p>Englisch lernen mit deiner Lieblingsmusik. Macht Spaß und trainiert das Hörverstehen.</p>
+                        <ul class="features-list">
+                            <li>Lückentext zu echten Songs</li>
+                            <li>Verschiedene Schwierigkeitsgrade</li>
+                            <li>Riesige Musikdatenbank</li>
+                            <li>Multiplayer-Modus</li>
+                            <li>Karaoke-Funktion</li>
+                            <li>Fortschritts-Tracking</li>
+                        </ul>
+                        <p><strong>Lerneffekt:</strong> Trainiert schnelles Hörverstehen und natürliche Intonation.</p>
+                    </div>
+                </div>
+
+                <div class="pro-tip">
+                    <h4>📱 Mobile Learning Best Practices</h4>
+                    <p><strong>Die 5-Minuten-Regel:</strong> Nutze jede freie 5-Minuten-Pause für eine kurze Lerneinheit. Das summiert sich über ein Jahr auf über 30 Stunden zusätzliche Lernzeit!</p>
+                    <ul style="margin-left: 20px; margin-top: 10px;">
+                        <li><strong>Morgens:</strong> 10 Vokabeln mit Anki (5 min)</li>
+                        <li><strong>Mittagspause:</strong> Einen BBC-Artikel lesen (10 min)</li>
+                        <li><strong>Abends:</strong> TED Talk beim Zähneputzen (3 min)</li>
+                        <li><strong>Wochenende:</strong> HelloTalk Chat (15 min)</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="resource-category">
+                <h2>🌟 Prüfungsstrategien & Lerntechniken</h2>
+                <p>Die besten Apps und Materialien nützen nichts ohne die richtigen Lernstrategien. Hier findest du bewährte Methoden, die speziell für das Englisch-Abitur entwickelt wurden.</p>
+
+                <div class="learning-path">
+                    <h3>📅 12-Monats-Lernplan für das Abitur 2026</h3>
+                    <div class="path-steps">
+                        <div class="step-card">
+                            <h4><span class="step-number">1</span>August - September 2025</h4>
+                            <p><strong>Foundation Phase:</strong></p>
+                            <ul style="list-style: none; margin-top: 10px;">
+                                <li>• Diagnose: Wo stehe ich?</li>
+                                <li>• Grundvokabular festigen</li>
+                                <li>• Grammatik-Basics wiederholen</li>
+                                <li>• Erstes Stark-Buch durcharbeiten</li>
+                            </ul>
+                        </div>
+                        <div class="step-card">
+                            <h4><span class="step-number">2</span>Oktober - November 2025</h4>
+                            <p><strong>Skill Building:</strong></p>
+                            <ul style="list-style: none; margin-top: 10px;">
+                                <li>• Essay Writing trainieren</li>
+                                <li>• Listening Skills aufbauen</li>
+                                <li>• Erste Textanalysen</li>
+                                <li>• Wortschatz thematisch erweitern</li>
+                            </ul>
+                        </div>
+                        <div class="step-card">
+                            <h4><span class="step-number">3</span>Dezember 2025 - Januar 2026</h4>
+                            <p><strong>Content Phase:</strong></p>
+                            <ul style="list-style: none; margin-top: 10px;">
+                                <li>• Abitur-Themen vertiefen</li>
+                                <li>• Cultural Studies intensiv</li>
+                                <li>• Literary Analysis perfektionieren</li>
+                                <li>• Erste Probeklausuren</li>
+                            </ul>
+                        </div>
+                        <div class="step-card">
+                            <h4><span class="step-number">4</span>Februar - März 2026</h4>
+                            <p><strong>Exam Preparation:</strong></p>
+                            <ul style="list-style: none; margin-top: 10px;">
+                                <li>• Wöchentliche Vollklausuren</li>
+                                <li>• Mündliche Prüfung vorbereiten</li>
+                                <li>• Time Management perfektionieren</li>
+                                <li>• Schwachstellen eliminieren</li>
+                            </ul>
+                        </div>
+                        <div class="step-card">
+                            <h4><span class="step-number">5</span>April 2026</h4>
+                            <p><strong>Final Sprint:</strong></p>
+                            <ul style="list-style: none; margin-top: 10px;">
+                                <li>• Nur noch Wiederholung</li>
+                                <li>• Entspannungstechniken</li>
+                                <li>• Prüfungsablauf mental durchgehen</li>
+                                <li>• Confidence Building</li>
+                            </ul>
+                        </div>
+                        <div class="step-card">
+                            <h4><span class="step-number">6</span>Mai 2026</h4>
+                            <p><strong>Abitur Time:</strong></p>
+                            <ul style="list-style: none; margin-top: 10px;">
+                                <li>• Du bist bereit! 🎉</li>
+                                <li>• Gesund bleiben</li>
+                                <li>• Prüfungsstrategien anwenden</li>
+                                <li>• Erfolg feiern!</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <h3>🧠 Effektive Lerntechniken</h3>
+                <div class="resource-grid">
+                    <div class="resource-card">
+                        <h4>🔄 Active Recall & Spaced Repetition</h4>
+                        <p><strong>Was ist das?</strong> Statt passiv zu lesen, testest du aktiv dein Wissen und wiederholst in optimalen Intervallen.</p>
+                        <ul class="features-list">
+                            <li>Karteikarten statt Markieren</li>
+                            <li>Ohne Notizen erklären können</li>
+                            <li>Wiederholung nach 1 Tag, 3 Tagen, 1 Woche, 1 Monat</li>
+                            <li>Apps wie Anki automatisieren das</li>
+                        </ul>
+                        <p><strong>Warum effektiv?</strong> Wissenschaftlich bewiesen: 300% bessere Langzeitspeicherung als klassisches Lernen!</p>
+                    </div>
+
+                    <div class="resource-card">
+                        <h4>🎯 Pomodoro Technique</h4>
+                        <p><strong>Wie geht's?</strong> 25 Minuten fokussiert lernen, dann 5 Minuten Pause. Nach 4 Zyklen: 30 Minuten Pause.</p>
+                        <ul class="features-list">
+                            <li>Timer verwenden (App: Forest, Be Focused)</li>
+                            <li>Keine Unterbrechungen in 25 min</li>
+                            <li>Klare Aufgabe pro Pomodoro</li>
+                            <li>Pausen wirklich als Pause nutzen</li>
+                        </ul>
+                        <p><strong>Perfekt für:</strong> Konzentrierte Textanalyse, Essay Writing, Vokabellernen.</p>
+                    </div>
+
+                    <div class="resource-card">
+                        <h4>🗺️ Mind Mapping</h4>
+                        <p><strong>Wofür nutzen?</strong> Komplexe Themen strukturieren, Essay-Planung, Vokabel-Vernetzung.</p>
+                        <ul class="features-list">
+                            <li>Zentrales Thema in die Mitte</li>
+                            <li>Äste für Unterthemen</li>
+                            <li>Farben für verschiedene Kategorien</li>
+                            <li>Bilder und Symbole integrieren</li>
+                        </ul>
+                        <p><strong>Tools:</strong> XMind, MindMeister, oder einfach Papier und Buntstifte.</p>
+                    </div>
+
+                    <div class="resource-card">
+                        <h4>✍️ Cornell Note-Taking</h4>
+                        <p><strong>System:</strong> Seite in 3 Bereiche: Notizen (rechts), Stichwörter (links), Zusammenfassung (unten).</p>
+                        <ul class="features-list">
+                            <li>Während des Unterrichts: Rechte Spalte</li>
+                            <li>Nach dem Unterricht: Stichwörter links</li>
+                            <li>Am Ende: Zusammenfassung unten</li>
+                            <li>Zum Lernen: Rechte Spalte abdecken</li>
+                        </ul>
+                        <p><strong>Perfekt für:</strong> Literaturanalyse, Grammatikregeln, Cultural Studies.</p>
+                    </div>
+
+                    <div class="resource-card">
+                        <h4>🎭 Storytelling & Mnemonics</h4>
+                        <p><strong>Prinzip:</strong> Verwandle abstrakte Informationen in konkrete, bildhafte Geschichten.</p>
+                        <ul class="features-list">
+                            <li>Vokabeln in Geschichten verpacken</li>
+                            <li>Grammatikregeln personifizieren</li>
+                            <li>Loci-Methode für Listen</li>
+                            <li>Akronyme für komplexe Konzepte</li>
+                        </ul>
+                        <p><strong>Beispiel:</strong> "Past Perfect" → "Die Vergangenheit war schon perfekt vorbei, bevor die Simple Past kam."</p>
+                    </div>
+
+                    <div class="resource-card">
+                        <h4>👥 Teaching Method</h4>
+                        <p><strong>Lernprinzip:</strong> Du verstehst etwas erst wirklich, wenn du es anderen erklären kannst.</p>
+                        <ul class="features-list">
+                            <li>Erkläre deinen Eltern/Geschwistern</li>
+                            <li>Erstelle Lernvideos</li>
+                            <li>Diskutiere mit Mitschülern</li>
+                            <li>Schreibe Blog-Posts zu Themen</li>
+                        </ul>
+                        <p><strong>Bonus:</strong> Du findest automatisch deine Wissenslücken und füllst sie.</p>
+                    </div>
+                </div>
+
+                <div class="study-schedule">
+                    <h4>📊 Beispiel-Wochenplan für optimales Lernen</h4>
+                    <table class="schedule-table">
+                        <thead>
+                            <tr>
+                                <th>Tag</th>
+                                <th>Morgens (30 min)</th>
+                                <th>Nachmittags (60 min)</th>
+                                <th>Abends (20 min)</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Montag</strong></td>
+                                <td>Neue Vokabeln (Anki)</td>
+                                <td>Essay Writing Practice</td>
+                                <td>BBC News lesen</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Dienstag</strong></td>
+                                <td>Grammatik wiederholen</td>
+                                <td>Textanalyse (ein Gedicht/Story)</td>
+                                <td>TED Talk anhören</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Mittwoch</strong></td>
+                                <td>Vokabeln wiederholen</td>
+                                <td>Listening Practice + Übungen</td>
+                                <td>Englischen Podcast</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Donnerstag</strong></td>
+                                <td>Cultural Studies</td>
+                                <td>Creative Writing</td>
+                                <td>HelloTalk Chat</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Freitag</strong></td>
+                                <td>Weekly Review</td>
+                                <td>Mock Exam (Teil-Klausur)</td>
+                                <td>Entertainment (Englische Serie)</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Samstag</strong></td>
+                                <td>Freie Wahl</td>
+                                <td>Vertiefung schwacher Bereiche</td>
+                                <td>Entspannung</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Sonntag</strong></td>
+                                <td>Planung nächste Woche</td>
+                                <td>Längere Lektüre</td>
+                                <td>Reflektion & Fortschritt</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <p style="margin-top: 15px; font-style: italic;">
+                        <strong>Wichtig:</strong> Passe diesen Plan an deinen Stundenplan und deine Präferenzen an. 
+                        Konsistenz ist wichtiger als Perfektion!
+                    </p>
+                </div>
+
+                <div class="warning-box">
+                    <h4>⚠️ Häufige Lernfehler vermeiden</h4>
+                    <ul style="margin-left: 20px;">
+                        <li><strong>Nur passiv lesen:</strong> Immer aktiv mitdenken und testen</li>
+                        <li><strong>Alles auf einmal:</strong> Lieber täglich 30 min als einmal 5 Stunden</li>
+                        <li><strong>Keine Pausen:</strong> Dein Gehirn braucht Erholung zum Verarbeiten</li>
+                        <li><strong>Perfektionismus:</strong> 80% Aufwand für 95% Ergebnis ist oft optimal</li>
+                        <li><strong>Isoliert lernen:</strong> Nutze Lerngruppen und Diskussionen</li>
+                        <li><strong>Technik ignorieren:</strong> Nutze Apps und digitale Tools sinnvoll</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="resource-category">
+                <h2>🏆 Prüfungstipps & Last-Minute-Strategien</h2>
+                <p>Der Tag der Wahrheit rückt näher? Diese erprobten Strategien helfen dir, in der Prüfung dein volles Potenzial abzurufen und typische Fehler zu vermeiden.</p>
+
+                <h3>📝 Schriftliche Prüfung: Strategie & Timing</h3>
+                <div class="resource-grid">
+                    <div class="resource-card">
+                        <h4>⏰ Zeitmanagement in der Prüfung</h4>
+                        <p><strong>Typische Aufteilung bei 270 Minuten (4,5h):</strong></p>
+                        <ul class="features-list">
+                            <li><strong>Lesephase (15 min):</strong> Alle Aufgaben durchlesen, entscheiden</li>
+                            <li><strong>Task 1 - Comprehension (45 min):</strong> Text verstehen + Fragen</li>
+                            <li><strong>Task 2 - Analysis (60 min):</strong> Textanalyse strukturiert</li>
+                            <li><strong>Task 3 - Comment/Creative (90 min):</strong> Hauptaufgabe</li>
+                            <li><strong>Revision (30 min):</strong> Korrekturlesen</li>
+                            <li><strong>Puffer (30 min):</strong> Für Unvorhergesehenes</li>
+                        </ul>
+                        <p><strong>Goldene Regel:</strong> Lieber alle Aufgaben gut als eine perfekt!</p>
+                    </div>
+
+                    <div class="resource-card">
+                        <h4>📋 Prüfungs-Checkliste</h4>
+                        <p><strong>Am Tag vor der Prüfung:</strong></p>
+                        <ul class="features-list">
+                            <li>Alle Materialien bereitlegen</li>
+                            <li>Früh ins Bett (mindestens 8h Schlaf)</li>
+                            <li>Keine neuen Inhalte mehr lernen</li>
+                            <li>Entspannungsaktivität</li>
+                            <li>Route zur Schule checken</li>
+                        </ul>
+                        <p><strong>Am Prüfungstag:</strong></p>
+                        <ul class="features-list">
+                            <li>Ausgewogenes Frühstück</li>
+                            <li>30 min früher da sein</li>
+                            <li>Entspannungsübungen</li>
+                            <li>Positive Selbstgespräche</li>
+                        </ul>
+                    </div>
+
+                    <div class="resource-card">
+                        <h4>✍️ Essay-Writing Formeln</h4>
+                        <p><strong>Comment/Argumentative Essay:</strong></p>
+                        <ul class="features-list">
+                            <li><strong>Introduction:</strong> Hook + Background + Thesis</li>
+                            <li><strong>Body 1:</strong> Strongest argument + Evidence + Analysis</li>
+                            <li><strong>Body 2:</strong> Second argument + Evidence + Analysis</li>
+                            <li><strong>Counter-argument:</strong> Acknowledge + Refute</li>
+                            <li><strong>Conclusion:</strong> Restate thesis + Implications + Call to action</li>
+                        </ul>
+                        <p><strong>Textanalyse:</strong></p>
+                        <ul class="features-list">
+                            <li><strong>Introduction:</strong> Title, Author, Text type, Main topic</li>
+                            <li><strong>Summary:</strong> Kurz und objektiv</li>
+                            <li><strong>Analysis:</strong> Structure, Language, Stylistic devices</li>
+                            <li><strong>Conclusion:</strong> Author's intention + Effect on reader</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="pro-tip">
+                    <h4>🎯 Last-Minute Erfolgsgarantie</h4>
+                    <p><strong>Die 48-Stunden-Strategie:</strong></p>
+                    <ol style="margin-left: 20px; margin-top: 10px;">
+                        <li><strong>Tag -2:</strong> Letzte Übungsklausur unter Zeitdruck</li>
+                        <li><strong>Tag -1:</strong> Nur noch Wiederholung von Phrasen und Strukturen</li>
+                        <li><strong>Prüfungstag:</strong> Früh aufstehen, gutes Frühstück, Entspannung</li>
+                    </ol>
+                    <p style="margin-top: 10px;"><strong>Mantra für die Prüfung:</strong> "Ich kann das, ich bin vorbereitet, ich bleibe ruhig!"</p>
+                </div>
+            </div>
+
+            <div class="resource-category">
+                <h2>🌍 Authentische Englisch-Erfahrungen</h2>
+                <p>Nichts ersetzt echten Kontakt mit der englischen Sprache. Diese Ressourcen bringen dir authentisches Englisch direkt nach Hause und schaffen Verbindungen zur realen Welt.</p>
+
+                <h3>🎬 Entertainment mit Lerneffekt</h3>
+                <div class="resource-grid">
+                    <div class="resource-card">
+                        <h4>📺 Netflix/Prime Video Serien</h4>
+                        <p><strong>Für verschiedene Niveaus und Interessen:</strong></p>
+                        <ul class="features-list">
+                            <li><strong>Anfänger:</strong> Friends, How I Met Your Mother (klare Aussprache)</li>
+                            <li><strong>Mittel:</strong> The Crown, Stranger Things (verschiedene Akzente)</li>
+                            <li><strong>Fortgeschritten:</strong> Sherlock, Black Mirror (komplexe Sprache)</li>
+                            <li><strong>Dokumentationen:</strong> Planet Earth, Our Planet (Bildungssprache)</li>
+                        </ul>
+                        <p><strong>Lernstrategie:</strong></p>
+                        <ul class="features-list">
+                            <li>Erste Episode: Deutsche Untertitel</li>
+                            <li>Zweite Episode: Englische Untertitel</li>
+                            <li>Dritte Episode: Ohne Untertitel</li>
+                            <li>Lieblingsepisoden mehrfach schauen</li>
+                        </ul>
+                    </div>
+
+                    <div class="resource-card">
+                        <h4>🎮 Gaming auf Englisch</h4>
+                        <p><strong>Warum Gaming effektiv ist:</strong> Du lernst durch Kontext, wiederholst automatisch und hast Spaß dabei!</p>
+                        <ul class="features-list">
+                            <li><strong>Story-Games:</strong> Life is Strange, Detroit: Become Human</li>
+                            <li><strong>RPGs:</strong> Skyrim, Witcher 3 (viel Text und Dialog)</li>
+                            <li><strong>Online:</strong> Among Us, Minecraft (Chat mit anderen)</li>
+                            <li><strong>Educational:</strong> Duolingo Adventures, English Learning Games</li>
+                        </ul>
+                        <p><strong>Einstellungen:</strong> Sprache auf English, Untertitel anfangs an, später aus.</p>
+                    </div>
+
+                    <div class="resource-card">
+                        <h4>🎵 Musik bewusst hören</h4>
+                        <p><strong>Nicht nur Hintergrund - aktiv mit Lyrics lernen:</strong></p>
+                        <ul class="features-list">
+                            <li><strong>Lyric-Websites:</strong> Genius.com (mit Erklärungen)</li>
+                            <li><strong>Apps:</strong> Musixmatch (Lyrics synchron)</li>
+                            <li><strong>Genres:</strong> Pop für klare Aussprache, Rap für schnelles Hören</li>
+                            <li><strong>Künstler-Empfehlungen:</strong> Ed Sheeran, Taylor Swift (storytelling)</li>
+                        </ul>
+                        <p><strong>Übung:</strong> Ein Lied pro Woche komplett verstehen und mitsingen können.</p>
+                    </div>
+                </div>
+
+                <h3>📰 Nachrichten & Aktuelle Ereignisse</h3>
+                <div class="resource-grid">
+                    <div class="resource-card">
+                        <h4>📡 International News Sources</h4>
+                        <p><strong>Verschiedene Perspektiven für kritisches Denken:</strong></p>
+                        <ul class="features-list">
+                            <li><strong>BBC News:</strong> Britische Sicht, ausgewogen</li>
+                            <li><strong>CNN/NPR:</strong> Amerikanische Perspektive</li>
+                            <li><strong>Al Jazeera English:</strong> Internationale Sicht</li>
+                            <li><strong>The Guardian:</strong> Progressive Sichtweise</li>
+                            <li><strong>Reuters:</strong> Fakten-orientiert</li>
+                        </ul>
+                        <p><strong>Abitur-Hack:</strong> Verfolge ein aktuelles Thema über mehrere Quellen hinweg.</p>
+                    </div>
+
+                    <div class="resource-card">
+                        <h4>📊 Data & Statistics</h4>
+                        <p><strong>Für Essay-Arguments und Critical Thinking:</strong></p>
+                        <ul class="features-list">
+                            <li><strong>Statista:</strong> Statistiken zu allen Themen</li>
+                            <li><strong>Our World in Data:</strong> Entwicklungstrends visuell</li>
+                            <li><strong>Pew Research:</strong> Gesellschaftliche Studien</li>
+                            <li><strong>UN Reports:</strong> Globale Herausforderungen</li>
+                        </ul>
+                        <p><strong>Nutzen:</strong> Starke Argumente mit echten Zahlen untermauern.</p>
+                    </div>
+
+                    <div class="resource-card">
+                        <h4>🗳️ Political Analysis</h4>
+                        <p><strong>Verstehe die englischsprachige Welt:</strong></p>
+                        <ul class="features-list">
+                            <li><strong>Politico:</strong> US-Politik verständlich erklärt</li>
+                            <li><strong>BBC Parliament:</strong> UK-Politik live</li>
+                            <li><strong>Council on Foreign Relations:</strong> Internationale Beziehungen</li>
+                            <li><strong>The Economist:</strong> Globale Wirtschaftspolitik</li>
+                        </ul>
+                        <p><strong>Abitur-Relevanz:</strong> Perfekt für Cultural Studies und aktuelle Themen.</p>
+                    </div>
+                </div>
+
+                <h3>🤝 Community & Austausch</h3>
+                <div class="resource-grid">
+                    <div class="resource-card">
+                        <h4>💬 Online Communities</h4>
+                        <p><strong>Echte Gespräche mit Muttersprachlern:</strong></p>
+                        <ul class="features-list">
+                            <li><strong>Reddit:</strong> r/EnglishLearning, r/grammar</li>
+                            <li><strong>Discord:</strong> English Learning Server</li>
+                            <li><strong>Facebook:</strong> English Learning Groups</li>
+                            <li><strong>Clubhouse:</strong> English Conversation Rooms</li>
+                            <li><strong>Tandem Apps:</strong> HelloTalk, Tandem, Speaky</li>
+                        </ul>
+                        <p><strong>Etikette:</strong> Sei respektvoll, hilf anderen auch, bleibe beim Thema Sprache.</p>
+                    </div>
+
+                    <div class="resource-card">
+                        <h4>🏫 Virtual Events & Webinars</h4>
+                        <p><strong>Kostenlose Online-Veranstaltungen:</strong></p>
+                        <ul class="features-list">
+                            <li><strong>British Council:</strong> Regelmäßige Webinars</li>
+                            <li><strong>American Corner:</strong> Kulturelle Events</li>
+                            <li><strong>University Open Days:</strong> Online Campus-Touren</li>
+                            <li><strong>TED Talks Live:</strong> Interaktive Sessions</li>
+                        </ul>
+                        <p><strong>Vorteil:</strong> Echte Interaktion mit Muttersprachlern in strukturiertem Rahmen.</p>
+                    </div>
+
+                    <div class="resource-card">
+                        <h4>✉️ Pen Pal & Correspondence</h4>
+                        <p><strong>Schriftlicher Austausch für Writing Skills:</strong></p>
+                        <ul class="features-list">
+                            <li><strong>Slowly App:</strong> Moderne Brieffreundschaften</li>
+                            <li><strong>International Pen Friends:</strong> Klassische Brieffreunde</li>
+                            <li><strong>Email Exchange:</strong> Mit Partnerschulen</li>
+                            <li><strong>Postcrossing:</strong> Postkarten weltweit</li>
+                        </ul>
+                        <p><strong>Learning Benefit:</strong> Formelles und informelles Schreiben üben.</p>
+                    </div>
+                </div>
+
+                <div class="warning-box">
+                    <h4>🔒 Sicherheit im Internet</h4>
+                    <p><strong>Wichtige Regeln für Online-Sprachaustausch:</strong></p>
+                    <ul style="margin-left: 20px;">
+                        <li>Teile niemals persönliche Daten (Adresse, Schule, Telefon)</li>
+                        <li>Verwende einen Nickname, nicht deinen echten Namen</li>
+                        <li>Treffe dich niemals offline mit Online-Bekanntschaften</li>
+                        <li>Verlasse Gespräche, die unangenehm werden</li>
+                        <li>Informiere Eltern/Lehrer über deine Online-Aktivitäten</li>
+                        <li>Nutze die Melde-Funktionen bei unangemessenem Verhalten</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="resource-category">
+                <h2>🎓 Motivation & Mindset</h2>
+                <p>Der Weg zum Abitur ist ein Marathon, kein Sprint. Diese psychologischen Strategien helfen dir, motiviert zu bleiben und mit Stress umzugehen.</p>
+
+                <h3>💪 Motivation aufrechterhalten</h3>
+                <div class="resource-grid">
+                    <div class="resource-card">
+                        <h4>🎯 SMART Goals setzen</h4>
+                        <p><strong>Specific, Measurable, Achievable, Relevant, Time-bound:</strong></p>
+                        <ul class="features-list">
+                            <li><strong>Schlecht:</strong> "Ich will besser in Englisch werden"</li>
+                            <li><strong>Gut:</strong> "Ich lerne täglich 20 neue Vokabeln und kann sie nach einer Woche ohne Hilfe verwenden"</li>
+                            <li><strong>Messbar:</strong> Verwende Apps mit Statistiken</li>
+                            <li><strong>Realistisch:</strong> Lieber 15 min täglich als 3h einmal pro Woche</li>
+                        </ul>
+                        <p><strong>Beispiel-Ziele:</strong> "Bis Ende Oktober schaffe ich eine Listening-Aufgabe ohne Pausen" oder "Ich schreibe jeden Sonntag ein 300-Wort-Essay in 45 Minuten".</p>
+                    </div>
+
+                    <div class="resource-card">
+                        <h4>📈 Progress Tracking</h4>
+                        <p><strong>Sichtbare Fortschritte motivieren extrem:</strong></p>
+                        <ul class="features-list">
+                            <li><strong>Lerntagebuch:</strong> Täglich 2 Sätze zu dem, was gelernt wurde</li>
+                            <li><strong>Habit Tracker:</strong> Apps wie Habitica, Streaks</li>
+                            <li><strong>Before/After Tests:</strong> Monatlich den gleichen Test wiederholen</li>
+                            <li><strong>Vokabel-Zähler:</strong> Sichtbare Zahlen des Wortschatz-Wachstums</li>
+                        </ul>
+                        <p><strong>Psychologie:</strong> Dein Gehirn liebt sichtbare Fortschritte und belohnt dich mit Dopamin!</p>
+                    </div>
+
+                    <div class="resource-card">
+                        <h4>🏆 Reward System</h4>
+                        <p><strong>Belohne dich für erreichte Meilensteine:</strong></p>
+                        <ul class="features-list">
+                            <li><strong>Kleine Belohnungen:</strong> Lieblingsserie nach Lerneinheit</li>
+                            <li><strong>Wöchentliche Belohnungen:</strong> Ausflug, besonderes Essen</li>
+                            <li><strong>Große Belohnungen:</strong> Nach Klausur etwas Besonderes gönnen</li>
+                            <li><strong>Soziale Belohnung:</strong> Erfolge mit Freunden/Familie teilen</li>
+                        </ul>
+                        <p><strong>Wichtig:</strong> Belohnungen erst NACH dem Lernen, nicht davor als "Motivation".</p>
+                    </div>
+                </div>
+
+                <h3>🧘 Stressmanagement & Entspannung</h3>
+                <div class="resource-grid">
+                    <div class="resource-card">
+                        <h4>🌬️ Atemtechniken</h4>
+                        <p><strong>4-7-8 Technik für schnelle Beruhigung:</strong></p>
+                        <ul class="features-list">
+                            <li>4 Sekunden einatmen</li>
+                            <li>7 Sekunden anhalten</li>
+                            <li>8 Sekunden ausatmen</li>
+                            <li>4 Zyklen wiederholen</li>
+                        </ul>
+                        <p><strong>Wann nutzen:</strong> Vor Prüfungen, bei Lernblockaden, vor dem Schlafengehen.</p>
+                        <p><strong>Apps:</strong> Calm, Headspace, Insight Timer</p>
+                    </div>
+
+                    <div class="resource-card">
+                        <h4>💭 Positive Selbstgespräche</h4>
+                        <p><strong>Ersetze negative durch positive Gedanken:</strong></p>
+                        <ul class="features-list">
+                            <li><strong>Statt:</strong> "Ich kann das nie" → <strong>Sage:</strong> "Ich lerne jeden Tag dazu"</li>
+                            <li><strong>Statt:</strong> "Ich bin schlecht in Englisch" → <strong>Sage:</strong> "Ich verbessere mich kontinuierlich"</li>
+                            <li><strong>Statt:</strong> "Das ist zu schwer" → <strong>Sage:</strong> "Das ist eine Herausforderung, die ich meistern kann"</li>
+                        </ul>
+                        <p><strong>Technik:</strong> Schreibe negative Gedanken auf und formuliere sie positiv um.</p>
+                    </div>
+
+                    <div class="resource-card">
+                        <h4>⚖️ Work-Life-Balance</h4>
+                        <p><strong>Nachhaltiges Lernen ohne Burnout:</strong></p>
+                        <ul class="features-list">
+                            <li><strong>80/20 Regel:</strong> 80% Lernen, 20% Entspannung</li>
+                            <li><strong>Feste Lernzeiten:</strong> Routine entwickeln</li>
+                            <li><strong>Echte Pausen:</strong> Handy weg, rausgehen, bewegen</li>
+                            <li><strong>Sozialkontakte:</strong> Freunde nicht vernachlässigen</li>
+                            <li><strong>Hobbies:</strong> Mindestens eine nicht-schulische Aktivität</li>
+                        </ul>
+                        <p><strong>Faustregel:</strong> Wenn du dich mehr als 3 Tage unmotiviert fühlst, mache eine längere Pause.</p>
+                    </div>
+                </div>
+
+                <div class="study-schedule">
+                    <h4>🧠 Mindset-Übungen für jeden Tag</h4>
+                    <table class="schedule-table">
+                        <thead>
+                            <tr>
+                                <th>Übung</th>
+                                <th>Zeit</th>
+                                <th>Beschreibung</th>
+                                <th>Wirkung</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Morning Affirmations</strong></td>
+                                <td>2 min</td>
+                                <td>3 positive Sätze über deine Englisch-Fähigkeiten</td>
+                                <td>Positiver Start in den Tag</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Gratitude Journal</strong></td>
+                                <td>3 min</td>
+                                <td>3 Dinge aufschreiben, für die du dankbar bist</td>
+                                <td>Positive Grundstimmung</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Visualization</strong></td>
+                                <td>5 min</td>
+                                <td>Stell dir vor, wie du die Abiturprüfung erfolgreich meisterst</td>
+                                <td>Mentale Vorbereitung</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Learning Reflection</strong></td>
+                                <td>5 min</td>
+                                <td>Was habe ich heute gelernt? Was war gut? Was kann besser werden?</td>
+                                <td>Bewusstes Lernen</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="pro-tip">
+                    <h4>🎯 Der ultimative Motivations-Hack</h4>
+                    <p><strong>Die "Warum"-Pyramide:</strong></p>
+                    <ol style="margin-left: 20px; margin-top: 10px;">
+                        <li><strong>Was willst du erreichen?</strong> → Gutes Englisch-Abitur</li>
+                        <li><strong>Warum ist das wichtig?</strong> → Für guten Uni-Zugang</li>
+                        <li><strong>Warum ist das wichtig?</strong> → Für meinen Traumberuf</li>
+                        <li><strong>Warum ist das wichtig?</strong> → Um meine Träume zu verwirklichen</li>
+                        <li><strong>Warum ist das wichtig?</strong> → Um ein erfülltes Leben zu führen</li>
+                    </ol>
+                    <p style="margin-top: 10px;">Schreibe deine persönliche Warum-Pyramide auf und hänge sie über deinen Schreibtisch!</p>
+                </div>
+            </div>
+
+            <div class="resource-category">
+                <h2>🔗 Weiterführende Links & Kontakte</h2>
+                <p>Zusätzliche Unterstützung und offizielle Quellen für deine Abiturvorbereitung.</p>
+
+                <div class="resource-grid">
+                    <div class="resource-card">
+                        <h4>🏛️ Offizielle Quellen</h4>
+                        <ul class="features-list">
+                            <li><strong>Kultusministerium BW:</strong> km-bw.de</li>
+                            <li><strong>Bildungsplan 2021:</strong> bildungsplaene-bw.de</li>
+                            <li><strong>Landesabitur-Portal:</strong> Abitur-Termine und Infos</li>
+                            <li><strong>ZSL (Lehrerbildung):</strong> zsl-bw.de</li>
+                        </ul>
+                    </div>
+
+                    <div class="resource-card">
+                        <h4>📞 Beratung & Hilfe</h4>
+                        <ul class="features-list">
+                            <li><strong>Schulberatung:</strong> Deine Englisch-Lehrkraft</li>
+                            <li><strong>Lerntherapie:</strong> Bei anhaltenden Schwierigkeiten</li>
+                            <li><strong>Nachhilfe:</strong> StudyHelp, Schülerhilfe, private Tutoren</li>
+                            <li><strong>Online-Tutoring:</strong> Preply, iTalki für Einzelstunden</li>
+                        </ul>
+                    </div>
+
+                    <div class="resource-card">
+                        <h4>🌟 Premium-Ressourcen</h4>
+                        <ul class="features-list">
+                            <li><strong>Grammarly Premium:</strong> AI-basierte Schreibhilfe</li>
+                            <li><strong>Cambly:</strong> 1:1 Conversation mit Natives</li>
+                            <li><strong>FluentU:</strong> Authentic Video Content</li>
+                            <li><strong>Babbel Live:</strong> Live-Unterricht in Kleingruppen</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div style="text-align: center; margin-top: 50px; padding: 30px; background: linear-gradient(135deg, var(--success-color) 0%, #229954 100%); border-radius: 15px; color: white;">
+                <h3 style="margin-bottom: 15px;">🎉 Du schaffst das!</h3>
+                <p style="font-size: 1.1em; margin-bottom: 20px;">
+                    Mit diesen Ressourcen und der richtigen Einstellung ist dein Englisch-Abitur 2026 ein Erfolg. 
+                    Remember: Every expert was once a beginner, and every professional was once an amateur.
+                </p>
+                <div style="margin-top: 20px;">
+                    <a href="index.html" class="btn" style="background: white; color: var(--success-color); margin-right: 10px;">🏠 Zurück zur Übersicht</a>
+                    <a href="pruefungsvorbereitung.html" class="btn" style="background: rgba(255,255,255,0.2);">🎯 Zur Prüfungsvorbereitung</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Track page visit for progress
+        trackPageVisit('resources');
+
+        // Add interactive elements
+        document.addEventListener('DOMContentLoaded', function() {
+            // Smooth scrolling for internal links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        target.scrollIntoView({
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+
+            // Interactive resource cards
+            const resourceCards = document.querySelectorAll('.resource-card');
+            resourceCards.forEach(card => {
+                card.addEventListener('click', function() {
+                    // Add a visual click effect
+                    this.style.transform = 'scale(0.98)';
+                    setTimeout(() => {
+                        this.style.transform = 'scale(1)';
+                    }, 150);
+                });
+            });
+
+            // Add reading time estimates
+            const sections = document.querySelectorAll('.resource-category');
+            sections.forEach(section => {
+                const text = section.textContent;
+                const wordCount = text.split(' ').length;
+                const readingTime = Math.ceil(wordCount / 200); // 200 words per minute
+                
+                const header = section.querySelector('h2');
+                if (header && readingTime > 1) {
+                    const timeSpan = document.createElement('span');
+                    timeSpan.style.fontSize = '0.8em';
+                    timeSpan.style.color = '#7f8c8d';
+                    timeSpan.style.marginLeft = '10px';
+                    timeSpan.textContent = `(~${readingTime} min Lesezeit)`;
+                    header.appendChild(timeSpan);
+                }
+            });
+        });
+
+        function trackPageVisit(page) {
+            let visitedPages = JSON.parse(localStorage.getItem('visitedPages') || '[]');
+            if (!visitedPages.includes(page)) {
+                visitedPages.push(page);
+                localStorage.setItem('visitedPages', JSON.stringify(visitedPages));
+            }
+        }
+    </script>
+</body>
+</html>
+
+                <h3>🗣️ Mündliche Prüfung: Selbstsicher präsentieren</h3>
+                <div class="resource-grid">
+                    <div class="resource-card">
+                        <h4>🎯 Präsentationsstrategie</h4>
+                        <p><strong>Typischer Ablauf (20 min gesamt):</strong></p>
+                        <ul class="features-list">
+                            <li><strong>Vorbereitung (10 min):</strong> Text lesen + Struktur planen</li>
+                            <li><strong>Präsentation (5 min):</strong> Strukturiert vortragen</li>
+                            <li><strong>Diskussion (5 min):</strong> Fragen beantworten + diskutieren</li>
+                        </ul>
+                        <p><strong>Struktur der Präsentation:</strong></p>
+                        <ul class="features-list">
+                            <li>Text summary (1-2 min)</li>
+                            <li>Analysis/Comment (2-3 min)</li>
+                            <li>Personal opinion + broader context (1 min)</li>
+                        </ul>
+                    </div>
+
+                    <div class="resource-card">
+                        <h4>💬 Useful Phrases für die mündliche Prüfung</h4>
+                        <p><strong>Strukturierung:</strong></p>
+                        <ul class="features-list">
+                            <li>"Let me start by summarizing..."</li>
+                            <li>"Moving on to my analysis..."</li>
+                            <li>"This brings me to the conclusion that..."</li>
+                            <li>"In my personal opinion..."</li>
+                        </ul>
+                        <p><strong>Bei Unsicherheit:</strong></p>
+                        <ul class="features-list">
+                            <li>"Could you rephrase the question?"</li>
+                            <li>"That's an interesting point..."</li>
+                            <li>"Let me think about this for a moment..."</li>
+                            <li>"From my perspective..."</li>
+                        </ul>
+                    </div>
+
+                    <div class="resource-card">
+                        <h4>🎭 Körpersprache & Auftreten</h4>
+                        <p><strong>Positive Ausstrahlung:</strong></p>
+                        <ul class="features-list">
+                            <li>Aufrechte Haltung</li>
+                            <li>Blickkontakt mit allen Prüfern</li>
+                            <li>Ruhige Gestik</li>
+                            <li>Deutliche Aussprache</li>
+                            <li>Angemessene Lautstärke</li>
+                        </ul>
+                        <p><strong>Nervosität überwinden:</strong></p>
+                        <ul class="features-list">
+                            <li>Tiefe Atemzüge vor Beginn</li>
+                            <li>Kurze Pause vor Antworten</li>
+                            <li>Bei Fehlern weitermachen, nicht korrigieren</li>
+                            <li>Prüfer als hilfsbereite Gesprächspartner sehen</li>
+                        </ul>

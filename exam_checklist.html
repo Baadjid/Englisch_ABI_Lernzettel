@@ -1,0 +1,1551 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prüfungs-Checkliste - Englisch Abitur 2026</title>
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --secondary-color: #3498db;
+            --accent-color: #e74c3c;
+            --success-color: #27ae60;
+            --warning-color: #f39c12;
+            --info-color: #8e44ad;
+            --bg-color: #ecf0f1;
+            --card-bg: #ffffff;
+            --text-color: #2c3e50;
+            --border-color: #bdc3c7;
+            --light-gray: #f8f9fa;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, var(--bg-color) 0%, #d5dbdb 100%);
+            color: var(--text-color);
+            line-height: 1.6;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+            background: var(--card-bg);
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            border-top: 5px solid var(--accent-color);
+        }
+
+        .header h1 {
+            color: var(--primary-color);
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+
+        .header p {
+            color: #7f8c8d;
+            font-size: 1.1em;
+            margin-bottom: 20px;
+        }
+
+        .nav-breadcrumb {
+            margin-bottom: 20px;
+            padding: 15px;
+            background: var(--card-bg);
+            border-radius: 10px;
+            border-left: 4px solid var(--secondary-color);
+        }
+
+        .nav-breadcrumb a {
+            color: var(--secondary-color);
+            text-decoration: none;
+            margin-right: 10px;
+        }
+
+        .nav-breadcrumb a:hover {
+            text-decoration: underline;
+        }
+
+        .timeline {
+            background: linear-gradient(135deg, var(--info-color) 0%, #9b59b6 100%);
+            color: white;
+            border-radius: 15px;
+            padding: 25px;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        .timeline h2 {
+            margin-bottom: 15px;
+            font-size: 1.5em;
+        }
+
+        .timeline-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .timeline-item {
+            background: rgba(255,255,255,0.1);
+            border-radius: 10px;
+            padding: 15px;
+            backdrop-filter: blur(10px);
+        }
+
+        .main-content {
+            display: grid;
+            gap: 30px;
+        }
+
+        .section {
+            background: var(--card-bg);
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+            border-left: 5px solid var(--secondary-color);
+        }
+
+        .section h2 {
+            color: var(--primary-color);
+            margin-bottom: 20px;
+            font-size: 1.8em;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .section h3 {
+            color: var(--secondary-color);
+            margin: 25px 0 15px 0;
+            font-size: 1.3em;
+            border-bottom: 2px solid var(--light-gray);
+            padding-bottom: 10px;
+        }
+
+        .exam-structure {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 25px;
+            margin: 20px 0;
+        }
+
+        .exam-part {
+            background: var(--light-gray);
+            border-radius: 10px;
+            padding: 20px;
+            border-left: 4px solid var(--warning-color);
+        }
+
+        .exam-part h4 {
+            color: var(--warning-color);
+            margin-bottom: 15px;
+            font-size: 1.2em;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin: 20px 0;
+        }
+
+        .skill-card {
+            background: #f8f9fa;
+            border: 1px solid #e9ecef;
+            border-radius: 10px;
+            padding: 20px;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .skill-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--success-color), var(--secondary-color));
+        }
+
+        .skill-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+        }
+
+        .skill-card h4 {
+            color: var(--primary-color);
+            margin-bottom: 15px;
+            font-size: 1.1em;
+        }
+
+        .checklist {
+            list-style: none;
+            margin: 15px 0;
+        }
+
+        .checklist li {
+            margin: 10px 0;
+            padding: 12px 15px;
+            background: white;
+            border-radius: 8px;
+            border-left: 4px solid var(--success-color);
+            position: relative;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .checklist li:hover {
+            background: #e8f5e8;
+            transform: translateX(5px);
+        }
+
+        .checklist li::before {
+            content: '☐';
+            font-size: 1.2em;
+            margin-right: 10px;
+            color: var(--success-color);
+            transition: all 0.3s ease;
+        }
+
+        .checklist li.checked::before {
+            content: '✅';
+        }
+
+        .checklist li.checked {
+            background: #e8f5e8;
+            color: #2d5a3d;
+            text-decoration: line-through;
+            opacity: 0.8;
+        }
+
+        .warning-box {
+            background: linear-gradient(135deg, #fff3cd 0%, #fef9e7 100%);
+            border: 2px solid var(--warning-color);
+            border-radius: 10px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+
+        .warning-box h4 {
+            color: var(--warning-color);
+            margin-bottom: 15px;
+            font-size: 1.2em;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .success-box {
+            background: linear-gradient(135deg, #d4edda 0%, #e8f5e8 100%);
+            border: 2px solid var(--success-color);
+            border-radius: 10px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+
+        .success-box h4 {
+            color: var(--success-color);
+            margin-bottom: 15px;
+            font-size: 1.2em;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .info-box {
+            background: linear-gradient(135deg, #cce5ff 0%, #e6f3ff 100%);
+            border: 2px solid var(--secondary-color);
+            border-radius: 10px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+
+        .info-box h4 {
+            color: var(--secondary-color);
+            margin-bottom: 15px;
+            font-size: 1.2em;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .grade-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            background: var(--card-bg);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        .grade-table th {
+            background: linear-gradient(45deg, var(--primary-color), #34495e);
+            color: white;
+            padding: 15px;
+            text-align: left;
+            font-weight: 600;
+        }
+
+        .grade-table td {
+            padding: 12px 15px;
+            border-bottom: 1px solid #ecf0f1;
+        }
+
+        .grade-table tr:nth-child(even) {
+            background: #f8f9fa;
+        }
+
+        .grade-table tr:hover {
+            background: #e3f2fd;
+        }
+
+        .time-management {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin: 20px 0;
+        }
+
+        .time-card {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border-radius: 10px;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .time-card h4 {
+            margin-bottom: 15px;
+            font-size: 1.2em;
+        }
+
+        .time-card .time {
+            font-size: 2em;
+            font-weight: bold;
+            margin: 10px 0;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 25px;
+            background: linear-gradient(45deg, var(--secondary-color), #2980b9);
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            margin: 5px;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(52, 152, 219, 0.3);
+        }
+
+        .btn-success {
+            background: linear-gradient(45deg, var(--success-color), #229954);
+        }
+
+        .btn-warning {
+            background: linear-gradient(45deg, var(--warning-color), #e67e22);
+        }
+
+        .progress-bar {
+            background: #ecf0f1;
+            border-radius: 10px;
+            padding: 3px;
+            margin: 15px 0;
+        }
+
+        .progress-fill {
+            background: linear-gradient(45deg, var(--success-color), #229954);
+            height: 20px;
+            border-radius: 8px;
+            transition: width 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            font-size: 0.9em;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 15px;
+            }
+            
+            .header h1 {
+                font-size: 2em;
+            }
+            
+            .exam-structure {
+                grid-template-columns: 1fr;
+            }
+            
+            .skills-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .collapsible {
+            cursor: pointer;
+            user-select: none;
+        }
+
+        .collapsible::after {
+            content: ' ▼';
+            font-size: 0.8em;
+            color: var(--secondary-color);
+            transition: transform 0.3s ease;
+        }
+
+        .collapsible.active::after {
+            transform: rotate(180deg);
+        }
+
+        .collapsible-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+        }
+
+        .collapsible-content.active {
+            max-height: 1000px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="nav-breadcrumb">
+            <a href="index.html">🏠 Hauptübersicht</a> / 
+            <span>✅ Prüfungs-Checkliste</span>
+        </div>
+
+        <div class="header">
+            <h1>✅ Prüfungs-Checkliste Englisch Abitur 2026</h1>
+            <p>Vollständige Vorbereitung auf das schriftliche und mündliche Abitur</p>
+            <p><strong>Berufliches Gymnasium Baden-Württemberg | Bildungsplan 2021</strong></p>
+        </div>
+
+        <div class="timeline">
+            <h2>🗓️ Prüfungstermine 2026</h2>
+            <div class="timeline-content">
+                <div class="timeline-item">
+                    <h4>Schriftliche Prüfung</h4>
+                    <p><strong>Frühjahr 2026</strong></p>
+                    <p>Dauer: 300 Minuten (5 Stunden)</p>
+                </div>
+                <div class="timeline-item">
+                    <h4>Mündliche Prüfung</h4>
+                    <p><strong>Juni/Juli 2026</strong></p>
+                    <p>Dauer: ca. 20 Minuten</p>
+                </div>
+                <div class="timeline-item">
+                    <h4>Anmeldeschluss</h4>
+                    <p><strong>Februar 2026</strong></p>
+                    <p>Für mündliche Prüfung</p>
+                </div>
+                <div class="timeline-item">
+                    <h4>Ergebnisse</h4>
+                    <p><strong>Juli 2026</strong></p>
+                    <p>Zeugnis & Zertifikate</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="main-content">
+            <!-- Prüfungsstruktur -->
+            <div class="section">
+                <h2>📋 Aufbau der Abiturprüfung</h2>
+                
+                <div class="info-box">
+                    <h4>🎯 Was ist das Abitur?</h4>
+                    <p>Das <strong>Abitur</strong> ist der höchste Schulabschluss in Deutschland und berechtigt zum Studium an Universitäten. Im Fach Englisch wird deine Sprachkompetenz auf dem Niveau <strong>B2/C1</strong> nach dem Gemeinsamen Europäischen Referenzrahmen (GER) geprüft.</p>
+                </div>
+
+                <h3 class="collapsible">📝 Schriftliche Prüfung (80% der Note)</h3>
+                <div class="collapsible-content">
+                    <div class="exam-structure">
+                        <div class="exam-part">
+                            <h4>Teil A: Leseverstehen & Sprachmittlung</h4>
+                            <ul>
+                                <li><strong>Dauer:</strong> 90 Minuten</li>
+                                <li><strong>Aufgaben:</strong> Multiple Choice, Lückentext, Übersetzung</li>
+                                <li><strong>Texte:</strong> Authentische Sach- und literarische Texte</li>
+                                <li><strong>Sprachmittlung:</strong> Deutsch → Englisch & Englisch → Deutsch</li>
+                            </ul>
+                        </div>
+                        <div class="exam-part">
+                            <h4>Teil B: Textproduktion</h4>
+                            <ul>
+                                <li><strong>Dauer:</strong> 210 Minuten</li>
+                                <li><strong>Wahl:</strong> 1 aus 3 Aufgaben</li>
+                                <li><strong>Textlänge:</strong> 350-450 Wörter</li>
+                                <li><strong>Formate:</strong> Comment, Analysis, Creative Writing</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="warning-box">
+                        <h4>⚠️ Wichtige Hinweise zur schriftlichen Prüfung</h4>
+                        <ul>
+                            <li>Keine Hilfsmittel erlaubt (kein Wörterbuch!)</li>
+                            <li>Alle Antworten müssen auf Englisch verfasst werden</li>
+                            <li>Rechtschreibung und Grammatik fließen in die Bewertung ein</li>
+                            <li>Zeitmanagement ist entscheidend!</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <h3 class="collapsible">🗣️ Mündliche Prüfung (20% der Note)</h3>
+                <div class="collapsible-content">
+                    <div class="time-management">
+                        <div class="time-card">
+                            <h4>Vorbereitung</h4>
+                            <div class="time">20 Min</div>
+                            <p>Stille Vorbereitung mit Materialien</p>
+                        </div>
+                        <div class="time-card">
+                            <h4>Präsentation</h4>
+                            <div class="time">10 Min</div>
+                            <p>Strukturierte Darstellung</p>
+                        </div>
+                        <div class="time-card">
+                            <h4>Gespräch</h4>
+                            <div class="time">10 Min</div>
+                            <p>Dialog mit Prüfern</p>
+                        </div>
+                    </div>
+
+                    <div class="success-box">
+                        <h4>✅ Erfolgstipps für die mündliche Prüfung</h4>
+                        <ul>
+                            <li>Sprechen Sie von Anfang an nur Englisch</li>
+                            <li>Nutzen Sie die Vorbereitungszeit für Notizen</li>
+                            <li>Strukturieren Sie Ihre Antworten klar (Introduction - Main Part - Conclusion)</li>
+                            <li>Bleiben Sie ruhig und bitten Sie um Wiederholung, falls nötig</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Kompetenzbereiche -->
+            <div class="section">
+                <h2>🎯 Die 5 Kompetenzbereiche im Detail</h2>
+                
+                <div class="info-box">
+                    <h4>📚 Was sind Kompetenzbereiche?</h4>
+                    <p>Kompetenzbereiche sind die verschiedenen Fähigkeiten, die im Englischunterricht entwickelt und in der Prüfung getestet werden. Jeder Bereich hat spezifische Anforderungen und Bewertungskriterien.</p>
+                </div>
+
+                <div class="skills-grid">
+                    <div class="skill-card">
+                        <h4>📖 Leseverstehen (Reading Comprehension)</h4>
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 0%" id="reading-progress">0%</div>
+                        </div>
+                        <ul class="checklist" data-skill="reading">
+                            <li>Skimming (Überblick gewinnen) verstehen</li>
+                            <li>Scanning (gezielt suchen) beherrschen</li>
+                            <li>Hauptaussagen erkennen</li>
+                            <li>Detailinformationen finden</li>
+                            <li>Implizite Informationen erschließen</li>
+                            <li>Textstrukturen analysieren</li>
+                            <li>Autor*innenabsicht verstehen</li>
+                            <li>Kulturspezifische Begriffe erschließen</li>
+                        </ul>
+                    </div>
+
+                    <div class="skill-card">
+                        <h4>✍️ Schreiben (Writing)</h4>
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 0%" id="writing-progress">0%</div>
+                        </div>
+                        <ul class="checklist" data-skill="writing">
+                            <li>Comment schreiben (eigene Meinung argumentieren)</li>
+                            <li>Analysis verfassen (Texte analysieren)</li>
+                            <li>Creative Writing (Geschichten, Dialoge)</li>
+                            <li>Formelle Briefe/E-Mails</li>
+                            <li>Reports und Summaries</li>
+                            <li>Korrekte Textstruktur verwenden</li>
+                            <li>Übergänge und Konnektoren richtig einsetzen</li>
+                            <li>Register und Stil anpassen</li>
+                        </ul>
+                    </div>
+
+                    <div class="skill-card">
+                        <h4>👂 Hörverstehen (Listening)</h4>
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 0%" id="listening-progress">0%</div>
+                        </div>
+                        <ul class="checklist" data-skill="listening">
+                            <li>Verschiedene Akzente verstehen (British, American)</li>
+                            <li>Hauptinformationen aus Hörtexten extrahieren</li>
+                            <li>Detailinformationen heraushören</li>
+                            <li>Sprecher*inneneinstellungen erkennen</li>
+                            <li>Dialoge und Diskussionen folgen</li>
+                            <li>Nachrichtensendungen verstehen</li>
+                            <li>Interviews und Podcasts folgen</li>
+                            <li>Filmsequenzen verstehen</li>
+                        </ul>
+                    </div>
+
+                    <div class="skill-card">
+                        <h4>🗣️ Sprechen (Speaking)</h4>
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 0%" id="speaking-progress">0%</div>
+                        </div>
+                        <ul class="checklist" data-skill="speaking">
+                            <li>Zusammenhängende Präsentationen halten</li>
+                            <li>Spontan auf Fragen antworten</li>
+                            <li>Diskussionen führen</li>
+                            <li>Argumente strukturiert vortragen</li>
+                            <li>Kompensationsstrategien anwenden</li>
+                            <li>Korrekte Aussprache und Intonation</li>
+                            <li>Bilder und Grafiken beschreiben</li>
+                            <li>Eigene Meinung begründen</li>
+                        </ul>
+                    </div>
+
+                    <div class="skill-card">
+                        <h4>🔄 Sprachmittlung (Mediation)</h4>
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 0%" id="mediation-progress">0%</div>
+                        </div>
+                        <ul class="checklist" data-skill="mediation">
+                            <li>Deutsch → Englisch übersetzen</li>
+                            <li>Englisch → Deutsch übersetzen</li>
+                            <li>Sinngemäße Übertragung (nicht wörtlich)</li>
+                            <li>Kulturelle Aspekte berücksichtigen</li>
+                            <li>Zielgruppengerechte Anpassung</li>
+                            <li>Wesentliche Informationen übertragen</li>
+                            <li>Angemessenes Register wählen</li>
+                            <li>Kommunikationssituation beachten</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Sprachliche Mittel -->
+            <div class="section">
+                <h2>📚 Sprachliche Mittel - Checkliste</h2>
+                
+                <div class="info-box">
+                    <h4>🔤 Was sind sprachliche Mittel?</h4>
+                    <p>Sprachliche Mittel umfassen Grammatik, Wortschatz, Aussprache und stilistische Elemente. Sie sind das "Werkzeug" für erfolgreiche Kommunikation auf Englisch.</p>
+                </div>
+
+                <h3 class="collapsible">🔧 Grammatik (Grammar)</h3>
+                <div class="collapsible-content">
+                    <ul class="checklist">
+                        <li>Alle Zeitformen (Present, Past, Future + Perfect/Progressive)</li>
+                        <li>Conditional Sentences (If-Sätze) Typ 0-3</li>
+                        <li>Passive Voice in allen Zeitformen</li>
+                        <li>Reported Speech (Indirekte Rede)</li>
+                        <li>Relative Clauses (Relativsätze)</li>
+                        <li>Modal Verbs (can, could, may, might, must, should, etc.)</li>
+                        <li>Gerund vs. Infinitive</li>
+                        <li>Participle Constructions</li>
+                        <li>Question Tags</li>
+                        <li>Articles (a, an, the) korrekt verwenden</li>
+                    </ul>
+                </div>
+
+                <h3 class="collapsible">📝 Wortschatz (Vocabulary)</h3>
+                <div class="collapsible-content">
+                    <ul class="checklist">
+                        <li>Thematischer Wortschatz (Politics, Environment, Technology, etc.)</li>
+                        <li>Unregelmäßige Verben (alle Formen)</li>
+                        <li>Phrasal Verbs (aufstehen = get up, etc.)</li>
+                        <li>Idioms und Redewendungen</li>
+                        <li>Formal vs. Informal Language</li>
+                        <li>Connectors (Bindewörter): however, therefore, moreover, etc.</li>
+                        <li>False Friends vermeiden (actually ≠ aktuell)</li>
+                        <li>Word Formation (Wortbildung): -tion, -ness, -ful, etc.</li>
+                        <li>Synonyme und Antonyme</li>
+                        <li>Academic Vocabulary für Essays</li>
+                    </ul>
+                </div>
+
+                <h3 class="collapsible">🗣️ Aussprache & Intonation</h3>
+                <div class="collapsible-content">
+                    <ul class="checklist">
+                        <li>Unterscheidung British vs. American English</li>
+                        <li>Korrekte Betonung von Wörtern</li>
+                        <li>Satzmelodie und Rhythmus</li>
+                        <li>Schwierige Laute (/θ/ = th-Sound, /ð/ = this)</li>
+                        <li>Silent Letters erkennen (knife, psychology)</li>
+                        <li>Linking (Wörter verbinden beim Sprechen)</li>
+                        <li>Stress in zusammengesetzten Wörtern</li>
+                        <li>Intonation für Fragen vs. Aussagen</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Bewertungskriterien -->
+            <div class="section">
+                <h2>📊 Bewertung & Notenschlüssel</h2>
+                
+                <div class="info-box">
+                    <h4>🎯 Wie wird bewertet?</h4>
+                    <p>Die Abiturnote setzt sich aus verschiedenen Teilbereichen zusammen. Jeder Bereich wird nach spezifischen Kriterien bewertet.</p>
+                </div>
+
+                <h3>📝 Bewertungskriterien Schriftliche Prüfung</h3>
+                <table class="grade-table">
+                    <thead>
+                        <tr>
+                            <th>Kriterium</th>
+                            <th>Gewichtung</th>
+                            <th>Was wird bewertet?</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Inhalt & Struktur</strong></td>
+                            <td>40%</td>
+                            <td>Vollständigkeit, Logik, Argumentation, Textsortenkenntnis</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Sprache & Stil</strong></td>
+                            <td>35%</td>
+                            <td>Grammatik, Wortschatz, Ausdruck, Register</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Kommunikation</strong></td>
+                            <td>25%</td>
+                            <td>Verständlichkeit, Adressatenbezug, Aufgabenerfüllung</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h3>🗣️ Bewertungskriterien Mündliche Prüfung</h3>
+                <table class="grade-table">
+                    <thead>
+                        <tr>
+                            <th>Kriterium</th>
+                            <th>Gewichtung</th>
+                            <th>Was wird bewertet?</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Inhaltliche Leistung</strong></td>
+                            <td>50%</td>
+                            <td>Sachwissen, Analyse, Reflexion, Argumentation</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Sprachliche Leistung</strong></td>
+                            <td>30%</td>
+                            <td>Grammatik, Wortschatz, Aussprache</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Kommunikative Leistung</strong></td>
+                            <td>20%</td>
+                            <td>Flüssigkeit, Spontaneität, Interaktion</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h3>📈 Notenschlüssel (Punkte → Note)</h3>
+                <div class="exam-structure">
+                    <div class="exam-part">
+                        <h4>Sehr gut bis gut</h4>
+                        <ul>
+                            <li><strong>15 Punkte (1+):</strong> 95-100%</li>
+                            <li><strong>14 Punkte (1):</strong> 90-94%</li>
+                            <li><strong>13 Punkte (1-):</strong> 85-89%</li>
+                            <li><strong>12 Punkte (2+):</strong> 80-84%</li>
+                            <li><strong>11 Punkte (2):</strong> 75-79%</li>
+                            <li><strong>10 Punkte (2-):</strong> 70-74%</li>
+                        </ul>
+                    </div>
+                    <div class="exam-part">
+                        <h4>Befriedigend bis ausreichend</h4>
+                        <ul>
+                            <li><strong>9 Punkte (3+):</strong> 65-69%</li>
+                            <li><strong>8 Punkte (3):</strong> 60-64%</li>
+                            <li><strong>7 Punkte (3-):</strong> 55-59%</li>
+                            <li><strong>6 Punkte (4+):</strong> 50-54%</li>
+                            <li><strong>5 Punkte (4):</strong> 45-49%</li>
+                            <li><strong>4 Punkte (4-):</strong> 40-44%</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="warning-box">
+                    <h4>⚠️ Mindestanforderungen</h4>
+                    <ul>
+                        <li><strong>Bestehen:</strong> Mindestens 4 Punkte (40%) erforderlich</li>
+                        <li><strong>Ausgleichsregelung:</strong> Eine schlechte Note kann durch andere Fächer ausgeglichen werden</li>
+                        <li><strong>Wiederholung:</strong> Bei Nicht-Bestehen ist eine Wiederholung möglich</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Zeitmanagement -->
+            <div class="section">
+                <h2>⏰ Zeitmanagement & Strategien</h2>
+                
+                <div class="info-box">
+                    <h4>🕐 Warum ist Zeitmanagement wichtig?</h4>
+                    <p>Bei 5 Stunden Prüfungszeit ist die richtige Zeiteinteilung entscheidend. Ohne Plan gerätst du in Zeitnot und kannst dein volles Potential nicht zeigen.</p>
+                </div>
+
+                <h3>📋 Empfohlene Zeiteinteilung (5 Stunden = 300 Minuten)</h3>
+                <div class="time-management">
+                    <div class="time-card">
+                        <h4>Leseverstehen</h4>
+                        <div class="time">90 Min</div>
+                        <p>Texte lesen + Aufgaben bearbeiten</p>
+                    </div>
+                    <div class="time-card">
+                        <h4>Aufgabe wählen</h4>
+                        <div class="time">15 Min</div>
+                        <p>Alle 3 Optionen durchlesen</p>
+                    </div>
+                    <div class="time-card">
+                        <h4>Planung</h4>
+                        <div class="time">25 Min</div>
+                        <p>Outline + Struktur erstellen</p>
+                    </div>
+                    <div class="time-card">
+                        <h4>Schreiben</h4>
+                        <div class="time">150 Min</div>
+                        <p>Text verfassen (350-450 Wörter)</p>
+                    </div>
+                    <div class="time-card">
+                        <h4>Korrektur</h4>
+                        <div class="time">20 Min</div>
+                        <p>Rechtschreibung + Grammatik</p>
+                    </div>
+                </div>
+
+                <div class="success-box">
+                    <h4>✅ Zeitmanagement-Tipps</h4>
+                    <ul>
+                        <li><strong>Uhr im Blick behalten:</strong> Regelmäßig auf die Zeit schauen</li>
+                        <li><strong>Nicht hängen bleiben:</strong> Bei schwierigen Aufgaben weitergehen und später zurückkommen</li>
+                        <li><strong>Pausen einplanen:</strong> 2-3 Minuten Pause alle 45 Minuten</li>
+                        <li><strong>Prioritäten setzen:</strong> Wichtige Punkte zuerst bearbeiten</li>
+                        <li><strong>Reservezeit:</strong> 10-15 Minuten Puffer einkalkulieren</li>
+                    </ul>
+                </div>
+
+                <h3 class="collapsible">📝 Strategien für verschiedene Aufgabentypen</h3>
+                <div class="collapsible-content">
+                    <div class="skills-grid">
+                        <div class="skill-card">
+                            <h4>💬 Comment schreiben</h4>
+                            <ul>
+                                <li><strong>1. Einleitung:</strong> These/Problem vorstellen</li>
+                                <li><strong>2. Hauptteil:</strong> Pro- und Contra-Argumente</li>
+                                <li><strong>3. Schluss:</strong> Eigene Meinung + Ausblick</li>
+                                <li><strong>Sprache:</strong> Formal, argumentativ</li>
+                                <li><strong>Länge:</strong> 350-450 Wörter</li>
+                            </ul>
+                        </div>
+
+                        <div class="skill-card">
+                            <h4>🔍 Text Analysis</h4>
+                            <ul>
+                                <li><strong>1. Einleitung:</strong> Autor, Titel, Thema, Textart</li>
+                                <li><strong>2. Hauptteil:</strong> Struktur + Stilmittel analysieren</li>
+                                <li><strong>3. Schluss:</strong> Wirkung + Intention bewerten</li>
+                                <li><strong>Zitate:</strong> Textbelege verwenden</li>
+                                <li><strong>Objektivität:</strong> Sachlich bleiben</li>
+                            </ul>
+                        </div>
+
+                        <div class="skill-card">
+                            <h4>✍️ Creative Writing</h4>
+                            <ul>
+                                <li><strong>Textsorte beachten:</strong> Dialog, Brief, Tagebuch, etc.</li>
+                                <li><strong>Perspective:</strong> 1st oder 3rd person</li>
+                                <li><strong>Stil anpassen:</strong> Je nach Textart</li>
+                                <li><strong>Spannungsbogen:</strong> Einleitung - Höhepunkt - Schluss</li>
+                                <li><strong>Show, don't tell:</strong> Beschreibend schreiben</li>
+                            </ul>
+                        </div>
+
+                        <div class="skill-card">
+                            <h4>🔄 Sprachmittlung</h4>
+                            <ul>
+                                <li><strong>Nicht wörtlich übersetzen:</strong> Sinngemäß übertragen</li>
+                                <li><strong>Zielgruppe beachten:</strong> Angemessenes Register wählen</li>
+                                <li><strong>Kulturelle Unterschiede:</strong> Erklärungen einfügen</li>
+                                <li><strong>Vollständigkeit:</strong> Alle wichtigen Informationen</li>
+                                <li><strong>Flüssigkeit:</strong> Natürlich klingender Text</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Häufige Fehler -->
+            <div class="section">
+                <h2>❌ Häufige Fehler vermeiden</h2>
+                
+                <div class="warning-box">
+                    <h4>⚠️ Die TOP 10 Fehlerquellen</h4>
+                    <p>Diese Fehler kosten die meisten Punkte - kenne sie und vermeide sie!</p>
+                </div>
+
+                <div class="skills-grid">
+                    <div class="skill-card">
+                        <h4>❌ Grammatikfehler</h4>
+                        <ul>
+                            <li><strong>Falsch:</strong> "I am knowing him" → <strong>Richtig:</strong> "I know him"</li>
+                            <li><strong>Falsch:</strong> "Since 5 years" → <strong>Richtig:</strong> "For 5 years"</li>
+                            <li><strong>Falsch:</strong> "I could not came" → <strong>Richtig:</strong> "I could not come"</li>
+                            <li><strong>Falsch:</strong> "The persons" → <strong>Richtig:</strong> "The people"</li>
+                        </ul>
+                    </div>
+
+                    <div class="skill-card">
+                        <h4>❌ False Friends</h4>
+                        <ul>
+                            <li><strong>Actually</strong> = tatsächlich (NICHT aktuell)</li>
+                            <li><strong>Eventually</strong> = schließlich (NICHT eventuell)</li>
+                            <li><strong>Sympathetic</strong> = mitfühlend (NICHT sympathisch)</li>
+                            <li><strong>Become</strong> = werden (NICHT bekommen)</li>
+                        </ul>
+                    </div>
+
+                    <div class="skill-card">
+                        <h4>❌ Strukturfehler</h4>
+                        <ul>
+                            <li>Keine klare Einleitung</li>
+                            <li>Fehlende Übergänge zwischen Absätzen</li>
+                            <li>Unlogische Argumentationsfolge</li>
+                            <li>Schwacher oder fehlender Schluss</li>
+                        </ul>
+                    </div>
+
+                    <div class="skill-card">
+                        <h4>❌ Stilfehler</h4>
+                        <ul>
+                            <li>Umgangssprache in formellen Texten</li>
+                            <li>Wiederholungen vermeiden</li>
+                            <li>Zu kurze oder zu lange Sätze</li>
+                            <li>Falsches Register für Textsorte</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="success-box">
+                    <h4>✅ Korrekturhilfen</h4>
+                    <ul>
+                        <li><strong>COPS-Methode:</strong> Capitalization, Organization, Punctuation, Spelling</li>
+                        <li><strong>Laut vorlesen:</strong> Fehler fallen beim Sprechen auf</li>
+                        <li><strong>Rückwärts lesen:</strong> Konzentration auf einzelne Wörter</li>
+                        <li><strong>Typische Fehler kennen:</strong> Eigene Schwächen identifizieren</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Lernplan -->
+            <div class="section">
+                <h2>📅 6-Monats-Lernplan</h2>
+                
+                <div class="info-box">
+                    <h4>🗓️ Strukturierte Vorbereitung</h4>
+                    <p>Ein systematischer Lernplan hilft dir, alle Bereiche rechtzeitig und gründlich zu bearbeiten. Passe ihn an deine persönlichen Bedürfnisse an!</p>
+                </div>
+
+                <div class="time-management">
+                    <div class="time-card">
+                        <h4>Monate 1-2</h4>
+                        <div class="time">Basis</div>
+                        <p>Grammatik wiederholen<br>Grundwortschatz festigen</p>
+                    </div>
+                    <div class="time-card">
+                        <h4>Monate 3-4</h4>
+                        <div class="time">Vertiefung</div>
+                        <p>Textanalyse üben<br>Schreibfertigkeiten entwickeln</p>
+                    </div>
+                    <div class="time-card">
+                        <h4>Monate 5-6</h4>
+                        <div class="time">Intensiv</div>
+                        <p>Prüfungsaufgaben<br>Mündliche Vorbereitung</p>
+                    </div>
+                </div>
+
+                <h3 class="collapsible">📋 Detaillierter Monatsplan</h3>
+                <div class="collapsible-content">
+                    <div class="skills-grid">
+                        <div class="skill-card">
+                            <h4>📖 Monat 1: Grundlagen</h4>
+                            <ul class="checklist">
+                                <li>Grammatik-Überblick verschaffen</li>
+                                <li>Irregular Verbs lernen</li>
+                                <li>Grundwortschatz 500 Wörter</li>
+                                <li>Einfache Texte lesen</li>
+                                <li>Listening-Übungen (A2/B1)</li>
+                            </ul>
+                        </div>
+
+                        <div class="skill-card">
+                            <h4>📝 Monat 2: Grammatik festigen</h4>
+                            <ul class="checklist">
+                                <li>Zeiten wiederholen und üben</li>
+                                <li>If-Sätze alle Typen</li>
+                                <li>Passive Voice trainieren</li>
+                                <li>Modal Verbs anwenden</li>
+                                <li>Erste Comments schreiben</li>
+                            </ul>
+                        </div>
+
+                        <div class="skill-card">
+                            <h4>📚 Monat 3: Wortschatz erweitern</h4>
+                            <ul class="checklist">
+                                <li>Thematischer Wortschatz (Politics, Environment)</li>
+                                <li>Connectors lernen</li>
+                                <li>Phrasal Verbs 100 wichtigste</li>
+                                <li>Academic Language</li>
+                                <li>Text Analysis beginnen</li>
+                            </ul>
+                        </div>
+
+                        <div class="skill-card">
+                            <h4>🎯 Monat 4: Textarbeit</h4>
+                            <ul class="checklist">
+                                <li>Literarische Texte analysieren</li>
+                                <li>Non-fictional Texts bearbeiten</li>
+                                <li>Stylistic Devices lernen</li>
+                                <li>Creative Writing üben</li>
+                                <li>Speaking Practice beginnen</li>
+                            </ul>
+                        </div>
+
+                        <div class="skill-card">
+                            <h4>🚀 Monat 5: Prüfungsvorbereitung</h4>
+                            <ul class="checklist">
+                                <li>Abituraufgaben der Vorjahre</li>
+                                <li>Zeitmanagement trainieren</li>
+                                <li>Alle Textsorten üben</li>
+                                <li>Sprachmittlung intensiv</li>
+                                <li>Mündliche Prüfung vorbereiten</li>
+                            </ul>
+                        </div>
+
+                        <div class="skill-card">
+                            <h4>🏆 Monat 6: Finale Vorbereitung</h4>
+                            <ul class="checklist">
+                                <li>Mock Exams unter Prüfungsbedingungen</li>
+                                <li>Schwachstellen gezielt üben</li>
+                                <li>Nervosität bewältigen</li>
+                                <li>Letzte Wiederholungen</li>
+                                <li>Prüfungstag vorbereiten</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="warning-box">
+                    <h4>⏰ Wöchentlicher Zeitplan (Empfehlung)</h4>
+                    <ul>
+                        <li><strong>Montag - Mittwoch:</strong> Je 45 Min Grammatik + Wortschatz</li>
+                        <li><strong>Donnerstag:</strong> 60 Min Textarbeit (Reading + Analysis)</li>
+                        <li><strong>Freitag:</strong> 60 Min Writing Practice</li>
+                        <li><strong>Samstag:</strong> 45 Min Listening + Speaking</li>
+                        <li><strong>Sonntag:</strong> 30 Min Wiederholung + Entspannung</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Prüfungstag -->
+            <div class="section">
+                <h2>🗓️ Der Prüfungstag</h2>
+                
+                <div class="success-box">
+                    <h4>✅ Perfekte Vorbereitung auf den Tag X</h4>
+                    <p>Mit der richtigen Vorbereitung gehst du entspannt und selbstbewusst in die Prüfung!</p>
+                </div>
+
+                <h3 class="collapsible">📋 Checkliste: Was mitbringen?</h3>
+                <div class="collapsible-content">
+                    <ul class="checklist">
+                        <li>Personalausweis oder Schülerausweis</li>
+                        <li>Mehrere blaue oder schwarze Stifte</li>
+                        <li>Ersatzpatronen oder zusätzliche Stifte</li>
+                        <li>Radiergummi und Korrekturroller</li>
+                        <li>Lineal (für Tabellen/Grafiken)</li>
+                        <li>Uhr (falls nicht vorhanden)</li>
+                        <li>Wasserflasche</li>
+                        <li>Kleiner Snack (Traubenzucker)</li>
+                        <li>Taschentücher</li>
+                        <li>Wörterbuch ist NICHT erlaubt!</li>
+                    </ul>
+                </div>
+
+                <h3 class="collapsible">🌅 Der Prüfungstag</h3>
+                <div class="collapsible-content">
+                    <div class="time-management">
+                        <div class="time-card">
+                            <h4>Vorabend</h4>
+                            <div class="time">📚</div>
+                            <p>Früh ins Bett<br>Nicht mehr lernen<br>Entspannen</p>
+                        </div>
+                        <div class="time-card">
+                            <h4>Morgen</h4>
+                            <div class="time">🥐</div>
+                            <p>Gutes Frühstück<br>Rechtzeitig aufstehen<br>Material checken</p>
+                        </div>
+                        <div class="time-card">
+                            <h4>Ankunft</h4>
+                            <div class="time">🏫</div>
+                            <p>30 Min vorher da sein<br>Toilettengang<br>Letzte Entspannung</p>
+                        </div>
+                    </div>
+
+                    <div class="info-box">
+                        <h4>🧘 Nervosität bewältigen</h4>
+                        <ul>
+                            <li><strong>Atemtechnik:</strong> 4-7-8 Atmung (4 Sek ein, 7 Sek halten, 8 Sek aus)</li>
+                            <li><strong>Positive Gedanken:</strong> "Ich bin gut vorbereitet"</li>
+                            <li><strong>Erfolg visualisieren:</strong> Stelle dir vor, wie du erfolgreich abschließt</li>
+                            <li><strong>Notfallplan:</strong> "Wenn ich nicht weiterkomme, gehe ich zur nächsten Aufgabe"</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <h3 class="collapsible">💡 Last-Minute-Tipps</h3>
+                <div class="collapsible-content">
+                    <div class="skills-grid">
+                        <div class="skill-card">
+                            <h4>✍️ Während der Prüfung</h4>
+                            <ul>
+                                <li>Alle Aufgaben durchlesen</li>
+                                <li>Mit der leichtesten beginnen</li>
+                                <li>Zeit im Auge behalten</li>
+                                <li>Nicht hängen bleiben</li>
+                                <li>Handschrift lesbar halten</li>
+                            </ul>
+                        </div>
+
+                        <div class="skill-card">
+                            <h4>🤔 Bei Blackout</h4>
+                            <ul>
+                                <li>Ruhig bleiben und tief atmen</li>
+                                <li>Zur nächsten Aufgabe</li>
+                                <li>Später zurückkommen</li>
+                                <li>Teilpunkte mitnehmen</li>
+                                <li>Notfalls raten</li>
+                            </ul>
+                        </div>
+
+                        <div class="skill-card">
+                            <h4>⏰ Zeitnot</h4>
+                            <ul>
+                                <li>Prioritäten setzen</li>
+                                <li>Schnell schreiben</li>
+                                <li>Stichpunkte notieren</li>
+                                <li>Hauptpunkte abarbeiten</li>
+                                <li>Nicht aufgeben</li>
+                            </ul>
+                        </div>
+
+                        <div class="skill-card">
+                            <h4>📝 Nach der Prüfung</h4>
+                            <ul>
+                                <li>Erstmal durchatmen</li>
+                                <li>Nicht mit anderen vergleichen</li>
+                                <li>Auf mündliche Prüfung fokussieren</li>
+                                <li>Erfolg feiern</li>
+                                <li>Entspannen</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Zusätzliche Ressourcen -->
+            <div class="section">
+                <h2>📚 Zusätzliche Lernressourcen</h2>
+                
+                <div class="skills-grid">
+                    <div class="skill-card">
+                        <h4>📖 Empfohlene Bücher</h4>
+                        <ul>
+                            <li>Fit fürs Abi - Englisch</li>
+                            <li>Stark Abitur-Training Englisch</li>
+                            <li>Klett Green Line Oberstufe</li>
+                            <li>Cornelsen Abitur-Wissen Englisch</li>
+                        </ul>
+                    </div>
+
+                    <div class="skill-card">
+                        <h4>🌐 Online-Ressourcen</h4>
+                        <ul>
+                            <li>BBC Learning English</li>
+                            <li>Englisch-hilfen.de</li>
+                            <li>Khan Academy</li>
+                            <li>Deutsche Welle - Learn German</li>
+                        </ul>
+                    </div>
+
+                    <div class="skill-card">
+                        <h4>📱 Apps</h4>
+                        <ul>
+                            <li>Duolingo (Vokabeln)</li>
+                            <li>Babbel (Konversation)</li>
+                            <li>Quizlet (Karteikarten)</li>
+                            <li>BBC iPlayer (Hörverstehen)</li>
+                        </ul>
+                    </div>
+
+                    <div class="skill-card">
+                        <h4>🎬 Medien</h4>
+                        <ul>
+                            <li>BBC News (aktuelles Englisch)</li>
+                            <li>TED Talks (Listening)</li>
+                            <li>Netflix mit Untertiteln</li>
+                            <li>English Podcasts</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Navigation -->
+            <div class="section" style="text-align: center;">
+                <h2>🔗 Weiterführende Lernmaterialien</h2>
+                <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 15px; margin-top: 20px;">
+                    <a href="sprachliche_mittel.html" class="btn">📚 Sprachliche Mittel</a>
+                    <a href="textproduktion.html" class="btn">✍️ Textproduktion</a>
+                    <a href="vokabeltrainer.html" class="btn">📱 Vokabeltrainer</a>
+                    <a href="grammar_exercises.html" class="btn">📝 Grammatik-Übungen</a>
+                    <a href="irregular_verbs.html" class="btn">📊 Irregular Verbs</a>
+                    <a href="index.html" class="btn btn-success">🏠 Zurück zur Übersicht</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Collapsible functionality
+        document.querySelectorAll('.collapsible').forEach(item => {
+            item.addEventListener('click', function() {
+                this.classList.toggle('active');
+                const content = this.nextElementSibling;
+                content.classList.toggle('active');
+            });
+        });
+
+        // Checklist functionality
+        document.querySelectorAll('.checklist li').forEach(item => {
+            item.addEventListener('click', function() {
+                this.classList.toggle('checked');
+                updateProgress();
+                saveProgress();
+            });
+        });
+
+        // Progress tracking
+        function updateProgress() {
+            const skills = ['reading', 'writing', 'listening', 'speaking', 'mediation'];
+            
+            skills.forEach(skill => {
+                const checklist = document.querySelector(`.checklist[data-skill="${skill}"]`);
+                if (checklist) {
+                    const items = checklist.querySelectorAll('li');
+                    const checkedItems = checklist.querySelectorAll('li.checked');
+                    const progress = Math.round((checkedItems.length / items.length) * 100);
+                    
+                    const progressBar = document.getElementById(`${skill}-progress`);
+                    if (progressBar) {
+                        progressBar.style.width = progress + '%';
+                        progressBar.textContent = progress + '%';
+                    }
+                }
+            });
+        }
+
+        // Save progress to localStorage
+        function saveProgress() {
+            const checkedItems = [];
+            document.querySelectorAll('.checklist li.checked').forEach(item => {
+                checkedItems.push(item.textContent);
+            });
+            localStorage.setItem('examChecklistProgress', JSON.stringify(checkedItems));
+        }
+
+        // Load progress from localStorage
+        function loadProgress() {
+            const savedProgress = JSON.parse(localStorage.getItem('examChecklistProgress') || '[]');
+            
+            if (savedProgress.length > 0) {
+                document.querySelectorAll('.checklist li').forEach(item => {
+                    if (savedProgress.includes(item.textContent)) {
+                        item.classList.add('checked');
+                    }
+                });
+                updateProgress();
+            }
+        }
+
+        // Initialize on page load
+        document.addEventListener('DOMContentLoaded', function() {
+            loadProgress();
+            
+            // Add smooth scrolling for anchor links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        target.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                });
+            });
+
+            // Track page visit for progress
+            trackPageVisit('exam-checklist');
+        });
+
+        // Track page visits
+        function trackPageVisit(page) {
+            let visitedPages = JSON.parse(localStorage.getItem('visitedPages') || '[]');
+            if (!visitedPages.includes(page)) {
+                visitedPages.push(page);
+                localStorage.setItem('visitedPages', JSON.stringify(visitedPages));
+            }
+        }
+
+        // Reset progress function
+        function resetProgress() {
+            if (confirm('Möchtest du wirklich den gesamten Fortschritt zurücksetzen?')) {
+                localStorage.removeItem('examChecklistProgress');
+                document.querySelectorAll('.checklist li').forEach(item => {
+                    item.classList.remove('checked');
+                });
+                updateProgress();
+            }
+        }
+
+        // Print function
+        function printChecklist() {
+            window.print();
+        }
+
+        // Export checklist as text
+        function exportChecklist() {
+            let content = "ENGLISCH ABITUR 2026 - PRÜFUNGS-CHECKLISTE\n";
+            content += "=" * 50 + "\n\n";
+            
+            document.querySelectorAll('.section').forEach(section => {
+                const title = section.querySelector('h2');
+                if (title) {
+                    content += title.textContent + "\n";
+                    content += "-" * title.textContent.length + "\n";
+                    
+                    section.querySelectorAll('.checklist li').forEach(item => {
+                        const status = item.classList.contains('checked') ? '[✓]' : '[ ]';
+                        content += status + " " + item.textContent + "\n";
+                    });
+                    content += "\n";
+                }
+            });
+            
+            const blob = new Blob([content], { type: 'text/plain' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = 'englisch-abitur-checkliste.txt';
+            a.click();
+            URL.revokeObjectURL(url);
+        }
+
+        // Add utility buttons
+        document.addEventListener('DOMContentLoaded', function() {
+            const utilityBar = document.createElement('div');
+            utilityBar.style.cssText = `
+                position: fixed;
+                bottom: 20px;
+                right: 20px;
+                background: var(--card-bg);
+                border-radius: 15px;
+                padding: 15px;
+                box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+                display: flex;
+                gap: 10px;
+                z-index: 1000;
+            `;
+            
+            const resetBtn = document.createElement('button');
+            resetBtn.textContent = '🔄 Reset';
+            resetBtn.className = 'btn btn-warning';
+            resetBtn.style.fontSize = '0.9em';
+            resetBtn.onclick = resetProgress;
+            
+            const exportBtn = document.createElement('button');
+            exportBtn.textContent = '📥 Export';
+            exportBtn.className = 'btn';
+            exportBtn.style.fontSize = '0.9em';
+            exportBtn.onclick = exportChecklist;
+            
+            const printBtn = document.createElement('button');
+            printBtn.textContent = '🖨️ Drucken';
+            printBtn.className = 'btn btn-success';
+            printBtn.style.fontSize = '0.9em';
+            printBtn.onclick = printChecklist;
+            
+            utilityBar.appendChild(resetBtn);
+            utilityBar.appendChild(exportBtn);
+            utilityBar.appendChild(printBtn);
+            
+            document.body.appendChild(utilityBar);
+        });
+
+        // Keyboard shortcuts
+        document.addEventListener('keydown', function(e) {
+            // Ctrl+P for print
+            if (e.ctrlKey && e.key === 'p') {
+                e.preventDefault();
+                printChecklist();
+            }
+            
+            // Ctrl+R for reset (but ask for confirmation)
+            if (e.ctrlKey && e.key === 'r') {
+                e.preventDefault();
+                resetProgress();
+            }
+            
+            // Ctrl+E for export
+            if (e.ctrlKey && e.key === 'e') {
+                e.preventDefault();
+                exportChecklist();
+            }
+        });
+
+        // Auto-save every 30 seconds
+        setInterval(saveProgress, 30000);
+
+        // Show progress summary
+        function showProgressSummary() {
+            const allItems = document.querySelectorAll('.checklist li');
+            const checkedItems = document.querySelectorAll('.checklist li.checked');
+            const totalProgress = Math.round((checkedItems.length / allItems.length) * 100);
+            
+            const summary = document.createElement('div');
+            summary.style.cssText = `
+                position: fixed;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                background: var(--card-bg);
+                border-radius: 15px;
+                padding: 30px;
+                box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+                z-index: 2000;
+                text-align: center;
+                min-width: 300px;
+            `;
+            
+            summary.innerHTML = `
+                <h3>🎯 Dein Fortschritt</h3>
+                <div style="font-size: 3em; color: var(--success-color); margin: 20px 0;">${totalProgress}%</div>
+                <p><strong>${checkedItems.length}</strong> von <strong>${allItems.length}</strong> Punkten erledigt</p>
+                <div style="margin-top: 20px;">
+                    <button onclick="this.parentElement.parentElement.remove()" class="btn">OK</button>
+                </div>
+            `;
+            
+            document.body.appendChild(summary);
+            
+            // Auto-close after 5 seconds
+            setTimeout(() => {
+                if (summary.parentElement) {
+                    summary.remove();
+                }
+            }, 5000);
+        }
+
+        // Add progress summary button
+        document.addEventListener('DOMContentLoaded', function() {
+            const progressBtn = document.createElement('button');
+            progressBtn.textContent = '📊 Fortschritt';
+            progressBtn.className = 'btn';
+            progressBtn.style.cssText = `
+                position: fixed;
+                bottom: 20px;
+                left: 20px;
+                z-index: 1000;
+            `;
+            progressBtn.onclick = showProgressSummary;
+            
+            document.body.appendChild(progressBtn);
+        });
+    </script>
+
+    <!-- Print styles -->
+    <style media="print">
+        .container {
+            max-width: none;
+            padding: 0;
+        }
+        
+        .nav-breadcrumb,
+        .btn,
+        .collapsible::after {
+            display: none !important;
+        }
+        
+        .section {
+            page-break-inside: avoid;
+            margin-bottom: 20px;
+        }
+        
+        .collapsible-content {
+            max-height: none !important;
+            display: block !important;
+        }
+        
+        .checklist li::before {
+            content: '☐' !important;
+        }
+        
+        .checklist li.checked::before {
+            content: '☑' !important;
+        }
+        
+        .skills-grid,
+        .exam-structure,
+        .time-management {
+            display: block !important;
+        }
+        
+        .skill-card,
+        .exam-part,
+        .time-card {
+            margin-bottom: 15px;
+            page-break-inside: avoid;
+        }
+    </style>
+</body>
+</html>
