@@ -164,6 +164,21 @@
         li {
             margin: 8px 0;
         }
+        .back-btn {
+            background-color: #666;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 14px;
+            margin-bottom: 20px;
+            display: inline-block;
+            text-decoration: none;
+        }
+        .back-btn:hover {
+            background-color: #555;
+        }
     </style>
     <script>
         function toggleSolutions() {
@@ -180,6 +195,8 @@
     </script>
 </head>
 <body>
+    <a href="javascript:history.back()" class="back-btn">← Zurück zur Übersicht</a>
+    
     <div class="header">
         <div class="main-title">MINISTERIUM FÜR KULTUS, JUGEND UND SPORT BADEN-WÜRTTEMBERG</div>
         <div class="exam-info">
@@ -217,11 +234,9 @@
             <h4>3.1.</h4>
             <p>Assess possible ways of dealing with misinformation for individuals, social media companies and society, also considering the text and the message of the cartoon.</p>
             
-            <div class="cartoon-placeholder">
-                <p><strong>[Platzhalter für Karikatur-Bild]</strong></p>
-                <p>Zeigt zwei Schalter: "INFORMATION" und "MISINFORMATION"<br>
-                Mit der Bildunterschrift: "Hey, that line's moving a lot faster!"</p>
-                <p style="font-size: 12px;">CartoonStock.com</p>
+            <div style="text-align: center; margin: 20px 0;">
+                <img src="Catoon.png" alt="Cartoon showing Information and Misinformation counters" style="max-width: 100%; height: auto; border: 1px solid #ccc;">
+                <p style="font-size: 12px; color: #666; margin-top: 10px;">"Hey, that line's moving a lot faster!" - CartoonStock.com</p>
             </div>
             
             <h4>oder</h4>
