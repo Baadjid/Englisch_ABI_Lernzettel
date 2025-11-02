@@ -1,0 +1,2313 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+    <meta name="description" content="Umfassender Lernzettel für Textanalyse im Englisch-Abitur mit Struktur, Stilmitteln, Vokabular und Hintergrundwissen">
+    <title>Lernzettel: Text Analysis - Abitur Niveau</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Georgia', 'Times New Roman', serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            padding: 40px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            border-radius: 10px;
+        }
+        
+        h1 {
+            color: #2c3e50;
+            text-align: center;
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            border-bottom: 4px solid #3498db;
+            padding-bottom: 15px;
+        }
+        
+        .subtitle {
+            text-align: center;
+            color: #7f8c8d;
+            font-style: italic;
+            margin-bottom: 30px;
+            font-size: 1.2em;
+        }
+        
+        h2 {
+            color: #2980b9;
+            font-size: 2em;
+            margin-top: 40px;
+            margin-bottom: 20px;
+            border-left: 5px solid #3498db;
+            padding-left: 15px;
+        }
+        
+        h3 {
+            color: #16a085;
+            font-size: 1.5em;
+            margin-top: 30px;
+            margin-bottom: 15px;
+        }
+        
+        h4 {
+            color: #27ae60;
+            font-size: 1.2em;
+            margin-top: 20px;
+            margin-bottom: 10px;
+        }
+        
+        p {
+            margin-bottom: 15px;
+            text-align: justify;
+        }
+        
+        .info-box {
+            background: #ecf0f1;
+            border-left: 4px solid #3498db;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 5px;
+        }
+        
+        .example-box {
+            background: #e8f8f5;
+            border-left: 4px solid #16a085;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 5px;
+            font-style: italic;
+        }
+        
+        .warning-box {
+            background: #fff3cd;
+            border-left: 4px solid #f39c12;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 5px;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        table th {
+            background: #3498db;
+            color: white;
+            padding: 12px;
+            text-align: left;
+            font-weight: bold;
+        }
+        
+        table td {
+            padding: 12px;
+            border-bottom: 1px solid #ddd;
+        }
+        
+        table tr:nth-child(even) {
+            background: #f9f9f9;
+        }
+        
+        table tr:hover {
+            background: #f5f5f5;
+        }
+        
+        .stylistic-device {
+            background: white;
+            border: 2px solid #3498db;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 25px 0;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+        }
+        
+        .stylistic-device h4 {
+            color: #2980b9;
+            margin-top: 0;
+            font-size: 1.4em;
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 8px;
+        }
+        
+        .device-section {
+            margin: 15px 0;
+        }
+        
+        .device-section strong {
+            color: #16a085;
+            display: block;
+            margin-bottom: 5px;
+        }
+        
+        ul, ol {
+            margin-left: 25px;
+            margin-bottom: 15px;
+        }
+        
+        ul li, ol li {
+            margin-bottom: 8px;
+        }
+        
+        .highlight {
+            background: #fff59d;
+            padding: 2px 5px;
+            border-radius: 3px;
+        }
+        
+        .intro-section {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 30px;
+            border-radius: 10px;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+        
+        .intro-section h2 {
+            color: white;
+            border: none;
+            padding: 0;
+        }
+        
+        .tip-box {
+            background: #d1ecf1;
+            border-left: 4px solid #0c5460;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 5px;
+        }
+        
+        .tip-box strong {
+            color: #0c5460;
+        }
+        
+        /* Back to Top Button */
+        #backToTop {
+            display: none;
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 99;
+            border: none;
+            outline: none;
+            background-color: #3498db;
+            color: white;
+            cursor: pointer;
+            padding: 15px;
+            border-radius: 50%;
+            font-size: 18px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+            transition: all 0.3s ease;
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        #backToTop:hover {
+            background-color: #2980b9;
+            transform: translateY(-5px);
+            box-shadow: 0 6px 12px rgba(0,0,0,0.4);
+        }
+        
+        #backToTop:active {
+            transform: translateY(-2px);
+        }
+        
+        @media screen and (max-width: 768px) {
+            #backToTop {
+                display: flex;
+                bottom: 15px;
+                right: 15px;
+                width: 45px;
+                height: 45px;
+                font-size: 16px;
+            }
+        }
+        
+        /* Smooth scrolling */
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        /* Mobile Optimization - Grid 1 (Single Column) */
+        @media screen and (max-width: 768px) {
+            body {
+                padding: 10px;
+                font-size: 16px;
+            }
+            
+            .container {
+                padding: 20px;
+                margin: 0;
+                border-radius: 5px;
+            }
+            
+            h1 {
+                font-size: 1.8em;
+                padding-bottom: 10px;
+                word-wrap: break-word;
+            }
+            
+            .subtitle {
+                font-size: 1em;
+                margin-bottom: 20px;
+            }
+            
+            h2 {
+                font-size: 1.5em;
+                margin-top: 30px;
+                margin-bottom: 15px;
+                word-wrap: break-word;
+            }
+            
+            h3 {
+                font-size: 1.3em;
+                margin-top: 20px;
+                margin-bottom: 12px;
+            }
+            
+            h4 {
+                font-size: 1.1em;
+                margin-top: 15px;
+                margin-bottom: 8px;
+            }
+            
+            /* Intro Section Mobile */
+            .intro-section {
+                padding: 20px;
+                margin-bottom: 20px;
+            }
+            
+            .intro-section h2 {
+                font-size: 1.4em;
+            }
+            
+            .intro-section p {
+                font-size: 0.95em;
+            }
+            
+            /* Info Boxes Mobile */
+            .info-box,
+            .example-box,
+            .warning-box,
+            .tip-box {
+                padding: 12px;
+                margin: 15px 0;
+                font-size: 0.95em;
+            }
+            
+            /* Stylistic Device Boxes Mobile */
+            .stylistic-device {
+                padding: 15px;
+                margin: 20px 0;
+            }
+            
+            .stylistic-device h4 {
+                font-size: 1.2em;
+            }
+            
+            .device-section {
+                margin: 12px 0;
+                font-size: 0.95em;
+            }
+            
+            /* Tables Mobile - Scrollable with indicator */
+            table {
+                display: block;
+                overflow-x: auto;
+                -webkit-overflow-scrolling: touch;
+                font-size: 0.85em;
+                margin: 15px 0;
+                border: 1px solid #ddd;
+                border-radius: 5px;
+                position: relative;
+                --scrolled: false;
+            }
+            
+            /* Visual hint for scrollable content - hides after scrolling */
+            table::after {
+                content: '⟷ scroll';
+                position: absolute;
+                top: 10px;
+                right: 10px;
+                background: rgba(52, 152, 219, 0.9);
+                color: white;
+                padding: 5px 10px;
+                border-radius: 3px;
+                font-size: 0.7em;
+                pointer-events: none;
+                opacity: 0.8;
+                transition: opacity 0.3s ease;
+            }
+            
+            table[style*="--scrolled: true"]::after {
+                opacity: 0;
+            }
+            
+            table thead {
+                display: table-header-group;
+            }
+            
+            table tbody {
+                display: table-row-group;
+            }
+            
+            table tr {
+                display: table-row;
+            }
+            
+            table th,
+            table td {
+                display: table-cell;
+                padding: 10px 8px;
+                min-width: 100px;
+                word-wrap: break-word;
+            }
+            
+            table th {
+                background: #3498db;
+                color: white;
+                font-size: 0.85em;
+                white-space: normal;
+                line-height: 1.3;
+            }
+            
+            table td {
+                line-height: 1.5;
+            }
+            
+            /* Touch-friendly spacing */
+            table tr {
+                min-height: 44px;
+            }
+            
+            /* Improved scrollbar for mobile */
+            table::-webkit-scrollbar {
+                height: 8px;
+            }
+            
+            table::-webkit-scrollbar-track {
+                background: #f1f1f1;
+                border-radius: 4px;
+            }
+            
+            table::-webkit-scrollbar-thumb {
+                background: #3498db;
+                border-radius: 4px;
+            }
+            
+            table::-webkit-scrollbar-thumb:hover {
+                background: #2980b9;
+            }
+            
+            /* Lists Mobile */
+            ul, ol {
+                margin-left: 20px;
+                padding-right: 10px;
+            }
+            
+            ul li, ol li {
+                margin-bottom: 10px;
+                word-wrap: break-word;
+            }
+            
+            /* Example box italic text */
+            .example-box {
+                font-size: 0.9em;
+                line-height: 1.6;
+            }
+            
+            /* Highlight spans */
+            .highlight {
+                padding: 1px 4px;
+                word-wrap: break-word;
+                display: inline;
+            }
+            
+            /* Adjust spacing */
+            p {
+                margin-bottom: 12px;
+                text-align: left;
+                word-wrap: break-word;
+            }
+        }
+        
+        /* Extra Small Mobile Devices */
+        @media screen and (max-width: 480px) {
+            body {
+                padding: 5px;
+                font-size: 15px;
+                line-height: 1.6;
+            }
+            
+            .container {
+                padding: 12px;
+            }
+            
+            h1 {
+                font-size: 1.5em;
+                line-height: 1.3;
+            }
+            
+            h2 {
+                font-size: 1.3em;
+                margin-top: 25px;
+            }
+            
+            h3 {
+                font-size: 1.15em;
+                margin-top: 20px;
+            }
+            
+            h4 {
+                font-size: 1.05em;
+            }
+            
+            .intro-section {
+                padding: 12px;
+                margin-bottom: 15px;
+            }
+            
+            .intro-section h2 {
+                font-size: 1.2em;
+            }
+            
+            .intro-section p {
+                font-size: 0.9em;
+            }
+            
+            .stylistic-device {
+                padding: 10px;
+                margin: 15px 0;
+            }
+            
+            .stylistic-device h4 {
+                font-size: 1.1em;
+            }
+            
+            table {
+                font-size: 0.8em;
+            }
+            
+            table th,
+            table td {
+                padding: 8px 6px;
+                font-size: 0.9em;
+                min-width: 90px;
+            }
+            
+            table::after {
+                font-size: 0.65em;
+                padding: 4px 8px;
+            }
+            
+            .info-box,
+            .example-box,
+            .warning-box,
+            .tip-box {
+                padding: 10px;
+                font-size: 0.9em;
+            }
+            
+            ul, ol {
+                margin-left: 18px;
+            }
+            
+            #backToTop {
+                width: 40px;
+                height: 40px;
+                font-size: 14px;
+                bottom: 10px;
+                right: 10px;
+            }
+            
+            #mobile-notice {
+                font-size: 0.85em;
+            }
+        }
+        
+        /* Tablet Optimization */
+        @media screen and (min-width: 769px) and (max-width: 1024px) {
+            .container {
+                max-width: 95%;
+                padding: 30px;
+            }
+            
+            h1 {
+                font-size: 2.2em;
+            }
+            
+            table {
+                font-size: 0.95em;
+            }
+        }
+        
+        /* Print Styles */
+        @media print {
+            body {
+                background: white;
+            }
+            .container {
+                box-shadow: none;
+                max-width: 100%;
+            }
+            
+            .intro-section {
+                background: #f0f0f0 !important;
+                color: black !important;
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+            
+            h1, h2, h3, h4 {
+                page-break-after: avoid;
+            }
+            
+            table, .stylistic-device, .info-box, .example-box {
+                page-break-inside: avoid;
+            }
+        }
+
+        .nav-breadcrumb {
+            margin-bottom: 20px;
+            padding: 15px;
+            background: var(--card-bg);
+            border-radius: 10px;
+            border-left: 4px solid var(--accent-color);
+        }
+
+        .nav-breadcrumb a {
+            color: var(--secondary-color);
+            text-decoration: none;
+            margin-right: 10px;
+        }
+
+        .nav-breadcrumb a:hover {
+            text-decoration: underline;
+        }
+
+        .back-button {
+            display: inline-block;
+            background: #f39c12;
+            color: white;
+            padding: 12px 24px;
+            border-radius: 25px;
+            text-decoration: none;
+            margin-bottom: 20px;
+            transition: all 0.3s ease;
+            font-weight: 500;
+        }
+
+        .back-button:hover {
+            background: #e67e22;
+            transform: translateY(-2px);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="nav-breadcrumb">
+            <a href="index.html">🏠 Hauptübersicht</a>
+        </div>
+        <h1>📚 Lernzettel: Text Analysis (Non-fictional texts)</h1>
+        <div class="subtitle">Abitur Niveau - Englisch LK/GK</div>
+        
+        <div class="tip-box" style="display: none;" id="mobile-notice">
+            <strong>📱 Mobile Ansicht:</strong> Tabellen können horizontal gescrollt werden. Nutze den Finger zum Wischen nach links/rechts. Alle Inhalte sind für Handys optimiert!
+        </div>
+        
+        <div class="intro-section">
+            <h2>Systematische Textanalyse auf Abiturniveau</h2>
+            <p>Dieser Lernzettel bereitet dich optimal auf die Analyse von Sachtexten (non-fictional texts) vor. Du findest hier alle wichtigen Strukturen, Formulierungen, Stilmittel und Hintergrundwissen für deine Abiturprüfung.</p>
+        </div>
+
+        <h2>1. Vollständige Struktur: Analysis of a Non-Fictional Text</h2>
+        
+        <div class="warning-box">
+            <strong>🎯 Grundprinzip für das Abitur:</strong> Eine Textanalyse besteht aus drei Hauptteilen: Introduction, Main Part (Analysis), und Conclusion. Jeder Teil erfüllt eine spezifische Funktion und folgt klaren Strukturprinzipien.
+        </div>
+
+        <h3>Komplette Struktur im Überblick</h3>
+        <table>
+            <tr>
+                <th>Teil</th>
+                <th>Inhalt</th>
+                <th>Ungefährer Anteil</th>
+            </tr>
+            <tr>
+                <td><strong>Introduction</strong></td>
+                <td>Author, title, text type, publication, year, theme, summary, thesis/hypothesis</td>
+                <td>15-20%</td>
+            </tr>
+            <tr>
+                <td><strong>Main Part/Body</strong></td>
+                <td>Structure/Argumentation, Stylistic Devices, Register, Choice of Words, Style, Tone, Rhetorical Devices, Intention and Position</td>
+                <td>65-75%</td>
+            </tr>
+            <tr>
+                <td><strong>Conclusion</strong></td>
+                <td>Sum up findings, evaluate effectiveness, address thesis, concluding statement</td>
+                <td>10-15%</td>
+            </tr>
+        </table>
+
+        <h3>PART 1: INTRODUCTION</h3>
+        
+        <h4>1.1 Basic Information (TATSYP-Formel)</h4>
+        <div class="info-box">
+            <strong>Die Einleitung muss folgende Elemente enthalten:</strong>
+            <ul>
+                <li><strong>T</strong>itle - Titel des Textes (in Anführungszeichen)</li>
+                <li><strong>A</strong>uthor - Name des Autors/der Autorin</li>
+                <li><strong>T</strong>ext type - Textsorte (article, essay, speech, blog post, editorial, etc.)</li>
+                <li><strong>S</strong>ource - Publikationsquelle (Zeitung, Website, Buch)</li>
+                <li><strong>Y</strong>ear/Date - Erscheinungsjahr oder -datum</li>
+                <li><strong>P</strong>urpose - Zweck/Absicht des Textes</li>
+            </ul>
+        </div>
+
+        <div class="example-box">
+            <strong>Beispiel für grundlegende Informationen:</strong><br><br>
+            In the article <strong>"The Weight of History: Why Britain Must Confront Its Colonial Past"</strong> written by <strong>historian David Olusoga</strong> and published in <strong>The Guardian</strong> on <strong>June 12, 2023</strong>, the author examines Britain's ongoing struggle to acknowledge and address the lasting impact of its imperial legacy. The primary purpose of the text is to persuade British readers that an honest confrontation with colonial history is both morally necessary and practically beneficial for contemporary society.
+        </div>
+
+        <h4>1.2 Theme & Context</h4>
+        <div class="info-box">
+            <strong>Nach den Basisinformationen:</strong>
+            <ul>
+                <li>Hauptthema des Textes präzise benennen</li>
+                <li>Relevanten historischen/gesellschaftlichen Kontext einordnen</li>
+                <li>Aktualität oder Bedeutung des Themas verdeutlichen</li>
+            </ul>
+        </div>
+
+        <div class="example-box">
+            <strong>Beispiel für Theme & Context:</strong><br><br>
+            The article addresses the contentious debate surrounding Britain's colonial history, written in the context of the Black Lives Matter movement and renewed calls for reparations from former colonies. Olusoga argues that Britain's reluctance to fully acknowledge colonial atrocities continues to shape racial inequalities and international relations in the present day.
+        </div>
+
+        <h4>1.3 Summary</h4>
+        <div class="warning-box">
+            <strong>⚠️ Wichtig für das Summary:</strong>
+            <ul>
+                <li>Kurz und prägnant (3-5 Sätze)</li>
+                <li>Present tense verwenden</li>
+                <li>Nur Hauptargumente, keine Details</li>
+                <li>Eigene Worte, keine direkten Zitate</li>
+                <li>Objektiv, keine eigene Meinung</li>
+                <li>Chronologische Reihenfolge des Textes folgen</li>
+            </ul>
+        </div>
+
+        <div class="example-box">
+            <strong>Beispiel für ein professionelles Summary:</strong><br><br>
+            The author begins by outlining how Britain's national curriculum inadequately addresses colonial history, particularly the transatlantic slave trade and exploitation of colonial subjects. He then examines the psychological and political resistance to confronting this past, attributing it to concerns about national pride and identity. Olusoga subsequently presents evidence that this historical denial perpetuates contemporary racial injustice and damages Britain's international reputation. He concludes by advocating for comprehensive educational reform and a public reckoning with colonial history as essential steps toward building a more equitable, multicultural Britain.
+        </div>
+
+        <h4>1.4 Thesis/Hypothesis</h4>
+        <div class="info-box">
+            <strong>Die Thesis ist deine zentrale Aussage zur Analyse:</strong>
+            <ul>
+                <li>Was ist die Hauptbotschaft des Autors?</li>
+                <li>Welche Position vertritt der Text?</li>
+                <li>Was will der Autor erreichen?</li>
+            </ul>
+        </div>
+
+        <div class="example-box">
+            <strong>Beispiel für eine Thesis:</strong><br><br>
+            Through a combination of historical evidence, emotional appeals, and logical argumentation, Olusoga constructs a compelling case that Britain's evasion of its colonial past is not only morally indefensible but also practically harmful to contemporary British society. This analysis will demonstrate how the author employs various rhetorical strategies to challenge readers' preconceptions and persuade them of the necessity for historical accountability.
+        </div>
+
+        <h3>🔗 VERKNÜPFUNG: Vom Summary zur Analyse</h3>
+        
+        <div class="info-box">
+            <strong>Transition Sentences - Übergang vom Summary zum Hauptteil:</strong>
+            <p>Nach dem Summary brauchst du einen eleganten Übergang zur eigentlichen Analyse. Hier sind professionelle Formulierungen:</p>
+        </div>
+
+        <table>
+            <tr>
+                <th>Funktion</th>
+                <th>Beispielsätze</th>
+            </tr>
+            <tr>
+                <td><strong>Analyse ankündigen</strong></td>
+                <td>
+                    • To achieve this persuasive purpose, the author employs a range of sophisticated rhetorical strategies, which will be examined in the following analysis.<br><br>
+                    • The effectiveness of Olusoga's argument relies heavily on his strategic use of language, structure, and rhetorical devices, which this analysis will explore in detail.<br><br>
+                    • Having established the content of the article, it is now essential to examine HOW the author constructs his argument through linguistic and structural choices.
+                </td>
+            </tr>
+            <tr>
+                <td><strong>Auf Stilmittel hinleiten</strong></td>
+                <td>
+                    • The author's persuasive power derives not only from what he says but from HOW he says it, utilizing various stylistic devices to maximum effect.<br><br>
+                    • Olusoga's argumentation is strengthened by his deliberate use of rhetorical techniques, which will be analyzed in terms of their function and effect.<br><br>
+                    • To fully appreciate the text's impact, one must examine the interplay between content and form, particularly the author's strategic deployment of language.
+                </td>
+            </tr>
+            <tr>
+                <td><strong>Struktur hervorheben</strong></td>
+                <td>
+                    • The text's persuasive force is enhanced by its carefully constructed structure, which guides readers from historical context through contemporary implications to a clear call for action.<br><br>
+                    • Before examining specific stylistic devices, it is worth noting how the article's overall organization contributes to its argumentative strength.<br><br>
+                    • The author's thesis unfolds through a logical progression that will be analyzed in terms of both content and rhetorical strategy.
+                </td>
+            </tr>
+            <tr>
+                <td><strong>Kombination: Summary + Überleitung</strong></td>
+                <td>
+                    • Having outlined the article's central arguments regarding Britain's colonial legacy, this analysis will now examine how Olusoga employs language, structure, and rhetorical devices to persuade his predominantly British readership of the necessity for historical accountability.<br><br>
+                    • The summary above demonstrates what the author argues; the following analysis will investigate the rhetorical strategies through which he constructs this argument, paying particular attention to his use of emotional appeals, logical reasoning, and stylistic techniques.
+                </td>
+            </tr>
+        </table>
+
+        <div class="example-box">
+            <strong>Vollständige Einleitung mit Überleitung (Komplettbeispiel):</strong><br><br>
+            In the article "The Weight of History: Why Britain Must Confront Its Colonial Past" written by historian David Olusoga and published in The Guardian on June 12, 2023, the author examines Britain's ongoing struggle to acknowledge and address the lasting impact of its imperial legacy. Written in the context of the Black Lives Matter movement and renewed calls for reparations, the text argues that Britain's reluctance to fully acknowledge colonial atrocities continues to shape racial inequalities and international relations in the present day.<br><br>
+            
+            The author begins by outlining how Britain's national curriculum inadequately addresses colonial history, particularly the transatlantic slave trade and exploitation of colonial subjects. He then examines the psychological and political resistance to confronting this past, attributing it to concerns about national pride and identity. Olusoga subsequently presents evidence that this historical denial perpetuates contemporary racial injustice and damages Britain's international reputation. He concludes by advocating for comprehensive educational reform and a public reckoning with colonial history as essential steps toward building a more equitable, multicultural Britain.<br><br>
+            
+            Through a combination of historical evidence, emotional appeals, and logical argumentation, Olusoga constructs a compelling case that Britain's evasion of its colonial past is not only morally indefensible but also practically harmful to contemporary British society. <span class="highlight">To achieve this persuasive purpose, the author employs a sophisticated range of rhetorical strategies, stylistic devices, and structural techniques, which will be systematically analyzed in the following examination of the text's language, tone, and argumentative construction.</span>
+        </div>
+
+        <h3>PART 2: MAIN PART / BODY - Detaillierte Analyse</h3>
+
+        <div style="text-align: center; margin: 20px 0;">
+                    <a href="https://baadjid.github.io/Deutsch_ABI_Lernzettel/sprechakte.html" class="back-button" style="background: #3498db;">🎤 Performative Verben (Sprechakte)</a>
+        </div>
+
+        <div class="warning-box">
+            <strong>🎯 Struktur des Hauptteils:</strong> Der Hauptteil sollte systematisch aufgebaut sein. Eine bewährte Struktur ist:<br>
+            1. Structure & Argumentation<br>
+            2. Stylistic Devices (Register, Choice of Words, Style, Tone, Rhetorical Devices)<br>
+            3. Intention & Position<br><br>
+            <strong>Wichtig:</strong> Immer konkrete Textbelege (Quotes!) verwenden und ihre Funktion analysieren!
+        </div>
+
+        <h4>2.1 Structure & Argumentation</h4>
+        <div class="info-box">
+            <strong>Analysiere den Aufbau des Textes:</strong>
+            <ul>
+                <li>Wie ist der Text strukturiert? (Einleitung, Hauptteil, Schluss)</li>
+                <li>Welche Argumentationsstrategie wird verwendet? (induktiv, deduktiv, dialektisch)</li>
+                <li>Wie entwickelt sich die Argumentation?</li>
+                <li>Gibt es einen logischen Aufbau?</li>
+                <li>Wie werden Übergänge gestaltet?</li>
+            </ul>
+        </div>
+
+        <div class="example-box">
+            <strong>Beispielanalyse mit Quote:</strong><br><br>
+            The article employs a <strong>deductive structure</strong>, beginning with a broad thesis about Britain's collective historical denial before narrowing to specific examples of its contemporary consequences. The opening paragraph immediately establishes the central argument: <span class="highlight">"Britain's refusal to confront its colonial past is not merely a historical oversight but an active choice with present-day ramifications."</span> This thesis statement serves as an anchor for the subsequent argumentation, which systematically builds evidence to support this claim. The logical progression from historical context (paragraphs 2-3) through contemporary manifestations (paragraphs 4-6) to proposed solutions (paragraphs 7-8) creates a compelling narrative arc that guides readers toward the author's conclusion.
+        </div>
+
+        <h4>2.2 STYLISTIC DEVICES - Detaillierte Sprachanalyse</h4>
+
+        <h5>A) Register</h5>
+        <table>
+            <tr>
+                <th>Register Type</th>
+                <th>Merkmale</th>
+                <th>Beispielanalyse mit Quote</th>
+            </tr>
+            <tr>
+                <td><strong>Formal</strong></td>
+                <td>Academic vocabulary, complex sentences, passive constructions, no contractions</td>
+                <td>The author employs a predominantly <strong>formal register</strong>, evident in phrases such as <span class="highlight">"the perpetuation of systemic inequalities"</span> and <span class="highlight">"the psychological ramifications of historical amnesia."</span> This elevated diction lends authority to the argument and positions the text within serious academic discourse.</td>
+            </tr>
+            <tr>
+                <td><strong>Informal</strong></td>
+                <td>Conversational, contractions, simple vocabulary, personal pronouns</td>
+                <td>To create accessibility, the author occasionally shifts to a more <strong>informal register</strong>, using direct address: <span class="highlight">"We've all heard the excuses."</span> This conversational moment breaks down barriers between writer and reader, creating a sense of shared experience.</td>
+            </tr>
+            <tr>
+                <td><strong>Colloquial</strong></td>
+                <td>Everyday language, idioms, informal expressions</td>
+                <td>The text occasionally incorporates <strong>colloquial expressions</strong> such as <span class="highlight">"sweeping under the rug"</span> to describe Britain's treatment of colonial history. This idiom makes the abstract concept of historical denial concrete and relatable.</td>
+            </tr>
+            <tr>
+                <td><strong>Technical/Scientific</strong></td>
+                <td>Specialized terminology, precise definitions, objective tone</td>
+                <td>When discussing psychological aspects, the author employs <strong>technical terminology</strong>: <span class="highlight">"cognitive dissonance,"</span> <span class="highlight">"collective memory,"</span> and <span class="highlight">"intergenerational trauma."</span> This scientific vocabulary strengthens the argument's credibility.</td>
+            </tr>
+            <tr>
+                <td><strong>Slang</strong></td>
+                <td>Very informal, youth language, subculture expressions</td>
+                <td>While rare in serious articles, occasional use like <span class="highlight">"whitewashing history"</span> shows awareness of contemporary discourse about racial issues, connecting with younger, socially-conscious readers.</td>
+            </tr>
+        </table>
+
+        <h5>B) Choice of Words (Wortwahl)</h5>
+        <table>
+            <tr>
+                <th>Aspect</th>
+                <th>Definition & Effect</th>
+                <th>Beispielanalyse mit Quote</th>
+            </tr>
+            <tr>
+                <td><strong>Neologism</strong></td>
+                <td>Newly coined words or expressions</td>
+                <td>The author employs the neologism <span class="highlight">"history-washing"</span> (parallel to "whitewashing") to describe the sanitization of colonial narratives. This newly coined term encapsulates a complex process in a memorable phrase.</td>
+            </tr>
+            <tr>
+                <td><strong>Euphemism</strong></td>
+                <td>Mild expression for something unpleasant</td>
+                <td>Olusoga critiques imperial rhetoric by exposing euphemisms: <span class="highlight">"What they called 'civilizing missions' were, in reality, violent conquests."</span> By contrasting euphemistic colonial language with harsh reality, he reveals how language obscured brutality.</td>
+            </tr>
+            <tr>
+                <td><strong>Positive Emotive Words</strong></td>
+                <td>Words with positive connotations</td>
+                <td>When describing potential benefits of historical accountability, the author uses positive emotive language: <span class="highlight">"healing,"</span> <span class="highlight">"reconciliation,"</span> <span class="highlight">"transformative understanding."</span> These hopeful terms create optimism about facing difficult truths.</td>
+            </tr>
+            <tr>
+                <td><strong>Negative Emotive Words</strong></td>
+                <td>Words with negative connotations</td>
+                <td>To emphasize colonial violence, Olusoga employs heavily negative vocabulary: <span class="highlight">"brutality,"</span> <span class="highlight">"exploitation,"</span> <span class="highlight">"devastation,"</span> <span class="highlight">"atrocities."</span> This charged language prevents readers from maintaining emotional distance from historical horrors.</td>
+            </tr>
+            <tr>
+                <td><strong>Connotations</strong></td>
+                <td>Associated meanings beyond literal definition</td>
+                <td>The word <span class="highlight">"legacy"</span> appears repeatedly but with shifting connotations - sometimes implying proud inheritance, other times suggesting burden or guilt. This semantic flexibility allows the author to complicate simplistic narratives about Britain's imperial past.</td>
+            </tr>
+            <tr>
+                <td><strong>Synonyms</strong></td>
+                <td>Different words with similar meanings</td>
+                <td>Rather than repetitively using "colonialism," the author employs synonyms: <span class="highlight">"imperialism,"</span> <span class="highlight">"empire,"</span> <span class="highlight">"colonial domination,"</span> <span class="highlight">"imperial rule."</span> This variation maintains reader interest while reinforcing the central topic.</td>
+            </tr>
+            <tr>
+                <td><strong>Figurative Language</strong></td>
+                <td>Non-literal, symbolic expressions (bildlich)</td>
+                <td>The author uses figurative language throughout: <span class="highlight">"History casts a long shadow over contemporary Britain."</span> This metaphorical expression makes the abstract concept of historical influence tangible and visual, suggesting darkness and inescapability.</td>
+            </tr>
+        </table>
+
+        <h5>C) Style (Schreibstil)</h5>
+        <table>
+            <tr>
+                <th>Style Type</th>
+                <th>Merkmale</th>
+                <th>Beispielanalyse mit Quote</th>
+            </tr>
+            <tr>
+                <td><strong>Plain</strong></td>
+                <td>Simple, straightforward, accessible</td>
+                <td>Key arguments are expressed in <strong>plain style</strong>: <span class="highlight">"Britain needs to face its past."</span> This directness ensures the central message is unmistakable, cutting through complexity to deliver clear imperatives.</td>
+            </tr>
+            <tr>
+                <td><strong>Natural</strong></td>
+                <td>Conversational, flowing, unforced</td>
+                <td>The author's <strong>natural style</strong> creates intimacy: <span class="highlight">"Let's be honest about what happened."</span> This casual phrasing invites readers into a frank conversation rather than lecturing from a position of authority.</td>
+            </tr>
+            <tr>
+                <td><strong>Clear</strong></td>
+                <td>Unambiguous, precise, easy to understand</td>
+                <td>Complex historical processes are explained with <strong>clarity</strong>: <span class="highlight">"The transatlantic slave trade enriched British merchants while devastating African communities."</span> This sentence achieves precision without sacrificing comprehensibility.</td>
+            </tr>
+            <tr>
+                <td><strong>Precise</strong></td>
+                <td>Exact, specific, detailed</td>
+                <td>The author demonstrates <strong>precision</strong> through specific details: <span class="highlight">"Between 1640 and 1807, British ships transported approximately 3.1 million enslaved Africans."</span> Exact figures strengthen credibility and prevent vague generalizations.</td>
+            </tr>
+            <tr>
+                <td><strong>Cliché-ridden</strong></td>
+                <td>Overused phrases, lacking originality</td>
+                <td>While generally avoiding clichés, one instance appears: <span class="highlight">"opening a can of worms."</span> This tired metaphor for complexity slightly weakens an otherwise fresh argumentative approach.</td>
+            </tr>
+            <tr>
+                <td><strong>Lengthy</strong></td>
+                <td>Long, complex sentences and passages</td>
+                <td>Some sentences adopt a <strong>lengthy</strong> style with multiple clauses: <span class="highlight">"While some argue that excessive focus on historical injustices risks dividing rather than uniting contemporary society, preventing productive dialogue about shared futures, this position fundamentally misunderstands how unaddressed historical trauma continues to shape present inequalities."</span> This complexity mirrors the subject's intricacy but risks losing some readers.</td>
+            </tr>
+            <tr>
+                <td><strong>Colorless</strong></td>
+                <td>Bland, lacking vividness or personality</td>
+                <td>In contrast to the generally vivid prose, bureaucratic passages become somewhat <strong>colorless</strong>: <span class="highlight">"Educational policy reforms should incorporate comprehensive historical content."</span> This neutral phrasing lacks the emotional force found elsewhere.</td>
+            </tr>
+        </table>
+
+        <h5>D) Tone (Tonfall/Stimmung)</h5>
+        <table>
+            <tr>
+                <th>Tone</th>
+                <th>Characteristics</th>
+                <th>Beispielanalyse mit Quote</th>
+            </tr>
+            <tr>
+                <td><strong>Serious</strong></td>
+                <td>Grave, earnest, weighty</td>
+                <td>The overall tone is predominantly <strong>serious</strong>, befitting the subject matter: <span class="highlight">"We cannot build a just society on foundations of historical denial."</span> This grave pronouncement underscores the moral stakes.</td>
+            </tr>
+            <tr>
+                <td><strong>Humorous</strong></td>
+                <td>Funny, light-hearted, amusing</td>
+                <td>Despite the serious subject, occasional <strong>humor</strong> appears: <span class="highlight">"If Britain were a person, it would be in serious need of therapy."</span> This wry observation uses levity to make a serious point more palatable.</td>
+            </tr>
+            <tr>
+                <td><strong>Ironic</strong></td>
+                <td>Meaning opposite of literal words</td>
+                <td>The author employs <strong>irony</strong> when discussing imperial rhetoric: <span class="highlight">"How 'civilized' Britain was, enslaving millions while preaching Christian values."</span> This ironic juxtaposition exposes hypocrisy without explicit condemnation.</td>
+            </tr>
+            <tr>
+                <td><strong>Sarcastic</strong></td>
+                <td>Bitter, mocking irony</td>
+                <td>A more biting <strong>sarcasm</strong> emerges when addressing defensive attitudes: <span class="highlight">"Oh, how convenient to remember empire's railways while forgetting its genocides."</span> This sharp mockery challenges selective historical memory.</td>
+            </tr>
+            <tr>
+                <td><strong>Aggressive</strong></td>
+                <td>Forceful, confrontational, attacking</td>
+                <td>At moments, the tone becomes deliberately <strong>aggressive</strong>: <span class="highlight">"This willful ignorance is inexcusable."</span> The harsh judgment leaves no room for defensive equivocation, forcing readers to confront uncomfortable truths.</td>
+            </tr>
+            <tr>
+                <td><strong>Solemn (feierlich)</strong></td>
+                <td>Formal, ceremonious, dignified</td>
+                <td>When addressing victims, the tone shifts to <strong>solemn</strong> reverence: <span class="highlight">"We owe it to those who suffered to tell their stories truthfully."</span> This formal, respectful tone honors the gravity of historical injustice.</td>
+            </tr>
+            <tr>
+                <td><strong>Colloquial</strong></td>
+                <td>Conversational, informal, casual</td>
+                <td>To maintain accessibility, the author occasionally adopts a <strong>colloquial</strong> tone: <span class="highlight">"Look, this isn't about making people feel guilty."</span> This casual interjection creates intimacy and defuses potential defensiveness.</td>
+            </tr>
+        </table>
+
+        <h5>E) Rhetorical Devices - KRITISCH: Immer mit Quotes belegen!</h5>
+        
+        <div class="warning-box">
+            <strong>⚠️ WICHTIG FÜR DAS ABITUR:</strong> Bei der Analyse von Stilmitteln MUSST du:<br>
+            1. Das Stilmittel identifizieren und benennen<br>
+            2. Ein konkretes ZITAT aus dem Text geben<br>
+            3. Die FUNKTION/WIRKUNG im Kontext erklären<br>
+            4. Auf die INTENTION des Autors eingehen<br><br>
+            <strong>Formel: Name + Quote + Function + Effect</strong>
+        </div>
+
+        <div class="example-box">
+            <strong>PERFEKTE Stilmittel-Analyse mit Quote (Musterbeispiel):</strong><br><br>
+            
+            <strong>❌ FALSCH (ohne Quote, ohne Funktion):</strong><br>
+            "The author uses metaphors and repetition."<br><br>
+            
+            <strong>✅ RICHTIG (mit Quote und Funktionsanalyse):</strong><br>
+            The author employs a powerful <strong>metaphor</strong> when describing Britain's relationship with its colonial past: <span class="highlight">"History is a ghost that haunts every immigration debate, every discussion of national identity, every attempt to define what 'British values' truly mean"</span> (ll. 45-47). This extended metaphor of the "ghost" personifies history as a spectral, inescapable presence that intrudes uninvited into contemporary discourse. The haunting imagery suggests that ignoring the past does not eliminate its influence; rather, like a ghost, it becomes more troubling when unacknowledged. This rhetorical choice serves multiple functions: it makes the abstract concept of historical influence visceral and unsettling, it implies that current problems have supernatural persistence because of their unresolved nature, and it positions confronting the past as a form of exorcism - necessary for peace. The metaphor's effectiveness lies in its transformation of historical accountability from an intellectual exercise into an emotional imperative, suggesting that Britain's collective psyche cannot rest until it addresses its imperial legacy.
+        </div>
+
+        <table>
+            <tr>
+                <th>Rhetorical Device</th>
+                <th>Example Quote</th>
+                <th>Function & Effect Analysis</th>
+            </tr>
+            <tr>
+                <td><strong>Alliteration</strong></td>
+                <td><span class="highlight">"Britain's boastful blindness to brutal beginnings"</span></td>
+                <td>The repetition of the 'b' sound creates a rhythmic, almost accusatory quality that makes the critique more memorable. The alliteration links positive self-image ("boastful") with moral failing ("blindness" to "brutal"), forcing readers to hear these contradictions as connected.</td>
+            </tr>
+            <tr>
+                <td><strong>Anaphora</strong></td>
+                <td><span class="highlight">"We cannot ignore... We cannot forget... We cannot move forward without..."</span></td>
+                <td>The anaphoric repetition of "We cannot" creates urgency and collective responsibility. Each iteration builds pressure, transforming individual resistance into collective imperative while emphasizing impossibility of avoidance.</td>
+            </tr>
+            <tr>
+                <td><strong>Reference/Allusion</strong></td>
+                <td><span class="highlight">"Like Orwell's Ministry of Truth, Britain rewrites its past"</span></td>
+                <td>The allusion to Orwell's dystopian novel positions Britain's historical revisionism within a framework of totalitarian thought control, lending literary authority while suggesting sinister implications of historical denial.</td>
+            </tr>
+            <tr>
+                <td><strong>Symbol</strong></td>
+                <td><span class="highlight">"The statues that still stand in our cities are not neutral monuments but symbols of values we must interrogate"</span></td>
+                <td>Colonial statues function as symbols representing competing narratives: heritage vs. oppression. The author demands readers recognize symbolic power, making physical monuments represent abstract historical reckonings.</td>
+            </tr>
+            <tr>
+                <td><strong>Hyperbole</strong></td>
+                <td><span class="highlight">"Britain has amnesia on an epic scale"</span></td>
+                <td>The hyperbolic claim of "epic" amnesia exaggerates for emphasis, transforming forgetfulness from individual failing to national catastrophe, thereby justifying the urgency of his proposed reforms.</td>
+            </tr>
+            <tr>
+                <td><strong>Rhetorical Question</strong></td>
+                <td><span class="highlight">"How can we claim to be a multicultural society while teaching a monocultural history?"</span></td>
+                <td>This rhetorical question exposes contradiction without requiring answer, forcing readers to recognize logical inconsistency. The implied answer ("we cannot") becomes more powerful through reader's own mental affirmation.</td>
+            </tr>
+            <tr>
+                <td><strong>Quotations (Expert Testimony)</strong></td>
+                <td><span class="highlight">As historian Maya Jasanoff observes: "Every British museum is a trophy case of empire"</span></td>
+                <td>Direct quotation from respected academic lends authority while the provocative "trophy case" metaphor reframes museums from neutral institutions to displays of plunder, challenging readers' comfortable assumptions.</td>
+            </tr>
+            <tr>
+                <td><strong>Superlative</strong></td>
+                <td><span class="highlight">"The most shameful aspect of British education is not what it teaches, but what it omits"</span></td>
+                <td>The superlative "most shameful" elevates omission above active misinformation, provocatively suggesting that silence is worse than distortion, thereby intensifying moral judgment of educational policy.</td>
+            </tr>
+        </table>
+
+        <h4>2.3 Intention and Position (Autorenintention & Standpunkt)</h4>
+        
+        <div class="info-box">
+            <strong>Analysiere die Absicht und Position des Autors:</strong>
+            <ul>
+                <li>Was ist die Hauptintention? (inform, persuade, entertain, provoke, criticize, etc.)</li>
+                <li>Welchen Standpunkt vertritt der Autor?</li>
+                <li>An wen richtet sich der Text? (Target audience)</li>
+                <li>Welche Reaktion soll beim Leser ausgelöst werden?</li>
+                <li>Ist der Autor objektiv oder subjektiv?</li>
+                <li>Gibt es Bias (Voreingenommenheit)?</li>
+            </ul>
+        </div>
+
+        <div class="example-box">
+            <strong>Beispielanalyse für Intention & Position:</strong><br><br>
+            Olusoga's primary <strong>intention</strong> is clearly <strong>persuasive</strong> rather than merely informative. While he provides historical facts, his purpose is not neutral education but advocacy for specific policy changes. His position is unambiguously <strong>progressive</strong> - he argues that confronting colonial history is both morally necessary and practically beneficial. The text targets a <strong>British liberal readership</strong>, likely Guardian readers already somewhat sympathetic to social justice issues but perhaps resistant to the full implications of historical accountability. <br><br>
+            
+            The author's <strong>bias</strong> is explicit and acknowledged; he does not pretend neutrality but argues from a clear ethical stance that colonial history demands confrontation. This transparency strengthens rather than weakens his argument, as readers appreciate his honesty. The intended <strong>effect</strong> is multifaceted: to make readers uncomfortable with complacency, to counter defensive nationalism, and ultimately to mobilize support for educational reform and public reckoning with colonial legacy. The quote <span class="highlight">"If we truly believe in the values we claim - equality, justice, human rights - we must extend them backward in time, acknowledging where we failed"</span> encapsulates his moral framework, positioning historical accountability as consistent with British values rather than opposed to them.
+        </div>
+
+        <h3>PART 3: CONCLUSION</h3>
+        
+        <div class="info-box">
+            <strong>Die Conclusion muss folgende Elemente enthalten:</strong>
+            <ul>
+                <li><strong>Sum up findings:</strong> Zusammenfassung der wichtigsten Analyseergebnisse</li>
+                <li><strong>Back to thesis:</strong> Rückbezug auf deine anfängliche Thesis - wurde sie bestätigt?</li>
+                <li><strong>Evaluation:</strong> Ist der Text well-structured? convincing? effective?</li>
+                <li><strong>Reader impact:</strong> To what extent does the author address the readership?</li>
+                <li><strong>Concluding sentence:</strong> Abschließende Bewertung</li>
+            </ul>
+        </div>
+
+        <h4>3.1 Sum up findings</h4>
+        <div class="example-box">
+            <strong>Beispiel:</strong><br>
+            In conclusion, this analysis has demonstrated how Olusoga employs a sophisticated range of rhetorical strategies to construct his argument for historical accountability. The combination of formal academic register with occasional colloquial accessibility creates credibility while maintaining engagement. His strategic use of emotive language - from harsh condemnations of colonial "atrocities" to hopeful visions of "reconciliation" - guides readers through an emotional journey that parallels his logical argumentation.
+        </div>
+
+        <h4>3.2 Back to thesis - supported?</h4>
+        <div class="example-box">
+            <strong>Beispiel:</strong><br>
+            The initial thesis that Olusoga constructs a "compelling case" through rhetorical strategies has been substantiated through this analysis. The textual evidence demonstrates that his persuasive power derives not from any single technique but from the cumulative effect of structural choices, linguistic precision, and emotional appeals working in concert.
+        </div>
+
+        <h4>3.3 Evaluation: Well-structured? Convincing? Effective?</h4>
+        <table>
+            <tr>
+                <th>Evaluation Aspect</th>
+                <th>Beispielformulierungen</th>
+            </tr>
+            <tr>
+                <td><strong>Structure</strong></td>
+                <td>• The text is <strong>exceptionally well-structured</strong>, with each paragraph building logically upon the previous, creating a cumulative argumentative force.<br>
+                • The organizational pattern from historical context through contemporary implications to proposed solutions creates a <strong>clear and effective trajectory</strong>.<br>
+                • While generally coherent, the transition between paragraphs 5 and 6 feels somewhat abrupt, briefly disrupting the otherwise smooth logical flow.</td>
+            </tr>
+            <tr>
+                <td><strong>Convincingness</strong></td>
+                <td>• The argument proves <strong>highly convincing</strong> for its target audience, successfully anticipating and addressing potential objections.<br>
+                • The combination of emotional appeals and empirical evidence creates a <strong>persuasive balance</strong> that engages both heart and mind.<br>
+                • However, readers already skeptical of the premise may find the argument <strong>less convincing</strong> due to its clear ideological stance.</td>
+            </tr>
+            <tr>
+                <td><strong>Effectiveness</strong></td>
+                <td>• The text is <strong>remarkably effective</strong> in achieving its stated purpose of challenging readers to reconsider Britain's colonial legacy.<br>
+                • The rhetorical strategies deployed work <strong>synergistically</strong>, with structure, language, and tone reinforcing rather than undermining each other.<br>
+                • The effectiveness is somewhat <strong>limited by preaching to the choir</strong> - those most needing to hear this message may be least likely to encounter it in The Guardian.</td>
+            </tr>
+        </table>
+
+        <h4>3.4 To what extent does the author address the readership?</h4>
+        <div class="example-box">
+            <strong>Beispiel:</strong><br>
+            Olusoga demonstrates a keen understanding of his readership, addressing them directly through inclusive pronouns ("we," "our") that position him as a fellow Briton grappling with difficult heritage rather than an external critic. His anticipation of defensive reactions - evident in preemptive responses to "but that was long ago" arguments - shows sophisticated audience awareness. The text successfully <strong>engages its target demographic</strong> of educated, liberal British readers by validating their progressive values while challenging them to extend those values to historical accountability. However, the article's publication in The Guardian and its progressive framing mean it is <strong>less likely to reach</strong> or persuade readers who most resist these arguments, potentially limiting its broader social impact.
+        </div>
+
+        <h4>3.5 Concluding Sentence - Final Statement</h4>
+        <div class="example-box">
+            <strong>Starke Abschlusssätze:</strong><br><br>
+            
+            • Ultimately, Olusoga's article succeeds not merely in presenting arguments but in <strong>reframing the debate</strong> itself, transforming historical accountability from a threat to national pride into an expression of Britain's proclaimed values of justice and equality.<br><br>
+            
+            • Through his masterful deployment of rhetorical strategies, the author achieves what facts alone could not: he makes the abstract notion of historical responsibility feel personally urgent and morally unavoidable for his readers.<br><br>
+            
+            • While some may disagree with Olusoga's conclusions, few can deny the <strong>rhetorical power and intellectual rigor</strong> with which he constructs his case, making this text a significant contribution to ongoing debates about Britain's imperial legacy and its contemporary implications.
+        </div>
+
+        <div class="warning-box">
+            <strong>⚠️ Was du in der Conclusion VERMEIDEN solltest:</strong>
+            <ul>
+                <li>❌ Neue Argumente oder Beispiele einführen</li>
+                <li>❌ Einfach den Inhalt wiederholen</li>
+                <li>❌ Zu vage bleiben ("The text is interesting")</li>
+                <li>❌ Deine persönliche Meinung zum THEMA (nur zur TEXTQUALITÄT!)</li>
+                <li>❌ Abrupt enden ohne richtigen Abschluss</li>
+            </ul>
+        </div>
+
+        <h3>Die 4 Analyseschritte (Zusammenfassung)</h3>
+        <table>
+            <tr>
+                <th>Schritt</th>
+                <th>Fokus</th>
+                <th>Leitfragen</th>
+            </tr>
+            <tr>
+                <td><strong>1. Content Analysis</strong></td>
+                <td>Inhalt & Argumentation</td>
+                <td>Was wird gesagt? Welche Argumente? Welche Perspektive?</td>
+            </tr>
+            <tr>
+                <td><strong>2. Language Analysis</strong></td>
+                <td>Sprachliche Mittel</td>
+                <td>Wie wird geschrieben? Welche Stilmittel? Welches Register?</td>
+            </tr>
+            <tr>
+                <td><strong>3. Structure Analysis</strong></td>
+                <td>Aufbau & Logik</td>
+                <td>Wie ist der Text organisiert? Welche Verbindungen?</td>
+            </tr>
+            <tr>
+                <td><strong>4. Purpose & Effect</strong></td>
+                <td>Intention & Wirkung</td>
+                <td>Warum wurde der Text geschrieben? Welche Wirkung wird erzielt?</td>
+            </tr>
+        </table>
+
+
+
+        <h2>2. Stylistic Devices / Stilmittel (Erweitert für Abitur)</h2>
+        
+        <div class="warning-box">
+            <strong>⚠️ Wichtig für das Abitur:</strong> Stilmittel nicht nur benennen, sondern immer in Bezug auf ihre spezifische Funktion und Wirkung im Text analysieren. Die bloße Auflistung von Stilmitteln reicht nicht aus - entscheidend ist die Interpretation ihrer Funktion im argumentativen Zusammenhang!
+        </div>
+
+        <!-- Metapher -->
+        <div class="stylistic-device">
+            <h4>1. Metaphor (Metapher)</h4>
+            <div class="device-section">
+                <strong>Definition:</strong>
+                <p>Ein Vergleich zwischen zwei unterschiedlichen Dingen ohne "like" oder "as", bei dem eine Sache als etwas anderes dargestellt wird, um eine tiefere Bedeutung zu vermitteln.</p>
+            </div>
+            <div class="device-section">
+                <strong>Erkennungsmerkmale:</strong>
+                <ul>
+                    <li>Direkte Gleichsetzung: A IS B (nicht: A is LIKE B)</li>
+                    <li>Übertragung von Eigenschaften eines Bereichs auf einen anderen</li>
+                    <li>Oft bildlich und abstrakt</li>
+                </ul>
+            </div>
+            <div class="device-section">
+                <strong>Wirkung & Funktion:</strong>
+                <ul>
+                    <li>Schafft lebendige, einprägsame Bilder</li>
+                    <li>Macht komplexe, abstrakte Konzepte greifbar und verständlich</li>
+                    <li>Emotionalisiert den Text und spricht die Vorstellungskraft an</li>
+                    <li>Kann Argumente verstärken durch bildhafte Veranschaulichung</li>
+                </ul>
+            </div>
+            <div class="example-box">
+                <strong>Beispiel:</strong> "The British Empire was a <span class="highlight">double-edged sword</span>, bringing infrastructure while cutting deep wounds of oppression."<br><br>
+                <strong>Analyse:</strong> The metaphor of the "double-edged sword" effectively encapsulates the paradoxical nature of colonialism, suggesting that the same force that created benefits also inflicted harm. This metaphor forces readers to consider both positive and negative aspects simultaneously, thereby complicating simplistic historical narratives.
+            </div>
+        </div>
+
+        <!-- Simile -->
+        <div class="stylistic-device">
+            <h4>2. Simile (Vergleich)</h4>
+            <div class="device-section">
+                <strong>Definition:</strong>
+                <p>Ein expliziter Vergleich zwischen zwei Dingen unter Verwendung von "like", "as", "as if" oder "as though".</p>
+            </div>
+            <div class="device-section">
+                <strong>Erkennungsmerkmale:</strong>
+                <ul>
+                    <li>Verwendung von Vergleichswörtern: like, as, as if, as though, similar to</li>
+                    <li>Vergleich wird explizit gemacht</li>
+                </ul>
+            </div>
+            <div class="device-section">
+                <strong>Wirkung & Funktion:</strong>
+                <ul>
+                    <li>Veranschaulicht durch bekannte Vergleiche</li>
+                    <li>Weniger subtil als Metaphern, dafür direkter und klarer</li>
+                    <li>Hilft bei der Visualisierung</li>
+                </ul>
+            </div>
+            <div class="example-box">
+                <strong>Beispiel:</strong> "Brexit hit the British economy <span class="highlight">like a tsunami</span>, leaving devastation in its wake."<br><br>
+                <strong>Analyse:</strong> The simile comparing Brexit's economic impact to a tsunami emphasizes the sudden, overwhelming, and destructive nature of the consequences, evoking a sense of natural disaster beyond human control.
+            </div>
+        </div>
+
+        <!-- Personification -->
+        <div class="stylistic-device">
+            <h4>3. Personification (Personifikation)</h4>
+            <div class="device-section">
+                <strong>Definition:</strong>
+                <p>Zuschreibung menschlicher Eigenschaften, Gefühle oder Handlungen zu nicht-menschlichen Dingen, abstrakten Konzepten oder Ideen.</p>
+            </div>
+            <div class="device-section">
+                <strong>Erkennungsmerkmale:</strong>
+                <ul>
+                    <li>Objekte oder Konzepte "handeln" wie Menschen</li>
+                    <li>Verwendung von Verben, die typischerweise menschliches Verhalten beschreiben</li>
+                    <li>Zuschreibung von Emotionen an Nicht-Menschen</li>
+                </ul>
+            </div>
+            <div class="device-section">
+                <strong>Wirkung & Funktion:</strong>
+                <ul>
+                    <li>Macht abstrakte Konzepte lebendig und greifbar</li>
+                    <li>Schafft emotionale Verbindung zum Leser</li>
+                    <li>Kann politische oder soziale Kräfte als handelnde Akteure darstellen</li>
+                </ul>
+            </div>
+            <div class="example-box">
+                <strong>Beispiel:</strong> "History <span class="highlight">haunts</span> Britain, <span class="highlight">whispering</span> reminders of colonial guilt in every debate about immigration."<br><br>
+                <strong>Analyse:</strong> By personifying history as a haunting presence that whispers, the author suggests that the past is not merely a neutral record but an active, almost ghostly force that continues to influence contemporary political discourse, particularly around sensitive issues like immigration.
+            </div>
+        </div>
+
+        <!-- Alliteration -->
+        <div class="stylistic-device">
+            <h4>4. Alliteration (Alliteration / Stabreim)</h4>
+            <div class="device-section">
+                <strong>Definition:</strong>
+                <p>Wiederholung des gleichen Anfangslauts in benachbarten oder nahe beieinander stehenden Wörtern.</p>
+            </div>
+            <div class="device-section">
+                <strong>Erkennungsmerkmale:</strong>
+                <ul>
+                    <li>Gleicher Anfangsbuchstabe/-laut bei mehreren Wörtern</li>
+                    <li>Oft in aufeinanderfolgenden oder nahen Wörtern</li>
+                    <li>Erzeugt Rhythmus und Klang</li>
+                </ul>
+            </div>
+            <div class="device-section">
+                <strong>Wirkung & Funktion:</strong>
+                <ul>
+                    <li>Macht Phrasen einprägsam und merkfähig</li>
+                    <li>Erzeugt Rhythmus und Musikalität</li>
+                    <li>Betont die verbundenen Konzepte</li>
+                    <li>Kann satirisch oder poetisch wirken</li>
+                </ul>
+            </div>
+            <div class="example-box">
+                <strong>Beispiel:</strong> "Britain's <span class="highlight">b</span>oastful <span class="highlight">b</span>ravado about its imperial <span class="highlight">b</span>rilliancemasked the <span class="highlight">b</span>rutal <span class="highlight">b</span>ase of its power."<br><br>
+                <strong>Analyse:</strong> The repetitive 'b' sound creates a rhythmic, almost mocking quality that undermines the positive connotations of "boastful," "bravado," and "brilliance" by immediately juxtaposing them with "brutal" and "base," thereby exposing the hypocrisy of imperial nostalgia.
+            </div>
+        </div>
+
+        <!-- Anaphora -->
+        <div class="stylistic-device">
+            <h4>5. Anaphora (Anapher)</h4>
+            <div class="device-section">
+                <strong>Definition:</strong>
+                <p>Wiederholung eines Wortes oder einer Wortgruppe am Anfang aufeinanderfolgender Sätze, Satzteile oder Verse.</p>
+            </div>
+            <div class="device-section">
+                <strong>Erkennungsmerkmale:</strong>
+                <ul>
+                    <li>Gleicher Anfang bei mehreren aufeinanderfolgenden Strukturen</li>
+                    <li>Paralleler Satzbau</li>
+                    <li>Oft in Reden und emotionalen Texten</li>
+                </ul>
+            </div>
+            <div class="device-section">
+                <strong>Wirkung & Funktion:</strong>
+                <ul>
+                    <li>Verstärkt und betont die zentrale Aussage</li>
+                    <li>Schafft Eindringlichkeit und Rhythmus</li>
+                    <li>Wirkt überzeugend und emotional mitreißend</li>
+                    <li>Strukturiert komplexe Argumentationen</li>
+                </ul>
+            </div>
+            <div class="example-box">
+                <strong>Beispiel:</strong> "<span class="highlight">We must</span> acknowledge our past. <span class="highlight">We must</span> confront uncomfortable truths. <span class="highlight">We must</span> reimagine our national identity."<br><br>
+                <strong>Analyse:</strong> The anaphoric repetition of "We must" creates a sense of moral imperative and collective responsibility. The triple repetition builds momentum, suggesting that each action is equally necessary and urgent, thereby galvanizing readers toward action.
+            </div>
+        </div>
+
+        <!-- Epistrophe -->
+        <div class="stylistic-device">
+            <h4>6. Epistrophe / Epiphora (Epipher)</h4>
+            <div class="device-section">
+                <strong>Definition:</strong>
+                <p>Wiederholung eines Wortes oder einer Wortgruppe am Ende aufeinanderfolgender Sätze oder Satzteile.</p>
+            </div>
+            <div class="device-section">
+                <strong>Erkennungsmerkmale:</strong>
+                <ul>
+                    <li>Gleicher Schluss bei mehreren Strukturen</li>
+                    <li>Gegenstück zur Anapher</li>
+                </ul>
+            </div>
+            <div class="device-section">
+                <strong>Wirkung & Funktion:</strong>
+                <ul>
+                    <li>Verstärkt die Schlussaussage</li>
+                    <li>Schafft Nachdruck und Betonung</li>
+                    <li>Erzeugt emotionale Resonanz</li>
+                </ul>
+            </div>
+            <div class="example-box">
+                <strong>Beispiel:</strong> "Where is the reckoning <span class="highlight">for slavery</span>? Where is the compensation <span class="highlight">for slavery</span>? Where is the education <span class="highlight">about slavery</span>?"<br><br>
+                <strong>Analyse:</strong> The epistrophic repetition of "for/about slavery" keeps the central issue at the forefront of each question, creating a cumulative effect that emphasizes the multiple dimensions of unresolved historical injustice.
+            </div>
+        </div>
+
+        <!-- Rhetorical Question -->
+        <div class="stylistic-device">
+            <h4>7. Rhetorical Question (Rhetorische Frage)</h4>
+            <div class="device-section">
+                <strong>Definition:</strong>
+                <p>Eine Frage, die keine Antwort erwartet, da die Antwort offensichtlich ist oder der Autor die Antwort selbst impliziert.</p>
+            </div>
+            <div class="device-section">
+                <strong>Erkennungsmerkmale:</strong>
+                <ul>
+                    <li>Frageform, aber keine Antwort wird erwartet oder gegeben</li>
+                    <li>Antwort ist meist offensichtlich oder impliziert</li>
+                    <li>Oft verwendet, um Leser zum Nachdenken anzuregen</li>
+                </ul>
+            </div>
+            <div class="device-section">
+                <strong>Wirkung & Funktion:</strong>
+                <ul>
+                    <li>Aktiviert den Leser kognitiv - zwingt zum Nachdenken</li>
+                    <li>Suggeriert die "richtige" Antwort ohne sie direkt zu geben</li>
+                    <li>Schafft Dramatik und Engagement</li>
+                    <li>Kann ironisch oder anklagend wirken</li>
+                </ul>
+            </div>
+            <div class="example-box">
+                <strong>Beispiel:</strong> "<span class="highlight">Can we truly call ourselves a multicultural society while our history curriculum whitewashes colonial atrocities?</span>"<br><br>
+                <strong>Analyse:</strong> This rhetorical question implies the answer "no" and challenges readers to recognize the contradiction between Britain's self-image as multicultural and its failure to honestly teach colonial history. The question format makes the critique less confrontational while still conveying strong disapproval.
+            </div>
+        </div>
+
+        <!-- Hyperbole -->
+        <div class="stylistic-device">
+            <h4>8. Hyperbole (Hyperbel / Übertreibung)</h4>
+            <div class="device-section">
+                <strong>Definition:</strong>
+                <p>Eine bewusste, extreme Übertreibung, die nicht wörtlich gemeint ist, sondern der Betonung dient.</p>
+            </div>
+            <div class="device-section">
+                <strong>Erkennungsmerkmale:</strong>
+                <ul>
+                    <li>Offensichtliche Übertreibung</li>
+                    <li>Nicht wörtlich zu nehmen</li>
+                    <li>Verwendung von Superlativen oder extremen Adjektiven</li>
+                </ul>
+            </div>
+            <div class="device-section">
+                <strong>Wirkung & Funktion:</strong>
+                <ul>
+                    <li>Verstärkt Emotionen und Dramatik</li>
+                    <li>Macht auf Probleme aufmerksam</li>
+                    <li>Kann humorvoll oder satirisch sein</li>
+                    <li>Betont die Dringlichkeit oder Schwere eines Themas</li>
+                </ul>
+            </div>
+            <div class="example-box">
+                <strong>Beispiel:</strong> "Brexit has <span class="highlight">torn the nation in two</span>, creating <span class="highlight">an unbridgeable chasm</span> between generations."<br><br>
+                <strong>Analyse:</strong> While the nation is not literally torn in half, this hyperbole effectively conveys the depth of political division. The exaggeration emphasizes the perceived severity of the generational conflict, making the social impact of Brexit seem catastrophic and potentially irreparable.
+            </div>
+        </div>
+
+        <!-- Understatement -->
+        <div class="stylistic-device">
+            <h4>9. Understatement (Untertreibung / Litotes)</h4>
+            <div class="device-section">
+                <strong>Definition:</strong>
+                <p>Bewusste Untertreibung oder Verharmlosung, oft durch Verneinung des Gegenteils ausgedrückt. Das Gegenteil der Hyperbel.</p>
+            </div>
+            <div class="device-section">
+                <strong>Erkennungsmerkmale:</strong>
+                <ul>
+                    <li>Minimierung einer offensichtlich bedeutenden Sache</li>
+                    <li>Oft durch doppelte Verneinung: "not un-"</li>
+                    <li>Typisch britischer Humor</li>
+                </ul>
+            </div>
+            <div class="device-section">
+                <strong>Wirkung & Funktion:</strong>
+                <ul>
+                    <li>Schafft Ironie und subtilen Humor</li>
+                    <li>Kann vornehme Zurückhaltung ausdrücken</li>
+                    <li>Macht Kritik weniger direkt, aber nicht weniger wirksam</li>
+                    <li>Typisch für britischen Kommunikationsstil</li>
+                </ul>
+            </div>
+            <div class="example-box">
+                <strong>Beispiel:</strong> "The legacy of slavery is <span class="highlight">not entirely positive</span> for Britain's international reputation."<br><br>
+                <strong>Analyse:</strong> This is a classic understatement - slavery's legacy is obviously devastating, not merely "not entirely positive." The understatement creates irony and may reflect characteristically British restraint, though it also risks minimizing the gravity of historical atrocities if not recognized as deliberate rhetorical strategy.
+            </div>
+        </div>
+
+        <!-- Irony -->
+        <div class="stylistic-device">
+            <h4>10. Irony (Ironie)</h4>
+            <div class="device-section">
+                <strong>Definition:</strong>
+                <p>Eine Aussage, bei der die gemeinte Bedeutung das Gegenteil oder etwas anderes als das wörtlich Gesagte ist.</p>
+            </div>
+            <div class="device-section">
+                <strong>Erkennungsmerkmale:</strong>
+                <ul>
+                    <li>Diskrepanz zwischen gesagter und gemeinter Bedeutung</li>
+                    <li>Kontext deutet auf andere Bedeutung hin</li>
+                    <li>Oft durch Ton oder Übertreibung erkennbar</li>
+                </ul>
+            </div>
+            <div class="device-section">
+                <strong>Wirkung & Funktion:</strong>
+                <ul>
+                    <li>Schafft kritische Distanz</li>
+                    <li>Ermöglicht subtile Kritik</li>
+                    <li>Aktiviert intellektuelles Engagement des Lesers</li>
+                    <li>Kann humorvoll oder beißend sein</li>
+                </ul>
+            </div>
+            <div class="example-box">
+                <strong>Beispiel:</strong> "Britain <span class="highlight">generously civilized</span> nations across the globe - by extracting their resources, enslaving their populations, and erasing their cultures."<br><br>
+                <strong>Analyse:</strong> The ironic use of "generously civilized" is immediately undermined by the list of colonial atrocities that follows. This irony exposes the hypocrisy of the "civilizing mission" rhetoric used to justify imperialism, forcing readers to confront the brutal reality behind euphemistic language.
+            </div>
+        </div>
+
+        <!-- Antithesis -->
+        <div class="stylistic-device">
+            <h4>11. Antithesis (Antithese / Gegensatz)</h4>
+            <div class="device-section">
+                <strong>Definition:</strong>
+                <p>Gegenüberstellung von gegensätzlichen Begriffen oder Gedanken in paralleler Struktur.</p>
+            </div>
+            <div class="device-section">
+                <strong>Erkennungsmerkmale:</strong>
+                <ul>
+                    <li>Parallele Satzstruktur mit gegensätzlichen Inhalten</li>
+                    <li>Kontrast zwischen zwei Ideen</li>
+                    <li>Oft symmetrischer Aufbau</li>
+                </ul>
+            </div>
+            <div class="device-section">
+                <strong>Wirkung & Funktion:</strong>
+                <ul>
+                    <li>Schafft klare Kontraste und Gegensätze</li>
+                    <li>Verstärkt beide Seiten durch Gegenüberstellung</li>
+                    <li>Erzeugt Spannung und Dramatik</li>
+                    <li>Hilft bei der Strukturierung komplexer Argumente</li>
+                </ul>
+            </div>
+            <div class="example-box">
+                <strong>Beispiel:</strong> "The Empire brought <span class="highlight">railways, not freedom; infrastructure, not dignity; wealth to Britain, poverty to its colonies</span>."<br><br>
+                <strong>Analyse:</strong> The antithetical structure creates a powerful contrast between material achievements and moral failures. The parallel construction emphasizes that every supposed benefit came at the cost of human rights and dignity, thereby dismantling the argument that colonialism's material legacies justify its moral crimes.
+            </div>
+        </div>
+
+        <!-- Parallelism -->
+        <div class="stylistic-device">
+            <h4>12. Parallelism (Parallelismus)</h4>
+            <div class="device-section">
+                <strong>Definition:</strong>
+                <p>Wiederholung ähnlicher grammatischer Strukturen in aufeinanderfolgenden Sätzen oder Satzteilen.</p>
+            </div>
+            <div class="device-section">
+                <strong>Erkennungsmerkmale:</strong>
+                <ul>
+                    <li>Identische oder sehr ähnliche Satzstrukturen</li>
+                    <li>Wiederholte grammatische Muster</li>
+                    <li>Symmetrischer Aufbau</li>
+                </ul>
+            </div>
+            <div class="device-section">
+                <strong>Wirkung & Funktion:</strong>
+                <ul>
+                    <li>Schafft Rhythmus und Balance</li>
+                    <li>Betont die Gleichwertigkeit oder Zusammengehörigkeit der Elemente</li>
+                    <li>Macht Texte einprägsam</li>
+                    <li>Verstärkt die argumentative Kraft</li>
+                </ul>
+            </div>
+            <div class="example-box">
+                <strong>Beispiel:</strong> "Britain must <span class="highlight">confront its past, acknowledge its wrongdoings, and commit to a different future</span>."<br><br>
+                <strong>Analyse:</strong> The parallel structure of three infinitive phrases creates a sense of ordered, progressive action. This parallelism suggests a logical sequence of steps, making the author's call to action seem reasonable, structured, and achievable rather than chaotic or overwhelming.
+            </div>
+        </div>
+
+        <!-- Climax -->
+        <div class="stylistic-device">
+            <h4>13. Climax (Klimax / Steigerung)</h4>
+            <div class="device-section">
+                <strong>Definition:</strong>
+                <p>Steigerung von Wörtern oder Gedanken in aufsteigender Reihenfolge, vom Schwächeren zum Stärkeren.</p>
+            </div>
+            <div class="device-section">
+                <strong>Erkennungsmerkmale:</strong>
+                <ul>
+                    <li>Aufsteigende Reihenfolge der Intensität</li>
+                    <li>Jedes Element übertrifft das vorherige</li>
+                    <li>Oft drei oder mehr Stufen</li>
+                </ul>
+            </div>
+            <div class="device-section">
+                <strong>Wirkung & Funktion:</strong>
+                <ul>
+                    <li>Baut Spannung auf</li>
+                    <li>Verstärkt die emotionale Wirkung</li>
+                    <li>Führt zum dramatischen Höhepunkt</li>
+                    <li>Unterstreicht die Schwere oder Bedeutung</li>
+                </ul>
+            </div>
+            <div class="example-box">
+                <strong>Beispiel:</strong> "Colonial policies <span class="highlight">disrupted communities, devastated cultures, and decimated entire populations</span>."<br><br>
+                <strong>Analyse:</strong> The climax builds from "disrupted" (temporary disturbance) through "devastated" (severe damage) to "decimated" (near-total destruction), creating an intensifying sense of catastrophe. This ascending structure leaves readers with the most extreme impact, emphasizing the magnitude of colonial violence.
+            </div>
+        </div>
+
+        <!-- Anticlimax -->
+        <div class="stylistic-device">
+            <h4>14. Anticlimax (Antiklimax)</h4>
+            <div class="device-section">
+                <strong>Definition:</strong>
+                <p>Abfall von einer ernsthaften oder erhobenen Aussage zu etwas Trivialem oder Unbedeutendem.</p>
+            </div>
+            <div class="device-section">
+                <strong>Erkennungsmerkmale:</strong>
+                <ul>
+                    <li>Aufbau von Erwartung, dann enttäuschende oder banale Auflösung</li>
+                    <li>Gegenteil der Klimax</li>
+                    <li>Oft humoristisch</li>
+                </ul>
+            </div>
+            <div class="device-section">
+                <strong>Wirkung & Funktion:</strong>
+                <ul>
+                    <li>Erzeugt Humor oder Satire</li>
+                    <li>Entlarvt Heuchelei oder Scheinheiligkeit</li>
+                    <li>Kritisiert durch Enttäuschung der Erwartung</li>
+                </ul>
+            </div>
+            <div class="example-box">
+                <strong>Beispiel:</strong> "The government promised radical reform, comprehensive change, and a new era of accountability - <span class="highlight">and renamed a committee</span>."<br><br>
+                <strong>Analyse:</strong> The anticlimax satirizes governmental inaction. After three grandiose promises that build expectation, the trivial action of "renamed a committee" reveals the emptiness of political rhetoric, using humor to express frustration with superficial rather than substantive reform.
+            </div>
+        </div>
+
+        <!-- Symbolism -->
+        <div class="stylistic-device">
+            <h4>15. Symbolism (Symbolik)</h4>
+            <div class="device-section">
+                <strong>Definition:</strong>
+                <p>Verwendung von Objekten, Figuren oder Handlungen, die über ihre wörtliche Bedeutung hinaus für abstrakte Ideen oder Konzepte stehen.</p>
+            </div>
+            <div class="device-section">
+                <strong>Erkennungsmerkmale:</strong>
+                <ul>
+                    <li>Konkrete Objekte repräsentieren abstrakte Ideen</li>
+                    <li>Wiederkehrende Bilder oder Motive</li>
+                    <li>Kulturell oder kontextuell bedingte Bedeutungen</li>
+                </ul>
+            </div>
+            <div class="device-section">
+                <strong>Wirkung & Funktion:</strong>
+                <ul>
+                    <li>Verdichtet komplexe Bedeutungen</li>
+                    <li>Schafft tiefere Bedeutungsebenen</li>
+                    <li>Ermöglicht subtile Kommunikation</li>
+                    <li>Verbindet Text mit kulturellen oder historischen Kontexten</li>
+                </ul>
+            </div>
+            <div class="example-box">
+                <strong>Beispiel:</strong> "The Union Jack flies over former colonies, a <span class="highlight">tattered flag</span> representing a faded empire clinging to past glory."<br><br>
+                <strong>Analyse:</strong> The "tattered flag" symbolizes not just a physical object but Britain's diminished global status and the deteriorating legacy of empire. The symbol conveys decline, stubbornness (still flying), and the tension between past glory and present reality more economically than lengthy explanation could.
+            </div>
+        </div>
+
+        <!-- Euphemism -->
+        <div class="stylistic-device">
+            <h4>16. Euphemism (Euphemismus / Beschönigung)</h4>
+            <div class="device-section">
+                <strong>Definition:</strong>
+                <p>Mildere oder verhüllende Ausdrücke für etwas Unangenehmes, Anstößiges oder Direktes.</p>
+            </div>
+            <div class="device-section">
+                <strong>Erkennungsmerkmale:</strong>
+                <ul>
+                    <li>Indirekte, mildernde Formulierungen</li>
+                    <li>Vermeidung direkter, harscher Begriffe</li>
+                    <li>Oft in politischem oder offiziellem Kontext</li>
+                </ul>
+            </div>
+            <div class="device-section">
+                <strong>Wirkung & Funktion:</strong>
+                <ul>
+                    <li>Verschleiert unangenehme Wahrheiten</li>
+                    <li>Kann Manipulation oder politisches Framing offenbaren</li>
+                    <li>Reduziert emotionale Wirkung</li>
+                    <li>Zeigt kulturelle Tabus oder Sensibilitäten</li>
+                </ul>
+            </div>
+            <div class="example-box">
+                <strong>Beispiel:</strong> Imperial powers spoke of '<span class="highlight">civilizing missions</span>' and '<span class="highlight">bringing progress</span>' - euphemisms for conquest and exploitation."<br><br>
+                <strong>Analyse:</strong> By identifying these phrases as euphemisms, the author exposes how language was weaponized to legitimize colonialism. The pleasant-sounding terms masked violent reality, revealing how rhetoric can sanitize atrocity. Recognizing euphemisms helps readers see through propaganda and political spin.
+            </div>
+        </div>
+
+        <!-- Juxtaposition -->
+        <div class="stylistic-device">
+            <h4>17. Juxtaposition (Gegenüberstellung)</h4>
+            <div class="device-section">
+                <strong>Definition:</strong>
+                <p>Platzierung von zwei kontrastierenden Elementen nahe beieinander, um einen Effekt zu erzielen oder Unterschiede hervorzuheben.</p>
+            </div>
+            <div class="device-section">
+                <strong>Erkennungsmerkmale:</strong>
+                <ul>
+                    <li>Direkte Nachbarschaft kontrastierender Elemente</li>
+                    <li>Keine explizite Verbindung notwendig</li>
+                    <li>Der Kontrast entsteht durch Nähe</li>
+                </ul>
+            </div>
+            <div class="device-section">
+                <strong>Wirkung & Funktion:</strong>
+                <ul>
+                    <li>Hebt Gegensätze hervor</li>
+                    <li>Schafft Ironie oder kritischen Kommentar</li>
+                    <li>Zwingt Leser, Verbindungen selbst zu ziehen</li>
+                    <li>Kann Heuchelei oder Widersprüche aufdecken</li>
+                </ul>
+            </div>
+            <div class="example-box">
+                <strong>Beispiel:</strong> "While British museums display <span class="highlight">stolen artifacts as cultural treasures</span>, source nations struggle to preserve what little heritage remains."<br><br>
+                <strong>Analyse:</strong> The juxtaposition of Britain's cultural wealth (built on appropriation) with source nations' cultural poverty creates a moral critique without explicitly stating it. The contrast forces readers to confront the ongoing injustice of retaining colonial plunder while former colonies lack resources to preserve their own heritage.
+            </div>
+        </div>
+
+        <!-- Repetition -->
+        <div class="stylistic-device">
+            <h4>18. Repetition (Wiederholung)</h4>
+            <div class="device-section">
+                <strong>Definition:</strong>
+                <p>Wiederholung von Wörtern, Phrasen oder Strukturen zur Betonung (allgemeiner als Anapher oder Epipher).</p>
+            </div>
+            <div class="device-section">
+                <strong>Erkennungsmerkmale:</strong>
+                <ul>
+                    <li>Gleiche Wörter oder Phrasen mehrfach verwendet</li>
+                    <li>Kann an verschiedenen Stellen im Satz vorkommen</li>
+                    <li>Absichtlich und auffällig</li>
+                </ul>
+            </div>
+            <div class="device-section">
+                <strong>Wirkung & Funktion:</strong>
+                <ul>
+                    <li>Verstärkt Schlüsselbegriffe und -konzepte</li>
+                    <li>Schafft Eindringlichkeit</li>
+                    <li>Macht Argumente memorabler</li>
+                    <li>Kann obsessiv oder dringlich wirken</li>
+                </ul>
+            </div>
+            <div class="example-box">
+                <strong>Beispiel:</strong> "We cannot forget. We must not forget. History will not let us forget the crimes of empire."<br><br>
+                <strong>Analyse:</strong> The threefold repetition of "forget" transforms a simple verb into an obsessive refrain, suggesting that forgetting is both impossible and morally unacceptable. Each repetition intensifies the obligation to remember, creating a sense of historical accountability that cannot be escaped.
+            </div>
+        </div>
+
+        <!-- Allusion -->
+        <div class="stylistic-device">
+            <h4>19. Allusion (Anspielung)</h4>
+            <div class="device-section">
+                <strong>Definition:</strong>
+                <p>Indirekter Verweis auf historische Ereignisse, literarische Werke, Personen, Bibel, Mythologie oder popkulturelle Phänomene.</p>
+            </div>
+            <div class="device-section">
+                <strong>Erkennungsmerkmale:</strong>
+                <ul>
+                    <li>Keine direkte Erklärung des Verweises</li>
+                    <li>Setzt Vorwissen beim Leser voraus</li>
+                    <li>Oft Namen, Zitate oder bekannte Phrasen</li>
+                </ul>
+            </div>
+            <div class="device-section">
+                <strong>Wirkung & Funktion:</strong>
+                <ul>
+                    <li>Schafft intertextuelle Verbindungen</li>
+                    <li>Verleiht dem Text zusätzliche Bedeutungsebenen</li>
+                    <li>Appelliert an gebildetes Publikum</li>
+                    <li>Kann Autorität oder kulturelles Kapital verleihen</li>
+                </ul>
+            </div>
+            <div class="example-box">
+                <strong>Beispiel:</strong> "Brexit supporters promised a return to Britain's '<span class="highlight">Jerusalem</span>,' but delivered a <span class="highlight">Tower of Babel</span>."<br><br>
+                <strong>Analyse:</strong> The biblical allusions enrich the critique: "Jerusalem" (from Blake's poem, representing an idealized Britain) contrasts with the "Tower of Babel" (representing confusion and division). These allusions efficiently convey that Brexit promised utopia but created chaos, while demonstrating the author's cultural literacy.
+            </div>
+        </div>
+
+        <!-- Oxymoron -->
+        <div class="stylistic-device">
+            <h4>20. Oxymoron (Oxymoron)</h4>
+            <div class="device-section">
+                <strong>Definition:</strong>
+                <p>Verbindung von zwei sich widersprechenden oder gegensätzlichen Begriffen in einer Phrase.</p>
+            </div>
+            <div class="device-section">
+                <strong>Erkennungsmerkmale:</strong>
+                <ul>
+                    <li>Zwei direkt nebeneinanderstehende widersprüchliche Wörter</li>
+                    <li>Scheinbar paradoxe Kombination</li>
+                    <li>Oft adjektiv + nomen</li>
+                </ul>
+            </div>
+            <div class="device-section">
+                <strong>Wirkung & Funktion:</strong>
+                <ul>
+                    <li>Schafft Paradoxon und zwingt zum Nachdenken</li>
+                    <li>Kann komplexe oder widersprüchliche Realitäten ausdrücken</li>
+                    <li>Erzeugt Spannung und Interesse</li>
+                    <li>Kann ironisch oder kritisch sein</li>
+                </ul>
+            </div>
+            <div class="example-box">
+                <strong>Beispiel:</strong> "The '<span class="highlight">benevolent oppression</span>' of colonialism is a myth that refuses to die."<br><br>
+                <strong>Analyse:</strong> The oxymoron "benevolent oppression" captures the fundamental contradiction in colonial rhetoric - oppression cannot be benevolent. By combining these incompatible terms, the author exposes the logical impossibility of justifying colonialism, showing how imperial propaganda relied on contradictory claims.
+            </div>
+        </div>
+
+        <!-- Tricolon -->
+        <div class="stylistic-device">
+            <h4>21. Tricolon (Trikolon / Dreierfigur)</h4>
+            <div class="device-section">
+                <strong>Definition:</strong>
+                <p>Reihung von drei parallelen Elementen, oft in steigender Bedeutung.</p>
+            </div>
+            <div class="device-section">
+                <strong>Erkennungsmerkmale:</strong>
+                <ul>
+                    <li>Genau drei Elemente</li>
+                    <li>Parallele Struktur</li>
+                    <li>Oft rhythmisch</li>
+                </ul>
+            </div>
+            <div class="device-section">
+                <strong>Wirkung & Funktion:</strong>
+                <ul>
+                    <li>Erzeugt Rhythmus und Vollständigkeit</li>
+                    <li>Die Zahl drei wirkt vollständig und überzeugend</li>
+                    <li>Besonders einprägsam</li>
+                    <li>Klassisches rhetorisches Mittel</li>
+                </ul>
+            </div>
+            <div class="example-box">
+                <strong>Beispiel:</strong> "Britain must <span class="highlight">educate, apologize, and compensate</span> for its colonial past."<br><br>
+                <strong>Analyse:</strong> The tricolon creates a sense of completeness and logical progression. Three actions feel like a complete program (fewer would seem incomplete, more would feel excessive), and the sequence moves from awareness (educate) through acknowledgment (apologize) to action (compensate), suggesting a reasonable, comprehensive approach.
+            </div>
+        </div>
+
+        <!-- Statistics and Data -->
+        <div class="stylistic-device">
+            <h4>22. Statistics & Data (Statistiken & Daten)</h4>
+            <div class="device-section">
+                <strong>Definition:</strong>
+                <p>Verwendung von numerischen Daten, Prozentsätzen, Studien oder empirischen Belegen zur Untermauerung von Argumenten.</p>
+            </div>
+            <div class="device-section">
+                <strong>Erkennungsmerkmale:</strong>
+                <ul>
+                    <li>Zahlen, Prozentsätze, Daten</li>
+                    <li>Verweise auf Studien, Umfragen, Berichte</li>
+                    <li>Quantitative Angaben</li>
+                </ul>
+            </div>
+            <div class="device-section">
+                <strong>Wirkung & Funktion:</strong>
+                <ul>
+                    <li>Verleiht Autorität und Glaubwürdigkeit</li>
+                    <li>Schafft Objektivität und wissenschaftliche Basis</li>
+                    <li>Macht abstrakte Probleme konkret</li>
+                    <li>Kann aber auch manipulativ eingesetzt werden</li>
+                </ul>
+            </div>
+            <div class="example-box">
+                <strong>Beispiel:</strong> "A 2023 study found that <span class="highlight">72% of Britons cannot name a single British colony</span>, revealing a catastrophic gap in historical education."<br><br>
+                <strong>Analyse:</strong> The specific statistic (72%) lends empirical weight to claims about historical ignorance. However, critical analysis should consider: Who conducted the study? What was the sample size? The statistic's credibility depends on its source, yet its precision creates an impression of objectivity that strengthens the argument.
+            </div>
+        </div>
+
+        <!-- Expert Testimony -->
+        <div class="stylistic-device">
+            <h4>23. Expert Testimony / Quotations (Expertenzitate)</h4>
+            <div class="device-section">
+                <strong>Definition:</strong>
+                <p>Einbindung von Zitaten, Aussagen oder Meinungen von Experten, Autoritäten oder bekannten Persönlichkeiten.</p>
+            </div>
+            <div class="device-section">
+                <strong>Erkennungsmerkmale:</strong>
+                <ul>
+                    <li>Direkte oder indirekte Zitate</li>
+                    <li>Namensnennung von Experten, Akademikern, Persönlichkeiten</li>
+                    <li>Verweise auf Autoritäten</li>
+                </ul>
+            </div>
+            <div class="device-section">
+                <strong>Wirkung & Funktion:</strong>
+                <ul>
+                    <li>Stützt Argumente durch externe Autorität</li>
+                    <li>Verleiht Glaubwürdigkeit</li>
+                    <li>Zeigt breite Unterstützung für die Position</li>
+                    <li>Appeal to Authority - aber kritisch zu hinterfragen</li>
+                </ul>
+            </div>
+            <div class="example-box">
+                <strong>Beispiel:</strong> "As historian David Olusoga argues, '<span class="highlight">British history cannot be understood without confronting empire</span>.'"<br><br>
+                <strong>Analyse:</strong> Citing a respected historian lends authority to the argument. Olusoga's expertise in British imperial history makes him a credible source. However, critical readers should consider whether the quote is used in context and whether opposing expert views exist, rather than accepting the authority uncritically.
+            </div>
+        </div>
+
+
+
+
+
+
+
+        <h2>3. Linking Words & Useful Phrases für die Textanalyse</h2>
+        
+        <div class="info-box">
+            <strong>Linking Words sind essentiell für eine kohärente Analyse!</strong> Sie verbinden deine Gedanken logisch und strukturieren deine Argumentation. Verwende sie, um zwischen Absätzen zu wechseln und Zusammenhänge herzustellen.
+        </div>
+
+        <table>
+            <tr>
+                <th>Funktion</th>
+                <th>Wörter/Phrasen</th>
+            </tr>
+            <tr>
+                <td><strong>Hinzufügen</strong></td>
+                <td>Furthermore, Moreover, In addition, Additionally, Besides, What is more, Also, Equally important</td>
+            </tr>
+            <tr>
+                <td><strong>Kontrast</strong></td>
+                <td>However, Nevertheless, On the other hand, In contrast, Although, Despite, While, Whereas, Conversely, Yet</td>
+            </tr>
+            <tr>
+                <td><strong>Beispiele</strong></td>
+                <td>For example, For instance, Such as, Like, To illustrate, As shown by, Namely, Specifically</td>
+            </tr>
+            <tr>
+                <td><strong>Folge/Ergebnis</strong></td>
+                <td>Therefore, Thus, Consequently, As a result, Hence, For this reason, Accordingly, This leads to</td>
+            </tr>
+            <tr>
+                <td><strong>Zusammenfassung</strong></td>
+                <td>In conclusion, To sum up, Overall, All in all, To conclude, In summary, Ultimately</td>
+            </tr>
+            <tr>
+                <td><strong>Betonung</strong></td>
+                <td>Indeed, Clearly, Obviously, Undoubtedly, Particularly, Especially, Significantly, Notably, Crucially</td>
+            </tr>
+            <tr>
+                <td><strong>Vergleich</strong></td>
+                <td>Similarly, Likewise, In the same way, Equally, Correspondingly, By comparison</td>
+            </tr>
+            <tr>
+                <td><strong>Zeitliche Abfolge</strong></td>
+                <td>Initially, Subsequently, Following this, Afterwards, Finally, Meanwhile, Previously</td>
+            </tr>
+        </table>
+
+        <h2>4. Wichtiges Vokabular - Topic 5: The UK and its people</h2>
+
+        <h3>British Identity & Multiculturalism</h3>
+        <table>
+            <tr>
+                <th>English</th>
+                <th>Deutsch</th>
+                <th>Context/Usage</th>
+            </tr>
+            <tr>
+                <td>constituency</td>
+                <td>Wahlkreis, Wahlbezirk</td>
+                <td>Electoral district represented by an MP</td>
+            </tr>
+            <tr>
+                <td>the devolved nations</td>
+                <td>die dezentralisierten Länder</td>
+                <td>Northern Ireland, Scotland, Wales with autonomous powers</td>
+            </tr>
+            <tr>
+                <td>enriched</td>
+                <td>bereichert</td>
+                <td>British culture has been enriched by immigration</td>
+            </tr>
+            <tr>
+                <td>diversity</td>
+                <td>Vielfalt</td>
+                <td>Ethnic/cultural diversity shapes modern Britain</td>
+            </tr>
+            <tr>
+                <td>trustworthy</td>
+                <td>vertrauenswürdig</td>
+                <td>Reliability as a British stereotype</td>
+            </tr>
+            <tr>
+                <td>to mock sb/sth</td>
+                <td>jdn/etw verhöhnen</td>
+                <td>To ridicule or make fun of</td>
+            </tr>
+            <tr>
+                <td>connotation</td>
+                <td>Konnotation, Nebenbedeutung</td>
+                <td>Implied or associated meaning beyond literal definition</td>
+            </tr>
+        </table>
+
+        <h3>British Empire & Colonial History</h3>
+        <table>
+            <tr>
+                <th>English</th>
+                <th>Deutsch</th>
+                <th>Context/Usage</th>
+            </tr>
+            <tr>
+                <td>slavery</td>
+                <td>Sklaverei</td>
+                <td>Central to Britain's colonial economy</td>
+            </tr>
+            <tr>
+                <td>to reverse</td>
+                <td>umkehren</td>
+                <td>To turn around, to turn back</td>
+            </tr>
+            <tr>
+                <td>notorious</td>
+                <td>berüchtigt, berühmt</td>
+                <td>Famous for something bad; morally wrong</td>
+            </tr>
+            <tr>
+                <td>in spite of oneself</td>
+                <td>unwillkürlich</td>
+                <td>Despite not wanting to; involuntarily</td>
+            </tr>
+            <tr>
+                <td>to vanish</td>
+                <td>verschwinden</td>
+                <td>Hopes vanishing; to disappear</td>
+            </tr>
+            <tr>
+                <td>to betray</td>
+                <td>verraten</td>
+                <td>Colonial powers betrayed indigenous populations</td>
+            </tr>
+            <tr>
+                <td>large-scale</td>
+                <td>umfangreich, weitreichend</td>
+                <td>Large-scale exploitation; extensive</td>
+            </tr>
+            <tr>
+                <td>imminent</td>
+                <td>bald, unmittelbar bevorstehend</td>
+                <td>About to happen; impending</td>
+            </tr>
+            <tr>
+                <td>to erase</td>
+                <td>löschen, auslöschen</td>
+                <td>Colonial powers erased indigenous cultures</td>
+            </tr>
+            <tr>
+                <td>reparations</td>
+                <td>Reparationen, Wiedergutmachung</td>
+                <td>Compensation for historical wrongs</td>
+            </tr>
+        </table>
+
+        <h3>Brexit & Contemporary Issues</h3>
+        <table>
+            <tr>
+                <th>English</th>
+                <th>Deutsch</th>
+                <th>Context/Usage</th>
+            </tr>
+            <tr>
+                <td>to withdraw</td>
+                <td>(sich) zurückziehen</td>
+                <td>UK withdrew from the EU</td>
+            </tr>
+            <tr>
+                <td>sovereignty</td>
+                <td>Souveränität</td>
+                <td>National independence and self-governance</td>
+            </tr>
+            <tr>
+                <td>referendum</td>
+                <td>Volksabstimmung</td>
+                <td>The 2016 Brexit referendum</td>
+            </tr>
+            <tr>
+                <td>generational divide</td>
+                <td>Generationenkonflikt</td>
+                <td>Young vs. old voters on Brexit</td>
+            </tr>
+            <tr>
+                <td>regardless of sth</td>
+                <td>ungeachtet, unabhängig von etw</td>
+                <td>Regardless of the consequences</td>
+            </tr>
+            <tr>
+                <td>to grapple with</td>
+                <td>ringen mit, kämpfen mit</td>
+                <td>Britain grapples with its post-Brexit identity</td>
+            </tr>
+        </table>
+
+        <h3>Food Poverty & Social Issues</h3>
+        <table>
+            <tr>
+                <th>English</th>
+                <th>Deutsch</th>
+                <th>Context/Usage</th>
+            </tr>
+            <tr>
+                <td>plea</td>
+                <td>Bitte, Appell</td>
+                <td>A plea for help; to plead</td>
+            </tr>
+            <tr>
+                <td>humanity</td>
+                <td>Menschlichkeit</td>
+                <td>The quality of being humane; compassion</td>
+            </tr>
+            <tr>
+                <td>to cancel</td>
+                <td>abschaffen</td>
+                <td>To abolish; cancellation of debt</td>
+            </tr>
+            <tr>
+                <td>overwhelmed</td>
+                <td>überwältigt</td>
+                <td>Food banks overwhelmed by demand</td>
+            </tr>
+            <tr>
+                <td>generosity</td>
+                <td>Großzügigkeit</td>
+                <td>Generous donations; charitable giving</td>
+            </tr>
+            <tr>
+                <td>to succeed</td>
+                <td>Erfolg haben</td>
+                <td>Success in addressing poverty</td>
+            </tr>
+        </table>
+
+        <h2>5. Hintergrundwissen (Abiturniveau)</h2>
+
+        <h3>British Empire: Historical Context</h3>
+        <div class="info-box">
+            <strong>Zentrale Fakten:</strong>
+            <ul>
+                <li><strong>Zeitraum:</strong> 17. Jahrhundert - 20. Jahrhundert (Höhepunkt: viktorianisches Zeitalter)</li>
+                <li><strong>Ausmaß:</strong> Bedeckte ca. 25% der weltweiten Landfläche und 20% der Weltbevölkerung</li>
+                <li><strong>Motivation:</strong> Wirtschaftliche Interessen (Handel, Rohstoffe), strategische Kontrolle von Handelswegen, "zivilisatorische Mission" (Christianisierung), Konkurrenz mit anderen europäischen Mächten</li>
+                <li><strong>Methoden:</strong> Militärische Eroberung, wirtschaftliche Ausbeutung, kulturelle Unterdrückung, Sklavenhandel</li>
+                <li><strong>Niedergang:</strong> Weltkriege schwächten Großbritannien wirtschaftlich und politisch; Unabhängigkeitsbewegungen in den Kolonien; internationale Kritik an Kolonialismus</li>
+                <li><strong>Legacy:</strong> Commonwealth of Nations (1931 gegründet, 53 Mitgliedsstaaten); andauernde Debatten über Reparationen, Rückgabe von Kulturgütern, historische Aufarbeitung</li>
+            </ul>
+        </div>
+
+        <h3>Brexit: Causes, Process, and Consequences</h3>
+        <div class="info-box">
+            <strong>Pro Brexit Argumente:</strong>
+            <ul>
+                <li><strong>Sovereignty:</strong> Zurückgewinnung nationaler Kontrolle über Gesetze und Grenzen</li>
+                <li><strong>Immigration Control:</strong> Beschränkung der EU-Freizügigkeit</li>
+                <li><strong>Trade Freedom:</strong> Möglichkeit, eigene Handelsabkommen mit Nicht-EU-Ländern zu schließen</li>
+                <li><strong>Financial:</strong> Stopp der EU-Beitragszahlungen</li>
+            </ul>
+
+            <strong>Contra Brexit Argumente:</strong>
+            <ul>
+                <li><strong>Economic Impact:</strong> Verlust des Zugangs zum EU-Binnenmarkt (fast 50% der britischen Exporte)</li>
+                <li><strong>Business Uncertainty:</strong> Firmen verlagern Sitze in EU-Länder; Investitionsrückgang</li>
+                <li><strong>Worker Shortages:</strong> Mangel an Arbeitskräften in verschiedenen Sektoren</li>
+                <li><strong>Northern Ireland:</strong> Komplexe Grenzfrage; Friedensprozess gefährdet</li>
+                <li><strong>International Influence:</strong> Verlust politischer Macht und Einfluss</li>
+            </ul>
+
+            <strong>Gesellschaftliche Spaltung:</strong>
+            <ul>
+                <li><strong>Generational Divide:</strong> Jüngere Generation (remain) vs. ältere Generation (leave)</li>
+                <li><strong>Geographic Divide:</strong> London/Schottland (remain) vs. ländliche Regionen (leave)</li>
+                <li><strong>Educational Divide:</strong> Höher Gebildete (remain) vs. weniger Gebildete (leave)</li>
+            </ul>
+        </div>
+
+        <h3>Being British: National Identity in the 21st Century</h3>
+        <div class="info-box">
+            <strong>Challenges to British Identity:</strong>
+            <ul>
+                <li><strong>Ethnic Diversity:</strong> Hohe Migration führt zu kulturellem Pluralismus; Frage "Was macht jemanden britisch?"</li>
+                <li><strong>Multiculturalism:</strong> Integration verschiedener Kulturen vs. Assimilation</li>
+                <li><strong>Devolution:</strong> Schottische, walisische, nordirische Identitäten vs. britische Identität</li>
+                <li><strong>Colonial Legacy:</strong> Auseinandersetzung mit imperialer Vergangenheit prägt nationale Selbstwahrnehmung</li>
+            </ul>
+
+            <strong>Commonly Shared British Values:</strong>
+            <ul>
+                <li>Respect, tolerance, fair play</li>
+                <li>Democracy and rule of law</li>
+                <li>Individual liberty</li>
+                <li>Mutual respect and tolerance of different faiths and beliefs</li>
+            </ul>
+
+            <strong>Cultural Stereotypes (kritisch zu hinterfragen):</strong>
+            <ul>
+                <li>British politeness and reserve</li>
+                <li>Pub culture and tea drinking</li>
+                <li>Queue culture (Warteschlangen)</li>
+                <li>Self-deprecating humor</li>
+                <li>Obsession with weather</li>
+            </ul>
+        </div>
+
+        <h3>The Influence of the Past on Today's Britain</h3>
+        <div class="info-box">
+            <strong>British Honours System:</strong>
+            <p>People are rewarded with titles (OBE, MBE, CBE) for achievements in public life. The system is controversial because:</p>
+            <ul>
+                <li>Titles reference the British Empire ("Order of the British Empire")</li>
+                <li>2004: Select Committee recommended changing "Empire" to "Excellence" - Tony Blair ignored this</li>
+                <li>2019: George the Poet rejected MBE due to "colonial trauma inflicted on the children of Africa"</li>
+                <li>Debate: Can Britain honor citizens while referencing imperial past?</li>
+            </ul>
+
+            <strong>Museums and Cultural Heritage:</strong>
+            <ul>
+                <li>British museums hold artifacts acquired during colonial era</li>
+                <li>Debates over repatriation (e.g., Benin Bronzes, Elgin Marbles)</li>
+                <li>Question of cultural ownership and historical justice</li>
+            </ul>
+
+            <strong>Education and Curriculum:</strong>
+            <ul>
+                <li>Debates over how to teach colonial history</li>
+                <li>Accusations of "whitewashing" history</li>
+                <li>Calls for more honest confrontation with past</li>
+            </ul>
+        </div>
+
+        <h2>6. Tipps für die Abiturprüfung</h2>
+
+        <div class="tip-box">
+            <strong>⏰ Zeitmanagement (typische 90-120 Minuten Klausur):</strong>
+            <ul>
+                <li>10-15 Min: Text mehrmals lesen, markieren, Notizen machen</li>
+                <li>5-10 Min: Analyse-Plan erstellen, Struktur überlegen</li>
+                <li>60-80 Min: Hauptteil schreiben (systematisch durch Content, Language, Structure, Effect)</li>
+                <li>10-15 Min: Korrekturlesen, sprachliche Feinheiten</li>
+            </ul>
+        </div>
+
+        <div class="tip-box">
+            <strong>📝 Schreibstrategie:</strong>
+            <ol>
+                <li><strong>Nie nur beschreiben:</strong> Immer analysieren und interpretieren</li>
+                <li><strong>Konkrete Textbelege:</strong> Jede Behauptung mit Beispiel oder Zitat belegen</li>
+                <li><strong>Funktionale Analyse:</strong> Nicht nur "Der Autor verwendet eine Metapher", sondern "Der Autor verwendet die Metapher X, um Y zu erreichen/zu betonen/zu verdeutlichen"</li>
+                <li><strong>Linking Words verwenden:</strong> Schaffe logische Verbindungen zwischen Absätzen</li>
+                <li><strong>Fachterminologie:</strong> Verwende präzise Fachbegriffe (rhetoric, ethos, pathos, logos, etc.)</li>
+                <li><strong>Akademischer Ton:</strong> Objektiv, sachlich, aber nicht trocken</li>
+            </ol>
+        </div>
+
+        <div class="warning-box">
+            <strong>⚠️ Häufige Fehler vermeiden:</strong>
+            <ul>
+                <li>❌ Bloße Inhaltsangabe statt Analyse</li>
+                <li>❌ Stilmittel nur auflisten ohne Funktion zu erklären</li>
+                <li>❌ Eigene Meinung statt Textanalyse (außer explizit gefordert)</li>
+                <li>❌ Zu vage Formulierungen ("Der Autor benutzt viele Stilmittel")</li>
+                <li>❌ Fehlende Textbelege für Behauptungen</li>
+                <li>❌ Unklare Struktur ohne logischen Aufbau</li>
+                <li>❌ Zu umgangssprachlich oder zu kompliziert</li>
+            </ul>
+        </div>
+
+        <div class="tip-box">
+            <strong>✅ Checkliste für eine exzellente Analyse:</strong>
+            <ul>
+                <li>☑ Vollständige TATS-Einleitung mit Kontext und These</li>
+                <li>☑ Systematische Analyse aller vier Bereiche (Content, Language, Structure, Effect)</li>
+                <li>☑ Mindestens 8-10 verschiedene Stilmittel identifiziert und funktional analysiert</li>
+                <li>☑ Klare Verbindung zwischen Stilmitteln und Autorenabsicht</li>
+                <li>☑ Konkrete Textbelege (Zitate oder Paraphrasen) für jede Behauptung</li>
+                <li>☑ Verwendung von Linking Words und komplexen Satzstrukturen</li>
+                <li>☑ Präzise Fachterminologie</li>
+                <li>☑ Akademischer, objektiver Ton</li>
+                <li>☑ Schlussfolgerung mit Synthese der Hauptpunkte</li>
+                <li>☑ Fehlerfreies Englisch (Grammatik, Rechtschreibung, Zeichensetzung)</li>
+            </ul>
+        </div>
+
+        <div class="intro-section" style="margin-top: 50px;">
+            <h2>🎓 Du schaffst das! Viel Erfolg bei deiner Abiturprüfung!</h2>
+            <p>Mit diesem umfassenden Lernzettel bist du bestens vorbereitet. Denk daran: Übung macht den Meister. Übe mit verschiedenen Texten, analysiere systematisch, und du wirst sicher und kompetent in die Prüfung gehen!</p>
+        </div>
+    </div>
+    
+    <!-- Back to Top Button -->
+    <button id="backToTop" title="Zurück nach oben">↑</button>
+    
+    <script>
+        // Back to Top Button functionality
+        const backToTopButton = document.getElementById('backToTop');
+        
+        // Show button when user scrolls down 300px
+        window.onscroll = function() {
+            if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+                backToTopButton.style.display = 'flex';
+            } else {
+                backToTopButton.style.display = 'none';
+            }
+        };
+        
+        // Scroll to top when button is clicked
+        backToTopButton.onclick = function() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        };
+        
+        // Mobile notice visibility
+        if (window.innerWidth <= 768) {
+            const mobileNotice = document.getElementById('mobile-notice');
+            if (mobileNotice) {
+                mobileNotice.style.display = 'block';
+            }
+        }
+        
+        // Remove scroll indicator after user scrolls a table
+        document.querySelectorAll('table').forEach(table => {
+            table.addEventListener('scroll', function() {
+                if (this.scrollLeft > 10) {
+                    this.style.setProperty('--scrolled', 'true');
+                }
+            }, { once: true });
+        });
+    </script>
+</body>
+</html>
