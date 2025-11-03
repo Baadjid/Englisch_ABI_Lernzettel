@@ -29,6 +29,26 @@
             border-radius: 10px;
         }
         
+        .nav-breadcrumb {
+            margin-bottom: 20px;
+            padding: 15px;
+            background: #f8f9fa;
+            border-radius: 10px;
+            border-left: 4px solid #3498db;
+        }
+        
+        .nav-breadcrumb a {
+            color: #2980b9;
+            text-decoration: none;
+            margin-right: 10px;
+            font-weight: 600;
+        }
+        
+        .nav-breadcrumb a:hover {
+            text-decoration: underline;
+            color: #2c3e50;
+        }
+        
         h1 {
             color: #2c3e50;
             text-align: center;
@@ -266,72 +286,456 @@
             box-shadow: 0 6px 12px rgba(0,0,0,0.4);
         }
         
+        /* Mobile Optimization - Grid 1 (Single Column) */
         @media screen and (max-width: 768px) {
             body {
                 padding: 10px;
+                font-size: 16px;
             }
             
             .container {
-                padding: 20px;
+                padding: 15px;
+                margin: 0;
+                border-radius: 5px;
+                box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            }
+            
+            .nav-breadcrumb {
+                margin-bottom: 15px;
+                padding: 10px;
+                font-size: 0.9em;
             }
             
             h1 {
-                font-size: 1.8em;
+                font-size: 1.6em;
+                padding-bottom: 10px;
+                word-wrap: break-word;
+                line-height: 1.3;
+            }
+            
+            .subtitle {
+                font-size: 0.95em;
+                margin-bottom: 20px;
+                padding: 0 5px;
             }
             
             h2 {
-                font-size: 1.5em;
+                font-size: 1.4em;
+                margin-top: 30px;
+                margin-bottom: 15px;
+                word-wrap: break-word;
+                line-height: 1.3;
+                padding-left: 10px;
             }
             
-            table {
+            h3 {
+                font-size: 1.2em;
+                margin-top: 25px;
+                margin-bottom: 12px;
+                line-height: 1.3;
+            }
+            
+            h4 {
+                font-size: 1.1em;
+                margin-top: 15px;
+                margin-bottom: 8px;
+                line-height: 1.3;
+            }
+            
+            /* Text and Paragraphs */
+            p {
+                margin-bottom: 12px;
+                text-align: left;
+                word-wrap: break-word;
+                line-height: 1.6;
+                font-size: 0.95em;
+            }
+            
+            /* Info Boxes Mobile */
+            .info-box,
+            .example-box,
+            .warning-box,
+            .new-section,
+            .tip-box {
+                padding: 12px;
+                margin: 15px 0;
+                font-size: 0.93em;
+                border-radius: 5px;
+            }
+            
+            /* Special Card Sections Mobile */
+            .intro-section {
+                padding: 15px;
+                margin-bottom: 20px;
+            }
+            
+            .intro-section h2 {
+                font-size: 1.3em;
+                border: none;
+                margin-top: 0;
+            }
+            
+            .intro-section p {
                 font-size: 0.9em;
+                line-height: 1.5;
+            }
+            
+            /* Text Type Cards Mobile */
+            .text-type-card {
+                padding: 15px;
+                margin: 15px 0;
+            }
+            
+            .text-type-card h4 {
+                color: white;
+                font-size: 1.15em;
+                margin-bottom: 8px;
+            }
+            
+            .text-type-card ul {
+                margin-left: 20px;
+                font-size: 0.9em;
+            }
+            
+            /* Stylistic Device Boxes Mobile */
+            .stylistic-device {
+                padding: 12px;
+                margin: 15px 0;
+                border-width: 1px;
+            }
+            
+            .stylistic-device h4 {
+                font-size: 1.15em;
+                margin-bottom: 10px;
+            }
+            
+            .stylistic-device p {
+                font-size: 0.9em;
+            }
+            
+            /* Pyramid Structure Mobile */
+            .structure-pyramid {
+                padding: 10px;
+                margin: 15px 0;
             }
             
             .pyramid-level {
                 width: 95% !important;
+                margin: 8px auto;
+                padding: 10px;
+                font-size: 0.85em;
+            }
+            
+            /* Tables Mobile - Responsive */
+            table {
+                display: block;
+                overflow-x: auto;
+                -webkit-overflow-scrolling: touch;
+                font-size: 0.8em;
+                margin: 15px 0;
+                border: 1px solid #ddd;
+                border-radius: 5px;
+                white-space: nowrap;
+            }
+            
+            table th {
+                padding: 8px;
+                font-size: 0.85em;
+                white-space: normal;
+                min-width: 100px;
+            }
+            
+            table td {
+                padding: 8px;
+                font-size: 0.82em;
+                min-width: 120px;
+                white-space: normal;
+                line-height: 1.4;
+            }
+            
+            /* Make first column sticky for better mobile experience */
+            table tr td:first-child,
+            table tr th:first-child {
+                position: sticky;
+                left: 0;
+                background: white;
+                z-index: 1;
+                box-shadow: 2px 0 5px rgba(0,0,0,0.1);
+            }
+            
+            table tr th:first-child {
+                background: #3498db;
+            }
+            
+            /* Scroll indicator for tables */
+            table::after {
+                content: '⟷ Scrollen';
+                position: absolute;
+                top: 5px;
+                right: 5px;
+                background: rgba(52, 152, 219, 0.9);
+                color: white;
+                padding: 3px 8px;
+                border-radius: 3px;
+                font-size: 0.65em;
+                pointer-events: none;
+            }
+            
+            /* Lists Mobile */
+            ul, ol {
+                margin-left: 20px;
+                padding-right: 10px;
+                font-size: 0.93em;
+            }
+            
+            ul li, ol li {
+                margin-bottom: 8px;
+                word-wrap: break-word;
+                line-height: 1.5;
+            }
+            
+            /* Highlight spans */
+            .highlight {
+                padding: 1px 3px;
+                word-wrap: break-word;
+                display: inline;
+                font-size: 0.95em;
+            }
+            
+            /* Back to Top Button Mobile */
+            #backToTop {
+                width: 42px;
+                height: 42px;
+                font-size: 16px;
+                bottom: 15px;
+                right: 15px;
+                padding: 12px;
             }
         }
-        .nav-breadcrumb {
-            margin-bottom: 20px;
-            padding: 15px;
-            background: var(--card-bg);
-            border-radius: 10px;
-            border-left: 4px solid var(--accent-color);
+        
+        /* Extra Small Mobile Devices */
+        @media screen and (max-width: 480px) {
+            body {
+                padding: 5px;
+                font-size: 15px;
+            }
+            
+            .container {
+                padding: 10px;
+                border-radius: 3px;
+            }
+            
+            .nav-breadcrumb {
+                padding: 8px;
+                font-size: 0.85em;
+            }
+            
+            h1 {
+                font-size: 1.4em;
+                line-height: 1.25;
+                margin-bottom: 8px;
+            }
+            
+            .subtitle {
+                font-size: 0.85em;
+                margin-bottom: 15px;
+            }
+            
+            h2 {
+                font-size: 1.25em;
+                margin-top: 25px;
+                padding-left: 8px;
+                border-left-width: 3px;
+            }
+            
+            h3 {
+                font-size: 1.1em;
+                margin-top: 20px;
+            }
+            
+            h4 {
+                font-size: 1.05em;
+            }
+            
+            p {
+                font-size: 0.9em;
+                line-height: 1.55;
+                margin-bottom: 10px;
+            }
+            
+            /* Info Boxes Extra Small */
+            .info-box,
+            .example-box,
+            .warning-box,
+            .new-section,
+            .tip-box {
+                padding: 10px;
+                margin: 12px 0;
+                font-size: 0.88em;
+            }
+            
+            /* Cards Extra Small */
+            .intro-section {
+                padding: 12px;
+                margin-bottom: 15px;
+            }
+            
+            .intro-section h2 {
+                font-size: 1.15em;
+            }
+            
+            .intro-section p {
+                font-size: 0.85em;
+            }
+            
+            .text-type-card {
+                padding: 12px;
+                margin: 12px 0;
+            }
+            
+            .text-type-card h4 {
+                font-size: 1.05em;
+            }
+            
+            .text-type-card ul {
+                margin-left: 18px;
+                font-size: 0.85em;
+            }
+            
+            /* Stylistic Devices Extra Small */
+            .stylistic-device {
+                padding: 10px;
+                margin: 12px 0;
+            }
+            
+            .stylistic-device h4 {
+                font-size: 1.05em;
+            }
+            
+            /* Tables Extra Small */
+            table {
+                font-size: 0.75em;
+            }
+            
+            table th,
+            table td {
+                padding: 6px;
+                font-size: 0.8em;
+                min-width: 100px;
+            }
+            
+            table::after {
+                font-size: 0.6em;
+                padding: 2px 6px;
+            }
+            
+            /* Lists Extra Small */
+            ul, ol {
+                margin-left: 18px;
+                font-size: 0.88em;
+            }
+            
+            ul li, ol li {
+                margin-bottom: 6px;
+            }
+            
+            /* Pyramid Extra Small */
+            .pyramid-level {
+                padding: 8px;
+                font-size: 0.8em;
+                margin: 6px auto;
+            }
+            
+            /* Back Button Extra Small */
+            #backToTop {
+                width: 38px;
+                height: 38px;
+                font-size: 14px;
+                bottom: 10px;
+                right: 10px;
+                padding: 10px;
+            }
         }
-
-        .nav-breadcrumb a {
-            color: var(--secondary-color);
-            text-decoration: none;
-            margin-right: 10px;
+        
+        /* Tablet Optimization */
+        @media screen and (min-width: 769px) and (max-width: 1024px) {
+            .container {
+                max-width: 95%;
+                padding: 30px;
+            }
+            
+            h1 {
+                font-size: 2.2em;
+            }
+            
+            h2 {
+                font-size: 1.8em;
+            }
+            
+            table {
+                font-size: 0.95em;
+            }
+            
+            .pyramid-level:nth-child(1) {
+                width: 70%;
+            }
+            
+            .pyramid-level:nth-child(2) {
+                width: 80%;
+            }
+            
+            .pyramid-level:nth-child(3) {
+                width: 90%;
+            }
+            
+            .pyramid-level:nth-child(4) {
+                width: 100%;
+            }
         }
-
-        .nav-breadcrumb a:hover {
-            text-decoration: underline;
-        }
-
-        .back-button {
-            display: inline-block;
-            background: #f39c12;
-            color: white;
-            padding: 12px 24px;
-            border-radius: 25px;
-            text-decoration: none;
-            margin-bottom: 20px;
-            transition: all 0.3s ease;
-            font-weight: 500;
-        }
-
-        .back-button:hover {
-            background: #e67e22;
-            transform: translateY(-2px);
+        
+        /* Print Styles */
+        @media print {
+            body {
+                background: white;
+            }
+            
+            .container {
+                box-shadow: none;
+                max-width: 100%;
+            }
+            
+            .nav-breadcrumb {
+                display: none;
+            }
+            
+            #backToTop {
+                display: none !important;
+            }
+            
+            .intro-section {
+                background: #f0f0f0 !important;
+                color: black !important;
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+            
+            h1, h2, h3, h4 {
+                page-break-after: avoid;
+            }
+            
+            table, .stylistic-device, .info-box, .example-box {
+                page-break-inside: avoid;
+            }
         }
     </style>
 </head>
 <body>
     <div class="container">
         <div class="nav-breadcrumb">
-            <a href="index.html">🏠 Hauptübersicht</a>
+            <a href="index.html">🏠 Hauptübersicht</a> &gt; 
+            <span>Erweiterte Textanalyse</span>
         </div>
+        
         <h1>📚 Erweiterte Textanalyse: Non-fictional Texts</h1>
         <div class="subtitle">Comprehensive Guide for A-Level English</div>
         
@@ -1154,6 +1558,72 @@
                 behavior: 'smooth'
             });
         };
+        
+        // Mobile detection and table scroll hint
+        if (window.innerWidth <= 768) {
+            // Add mobile notice
+            const mobileNotice = document.createElement('div');
+            mobileNotice.className = 'info-box';
+            mobileNotice.style.background = '#d1ecf1';
+            mobileNotice.style.borderLeft = '4px solid #17a2b8';
+            mobileNotice.innerHTML = '<strong>📱 Mobile Ansicht:</strong> Tabellen können horizontal gescrollt werden. Wische nach links/rechts für mehr Inhalt.';
+            
+            const firstH2 = document.querySelector('h2');
+            if (firstH2) {
+                firstH2.parentNode.insertBefore(mobileNotice, firstH2);
+            }
+            
+            // Remove scroll indicator after user scrolls a table
+            document.querySelectorAll('table').forEach(table => {
+                table.addEventListener('scroll', function() {
+                    if (this.scrollLeft > 10) {
+                        const afterElement = this.querySelector('::after');
+                        this.style.setProperty('--scrolled', 'true');
+                    }
+                }, { once: true });
+            });
+        }
+        
+        // Smooth scroll for internal links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+        
+        // Add touch-friendly table scrolling
+        if ('ontouchstart' in window) {
+            document.querySelectorAll('table').forEach(table => {
+                let isDown = false;
+                let startX;
+                let scrollLeft;
+                
+                table.addEventListener('touchstart', (e) => {
+                    isDown = true;
+                    startX = e.touches[0].pageX - table.offsetLeft;
+                    scrollLeft = table.scrollLeft;
+                });
+                
+                table.addEventListener('touchmove', (e) => {
+                    if (!isDown) return;
+                    e.preventDefault();
+                    const x = e.touches[0].pageX - table.offsetLeft;
+                    const walk = (x - startX) * 2;
+                    table.scrollLeft = scrollLeft - walk;
+                });
+                
+                table.addEventListener('touchend', () => {
+                    isDown = false;
+                });
+            });
+        }
     </script>
 </body>
 </html>
