@@ -231,6 +231,26 @@
             }
         }
 
+             .nav-breadcrumb {
+            margin-bottom: 20px;
+            padding: 15px 20px;
+            background: var(--card-bg);
+            border-radius: 10px;
+            border-left: 4px solid var(--secondary-color);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        .nav-breadcrumb a {
+            color: var(--secondary-color);
+            text-decoration: none;
+            margin-right: 10px;
+            font-weight: 500;
+        }
+
+        .nav-breadcrumb a:hover {
+            text-decoration: underline;
+        }
+
         .summary-table {
             width: 100%;
             border-collapse: collapse;
@@ -286,6 +306,9 @@
 <body>
     <div class="container">
         <header>
+            <div class="nav-breadcrumb">
+            <a href="index.html">🏠 Hauptübersicht</a> / 
+        </div>
             <h1>Skills File: How to Write a Blog Post</h1>
             <p>A comprehensive guide to creating engaging, effective blog content</p>
         </header>
