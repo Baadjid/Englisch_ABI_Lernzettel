@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="de">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Englisch Abitur 2026 - Lernzettel</title>
+    <title>English Abitur 2026 - Study Guide</title>
     <style>
         :root {
             --primary-color: #2c3e50;
@@ -71,21 +71,12 @@
             margin-bottom: 20px;
         }
 
-        .progress-info {
-            background: linear-gradient(45deg, var(--secondary-color), var(--success-color));
-            color: white;
-            padding: 15px;
-            border-radius: 10px;
-            margin-top: 20px;
-            font-weight: 500;
-        }
-
         .main-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            grid-template-columns: 1fr;
             gap: 25px;
             margin-bottom: 40px;
-	    margin-top: 40px;
+            margin-top: 40px;
         }
 
         .category-card {
@@ -96,12 +87,14 @@
             transition: all 0.3s ease;
             border-left: 5px solid var(--secondary-color);
             position: relative;
-            overflow: hidden;
+            overflow: visible;
+            z-index: 1;
         }
 
         .category-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+            transform: translateY(-3px);
+            box-shadow: 0 12px 35px rgba(0,0,0,0.15);
+            z-index: 10;
         }
 
         .category-card::before {
@@ -154,6 +147,122 @@
             background: #e3f2fd;
         }
 
+        .subsection {
+            margin: 20px 0;
+            padding: 15px;
+            background: #f8f9fa;
+            border-radius: 10px;
+            border-left: 3px solid var(--success-color);
+        }
+
+        .subsection-header {
+            color: var(--primary-color);
+            font-size: 1.1em;
+            margin-bottom: 12px;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .subsection .topic-list {
+            margin-bottom: 0;
+        }
+
+        .subsection .topic-list li {
+            background: white;
+            border-left-color: var(--success-color);
+        }
+
+        .subcategory {
+            margin: 20px 0;
+            padding: 15px;
+            background: #f8f9fa;
+            border-radius: 10px;
+            border-left: 3px solid var(--secondary-color);
+        }
+
+        .subcategory h3 {
+            color: var(--primary-color);
+            font-size: 1.1em;
+            margin-bottom: 12px;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .subcategory .sub-icon {
+            font-size: 1.2em;
+            color: var(--secondary-color);
+        }
+
+        .subcategory .topic-list {
+            margin-bottom: 0;
+        }
+
+        .subcategory .topic-list li {
+            background: white;
+            border-left-color: var(--secondary-color);
+        }
+
+        .card-header-section {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 15px;
+        }
+
+        .card-title-wrapper {
+            flex: 1;
+        }
+
+        .toggle-btn {
+            background: var(--secondary-color);
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 1.2em;
+            flex-shrink: 0;
+            margin-left: 15px;
+        }
+
+        .toggle-btn:hover {
+            background: var(--primary-color);
+            transform: scale(1.1);
+        }
+
+        .toggle-btn.collapsed {
+            transform: rotate(0deg);
+        }
+
+        .toggle-btn.expanded {
+            transform: rotate(180deg);
+        }
+
+        .collapsible-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s ease-in-out;
+        }
+
+        .collapsible-content.expanded {
+            max-height: 5000px;
+        }
+
+        .card-footer {
+            margin-top: 20px;
+            padding-top: 15px;
+            border-top: 2px solid #e3e8eb;
+        }
+
         .btn {
             display: inline-block;
             padding: 12px 25px;
@@ -166,6 +275,7 @@
             border: none;
             cursor: pointer;
             text-align: center;
+            margin: 5px;
         }
 
         .btn:hover {
@@ -199,76 +309,33 @@
 
         .links-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            grid-template-columns: 1fr;
             gap: 15px;
-			margin-bottom: 20px;
-        }
-
-        .competency-levels {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            border-radius: 15px;
-            padding: 25px;
-            margin: 30px 0;
-        }
-
-        .competency-levels h3 {
             margin-bottom: 20px;
-            font-size: 1.3em;
         }
 
-        .level-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
-        }
-
-        .level-card {
-            background: rgba(255,255,255,0.1);
-            border-radius: 10px;
+        .footer {
+            text-align: center;
+            margin-top: 40px;
             padding: 20px;
-            backdrop-filter: blur(10px);
+            background: var(--card-bg);
+            border-radius: 15px;
         }
 
-        .level-card h4 {
+        .footer p {
+            color: #7f8c8d;
             margin-bottom: 10px;
-            color: #fff;
         }
 
-        .level-card ul {
-            list-style: none;
-        }
-
-        .level-card li {
-            margin: 5px 0;
-            padding-left: 20px;
-            position: relative;
-        }
-
-        .level-card li::before {
-            content: '✓';
-            position: absolute;
-            left: 0;
-            color: #2ecc71;
-            font-weight: bold;
-        }
-
-        @media (max-width: 768px) {
-            .container {
-                padding: 15px;
+        @media (min-width: 768px) {
+            .links-grid {
+                grid-template-columns: repeat(2, 1fr);
             }
-            
-            .header h1 {
-                font-size: 2em;
-            }
-            
-            .main-grid {
-                grid-template-columns: 1fr;
-                gap: 20px;
-            }
-            
-            .category-card {
-                padding: 20px;
+        }
+
+        @media (min-width: 1024px) {
+            .links-grid {
+                grid-template-columns: repeat(3, 1fr);
             }
         }
     </style>
@@ -276,57 +343,427 @@
 <body>
     <div class="container">
         <div class="header">
-            <h1>🎓 Englisch Abitur 2026</h1>
-            <p>Comprehensive Study Guide | Berufliches Gymnasium Baden-Württemberg</p>
-            <div class="progress-info">
-                <strong>Zielniveau:</strong> B2/C1 (GER) | <strong>Referenzrahmen:</strong> Bildungsplan 2021 BG
-            </div>
+            <h1>🎓 English Abitur 2026</h1>
+            <p>Comprehensive Study Guide | Vocational High School Baden-Württemberg</p>
         </div>
+
         <div class="quick-links">
-            <h3>🔗 Schnellzugriff & Tools</h3>
+            <h3>🔗 Quick Access & Tools</h3>
             <div class="links-grid">
                 <a href="useful_phrases.html" class="btn">💭 Useful Phrases</a>
+                <a href="Grammar.html" class="btn">📚 Grammar Reference</a>
+                <a href="AnalyzingNonFictionalTexts.html" class="btn">📰 Analyzing Non-fictional Texts</a>
+                <a href="AnalyzingFictionalTexts.html" class="btn">📖 Analyzing Fictional Texts</a>
+                <a href="DifferentWritingStrategies.html" class="btn">✍️ Writing Strategies</a>
             </div>
         </div>
 
         <div class="main-grid">
-			
+            
             <div class="category-card">
-                <h2><span class="icon">🎯</span>Prüfungsvorbereitung</h2>
-                <p>Gezielte Vorbereitung auf die Abiturprüfung mit Übungen und Strategien</p>
+                <div class="card-header-section">
+                    <div class="card-title-wrapper">
+                        <h2><span class="icon">🇺🇸</span>United States of America</h2>
+                        <p>Comprehensive overview of American history, society, politics, and culture</p>
+                    </div>
+                    <button class="toggle-btn collapsed" onclick="toggleCard(this)" aria-label="Toggle content">
+                        ▼
+                    </button>
+                </div>
+                
+                <div class="collapsible-content">
+                    <div class="subcategory">
+                        <h3><span class="sub-icon">🏛️</span>Foundations</h3>
+                        <ul class="topic-list">
+                            <li>Declaration of Independence</li>
+                            <li>The Westward Movement and the Frontier Spirit</li>
+                            <li>Manifest Destiny</li>
+                            <li>Difficulties in Forming a Nation</li>
+                        </ul>
+                    </div>
+
+                    <div class="subcategory">
+                        <h3><span class="sub-icon">✊</span>African American History</h3>
+                        <ul class="topic-list">
+                            <li>Slaves – Liberated into Misery</li>
+                            <li>Separate but Equal</li>
+                            <li>Rosa Parks and the Montgomery Bus Boycott</li>
+                            <li>Little Rock Nine</li>
+                            <li>Martin Luther King</li>
+                            <li>Malcolm X</li>
+                            <li>Affirmative Action</li>
+                            <li>Situation of African Americans today</li>
+                            <li>Black Lives Matter</li>
+                        </ul>
+                    </div>
+
+                    <div class="subcategory">
+                        <h3><span class="sub-icon">🌎</span>Immigration</h3>
+                        <ul class="topic-list">
+                            <li>Push and Pull Factors</li>
+                            <li>Immigration Pattern</li>
+                            <li>Immigration Policy</li>
+                            <li>Illegal Immigration</li>
+                            <li>Changing Social Structure</li>
+                        </ul>
+                    </div>
+
+                    <div class="subcategory">
+                        <h3><span class="sub-icon">🤝</span>Multiculturalism</h3>
+                        <ul class="topic-list">
+                            <li>Native Americans</li>
+                            <li>Hispanics</li>
+                            <li>Muslims</li>
+                            <li>Asians</li>
+                            <li>Melting Pot and Salad Bowl</li>
+                            <li>Racism, Stereotyping, Prejudices and Culture of Fear</li>
+                        </ul>
+                    </div>
+
+                    <div class="subcategory">
+                        <h3><span class="sub-icon">🔒</span>Security and Freedom</h3>
+                        <ul class="topic-list">
+                            <li>Nine Eleven (9/11)</li>
+                            <li>The Patriot Act</li>
+                            <li>The NSA Scandal</li>
+                            <li>Gun Control</li>
+                            <li>Crime</li>
+                        </ul>
+                    </div>
+
+                    <div class="subcategory">
+                        <h3><span class="sub-icon">🌐</span>Foreign Policy</h3>
+                        <ul class="topic-list">
+                            <li>From Isolationism to Interventionism</li>
+                            <li>The Cold War Period</li>
+                            <li>The Vietnam War</li>
+                            <li>Reorientation after 1990</li>
+                            <li>The Bush Administration (2001-2009)</li>
+                            <li>Russian Invasion of Ukraine (2022)</li>
+                            <li>US Relations to Europe</li>
+                        </ul>
+                    </div>
+
+                    <div class="subcategory">
+                        <h3><span class="sub-icon">💰</span>Economy</h3>
+                        <ul class="topic-list">
+                            <li>The Roaring Twenties and the Great Depression</li>
+                            <li>Roosevelt's New Deal</li>
+                            <li>The Financial Crisis in 2008</li>
+                            <li>Current Problems of the American Economy</li>
+                        </ul>
+                    </div>
+
+                    <div class="subcategory">
+                        <h3><span class="sub-icon">🏥</span>Social Welfare</h3>
+                        <ul class="topic-list">
+                            <li>Help Yourself – an American Point of View</li>
+                            <li>Health Care</li>
+                        </ul>
+                    </div>
+
+                    <div class="subcategory">
+                        <h3><span class="sub-icon">🏛️</span>Political System</h3>
+                        <ul class="topic-list">
+                            <li>Checks and Balances</li>
+                            <li>How to Become President</li>
+                            <li>Problems of the Electoral System</li>
+                            <li>Congress</li>
+                            <li>Democrats</li>
+                            <li>Republicans</li>
+                            <li>Barack Obama</li>
+                            <li>Donald Trump (2017-2021)</li>
+                            <li>Joe Biden and Kamala Harris</li>
+                        </ul>
+                    </div>
+
+                    <div class="subcategory">
+                        <h3><span class="sub-icon">⛪</span>Religion</h3>
+                        <ul class="topic-list">
+                            <li>The Puritans' Heritage</li>
+                            <li>Religious Diversity</li>
+                            <li>Liberal Protestantism and Conservative Fundamentalism</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="card-footer">
+                    <a href="UnitedStatesOfAmerica.html" class="btn btn-secondary">Explore USA Topics</a>
+                </div>
+            </div>
+
+            <div class="category-card">
+                <div class="card-header-section">
+                    <div class="card-title-wrapper">
+                        <h2><span class="icon">🇬🇧</span>Great Britain</h2>
+                        <p>In-depth study of British history, politics, society, and the Commonwealth</p>
+                    </div>
+                    <button class="toggle-btn collapsed" onclick="toggleCard(this)" aria-label="Toggle content">
+                        ▼
+                    </button>
+                </div>
+                
+                <div class="collapsible-content">
+                    <div class="subcategory">
+                        <h3><span class="sub-icon">👑</span>History of a World Power</h3>
+                        <ul class="topic-list">
+                            <li>The British Empire</li>
+                            <li>The Commonwealth</li>
+                        </ul>
+                    </div>
+
+                    <div class="subcategory">
+                        <h3><span class="sub-icon">🌍</span>Post-colonial Developments</h3>
+                        <ul class="topic-list">
+                            <li>Gandhi and the Independence of India</li>
+                            <li>India today</li>
+                            <li>South Africa</li>
+                            <li>Australia</li>
+                            <li>Multiculturalism in Australia, Canada and Great Britain</li>
+                        </ul>
+                    </div>
+
+                    <div class="subcategory">
+                        <h3><span class="sub-icon">🇪🇺</span>Britain and Europe</h3>
+                        <ul class="topic-list">
+                            <li>Geography is Destiny</li>
+                            <li>Foreign Policy until 1949</li>
+                            <li>Brexit</li>
+                            <li>British-German Relations</li>
+                        </ul>
+                    </div>
+
+                    <div class="subcategory">
+                        <h3><span class="sub-icon">🏛️</span>Political System</h3>
+                        <ul class="topic-list">
+                            <li>Unwritten Constitution</li>
+                            <li>Monarchy</li>
+                            <li>House of Commons</li>
+                            <li>House of Lords</li>
+                            <li>The Conservatives</li>
+                            <li>The Labour Party</li>
+                            <li>Liberal Democrats</li>
+                            <li>The Electoral System</li>
+                            <li>The 2019 General Election</li>
+                        </ul>
+                    </div>
+
+                    <div class="subcategory">
+                        <h3><span class="sub-icon">🏴󠁧󠁢󠁥󠁮󠁧󠁿</span>United Kingdom</h3>
+                        <ul class="topic-list">
+                            <li>Devolution</li>
+                            <li>Scottish Independence Referendum (2014)</li>
+                            <li>Anglo-Irish Relations (until 1921)</li>
+                            <li>The Troubles (1968-1998)</li>
+                        </ul>
+                    </div>
+
+                    <div class="subcategory">
+                        <h3><span class="sub-icon">🤝</span>Britain's Multicultural Society</h3>
+                        <ul class="topic-list">
+                            <li>A Class-ridden Society</li>
+                            <li>Immigration Waves</li>
+                            <li>Structure of Britain's Multi-ethnic Society</li>
+                            <li>Discrimination and Anger</li>
+                            <li>London Bomb Attack 2005</li>
+                            <li>Sleepwalking into Segregation?</li>
+                            <li>Arranged Marriage in Asian Communities</li>
+                        </ul>
+                    </div>
+
+                    <div class="subcategory">
+                        <h3><span class="sub-icon">⛪</span>Religion</h3>
+                        <ul class="topic-list">
+                            <li>The Church of England</li>
+                            <li>The Free Churches (Dissenters)</li>
+                            <li>Current Religious Issues in Britain</li>
+                        </ul>
+                    </div>
+
+                    <div class="subcategory">
+                        <h3><span class="sub-icon">🏥</span>Social Welfare</h3>
+                        <ul class="topic-list">
+                            <li>The Welfare State</li>
+                            <li>The National Health Service</li>
+                        </ul>
+                    </div>
+
+                    <div class="subcategory">
+                        <h3><span class="sub-icon">💰</span>Economy</h3>
+                        <ul class="topic-list">
+                            <li>Economic Superpower of the 19th Century</li>
+                            <li>Decline (1945-1979)</li>
+                            <li>Pre-Brexit Boom</li>
+                            <li>Structural Changes in the Last Decades</li>
+                            <li>A Prosperous South and a Poor North</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="card-footer">
+                    <a href="GreatBritan.html" class="btn btn-secondary">Explore UK Topics</a>
+                </div>
+            </div>
+
+            <div class="category-card">
+                <div class="card-header-section">
+                    <div class="card-title-wrapper">
+                        <h2><span class="icon">🌍</span>Living in a Modern World</h2>
+                        <p>Global challenges and contemporary issues shaping our interconnected world</p>
+                    </div>
+                    <button class="toggle-btn collapsed" onclick="toggleCard(this)" aria-label="Toggle content">
+                        ▼
+                    </button>
+                </div>
+                
+                <div class="collapsible-content">
+                    <div class="subcategory">
+                        <h3><span class="sub-icon">🌐</span>Globalization</h3>
+                        <ul class="topic-list">
+                            <li>Pros and Cons of Globalization</li>
+                            <li>Poverty as a Global Challenge</li>
+                            <li>Migration</li>
+                            <li>Environmental Challenges</li>
+                            <li>Paris Climate Agreement (2015)</li>
+                            <li>Americanization: Consequences of a Global Culture</li>
+                            <li>English as a World Language</li>
+                        </ul>
+                    </div>
+
+                    <div class="subcategory">
+                        <h3><span class="sub-icon">💻</span>Technology and Media</h3>
+                        <ul class="topic-list">
+                            <li>Genetic Engineering</li>
+                            <li>Big Data</li>
+                            <li>Social Media</li>
+                            <li>Power of Media Corporations</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="card-footer">
+                    <a href="LivingInAModernWorld.html" class="btn btn-secondary">Explore Global Topics</a>
+                </div>
+            </div>
+
+            <div class="category-card">
+                <div class="card-header-section">
+                    <div class="card-title-wrapper">
+                        <h2><span class="icon">📚</span>Literature and Film</h2>
+                        <p>Analysis of significant literary works and films relevant to the Abitur</p>
+                    </div>
+                    <button class="toggle-btn collapsed" onclick="toggleCard(this)" aria-label="Toggle content">
+                        ▼
+                    </button>
+                </div>
+                
+                <div class="collapsible-content">
+                    <div class="subcategory">
+                        <h3><span class="sub-icon">🎭</span>William Shakespeare</h3>
+                        <ul class="topic-list">
+                            <li>The Globe – Shakespeare's Theatre</li>
+                            <li>The Elizabethan World Picture</li>
+                            <li>Romeo and Juliet (Tragedy, 1597)</li>
+                            <li>Baz Luhrmann: Romeo + Juliet (Film, 1996)</li>
+                            <li>Othello (Tragedy, 1603/04)</li>
+                            <li>The Merchant of Venice (Comedy, 1596-98)</li>
+                            <li>A Midsummer Night's Dream (Comedy, 1595/96)</li>
+                            <li>The Interest of Young Audiences in Shakespeare</li>
+                        </ul>
+                    </div>
+
+                    <div class="subcategory">
+                        <h3><span class="sub-icon">✊</span>Identity and Racial Prejudices</h3>
+                        <ul class="topic-list">
+                            <li>Crash (Film, 2004)</li>
+                            <li>Tom Franklin: Crooked Letter, Crooked Letter (Novel, 2010)</li>
+                            <li>Gran Torino (Film, 2008)</li>
+                            <li>Green Book (Film, 2018)</li>
+                        </ul>
+                    </div>
+
+                    <div class="subcategory">
+                        <h3><span class="sub-icon">🔮</span>Exploring Alternative Worlds</h3>
+                        <ul class="topic-list">
+                            <li>Aldous Huxley: Brave New World (Novel, 1932)</li>
+                            <li>George Orwell: Nineteen Eighty-Four (Novel, 1949)</li>
+                            <li>Ray Bradbury: Fahrenheit 451 (Novel, 1953)</li>
+                            <li>Suzanne Collins: The Hunger Games (Trilogy, 2008-2010)</li>
+                            <li>Common Features of Dystopias</li>
+                        </ul>
+                    </div>
+
+                    <div class="subcategory">
+                        <h3><span class="sub-icon">🌏</span>Migration and Cross-Cultural Encounters</h3>
+                        <ul class="topic-list">
+                            <li>Joseph Conrad: An Outpost of Progress (Short Story, 1896)</li>
+                            <li>Rabbit-Proof Fence (Film, 2002)</li>
+                            <li>Ngugi wa Thiong'o: A Meeting in the Dark (Short Story, 1974)</li>
+                            <li>Salman Rushdie: Good Advice Is Rarer than Rubies (Short Story, 1994)</li>
+                            <li>Arrival (Film, 2016)</li>
+                            <li>Zadie Smith: Embassy of Cambodia (Short Story, 2013)</li>
+                        </ul>
+                    </div>
+
+                    <div class="subcategory">
+                        <h3><span class="sub-icon">🕌</span>Asian Communities in Britain</h3>
+                        <ul class="topic-list">
+                            <li>Hanif Kureishi: My Son the Fanatic (Short Story, 1994)</li>
+                            <li>Qaisra Shahraz: A Pair of Jeans (Novel, 2001)</li>
+                            <li>Bali Rai: (Un)Arranged Marriage (Novel, 2001)</li>
+                            <li>East is East (Film, 1999)</li>
+                            <li>Bend It Like Beckham (Film, 2002)</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="card-footer">
+                    <a href="LiteratureAndFilm.html" class="btn btn-secondary">Explore Literature & Film</a>
+                </div>
+            </div>
+
+            <div class="category-card">
+                <h2><span class="icon">🎯</span>Exam Preparation</h2>
+                <p>Targeted preparation for the Abitur exam with exercises and strategies</p>
                 <ul class="topic-list">
                     <li>Exam Strategies</li>
                     <li>Practice Tests</li>
                     <li>Time Management</li>
                     <li>Sample Essays</li>
-                    <li>Oral Exam Prep</li>
+                    <li>Oral Exam Preparation</li>
                 </ul>
-                <a href="pruefungsvorbereitung.html" class="btn btn-secondary" style="margin-bottom: 20px;">Zur Prüfungsvorbereitung</a>
-				<a href="englisch_pruefung.html" class="btn btn-secondary" style="margin-bottom: 20px;">Zur Probeprüfung</a>
+                <a href="pruefungsvorbereitung.html" class="btn btn-secondary">Exam Preparation</a>
+                <a href="englisch_pruefung.html" class="btn btn-secondary">Practice Exam</a>
             </div>
+
         </div>
 
-        <div style="text-align: center; margin-top: 40px; padding: 20px; background: var(--card-bg); border-radius: 15px;">
-            <p style="color: #7f8c8d; margin-bottom: 10px;">
-                📚 Basierend auf dem Bildungsplan 2021 für das Berufliche Gymnasium Baden-Württemberg
+        <div class="footer">
+            <p>
+                📚 Based on the 2021 curriculum for vocational high schools in Baden-Württemberg
+            </p>
+            <p style="margin-top: 15px; font-size: 0.9em;">
+                This comprehensive study guide covers all relevant topics for the English Abitur 2026
             </p>
         </div>
     </div>
 
     <script>
-        // Add some interactive functionality
         document.addEventListener('DOMContentLoaded', function() {
-            // Add smooth scrolling for internal links
+            // Smooth scrolling for internal links
             document.querySelectorAll('a[href^="#"]').forEach(anchor => {
                 anchor.addEventListener('click', function (e) {
                     e.preventDefault();
-                    document.querySelector(this.getAttribute('href')).scrollIntoView({
-                        behavior: 'smooth'
-                    });
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        target.scrollIntoView({
+                            behavior: 'smooth'
+                        });
+                    }
                 });
             });
 
-            // Add hover effects for cards
+            // Enhanced hover effects for cards
             const cards = document.querySelectorAll('.category-card');
             cards.forEach(card => {
                 card.addEventListener('mouseenter', function() {
@@ -338,18 +775,27 @@
                 });
             });
 
-            // Progress tracking (basic implementation)
+            // Progress tracking
             const visitedPages = JSON.parse(localStorage.getItem('visitedPages') || '[]');
-            const totalPages = 6; // Total number of main sections
-            const progress = (visitedPages.length / totalPages) * 100;
+            const totalPages = 9; // Total number of main sections
             
-            if (visitedPages.length > 0) {
-                const progressInfo = document.querySelector('.progress-info');
-                progressInfo.innerHTML += `<br><small>Fortschritt: ${Math.round(progress)}% (${visitedPages.length}/${totalPages} Bereiche besucht)</small>`;
+            // Track current page visit
+            if (!visitedPages.includes('index')) {
+                visitedPages.push('index');
+                localStorage.setItem('visitedPages', JSON.stringify(visitedPages));
             }
+
+            // Add click tracking to category links
+            const categoryLinks = document.querySelectorAll('.category-card .btn');
+            categoryLinks.forEach(link => {
+                link.addEventListener('click', function() {
+                    const page = this.getAttribute('href').replace('.html', '');
+                    trackPageVisit(page);
+                });
+            });
         });
 
-        // Track page visits
+        // Track page visits function
         function trackPageVisit(page) {
             let visitedPages = JSON.parse(localStorage.getItem('visitedPages') || '[]');
             if (!visitedPages.includes(page)) {
@@ -357,19 +803,35 @@
                 localStorage.setItem('visitedPages', JSON.stringify(visitedPages));
             }
         }
+
+        // Toggle card content function
+        function toggleCard(button) {
+            const card = button.closest('.category-card');
+            const content = card.querySelector('.collapsible-content');
+            const isExpanded = content.classList.contains('expanded');
+            
+            if (isExpanded) {
+                content.classList.remove('expanded');
+                button.classList.remove('expanded');
+                button.classList.add('collapsed');
+                button.innerHTML = '▼';
+            } else {
+                content.classList.add('expanded');
+                button.classList.add('expanded');
+                button.classList.remove('collapsed');
+                button.innerHTML = '▲';
+            }
+        }
+
+        // Add visual feedback on button clicks
+        document.querySelectorAll('.btn').forEach(button => {
+            button.addEventListener('click', function(e) {
+                this.style.transform = 'scale(0.95)';
+                setTimeout(() => {
+                    this.style.transform = '';
+                }, 150);
+            });
+        });
     </script>
 </body>
-
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
