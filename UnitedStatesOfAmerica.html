@@ -1,0 +1,2548 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>United States of America - Englisch Abitur 2026</title>
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --secondary-color: #3498db;
+            --accent-color: #e74c3c;
+            --success-color: #27ae60;
+            --warning-color: #f39c12;
+            --bg-color: #ecf0f1;
+            --card-bg: #ffffff;
+            --text-color: #2c3e50;
+            --border-color: #bdc3c7;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, var(--bg-color) 0%, #d5dbdb 100%);
+            color: var(--text-color);
+            line-height: 1.6;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+            background: var(--card-bg);
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 5px;
+            background: linear-gradient(90deg, #b22234, white, #3c3b6e);
+        }
+
+        .back-button {
+            display: inline-block;
+            padding: 10px 20px;
+            background: var(--secondary-color);
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            transition: all 0.3s ease;
+        }
+
+        .back-button:hover {
+            background: #2980b9;
+            transform: translateY(-2px);
+        }
+
+        .header h1 {
+            color: var(--primary-color);
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+
+        .section {
+            background: var(--card-bg);
+            border-radius: 15px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+            border-left: 5px solid var(--secondary-color);
+        }
+
+        .section h2 {
+            color: var(--primary-color);
+            margin-bottom: 20px;
+            font-size: 1.8em;
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 10px;
+        }
+
+        .section h3 {
+            color: var(--secondary-color);
+            margin-top: 25px;
+            margin-bottom: 15px;
+            font-size: 1.4em;
+        }
+
+        .section h4 {
+            color: var(--primary-color);
+            margin-top: 20px;
+            margin-bottom: 10px;
+            font-size: 1.2em;
+        }
+
+        .section p {
+            margin-bottom: 15px;
+            text-align: justify;
+        }
+
+        .section ul, .section ol {
+            margin-left: 30px;
+            margin-bottom: 15px;
+        }
+
+        .section li {
+            margin-bottom: 8px;
+        }
+
+        .key-term {
+            background: #e3f2fd;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-weight: 600;
+            color: var(--secondary-color);
+        }
+
+        .important-note {
+            background: #fff3cd;
+            border-left: 4px solid var(--warning-color);
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 5px;
+        }
+
+        .quote {
+            background: #f8f9fa;
+            border-left: 4px solid var(--accent-color);
+            padding: 15px;
+            margin: 20px 0;
+            font-style: italic;
+            border-radius: 5px;
+        }
+
+        .timeline {
+            border-left: 3px solid var(--secondary-color);
+            padding-left: 20px;
+            margin: 20px 0;
+        }
+
+        .timeline-item {
+            margin-bottom: 20px;
+            position: relative;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -27px;
+            top: 5px;
+            width: 12px;
+            height: 12px;
+            background: var(--secondary-color);
+            border-radius: 50%;
+            border: 3px solid white;
+        }
+
+        .timeline-year {
+            font-weight: bold;
+            color: var(--accent-color);
+            font-size: 1.1em;
+        }
+
+        /* Navigation Menu */
+        .nav-container {
+            background: var(--card-bg);
+            padding: 20px;
+            border-radius: 15px;
+            margin-bottom: 30px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 20px;
+            z-index: 100;
+        }
+
+        .nav-container h3 {
+            color: var(--primary-color);
+            margin-bottom: 15px;
+            font-size: 1.3em;
+        }
+
+        .nav-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 10px;
+        }
+
+        .nav-link {
+            background: linear-gradient(45deg, var(--secondary-color), #2980b9);
+            color: white;
+            padding: 10px 15px;
+            border-radius: 8px;
+            text-decoration: none;
+            text-align: center;
+            transition: all 0.3s ease;
+            font-size: 0.9em;
+            font-weight: 600;
+        }
+
+        .nav-link:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(52, 152, 219, 0.3);
+            background: linear-gradient(45deg, #2980b9, var(--secondary-color));
+        }
+
+        /* Scroll to Top Button */
+        .scroll-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: linear-gradient(45deg, var(--accent-color), #c0392b);
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            cursor: pointer;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+            transition: all 0.3s ease;
+            z-index: 1000;
+            opacity: 0;
+            visibility: hidden;
+        }
+
+        .scroll-top.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .scroll-top:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(231, 76, 60, 0.4);
+        }
+
+        /* Collapsible Sections */
+        .collapsible-header {
+            background: linear-gradient(135deg, var(--secondary-color), #2980b9);
+            color: white;
+            padding: 15px 20px;
+            cursor: pointer;
+            border-radius: 10px;
+            margin-top: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: all 0.3s ease;
+            user-select: none;
+        }
+
+        .collapsible-header:hover {
+            background: linear-gradient(135deg, #2980b9, var(--secondary-color));
+            transform: translateX(5px);
+        }
+
+        .collapsible-header h3 {
+            margin: 0;
+            color: white;
+            font-size: 1.3em;
+        }
+
+        .collapsible-icon {
+            font-size: 1.5em;
+            transition: transform 0.3s ease;
+        }
+
+        .collapsible-header.active .collapsible-icon {
+            transform: rotate(180deg);
+        }
+
+        .collapsible-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s ease;
+        }
+
+        .collapsible-content.active {
+            max-height: 10000px;
+        }
+
+        .collapsible-inner {
+            padding: 20px 0;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 15px;
+            }
+            
+            .header h1 {
+                font-size: 2em;
+            }
+            
+            .section {
+                padding: 20px;
+            }
+
+            .section h2 {
+                font-size: 1.5em;
+            }
+
+            .nav-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .scroll-top {
+                bottom: 20px;
+                right: 20px;
+                width: 45px;
+                height: 45px;
+            }
+
+            .nav-container {
+                position: relative;
+                top: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <a href="index.html" class="back-button">← Back to Home</a>
+            <h1>🇺🇸 United States of America</h1>
+            <p>Comprehensive Study Guide for English Abitur 2026</p>
+        </div>
+
+        <!-- Navigation Menu -->
+        <div class="nav-container">
+            <h3>📑 Quick Navigation</h3>
+            <div class="nav-grid">
+                <a href="#foundations" class="nav-link">1. Foundations</a>
+                <a href="#african-american" class="nav-link">2. African American History</a>
+                <a href="#immigration" class="nav-link">3. Immigration</a>
+                <a href="#multiculturalism" class="nav-link">4. Multiculturalism</a>
+                <a href="#security" class="nav-link">5. Security & Freedom</a>
+                <a href="#foreign-policy" class="nav-link">6. Foreign Policy</a>
+                <a href="#economy" class="nav-link">7. Economy</a>
+                <a href="#social-welfare" class="nav-link">8. Social Welfare</a>
+                <a href="#political-system" class="nav-link">9. Political System</a>
+                <a href="#religion" class="nav-link">10. Religion</a>
+            </div>
+        </div>
+
+        <!-- Section 1: Foundations - COLLAPSIBLE VERSION -->
+        <div class="section" id="foundations">
+            <h2>1. Foundations</h2>
+
+            <div class="collapsible-header">
+                <h3>Declaration of Independence (1776)</h3>
+                <span class="collapsible-icon">▼</span>
+            </div>
+            <div class="collapsible-content">
+                <div class="collapsible-inner">
+                    <p>The Declaration of Independence, adopted on July 4, 1776, marked the thirteen American colonies' formal separation from Great Britain. Written primarily by Thomas Jefferson, this foundational document established the philosophical basis for American democracy.</p>
+                    
+                    <div class="quote">
+                        "We hold these truths to be self-evident, that all men are created equal, that they are endowed by their Creator with certain unalienable Rights, that among these are Life, Liberty and the pursuit of Happiness."
+                    </div>
+                    
+                    <h4>Key Principles:</h4>
+                    <ul>
+                        <li><span class="key-term">Natural Rights:</span> All people possess inherent rights that cannot be taken away</li>
+                        <li><span class="key-term">Equality:</span> All men are created equal (though initially excluding women, enslaved people, and Native Americans)</li>
+                        <li><span class="key-term">Popular Sovereignty:</span> Government derives its power from the consent of the governed</li>
+                        <li><span class="key-term">Right to Revolution:</span> People have the right to overthrow oppressive governments</li>
+                    </ul>
+
+                    <h4>Historical Context:</h4>
+                    <p>The Declaration emerged after years of colonial grievances against British rule, including taxation without representation, the Quartering Acts, and restrictions on colonial self-governance. The document listed 27 specific grievances against King George III and Parliament.</p>
+                </div>
+            </div>
+
+            <div class="collapsible-header">
+                <h3>The Westward Movement and the Frontier Spirit</h3>
+                <span class="collapsible-icon">▼</span>
+            </div>
+            <div class="collapsible-content">
+                <div class="collapsible-inner">
+                    <p>The westward expansion shaped American identity profoundly, creating what became known as the <span class="key-term">Frontier Spirit</span> or <span class="key-term">Pioneer Spirit</span>.</p>
+
+                    <h4>Characteristics of the Frontier Spirit:</h4>
+                    <ul>
+                        <li><span class="key-term">Individualism:</span> Self-reliance and personal initiative</li>
+                        <li><span class="key-term">Optimism:</span> Belief in unlimited possibilities and a better future</li>
+                        <li><span class="key-term">Pragmatism:</span> Focus on practical solutions rather than abstract theories</li>
+                        <li><span class="key-term">Mobility:</span> Willingness to move for opportunity</li>
+                        <li><span class="key-term">Egalitarianism:</span> Rejection of rigid class structures</li>
+                        <li><span class="key-term">Work Ethic:</span> Emphasis on hard work and perseverance</li>
+                    </ul>
+
+                    <h4>Key Events in Westward Expansion:</h4>
+                    <div class="timeline">
+                        <div class="timeline-item">
+                            <span class="timeline-year">1803:</span> Louisiana Purchase doubled the size of the United States
+                        </div>
+                        <div class="timeline-item">
+                            <span class="timeline-year">1804-1806:</span> Lewis and Clark Expedition explored the western territories
+                        </div>
+                        <div class="timeline-item">
+                            <span class="timeline-year">1848:</span> California Gold Rush attracted hundreds of thousands westward
+                        </div>
+                        <div class="timeline-item">
+                            <span class="timeline-year">1862:</span> Homestead Act provided free land to settlers
+                        </div>
+                        <div class="timeline-item">
+                            <span class="timeline-year">1869:</span> Transcontinental Railroad completed, connecting East and West
+                        </div>
+                        <div class="timeline-item">
+                            <span class="timeline-year">1890:</span> U.S. Census declared the frontier "closed"
+                        </div>
+                    </div>
+
+                    <div class="important-note">
+                        <strong>Critical Perspective:</strong> While westward expansion represented opportunity for European Americans, it resulted in the displacement, violence against, and cultural destruction of Native American peoples through forced removals, broken treaties, and warfare.
+                    </div>
+                </div>
+            </div>
+
+            <div class="collapsible-header">
+                <h3>Manifest Destiny</h3>
+                <span class="collapsible-icon">▼</span>
+            </div>
+            <div class="collapsible-content">
+                <div class="collapsible-inner">
+                    <p><span class="key-term">Manifest Destiny</span> was the 19th-century belief that American expansion across the continent was both justified and inevitable. The term was coined by journalist John O'Sullivan in 1845.</p>
+
+                    <h4>Core Beliefs:</h4>
+                    <ul>
+                        <li>Americans were destined by God to expand across North America</li>
+                        <li>American institutions and democracy were superior and should be spread</li>
+                        <li>Expansion would bring progress, democracy, and civilization</li>
+                        <li>Continental expansion from Atlantic to Pacific was America's right and duty</li>
+                    </ul>
+
+                    <h4>Consequences:</h4>
+                    <ul>
+                        <li><strong>Mexican-American War (1846-1848):</strong> Resulted in U.S. acquisition of California, Nevada, Utah, Arizona, New Mexico, and parts of Colorado and Wyoming</li>
+                        <li><strong>Native American Displacement:</strong> Trail of Tears, reservation system, and systematic destruction of indigenous cultures</li>
+                        <li><strong>Slavery Expansion Debate:</strong> New territories reignited conflicts over whether slavery would expand westward</li>
+                        <li><strong>Cultural Impact:</strong> Reinforced American exceptionalism and interventionist foreign policy tendencies</li>
+                    </ul>
+
+                    <div class="important-note">
+                        <strong>Critical Analysis:</strong> Manifest Destiny served as ideological justification for territorial expansion and the subjugation of non-white peoples. It reflected racist assumptions about Anglo-Saxon superiority and divine favor, while conveniently ignoring the rights and humanity of those already inhabiting the territories.
+                    </div>
+                </div>
+            </div>
+
+            <div class="collapsible-header">
+                <h3>Difficulties in Forming a Nation</h3>
+                <span class="collapsible-icon">▼</span>
+            </div>
+            <div class="collapsible-content">
+                <div class="collapsible-inner">
+                    <p>Creating a unified nation from thirteen independent colonies presented enormous challenges between 1776 and 1789.</p>
+
+                    <h4>Major Challenges:</h4>
+                    
+                    <p><strong>1. Creating a Federal System</strong></p>
+                    <ul>
+                        <li><span class="key-term">Articles of Confederation (1781-1789):</span> First attempt at national government proved too weak
+                            <ul>
+                                <li>No executive branch or federal courts</li>
+                                <li>Congress couldn't levy taxes or regulate commerce</li>
+                                <li>Required unanimous consent for amendments</li>
+                                <li>No national currency or army</li>
+                            </ul>
+                        </li>
+                        <li><span class="key-term">Constitutional Convention (1787):</span> Delegates met in Philadelphia to create a stronger federal government</li>
+                    </ul>
+
+                    <p><strong>2. Balancing State and Federal Power</strong></p>
+                    <ul>
+                        <li><span class="key-term">Federalists:</span> Supported strong central government (Hamilton, Madison, Jay)</li>
+                        <li><span class="key-term">Anti-Federalists:</span> Feared centralized power, wanted stronger state rights (Patrick Henry, George Mason)</li>
+                        <li><strong>Compromise:</strong> Federal system with division of powers and Bill of Rights (1791)</li>
+                    </ul>
+
+                    <p><strong>3. Regional Differences</strong></p>
+                    <ul>
+                        <li><strong>North:</strong> Industrial, commercial, opposed slavery expansion</li>
+                        <li><strong>South:</strong> Agricultural, plantation economy dependent on slavery</li>
+                        <li><strong>West:</strong> Frontier territories seeking statehood and representation</li>
+                    </ul>
+
+                    <p><strong>4. The Slavery Question</strong></p>
+                    <ul>
+                        <li><span class="key-term">Three-Fifths Compromise:</span> Enslaved people counted as 3/5 of a person for representation purposes</li>
+                        <li><span class="key-term">Slave Trade Compromise:</span> Congress couldn't ban slave trade until 1808</li>
+                        <li>This issue ultimately led to the Civil War (1861-1865)</li>
+                    </ul>
+
+                    <p><strong>5. Economic Challenges</strong></p>
+                    <ul>
+                        <li>War debt and economic depression</li>
+                        <li>Lack of unified currency</li>
+                        <li>Interstate trade barriers</li>
+                        <li>Foreign trade restrictions</li>
+                    </ul>
+
+                    <h4>Constitutional Solutions:</h4>
+                    <ul>
+                        <li><span class="key-term">Separation of Powers:</span> Legislative, Executive, Judicial branches</li>
+                        <li><span class="key-term">Checks and Balances:</span> Each branch limits the others' power</li>
+                        <li><span class="key-term">Federalism:</span> Power divided between national and state governments</li>
+                        <li><span class="key-term">Bill of Rights:</span> First 10 amendments protecting individual liberties</li>
+                        <li><span class="key-term">Amendment Process:</span> Constitution could be changed with sufficient support</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+       <!-- Section 2: African American History - COLLAPSIBLE VERSION -->
+        <div class="section" id="african-american">
+            <h2>2. African American History</h2>
+
+            <div class="collapsible-header">
+                <h3>Slaves – Liberated into Misery</h3>
+                <span class="collapsible-icon">▼</span>
+            </div>
+            <div class="collapsible-content">
+                <div class="collapsible-inner">
+                    <h4>Slavery in America (1619-1865)</h4>
+                    <p>The institution of slavery defined American society for nearly 250 years. The first enslaved Africans arrived in Virginia in 1619, and by 1860, nearly 4 million enslaved people lived in the United States, primarily in the South.</p>
+
+                    <h4>The Civil War and Emancipation</h4>
+                    <div class="timeline">
+                        <div class="timeline-item">
+                            <span class="timeline-year">1861-1865:</span> Civil War between Union (North) and Confederacy (South)
+                        </div>
+                        <div class="timeline-item">
+                            <span class="timeline-year">1863:</span> Emancipation Proclamation declared slaves in Confederate states free
+                        </div>
+                        <div class="timeline-item">
+                            <span class="timeline-year">1865:</span> 13th Amendment abolished slavery throughout the United States
+                        </div>
+                        <div class="timeline-item">
+                            <span class="timeline-year">1868:</span> 14th Amendment granted citizenship to all born in the U.S.
+                        </div>
+                        <div class="timeline-item">
+                            <span class="timeline-year">1870:</span> 15th Amendment prohibited racial discrimination in voting
+                        </div>
+                    </div>
+
+                    <h4>Reconstruction Era (1865-1877)</h4>
+                    <p>The period following the Civil War brought temporary progress but ultimately failed to secure lasting equality.</p>
+
+                    <p><strong>Brief Progress:</strong></p>
+                    <ul>
+                        <li>Freedmen's Bureau provided education, healthcare, and legal assistance</li>
+                        <li>African Americans elected to Congress and state legislatures</li>
+                        <li>Public schools established for Black children</li>
+                        <li>Economic opportunities through land ownership attempts</li>
+                    </ul>
+
+                    <p><strong>Systematic Oppression Emerged:</strong></p>
+                    <ul>
+                        <li><span class="key-term">Black Codes:</span> Southern laws restricting African American rights and mobility</li>
+                        <li><span class="key-term">Sharecropping:</span> Economic system trapping Black farmers in perpetual debt</li>
+                        <li><span class="key-term">Ku Klux Klan:</span> Terrorist organization using violence and intimidation</li>
+                        <li><span class="key-term">Compromise of 1877:</span> Ended Reconstruction, withdrew federal troops from South</li>
+                    </ul>
+
+                    <div class="important-note">
+                        <strong>The Reality of "Freedom":</strong> Liberation from slavery did not bring true freedom. African Americans faced economic exploitation, political disenfranchisement, social segregation, and constant threat of violence. Many historians describe this as being "liberated into misery."
+                    </div>
+                </div>
+            </div>
+
+            <div class="collapsible-header">
+                <h3>Separate but Equal</h3>
+                <span class="collapsible-icon">▼</span>
+            </div>
+            <div class="collapsible-content">
+                <div class="collapsible-inner">
+                    <h4>Jim Crow Era (1877-1965)</h4>
+                    <p><span class="key-term">Jim Crow laws</span> enforced racial segregation throughout the South and, informally, in many Northern areas. These laws mandated separate facilities for Black and white Americans in virtually every aspect of public life.</p>
+
+                    <h4>Plessy v. Ferguson (1896)</h4>
+                    <p>This Supreme Court decision established the legal doctrine of <span class="key-term">"separate but equal,"</span> ruling that racial segregation was constitutional as long as facilities were supposedly equal.</p>
+
+                    <ul>
+                        <li><strong>Background:</strong> Homer Plessy, who was 1/8 Black, deliberately violated Louisiana's Separate Car Act</li>
+                        <li><strong>Court Decision:</strong> 7-1 ruling upheld segregation</li>
+                        <li><strong>Justice Harlan's Dissent:</strong> Argued "our Constitution is color-blind"</li>
+                        <li><strong>Impact:</strong> Legalized segregation for 58 years</li>
+                    </ul>
+
+                    <h4>Reality of "Separate but Equal"</h4>
+                    <p>Facilities were never truly equal. African Americans faced:</p>
+                    <ul>
+                        <li>Inferior schools with outdated textbooks and dilapidated buildings</li>
+                        <li>Restricted access to hospitals and medical care</li>
+                        <li>Exclusion from restaurants, hotels, theaters, and public spaces</li>
+                        <li>Separate and inferior transportation facilities</li>
+                        <li>Economic barriers including job discrimination and unequal pay</li>
+                        <li><span class="key-term">Disenfranchisement:</span> Poll taxes, literacy tests, grandfather clauses preventing voting</li>
+                        <li><span class="key-term">Lynching:</span> Extrajudicial killings used as racial terrorism (over 4,000 documented between 1877-1950)</li>
+                    </ul>
+
+                    <h4>Early Resistance and Legal Challenges</h4>
+                    <ul>
+                        <li><span class="key-term">NAACP (1909):</span> National Association for the Advancement of Colored People fought legal battles</li>
+                        <li><strong>Thurgood Marshall:</strong> NAACP lawyer who challenged segregation in courts</li>
+                        <li><span class="key-term">Brown v. Board of Education (1954):</span> Supreme Court unanimously ruled school segregation unconstitutional, overturning Plessy</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="collapsible-header">
+                <h3>Rosa Parks and the Montgomery Bus Boycott</h3>
+                <span class="collapsible-icon">▼</span>
+            </div>
+            <div class="collapsible-content">
+                <div class="collapsible-inner">
+                    <h4>December 1, 1955 – The Spark</h4>
+                    <p>Rosa Parks, a 42-year-old seamstress and NAACP secretary, refused to give up her seat to a white passenger on a Montgomery, Alabama bus. Her arrest became the catalyst for a mass movement.</p>
+
+                    <div class="important-note">
+                        <strong>Context:</strong> Parks was not simply "tired" as often simplified. She was an experienced civil rights activist who made a conscious decision to challenge segregation. She stated: "The only tired I was, was tired of giving in."
+                    </div>
+
+                    <h4>The Montgomery Bus Boycott (1955-1956)</h4>
+                    <ul>
+                        <li><strong>Duration:</strong> 381 days</li>
+                        <li><strong>Organization:</strong> Montgomery Improvement Association (MIA) led by Dr. Martin Luther King Jr.</li>
+                        <li><strong>Participation:</strong> 40,000 Black residents (75% of bus riders) refused to use buses</li>
+                        <li><strong>Alternative Transportation:</strong> Carpools, walking groups, Black-owned taxi companies</li>
+                        <li><strong>Economic Impact:</strong> Bus company faced severe financial losses</li>
+                    </ul>
+
+                    <h4>Tactics and Challenges:</h4>
+                    <ul>
+                        <li><span class="key-term">Nonviolent Resistance:</span> Inspired by Gandhi's philosophy</li>
+                        <li><strong>Violence Against Protesters:</strong> Bombings of King's home and Black churches</li>
+                        <li><strong>Legal Harassment:</strong> Arrests for "conspiracy to boycott"</li>
+                        <li><strong>Community Solidarity:</strong> Black community remained united despite hardships</li>
+                    </ul>
+
+                    <h4>Victory and Significance:</h4>
+                    <ul>
+                        <li><span class="key-term">Browder v. Gayle (1956):</span> Federal court ruled bus segregation unconstitutional</li>
+                        <li>December 20, 1956: Buses desegregated</li>
+                        <li><strong>Impact:</strong> Demonstrated effectiveness of mass nonviolent protest</li>
+                        <li>Launched Dr. King as national civil rights leader</li>
+                        <li>Inspired similar movements across the South</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="collapsible-header">
+                <h3>Little Rock Nine</h3>
+                <span class="collapsible-icon">▼</span>
+            </div>
+            <div class="collapsible-content">
+                <div class="collapsible-inner">
+                    <h4>Background</h4>
+                    <p>Despite the Brown v. Board of Education decision in 1954, many Southern states resisted school integration. Arkansas Governor Orval Faubus actively opposed integration, setting the stage for a national crisis.</p>
+
+                    <h4>September 1957 – Crisis at Central High School</h4>
+                    <p>Nine African American students—Minnijean Brown, Elizabeth Eckford, Ernest Green, Thelma Mothershed, Melba Pattillo, Gloria Ray, Terrence Roberts, Jefferson Thomas, and Carlotta Walls—attempted to integrate Little Rock Central High School.</p>
+
+                    <h4>Timeline of Events:</h4>
+                    <div class="timeline">
+                        <div class="timeline-item">
+                            <span class="timeline-year">September 4:</span> Governor Faubus deployed Arkansas National Guard to prevent Black students from entering
+                        </div>
+                        <div class="timeline-item">
+                            <span class="timeline-year">September 4:</span> Elizabeth Eckford faced angry mob alone after missing message to meet other students
+                        </div>
+                        <div class="timeline-item">
+                            <span class="timeline-year">September 23:</span> Nine students entered through side door but were removed due to mob violence
+                        </div>
+                        <div class="timeline-item">
+                            <span class="timeline-year">September 24:</span> President Eisenhower federalized Arkansas National Guard and sent 101st Airborne Division
+                        </div>
+                        <div class="timeline-item">
+                            <span class="timeline-year">September 25:</span> Little Rock Nine entered school under federal military protection
+                        </div>
+                    </div>
+
+                    <h4>Their Experience:</h4>
+                    <ul>
+                        <li>Daily harassment, verbal abuse, and physical attacks</li>
+                        <li>Isolation from white students</li>
+                        <li>Minnijean Brown expelled for defending herself against harassment</li>
+                        <li>Required constant military protection</li>
+                        <li>Ernest Green became first Black graduate in May 1958</li>
+                    </ul>
+
+                    <h4>Historical Significance:</h4>
+                    <ul>
+                        <li>First major test of federal enforcement of Brown v. Board decision</li>
+                        <li>Demonstrated federal government's willingness to protect civil rights</li>
+                        <li>Exposed violent resistance to integration to national audience</li>
+                        <li>Images of Elizabeth Eckford facing the mob became iconic</li>
+                        <li>Showed courage of young activists in civil rights movement</li>
+                    </ul>
+
+                    <div class="important-note">
+                        <strong>Governor Faubus's Response (1958-1959):</strong> Rather than continue integration, Faubus closed all Little Rock high schools for the entire 1958-1959 school year—a period known as the "Lost Year."
+                    </div>
+                </div>
+            </div>
+
+            <div class="collapsible-header">
+                <h3>Martin Luther King Jr.</h3>
+                <span class="collapsible-icon">▼</span>
+            </div>
+            <div class="collapsible-content">
+                <div class="collapsible-inner">
+                    <h4>Early Life and Education</h4>
+                    <p>Born January 15, 1929, in Atlanta, Georgia, Martin Luther King Jr. grew up in a middle-class Black family. His father was a Baptist minister. King earned a doctorate in theology from Boston University and became deeply influenced by Christian theology and Gandhi's philosophy of nonviolent resistance.</p>
+
+                    <h4>Philosophy and Methods</h4>
+                    <ul>
+                        <li><span class="key-term">Nonviolent Direct Action:</span> Civil disobedience, sit-ins, marches, boycotts</li>
+                        <li><span class="key-term">Christian Love (Agape):</span> Unconditional love even for enemies</li>
+                        <li><span class="key-term">Integration:</span> Belief in "beloved community" where all races live together equally</li>
+                        <li><span class="key-term">Moral Persuasion:</span> Appeal to American values and conscience</li>
+                    </ul>
+
+                    <h4>Major Campaigns and Achievements:</h4>
+                    
+                    <p><strong>Birmingham Campaign (1963)</strong></p>
+                    <ul>
+                        <li>Targeted "most segregated city in America"</li>
+                        <li>Police Commissioner Bull Connor used fire hoses and police dogs against protesters</li>
+                        <li>King arrested, wrote famous "Letter from Birmingham Jail"</li>
+                        <li>Children's Crusade: Young people faced violence, shocking nation</li>
+                        <li>Result: Birmingham began desegregating public facilities</li>
+                    </ul>
+
+                    <p><strong>March on Washington (August 28, 1963)</strong></p>
+                    <ul>
+                        <li>250,000 people gathered at Lincoln Memorial</li>
+                        <li>King delivered "I Have a Dream" speech</li>
+                        <li>Pressured Congress to pass civil rights legislation</li>
+                    </ul>
+
+                    <div class="quote">
+                        "I have a dream that one day this nation will rise up and live out the true meaning of its creed: 'We hold these truths to be self-evident, that all men are created equal.'" - Martin Luther King Jr., 1963
+                    </div>
+
+                    <p><strong>Selma to Montgomery Marches (1965)</strong></p>
+                    <ul>
+                        <li><span class="key-term">Bloody Sunday (March 7, 1965):</span> Police attacked marchers on Edmund Pettus Bridge</li>
+                        <li>National outrage led to federal protection for marchers</li>
+                        <li>Led to passage of Voting Rights Act (1965)</li>
+                    </ul>
+
+                    <h4>Legislative Victories:</h4>
+                    <ul>
+                        <li><span class="key-term">Civil Rights Act (1964):</span> Banned discrimination in public accommodations and employment</li>
+                        <li><span class="key-term">Voting Rights Act (1965):</span> Prohibited racial discrimination in voting</li>
+                        <li><span class="key-term">Fair Housing Act (1968):</span> Banned discrimination in housing (passed after King's death)</li>
+                    </ul>
+
+                    <h4>Later Focus and Assassination</h4>
+                    <p>In his final years, King expanded his focus to economic justice and opposition to the Vietnam War, which made him more controversial.</p>
+                    <ul>
+                        <li><span class="key-term">Poor People's Campaign:</span> Addressed economic inequality across racial lines</li>
+                        <li><strong>Anti-War Stance:</strong> "Beyond Vietnam" speech (1967) criticized American militarism</li>
+                        <li><strong>April 4, 1968:</strong> Assassinated in Memphis while supporting striking sanitation workers</li>
+                    </ul>
+
+                    <h4>Legacy:</h4>
+                    <ul>
+                        <li>Nobel Peace Prize recipient (1964), youngest at the time</li>
+                        <li>His birthday is a federal holiday (third Monday in January)</li>
+                        <li>Symbol of nonviolent resistance worldwide</li>
+                        <li>His methods influenced civil rights movements globally</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="collapsible-header">
+                <h3>Malcolm X</h3>
+                <span class="collapsible-icon">▼</span>
+            </div>
+            <div class="collapsible-content">
+                <div class="collapsible-inner">
+                    <h4>Early Life: Malcolm Little (1925-1965)</h4>
+                    <p>Born Malcolm Little in Omaha, Nebraska, his childhood was marked by violence and trauma. His father, a supporter of Marcus Garvey's Black nationalism, was likely murdered by white supremacists. His mother was institutionalized, and Malcolm was placed in foster care. He dropped out of school despite being intelligent and turned to crime, eventually serving prison time.</p>
+
+                    <h4>Transformation in Prison</h4>
+                    <ul>
+                        <li>Educated himself extensively while imprisoned</li>
+                        <li>Converted to Nation of Islam (NOI)</li>
+                        <li>Replaced surname "Little" (slave name) with "X" representing his lost African name</li>
+                        <li>Released in 1952 and became NOI minister</li>
+                    </ul>
+
+                    <h4>Philosophy and Ideology</h4>
+                    
+                    <p><strong>Early Period with Nation of Islam (1952-1964):</strong></p>
+                    <ul>
+                        <li><span class="key-term">Black Nationalism:</span> Economic independence and cultural pride for Black community</li>
+                        <li><span class="key-term">Self-Defense:</span> "By any means necessary" - rejected nonviolence if attacked</li>
+                        <li><span class="key-term">Separation:</span> Initially advocated for separate Black nation</li>
+                        <li><strong>Critique of Integration:</strong> Called it a false solution that asked Blacks to beg for rights</li>
+                        <li><strong>White America:</strong> Described it as inherently racist; initially called whites "devils"</li>
+                    </ul>
+
+                    <div class="quote">
+                        "We declare our right on this earth to be a man, to be a human being, to be respected as a human being, to be given the rights of a human being in this society, on this earth, in this day, which we intend to bring into existence by any means necessary." - Malcolm X
+                    </div>
+
+                    <h4>Evolution and Break with NOI (1964)</h4>
+                    <p>Malcolm X's views evolved significantly in his final year:</p>
+                    <ul>
+                        <li>Left Nation of Islam due to disillusionment with leader Elijah Muhammad</li>
+                        <li><span class="key-term">Pilgrimage to Mecca (Hajj):</span> Transformative experience seeing Muslims of all races praying together</li>
+                        <li>Adopted name <span class="key-term">El-Hajj Malik El-Shabazz</span></li>
+                        <li>Founded Organization of Afro-American Unity (OAAU)</li>
+                        <li>Moved toward human rights rather than just civil rights framework</li>
+                        <li>Became more open to working with white allies who were genuine</li>
+                        <li>Began to see economic exploitation, not just race, as central problem</li>
+                    </ul>
+
+                    <h4>Assassination and Legacy</h4>
+                    <ul>
+                        <li><strong>February 21, 1965:</strong> Assassinated at age 39 by Nation of Islam members in New York</li>
+                        <li><span class="key-term">"The Autobiography of Malcolm X"</span> (1965): One of the most influential books of 20th century</li>
+                        <li>Influenced Black Power movement, Black Panthers, and hip-hop culture</li>
+                        <li>Symbol of Black pride, self-determination, and uncompromising stance against oppression</li>
+                        <li>His evolution showed capacity for growth and changing views</li>
+                    </ul>
+
+                    <div class="important-note">
+                        <strong>Understanding Malcolm X:</strong> While often portrayed as opposite of King, Malcolm X articulated the anger and frustration of urban Black Americans who felt nonviolence wasn't working. His message of self-respect, economic independence, and self-defense resonated with those who felt King's approach was too accommodating. By his death, both leaders were moving toward more similar positions on economic justice and systemic racism.
+                    </div>
+                </div>
+            </div>
+
+            <div class="collapsible-header">
+                <h3>Affirmative Action</h3>
+                <span class="collapsible-icon">▼</span>
+            </div>
+            <div class="collapsible-content">
+                <div class="collapsible-inner">
+                    <h4>Definition and Origins</h4>
+                    <p><span class="key-term">Affirmative action</span> refers to policies that take race, ethnicity, or gender into consideration to increase opportunities for underrepresented groups in education, employment, and business.</p>
+
+                    <h4>Historical Development:</h4>
+                    <div class="timeline">
+                        <div class="timeline-item">
+                            <span class="timeline-year">1961:</span> President Kennedy first used term "affirmative action"
+                        </div>
+                        <div class="timeline-item">
+                            <span class="timeline-year">1965:</span> President Johnson's Executive Order 11246 required federal contractors to take affirmative action
+                        </div>
+                        <div class="timeline-item">
+                            <span class="timeline-year">1978:</span> Regents of University of California v. Bakke: Supreme Court allowed race as one factor among many
+                        </div>
+                        <div class="timeline-item">
+                            <span class="timeline-year">2003:</span> Grutter v. Bollinger: Upheld affirmative action in university admissions
+                        </div>
+                        <div class="timeline-item">
+                            <span class="timeline-year">2023:</span> Supreme Court struck down race-conscious admissions at Harvard and UNC
+                        </div>
+                    </div>
+
+                    <h4>Arguments For Affirmative Action:</h4>
+                    <ul>
+                        <li><span class="key-term">Remedying Past Discrimination:</span> Addresses centuries of slavery, segregation, and discrimination</li>
+                        <li><span class="key-term">Diversity Benefits:</span> Diverse student bodies and workforces improve learning and performance</li>
+                        <li><span class="key-term">Level Playing Field:</span> Compensates for ongoing systemic disadvantages</li>
+                        <li><span class="key-term">Breaking Cycles:</span> Helps break intergenerational poverty and exclusion</li>
+                        <li><strong>Success Stories:</strong> Created opportunities for millions to enter higher education and professions</li>
+                        <li><strong>Social Mobility:</strong> Expanded the Black middle class</li>
+                    </ul>
+
+                    <h4>Arguments Against Affirmative Action:</h4>
+                    <ul>
+                        <li><span class="key-term">Reverse Discrimination:</span> Unfair to individuals (often white or Asian) denied opportunities</li>
+                        <li><span class="key-term">Merit-Based System:</span> Should focus only on qualifications, not race</li>
+                        <li><span class="key-term">Stigmatization:</span> May create perception that beneficiaries are less qualified</li>
+                        <li><span class="key-term">Mismatch Theory:</span> Places students in schools where they struggle academically</li>
+                        <li><strong>Class-Based Alternative:</strong> Should focus on economic disadvantage instead of race</li>
+                        <li><strong>Constitution:</strong> Violates principle of color-blind justice</li>
+                    </ul>
+
+                    <h4>Current Status and Future:</h4>
+                    <p>The 2023 Supreme Court decision <span class="key-term">"Students for Fair Admissions v. Harvard/UNC"</span> effectively ended race-conscious admissions in higher education, though institutions are exploring alternative approaches to maintaining diversity.</p>
+                </div>
+            </div>
+
+            <div class="collapsible-header">
+                <h3>Situation of African Americans Today</h3>
+                <span class="collapsible-icon">▼</span>
+            </div>
+            <div class="collapsible-content">
+                <div class="collapsible-inner">
+                    <h4>Progress Made:</h4>
+                    <ul>
+                        <li><strong>Political Representation:</strong> Barack Obama elected president (2008, 2012); Kamala Harris first Black/Asian woman vice president</li>
+                        <li><strong>Legal Equality:</strong> Civil rights laws protect against discrimination</li>
+                        <li><strong>Economic Growth:</strong> Significant Black middle class; Black-owned businesses growing</li>
+                        <li><strong>Educational Attainment:</strong> More African Americans attending and graduating college</li>
+                        <li><strong>Cultural Influence:</strong> Dominant presence in entertainment, sports, and culture</li>
+                    </ul>
+
+                    <h4>Persistent Challenges and Disparities:</h4>
+                    
+                    <p><strong>Economic Inequality:</strong></p>
+                    <ul>
+                        <li><span class="key-term">Wealth Gap:</span> Median Black family wealth is 1/10th of white family wealth</li>
+                        <li><strong>Income Disparity:</strong> Black households earn approximately 60% of white household income</li>
+                        <li><strong>Unemployment:</strong> Typically double the rate for whites</li>
+                        <li><strong>Homeownership:</strong> Significantly lower rates; legacy of redlining</li>
+                    </ul>
+
+                    <p><strong>Criminal Justice:</strong></p>
+                    <ul>
+                        <li><span class="key-term">Mass Incarceration:</span> African Americans incarcerated at 5x the rate of whites</li>
+                        <li><strong>Police Brutality:</strong> Disproportionate victims of police violence</li>
+                        <li><strong>War on Drugs:</strong> Disproportionately targeted Black communities</li>
+                        <li><strong>Sentencing Disparities:</strong> Longer sentences for same crimes</li>
+                    </ul>
+
+                    <p><strong>Education:</strong></p>
+                    <ul>
+                        <li><span class="key-term">School Segregation:</strong> De facto segregation due to residential patterns</li>
+                        <li><strong>Resource Inequality:</strong> Schools in Black neighborhoods often underfunded</li>
+                        <li><strong>School-to-Prison Pipeline:</strong> Harsh discipline policies affect Black students disproportionately</li>
+                        <li><strong>Achievement Gap:</strong> Persistent disparities in test scores and graduation rates</li>
+                    </ul>
+
+                    <p><strong>Health:</strong></p>
+                    <ul>
+                        <li><strong>Life Expectancy:</strong> 3-4 years lower than white Americans</li>
+                        <li><strong>Maternal Mortality:</strong> Black women die during pregnancy/childbirth at 3x the rate</li>
+                        <li><strong>COVID-19:</strong> Disproportionately affected Black communities</li>
+                        <li><strong>Healthcare Access:</strong> Less access to quality healthcare</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="collapsible-header">
+                <h3>Black Lives Matter</h3>
+                <span class="collapsible-icon">▼</span>
+            </div>
+            <div class="collapsible-content">
+                <div class="collapsible-inner">
+                    <h4>Origins and Founding (2013)</h4>
+                    <p>Black Lives Matter began as a hashtag after George Zimmerman's acquittal in the shooting death of Trayvon Martin, an unarmed Black teenager. Three Black women activists—Alicia Garza, Patrisse Cullors, and Opal Tometi—founded the movement.</p>
+
+                    <h4>Core Message:</h4>
+                    <p>The phrase "Black Lives Matter" asserts that Black lives, which have historically been devalued, deserve equal protection and treatment. It's a response to systemic racism and violence against Black people.</p>
+
+                    <div class="important-note">
+                        <strong>Common Misunderstanding:</strong> "Black Lives Matter" doesn't mean other lives don't matter. The implicit meaning is "Black Lives Matter TOO" or "Black Lives Matter AS MUCH AS others." It's a call for equality, not superiority.
+                    </div>
+
+                    <h4>Catalyzing Events:</h4>
+                    <div class="timeline">
+                        <div class="timeline-item">
+                            <span class="timeline-year">2013:</span> Trayvon Martin case - sparked initial hashtag
+                        </div>
+                        <div class="timeline-item">
+                            <span class="timeline-year">2014:</span> Michael Brown (Ferguson, MO) - national protests, "Hands Up, Don't Shoot"
+                        </div>
+                        <div class="timeline-item">
+                            <span class="timeline-year">2014:</span> Eric Garner (New York) - "I Can't Breathe" became rallying cry
+                        </div>
+                        <div class="timeline-item">
+                            <span class="timeline-year">2020:</span> George Floyd (Minneapolis) - global protests, largest civil rights movement in U.S. history
+                        </div>
+                        <div class="timeline-item">
+                            <span class="timeline-year">2020:</span> Breonna Taylor (Louisville) - killed in botched police raid
+                        </div>
+                    </div>
+
+                    <h4>2020 Protests and Global Impact:</h4>
+                    <p>The murder of George Floyd by police officer Derek Chauvin, captured on video, sparked unprecedented protests:</p>
+                    <ul>
+                        <li>15-26 million Americans participated in protests</li>
+                        <li>Protests in over 60 countries</li>
+                        <li>Diverse, multiracial participation</li>
+                        <li>Largely peaceful (93% of protests had no violence)</li>
+                        <li>Led to some police reforms and removal of Confederate monuments</li>
+                        <li>Renewed national conversation on systemic racism</li>
+                    </ul>
+
+                    <h4>Movement Goals and Demands:</h4>
+                    <ul>
+                        <li><span class="key-term">Police Accountability:</span> End qualified immunity, body cameras, civilian oversight</li>
+                        <li><span class="key-term">Defund/Reimagine Police:</span> Redirect funding to community services (controversial slogan)</li>
+                        <li><strong>Criminal Justice Reform:</strong> End mass incarceration, eliminate cash bail</li>
+                        <li><strong>Economic Justice:</strong> Address wealth gap and economic inequality</li>
+                        <li><strong>Educational Equity:</strong> Equal funding and opportunities</li>
+                    </ul>
+
+                    <h4>Criticisms and Controversies:</h4>
+                    <ul>
+                        <li><strong>"Defund the Police":</strong> Slogan seen as too radical by many</li>
+                        <li><strong>Decentralized Structure:</strong> No central leadership</li>
+                        <li><strong>Tactics:</strong> Some protests involved property damage</li>
+                        <li><strong>"All Lives Matter" Response:</strong> Counter-slogan seen as missing the point</li>
+                        <li><strong>Political Polarization:</strong> Became partisan issue</li>
+                    </ul>
+
+                    <h4>Impact and Legacy:</h4>
+                    <ul>
+                        <li>Transformed national conversation about race and policing</li>
+                        <li>Led to some police reforms in various cities and states</li>
+                        <li>Increased awareness of systemic racism among white Americans</li>
+                        <li>Derek Chauvin convicted of murder (rare outcome)</li>
+                        <li>Inspired global anti-racism movements</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Section 3: Immigration - COLLAPSIBLE VERSION -->
+        <div class="section" id="immigration">
+            <h2>3. Immigration</h2>
+
+            <div class="collapsible-header">
+                <h3>Push and Pull Factors</h3>
+                <span class="collapsible-icon">▼</span>
+            </div>
+            <div class="collapsible-content">
+                <div class="collapsible-inner">
+                    <p>Immigration is driven by <span class="key-term">push factors</span> (conditions that drive people to leave) and <span class="key-term">pull factors</span> (attractions that draw people to a destination).</p>
+
+                    <h4>Push Factors (Why People Leave):</h4>
+                    <ul>
+                        <li><strong>Economic Hardship:</strong> Poverty, unemployment, lack of opportunity</li>
+                        <li><strong>Political Persecution:</strong> Authoritarian regimes, human rights violations</li>
+                        <li><strong>War and Violence:</strong> Civil wars, ethnic conflicts, gang violence</li>
+                        <li><strong>Religious Persecution:</strong> Discrimination based on religious beliefs</li>
+                        <li><strong>Natural Disasters:</strong> Droughts, floods, earthquakes, climate change</li>
+                        <li><strong>Lack of Services:</strong> Poor education, inadequate healthcare</li>
+                    </ul>
+
+                    <h4>Pull Factors (Why Choose America):</h4>
+                    <ul>
+                        <li><strong>Economic Opportunity:</strong> Jobs, higher wages, entrepreneurship</li>
+                        <li><strong>Political Freedom:</strong> Democracy, rule of law, human rights</li>
+                        <li><strong>Religious Freedom:</strong> Constitutional protection</li>
+                        <li><strong>Education:</strong> World-class universities, free public schools</li>
+                        <li><strong>Family Reunification:</strong> Relatives already in U.S.</li>
+                        <li><strong>The "American Dream":</strong> Belief in meritocracy and upward mobility</li>
+                        <li><strong>Safety and Security:</strong> Escape from violence</li>
+                    </ul>
+
+                    <h4>Historical Examples:</h4>
+                    <ul>
+                        <li><strong>Irish (1840s-1850s):</strong> Push - Potato Famine; Pull - Jobs</li>
+                        <li><strong>Jews (1880s-1920s):</strong> Push - Pogroms; Pull - Religious freedom</li>
+                        <li><strong>Mexicans (ongoing):</strong> Push - Economic inequality, violence; Pull - Jobs, family</li>
+                        <li><strong>Vietnamese (1970s-1980s):</strong> Push - Communist takeover; Pull - Refugee programs</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="collapsible-header">
+                <h3>Immigration Patterns</h3>
+                <span class="collapsible-icon">▼</span>
+            </div>
+            <div class="collapsible-content">
+                <div class="collapsible-inner">
+                    <h4>First Wave (1820s-1860s): Northern and Western Europeans</h4>
+                    <ul>
+                        <li><strong>Origins:</strong> Ireland, Germany, Scandinavia, Britain</li>
+                        <li><strong>Numbers:</strong> 5 million immigrants</li>
+                        <li><strong>Settlement:</strong> Midwest farming, Eastern cities</li>
+                        <li><strong>Reception:</strong> Some nativist opposition, especially to Irish Catholics</li>
+                    </ul>
+
+                    <h4>Second Wave (1880s-1920s): Southern and Eastern Europeans</h4>
+                    <ul>
+                        <li><strong>Origins:</strong> Italy, Poland, Russia, Austria-Hungary, Greece</li>
+                        <li><strong>Numbers:</strong> 23 million immigrants</li>
+                        <li><strong>Entry Point:</strong> Ellis Island (1892-1954) processed 12 million</li>
+                        <li><strong>Settlement:</strong> Urban industrial centers, ethnic neighborhoods</li>
+                        <li><strong>Reception:</strong> Significant nativist backlash, viewed as "unassimilable"</li>
+                    </ul>
+
+                    <h4>Restriction Era (1924-1965):</h4>
+                    <ul>
+                        <li><span class="key-term">Immigration Act of 1924:</span> National origins quotas favoring Northern Europeans</li>
+                        <li>Severely restricted Southern/Eastern European and Asian immigration</li>
+                        <li>Completely banned Asian immigration</li>
+                        <li>Immigration dropped dramatically</li>
+                    </ul>
+
+                    <h4>Third Wave (1965-present): Global Immigration</h4>
+                    <ul>
+                        <li><span class="key-term">Immigration and Nationality Act of 1965:</span> Abolished discriminatory quota system</li>
+                        <li><strong>Origins:</strong> Latin America (especially Mexico), Asia, Africa, Middle East</li>
+                        <li><strong>Numbers:</strong> Over 59 million immigrants since 1965</li>
+                        <li><strong>Current (2020s):</strong> Approximately 45 million foreign-born (14% of population)</li>
+                    </ul>
+
+                    <h4>Current Demographics:</h4>
+                    <ul>
+                        <li><strong>Top Countries:</strong> Mexico, China, India, Philippines, El Salvador</li>
+                        <li><strong>Geographic Distribution:</strong> California, Texas, Florida, New York</li>
+                        <li><strong>Economic Profile:</strong> Range from low-wage workers to highly educated professionals</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="collapsible-header">
+                <h3>Immigration Policy</h3>
+                <span class="collapsible-icon">▼</span>
+            </div>
+            <div class="collapsible-content">
+                <div class="collapsible-inner">
+                    <h4>Historical Development:</h4>
+                    <div class="timeline">
+                        <div class="timeline-item">
+                            <span class="timeline-year">1790:</span> Naturalization Act - restricted citizenship to "free white persons"
+                        </div>
+                        <div class="timeline-item">
+                            <span class="timeline-year">1882:</span> Chinese Exclusion Act - first law restricting by nationality
+                        </div>
+                        <div class="timeline-item">
+                            <span class="timeline-year">1924:</span> Immigration Act - national origins quotas
+                        </div>
+                        <div class="timeline-item">
+                            <span class="timeline-year">1965:</span> Hart-Celler Act - abolished discriminatory quotas
+                        </div>
+                        <div class="timeline-item">
+                            <span class="timeline-year">1986:</span> Immigration Reform and Control Act - amnesty for 3 million
+                        </div>
+                    </div>
+
+                    <h4>Current Immigration Categories:</h4>
+                    
+                    <p><strong>1. Family-Based Immigration</strong></p>
+                    <ul>
+                        <li>Largest category of legal immigrants</li>
+                        <li>U.S. citizens can sponsor spouses, children, parents, siblings</li>
+                        <li>Long waiting lists for some countries</li>
+                    </ul>
+
+                    <p><strong>2. Employment-Based Immigration</strong></p>
+                    <ul>
+                        <li><span class="key-term">H-1B Visas:</span> Skilled workers, especially tech</li>
+                        <li>Priority workers, professionals with advanced degrees</li>
+                        <li>Limited numbers, highly competitive</li>
+                    </ul>
+
+                    <p><strong>3. Diversity Visa Program</strong></p>
+                    <ul>
+                        <li>50,000 visas annually through lottery</li>
+                        <li>For countries with low immigration rates</li>
+                    </ul>
+
+                    <p><strong>4. Refugees and Asylum Seekers</strong></p>
+                    <ul>
+                        <li><span class="key-term">Refugees:</span> Admitted from outside U.S. due to persecution fears</li>
+                        <li><span class="key-term">Asylum:</span> Protection for those already in U.S. or at border</li>
+                        <li>Annual caps set by president</li>
+                    </ul>
+
+                    <h4>Contemporary Policy Debates:</h4>
+                    <ul>
+                        <li><strong>Border Security:</strong> Physical barriers, increased enforcement</li>
+                        <li><strong>DACA:</strong> Protection for "Dreamers" brought as children</li>
+                        <li><strong>Path to Citizenship:</strong> For undocumented immigrants</li>
+                        <li><strong>Guest Worker Programs:</strong> Temporary labor</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="collapsible-header">
+                <h3>Illegal Immigration</h3>
+                <span class="collapsible-icon">▼</span>
+            </div>
+            <div class="collapsible-content">
+                <div class="collapsible-inner">
+                    <h4>Scale and Demographics:</h4>
+                    <ul>
+                        <li>Approximately 11 million undocumented immigrants in U.S.</li>
+                        <li><strong>Origins:</strong> About 50% from Mexico, also Central America, Asia</li>
+                        <li>Many overstay visas rather than crossing border illegally</li>
+                        <li>Declining numbers since 2007 peak</li>
+                    </ul>
+
+                    <h4>How People Become Undocumented:</h4>
+                    <ul>
+                        <li><span class="key-term">Illegal Border Crossing:</span> Entering without inspection</li>
+                        <li><span class="key-term">Visa Overstays:</span> Remaining after visa expires (40-50% of undocumented)</li>
+                        <li><strong>Expired Asylum Claims:</strong> Remaining after denial</li>
+                    </ul>
+
+                    <h4>Reasons for Illegal Immigration:</h4>
+                    <ul>
+                        <li><strong>Economic Desperation:</strong> Extreme poverty in home countries</li>
+                        <li><strong>Family Reunification:</strong> Joining relatives in U.S.</li>
+                        <li><strong>Violence:</strong> Fleeing gangs, cartels, domestic abuse</li>
+                        <li><strong>Legal Barriers:</strong> Years-long waiting lists</li>
+                    </ul>
+
+                    <h4>Economic Impact - Perspectives Vary:</h4>
+                    
+                    <p><strong>Arguments: Negative Impact</strong></p>
+                    <ul>
+                        <li>Compete with low-skilled native workers</li>
+                        <li>Depress wages in certain sectors</li>
+                        <li>Burden on public services</li>
+                    </ul>
+
+                    <p><strong>Arguments: Positive Impact</strong></p>
+                    <ul>
+                        <li>Fill jobs Americans won't take</li>
+                        <li>Contribute more in taxes than consume in benefits</li>
+                        <li>Essential to certain industries</li>
+                        <li>Entrepreneurship at higher rates</li>
+                        <li>Keep Social Security solvent</li>
+                    </ul>
+
+                    <div class="important-note">
+                        <strong>Economic Research:</strong> Most economists find immigration, including undocumented, has small positive effects on overall economy. Impacts vary locally and by sector.
+                    </div>
+
+                    <h4>Enforcement Approaches:</h4>
+                    <ul>
+                        <li><span class="key-term">Border Enforcement:</span> Barriers, surveillance, Border Patrol</li>
+                        <li><span class="key-term">Interior Enforcement:</span> ICE raids and detentions</li>
+                        <li><span class="key-term">Employer Sanctions:</span> Fines for hiring undocumented (rarely enforced)</li>
+                        <li><strong>Detention and Deportation:</strong> ICE removes undocumented immigrants</li>
+                    </ul>
+
+                    <h4>Human Costs:</h4>
+                    <ul>
+                        <li>Deaths crossing desert border (thousands since 2000)</li>
+                        <li>Family separations through deportation</li>
+                        <li>Exploitation by employers</li>
+                        <li>Vulnerability to crime (can't report to police)</li>
+                        <li>Human trafficking operations</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="collapsible-header">
+                <h3>Changing Social Structure</h3>
+                <span class="collapsible-icon">▼</span>
+            </div>
+            <div class="collapsible-content">
+                <div class="collapsible-inner">
+                    <h4>Demographic Transformation:</h4>
+                    <p>Immigration is fundamentally changing America's demographic composition.</p>
+
+                    <h4>Current Demographics:</h4>
+                    <ul>
+                        <li><strong>White (Non-Hispanic):</strong> 59.3% (declining from 80% in 1980)</li>
+                        <li><strong>Hispanic/Latino:</strong> 18.9% (fastest growing)</li>
+                        <li><strong>Black:</strong> 13.6%</li>
+                        <li><strong>Asian:</strong> 6.1% (fastest growing percentage-wise)</li>
+                    </ul>
+
+                    <h4>Projected Future (by 2045):</h4>
+                    <ul>
+                        <li>No single racial/ethnic majority - "majority-minority" nation</li>
+                        <li>Whites will be plurality (under 50%)</li>
+                        <li>Hispanics approximately 25%</li>
+                        <li>Asians and multiracial populations increasing</li>
+                    </ul>
+
+                    <h4>Geographic Distribution Changes:</h4>
+                    <ul>
+                        <li><strong>Traditional Destinations:</strong> California, Texas, Florida, New York</li>
+                        <li><strong>New Destinations:</strong> South, Midwest (North Carolina, Georgia, Tennessee)</li>
+                        <li><strong>Urban vs. Rural:</strong> Most in metropolitan areas, spreading to suburbs</li>
+                    </ul>
+
+                    <h4>Generational Patterns:</h4>
+                    <ul>
+                        <li><span class="key-term">First Generation:</span> Foreign-born; struggle with language, cultural adjustment</li>
+                        <li><span class="key-term">Second Generation:</span> Children of immigrants; bilingual/bicultural; often high achievers</li>
+                        <li><span class="key-term">Third+ Generation:</span> Fully assimilated; English-dominant</li>
+                    </ul>
+
+                    <h4>Cultural Impact:</h4>
+                    <ul>
+                        <li><strong>Food:</strong> Diverse cuisine (Mexican, Chinese, Italian, Thai, Ethiopian)</li>
+                        <li><strong>Language:</strong> Over 350 languages spoken</li>
+                        <li><strong>Religion:</strong> Growing religious diversity</li>
+                        <li><strong>Arts:</strong> Diverse cultural influences in music, film, literature</li>
+                    </ul>
+
+                    <h4>Political Implications:</h4>
+                    <ul>
+                        <li><strong>Electoral Politics:</strong> Hispanic and Asian vote increasingly important</li>
+                        <li><strong>Policy Priorities:</strong> Immigration policy more salient</li>
+                        <li><strong>Representation:</strong> Increasing immigrant and second-generation officials</li>
+                    </ul>
+
+                    <h4>Social Tensions:</h4>
+                    <ul>
+                        <li><span class="key-term">Cultural Anxiety:</span> Fear of losing "traditional" American culture</li>
+                        <li><strong>Economic Competition:</strong> Perceived job competition</li>
+                        <li><strong>Language Debates:</strong> English-only vs. bilingual accommodation</li>
+                        <li><strong>National Identity:</strong> What does it mean to be "American"?</li>
+                    </ul>
+
+                    <div class="important-note">
+                        <strong>Historical Pattern:</strong> Similar anxieties emerged with previous immigration waves (Irish, Italians, Jews), yet these groups eventually integrated successfully. Today's immigrants follow similar patterns.
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Section 4: Multiculturalism - COLLAPSIBLE VERSION -->
+        <div class="section" id="multiculturalism">
+            <h2>4. Multiculturalism</h2>
+
+            <div class="collapsible-header">
+                <h3>Native Americans</h3>
+                <span class="collapsible-icon">▼</span>
+            </div>
+            <div class="collapsible-content">
+                <div class="collapsible-inner">
+                    <h4>Pre-Columbian America:</h4>
+                    <ul>
+                        <li>Estimated 5-15 million Native Americans before 1492</li>
+                        <li>Over 500 distinct tribes with diverse cultures</li>
+                        <li>Sophisticated civilizations with agriculture, trade, political systems</li>
+                    </ul>
+
+                    <h4>European Colonization and Displacement:</h4>
+                    <ul>
+                        <li><strong>Disease:</strong> European diseases killed 90% of Native population</li>
+                        <li><strong>Land Theft:</strong> Treaties repeatedly broken</li>
+                        <li><span class="key-term">Indian Removal Act (1830):</span> Forced relocation eastward</li>
+                        <li><span class="key-term">Trail of Tears (1838):</span> Forced Cherokee march; thousands died</li>
+                        <li><strong>Indian Wars (1860s-1890s):</strong> Military conflicts across West</li>
+                    </ul>
+
+                    <h4>Reservation System:</h4>
+                    <ul>
+                        <li>Confined to reservations on marginal land</li>
+                        <li>By 1900, population reduced to about 250,000</li>
+                        <li>Reservations often lack economic opportunities</li>
+                    </ul>
+
+                    <h4>Cultural Suppression:</h4>
+                    <ul>
+                        <li><span class="key-term">Boarding Schools:</span> "Kill the Indian, save the man"</li>
+                        <li>Children forbidden to speak native languages</li>
+                        <li>Traditional religions banned until 1978</li>
+                        <li>Cultural genocide alongside physical genocide</li>
+                    </ul>
+
+                    <h4>Current Status:</h4>
+                    <ul>
+                        <li><strong>Population:</strong> 5.2 million, 574 federally recognized tribes</li>
+                        <li><strong>Challenges:</strong> Highest poverty rates; unemployment often over 50%</li>
+                        <li><strong>Health Issues:</strong> Lower life expectancy, high diabetes rates</li>
+                        <li><strong>Missing and Murdered Indigenous Women:</strong> Crisis of violence</li>
+                    </ul>
+
+                    <h4>Recent Developments:</h4>
+                    <ul>
+                        <li><strong>Gaming Industry:</strong> Some tribes economically successful</li>
+                        <li><strong>Cultural Revival:</strong> Preserving languages and traditions</li>
+                        <li><strong>Land Back Movement:</strong> Demanding return of stolen lands</li>
+                        <li><strong>Environmental Justice:</strong> Protecting sacred sites</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="collapsible-header">
+                <h3>Hispanics</h3>
+                <span class="collapsible-icon">▼</span>
+            </div>
+            <div class="collapsible-content">
+                <div class="collapsible-inner">
+                    <h4>Overview:</h4>
+                    <p><span class="key-term">Hispanic</span> or <span class="key-term">Latino</span> refers to people of Spanish-speaking origin. Currently the largest minority group at 62 million (18.9% of population).</p>
+
+                    <h4>Diverse Origins:</h4>
+                    <ul>
+                        <li><strong>Mexican Americans (62%):</strong> Largest subgroup; Southwest</li>
+                        <li><strong>Puerto Ricans (9%):</strong> U.S. citizens; Northeast</li>
+                        <li><strong>Cubans (4%):</strong> Primarily Florida; political refugees</li>
+                        <li><strong>Central Americans:</strong> Salvadorans, Guatemalans, growing</li>
+                    </ul>
+
+                    <h4>Socioeconomic Profile:</h4>
+                    <ul>
+                        <li><strong>Income:</strong> Lower than white, Asian, but higher than Black</li>
+                        <li><strong>Education:</strong> Lower college graduation rates</li>
+                        <li><strong>Employment:</strong> Construction, agriculture, service industries</li>
+                        <li><strong>Entrepreneurship:</strong> Growing Hispanic-owned businesses</li>
+                    </ul>
+
+                    <h4>Cultural Contributions:</h4>
+                    <ul>
+                        <li><strong>Language:</strong> Spanish second most spoken</li>
+                        <li><strong>Food:</strong> Mexican, Cuban, Puerto Rican cuisine mainstream</li>
+                        <li><strong>Music:</strong> Latin music, reggaeton, salsa popular</li>
+                        <li><strong>Celebrations:</strong> Día de los Muertos, Cinco de Mayo</li>
+                    </ul>
+
+                    <h4>Political Influence:</h4>
+                    <ul>
+                        <li>Swing voters in key states</li>
+                        <li>Increasing Hispanic elected officials</li>
+                        <li>Not monolithic voting bloc</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="collapsible-header">
+                <h3>Muslims</h3>
+                <span class="collapsible-icon">▼</span>
+            </div>
+            <div class="collapsible-content">
+                <div class="collapsible-inner">
+                    <h4>Demographics:</h4>
+                    <ul>
+                        <li>Approximately 3.45 million Muslims (1.1% of population)</li>
+                        <li>Growing through immigration and conversion</li>
+                        <li>Diverse: Middle Eastern, South Asian, African, African American</li>
+                    </ul>
+
+                    <h4>Socioeconomic Profile:</h4>
+                    <ul>
+                        <li>Highly educated: 39% hold bachelor's degree or higher</li>
+                        <li>Income comparable to general population</li>
+                        <li>Professionals, entrepreneurs, students</li>
+                    </ul>
+
+                    <h4>Post-9/11 Experiences:</h4>
+                    <ul>
+                        <li><strong>Islamophobia:</strong> Increased suspicion, discrimination</li>
+                        <li><strong>Surveillance:</strong> Government monitoring</li>
+                        <li><strong>Profiling:</strong> Airport security targeting</li>
+                        <li><strong>Backlash:</strong> Mosque vandalism, harassment</li>
+                        <li><strong>Travel Bans:</strong> Trump administration targeted Muslim-majority countries</li>
+                    </ul>
+
+                    <h4>Community Response:</h4>
+                    <ul>
+                        <li><strong>Civic Engagement:</strong> Increased political participation</li>
+                        <li><strong>Interfaith Dialogue:</strong> Building bridges</li>
+                        <li><strong>Legal Advocacy:</strong> Organizations like CAIR</li>
+                        <li><strong>Representation:</strong> More Muslims in elected office</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="collapsible-header">
+                <h3>Asians</h3>
+                <span class="collapsible-icon">▼</span>
+            </div>
+            <div class="collapsible-content">
+                <div class="collapsible-inner">
+                    <h4>Demographics:</h4>
+                    <ul>
+                        <li>Approximately 24 million (6.1%), fastest growing</li>
+                        <li><strong>Major Groups:</strong> Chinese, Indian, Filipino, Vietnamese, Korean, Japanese</li>
+                        <li>Extremely diverse in language, culture, religion</li>
+                    </ul>
+
+                    <h4>Immigration History:</h4>
+                    <ul>
+                        <li><span class="key-term">Chinese Exclusion Act (1882):</span> First law targeting specific nationality</li>
+                        <li><span class="key-term">Japanese Internment (1942-1945):</span> 120,000 imprisoned during WWII</li>
+                        <li><strong>Post-1965:</strong> Immigration Act opened doors</li>
+                    </ul>
+
+                    <h4>Socioeconomic Status:</h4>
+                    <ul>
+                        <li><strong>Income:</strong> Highest median household income</li>
+                        <li><strong>Education:</strong> Highest college graduation rates</li>
+                        <li><strong>BUT:</strong> Huge diversity within Asian American category</li>
+                    </ul>
+
+                    <h4>"Model Minority" Myth:</h4>
+                    <p>Stereotype portraying Asian Americans as universally successful.</p>
+                    <p><strong>Problems:</strong></p>
+                    <ul>
+                        <li>Ignores diversity within communities</li>
+                        <li>Masks real problems and needs</li>
+                        <li>Used to pit minorities against each other</li>
+                        <li>Creates pressure and mental health issues</li>
+                    </ul>
+
+                    <h4>Challenges:</h4>
+                    <ul>
+                        <li><strong>Discrimination:</strong> Despite success, face racism</li>
+                        <li><strong>COVID-19 Anti-Asian Hate:</strong> Surge in violence</li>
+                        <li><strong>Bamboo Ceiling:</strong> Underrepresented in leadership</li>
+                        <li><strong>Identity Issues:</strong> Balancing Asian and American identities</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="collapsible-header">
+                <h3>Melting Pot and Salad Bowl</h3>
+                <span class="collapsible-icon">▼</span>
+            </div>
+            <div class="collapsible-content">
+                <div class="collapsible-inner">
+                    <h4>Melting Pot Concept:</h4>
+                    <p>Immigrants blend together, losing distinct characteristics to create uniform "American" identity.</p>
+                    <ul>
+                        <li>Assimilation into dominant Anglo-American culture</li>
+                        <li>Immigrants shed old identities, adopt American ways</li>
+                        <li>"E pluribus unum" - Out of many, one</li>
+                        <li>Common language, shared values, unified culture</li>
+                    </ul>
+
+                    <h4>Salad Bowl Concept:</h4>
+                    <p>Immigrants maintain distinct cultural identities while coexisting.</p>
+                    <ul>
+                        <li>Cultural pluralism - maintaining traditions</li>
+                        <li>Bilingualism and multiculturalism valued</li>
+                        <li>Ethnic enclaves and cultural communities thrive</li>
+                        <li>Unity through diversity rather than uniformity</li>
+                    </ul>
+
+                    <h4>Reality Today:</h4>
+                    <p>Contemporary America represents complex mix of both models:</p>
+                    <ul>
+                        <li>Second/third generations learn English and adopt customs</li>
+                        <li>But many maintain cultural traditions, speak heritage languages</li>
+                        <li>Intermarriage creates new blended identities</li>
+                        <li>Technology makes cultural maintenance easier</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="collapsible-header">
+                <h3>Racism, Stereotyping, Prejudices and a Culture of Fear</h3>
+                <span class="collapsible-icon">▼</span>
+            </div>
+            <div class="collapsible-content">
+                <div class="collapsible-inner">
+                    <h4>Definitions:</h4>
+                    <ul>
+                        <li><span class="key-term">Racism:</span> Discrimination based on belief one race is superior</li>
+                        <li><span class="key-term">Stereotypes:</span> Oversimplified generalizations about groups</li>
+                        <li><span class="key-term">Prejudice:</span> Preconceived negative opinions</li>
+                        <li><span class="key-term">Discrimination:</span> Actions treating people unequally</li>
+                    </ul>
+
+                    <h4>Individual vs. Systemic Racism:</h4>
+                    <p><strong>Individual Racism:</strong></p>
+                    <ul>
+                        <li>Personal prejudices and discriminatory actions</li>
+                        <li>Hate crimes, slurs, biased treatment</li>
+                    </ul>
+
+                    <p><strong>Systemic/Institutional Racism:</strong></p>
+                    <ul>
+                        <li>Policies embedded in institutions disadvantaging groups</li>
+                        <li>May not require individual racist intent</li>
+                        <li>Examples: Redlining, school funding disparities, sentencing guidelines</li>
+                    </ul>
+
+                    <h4>Common Stereotypes:</h4>
+                    <ul>
+                        <li><strong>African Americans:</strong> Criminal, dangerous, athletic</li>
+                        <li><strong>Hispanics:</strong> Illegal immigrants, lazy</li>
+                        <li><strong>Asians:</strong> Model minority, good at math, foreign</li>
+                        <li><strong>Native Americans:</strong> Alcoholic, savage</li>
+                        <li><strong>Muslims:</strong> Terrorists, oppressed women</li>
+                    </ul>
+
+                    <div class="important-note">
+                        <strong>Impact of Stereotypes:</strong> Even "positive" stereotypes are harmful because they reduce individuals to group characteristics and ignore diversity within groups.
+                    </div>
+
+                    <h4>Culture of Fear:</h4>
+                    <p>Media and political rhetoric emphasize threats from minority groups:</p>
+                    <ul>
+                        <li><strong>Crime Reporting:</strong> Overrepresentation of minorities as criminals</li>
+                        <li><strong>Immigration Rhetoric:</strong> Portraying immigrants as threats</li>
+                        <li><strong>Terrorism Fears:</strong> Association of Muslims with terrorism</li>
+                    </ul>
+
+                    <h4>Combating Racism:</h4>
+                    <ul>
+                        <li><strong>Education:</strong> Learning accurate history, exposing bias</li>
+                        <li><strong>Diversity Training:</strong> In workplaces, schools</li>
+                        <li><strong>Personal Relationships:</strong> Cross-racial friendships</li>
+                        <li><strong>Representation:</strong> Diverse voices in media, politics</li>
+                        <li><strong>Policy Reform:</strong> Addressing systemic discrimination</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Section 5: Security and Freedom - COLLAPSIBLE VERSION -->
+        <div class="section" id="security">
+            <h2>5. Security and Freedom</h2>
+
+            <div class="collapsible-header">
+                <h3>Nine Eleven (9/11)</h3>
+                <span class="collapsible-icon">▼</span>
+            </div>
+            <div class="collapsible-content">
+                <div class="collapsible-inner">
+                    <h4>The Attacks:</h4>
+                    <p>On September 11, 2001, 19 al-Qaeda terrorists hijacked four commercial airplanes:</p>
+                    <ul>
+                        <li><strong>American Airlines Flight 11:</strong> North Tower of World Trade Center (8:46 AM)</li>
+                        <li><strong>United Airlines Flight 175:</strong> South Tower (9:03 AM)</li>
+                        <li><strong>American Airlines Flight 77:</strong> Pentagon (9:37 AM)</li>
+                        <li><strong>United Airlines Flight 93:</strong> Pennsylvania field after passengers fought hijackers</li>
+                    </ul>
+
+                    <h4>Casualties:</h4>
+                    <ul>
+                        <li>2,977 people killed</li>
+                        <li>Over 6,000 injured</li>
+                        <li>Deadliest terrorist attack in world history</li>
+                    </ul>
+
+                    <h4>Long-term Consequences:</h4>
+                    <ul>
+                        <li><strong>Afghanistan War (2001-2021):</strong> Overthrew Taliban</li>
+                        <li><strong>Iraq War (2003-2011):</strong> Controversial invasion</li>
+                        <li><strong>Homeland Security:</strong> New Cabinet department</li>
+                        <li><strong>Surveillance Expansion:</strong> Massive government monitoring</li>
+                        <li><strong>Islamophobia:</strong> Discrimination against Muslims</li>
+                        <li><strong>Airport Security:</strong> TSA created</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="collapsible-header">
+                <h3>The Patriot Act</h3>
+                <span class="collapsible-icon">▼</span>
+            </div>
+            <div class="collapsible-content">
+                <div class="collapsible-inner">
+                    <p>Passed 45 days after 9/11 with minimal debate.</p>
+
+                    <h4>Key Provisions:</h4>
+                    <ul>
+                        <li><span class="key-term">Expanded Surveillance:</span> Easier wiretapping, email monitoring</li>
+                        <li><span class="key-term">National Security Letters:</span> FBI can demand records without court order</li>
+                        <li><span class="key-term">Business Records:</span> Access to library, medical, financial records</li>
+                        <li><strong>Immigration Detention:</strong> Indefinite detention of non-citizens</li>
+                    </ul>
+
+                    <h4>Supporters' Arguments:</h4>
+                    <ul>
+                        <li>Necessary to prevent another 9/11</li>
+                        <li>Modernizes laws for digital age</li>
+                        <li>Successfully prevented attacks</li>
+                    </ul>
+
+                    <h4>Critics' Arguments:</h4>
+                    <ul>
+                        <li><strong>Privacy Violations:</strong> Infringes on Fourth Amendment</li>
+                        <li><strong>Lack of Oversight:</strong> Too much power, little review</li>
+                        <li><strong>Mission Creep:</strong> Powers used beyond terrorism</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="collapsible-header">
+                <h3>The NSA Scandal</h3>
+                <span class="collapsible-icon">▼</span>
+            </div>
+            <div class="collapsible-content">
+                <div class="collapsible-inner">
+                    <h4>Edward Snowden's Revelations (2013):</h4>
+                    <p>Former NSA contractor leaked documents revealing extensive surveillance programs.</p>
+
+                    <h4>What Was Revealed:</h4>
+                    <ul>
+                        <li><span class="key-term">PRISM Program:</span> Direct access to tech company data</li>
+                        <li><span class="key-term">Phone Metadata:</span> NSA collected millions of phone records</li>
+                        <li><strong>Foreign Leaders:</strong> Spying on allies including Merkel</li>
+                        <li><strong>Mass Surveillance:</strong> Affecting hundreds of millions worldwide</li>
+                    </ul>
+
+                    <h4>Key Issues:</h4>
+                    <ul>
+                        <li>Collection of data on innocent people without warrants</li>
+                        <li>Programs secret from public and Congress</li>
+                        <li>Questionable constitutionality</li>
+                    </ul>
+
+                    <h4>Consequences:</h4>
+                    <ul>
+                        <li><strong>USA Freedom Act (2015):</strong> Ended bulk phone metadata collection</li>
+                        <li><strong>Tech Reforms:</strong> Increased encryption</li>
+                        <li><strong>Snowden's Status:</strong> Charged with espionage; fled to Russia</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="collapsible-header">
+                <h3>Gun Control</h3>
+                <span class="collapsible-icon">▼</span>
+            </div>
+            <div class="collapsible-content">
+                <div class="collapsible-inner">
+                    <h4>Second Amendment:</h4>
+                    <div class="quote">
+                        "A well regulated Militia, being necessary to the security of a free State, the right of the people to keep and bear Arms, shall not be infringed."
+                    </div>
+
+                    <h4>Statistics:</h4>
+                    <ul>
+                        <li>393 million civilian-owned guns (more than people)</li>
+                        <li>45,000+ gun deaths annually</li>
+                        <li>Regular mass shootings</li>
+                        <li>School shootings uniquely American</li>
+                    </ul>
+
+                    <h4>Arguments For Gun Rights:</h4>
+                    <ul>
+                        <li><strong>Constitutional Right:</strong> Second Amendment protection</li>
+                        <li><strong>Self-Defense:</strong> Protect home and family</li>
+                        <li><strong>Deterrent to Tyranny:</strong> Armed populace prevents oppression</li>
+                        <li><strong>Other Factors:</strong> Mental health, culture - not guns</li>
+                    </ul>
+
+                    <h4>Arguments For Gun Control:</h4>
+                    <ul>
+                        <li><strong>Public Safety:</strong> Reduce gun deaths</li>
+                        <li><strong>International Comparison:</strong> Stricter laws = fewer deaths</li>
+                        <li><strong>Mass Shootings:</strong> Military weapons enable massacres</li>
+                        <li><strong>Suicide Prevention:</strong> Guns make attempts more lethal</li>
+                    </ul>
+
+                    <h4>Proposed Regulations:</h4>
+                    <ul>
+                        <li><span class="key-term">Universal Background Checks:</span> Close private sale loophole</li>
+                        <li><span class="key-term">Assault Weapons Ban:</span> Prohibit military-style rifles</li>
+                        <li><span class="key-term">Red Flag Laws:</span> Remove guns from dangerous people</li>
+                    </ul>
+
+                    <h4>Political Landscape:</h4>
+                    <ul>
+                        <li><span class="key-term">NRA:</span> Powerful gun rights lobby</li>
+                        <li><strong>Democrats:</strong> Generally support more regulations</li>
+                        <li><strong>Republicans:</strong> Generally oppose restrictions</li>
+                        <li>After mass shootings, momentum usually fades</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="collapsible-header">
+                <h3>Crime</h3>
+                <span class="collapsible-icon">▼</span>
+            </div>
+            <div class="collapsible-content">
+                <div class="collapsible-inner">
+                    <h4>Crime Rates and Trends:</h4>
+                    <ul>
+                        <li><strong>1990s Peak:</strong> Crime reached historic highs</li>
+                        <li><strong>Great Crime Decline:</strong> Dramatic decrease 1990s-2010s</li>
+                        <li><strong>Recent:</strong> Varies by city and type</li>
+                    </ul>
+
+                    <h4>Mass Incarceration:</h4>
+                    <ul>
+                        <li>2.3 million incarcerated (highest in world)</li>
+                        <li><span class="key-term">War on Drugs:</span> Main driver since 1980s</li>
+                        <li><strong>Racial Disparities:</strong> African Americans and Hispanics disproportionately imprisoned</li>
+                        <li><strong>Costs:</strong> $80+ billion annually</li>
+                    </ul>
+
+                    <h4>Criminal Justice Reform:</h4>
+                    <p><strong>"Tough on Crime" vs Reform Approach</strong></p>
+                    <ul>
+                        <li>Rehabilitation vs. punishment debate</li>
+                        <li>Reduce incarceration for non-violent offenses</li>
+                        <li>Drug treatment instead of prison</li>
+                        <li>End cash bail</li>
+                    </ul>
+
+                    <h4>Recent Reforms:</h4>
+                    <ul>
+                        <li><span class="key-term">First Step Act (2018):</span> Reduced some federal sentences</li>
+                        <li><strong>Marijuana Legalization:</strong> Reducing drug arrests</li>
+                        <li><strong>Bail Reform:</strong> Some jurisdictions eliminating cash bail</li>
+                        <li><strong>Police Reform:</strong> Body cameras, de-escalation training</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Section 6: Foreign Policy -->
+        <div class="section" id="foreign-policy">
+            <h2>6. Foreign Policy</h2>
+
+            <div class="collapsible-header">
+                <h3>From Isolationism to Interventionism</h3>
+                <span class="collapsible-icon">▼</span>
+            </div>
+            <div class="collapsible-content">
+                <div class="collapsible-inner">
+                    <h4>Early American Foreign Policy:</h4>
+                    <ul>
+                        <li><span class="key-term">Washington's Farewell Address (1796):</span> Warned against "entangling alliances"</li>
+                        <li><span class="key-term">Monroe Doctrine (1823):</span> European powers should not interfere in Western Hemisphere</li>
+                        <li><strong>Isolationism:</strong> Focus on domestic expansion, avoid European conflicts</li>
+                        <li><strong>But:</strong> Still engaged in imperialism (Spanish-American War 1898)</li>
+                    </ul>
+
+                    <h4>World Wars and Shift to Interventionism:</h4>
+                    <ul>
+                        <li><strong>WWI (1917):</strong> Entered war reluctantly, returned to isolationism after</li>
+                        <li><strong>WWII (1941):</strong> Pearl Harbor forced entry; emerged as superpower</li>
+                        <li><strong>Permanent Change:</strong> Became global leader, never returned to isolationism</li>
+                        <li><strong>NATO (1949):</strong> Permanent military alliances</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="collapsible-header">
+                <h3>The Cold War Period</h3>
+                <span class="collapsible-icon">▼</span>
+            </div>
+            <div class="collapsible-content">
+                <div class="collapsible-inner">
+                    <h4>Overview (1947-1991):</h4>
+                    <ul>
+                        <li>Ideological struggle: Capitalism vs. Communism</li>
+                        <li>No direct war between superpowers</li>
+                        <li>Proxy wars, arms race, space race</li>
+                        <li><span class="key-term">Containment Policy:</span> Prevent spread of communism</li>
+                        <li><span class="key-term">Domino Theory:</span> If one country falls, neighbors follow</li>
+                    </ul>
+
+                    <h4>Major Events:</h4>
+                    <ul>
+                        <li>Berlin Airlift (1948-1949)</li>
+                        <li>Korean War (1950-1953)</li>
+                        <li>Cuban Missile Crisis (1962) - closest to nuclear war</li>
+                        <li>Vietnam War (see detailed section)</li>
+                        <li>Soviet-Afghan War (1979-1989)</li>
+                        <li>Fall of Berlin Wall (1989)</li>
+                        <li>Soviet Union collapsed (1991)</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="collapsible-header">
+                <h3>The Vietnam War – Trauma of an Invincible Nation</h3>
+                <span class="collapsible-icon">▼</span>
+            </div>
+            <div class="collapsible-content">
+                <div class="collapsible-inner">
+                    <h4>Background and Escalation:</h4>
+                    <ul>
+                        <li>Vietnam fighting for independence from France</li>
+                        <li>U.S. feared communist takeover (domino theory)</li>
+                        <li>Gradual escalation: advisors → combat troops (500,000+ by 1968)</li>
+                        <li>Gulf of Tonkin incident (1964) led to authorization for war</li>
+                    </ul>
+
+                    <h4>The War's Characteristics:</h4>
+                    <ul>
+                        <li><span class="key-term">Guerrilla Warfare:</span> Viet Cong used hit-and-run tactics</li>
+                        <li><strong>Jungle Terrain:</strong> Unfamiliar, difficult for American forces</li>
+                        <li><strong>Agent Orange:</strong> Chemical defoliant caused lasting damage</li>
+                        <li><strong>My Lai Massacre (1968):</strong> U.S. soldiers killed civilians, shocked nation</li>
+                    </ul>
+
+                    <h4>Home Front Opposition:</h4>
+                    <ul>
+                        <li>Largest protest movement in American history</li>
+                        <li>Student protests, Kent State shootings (1970)</li>
+                        <li>First "television war" - graphic images shocked public</li>
+                        <li>Pentagon Papers (1971) revealed government lies</li>
+                        <li>Draft resistance, generational divide</li>
+                    </ul>
+
+                    <h4>Outcome and Legacy:</h4>
+                    <ul>
+                        <li>58,000+ Americans killed, millions of Vietnamese</li>
+                        <li>U.S. withdrew 1973, Saigon fell 1975</li>
+                        <li><span class="key-term">First Lost War:</span> Shattered American confidence</li>
+                        <li><strong>Vietnam Syndrome:</strong> Reluctance for military interventions</li>
+                        <li><strong>PTSD:</strong> Veterans suffered psychological wounds</li>
+                        <li><strong>Credibility Gap:</strong> Distrust of government</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="collapsible-header">
+                <h3>Post-Cold War & Bush Administration</h3>
+                <span class="collapsible-icon">▼</span>
+            </div>
+            <div class="collapsible-content">
+                <div class="collapsible-inner">
+                    <h4>Reorientation after 1990:</h4>
+                    <ul>
+                        <li>Became sole superpower after Soviet collapse</li>
+                        <li>Gulf War (1990-1991): Quick victory liberating Kuwait</li>
+                        <li>Humanitarian interventions: Somalia, Bosnia, Kosovo</li>
+                        <li>Rise of terrorism as main threat</li>
+                    </ul>
+
+                    <h4>9/11 and War on Terror:</h4>
+                    <ul>
+                        <li>September 11, 2001 attacks transformed foreign policy</li>
+                        <li><strong>Afghanistan War (2001-2021):</strong> Longest U.S. war</li>
+                        <li><strong>Iraq War (2003-2011):</strong> Controversial invasion based on false WMD claims</li>
+                        <li><strong>Bush Doctrine:</strong> Preemptive war, unilateralism</li>
+                        <li>Trillions spent, thousands killed, created ISIS</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="collapsible-header">
+                <h3>Russian Invasion of Ukraine & US Relations to Europe</h3>
+                <span class="collapsible-icon">▼</span>
+            </div>
+            <div class="collapsible-content">
+                <div class="collapsible-inner">
+                    <h4>Ukraine War (2022-present):</h4>
+                    <ul>
+                        <li>Russia invaded February 24, 2022</li>
+                        <li><strong>U.S. Response:</strong> Billions in military aid, sanctions on Russia</li>
+                        <li><strong>No Direct Combat:</strong> Avoided U.S.-Russia confrontation</li>
+                        <li><strong>NATO Unity:</strong> Strengthened alliance</li>
+                        <li><strong>Domestic Debate:</strong> Some Republicans question continued funding</li>
+                    </ul>
+
+                    <h4>US-Europe Relations:</h4>
+                    <ul>
+                        <li><strong>NATO:</strong> Cornerstone of transatlantic relationship since 1949</li>
+                        <li><strong>Shared Values:</strong> Democracy, human rights</li>
+                        <li><strong>Economic:</strong> Largest bilateral trade relationship</li>
+                        <li><strong>Trump Era Strains:</strong> Questioned NATO value, personal conflicts</li>
+                        <li><strong>Biden Reset:</strong> "America is back," recommitted to alliances</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Section 7: Economy -->
+        <div class="section" id="economy">
+            <h2>7. Economy</h2>
+
+            <div class="collapsible-header">
+                <h3>The Roaring Twenties and the Great Depression</h3>
+                <span class="collapsible-icon">▼</span>
+            </div>
+            <div class="collapsible-content">
+                <div class="collapsible-inner">
+                    <h4>The Roaring Twenties (1920s):</h4>
+                    <ul>
+                        <li>Economic boom, mass consumption, new technologies</li>
+                        <li>Stock market speculation, everyone investing</li>
+                        <li>Jazz Age, flappers, cultural changes</li>
+                        <li>BUT: Growing inequality, risky speculation</li>
+                    </ul>
+
+                    <h4>Stock Market Crash (October 1929):</h4>
+                    <ul>
+                        <li>Market collapsed, billions lost</li>
+                        <li>Banks failed, credit dried up</li>
+                        <li>Beginning of Great Depression</li>
+                    </ul>
+
+                    <h4>The Great Depression (1929-1939):</h4>
+                    <ul>
+                        <li>25% unemployment at peak</li>
+                        <li>Industrial production dropped 50%</li>
+                        <li>9,000 banks failed</li>
+                        <li>Widespread poverty, hunger, homelessness</li>
+                        <li>Dust Bowl environmental disaster</li>
+                        <li>Worst economic crisis in American history</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="collapsible-header">
+                <h3>Roosevelt's New Deal</h3>
+                <span class="collapsible-icon">▼</span>
+            </div>
+            <div class="collapsible-content">
+                <div class="collapsible-inner">
+                    <h4>FDR's Response (1933-1939):</h4>
+                    <ul>
+                        <li>"New Deal for the American people"</li>
+                        <li>Activist government to combat Depression</li>
+                        <li>Three Rs: Relief, Recovery, Reform</li>
+                    </ul>
+
+                    <h4>Key Programs:</h4>
+                    <ul>
+                        <li><span class="key-term">CCC:</span> Jobs in conservation</li>
+                        <li><span class="key-term">WPA:</span> Public works jobs</li>
+                        <li><span class="key-term">Social Security (1935):</span> Old-age pensions</li>
+                        <li><span class="key-term">FDIC:</span> Bank deposit insurance</li>
+                        <li><span class="key-term">SEC:</span> Stock market regulation</li>
+                        <li><strong>Fair Labor Standards:</strong> Minimum wage, 40-hour week</li>
+                        <li><strong>Union Rights:</strong> Protected collective bargaining</li>
+                    </ul>
+
+                    <h4>Legacy:</h4>
+                    <ul>
+                        <li>Didn't end Depression (WWII did)</li>
+                        <li>But transformed government's role</li>
+                        <li>Created welfare state and safety net</li>
+                        <li>Social Security, unemployment insurance remain</li>
+                        <li>Established principle of government responsibility for economy</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="collapsible-header">
+                <h3>The Financial Crisis in 2008</h3>
+                <span class="collapsible-icon">▼</span>
+            </div>
+            <div class="collapsible-content">
+                <div class="collapsible-inner">
+                    <h4>Causes:</h4>
+                    <ul>
+                        <li><span class="key-term">Housing Bubble:</span> Home prices rising unsustainably</li>
+                        <li><span class="key-term">Subprime Mortgages:</span> Loans to unqualified borrowers</li>
+                        <li><strong>Securitization:</strong> Mortgages bundled and sold as investments</li>
+                        <li><strong>Deregulation:</strong> Reduced financial oversight</li>
+                        <li><strong>Excessive Risk:</strong> Banks over-leveraged</li>
+                    </ul>
+
+                    <h4>The Crisis (2007-2008):</h4>
+                    <ul>
+                        <li>Bear Stearns collapsed (March 2008)</li>
+                        <li>Lehman Brothers bankruptcy (September 2008)</li>
+                        <li>Stock market plunged 40%</li>
+                        <li>Credit markets froze</li>
+                        <li>Threat of total economic collapse</li>
+                    </ul>
+
+                    <h4>The Great Recession:</h4>
+                    <ul>
+                        <li>Unemployment rose to 10%</li>
+                        <li>Millions lost homes to foreclosure</li>
+                        <li>Trillions in wealth destroyed</li>
+                        <li>Deepest recession since Great Depression</li>
+                    </ul>
+
+                    <h4>Government Response:</h4>
+                    <ul>
+                        <li><span class="key-term">TARP:</span> $700 billion bank bailout</li>
+                        <li><strong>Fed Actions:</strong> Zero interest rates, quantitative easing</li>
+                        <li><strong>Auto Bailout:</strong> Saved GM and Chrysler</li>
+                        <li><strong>Stimulus (2009):</strong> $787 billion spending</li>
+                        <li><strong>Dodd-Frank (2010):</strong> Financial regulation reform</li>
+                    </ul>
+
+                    <h4>Controversies:</h4>
+                    <ul>
+                        <li>"Too big to fail" - banks bailed out, homeowners foreclosed</li>
+                        <li>Few executives held accountable</li>
+                        <li>Widened wealth inequality</li>
+                        <li>Occupy Wall Street protests (2011)</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="collapsible-header">
+                <h3>Current Problems of the American Economy</h3>
+                <span class="collapsible-icon">▼</span>
+            </div>
+            <div class="collapsible-content">
+                <div class="collapsible-inner">
+                    <h4>Major Challenges:</h4>
+                    <ul>
+                        <li><strong>Income Inequality:</strong> Top 1% owns 40% of wealth; bottom 50% owns 2%</li>
+                        <li><strong>National Debt:</strong> Over $34 trillion (>100% of GDP)</li>
+                        <li><strong>Manufacturing Decline:</strong> Jobs moved overseas, automation</li>
+                        <li><strong>Healthcare Costs:</strong> 18% of GDP, highest in world</li>
+                        <li><strong>Student Debt:</strong> $1.7 trillion total burden</li>
+                        <li><strong>Infrastructure:</strong> Aging, needs modernization</li>
+                        <li><strong>Gig Economy:</strong> Less job security, fewer benefits</li>
+                        <li><strong>Trade Debates:</strong> Globalization benefits vs. job losses</li>
+                        <li><strong>Climate Impact:</strong> Extreme weather, transition costs</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Section 8: Social Welfare -->
+        <div class="section" id="social-welfare">
+            <h2>8. Social Welfare</h2>
+
+            <div class="collapsible-header">
+                <h3>Help Yourself – an American Point of View</h3>
+                <span class="collapsible-icon">▼</span>
+            </div>
+            <div class="collapsible-content">
+                <div class="collapsible-inner">
+                    <h4>Core Values:</h4>
+                    <ul>
+                        <li><span class="key-term">Individualism:</span> Personal responsibility</li>
+                        <li><span class="key-term">Self-Reliance:</span> Independence, not depending on others</li>
+                        <li><span class="key-term">Work Ethic:</span> Hard work should be rewarded</li>
+                        <li><span class="key-term">American Dream:</span> Anyone can succeed through hard work</li>
+                    </ul>
+
+                    <h4>Attitudes Toward Welfare:</h4>
+                    <ul>
+                        <li>Stigma attached to accepting government help</li>
+                        <li>Concerns about "welfare dependency"</li>
+                        <li>Distinction between "deserving" (disabled, elderly) and "undeserving" poor</li>
+                        <li>Support seen as temporary, not permanent</li>
+                    </ul>
+
+                    <h4>American Exceptionalism:</h4>
+                    <ul>
+                        <li>Smaller welfare state than other developed nations</li>
+                        <li>Less generous benefits</li>
+                        <li>More private solutions (employer-based benefits)</li>
+                        <li>Greater emphasis on charity and volunteerism</li>
+                    </ul>
+
+                    <h4>Contradictions:</h4>
+                    <ul>
+                        <li>Many receive government help but don't see it as "welfare"</li>
+                        <li>Corporate welfare less controversial</li>
+                        <li>Structural barriers often beyond individual control</li>
+                        <li>Success often depends on family background, not just effort</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="collapsible-header">
+                <h3>Health Care</h3>
+                <span class="collapsible-icon">▼</span>
+            </div>
+            <div class="collapsible-content">
+                <div class="collapsible-inner">
+                    <h4>System Overview:</h4>
+                    <ul>
+                        <li>Hybrid public-private system</li>
+                        <li>Most get insurance through employers</li>
+                        <li>Most expensive in world ($12,000+ per person annually)</li>
+                        <li>Only developed nation without universal coverage</li>
+                    </ul>
+
+                    <h4>Public Programs:</h4>
+                    <ul>
+                        <li><span class="key-term">Medicare:</span> For 65+ and disabled (since 1965)</li>
+                        <li><span class="key-term">Medicaid:</span> For low-income (since 1965)</li>
+                        <li>Together cover about 35% of population</li>
+                    </ul>
+
+                    <h4>Major Problems:</h4>
+                    <ul>
+                        <li><strong>Cost:</strong> Medical bills leading cause of bankruptcy</li>
+                        <li><strong>Access:</strong> 8% uninsured (down from 18% pre-ACA)</li>
+                        <li><strong>Quality:</strong> Lower life expectancy than comparable countries</li>
+                        <li><strong>Complexity:</strong> Bureaucracy of multiple insurers</li>
+                    </ul>
+
+                    <h4>Affordable Care Act / "Obamacare" (2010):</h4>
+                    <ul>
+                        <li>20+ million gained coverage</li>
+                        <li>Can't deny coverage for pre-existing conditions</li>
+                        <li>Young adults stay on parents' plan until 26</li>
+                        <li>Still politically controversial</li>
+                    </ul>
+
+                    <h4>Current Debates:</h4>
+                    <ul>
+                        <li><strong>Medicare for All:</strong> Single-payer system (progressive proposal)</li>
+                        <li><strong>Public Option:</strong> Government plan competing with private</li>
+                        <li><strong>Drug Prices:</strong> Allow Medicare to negotiate</li>
+                        <li>Deep partisan divisions on healthcare reform</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Section 9: Political System -->
+        <div class="section" id="political-system">
+            <h2>9. Political System</h2>
+
+            <div class="collapsible-header">
+                <h3>Checks and Balances</h3>
+                <span class="collapsible-icon">▼</span>
+            </div>
+            <div class="collapsible-content">
+                <div class="collapsible-inner">
+                    <h4>Three Branches:</h4>
+                    <ul>
+                        <li><strong>Legislative (Congress):</strong> Makes laws</li>
+                        <li><strong>Executive (President):</strong> Enforces laws</li>
+                        <li><strong>Judicial (Courts):</strong> Interprets laws</li>
+                    </ul>
+
+                    <h4>How They Check Each Other:</h4>
+                    <ul>
+                        <li>Congress can override presidential veto</li>
+                        <li>President can veto legislation</li>
+                        <li>Courts can declare laws unconstitutional</li>
+                        <li>Congress approves judicial appointments</li>
+                        <li>Congress can impeach president or judges</li>
+                    </ul>
+
+                    <h4>Purpose:</h4>
+                    <ul>
+                        <li>Prevent tyranny - no single branch too powerful</li>
+                        <li>Require cooperation and compromise</li>
+                        <li>Protect individual rights</li>
+                    </ul>
+
+                    <h4>Modern Issues:</h4>
+                    <ul>
+                        <li>Gridlock - system can prevent any action</li>
+                        <li>Increased executive power</li>
+                        <li>Partisan polarization makes compromise difficult</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="collapsible-header">
+                <h3>How to Become President & Electoral Problems</h3>
+                <span class="collapsible-icon">▼</span>
+            </div>
+            <div class="collapsible-content">
+                <div class="collapsible-inner">
+                    <h4>Requirements:</h4>
+                    <ul>
+                        <li>Natural-born U.S. citizen</li>
+                        <li>At least 35 years old</li>
+                        <li>Resident for 14+ years</li>
+                        <li>Limited to two 4-year terms</li>
+                    </ul>
+
+                    <h4>Election Process:</h4>
+                    <ul>
+                        <li><strong>Primaries/Caucuses:</strong> Parties choose nominee</li>
+                        <li><strong>National Conventions:</strong> Formal nomination</li>
+                        <li><strong>General Campaign:</strong> Campaign until November</li>
+                        <li><strong>Election Day:</strong> First Tuesday after first Monday in November</li>
+                        <li><strong>Electoral College:</strong> Electors actually choose president</li>
+                    </ul>
+
+                    <h4>Electoral College Issues:</h4>
+                    <ul>
+                        <li>Can win without popular vote (happened 5 times)</li>
+                        <li>Focus on swing states, ignore safe states</li>
+                        <li>Small states have disproportionate power</li>
+                        <li>Winner-take-all system wastes votes</li>
+                    </ul>
+
+                    <h4>Other Electoral Problems:</h4>
+                    <ul>
+                        <li><strong>Money:</strong> Campaigns cost billions, wealthy donors have huge influence</li>
+                        <li><strong>Gerrymandering:</strong> District lines drawn to favor one party</li>
+                        <li><strong>Voter Suppression:</strong> ID laws, polling place closures</li>
+                        <li><strong>Low Turnout:</strong> Only 60-65% in presidential elections</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="collapsible-header">
+                <h3>Congress, Democrats & Republicans</h3>
+                <span class="collapsible-icon">▼</span>
+            </div>
+            <div class="collapsible-content">
+                <div class="collapsible-inner">
+                    <h4>Congress:</h4>
+                    <ul>
+                        <li><strong>House:</strong> 435 members, 2-year terms, based on population</li>
+                        <li><strong>Senate:</strong> 100 members, 6-year terms, 2 per state</li>
+                        <li><strong>Problems:</strong> Gridlock, low approval ratings, safe seats reduce accountability</li>
+                    </ul>
+
+                    <h4>Democrats:</h4>
+                    <ul>
+                        <li><strong>Economic:</strong> Higher taxes on wealthy, stronger safety net, regulate business</li>
+                        <li><strong>Social:</strong> LGBTQ+ rights, pro-choice, gun control, racial justice</li>
+                        <li><strong>Environment:</strong> Climate action, renewable energy</li>
+                        <li><strong>Healthcare:</strong> Expand coverage, support ACA</li>
+                        <li><strong>Base:</strong> Minorities, young voters, urban, college-educated</li>
+                    </ul>
+
+                    <h4>Republicans:</h4>
+                    <ul>
+                        <li><strong>Economic:</strong> Lower taxes, less regulation, free market</li>
+                        <li><strong>Social:</strong> Traditional values, pro-life, gun rights, law and order</li>
+                        <li><strong>Environment:</strong> Skeptical of climate urgency, support fossil fuels</li>
+                        <li><strong>Healthcare:</strong> Market-based, oppose government-run</li>
+                        <li><strong>Base:</strong> White voters, rural, older, evangelical Christians</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="collapsible-header">
+                <h3>Barack Obama, Donald Trump, Joe Biden & Kamala Harris</h3>
+                <span class="collapsible-icon">▼</span>
+            </div>
+            <div class="collapsible-content">
+                <div class="collapsible-inner">
+                    <h4>Barack Obama (2009-2017):</h4>
+                    <ul>
+                        <li>First African American president</li>
+                        <li><strong>Achievements:</strong> Affordable Care Act, killed bin Laden, economic recovery</li>
+                        <li><strong>Challenges:</strong> Republican obstruction, lost Congress</li>
+                        <li>Remains very popular among Democrats</li>
+                    </ul>
+
+                    <h4>Donald Trump (2017-2021):</h4>
+                    <ul>
+                        <li>Businessman, no political experience</li>
+                        <li><strong>Style:</strong> Norm-breaking, Twitter, "Make America Great Again"</li>
+                        <li><strong>Policies:</strong> Tax cuts, conservative judges, immigration crackdown, deregulation</li>
+                        <li><strong>Controversies:</strong> Two impeachments, COVID response, 2020 election denial, January 6</li>
+                        <li>Transformed Republican Party, deepened divisions</li>
+                    </ul>
+
+                    <h4>Joe Biden & Kamala Harris (2021-present):</h4>
+                    <ul>
+                        <li>Defeated Trump in 2020</li>
+                        <li><strong>Harris:</strong> First woman, Black, and South Asian VP</li>
+                        <li><strong>Legislation:</strong> COVID relief, infrastructure, climate/healthcare investments</li>
+                        <li><strong>Foreign Policy:</strong> Ukraine support, strengthened NATO, Afghanistan withdrawal</li>
+                        <li><strong>Challenges:</strong> Inflation, border crisis, low approval, age concerns</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Section 10: Religion -->
+        <div class="section" id="religion">
+            <h2>10. Religion</h2>
+
+            <div class="collapsible-header">
+                <h3>The Puritans' Heritage</h3>
+                <span class="collapsible-icon">▼</span>
+            </div>
+            <div class="collapsible-content">
+                <div class="collapsible-inner">
+                    <h4>Puritan Influence:</h4>
+                    <ul>
+                        <li>English Protestants seeking religious purity</li>
+                        <li>Plymouth (1620), Massachusetts Bay Colony (1630)</li>
+                        <li>Wanted to create "city upon a hill" - model Christian society</li>
+                    </ul>
+
+                    <h4>Lasting Impact on American Culture:</h4>
+                    <ul>
+                        <li><span class="key-term">Work Ethic:</span> Hard work as religious duty</li>
+                        <li><span class="key-term">Success as Virtue:</span> Material success = God's favor</li>
+                        <li><span class="key-term">Moral Reform:</span> Desire to improve society</li>
+                        <li><span class="key-term">American Exceptionalism:</span> America as chosen nation with mission</li>
+                        <li><strong>Education:</strong> Founded Harvard (1636), emphasis on literacy</li>
+                        <li><strong>Self-Governance:</strong> Town meetings, democratic participation</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="collapsible-header">
+                <h3>Religious Diversity</h3>
+                <span class="collapsible-icon">▼</span>
+            </div>
+            <div class="collapsible-content">
+                <div class="collapsible-inner">
+                    <h4>First Amendment:</h4>
+                    <ul>
+                        <li>No official state religion</li>
+                        <li>Freedom to practice (or not practice) religion</li>
+                        <li>Separation of church and state</li>
+                    </ul>
+
+                    <h4>Religious Composition Today:</h4>
+                    <ul>
+                        <li><strong>Christians:</strong> 63% (declining)
+                            <ul>
+                                <li>Protestants: 40%</li>
+                                <li>Catholics: 21%</li>
+                            </ul>
+                        </li>
+                        <li><strong>"Nones" (Unaffiliated):</strong> 29% (growing)</li>
+                        <li><strong>Jewish:</strong> 2%</li>
+                        <li><strong>Muslim, Hindu, Buddhist:</strong> 1% each</li>
+                    </ul>
+
+                    <h4>More Religious Than Europe:</h4>
+                    <ul>
+                        <li>Higher church attendance than other developed nations</li>
+                        <li>Religion plays larger role in politics</li>
+                        <li>But also more religious diversity and freedom</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="collapsible-header">
+                <h3>Liberal Protestantism and Conservative Fundamentalism</h3>
+                <span class="collapsible-icon">▼</span>
+            </div>
+            <div class="collapsible-content">
+                <div class="collapsible-inner">
+                    <h4>Liberal/Mainline Protestantism:</h4>
+                    <ul>
+                        <li><strong>Denominations:</strong> Episcopal, Presbyterian, Methodist, Lutheran</li>
+                        <li><strong>Beliefs:</strong> Bible metaphorical, emphasis on social justice, accept science</li>
+                        <li><strong>Social Issues:</strong> Support LGBTQ+ rights, pro-choice or nuanced on abortion</li>
+                        <li><strong>Trend:</strong> Declining membership since 1960s</li>
+                    </ul>
+
+                    <h4>Conservative/Evangelical Protestantism:</h4>
+                    <ul>
+                        <li><strong>Denominations:</strong> Southern Baptist, Pentecostal, megachurches</li>
+                        <li><strong>Beliefs:</strong> Bible literal and inerrant, born-again experience, evangelism</li>
+                        <li><strong>Social Issues:</strong> Pro-life, traditional marriage, oppose LGBTQ+ rights</li>
+                        <li><strong>Trend:</strong> Growing, especially megachurches</li>
+                    </ul>
+
+                    <h4>Political Alignment:</h4>
+                    <ul>
+                        <li><strong>Evangelicals:</strong> 70-80% Republican</li>
+                        <li><strong>Religious Right:</strong> Major force in GOP since 1970s</li>
+                        <li><strong>Culture Wars:</strong> Abortion, LGBTQ+ rights, education central issues</li>
+                    </ul>
+
+                    <h4>Current Trends:</h4>
+                    <ul>
+                        <li>Growing polarization between liberal and conservative Christians</li>
+                        <li>Young people leaving churches, especially evangelical</li>
+                        <li>Political divisions splitting congregations</li>
+                        <li>Rise of "Nones" - religiously unaffiliated</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Scroll to Top Button -->
+        <div class="scroll-top" id="scrollTop">↑</div>
+
+        <div style="text-align: center; margin-top: 40px; padding: 20px; background: var(--card-bg); border-radius: 15px;">
+            <p style="color: #7f8c8d; margin-bottom: 10px;">
+                📚 This comprehensive guide covers all USA topics for the English Abitur 2026 examination.
+            </p>
+            <p style="color: #7f8c8d; margin-bottom: 20px;">
+                ✨ Click section headers to expand/collapse content • Use navigation menu to jump to sections • Press 'T' to scroll to top
+            </p>
+            <a href="index.html" class="btn">← Back to Home</a>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Collapsible sections
+            const collapsibleHeaders = document.querySelectorAll('.collapsible-header');
+            
+            collapsibleHeaders.forEach(header => {
+                header.addEventListener('click', function() {
+                    this.classList.toggle('active');
+                    const content = this.nextElementSibling;
+                    content.classList.toggle('active');
+                });
+            });
+
+            // Smooth scrolling
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    }
+                });
+            });
+
+            // Scroll to top button
+            const scrollTopButton = document.getElementById('scrollTop');
+            
+            window.addEventListener('scroll', function() {
+                if (window.pageYOffset > 300) {
+                    scrollTopButton.classList.add('visible');
+                } else {
+                    scrollTopButton.classList.remove('visible');
+                }
+            });
+            
+            scrollTopButton.addEventListener('click', function() {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            });
+
+            // Keyboard shortcut: Press 'T' to scroll to top
+            document.addEventListener('keydown', function(e) {
+                if ((e.key === 't' || e.key === 'T') && !e.ctrlKey && !e.altKey) {
+                    const active = document.activeElement;
+                    if (active.tagName !== 'INPUT' && active.tagName !== 'TEXTAREA') {
+                        window.scrollTo({ top: 0, behavior: 'smooth' });
+                    }
+                }
+            });
+
+            // Highlight active navigation link
+            const sections = document.querySelectorAll('.section');
+            const navLinks = document.querySelectorAll('.nav-link');
+            
+            const observerOptions = {
+                root: null,
+                rootMargin: '-20% 0px -80% 0px',
+                threshold: 0
+            };
+
+            const observer = new IntersectionObserver(entries => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        navLinks.forEach(link => {
+                            link.style.background = 'linear-gradient(45deg, var(--secondary-color), #2980b9)';
+                        });
+                        
+                        const id = entry.target.getAttribute('id');
+                        const activeLink = document.querySelector(`.nav-link[href="#${id}"]`);
+                        if (activeLink) {
+                            activeLink.style.background = 'linear-gradient(45deg, var(--accent-color), #c0392b)';
+                        }
+                    }
+                });
+            }, observerOptions);
+
+            sections.forEach(section => observer.observe(section));
+
+            console.log('✅ USA Study Guide loaded! Press T to scroll to top.');
+        });
+    </script>
+</body>
+</html>
