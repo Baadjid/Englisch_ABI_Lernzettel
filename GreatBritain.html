@@ -1,0 +1,1200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Great Britain - Englisch Abitur 2026</title>
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --secondary-color: #3498db;
+            --accent-color: #e74c3c;
+            --success-color: #27ae60;
+            --warning-color: #f39c12;
+            --bg-color: #ecf0f1;
+            --card-bg: #ffffff;
+            --text-color: #2c3e50;
+            --border-color: #bdc3c7;
+            --uk-blue: #012169;
+            --uk-red: #C8102E;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: linear-gradient(135deg, var(--bg-color) 0%, #d5dbdb 100%); color: var(--text-color); line-height: 1.6; min-height: 100vh; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 20px; }
+        .header { text-align: center; margin-bottom: 40px; background: var(--card-bg); padding: 30px; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); position: relative; overflow: hidden; }
+        .header::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 5px; background: linear-gradient(90deg, var(--uk-blue), white, var(--uk-red)); }
+        .back-button { display: inline-block; padding: 10px 20px; background: var(--secondary-color); color: white; text-decoration: none; border-radius: 8px; margin-bottom: 20px; transition: all 0.3s ease; }
+        .back-button:hover { background: #2980b9; transform: translateY(-2px); }
+        .header h1 { color: var(--primary-color); font-size: 2.5em; margin-bottom: 10px; }
+        .section { background: var(--card-bg); border-radius: 15px; padding: 30px; margin-bottom: 30px; box-shadow: 0 8px 25px rgba(0,0,0,0.1); border-left: 5px solid var(--secondary-color); }
+        .section h2 { color: var(--primary-color); margin-bottom: 20px; font-size: 1.8em; border-bottom: 2px solid var(--border-color); padding-bottom: 10px; }
+        .section h3 { color: var(--secondary-color); margin-top: 25px; margin-bottom: 15px; font-size: 1.4em; }
+        .section h4 { color: var(--primary-color); margin-top: 20px; margin-bottom: 10px; font-size: 1.2em; }
+        .section p { margin-bottom: 15px; text-align: justify; }
+        .section ul, .section ol { margin-left: 30px; margin-bottom: 15px; }
+        .section li { margin-bottom: 8px; }
+        .key-term { background: #e3f2fd; padding: 2px 8px; border-radius: 4px; font-weight: 600; color: var(--secondary-color); }
+        .important-note { background: #fff3cd; border-left: 4px solid var(--warning-color); padding: 15px; margin: 20px 0; border-radius: 5px; }
+        .quote { background: #f8f9fa; border-left: 4px solid var(--accent-color); padding: 15px; margin: 20px 0; font-style: italic; border-radius: 5px; }
+        .timeline { border-left: 3px solid var(--secondary-color); padding-left: 20px; margin: 20px 0; }
+        .timeline-item { margin-bottom: 20px; position: relative; }
+        .timeline-item::before { content: ''; position: absolute; left: -27px; top: 5px; width: 12px; height: 12px; background: var(--secondary-color); border-radius: 50%; border: 3px solid white; }
+        .timeline-year { font-weight: bold; color: var(--accent-color); font-size: 1.1em; }
+        .nav-container { background: var(--card-bg); padding: 20px; border-radius: 15px; margin-bottom: 30px; box-shadow: 0 8px 25px rgba(0,0,0,0.1); position: sticky; top: 20px; z-index: 100; }
+        .nav-container h3 { color: var(--primary-color); margin-bottom: 15px; font-size: 1.3em; }
+        .nav-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 10px; }
+        .nav-link { background: linear-gradient(45deg, var(--secondary-color), #2980b9); color: white; padding: 10px 15px; border-radius: 8px; text-decoration: none; text-align: center; transition: all 0.3s ease; font-size: 0.9em; font-weight: 600; }
+        .nav-link:hover { transform: translateY(-2px); box-shadow: 0 5px 15px rgba(52, 152, 219, 0.3); background: linear-gradient(45deg, #2980b9, var(--secondary-color)); }
+        .scroll-top { position: fixed; bottom: 30px; right: 30px; background: linear-gradient(45deg, var(--accent-color), #c0392b); color: white; width: 50px; height: 50px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 24px; cursor: pointer; box-shadow: 0 5px 20px rgba(0,0,0,0.3); transition: all 0.3s ease; z-index: 1000; opacity: 0; visibility: hidden; }
+        .scroll-top.visible { opacity: 1; visibility: visible; }
+        .scroll-top:hover { transform: translateY(-5px); box-shadow: 0 8px 25px rgba(231, 76, 60, 0.4); }
+        .collapsible-header { background: linear-gradient(135deg, var(--secondary-color), #2980b9); color: white; padding: 15px 20px; cursor: pointer; border-radius: 10px; margin-top: 20px; display: flex; justify-content: space-between; align-items: center; transition: all 0.3s ease; user-select: none; }
+        .collapsible-header:hover { background: linear-gradient(135deg, #2980b9, var(--secondary-color)); transform: translateX(5px); }
+        .collapsible-header h3 { margin: 0; color: white; font-size: 1.3em; }
+        .collapsible-icon { font-size: 1.5em; transition: transform 0.3s ease; }
+        .collapsible-header.active .collapsible-icon { transform: rotate(180deg); }
+        .collapsible-content { max-height: 0; overflow: hidden; transition: max-height 0.5s ease; }
+        .collapsible-content.active { max-height: 10000px; }
+        .collapsible-inner { padding: 20px 0; }
+        @media (max-width: 768px) {
+            .container { padding: 15px; }
+            .header h1 { font-size: 2em; }
+            .section { padding: 20px; }
+            .section h2 { font-size: 1.5em; }
+            .nav-grid { grid-template-columns: 1fr; }
+            .scroll-top { bottom: 20px; right: 20px; width: 45px; height: 45px; }
+            .nav-container { position: relative; top: 0; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <a href="index.html" class="back-button">← Back to Home</a>
+            <h1>🇬🇧 Great Britain</h1>
+            <p>Comprehensive Study Guide for English Abitur 2026</p>
+        </div>
+
+<div class="collapsible-header">
+                <h3>Anglo-Irish Relations (until 1921)</h3>
+                <span class="collapsible-icon">▼</span>
+            </div>
+            <div class="collapsible-content">
+                <div class="collapsible-inner">
+                    <h4>English Conquest and Colonization:</h4>
+                    <ul>
+                        <li><strong>12th Century:</strong> English invasion of Ireland began</li>
+                        <li><strong>16th-17th Centuries:</strong> Plantation of Ireland - English/Scottish Protestant settlers given confiscated Catholic land</li>
+                        <li><strong>Ulster Plantation:</strong> Northern Ireland heavily settled by Protestants</li>
+                        <li><strong>Penal Laws (1691):</strong> Discriminated against Catholics - couldn't vote, own land, hold office</li>
+                    </ul>
+
+                    <h4>Resistance and Rebellion:</h4>
+                    <ul>
+                        <li><strong>1798 Rebellion:</strong> United Irishmen uprising brutally suppressed</li>
+                        <li><strong>Act of Union (1800):</strong> Ireland formally part of United Kingdom</li>
+                        <li><strong>Catholic Emancipation (1829):</strong> Some rights restored</li>
+                        <li><strong>Great Famine (1845-1852):</strong> 1 million died, 1 million emigrated; British response inadequate</li>
+                    </ul>
+
+                    <h4>Home Rule Movement:</h4>
+                    <ul>
+                        <li>Campaign for Irish self-government within UK</li>
+                        <li>Three Home Rule Bills (1886, 1893, 1914)</li>
+                        <li><span class="key-term">Ulster Unionists:</span> Protestant majority in Northern Ireland opposed Home Rule</li>
+                        <li>Threat of civil war by 1914</li>
+                    </ul>
+
+                    <h4>Easter Rising (1916):</h4>
+                    <ul>
+                        <li>Armed rebellion in Dublin</li>
+                        <li>Declared Irish Republic</li>
+                        <li>Brutally suppressed by British</li>
+                        <li>Execution of leaders turned them into martyrs</li>
+                        <li>Shifted Irish opinion toward complete independence</li>
+                    </ul>
+
+                    <h4>War of Independence (1919-1921):</h4>
+                    <ul>
+                        <li><span class="key-term">Sinn Féin:</span> Won 1918 election, declared independence</li>
+                        <li><span class="key-term">IRA (Irish Republican Army):</span> Guerrilla war against British</li>
+                        <li><strong>Black and Tans:</strong> British paramilitaries, notorious for brutality</li>
+                        <li><strong>Anglo-Irish Treaty (1921):</strong> Ireland partitioned</li>
+                    </ul>
+
+                    <h4>Partition (1921):</h4>
+                    <ul>
+                        <li><strong>Irish Free State:</strong> 26 counties, Catholic majority, independent (later Republic of Ireland)</li>
+                        <li><strong>Northern Ireland:</strong> 6 counties, Protestant majority, remained in UK</li>
+                        <li><strong>Border:</strong> Gerrymandered to maximize Protestant/Unionist control</li>
+                        <li><strong>Legacy:</strong> Created lasting sectarian division</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="collapsible-header">
+                <h3>The Troubles (1968-1998)</h3>
+                <span class="collapsible-icon">▼</span>
+            </div>
+            <div class="collapsible-content">
+                <div class="collapsible-inner">
+                    <h4>Background:</h4>
+                    <p>The <span class="key-term">Troubles</span> was a 30-year conflict in Northern Ireland between:</p>
+                    <ul>
+                        <li><span class="key-term">Nationalists/Republicans:</span> Mostly Catholic, wanted united Ireland</li>
+                        <li><span class="key-term">Unionists/Loyalists:</span> Mostly Protestant, wanted to remain in UK</li>
+                    </ul>
+
+                    <h4>Causes:</h4>
+                    <ul>
+                        <li><strong>Discrimination:</strong> Catholics faced systematic discrimination in housing, employment, voting</li>
+                        <li><strong>Sectarianism:</strong> Deep religious and cultural divisions</li>
+                        <li><strong>Partition:</strong> Legacy of 1921 division</li>
+                        <li><strong>National Identity:</strong> Conflicting allegiances (British vs. Irish)</li>
+                        <li><strong>Gerrymandering:</strong> Electoral boundaries favored Protestants</li>
+                    </ul>
+
+                    <h4>Key Events:</h4>
+                    <div class="timeline">
+                        <div class="timeline-item">
+                            <span class="timeline-year">1968-69:</span> Civil Rights Movement marches, police violence
+                        </div>
+                        <div class="timeline-item">
+                            <span class="timeline-year">1969:</span> British troops deployed to "restore order"
+                        </div>
+                        <div class="timeline-item">
+                            <span class="timeline-year">1971:</span> Internment without trial introduced
+                        </div>
+                        <div class="timeline-item">
+                            <span class="timeline-year">1972:</span> Bloody Sunday - British soldiers killed 14 unarmed civilians
+                        </div>
+                        <div class="timeline-item">
+                            <span class="timeline-year">1981:</span> IRA hunger strikes - Bobby Sands died
+                        </div>
+                        <div class="timeline-item">
+                            <span class="timeline-year">1984:</span> Brighton bombing - IRA nearly killed PM Thatcher
+                        </div>
+                        <div class="timeline-item">
+                            <span class="timeline-year">1998:</span> Good Friday Agreement - peace settlement
+                        </div>
+                    </div>
+
+                    <h4>Main Paramilitary Groups:</h4>
+                    <p><strong>Republican (Irish Nationalist):</strong></p>
+                    <ul>
+                        <li><span class="key-term">IRA (Provisional IRA):</span> Main republican paramilitary</li>
+                        <li>Bombings, assassinations, attacks on British forces</li>
+                        <li>Political wing: Sinn Féin</li>
+                    </ul>
+
+                    <p><strong>Loyalist (British Unionist):</strong></p>
+                    <ul>
+                        <li><span class="key-term">UVF, UDA:</span> Protestant paramilitaries</li>
+                        <li>Targeted Catholic civilians</li>
+                        <li>Sometimes colluded with British security forces</li>
+                    </ul>
+
+                    <h4>British Role:</h4>
+                    <ul>
+                        <li>British Army presence throughout</li>
+                        <li>Special powers - detention, searches</li>
+                        <li><strong>Shoot-to-Kill Policy:</strong> Controversial tactics</li>
+                        <li><strong>Collusion:</strong> Evidence of cooperation with loyalist paramilitaries</li>
+                        <li><strong>Propaganda War:</strong> Censorship, media restrictions</li>
+                    </ul>
+
+                    <h4>Casualties:</h4>
+                    <ul>
+                        <li>3,500+ killed</li>
+                        <li>47,000+ injured</li>
+                        <li>Majority were civilians</li>
+                        <li>Psychological trauma across Northern Ireland</li>
+                    </ul>
+
+                    <h4>Good Friday Agreement (1998):</h4>
+                    <p><strong>Key Provisions:</strong></p>
+                    <ul>
+                        <li><strong>Power-Sharing:</strong> Mandatory coalition government</li>
+                        <li><strong>North-South Bodies:</strong> Cooperation with Republic of Ireland</li>
+                        <li><strong>Decommissioning:</strong> Paramilitaries give up weapons</li>
+                        <li><strong>Prisoners:</strong> Early release for paramilitary prisoners</li>
+                        <li><strong>Policing:</strong> Reform of Royal Ulster Constabulary</li>
+                        <li><strong>Self-Determination:</strong> Northern Ireland's status by consent</li>
+                    </ul>
+
+                    <p><strong>Approval:</strong></p>
+                    <ul>
+                        <li>Referendum in Northern Ireland: 71% Yes</li>
+                        <li>Referendum in Republic of Ireland: 94% Yes</li>
+                    </ul>
+
+                    <h4>Post-Good Friday Agreement:</h4>
+                    <ul>
+                        <li><strong>Success:</strong> Violence dramatically reduced</li>
+                        <li><strong>Challenges:</strong> Assembly suspended multiple times</li>
+                        <li><strong>Dissidents:</strong> Some reject peace process</li>
+                        <li><strong>Segregation:</strong> Communities still divided</li>
+                        <li><strong>Brexit Impact:</strong> Threatened peace by creating border issues</li>
+                    </ul>
+
+                    <div class="important-note">
+                        <strong>Legacy:</strong> The Troubles represent one of the darkest chapters in modern British history. While the peace process has been largely successful, Northern Ireland remains divided along sectarian lines, with separate schools, housing areas, and ongoing tensions.
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Section 16: Britain's Multicultural Society -->
+        <div class="section" id="multicultural">
+            <h2>16. Britain's Multicultural Society</h2>
+
+            <div class="collapsible-header">
+                <h3>A Class-ridden Society</h3>
+                <span class="collapsible-icon">▼</span>
+            </div>
+            <div class="collapsible-content">
+                <div class="collapsible-inner">
+                    <h4>British Class System:</h4>
+                    <p>Britain has historically been highly stratified by social class, with class consciousness remaining stronger than in many other Western nations.</p>
+
+                    <h4>Traditional Three-Class Model:</h4>
+                    <ul>
+                        <li><span class="key-term">Upper Class:</span> Aristocracy, landed gentry, old wealth</li>
+                        <li><span class="key-term">Middle Class:</span> Professionals, business owners, educated</li>
+                        <li><span class="key-term">Working Class:</span> Manual laborers, factory workers</li>
+                    </ul>
+
+                    <h4>Modern Class Indicators:</h4>
+                    <ul>
+                        <li><strong>Accent:</strong> "Received Pronunciation" vs. regional accents</li>
+                        <li><strong>Education:</strong> Public schools (actually private) vs. state schools</li>
+                        <li><strong>Occupation:</strong> Professional vs. manual work</li>
+                        <li><strong>Cultural Capital:</strong> Tastes, manners, consumption patterns</li>
+                        <li><strong>Geography:</strong> London/South vs. North, urban vs. rural</li>
+                    </ul>
+
+                    <h4>Class Mobility:</h4>
+                    <ul>
+                        <li>Less social mobility than commonly believed</li>
+                        <li>Education key but also reproduces class</li>
+                        <li>Elite universities (Oxford, Cambridge) still dominated by upper/middle class</li>
+                        <li>Decline of manufacturing reduced working-class opportunities</li>
+                    </ul>
+
+                    <h4>Class and Politics:</h4>
+                    <ul>
+                        <li>Historically: Working class voted Labour, middle/upper class Conservative</li>
+                        <li>Increasingly complex: Some working class now vote Conservative</li>
+                        <li>Brexit showed class divisions remain significant</li>
+                    </ul>
+
+                    <h4>Class Inequality:</h4>
+                    <ul>
+                        <li>Wealth gap increased since 1980s</li>
+                        <li>Top 1% own more than bottom 50%</li>
+                        <li>Life expectancy varies by class</li>
+                        <li>Health outcomes strongly correlated with class</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="collapsible-header">
+                <h3>Immigration Waves</h3>
+                <span class="collapsible-icon">▼</span>
+            </div>
+            <div class="collapsible-content">
+                <div class="collapsible-inner">
+                    <h4>Post-WWII Immigration:</h4>
+                    
+                    <p><strong>Windrush Generation (1948-1971):</strong></p>
+                    <ul>
+                        <li>From Caribbean colonies (Jamaica, Barbados, Trinidad)</li>
+                        <li>Invited to address labor shortage</li>
+                        <li>Named after Empire Windrush ship (1948)</li>
+                        <li>Around 500,000 arrived</li>
+                        <li>Faced racism, discrimination despite legal status</li>
+                        <li><strong>Windrush Scandal (2018):</strong> Many wrongly deported or denied rights</li>
+                    </ul>
+
+                    <p><strong>South Asian Immigration (1950s-1970s):</strong></p>
+                    <ul>
+                        <li>From India, Pakistan, Bangladesh</li>
+                        <li>Also to address labor shortage</li>
+                        <li>Later: East African Asians expelled from Uganda, Kenya</li>
+                        <li>Concentrated in Midlands, Northern England</li>
+                    </ul>
+
+                    <h4>Immigration Restrictions:</h4>
+                    <ul>
+                        <li><span class="key-term">Commonwealth Immigration Act (1962, 1968):</span> Restricted non-white Commonwealth immigration</li>
+                        <li>Shifted from open to controlled immigration</li>
+                        <li>Racist intent though not explicitly stated</li>
+                    </ul>
+
+                    <h4>Recent Immigration (1990s-present):</h4>
+                    <ul>
+                        <li><strong>EU Freedom of Movement:</strong> Large influx from Eastern Europe (Poland, Romania)</li>
+                        <li><strong>Asylum Seekers:</strong> Middle East, Africa</li>
+                        <li><strong>Students:</strong> International students, particularly from China, India</li>
+                        <li><strong>Brexit:</strong> Ended EU freedom of movement (2021)</li>
+                    </ul>
+
+                    <h4>Current Demographics:</h4>
+                    <ul>
+                        <li>14% of population foreign-born</li>
+                        <li>18% ethnic minority (Census 2021)</li>
+                        <li>London: 40%+ ethnic minority</li>
+                        <li>Over 300 languages spoken</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="collapsible-header">
+                <h3>Structure of Britain's Multi-ethnic Society</h3>
+                <span class="collapsible-icon">▼</span>
+            </div>
+            <div class="collapsible-content">
+                <div class="collapsible-inner">
+                    <h4>Major Ethnic Groups:</h4>
+                    <ul>
+                        <li><strong>White British:</strong> 82% (declining)</li>
+                        <li><strong>Asian/Asian British:</strong> 9.3%
+                            <ul>
+                                <li>Indian: 3.1%</li>
+                                <li>Pakistani: 2.7%</li>
+                                <li>Bangladeshi: 1.0%</li>
+                                <li>Chinese: 0.9%</li>
+                            </ul>
+                        </li>
+                        <li><strong>Black/Black British:</strong> 4.2%
+                            <ul>
+                                <li>African: 2.5%</li>
+                                <li>Caribbean: 1.2%</li>
+                            </ul>
+                        </li>
+                        <li><strong>Mixed:</strong> 2.9%</li>
+                        <li><strong>Other:</strong> 2.1%</li>
+                    </ul>
+
+                    <h4>Geographic Distribution:</h4>
+                    <ul>
+                        <li><strong>London:</strong> Most diverse (40% ethnic minority)</li>
+                        <li><strong>Birmingham, Manchester, Leicester:</strong> Large Asian populations</li>
+                        <li><strong>Rural Areas:</strong> Overwhelmingly white</li>
+                        <li><strong>Segregation:</strong> Some areas highly segregated</li>
+                    </ul>
+
+                    <h4>Socioeconomic Profile:</h4>
+                    <p><strong>Varies by Group:</strong></p>
+                    <ul>
+                        <li><strong>Indian, Chinese:</strong> Often high-achieving, professional</li>
+                        <li><strong>Pakistani, Bangladeshi:</strong> Higher poverty rates</li>
+                        <li><strong>Black Caribbean:</strong> Face discrimination, lower educational outcomes</li>
+                        <li><strong>Black African:</strong> Increasingly educated, professional</li>
+                    </ul>
+
+                    <h4>Integration Patterns:</h4>
+                    <ul>
+                        <li><strong>Language:</strong> English dominant by second generation</li>
+                        <li><strong>Intermarriage:</strong> Increasing, especially for younger generations</li>
+                        <li><strong>Cultural Retention:</strong> Many maintain ethnic traditions</li>
+                        <li><strong>British Identity:</strong> Most identify as British alongside ethnic identity</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="collapsible-header">
+                <h3>Discrimination and Anger</h3>
+                <span class="collapsible-icon">▼</span>
+            </div>
+            <div class="collapsible-content">
+                <div class="collapsible-inner">
+                    <h4>Forms of Discrimination:</h4>
+                    <ul>
+                        <li><strong>Employment:</strong> Ethnic minority names less likely to get interviews</li>
+                        <li><strong>Housing:</strong> Discrimination in rentals, mortgages</li>
+                        <li><strong>Education:</strong> Lower expectations, exclusion rates</li>
+                        <li><strong>Criminal Justice:</strong> Stop and search disproportionately affects Black people</li>
+                        <li><strong>Daily Microaggressions:</strong> Subtle racism in everyday interactions</li>
+                    </ul>
+
+                    <h4>Institutional Racism:</h4>
+                    <ul>
+                        <li><span class="key-term">Stephen Lawrence Case (1993):</span> Black teenager murdered by racists; police failed to investigate properly</li>
+                        <li><strong>Macpherson Report (1999):</strong> Found Metropolitan Police "institutionally racist"</li>
+                        <li>Defined as: "collective failure of organization to provide appropriate service to people because of color, culture, or ethnic origin"</li>
+                    </ul>
+
+                    <h4>2011 Riots:</h4>
+                    <ul>
+                        <li>Triggered by police shooting of Mark Duggan (Black man) in Tottenham</li>
+                        <li>Spread across England</li>
+                        <li>Looting, arson, violence</li>
+                        <li>Reflected anger about police relations, inequality, opportunity</li>
+                    </ul>
+
+                    <h4>Persistent Inequalities:</h4>
+                    <ul>
+                        <li>Ethnic minorities overrepresented in poverty</li>
+                        <li>Underrepresented in leadership positions</li>
+                        <li>Higher unemployment rates</li>
+                        <li>Pay gaps persist even with same qualifications</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="collapsible-header">
+                <h3>London Bomb Attack 2005 & Sleepwalking into Segregation?</h3>
+                <span class="collapsible-icon">▼</span>
+            </div>
+            <div class="collapsible-content">
+                <div class="collapsible-inner">
+                    <h4>7/7 Bombings (July 7, 2005):</h4>
+                    <ul>
+                        <li>Four suicide bombers attacked London transport</li>
+                        <li>Three Tube trains and one bus bombed</li>
+                        <li>52 killed, 700+ injured</li>
+                        <li>Deadliest terrorist attack in UK history</li>
+                    </ul>
+
+                    <h4>The Bombers:</h4>
+                    <ul>
+                        <li>Four young British Muslim men</li>
+                        <li>Three from Pakistani backgrounds, born in UK</li>
+                        <li>Seemed integrated - worked, had families</li>
+                        <li>Radicalized, inspired by Al-Qaeda</li>
+                        <li>Motivated by UK foreign policy (Iraq War)</li>
+                    </ul>
+
+                    <h4>Impact:</h4>
+                    <ul>
+                        <li>Shocked nation - "homegrown terrorism"</li>
+                        <li>Increased anti-Muslim sentiment</li>
+                        <li>Questions about multiculturalism</li>
+                        <li>Debate about integration vs. segregation</li>
+                    </ul>
+
+                    <h4>"Sleepwalking into Segregation":</h4>
+                    <p>Trevor Phillips (Head of Commission for Racial Equality) warned in 2005 that Britain was "sleepwalking into segregation"</p>
+
+                    <h4>Evidence of Segregation:</h4>
+                    <ul>
+                        <li><strong>Residential:</strong> Ethnic enclaves, "white flight"</li>
+                        <li><strong>Schools:</strong> Many schools overwhelmingly one ethnicity</li>
+                        <li><strong>Parallel Lives:</strong> Different communities not mixing</li>
+                        <li><strong>Self-Segregation:</strong> Some minorities prefer living among own group</li>
+                    </ul>
+
+                    <h4>Cantle Report (2001 - after race riots):</h4>
+                    <ul>
+                        <li>Found communities leading "parallel lives"</li>
+                        <li>Little interaction between ethnic groups</li>
+                        <li>Mutual ignorance and suspicion</li>
+                        <li>Recommended community cohesion policies</li>
+                    </ul>
+
+                    <h4>Multiculturalism Under Attack:</h4>
+                    <ul>
+                        <li>Politicians criticized "state multiculturalism"</li>
+                        <li>David Cameron: Multiculturalism has "failed"</li>
+                        <li>Shift toward "integration" and "British values"</li>
+                        <li>Citizenship tests, language requirements</li>
+                    </ul>
+
+                    <h4>Counter-Arguments:</h4>
+                    <ul>
+                        <li>Segregation exaggerated - most areas mixed</li>
+                        <li>Young people increasingly integrated</li>
+                        <li>Intermarriage rates rising</li>
+                        <li>Problems of class and poverty, not just ethnicity</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="collapsible-header">
+                <h3>Arranged Marriage in Asian Communities</h3>
+                <span class="collapsible-icon">▼</span>
+            </div>
+            <div class="collapsible-content">
+                <div class="collapsible-inner">
+                    <h4>Cultural Practice:</h4>
+                    <p><span class="key-term">Arranged marriage</span> is traditional in South Asian cultures (Indian, Pakistani, Bangladeshi). Families introduce potential partners, couple meets and can consent.</p>
+
+                    <h4>Distinction:</h4>
+                    <ul>
+                        <li><span class="key-term">Arranged Marriage:</span> Families arrange, but couple consents</li>
+                        <li><span class="key-term">Forced Marriage:</span> No consent, illegal in UK</li>
+                    </ul>
+
+                    <h4>Reasons for Arranged Marriage:</h4>
+                    <ul>
+                        <li>Cultural tradition, family expectations</li>
+                        <li>Maintaining cultural/religious identity</li>
+                        <li>Family compatibility considered</li>
+                        <li>Practical approach to marriage</li>
+                        <li>Strong family bonds</li>
+                    </ul>
+
+                    <h4>Changing Patterns:</h4>
+                    <ul>
+                        <li>More choice given to young people</li>
+                        <li>"Assisted marriages" - parents suggest, young people decide</li>
+                        <li>Later marriages</li>
+                        <li>More education before marriage</li>
+                        <li>Increasing "love marriages"</li>
+                    </ul>
+
+                    <h4>Generational Conflict:</h4>
+                    <ul>
+                        <li>First generation: Strong adherence to tradition</li>
+                        <li>Second generation: Balance between cultures</li>
+                        <li>Third generation: More British than Asian</li>
+                        <li>Tensions over marriage choice, lifestyle</li>
+                    </ul>
+
+                    <h4>Forced Marriage:</h4>
+                    <ul>
+                        <li><strong>Illegal:</strong> Forced Marriage (Civil Protection) Act 2007</li>
+                        <li><strong>Estimates:</strong> Thousands affected annually</li>
+                        <li><strong>Victims:</strong> Mostly young women, but also men</li>
+                        <li><strong>Consequences:</strong> Domestic abuse, mental health issues</li>
+                        <li><strong>Support:</strong> Forced Marriage Unit helps victims</li>
+                    </ul>
+
+                    <h4>"Honour-Based" Violence:</h4>
+                    <ul>
+                        <li>Crimes committed to "protect family honour"</li>
+                        <li>Refusing arranged marriage can trigger</li>
+                        <li>Also: dating, dress, Western lifestyle</li>
+                        <li>Can include violence, murder ("honour killing")</li>
+                        <li>Illegal and condemned by most community leaders</li>
+                    </ul>
+
+                    <div class="important-note">
+                        <strong>Cultural Sensitivity:</strong> It's important to distinguish between arranged marriages (legal and respected cultural practice) and forced marriages (illegal and abusive). Critics of forced marriage must avoid stigmatizing the entire practice of arranged marriage or Asian communities generally.
+                    </div>
+                </div>
+            </div>
+        </div>
+
+<!-- Section 17: Religion -->
+        <div class="section" id="religion">
+            <h2>17. Religion</h2>
+
+            <div class="collapsible-header">
+                <h3>The Church of England</h3>
+                <span class="collapsible-icon">▼</span>
+            </div>
+            <div class="collapsible-content">
+                <div class="collapsible-inner">
+                    <h4>Origins:</h4>
+                    <ul>
+                        <li>Founded by Henry VIII (1534)</li>
+                        <li>Split from Roman Catholic Church</li>
+                        <li>Immediate cause: Pope refused annulment of marriage</li>
+                        <li>Act of Supremacy: Monarch head of Church</li>
+                    </ul>
+
+                    <h4>Established Church:</h4>
+                    <p>The Church of England is the <span class="key-term">established church</span> - official state church of England.</p>
+                    <ul>
+                        <li><strong>Supreme Governor:</strong> The monarch (currently King Charles III)</li>
+                        <li><strong>Bishops in Lords:</strong> 26 Church of England bishops sit in House of Lords</li>
+                        <li><strong>Parliament:</strong> Historically had power over Church doctrine</li>
+                    </ul>
+
+                    <h4>Characteristics:</h4>
+                    <ul>
+                        <li><span class="key-term">"Via Media":</span> Middle way between Catholicism and Protestantism</li>
+                        <li>Retains some Catholic traditions (bishops, liturgy)</li>
+                        <li>But Protestant theology</li>
+                        <li>Relatively liberal, inclusive approach</li>
+                    </ul>
+
+                    <h4>Current Status:</h4>
+                    <ul>
+                        <li>25 million baptized members (but low church attendance)</li>
+                        <li>Only 1-2% attend weekly services</li>
+                        <li>Declining membership and influence</li>
+                        <li>Financial challenges - maintaining historic buildings</li>
+                    </ul>
+
+                    <h4>Controversies:</h4>
+                    <ul>
+                        <li><strong>Women Bishops:</strong> Approved 2014 (after long debate)</li>
+                        <li><strong>Same-Sex Marriage:</strong> Church doesn't perform, but allows blessings</li>
+                        <li><strong>LGBT Clergy:</strong> Ongoing debates</li>
+                        <li><strong>Disestablishment:</strong> Some call for separation of Church and State</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="collapsible-header">
+                <h3>The Free Churches (Dissenters)</h3>
+                <span class="collapsible-icon">▼</span>
+            </div>
+            <div class="collapsible-content">
+                <div class="collapsible-inner">
+                    <h4>Who Are They?</h4>
+                    <p><span class="key-term">Free Churches</span> or <span class="key-term">Nonconformists</span> are Protestant denominations separate from the Church of England.</p>
+
+                    <h4>Major Free Churches:</h4>
+                    <ul>
+                        <li><strong>Methodists:</strong> Founded by John Wesley (18th century)</li>
+                        <li><strong>Baptists:</strong> Believer's baptism, congregational governance</li>
+                        <li><strong>Presbyterians:</strong> Scottish origin, reformed theology</li>
+                        <li><strong>Congregationalists:</strong> Independent local churches</li>
+                        <li><strong>Quakers (Society of Friends):</strong> Pacifist, egalitarian</li>
+                        <li><strong>United Reformed Church:</strong> Union of Congregationalists and Presbyterians</li>
+                    </ul>
+
+                    <h4>Historical Discrimination:</h4>
+                    <ul>
+                        <li>Until 19th century, Dissenters faced legal disabilities</li>
+                        <li>Couldn't attend Oxford/Cambridge</li>
+                        <li>Couldn't hold public office</li>
+                        <li>Test Acts excluded them</li>
+                    </ul>
+
+                    <h4>Social Impact:</h4>
+                    <ul>
+                        <li>Strong in working class</li>
+                        <li>Supported Labour movement</li>
+                        <li>Social reform movements</li>
+                        <li>Temperance, anti-slavery</li>
+                    </ul>
+
+                    <h4>Current Status:</h4>
+                    <ul>
+                        <li>Declining like Church of England</li>
+                        <li>Together about 10% of population</li>
+                        <li>Low regular attendance</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="collapsible-header">
+                <h3>Current Religious Issues in Britain</h3>
+                <span class="collapsible-icon">▼</span>
+            </div>
+            <div class="collapsible-content">
+                <div class="collapsible-inner">
+                    <h4>Religious Demographics (2021 Census):</h4>
+                    <ul>
+                        <li><strong>Christian:</strong> 46.2% (declining from 59.3% in 2011)</li>
+                        <li><strong>No Religion:</strong> 37.2% (rising rapidly)</li>
+                        <li><strong>Muslim:</strong> 6.5% (growing)</li>
+                        <li><strong>Hindu:</strong> 1.7%</li>
+                        <li><strong>Sikh:</strong> 0.9%</li>
+                        <li><strong>Jewish:</strong> 0.5%</li>
+                        <li><strong>Buddhist:</strong> 0.5%</li>
+                    </ul>
+
+                    <h4>Secularization:</h4>
+                    <ul>
+                        <li>Britain increasingly secular</li>
+                        <li>Church attendance very low</li>
+                        <li>"Cultural Christians" - identify but don't practice</li>
+                        <li>Young people especially non-religious</li>
+                        <li>Religion declining in public life</li>
+                    </ul>
+
+                    <h4>Religious Diversity:</h4>
+                    <ul>
+                        <li>Immigration brought religious pluralism</li>
+                        <li>Mosques, temples, gurdwaras in cities</li>
+                        <li>Accommodations: Halal food, prayer rooms</li>
+                        <li>Faith schools - Muslims, Jews, Hindus</li>
+                    </ul>
+
+                    <h4>Islamophobia:</h4>
+                    <ul>
+                        <li>Anti-Muslim prejudice increased post-9/11 and 7/7</li>
+                        <li>Hate crimes against Muslims</li>
+                        <li>Media stereotyping</li>
+                        <li>Discrimination in employment</li>
+                        <li>"Prevent" strategy criticized for targeting Muslims</li>
+                    </ul>
+
+                    <h4>Religious Freedom Debates:</h4>
+                    <ul>
+                        <li><strong>Religious Symbols:</strong> Should hijab be banned in schools?</li>
+                        <li><strong>Faith Schools:</strong> Segregation concerns</li>
+                        <li><strong>Blasphemy:</strong> Legal protections?</li>
+                        <li><strong>Religious Accommodation:</strong> How far to go?</li>
+                    </ul>
+
+                    <h4>Disestablishment Debate:</h4>
+                    <ul>
+                        <li>Should Church of England remain established?</li>
+                        <li>Bishops in Lords anachronistic in multi-faith society?</li>
+                        <li>Monarch required to be Anglican</li>
+                        <li>Most oppose change - "if not broken, don't fix"</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Section 18: Social Welfare -->
+        <div class="section" id="social-welfare">
+            <h2>18. Social Welfare</h2>
+
+            <div class="collapsible-header">
+                <h3>The Welfare State</h3>
+                <span class="collapsible-icon">▼</span>
+            </div>
+            <div class="collapsible-content">
+                <div class="collapsible-inner">
+                    <h4>Origins:</h4>
+                    <p>The British <span class="key-term">welfare state</span> was established after WWII based on the <span class="key-term">Beveridge Report (1942)</span>.</p>
+
+                    <h4>Beveridge's "Five Giants":</h4>
+                    <ul>
+                        <li><strong>Want:</strong> Poverty</li>
+                        <li><strong>Disease:</strong> Ill health</li>
+                        <li><strong>Ignorance:</strong> Lack of education</li>
+                        <li><strong>Squalor:</strong> Poor housing</li>
+                        <li><strong>Idleness:</strong> Unemployment</li>
+                    </ul>
+
+                    <h4>Key Principles:</h4>
+                    <ul>
+                        <li><span class="key-term">"Cradle to Grave":</span> Support from birth to death</li>
+                        <li><span class="key-term">Universalism:</span> Benefits for all, not just poor</li>
+                        <li><strong>State Responsibility:</strong> Government ensures minimum living standards</li>
+                        <li><strong>Funded by Taxation:</strong> Progressive taxation pays for services</li>
+                    </ul>
+
+                    <h4>Core Programs Established (1945-1951):</h4>
+                    <ul>
+                        <li><strong>NHS (1948):</strong> Free healthcare</li>
+                        <li><strong>National Insurance:</strong> Unemployment, sickness, retirement benefits</li>
+                        <li><strong>Child Benefit:</strong> Payments for families</li>
+                        <li><strong>Council Housing:</strong> Government-built social housing</li>
+                        <li><strong>Free Education:</strong> Expanded secondary education</li>
+                    </ul>
+
+                    <h4>Evolution:</h4>
+                    <ul>
+                        <li><strong>Expansion (1945-1979):</strong> Welfare state grew</li>
+                        <li><strong>Thatcher Era (1979-1990):</strong> Retrenchment, means-testing, privatization</li>
+                        <li><strong>New Labour (1997-2010):</strong> "Third Way" - investment but with conditionality</li>
+                        <li><strong>Austerity (2010-present):</strong> Severe cuts to welfare</li>
+                    </ul>
+
+                    <h4>Current Benefits System:</h4>
+                    <ul>
+                        <li><span class="key-term">Universal Credit:</span> Consolidated benefit replacing six others</li>
+                        <li><strong>State Pension:</strong> For retirees</li>
+                        <li><strong>Jobseeker's Allowance:</strong> For unemployed (conditions attached)</li>
+                        <li><strong>Housing Benefit:</strong> Help with rent</li>
+                        <li><strong>Disability Benefits:</strong> For disabled people</li>
+                        <li><strong>Child Benefit:</strong> For families with children</li>
+                    </ul>
+
+                    <h4>Criticisms:</h4>
+                    <p><strong>From the Right:</strong></p>
+                    <ul>
+                        <li>"Dependency culture" - discourages work</li>
+                        <li>Too expensive, unsustainable</li>
+                        <li>Fraud and abuse</li>
+                    </ul>
+
+                    <p><strong>From the Left:</strong></p>
+                    <ul>
+                        <li>Benefits too low to live on</li>
+                        <li>Punitive conditionality</li>
+                        <li>Cuts hurt vulnerable</li>
+                        <li>Universal Credit poorly designed</li>
+                    </ul>
+
+                    <h4>Challenges:</h4>
+                    <ul>
+                        <li>Aging population</li>
+                        <li>Rising healthcare costs</li>
+                        <li>Automation reducing jobs</li>
+                        <li>Inequality increasing</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="collapsible-header">
+                <h3>The National Health Service (NHS)</h3>
+                <span class="collapsible-icon">▼</span>
+            </div>
+            <div class="collapsible-content">
+                <div class="collapsible-inner">
+                    <h4>Founding:</h4>
+                    <ul>
+                        <li>Established July 5, 1948</li>
+                        <li>Health Minister: Aneurin Bevan (Labour)</li>
+                        <li>Revolutionary: Free healthcare for all</li>
+                        <li>"No society can call itself civilized if a sick person is denied medical aid because of lack of means"</li>
+                    </ul>
+
+                    <h4>Core Principles:</h4>
+                    <ul>
+                        <li><span class="key-term">Free at Point of Use:</span> No payment when receiving care</li>
+                        <li><span class="key-term">Universal:</span> Available to all residents</li>
+                        <li><span class="key-term">Comprehensive:</span> All medical conditions covered</li>
+                        <li>Funded by taxation</li>
+                    </ul>
+
+                    <h4>Structure:</h4>
+                    <ul>
+                        <li><strong>NHS England, Scotland, Wales, Northern Ireland:</strong> Separate systems</li>
+                        <li><strong>Primary Care:</strong> GPs (family doctors), first point of contact</li>
+                        <li><strong>Secondary Care:</strong> Hospitals, specialists</li>
+                        <li><strong>Emergency Care:</strong> A&E departments</li>
+                    </ul>
+
+                    <h4>What's Free vs. Paid:</h4>
+                    <p><strong>Free:</strong></p>
+                    <ul>
+                        <li>GP visits</li>
+                        <li>Hospital treatment</li>
+                        <li>Emergency care</li>
+                        <li>Mental health services</li>
+                    </ul>
+
+                    <p><strong>Charged (in England):</strong></p>
+                    <ul>
+                        <li>Prescriptions (£9.90 per item - exemptions for many)</li>
+                        <li>Dental care (subsidized)</li>
+                        <li>Eye tests (subsidized)</li>
+                    </ul>
+
+                    <h4>Public Perception:</h4>
+                    <ul>
+                        <li>Beloved institution - "national treasure"</li>
+                        <li>Symbol of British values</li>
+                        <li>Featured in London 2012 Olympics opening ceremony</li>
+                        <li>Regular polls show overwhelming support</li>
+                    </ul>
+
+                    <h4>Current Challenges:</h4>
+                    <ul>
+                        <li><strong>Funding Crisis:</strong> Spending hasn't kept pace with demand</li>
+                        <li><strong>Staff Shortages:</strong> Nurses, doctors leaving profession</li>
+                        <li><strong>Wait Times:</strong> Months for appointments, treatments</li>
+                        <li><strong>Aging Population:</strong> More elderly patients with complex needs</li>
+                        <li><strong>COVID-19 Impact:</strong> Huge backlog, staff burnout</li>
+                        <li><strong>Mental Health:</strong> Services overwhelmed</li>
+                    </ul>
+
+                    <h4>Political Debates:</h4>
+                    <p><strong>Privatization Concerns:</strong></p>
+                    <ul>
+                        <li>Increased outsourcing to private companies</li>
+                        <li>Labour warns of "backdoor privatization"</li>
+                        <li>Conservatives deny plans to privatize</li>
+                    </ul>
+
+                    <p><strong>Funding:</strong></p>
+                    <ul>
+                        <li>Both parties promise more funding</li>
+                        <li>Debate over how much and where from</li>
+                        <li>Tax increases politically difficult</li>
+                    </ul>
+
+                    <h4>Comparison with Other Systems:</h4>
+                    <ul>
+                        <li>More cost-effective than US system</li>
+                        <li>But worse outcomes than some European countries</li>
+                        <li>Lower spending per capita than comparable nations</li>
+                    </ul>
+
+                    <div class="important-note">
+                        <strong>Cultural Significance:</strong> The NHS is more than healthcare - it's a symbol of British social solidarity and egalitarianism. Any politician suggesting major reforms or privatization faces fierce public opposition.
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Section 19: Economy -->
+        <div class="section" id="economy">
+            <h2>19. Economy</h2>
+
+            <div class="collapsible-header">
+                <h3>Economic Superpower of the 19th Century</h3>
+                <span class="collapsible-icon">▼</span>
+            </div>
+            <div class="collapsible-content">
+                <div class="collapsible-inner">
+                    <h4>Industrial Revolution:</h4>
+                    <ul>
+                        <li>Britain first industrialized nation (late 18th century)</li>
+                        <li><span class="key-term">"Workshop of the World":</span> Manufacturing powerhouse</li>
+                        <li>Innovations: Steam engine, railways, factories</li>
+                        <li>Coal and iron resources</li>
+                    </ul>
+
+                    <h4>Global Dominance (19th Century):</h4>
+                    <ul>
+                        <li>Largest economy in world</li>
+                        <li>Controlled 25% of world trade</li>
+                        <li>Pound sterling global reserve currency</li>
+                        <li>London financial center of world</li>
+                        <li>"Pax Britannica" - British-dominated world order</li>
+                    </ul>
+
+                    <h4>Sources of Wealth:</h4>
+                    <ul>
+                        <li><strong>Manufacturing:</strong> Textiles, steel, shipbuilding</li>
+                        <li><strong>Trade:</strong> Global commerce through empire</li>
+                        <li><strong>Finance:</strong> Banking, insurance</li>
+                        <li><strong>Imperial Exploitation:</strong> Raw materials, captive markets</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="collapsible-header">
+                <h3>Decline (1945-1979)</h3>
+                <span class="collapsible-icon">▼</span>
+            </div>
+            <div class="collapsible-content">
+                <div class="collapsible-inner">
+                    <h4>Post-WWII Decline:</h4>
+                    <ul>
+                        <li>Exhausted by two world wars</li>
+                        <li>Loss of empire</li>
+                        <li>Outdated industries</li>
+                        <li>Overtaken by US, Germany, Japan</li>
+                    </ul>
+
+                    <h4>Economic Problems (1945-1979):</h4>
+                    <ul>
+                        <li><strong>Low Growth:</strong> "British disease" - stagnation</li>
+                        <li><strong>Strikes:</strong> Labor unrest, "Winter of Discontent" (1978-79)</li>
+                        <li><strong>Inflation:</strong> Rising prices</li>
+                        <li><strong>Unemployment:</strong> Increasing joblessness</li>
+                        <li><strong>Balance of Payments:</strong> Importing more than exporting</li>
+                        <li><strong>Nationalization:</strong> State ownership of industries often inefficient</li>
+                    </ul>
+
+                    <h4>"Sick Man of Europe":</h4>
+                    <ul>
+                        <li>Britain seen as declining, failing economy</li>
+                        <li>Frequent IMF bailouts</li>
+                        <li>Power cuts, three-day work week</li>
+                        <li>Garbage strikes, bodies unburied</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="collapsible-header">
+                <h3>Pre-Brexit Boom</h3>
+                <span class="collapsible-icon">▼</span>
+            </div>
+            <div class="collapsible-content">
+                <div class="collapsible-inner">
+                    <h4>Thatcher Revolution (1979-1990):</h4>
+                    <ul>
+                        <li><span class="key-term">Privatization:</span> Sold state-owned industries</li>
+                        <li><span class="key-term">Deregulation:</span> Freed up financial sector</li>
+                        <li><strong>Trade Union Reform:</strong> Reduced union power</li>
+                        <li><strong>"Big Bang" (1986):</strong> Deregulated financial markets</li>
+                        <li><strong>Free Market:</strong> Less government intervention</li>
+                    </ul>
+
+                    <h4>New Labour (1997-2010):</h4>
+                    <ul>
+                        <li>Accepted Thatcherite reforms</li>
+                        <li>But increased public spending</li>
+                        <li>"Cool Britannia" - cultural renaissance</li>
+                        <li>Strong growth, low unemployment</li>
+                        <li>City of London booming</li>
+                    </ul>
+
+                    <h4>Economic Transformation:</h4>
+                    <ul>
+                        <li><strong>Deindustrialization:</strong> Manufacturing declined</li>
+                        <li><strong>Service Economy:</strong> Finance, business services, creative industries</li>
+                        <li><strong>London-Centric:</strong> Capital dominant</li>
+                        <li><strong>EU Single Market:</strong> Benefited from European integration</li>
+                    </ul>
+
+                    <h4>2008 Financial Crisis:</h4>
+                    <ul>
+                        <li>Banks overleveraged, required bailouts</li>
+                        <li>Recession, unemployment rose</li>
+                        <li>Austerity policies from 2010</li>
+                        <li>But economy recovered by mid-2010s</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="collapsible-header">
+                <h3>Structural Changes & A Prosperous South and a Poor North</h3>
+                <span class="collapsible-icon">▼</span>
+            </div>
+            <div class="collapsible-content">
+                <div class="collapsible-inner">
+                    <h4>Deindustrialization:</h4>
+                    <ul>
+                        <li>Manufacturing jobs collapsed (1970s-1990s)</li>
+                        <li>Coal mines, steel mills, shipyards closed</li>
+                        <li>Devastated Northern England, Wales, Scotland</li>
+                        <li>Communities built around industry lost purpose</li>
+                    </ul>
+
+                    <h4>Service Economy:</h4>
+                    <ul>
+                        <li>80% of economy now services</li>
+                        <li><strong>Finance:</strong> City of London global center</li>
+                        <li><strong>Business Services:</strong> Consulting, law, accounting</li>
+                        <li><strong>Creative Industries:</strong> Music, film, TV, advertising</li>
+                        <li><strong>Tourism:</strong> Major sector</li>
+                    </ul>
+
+                    <h4>North-South Divide:</h4>
+                    <p><strong>South/London:</strong></p>
+                    <ul>
+                        <li>Prosperous, service-based economy</li>
+                        <li>High incomes, employment</li>
+                        <li>Property values soaring</li>
+                        <li>Finance, tech, creative industries</li>
+                    </ul>
+
+                    <p><strong>North/Midlands:</strong></p>
+                    <ul>
+                        <li>Struggled after deindustrialization</li>
+                        <li>Lower incomes, higher unemployment</li>
+                        <li>Cheaper housing but less opportunity</li>
+                        <li>Some recovery but lags South</li>
+                    </ul>
+
+                    <h4>Regional Inequality:</h4>
+                    <ul>
+                        <li>Widest regional inequality in developed world</li>
+                        <li>London GDP per capita double some Northern regions</li>
+                        <li>Life expectancy varies by region</li>
+                        <li>Investment concentrated in London</li>
+                    </ul>
+
+                    <h4>Levelling Up:</h4>
+                    <ul>
+                        <li>Boris Johnson pledged to reduce inequality</li>
+                        <li>"Levelling up" became government slogan</li>
+                        <li>Promise to invest in Northern England</li>
+                        <li>Critics say insufficient action</li>
+                    </ul>
+
+                    <h4>Brexit Impact:</h4>
+                    <ul>
+                        <li>Northern England voted heavily for Brexit</li>
+                        <li>Economic performance worse post-Brexit</li>
+                        <li>Trade barriers with EU</li>
+                        <li>Some businesses relocated to EU</li>
+                        <li>Labor shortages in some sectors</li>
+                        <li>Long-term impact still unfolding</li>
+                    </ul>
+
+                    <h4>Current Economic Challenges:</h4>
+                    <ul>
+                        <li><strong>Low Growth:</strong> Anemic compared to peers</li>
+                        <li><strong>Productivity:</strong> Lower than competitors</li>
+                        <li><strong>Inequality:</strong> Wealth gap widening</li>
+                        <li><strong>Cost of Living Crisis:</strong> Inflation, energy costs</li>
+                        <li><strong>Public Services:</strong> Underfunded after austerity</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Scroll to Top Button -->
+        <div class="scroll-top" id="scrollTop">↑</div>
+
+        <div style="text-align: center; margin-top: 40px; padding: 20px; background: var(--card-bg); border-radius: 15px;">
+            <p style="color: #7f8c8d; margin-bottom: 10px;">
+                📚 This comprehensive guide covers all Great Britain topics for the English Abitur 2026 examination.
+            </p>
+            <p style="color: #7f8c8d; margin-bottom: 20px;">
+                ✨ Click section headers to expand/collapse content • Use navigation menu to jump to sections • Press 'T' to scroll to top
+            </p>
+            <a href="index.html" class="back-button">← Back to Home</a>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Collapsible sections
+            const collapsibleHeaders = document.querySelectorAll('.collapsible-header');
+            
+            collapsibleHeaders.forEach(header => {
+                header.addEventListener('click', function() {
+                    this.classList.toggle('active');
+                    const content = this.nextElementSibling;
+                    content.classList.toggle('active');
+                });
+            });
+
+            // Smooth scrolling
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    }
+                });
+            });
+
+            // Scroll to top button
+            const scrollTopButton = document.getElementById('scrollTop');
+            
+            window.addEventListener('scroll', function() {
+                if (window.pageYOffset > 300) {
+                    scrollTopButton.classList.add('visible');
+                } else {
+                    scrollTopButton.classList.remove('visible');
+                }
+            });
+            
+            scrollTopButton.addEventListener('click', function() {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            });
+
+            // Keyboard shortcut: Press 'T' to scroll to top
+            document.addEventListener('keydown', function(e) {
+                if ((e.key === 't' || e.key === 'T') && !e.ctrlKey && !e.altKey) {
+                    const active = document.activeElement;
+                    if (active.tagName !== 'INPUT' && active.tagName !== 'TEXTAREA') {
+                        window.scrollTo({ top: 0, behavior: 'smooth' });
+                    }
+                }
+            });
+
+            // Highlight active navigation link
+            const sections = document.querySelectorAll('.section');
+            const navLinks = document.querySelectorAll('.nav-link');
+            
+            const observerOptions = {
+                root: null,
+                rootMargin: '-20% 0px -80% 0px',
+                threshold: 0
+            };
+
+            const observer = new IntersectionObserver(entries => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        navLinks.forEach(link => {
+                            link.style.background = 'linear-gradient(45deg, var(--secondary-color), #2980b9)';
+                        });
+                        
+                        const id = entry.target.getAttribute('id');
+                        const activeLink = document.querySelector(`.nav-link[href="#${id}"]`);
+                        if (activeLink) {
+                            activeLink.style.background = 'linear-gradient(45deg, var(--accent-color), #c0392b)';
+                        }
+                    }
+                });
+            }, observerOptions);
+
+            sections.forEach(section => observer.observe(section));
+
+            console.log('✅ Great Britain Study Guide loaded! Press T to scroll to top.');
+        });
+    </script>
+</body>
+</html>
