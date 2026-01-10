@@ -18,52 +18,321 @@
             --uk-blue: #012169;
             --uk-red: #C8102E;
         }
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: linear-gradient(135deg, var(--bg-color) 0%, #d5dbdb 100%); color: var(--text-color); line-height: 1.6; min-height: 100vh; }
-        .container { max-width: 1200px; margin: 0 auto; padding: 20px; }
-        .header { text-align: center; margin-bottom: 40px; background: var(--card-bg); padding: 30px; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); position: relative; overflow: hidden; }
-        .header::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 5px; background: linear-gradient(90deg, var(--uk-blue), white, var(--uk-red)); }
-        .back-button { display: inline-block; padding: 10px 20px; background: var(--secondary-color); color: white; text-decoration: none; border-radius: 8px; margin-bottom: 20px; transition: all 0.3s ease; }
-        .back-button:hover { background: #2980b9; transform: translateY(-2px); }
-        .header h1 { color: var(--primary-color); font-size: 2.5em; margin-bottom: 10px; }
-        .section { background: var(--card-bg); border-radius: 15px; padding: 30px; margin-bottom: 30px; box-shadow: 0 8px 25px rgba(0,0,0,0.1); border-left: 5px solid var(--secondary-color); }
-        .section h2 { color: var(--primary-color); margin-bottom: 20px; font-size: 1.8em; border-bottom: 2px solid var(--border-color); padding-bottom: 10px; }
-        .section h3 { color: var(--secondary-color); margin-top: 25px; margin-bottom: 15px; font-size: 1.4em; }
-        .section h4 { color: var(--primary-color); margin-top: 20px; margin-bottom: 10px; font-size: 1.2em; }
-        .section p { margin-bottom: 15px; text-align: justify; }
-        .section ul, .section ol { margin-left: 30px; margin-bottom: 15px; }
-        .section li { margin-bottom: 8px; }
-        .key-term { background: #e3f2fd; padding: 2px 8px; border-radius: 4px; font-weight: 600; color: var(--secondary-color); }
-        .important-note { background: #fff3cd; border-left: 4px solid var(--warning-color); padding: 15px; margin: 20px 0; border-radius: 5px; }
-        .quote { background: #f8f9fa; border-left: 4px solid var(--accent-color); padding: 15px; margin: 20px 0; font-style: italic; border-radius: 5px; }
-        .timeline { border-left: 3px solid var(--secondary-color); padding-left: 20px; margin: 20px 0; }
-        .timeline-item { margin-bottom: 20px; position: relative; }
-        .timeline-item::before { content: ''; position: absolute; left: -27px; top: 5px; width: 12px; height: 12px; background: var(--secondary-color); border-radius: 50%; border: 3px solid white; }
-        .timeline-year { font-weight: bold; color: var(--accent-color); font-size: 1.1em; }
-        .nav-container { background: var(--card-bg); padding: 20px; border-radius: 15px; margin-bottom: 30px; box-shadow: 0 8px 25px rgba(0,0,0,0.1); position: sticky; top: 20px; z-index: 100; }
-        .nav-container h3 { color: var(--primary-color); margin-bottom: 15px; font-size: 1.3em; }
-        .nav-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 10px; }
-        .nav-link { background: linear-gradient(45deg, var(--secondary-color), #2980b9); color: white; padding: 10px 15px; border-radius: 8px; text-decoration: none; text-align: center; transition: all 0.3s ease; font-size: 0.9em; font-weight: 600; }
-        .nav-link:hover { transform: translateY(-2px); box-shadow: 0 5px 15px rgba(52, 152, 219, 0.3); background: linear-gradient(45deg, #2980b9, var(--secondary-color)); }
-        .scroll-top { position: fixed; bottom: 30px; right: 30px; background: linear-gradient(45deg, var(--accent-color), #c0392b); color: white; width: 50px; height: 50px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 24px; cursor: pointer; box-shadow: 0 5px 20px rgba(0,0,0,0.3); transition: all 0.3s ease; z-index: 1000; opacity: 0; visibility: hidden; }
-        .scroll-top.visible { opacity: 1; visibility: visible; }
-        .scroll-top:hover { transform: translateY(-5px); box-shadow: 0 8px 25px rgba(231, 76, 60, 0.4); }
-        .collapsible-header { background: linear-gradient(135deg, var(--secondary-color), #2980b9); color: white; padding: 15px 20px; cursor: pointer; border-radius: 10px; margin-top: 20px; display: flex; justify-content: space-between; align-items: center; transition: all 0.3s ease; user-select: none; }
-        .collapsible-header:hover { background: linear-gradient(135deg, #2980b9, var(--secondary-color)); transform: translateX(5px); }
-        .collapsible-header h3 { margin: 0; color: white; font-size: 1.3em; }
-        .collapsible-icon { font-size: 1.5em; transition: transform 0.3s ease; }
-        .collapsible-header.active .collapsible-icon { transform: rotate(180deg); }
-        .collapsible-content { max-height: 0; overflow: hidden; transition: max-height 0.5s ease; }
-        .collapsible-content.active { max-height: 10000px; }
-        .collapsible-inner { padding: 20px 0; }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, var(--bg-color) 0%, #d5dbdb 100%);
+            color: var(--text-color);
+            line-height: 1.6;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+            background: var(--card-bg);
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 5px;
+            background: linear-gradient(90deg, var(--uk-blue), white, var(--uk-red));
+        }
+
+        .back-button {
+            display: inline-block;
+            padding: 10px 20px;
+            background: var(--secondary-color);
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            transition: all 0.3s ease;
+        }
+
+        .back-button:hover {
+            background: #2980b9;
+            transform: translateY(-2px);
+        }
+
+        .header h1 {
+            color: var(--primary-color);
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+
+        .section {
+            background: var(--card-bg);
+            border-radius: 15px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+            border-left: 5px solid var(--secondary-color);
+        }
+
+        .section h2 {
+            color: var(--primary-color);
+            margin-bottom: 20px;
+            font-size: 1.8em;
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 10px;
+        }
+
+        .section h3 {
+            color: var(--secondary-color);
+            margin-top: 25px;
+            margin-bottom: 15px;
+            font-size: 1.4em;
+        }
+
+        .section h4 {
+            color: var(--primary-color);
+            margin-top: 20px;
+            margin-bottom: 10px;
+            font-size: 1.2em;
+        }
+
+        .section p {
+            margin-bottom: 15px;
+            text-align: justify;
+        }
+
+        .section ul, .section ol {
+            margin-left: 30px;
+            margin-bottom: 15px;
+        }
+
+        .section li {
+            margin-bottom: 8px;
+        }
+
+        .key-term {
+            background: #e3f2fd;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-weight: 600;
+            color: var(--secondary-color);
+        }
+
+        .important-note {
+            background: #fff3cd;
+            border-left: 4px solid var(--warning-color);
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 5px;
+        }
+
+        .quote {
+            background: #f8f9fa;
+            border-left: 4px solid var(--accent-color);
+            padding: 15px;
+            margin: 20px 0;
+            font-style: italic;
+            border-radius: 5px;
+        }
+
+        .timeline {
+            border-left: 3px solid var(--secondary-color);
+            padding-left: 20px;
+            margin: 20px 0;
+        }
+
+        .timeline-item {
+            margin-bottom: 20px;
+            position: relative;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -27px;
+            top: 5px;
+            width: 12px;
+            height: 12px;
+            background: var(--secondary-color);
+            border-radius: 50%;
+            border: 3px solid white;
+        }
+
+        .timeline-year {
+            font-weight: bold;
+            color: var(--accent-color);
+            font-size: 1.1em;
+        }
+
+        .nav-container {
+            background: var(--card-bg);
+            padding: 20px;
+            border-radius: 15px;
+            margin-bottom: 30px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 20px;
+            z-index: 100;
+        }
+
+        .nav-container h3 {
+            color: var(--primary-color);
+            margin-bottom: 15px;
+            font-size: 1.3em;
+        }
+
+        .nav-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 10px;
+        }
+
+        .nav-link {
+            background: linear-gradient(45deg, var(--secondary-color), #2980b9);
+            color: white;
+            padding: 10px 15px;
+            border-radius: 8px;
+            text-decoration: none;
+            text-align: center;
+            transition: all 0.3s ease;
+            font-size: 0.9em;
+            font-weight: 600;
+        }
+
+        .nav-link:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(52, 152, 219, 0.3);
+            background: linear-gradient(45deg, #2980b9, var(--secondary-color));
+        }
+
+        .scroll-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: linear-gradient(45deg, var(--accent-color), #c0392b);
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            cursor: pointer;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+            transition: all 0.3s ease;
+            z-index: 1000;
+            opacity: 0;
+            visibility: hidden;
+        }
+
+        .scroll-top.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .scroll-top:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(231, 76, 60, 0.4);
+        }
+
+        .collapsible-header {
+            background: linear-gradient(135deg, var(--secondary-color), #2980b9);
+            color: white;
+            padding: 15px 20px;
+            cursor: pointer;
+            border-radius: 10px;
+            margin-top: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: all 0.3s ease;
+            user-select: none;
+        }
+
+        .collapsible-header:hover {
+            background: linear-gradient(135deg, #2980b9, var(--secondary-color));
+            transform: translateX(5px);
+        }
+
+        .collapsible-header h3 {
+            margin: 0;
+            color: white;
+            font-size: 1.3em;
+        }
+
+        .collapsible-icon {
+            font-size: 1.5em;
+            transition: transform 0.3s ease;
+        }
+
+        .collapsible-header.active .collapsible-icon {
+            transform: rotate(180deg);
+        }
+
+        .collapsible-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s ease;
+        }
+
+        .collapsible-content.active {
+            max-height: 10000px;
+        }
+
+        .collapsible-inner {
+            padding: 20px 0;
+        }
+
         @media (max-width: 768px) {
-            .container { padding: 15px; }
-            .header h1 { font-size: 2em; }
-            .section { padding: 20px; }
-            .section h2 { font-size: 1.5em; }
-            .nav-grid { grid-template-columns: 1fr; }
-            .scroll-top { bottom: 20px; right: 20px; width: 45px; height: 45px; }
-            .nav-container { position: relative; top: 0; }
+            .container {
+                padding: 15px;
+            }
+            
+            .header h1 {
+                font-size: 2em;
+            }
+            
+            .section {
+                padding: 20px;
+            }
+
+            .section h2 {
+                font-size: 1.5em;
+            }
+
+            .nav-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .scroll-top {
+                bottom: 20px;
+                right: 20px;
+                width: 45px;
+                height: 45px;
+            }
+
+            .nav-container {
+                position: relative;
+                top: 0;
+            }
         }
     </style>
 </head>
@@ -75,7 +344,1582 @@
             <p>Comprehensive Study Guide for English Abitur 2026</p>
         </div>
 
-<div class="collapsible-header">
+        <!-- Navigation Menu -->
+        <div class="nav-container">
+            <h3>📑 Quick Navigation</h3>
+            <div class="nav-grid">
+                <a href="#world-power" class="nav-link">11. History of a World Power</a>
+                <a href="#post-colonial" class="nav-link">12. Post-colonial Developments</a>
+                <a href="#europe" class="nav-link">13. Britain and Europe</a>
+                <a href="#political-system" class="nav-link">14. Political System</a>
+                <a href="#united-kingdom" class="nav-link">15. United Kingdom</a>
+                <a href="#multicultural" class="nav-link">16. Multicultural Society</a>
+                <a href="#religion" class="nav-link">17. Religion</a>
+                <a href="#social-welfare" class="nav-link">18. Social Welfare</a>
+                <a href="#economy" class="nav-link">19. Economy</a>
+            </div>
+        </div>
+
+        <!-- Section 11: History of a World Power -->
+        <div class="section" id="world-power">
+            <h2>11. History of a World Power</h2>
+
+            <div class="collapsible-header">
+                <h3>The British Empire</h3>
+                <span class="collapsible-icon">▼</span>
+            </div>
+            <div class="collapsible-content">
+                <div class="collapsible-inner">
+                    <h4>Overview:</h4>
+                    <p>The British Empire was the largest empire in history, covering approximately one-quarter of the world's land surface and ruling over 400-500 million people at its peak in the 1920s. The phrase <span class="key-term">"the empire on which the sun never sets"</span> reflected its global reach.</p>
+
+                    <h4>Timeline of Expansion:</h4>
+                    <div class="timeline">
+                        <div class="timeline-item">
+                            <span class="timeline-year">16th-17th centuries:</span> Early expansion - North America, Caribbean
+                        </div>
+                        <div class="timeline-item">
+                            <span class="timeline-year">18th century:</span> India becomes jewel in the crown
+                        </div>
+                        <div class="timeline-item">
+                            <span class="timeline-year">19th century:</span> "Scramble for Africa," peak of imperial power
+                        </div>
+                        <div class="timeline-item">
+                            <span class="timeline-year">1920s:</span> Empire reaches maximum territorial extent
+                        </div>
+                        <div class="timeline-item">
+                            <span class="timeline-year">1947-1997:</span> Decolonization and decline
+                        </div>
+                    </div>
+
+                    <h4>Key Colonies and Territories:</h4>
+                    <ul>
+                        <li><strong>India:</strong> "Jewel in the Crown," British Raj (1858-1947)</li>
+                        <li><strong>Africa:</strong> Egypt, Sudan, Kenya, Uganda, Nigeria, South Africa, Rhodesia</li>
+                        <li><strong>Asia:</strong> Burma (Myanmar), Malaya, Singapore, Hong Kong</li>
+                        <li><strong>Oceania:</strong> Australia, New Zealand, Pacific islands</li>
+                        <li><strong>Caribbean:</strong> Jamaica, Barbados, Trinidad and Tobago</li>
+                        <li><strong>Middle East:</strong> Palestine, Iraq (after WWI)</li>
+                    </ul>
+
+                    <h4>Methods of Control:</h4>
+                    <ul>
+                        <li><span class="key-term">Direct Rule:</span> British governors, administrators directly controlled colonies</li>
+                        <li><span class="key-term">Indirect Rule:</span> Worked through local rulers, especially in Africa and India</li>
+                        <li><strong>Military Power:</strong> Royal Navy dominated seas, army suppressed rebellions</li>
+                        <li><strong>Economic Exploitation:</strong> Extracted raw materials, created captive markets</li>
+                        <li><strong>Cultural Imperialism:</strong> Spread English language, British education, Christianity</li>
+                    </ul>
+
+                    <h4>Justifications for Empire:</h4>
+                    <ul>
+                        <li><span class="key-term">"The White Man's Burden":</span> Duty to "civilize" non-European peoples</li>
+                        <li><strong>Racial Superiority:</strong> Belief in Anglo-Saxon superiority</li>
+                        <li><strong>Christian Mission:</strong> Spread Christianity and "enlightenment"</li>
+                        <li><strong>Economic Benefits:</strong> Trade, resources, markets</li>
+                        <li><strong>Strategic Interests:</strong> Naval bases, trade routes, buffer zones</li>
+                    </ul>
+
+                    <h4>Impact on Colonized Peoples:</h4>
+                    <p><strong>Negative Effects:</strong></p>
+                    <ul>
+                        <li>Political subjugation and loss of sovereignty</li>
+                        <li>Economic exploitation and underdevelopment</li>
+                        <li>Cultural destruction and erasure of indigenous practices</li>
+                        <li>Violent suppression of resistance (e.g., Amritsar Massacre 1919)</li>
+                        <li>Artificial borders creating ethnic conflicts</li>
+                        <li>Famines (Bengal Famine 1943 killed 3 million)</li>
+                        <li>Racism and discrimination</li>
+                    </ul>
+
+                    <p><strong>Some Positive Legacies (Debated):</strong></p>
+                    <ul>
+                        <li>Infrastructure: railways, ports, telegraph systems</li>
+                        <li>English language as global lingua franca</li>
+                        <li>Parliamentary democracy and legal systems (in some former colonies)</li>
+                        <li>Education systems</li>
+                    </ul>
+
+                    <div class="important-note">
+                        <strong>Contemporary Perspective:</strong> Modern historians increasingly emphasize the exploitative and destructive nature of the British Empire. While some infrastructure was built, its primary purpose was extraction of resources and control, not development of colonized peoples. The empire created lasting economic, social, and political problems that persist today.
+                    </div>
+
+                    <h4>Decline of the Empire:</h4>
+                    <ul>
+                        <li><strong>WWI & WWII:</strong> Drained British resources and strength</li>
+                        <li><strong>Rise of Nationalism:</strong> Independence movements in colonies</li>
+                        <li><strong>Cold War:</strong> Superpower competition undermined European empires</li>
+                        <li><strong>Economic Decline:</strong> Britain couldn't afford to maintain empire</li>
+                        <li><strong>Changing Values:</strong> Growing opposition to colonialism at home</li>
+                        <li><strong>UN Charter:</strong> Self-determination became international norm</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="collapsible-header">
+                <h3>The Commonwealth</h3>
+                <span class="collapsible-icon">▼</span>
+            </div>
+            <div class="collapsible-content">
+                <div class="collapsible-inner">
+                    <h4>What is the Commonwealth?</h4>
+                    <p>The <span class="key-term">Commonwealth of Nations</span> is a voluntary association of 56 independent countries, most of which are former British colonies. It represents approximately 2.5 billion people (one-third of the world's population).</p>
+
+                    <h4>History and Evolution:</h4>
+                    <ul>
+                        <li><strong>1926:</strong> Balfour Declaration recognized dominions as equal partners</li>
+                        <li><strong>1931:</strong> Statute of Westminster formalized independence of dominions</li>
+                        <li><strong>1949:</strong> London Declaration - republics could remain members</li>
+                        <li><strong>Evolution:</strong> From "British Commonwealth" to inclusive "Commonwealth of Nations"</li>
+                    </ul>
+
+                    <h4>Member Categories:</h4>
+                    <ul>
+                        <li><strong>Realms (15):</strong> Recognize British monarch as head of state (Canada, Australia, New Zealand, Jamaica, etc.)</li>
+                        <li><strong>Republics (36):</strong> India, South Africa, Kenya, Nigeria, etc.</li>
+                        <li><strong>Monarchies (5):</strong> Own monarchs (Malaysia, Brunei, Lesotho, Eswatini, Tonga)</li>
+                    </ul>
+
+                    <h4>Structure and Leadership:</h4>
+                    <ul>
+                        <li><span class="key-term">Head of the Commonwealth:</span> King Charles III (symbolic role, not hereditary)</li>
+                        <li><span class="key-term">Commonwealth Secretary-General:</span> Main executive officer</li>
+                        <li><strong>Commonwealth Secretariat:</strong> Based in London, coordinates activities</li>
+                        <li><strong>CHOGM:</strong> Commonwealth Heads of Government Meeting (biennial)</li>
+                    </ul>
+
+                    <h4>Core Values and Principles:</h4>
+                    <ul>
+                        <li>Democracy and good governance</li>
+                        <li>Human rights and rule of law</li>
+                        <li>Sustainable development</li>
+                        <li>Gender equality</li>
+                        <li>Peace and security</li>
+                        <li>Free and fair trade</li>
+                    </ul>
+
+                    <h4>Activities and Functions:</h4>
+                    <ul>
+                        <li><strong>Political Cooperation:</strong> Election monitoring, good governance support</li>
+                        <li><strong>Trade:</strong> Preferential trade arrangements between members</li>
+                        <li><strong>Cultural Exchange:</strong> Commonwealth Games (every 4 years)</li>
+                        <li><strong>Education:</strong> Scholarships, university cooperation</li>
+                        <li><strong>Development Aid:</strong> Supporting smaller, poorer members</li>
+                        <li><strong>Youth Programs:</strong> Commonwealth Youth Programme</li>
+                    </ul>
+
+                    <h4>Criticisms and Controversies:</h4>
+                    <ul>
+                        <li><strong>Relevance:</strong> Questions about its purpose in modern world</li>
+                        <li><strong>Colonial Legacy:</strong> Reminder of imperial past</li>
+                        <li><strong>Human Rights:</strong> Some members have poor records (Uganda, Pakistan)</li>
+                        <li><strong>Limited Power:</strong> No enforcement mechanism for principles</li>
+                        <li><strong>Unequal Benefits:</strong> Britain gains soft power, others gain less</li>
+                        <li><strong>Suspension Mechanism:</strong> Rarely used (Zimbabwe, Pakistan, Fiji at various times)</li>
+                    </ul>
+
+                    <h4>Modern Significance:</h4>
+                    <ul>
+                        <li>Provides forum for cooperation on shared challenges</li>
+                        <li>Network for trade, especially for small island nations</li>
+                        <li>Cultural and educational connections</li>
+                        <li>Platform for developing nations to have voice</li>
+                        <li>British "soft power" tool - maintains global influence</li>
+                    </ul>
+
+                    <div class="important-note">
+                        <strong>Post-Brexit Context:</strong> After leaving the EU, Britain has emphasized Commonwealth relationships as alternative trade and diplomatic network. However, critics argue Commonwealth trade is far less significant than EU trade was.
+                    </div>
+
+                    <h4>Notable Commonwealth Members:</h4>
+                    <ul>
+                        <li><strong>Major Economies:</strong> India, Canada, Australia, Nigeria, South Africa</li>
+                        <li><strong>Newest Members:</strong> Rwanda (2009), Mozambique (1995) - never colonized by Britain</li>
+                        <li><strong>Former Members:</strong> Ireland (left 1949), Zimbabwe (suspended then left 2003)</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!-- Section 12: Post-colonial Developments -->
+        <div class="section" id="post-colonial">
+            <h2>12. Post-colonial Developments</h2>
+
+            <div class="collapsible-header">
+                <h3>Gandhi and the Independence of India</h3>
+                <span class="collapsible-icon">▼</span>
+            </div>
+            <div class="collapsible-content">
+                <div class="collapsible-inner">
+                    <h4>Mohandas Karamchand Gandhi (1869-1948):</h4>
+                    <p>Known as <span class="key-term">"Mahatma"</span> (Great Soul), Gandhi led India's independence movement through nonviolent civil disobedience, inspiring civil rights movements worldwide.</p>
+
+                    <h4>Early Life and South Africa:</h4>
+                    <ul>
+                        <li>Born in Gujarat, India; studied law in London</li>
+                        <li>Worked as lawyer in South Africa (1893-1914)</li>
+                        <li>Experienced racial discrimination, developed philosophy of <span class="key-term">Satyagraha</span> (truth-force/nonviolent resistance)</li>
+                        <li>Organized Indian community against discriminatory laws</li>
+                    </ul>
+
+                    <h4>Philosophy and Methods:</h4>
+                    <ul>
+                        <li><span class="key-term">Ahimsa (Nonviolence):</span> Refusal to use violence even when oppressed</li>
+                        <li><span class="key-term">Satyagraha:</span> Peaceful resistance to injustice</li>
+                        <li><span class="key-term">Civil Disobedience:</span> Deliberately breaking unjust laws</li>
+                        <li><span class="key-term">Swadeshi:</span> Economic self-sufficiency, boycott British goods</li>
+                        <li><strong>Fasting:</strong> Used as political protest and moral pressure</li>
+                        <li><strong>Simple Living:</strong> Spinning wheel, rejection of materialism</li>
+                    </ul>
+
+                    <h4>Major Campaigns:</h4>
+                    
+                    <p><strong>Non-Cooperation Movement (1920-1922):</strong></p>
+                    <ul>
+                        <li>Response to Amritsar Massacre (1919) - British troops killed 400+ peaceful protesters</li>
+                        <li>Boycott of British institutions, courts, schools</li>
+                        <li>Return of British honors and titles</li>
+                        <li>Suspended after violence at Chauri Chaura</li>
+                    </ul>
+
+                    <p><strong>Salt March (1930):</strong></p>
+                    <ul>
+                        <li>Protested British salt tax and monopoly</li>
+                        <li>Gandhi walked 240 miles to sea to make salt</li>
+                        <li>Thousands joined, making illegal salt across India</li>
+                        <li>60,000+ arrested, but gained international attention</li>
+                        <li>Demonstrated power of nonviolent mass action</li>
+                    </ul>
+
+                    <p><strong>Quit India Movement (1942):</strong></p>
+                    <ul>
+                        <li>During WWII, demanded immediate British withdrawal</li>
+                        <li>"Do or Die" - most radical campaign</li>
+                        <li>Gandhi and Congress leaders imprisoned</li>
+                        <li>Mass protests, strikes across India</li>
+                        <li>Convinced British that continued rule impossible</li>
+                    </ul>
+
+                    <h4>Path to Independence:</h4>
+                    <div class="timeline">
+                        <div class="timeline-item">
+                            <span class="timeline-year">1945:</span> WWII ends, Britain exhausted
+                        </div>
+                        <div class="timeline-item">
+                            <span class="timeline-year">1946:</span> Labour government committed to independence
+                        </div>
+                        <div class="timeline-item">
+                            <span class="timeline-year">1947:</span> Partition of India - India and Pakistan created
+                        </div>
+                        <div class="timeline-item">
+                            <span class="timeline-year">August 15, 1947:</span> India gains independence
+                        </div>
+                    </div>
+
+                    <h4>Partition Tragedy:</h4>
+                    <ul>
+                        <li><strong>Division:</strong> India (Hindu-majority) and Pakistan (Muslim-majority)</li>
+                        <li><strong>Violence:</strong> 1-2 million killed in communal riots</li>
+                        <li><strong>Displacement:</strong> 10-20 million refugees crossed borders</li>
+                        <li><strong>Gandhi's Opposition:</strong> Opposed partition, wanted united India</li>
+                        <li><strong>Legacy:</strong> Ongoing India-Pakistan tensions, Kashmir conflict</li>
+                    </ul>
+
+                    <h4>Assassination:</h4>
+                    <ul>
+                        <li>January 30, 1948: Shot by Hindu nationalist Nathuram Godse</li>
+                        <li>Godse opposed Gandhi's tolerance toward Muslims</li>
+                        <li>Last words reportedly "Hey Ram" (Oh God)</li>
+                        <li>Nation mourned, funeral attended by millions</li>
+                    </ul>
+
+                    <h4>Global Legacy:</h4>
+                    <ul>
+                        <li>Influenced Martin Luther King Jr.'s civil rights strategy</li>
+                        <li>Inspired Nelson Mandela's anti-apartheid struggle</li>
+                        <li>Model for peaceful resistance movements worldwide</li>
+                        <li>UN celebrates October 2 (Gandhi's birthday) as International Day of Non-Violence</li>
+                        <li>Proved nonviolent resistance could defeat empire</li>
+                    </ul>
+
+                    <div class="quote">
+                        "Be the change you wish to see in the world." - Often attributed to Gandhi (paraphrase of his ideas)
+                    </div>
+                </div>
+            </div>
+
+            <div class="collapsible-header">
+                <h3>India Today</h3>
+                <span class="collapsible-icon">▼</span>
+            </div>
+            <div class="collapsible-content">
+                <div class="collapsible-inner">
+                    <h4>World's Largest Democracy:</h4>
+                    <ul>
+                        <li>Population: 1.4+ billion (surpassed China as most populous)</li>
+                        <li>Parliamentary democracy since independence</li>
+                        <li>Federal system with 28 states and 8 union territories</li>
+                        <li>Regular elections, peaceful transfers of power</li>
+                    </ul>
+
+                    <h4>Economic Development:</h4>
+                    <ul>
+                        <li><strong>5th Largest Economy:</strong> By GDP, growing rapidly</li>
+                        <li><strong>IT Powerhouse:</strong> Global leader in software, services</li>
+                        <li><strong>Manufacturing:</strong> Emerging as alternative to China</li>
+                        <li><strong>Space Program:</strong> Successfully reached Mars (Mangalyaan)</li>
+                        <li><strong>Start-up Hub:</strong> Third-largest start-up ecosystem</li>
+                    </ul>
+
+                    <h4>Persistent Challenges:</h4>
+                    <ul>
+                        <li><strong>Poverty:</strong> 10-20% live in extreme poverty</li>
+                        <li><strong>Inequality:</strong> Huge wealth gap between rich and poor</li>
+                        <li><strong>Caste System:</strong> Discrimination persists despite legal equality</li>
+                        <li><strong>Religious Tensions:</strong> Hindu-Muslim conflicts</li>
+                        <li><strong>Women's Rights:</strong> Gender-based violence, discrimination</li>
+                        <li><strong>Infrastructure:</strong> Inadequate in many areas</li>
+                        <li><strong>Pollution:</strong> Major cities have severe air quality issues</li>
+                        <li><strong>Corruption:</strong> Endemic in government and business</li>
+                    </ul>
+
+                    <h4>Political Landscape:</h4>
+                    <ul>
+                        <li><strong>Current Leadership:</strong> Narendra Modi (Prime Minister since 2014)</li>
+                        <li><strong>BJP (Bharatiya Janata Party):</strong> Hindu nationalist party in power</li>
+                        <li><strong>Congress Party:</strong> Historic party of independence, in opposition</li>
+                        <li><strong>Concerns:</strong> Rising Hindu nationalism, restrictions on minorities and press freedom</li>
+                    </ul>
+
+                    <h4>British Legacy:</h4>
+                    <ul>
+                        <li><strong>Positive:</strong> English language widespread, parliamentary system, railway network, legal framework</li>
+                        <li><strong>Negative:</strong> Partition's ongoing impact, communal divisions, economic underdevelopment, colonial trauma</li>
+                        <li><strong>Debate:</strong> Growing calls for Britain to acknowledge colonial atrocities and pay reparations</li>
+                    </ul>
+
+                    <h4>Relations with Britain:</h4>
+                    <ul>
+                        <li>Important trading partner</li>
+                        <li>Large Indian diaspora in UK (1.5+ million)</li>
+                        <li>Commonwealth member</li>
+                        <li>Increasing demands for return of artifacts (Kohinoor diamond, etc.)</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="collapsible-header">
+                <h3>South Africa</h3>
+                <span class="collapsible-icon">▼</span>
+            </div>
+            <div class="collapsible-content">
+                <div class="collapsible-inner">
+                    <h4>Apartheid System (1948-1994):</h4>
+                    <p><span class="key-term">Apartheid</span> (Afrikaans for "apartness") was a legal system of racial segregation that gave white minority complete control over Black majority.</p>
+
+                    <h4>Apartheid Laws:</h4>
+                    <ul>
+                        <li><span class="key-term">Population Registration Act:</span> Classified everyone by race</li>
+                        <li><span class="key-term">Group Areas Act:</span> Residential segregation, forced removals</li>
+                        <li><strong>Pass Laws:</strong> Black people needed permits to enter white areas</li>
+                        <li><strong>Bantu Education Act:</strong> Inferior education for Black students</li>
+                        <li><strong>Prohibition of Mixed Marriages:</strong> Interracial marriage illegal</li>
+                        <li><strong>Separate Amenities:</strong> Segregated beaches, hospitals, schools, transport</li>
+                        <li><strong>No Political Rights:</strong> Black people couldn't vote</li>
+                    </ul>
+
+                    <h4>Resistance:</h4>
+                    <ul>
+                        <li><span class="key-term">ANC (African National Congress):</span> Main resistance organization</li>
+                        <li><strong>1960 Sharpeville Massacre:</strong> Police killed 69 peaceful protesters</li>
+                        <li><strong>Nelson Mandela:</strong> Led armed struggle, imprisoned 27 years (1962-1990)</li>
+                        <li><strong>Soweto Uprising (1976):</strong> Student protests, police violence</li>
+                        <li><strong>International Sanctions:</strong> Economic pressure on regime</li>
+                        <li><strong>Sports Boycotts:</strong> Isolated South Africa internationally</li>
+                    </ul>
+
+                    <h4>End of Apartheid:</h4>
+                    <div class="timeline">
+                        <div class="timeline-item">
+                            <span class="timeline-year">1990:</span> Nelson Mandela released from prison
+                        </div>
+                        <div class="timeline-item">
+                            <span class="timeline-year">1991:</span> Apartheid laws repealed
+                        </div>
+                        <div class="timeline-item">
+                            <span class="timeline-year">1994:</span> First democratic elections - Mandela becomes president
+                        </div>
+                        <div class="timeline-item">
+                            <span class="timeline-year">1995-1998:</span> Truth and Reconciliation Commission
+                        </div>
+                    </div>
+
+                    <h4>Nelson Mandela (1918-2013):</h4>
+                    <ul>
+                        <li>Lawyer, anti-apartheid revolutionary</li>
+                        <li>Imprisoned for 27 years (1962-1990)</li>
+                        <li>President 1994-1999</li>
+                        <li>Nobel Peace Prize 1993</li>
+                        <li>Symbol of reconciliation - forgave oppressors</li>
+                        <li>Advocated "Rainbow Nation" - multiracial democracy</li>
+                    </ul>
+
+                    <h4>South Africa Today:</h4>
+                    <ul>
+                        <li><strong>Democracy:</strong> Regular free elections</li>
+                        <li><strong>Constitution:</strong> One of world's most progressive</li>
+                        <li><strong>Economic Hub:</strong> Africa's most developed economy</li>
+                        <li><strong>Challenges:</strong> Extreme inequality, high unemployment, crime, corruption</li>
+                        <li><strong>Legacy of Apartheid:</strong> Wealth gap between races persists</li>
+                    </ul>
+
+                    <h4>British Colonial Legacy:</h4>
+                    <ul>
+                        <li>Boer Wars (1880-1902) - British vs. Dutch settlers</li>
+                        <li>British colonial rule created racial hierarchies</li>
+                        <li>English language and British institutions</li>
+                        <li>Left Commonwealth during apartheid, rejoined 1994</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="collapsible-header">
+                <h3>Australia</h3>
+                <span class="collapsible-icon">▼</span>
+            </div>
+            <div class="collapsible-content">
+                <div class="collapsible-inner">
+                    <h4>Indigenous Australians:</h4>
+                    <ul>
+                        <li>Aboriginal and Torres Strait Islander peoples</li>
+                        <li>Inhabited continent for 65,000+ years</li>
+                        <li>Complex cultures, languages, spiritual beliefs</li>
+                        <li>Population estimated 300,000-1 million before colonization</li>
+                    </ul>
+
+                    <h4>British Colonization (1788):</h4>
+                    <ul>
+                        <li><strong>First Fleet:</strong> Arrived January 26, 1788 (now "Australia Day")</li>
+                        <li><strong>Penal Colony:</strong> Initially for British convicts</li>
+                        <li><span class="key-term">Terra Nullius:</span> "Land belonging to no one" - legal fiction denying Indigenous ownership</li>
+                    </ul>
+
+                    <h4>Treatment of Indigenous Peoples:</h4>
+                    <ul>
+                        <li><strong>Genocide:</strong> Massacres, poisonings of Aboriginal people</li>
+                        <li><strong>Disease:</strong> Smallpox and other diseases decimated population</li>
+                        <li><strong>Land Theft:</strong> Forced from traditional lands</li>
+                        <li><span class="key-term">Stolen Generations (1910-1970):</span> Aboriginal children forcibly removed from families</li>
+                        <li><strong>Assimilation Policies:</strong> Forced to abandon culture, language</li>
+                        <li><strong>Exclusion:</strong> Not counted in census until 1967</li>
+                    </ul>
+
+                    <h4>Path to Recognition:</h4>
+                    <div class="timeline">
+                        <div class="timeline-item">
+                            <span class="timeline-year">1967:</span> Referendum - Aboriginal people included in census
+                        </div>
+                        <div class="timeline-item">
+                            <span class="timeline-year">1992:</span> Mabo decision - overturned terra nullius
+                        </div>
+                        <div class="timeline-item">
+                            <span class="timeline-year">2008:</span> Prime Minister Kevin Rudd's formal apology to Stolen Generations
+                        </div>
+                        <div class="timeline-item">
+                            <span class="timeline-year">2023:</span> Voice to Parliament referendum rejected by voters
+                        </div>
+                    </div>
+
+                    <h4>Modern Australia:</h4>
+                    <ul>
+                        <li><strong>Population:</strong> 26 million</li>
+                        <li><strong>Indigenous:</strong> 3.8% of population</li>
+                        <li><strong>Immigration:</strong> Diverse, multicultural (30% born overseas)</li>
+                        <li><strong>Economy:</strong> Wealthy, high standard of living</li>
+                        <li><strong>Constitutional Monarchy:</strong> King Charles III is head of state</li>
+                        <li><strong>Republic Debate:</strong> Ongoing discussion about removing British monarch</li>
+                    </ul>
+
+                    <h4>Indigenous Australians Today:</h4>
+                    <ul>
+                        <li><strong>Disadvantages:</strong> Lower life expectancy, higher poverty, incarceration rates</li>
+                        <li><strong>Cultural Revival:</strong> Renewed pride in Aboriginal identity</li>
+                        <li><strong>Land Rights:</strong> Some traditional lands returned</li>
+                        <li><strong>Recognition:</strong> Calls for constitutional recognition</li>
+                        <li><strong>Close the Gap:</strong> Campaign to reduce Indigenous disadvantage</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="collapsible-header">
+                <h3>Multiculturalism in Australia, Canada and Great Britain</h3>
+                <span class="collapsible-icon">▼</span>
+            </div>
+            <div class="collapsible-content">
+                <div class="collapsible-inner">
+                    <h4>Three Models of Multiculturalism:</h4>
+                    <p>Australia, Canada, and Britain - all former British colonies/colonizer - have developed distinct approaches to managing diverse populations.</p>
+
+                    <h4>Australia:</h4>
+                    <ul>
+                        <li><strong>White Australia Policy (1901-1973):</strong> Restricted non-European immigration</li>
+                        <li><strong>Shift (1970s):</strong> Abandoned racist policies, embraced multiculturalism</li>
+                        <li><strong>Immigration:</strong> 30% foreign-born; Asia, Middle East, Europe</li>
+                        <li><strong>Official Policy:</strong> Multiculturalism in unified framework</li>
+                        <li><strong>Success:</strong> Generally harmonious, low social tensions</li>
+                        <li><strong>Challenges:</strong> Asylum seeker detention, Islamophobia, Indigenous reconciliation</li>
+                    </ul>
+
+                    <h4>Canada:</h4>
+                    <ul>
+                        <li><strong>Official Multiculturalism (1971):</strong> First country to adopt policy</li>
+                        <li><strong>Multicultural Act (1988):</strong> Legal framework</li>
+                        <li><strong>Immigration:</strong> 23% foreign-born; extremely diverse</li>
+                        <li><strong>Bilingualism:</strong> English and French official languages</li>
+                        <li><strong>Points System:</strong> Merit-based immigration</li>
+                        <li><strong>Success:</strong> Often called most successful multicultural nation</li>
+                        <li><strong>Challenges:</strong> Indigenous peoples' treatment, Quebec's distinct identity</li>
+                    </ul>
+
+                    <h4>Great Britain:</h4>
+                    <ul>
+                        <li><strong>Post-WWII Immigration:</strong> Windrush generation from Caribbean, South Asians</li>
+                        <li><strong>Multiculturalism (1980s-2000s):</strong> Celebrated diversity</li>
+                        <li><strong>Shift:</strong> Post-7/7 bombings, emphasis on "British values," integration</li>
+                        <li><strong>Immigration Debates:</strong> Central to Brexit</li>
+                        <li><strong>Diversity:</strong> 14% foreign-born, concentrated in cities</li>
+                        <li><strong>Challenges:</strong> Greater tensions, segregation concerns, Islamophobia, racism</li>
+                    </ul>
+
+                    <h4>Comparative Analysis:</h4>
+                    <p><strong>Similarities:</strong></p>
+                    <ul>
+                        <li>All are immigrant nations (or colonized Indigenous lands)</li>
+                        <li>All have diverse, multiethnic populations</li>
+                        <li>English language dominance helps integration</li>
+                        <li>Democratic values, rule of law</li>
+                    </ul>
+
+                    <p><strong>Differences:</strong></p>
+                    <ul>
+                        <li><strong>Canada & Australia:</strong> More explicit multiculturalism policies</li>
+                        <li><strong>Britain:</strong> More skepticism toward multiculturalism since 2000s</li>
+                        <li><strong>Australia & Canada:</strong> Select immigrants; Britain had more colonial migration</li>
+                        <li><strong>Geography:</strong> Australia & Canada more dispersed; UK more concentrated urban diversity</li>
+                    </ul>
+
+                    <div class="important-note">
+                        <strong>Success Factors:</strong> Australia and Canada often ranked as more successful multicultural societies due to: selective immigration systems, geographic distance allowing control, less colonial "return migration," and sustained political commitment to multiculturalism.
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Section 13: Britain and Europe -->
+        <div class="section" id="europe">
+            <h2>13. Britain and Europe</h2>
+
+            <div class="collapsible-header">
+                <h3>Geography is Destiny</h3>
+                <span class="collapsible-icon">▼</span>
+            </div>
+            <div class="collapsible-content">
+                <div class="collapsible-inner">
+                    <h4>Island Mentality:</h4>
+                    <p>Britain's status as an island nation has profoundly shaped its relationship with continental Europe, creating both physical and psychological distance.</p>
+
+                    <h4>Historical Patterns:</h4>
+                    <ul>
+                        <li><strong>Separation:</strong> English Channel provided natural defense</li>
+                        <li><strong>Maritime Focus:</strong> Looked to seas and empire rather than Europe</li>
+                        <li><strong>Selective Engagement:</strong> Intervened in Europe to prevent single power dominating</li>
+                        <li><strong>Balance of Power:</strong> Prevented hegemony without permanent continental commitments</li>
+                        <li><strong>Splendid Isolation:</strong> 19th century policy of non-alignment</li>
+                    </ul>
+
+                    <h4>Cultural Exceptionalism:</h4>
+                    <ul>
+                        <li>Sense of being different from, even superior to, continental Europeans</li>
+                        <li>English language vs. Romance/Germanic languages</li>
+                        <li>Common law vs. civil law tradition</li>
+                        <li>Protestant vs. Catholic heritage (historically)</li>
+                        <li>"Us" vs. "them" mentality toward "the Continent"</li>
+                    </ul>
+
+                    <h4>Special Relationships:</h4>
+                    <ul>
+                        <li><strong>United States:</strong> "Special relationship" emphasized over European ties</li>
+                        <li><strong>Commonwealth:</strong> Historic links to former empire</li>
+                        <li><strong>Anglosphere:</strong> Cultural connections with English-speaking world</li>
+                    </ul>
+
+                    <div class="quote">
+                        "Britain is in Europe but not of Europe" - Common British sentiment
+                    </div>
+
+                    <h4>Impact on European Integration:</h4>
+                    <ul>
+                        <li>Late to join EEC (1973) - after initial members</li>
+                        <li>Negotiated opt-outs (euro, Schengen)</li>
+                        <li>Often seen as "awkward partner" in EU</li>
+                        <li>Retained stronger national sovereignty focus</li>
+                        <li>Ultimately led to Brexit</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="collapsible-header">
+                <h3>Foreign Policy until 1949</h3>
+                <span class="collapsible-icon">▼</span>
+            </div>
+            <div class="collapsible-content">
+                <div class="collapsible-inner">
+                    <h4>Key Principles (19th-Early 20th Century):</h4>
+                    <ul>
+                        <li><span class="key-term">Balance of Power:</span> Prevent any single European power from dominating</li>
+                        <li><span class="key-term">Splendid Isolation:</span> Avoid permanent alliances (until early 1900s)</li>
+                        <li><strong>Imperial Focus:</strong> Empire more important than Europe</li>
+                        <li><strong>Naval Supremacy:</strong> Rule the seas, protect trade routes</li>
+                        <li><strong>Free Trade:</strong> Economic liberalism, open markets</li>
+                    </ul>
+
+                    <h4>World War I (1914-1918):</h4>
+                    <ul>
+                        <li>Entered war to support Belgium, maintain balance of power</li>
+                        <li>Allied with France and Russia vs. Germany and Austria-Hungary</li>
+                        <li>900,000 British dead, empire exhausted</li>
+                        <li>Treaty of Versailles (1919) - harsh terms for Germany</li>
+                    </ul>
+
+                    <h4>Interwar Period (1919-1939):</h4>
+                    <ul>
+                        <li><strong>League of Nations:</strong> Britain founding member, but ineffective</li>
+                        <li><strong>Appeasement (1930s):</strong> Tried to avoid war by appeasing Hitler</li>
+                        <li><strong>Munich Agreement (1938):</strong> Allowed Hitler to take Czechoslovakia</li>
+                        <li><strong>Failure:</strong> Appeasement emboldened Hitler, war inevitable</li>
+                    </ul>
+
+                    <h4>World War II (1939-1945):</h4>
+                    <ul>
+                        <li>September 1939: Declared war after Hitler invaded Poland</li>
+                        <li><strong>Battle of Britain (1940):</strong> RAF defeated Luftwaffe</li>
+                        <li><strong>Churchill:</strong> Inspired resistance, "We shall never surrender"</li>
+                        <li><strong>Allied Victory:</strong> With USA and USSR, defeated Nazi Germany</li>
+                        <li><strong>Cost:</strong> 450,000 dead, economy devastated, empire weakened</li>
+                    </ul>
+
+                    <h4>Post-WWII Shift (1945-1949):</h4>
+                    <ul>
+                        <li><strong>Cold War Begins:</strong> Western Europe vs. Soviet bloc</li>
+                        <li><strong>Marshall Plan (1948):</strong> U.S. aid for European recovery</li>
+                        <li><strong>NATO (1949):</strong> Britain founding member, permanent U.S. commitment to Europe</li>
+                        <li><strong>End of Isolation:</strong> Britain now permanently engaged in European security</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="collapsible-header">
+                <h3>Brexit</h3>
+                <span class="collapsible-icon">▼</span>
+            </div>
+            <div class="collapsible-content">
+                <div class="collapsible-inner">
+                    <h4>Britain and the European Union:</h4>
+                    <div class="timeline">
+                        <div class="timeline-item">
+                            <span class="timeline-year">1973:</span> UK joined EEC (now EU)
+                        </div>
+                        <div class="timeline-item">
+                            <span class="timeline-year">1975:</span> Referendum - 67% voted to remain
+                        </div>
+                        <div class="timeline-item">
+                            <span class="timeline-year">1992:</span> Maastricht Treaty - created European Union
+                        </div>
+                        <div class="timeline-item">
+                            <span class="timeline-year">1993-2016:</span> Growing Euroscepticism in UK
+                        </div>
+                    </div>
+
+                    <h4>Path to Brexit Referendum:</h4>
+                    <ul>
+                        <li><strong>Conservative Eurosceptics:</strong> Long-standing opposition to EU</li>
+                        <li><strong>UKIP (UK Independence Party):</strong> Single-issue party demanding Brexit</li>
+                        <li><strong>Immigration Concerns:</strong> EU free movement, refugee crisis (2015)</li>
+                        <li><strong>Sovereignty:</strong> Desire to "take back control" from Brussels</li>
+                        <li><strong>Cameron's Gamble:</strong> PM David Cameron promised referendum to win 2015 election</li>
+                    </ul>
+
+                    <h4>The Referendum (June 23, 2016):</h4>
+                    <ul>
+                        <li><strong>Result:</strong> 51.9% Leave, 48.1% Remain</li>
+                        <li><strong>Turnout:</strong> 72% - high for UK</li>
+                        <li><strong>Geographic Divide:</strong> England and Wales voted Leave; Scotland and Northern Ireland voted Remain</li>
+                        <li><strong>Age Divide:</strong> Young voted Remain; older voted Leave</li>
+                        <li><strong>Education Divide:</strong> University-educated voted Remain; others Leave</li>
+                        <li><strong>Urban/Rural:</strong> Cities Remain; rural areas Leave</li>
+                    </ul>
+
+                    <h4>Leave Campaign Arguments:</h4>
+                    <ul>
+                        <li><span class="key-term">"Take Back Control":</span> Sovereignty from EU institutions</li>
+                        <li><strong>Immigration:</strong> Control borders, reduce numbers</li>
+                        <li><strong>Money:</strong> "£350 million/week to NHS" (false claim)</li>
+                        <li><strong>Laws:</strong> Make own laws, not follow EU regulations</li>
+                        <li><strong>Trade:</strong> Free to make own trade deals</li>
+                        <li><strong>Democracy:</strong> EU undemocratic, unelected bureaucrats</li>
+                    </ul>
+
+                    <h4>Remain Campaign Arguments:</h4>
+                    <ul>
+                        <li><strong>Economy:</strong> Leaving would damage trade, jobs, investment</li>
+                        <li><strong>Single Market:</strong> Frictionless trade with largest market</li>
+                        <li><strong>Influence:</strong> Better to reform from inside</li>
+                        <li><strong>Security:</strong> Cooperation on terrorism, crime</li>
+                        <li><strong>Peace:</strong> EU helped maintain peace since WWII</li>
+                        <li><strong>Rights:</strong> EU protections for workers, environment, consumers</li>
+                    </ul>
+
+                    <h4>Brexit Process (2016-2020):</h4>
+                    <div class="timeline">
+                        <div class="timeline-item">
+                            <span class="timeline-year">2016:</span> Referendum result, Cameron resigned
+                        </div>
+                        <div class="timeline-item">
+                            <span class="timeline-year">2017:</span> Theresa May triggered Article 50
+                        </div>
+                        <div class="timeline-item">
+                            <span class="timeline-year">2019:</span> May's deal rejected 3 times; Boris Johnson PM
+                        </div>
+                        <div class="timeline-item">
+                            <span class="timeline-year">January 31, 2020:</span> UK officially left EU
+                        </div>
+                        <div class="timeline-item">
+                            <span class="timeline-year">December 2020:</span> Trade deal finalized
+                        </div>
+                    </div>
+
+                    <h4>Consequences of Brexit:</h4>
+                    <p><strong>Economic:</strong></p>
+                    <ul>
+                        <li>Trade barriers with EU (customs checks, paperwork)</li>
+                        <li>GDP growth lower than would have been</li>
+                        <li>Some businesses relocated to EU</li>
+                        <li>Labor shortages in some sectors</li>
+                        <li>Pound weakened</li>
+                    </ul>
+
+                    <p><strong>Political:</strong></p>
+                    <ul>
+                        <li>Deep divisions within UK society</li>
+                        <li>Scotland renewed independence demands</li>
+                        <li>Northern Ireland Protocol issues</li>
+                        <li>Lost influence in Europe</li>
+                        <li>Damaged UK's international reputation</li>
+                    </ul>
+
+                    <p><strong>Social:</strong></p>
+                    <ul>
+                        <li>End of free movement for UK and EU citizens</li>
+                        <li>More difficult for British to live/work in EU</li>
+                        <li>Reduced cooperation on security, research</li>
+                        <li>Generational divide deepened</li>
+                    </ul>
+
+                    <h4>Northern Ireland Protocol:</h4>
+                    <ul>
+                        <li>Special arrangement to avoid hard border with Republic of Ireland</li>
+                        <li>Northern Ireland follows some EU rules</li>
+                        <li>Creates trade barriers within UK</li>
+                        <li>Ongoing source of tension, renegotiated in 2023</li>
+                    </ul>
+
+                    <div class="important-note">
+                        <strong>Long-term Impact:</strong> Brexit represents Britain's most significant peacetime foreign policy decision since WWII. Its full consequences will take decades to unfold, but it has fundamentally altered Britain's relationship with Europe and its role in the world.
+                    </div>
+                </div>
+            </div>
+
+            <div class="collapsible-header">
+                <h3>British-German Relations</h3>
+                <span class="collapsible-icon">▼</span>
+            </div>
+            <div class="collapsible-content">
+                <div class="collapsible-inner">
+                    <h4>Historical Context:</h4>
+                    <ul>
+                        <li><strong>Royal Connections:</strong> Queen Victoria married German Prince Albert; royal families interrelated</li>
+                        <li><strong>WWI (1914-1918):</strong> Britain and Germany enemies; immense casualties on both sides</li>
+                        <li><strong>WWII (1939-1945):</strong> Nazi Germany vs. Britain; Blitz destroyed British cities</li>
+                        <li><strong>Post-War:</strong> Britain occupied part of Germany (1945-1955)</li>
+                    </ul>
+
+                    <h4>Reconciliation and Partnership:</h4>
+                    <ul>
+                        <li><strong>Cold War Allies:</strong> Both in NATO, facing Soviet threat</li>
+                        <li><strong>Economic Integration:</strong> Both in EEC/EU (1973-2020 for UK)</li>
+                        <li><strong>NATO Partners:</strong> Military cooperation</li>
+                        <li><strong>Trade:</strong> Major trading partners</li>
+                        <li><strong>Cultural Exchange:</strong> Student exchanges, tourism</li>
+                    </ul>
+
+                    <h4>Contemporary Relations:</h4>
+                    <ul>
+                        <li><strong>Brexit Impact:</strong> Strained relationship; Germany regretted UK departure</li>
+                        <li><strong>Economic:</strong> Germany UK's second-largest trading partner</li>
+                        <li><strong>Political:</strong> Different approaches (UK more Atlanticist, Germany more Europeanist)</li>
+                        <li><strong>Security:</strong> Continue cooperation despite Brexit</li>
+                    </ul>
+
+                    <h4>Stereotypes and Perceptions:</h4>
+                    <p><strong>British Views of Germans:</strong></p>
+                    <ul>
+                        <li>Efficient, organized, punctual</li>
+                        <li>Strong work ethic</li>
+                        <li>Historical memory of wars (especially among older generation)</li>
+                        <li>Admiration for German economy</li>
+                    </ul>
+
+                    <p><strong>German Views of British:</strong></p>
+                    <ul>
+                        <li>Humorous, eccentric</li>
+                        <li>Polite but reserved</li>
+                        <li>Brexit seen as self-defeating</li>
+                        <li>Respect for British culture, democracy</li>
+                    </ul>
+
+                    <h4>Challenges:</h4>
+                    <ul>
+                        <li>Brexit reduced cooperation</li>
+                        <li>Different strategic priorities</li>
+                        <li>Language barrier (Germans more likely to speak English)</li>
+                        <li>Historical legacy still present in some contexts</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!-- Section 14: Political System -->
+        <div class="section" id="political-system">
+            <h2>14. Political System</h2>
+
+            <div class="collapsible-header">
+                <h3>Unwritten Constitution</h3>
+                <span class="collapsible-icon">▼</span>
+            </div>
+            <div class="collapsible-content">
+                <div class="collapsible-inner">
+                    <h4>What is an Unwritten Constitution?</h4>
+                    <p>The UK has an <span class="key-term">uncodified constitution</span> - there is no single document called "The Constitution." Instead, it consists of multiple sources.</p>
+
+                    <h4>Sources of the British Constitution:</h4>
+                    <ul>
+                        <li><span class="key-term">Statute Law:</span> Acts of Parliament (e.g., Human Rights Act 1998)</li>
+                        <li><span class="key-term">Common Law:</span> Judge-made law based on precedent</li>
+                        <li><span class="key-term">Conventions:</span> Unwritten rules and traditions (e.g., PM must be from House of Commons)</li>
+                        <li><span class="key-term">Authoritative Works:</span> Historic texts (e.g., Walter Bagehot's "The English Constitution")</li>
+                        <li><span class="key-term">EU Law:</span> Was binding 1973-2020, now incorporated into UK law</li>
+                    </ul>
+
+                    <h4>Key Constitutional Documents:</h4>
+                    <ul>
+                        <li><strong>Magna Carta (1215):</strong> Limited royal power, rule of law</li>
+                        <li><strong>Bill of Rights (1689):</strong> Parliamentary sovereignty, free elections</li>
+                        <li><strong>Act of Settlement (1701):</strong> Protestant succession</li>
+                        <li><strong>Parliament Acts (1911, 1949):</strong> Limited House of Lords power</li>
+                        <li><strong>Human Rights Act (1998):</strong> Incorporated European Convention on Human Rights</li>
+                    </ul>
+
+                    <h4>Key Principles:</h4>
+                    <ul>
+                        <li><span class="key-term">Parliamentary Sovereignty:</span> Parliament is supreme law-making body</li>
+                        <li><span class="key-term">Rule of Law:</span> Everyone equal before law, including government</li>
+                        <li><span class="key-term">Constitutional Monarchy:</span> Monarch as head of state, but limited power</li>
+                        <li><span class="key-term">Unitary State:</span> Central government supreme (though devolution has changed this)</li>
+                    </ul>
+
+                    <h4>Advantages of Unwritten Constitution:</h4>
+                    <ul>
+                        <li><strong>Flexibility:</strong> Easy to adapt to changing circumstances</li>
+                        <li><strong>Organic Development:</strong> Evolved gradually over centuries</li>
+                        <li><strong>Practical:</strong> Based on what works, not abstract principles</li>
+                        <li><strong>Stability:</strong> System has lasted centuries</li>
+                    </ul>
+
+                    <h4>Disadvantages:</h4>
+                    <ul>
+                        <li><strong>Unclear:</strong> Hard to know what is constitutional</li>
+                        <li><strong>No Protection:</strong> No higher law; Parliament can change anything</li>
+                        <li><strong>Executive Power:</strong> PM with majority can act like dictator</li>
+                        <li><strong>Conventions:</strong> Unwritten rules can be broken</li>
+                        <li><strong>Rights:</strong> No guaranteed constitutional rights</li>
+                    </ul>
+
+                    <div class="important-note">
+                        <strong>Brexit and Constitution:</strong> Brexit highlighted constitutional questions - can Parliament bind future Parliaments? What is role of referendums? Who has final say - Parliament, people, or courts?
+                    </div>
+                </div>
+            </div>
+
+            <div class="collapsible-header">
+                <h3>Monarchy</h3>
+                <span class="collapsible-icon">▼</span>
+            </div>
+            <div class="collapsible-content">
+                <div class="collapsible-inner">
+                    <h4>Current Monarch:</h4>
+                    <p><span class="key-term">King Charles III</span> became king on September 8, 2022, after the death of Queen Elizabeth II (reigned 1952-2022).</p>
+
+                    <h4>Constitutional Role:</h4>
+                    <p>The monarch is a <span class="key-term">constitutional monarch</span> - head of state but with limited powers. The monarch "reigns but does not rule."</p>
+
+                    <h4>Powers of the Monarch:</h4>
+                    <p><strong>Formal (Royal Prerogative):</strong></p>
+                    <ul>
+                        <li>Appoints Prime Minister</li>
+                        <li>Dissolves Parliament</li>
+                        <li>Gives Royal Assent to laws</li>
+                        <li>Declares war and peace</li>
+                        <li>Commander-in-chief of armed forces</li>
+                        <li>Appoints judges, bishops</li>
+                    </ul>
+
+                    <p><strong>Reality:</strong></p>
+                    <ul>
+                        <li>All powers exercised on advice of Prime Minister</li>
+                        <li>Cannot refuse Royal Assent (last refusal 1708)</li>
+                        <li>Cannot choose PM (must be leader who can command Commons)</li>
+                        <li>Ceremonial role, not political</li>
+                    </ul>
+
+                    <h4>Actual Functions:</h4>
+                    <ul>
+                        <li><strong>Head of State:</strong> Represents nation at home and abroad</li>
+                        <li><strong>Weekly Meetings:</strong> PM meets monarch weekly to brief on government</li>
+                        <li><strong>State Opening of Parliament:</strong> Reads government's legislative program</li>
+                        <li><strong>Diplomacy:</strong> State visits, receives foreign leaders</li>
+                        <li><strong>National Unity:</strong> Symbol above party politics</li>
+                        <li><strong>Continuity:</strong> Provides stability through governments</li>
+                    </ul>
+
+                    <h4>Arguments FOR Monarchy:</h4>
+                    <ul>
+                        <li><strong>Tradition:</strong> Part of British identity, history</li>
+                        <li><strong>Stability:</strong> Non-political head of state</li>
+                        <li><strong>Tourism:</strong> Royal family attracts tourists</li>
+                        <li><strong>Diplomacy:</strong> Useful in international relations</li>
+                        <li><strong>Continuity:</strong> Provides institutional memory</li>
+                        <li><strong>Popularity:</strong> Majority support keeping monarchy</li>
+                    </ul>
+
+                    <h4>Arguments AGAINST Monarchy:</h4>
+                    <ul>
+                        <li><strong>Undemocratic:</strong> Hereditary principle vs. meritocracy</li>
+                        <li><strong>Cost:</strong> Taxpayers fund royal family</li>
+                        <li><strong>Inequality:</strong> Reinforces class system</li>
+                        <li><strong>Outdated:</strong> Belongs to past, not modern democracy</li>
+                        <li><strong>Scandals:</strong> Royal controversies damage institution</li>
+                        <li><strong>Privilege:</strong> Born into power, not earned</li>
+                    </ul>
+
+                    <h4>Succession:</h4>
+                    <ul>
+                        <li><strong>Rules:</strong> Eldest child inherits (changed 2013 - was eldest son)</li>
+                        <li><strong>Next in Line:</strong> Prince William, then his children</li>
+                        <li><strong>Requirement:</strong> Must be Protestant (Church of England)</li>
+                        <li><strong>Cannot Marry:</strong> Catholic (restriction loosened 2013)</li>
+                    </ul>
+
+                    <h4>Public Opinion:</h4>
+                    <ul>
+                        <li>60-70% support monarchy</li>
+                        <li>Younger generations less supportive</li>
+                        <li>Support increased during Queen Elizabeth II's reign</li>
+                        <li>Charles less popular than his mother</li>
+                    </ul>
+
+                    <h4>Commonwealth Realms:</h4>
+                    <ul>
+                        <li>15 countries recognize British monarch as head of state</li>
+                        <li>Includes Canada, Australia, New Zealand, Jamaica</li>
+                        <li>Some considering becoming republics</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="collapsible-header">
+                <h3>House of Commons</h3>
+                <span class="collapsible-icon">▼</span>
+            </div>
+            <div class="collapsible-content">
+                <div class="collapsible-inner">
+                    <h4>Structure:</h4>
+                    <ul>
+                        <li><strong>Members:</strong> 650 MPs (Members of Parliament)</li>
+                        <li><strong>Elected:</strong> By first-past-the-post system</li>
+                        <li><strong>Term:</strong> Maximum 5 years between elections</li>
+                        <li><strong>Location:</strong> Palace of Westminster, London</li>
+                    </ul>
+
+                    <h4>Role and Powers:</h4>
+                    <ul>
+                        <li><strong>Legislation:</strong> Makes and passes laws</li>
+                        <li><strong>Scrutiny:</strong> Holds government accountable</li>
+                        <li><strong>Representation:</strong> MPs represent constituents</li>
+                        <li><strong>Debate:</strong> Discusses national issues</li>
+                        <li><strong>Finance:</strong> Controls taxation and spending</li>
+                    </ul>
+
+                    <h4>The Prime Minister:</h4>
+                    <ul>
+                        <li>Leader of party with most seats (or coalition)</li>
+                        <li>Head of government</li>
+                        <li>Appoints Cabinet ministers</li>
+                        <li>Sets government policy</li>
+                        <li>Must retain confidence of Commons</li>
+                    </ul>
+
+                    <h4>Prime Minister's Questions (PMQs):</h4>
+                    <ul>
+                        <li>Every Wednesday at noon</li>
+                        <li>PM answers questions from MPs</li>
+                        <li>Often confrontational, theatrical</li>
+                        <li>Opposition leader gets six questions</li>
+                        <li>Tests PM's knowledge and leadership</li>
+                    </ul>
+
+                    <h4>Select Committees:</h4>
+                    <ul>
+                        <li>Scrutinize government departments</li>
+                        <li>Call witnesses, examine evidence</li>
+                        <li>Publish reports with recommendations</li>
+                        <li>Cross-party membership</li>
+                    </ul>
+
+                    <h4>Party Discipline:</h4>
+                    <ul>
+                        <li><span class="key-term">Whips:</span> Enforce party discipline</li>
+                        <li><strong>Three-Line Whip:</strong> Must vote with party or face consequences</li>
+                        <li>MPs generally vote along party lines</li>
+                        <li>Rebellions rare but increasing</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="collapsible-header">
+                <h3>House of Lords</h3>
+                <span class="collapsible-icon">▼</span>
+            </div>
+            <div class="collapsible-content">
+                <div class="collapsible-inner">
+                    <h4>Composition:</h4>
+                    <ul>
+                        <li><strong>Approximately 800 members</strong> (number fluctuates)</li>
+                        <li><span class="key-term">Life Peers:</span> ~690 - appointed for life, cannot pass title to children</li>
+                        <li><span class="key-term">Hereditary Peers:</span> 92 - inherited titles (reduced from 700+ in 1999)</li>
+                        <li><span class="key-term">Bishops:</span> 26 - Church of England senior bishops</li>
+                    </ul>
+
+                    <h4>Appointment:</h4>
+                    <ul>
+                        <li>Life peers appointed by monarch on PM's advice</li>
+                        <li>Cross-party appointments, plus crossbenchers (independents)</li>
+                        <li>Often reward for political service or expertise</li>
+                        <li>Hereditary peers elected by other hereditaries when vacancy</li>
+                    </ul>
+
+                    <h4>Powers:</h4>
+                    <ul>
+                        <li><strong>Limited:</strong> Cannot block laws, only delay</li>
+                        <li><strong>Revising Chamber:</strong> Improves legislation, suggests amendments</li>
+                        <li><strong>Delay:</strong> Can delay non-financial bills up to one year</li>
+                        <li><strong>No Power over Finance:</strong> Cannot amend money bills</li>
+                        <li><strong>Scrutiny:</strong> Debates and investigates</li>
+                    </ul>
+
+                    <h4>Role:</h4>
+                    <ul>
+                        <li>Scrutinizes and revises legislation</li>
+                        <li>Debates issues of public interest</li>
+                        <li>Questions government ministers</li>
+                        <li>Investigates public policy</li>
+                        <li>Provides expertise from various fields</li>
+                    </ul>
+
+                    <h4>Arguments FOR House of Lords:</h4>
+                    <ul>
+                        <li><strong>Expertise:</strong> Members bring specialist knowledge</li>
+                        <li><strong>Less Partisan:</strong> Not seeking re-election, more independent</li>
+                        <li><strong>Scrutiny:</strong> Improves legislation</li>
+                        <li><strong>Restraint:</strong> Checks Commons power</li>
+                        <li><strong>Works:</strong> System functions well</li>
+                    </ul>
+
+                    <h4>Arguments AGAINST House of Lords:</h4>
+                    <ul>
+                        <li><strong>Undemocratic:</strong> Unelected lawmakers</li>
+                        <li><strong>Unrepresentative:</strong> Old, white, male-dominated</li>
+                        <li><strong>Anachronistic:</strong> Hereditary principle outdated</li>
+                        <li><strong>Size:</strong> Second-largest legislature in world</li>
+                        <li><strong>Cronyism:</strong> PM can appoint supporters</li>
+                        <li><strong>Bishops:</strong> Church representatives in secular state</li>
+                    </ul>
+
+                    <h4>Reform Proposals:</h4>
+                    <ul>
+                        <li>Elected second chamber</li>
+                        <li>Reduce size</li>
+                        <li>Remove hereditary peers entirely</li>
+                        <li>Remove bishops</li>
+                        <li>Abolish entirely (unicameral legislature)</li>
+                    </ul>
+
+                    <div class="important-note">
+                        <strong>Status Quo:</strong> Despite decades of debate, major reform unlikely. System works adequately, and no consensus on alternative. Hereditary peers reduced in 1999, but remain.
+                    </div>
+                </div>
+            </div>
+
+            <div class="collapsible-header">
+                <h3>Political Parties</h3>
+                <span class="collapsible-icon">▼</span>
+            </div>
+            <div class="collapsible-content">
+                <div class="collapsible-inner">
+                    <h4>Conservative Party (Tories):</h4>
+                    <ul>
+                        <li><strong>Founded:</strong> 1834 (traces roots to 1678)</li>
+                        <li><strong>Color:</strong> Blue</li>
+                        <li><strong>Ideology:</strong> Centre-right to right-wing</li>
+                    </ul>
+
+                    <p><strong>Core Beliefs:</strong></p>
+                    <ul>
+                        <li><span class="key-term">Free Market Economics:</span> Low taxes, less regulation, privatization</li>
+                        <li><strong>Individual Responsibility:</strong> Self-reliance over state dependency</li>
+                        <li><strong>Strong Defense:</strong> Military strength, law and order</li>
+                        <li><strong>Traditional Values:</strong> Family, nation, monarchy</li>
+                        <li><strong>Euroskepticism:</strong> Led Brexit campaign</li>
+                    </ul>
+
+                    <p><strong>Electoral Base:</strong></p>
+                    <ul>
+                        <li>Middle class, wealthy, business owners</li>
+                        <li>Older voters</li>
+                        <li>Rural areas, small towns</li>
+                        <li>Southern England (traditionally)</li>
+                        <li>Post-Brexit: gained working-class voters in North</li>
+                    </ul>
+
+                    <h4>Labour Party:</h4>
+                    <ul>
+                        <li><strong>Founded:</strong> 1900</li>
+                        <li><strong>Color:</strong> Red</li>
+                        <li><strong>Ideology:</strong> Centre-left to left-wing</li>
+                    </ul>
+
+                    <p><strong>Core Beliefs:</strong></p>
+                    <ul>
+                        <li><span class="key-term">Social Justice:</span> Reduce inequality, help working people</li>
+                        <li><strong>Welfare State:</strong> Strong public services, NHS protection</li>
+                        <li><strong>Workers' Rights:</strong> Trade unions, fair wages</li>
+                        <li><strong>Redistribution:</strong> Progressive taxation, wealth redistribution</li>
+                        <li><strong>Internationalism:</strong> More pro-European than Conservatives</li>
+                    </ul>
+
+                    <p><strong>Electoral Base:</strong></p>
+                    <ul>
+                        <li>Working class (traditionally)</li>
+                        <li>Young voters</li>
+                        <li>Ethnic minorities</li>
+                        <li>Urban areas, cities</li>
+                        <li>Northern England (though Brexit changed this)</li>
+                    </ul>
+
+                    <h4>Liberal Democrats:</h4>
+                    <ul>
+                        <li><strong>Founded:</strong> 1988 (merger of Liberals and SDP)</li>
+                        <li><strong>Color:</strong> Orange/Yellow</li>
+                        <li><strong>Ideology:</strong> Centrist, liberal</li>
+                    </ul>
+
+                    <p><strong>Core Beliefs:</strong></p>
+                    <ul>
+                        <li><span class="key-term">Individual Liberty:</span> Civil liberties, personal freedom</li>
+                        <li><strong>Pro-European:</strong> Strongest support for EU</li>
+                        <li><strong>Constitutional Reform:</strong> Proportional representation, House of Lords reform</li>
+                        <li><strong>Environment:</strong> Green policies</li>
+                        <li><strong>Social Liberalism:</strong> Progressive on social issues</li>
+                    </ul>
+
+                    <p><strong>Electoral Base:</strong></p>
+                    <ul>
+                        <li>Middle class professionals</li>
+                        <li>Students, educated</li>
+                        <li>Suburban areas</li>
+                        <li>South-west England</li>
+                        <li>Squeezed by two-party system</li>
+                    </ul>
+
+                    <h4>Other Parties:</h4>
+                    <ul>
+                        <li><strong>SNP (Scottish National Party):</strong> Scottish independence, social democracy</li>
+                        <li><strong>Plaid Cymru:</strong> Welsh nationalism</li>
+                        <li><strong>Green Party:</strong> Environmentalism</li>
+                        <li><strong>Reform UK:</strong> Right-wing, anti-immigration (formerly Brexit Party/UKIP)</li>
+                        <li><strong>Northern Ireland Parties:</strong> DUP (Unionist), Sinn Féin (Republican), Alliance (neutral)</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="collapsible-header">
+                <h3>Electoral System</h3>
+                <span class="collapsible-icon">▼</span>
+            </div>
+            <div class="collapsible-content">
+                <div class="collapsible-inner">
+                    <h4>First-Past-The-Post (FPTP):</h4>
+                    <p>The UK uses <span class="key-term">first-past-the-post</span> for House of Commons elections.</p>
+
+                    <h4>How It Works:</h4>
+                    <ul>
+                        <li>650 constituencies (electoral districts)</li>
+                        <li>Each elects one MP</li>
+                        <li>Candidate with most votes wins (plurality, not majority)</li>
+                        <li>Simple: Put X next to one candidate</li>
+                    </ul>
+
+                    <h4>Advantages of FPTP:</h4>
+                    <ul>
+                        <li><strong>Simple:</strong> Easy to understand and count</li>
+                        <li><strong>Strong Government:</strong> Usually produces majority, stable government</li>
+                        <li><strong>Clear Choice:</strong> Vote for government, not coalition</li>
+                        <li><strong>Constituency Link:</strong> Direct MP-constituent relationship</li>
+                        <li><strong>Accountability:</strong> Can vote out government</li>
+                        <li><strong>Quick Results:</strong> Winner known overnight</li>
+                    </ul>
+
+                    <h4>Disadvantages of FPTP:</h4>
+                    <ul>
+                        <li><strong>Disproportional:</strong> % of seats ≠ % of votes</li>
+                        <li><strong>Wasted Votes:</strong> Votes for losers count for nothing</li>
+                        <li><strong>Safe Seats:</strong> Most constituencies never change party</li>
+                        <li><strong>Tactical Voting:</strong> Vote against party you dislike, not for party you like</li>
+                        <li><strong>Two-Party System:</strong> Difficult for small parties</li>
+                        <li><strong>Winner's Bonus:</strong> Party can get majority with <40% of votes</li>
+                    </ul>
+
+                    <h4>Example of Disproportionality (2015):</h4>
+                    <ul>
+                        <li>UKIP: 12.6% of votes → 1 seat (0.2%)</li>
+                        <li>SNP: 4.7% of votes → 56 seats (8.6%)</li>
+                        <li>Conservatives: 36.9% of votes → 330 seats (50.8%) - majority government</li>
+                    </ul>
+
+                    <h4>Alternative Systems:</h4>
+                    <ul>
+                        <li><span class="key-term">Proportional Representation (PR):</span> Seats match vote share</li>
+                        <li><strong>Alternative Vote (AV):</strong> Rank candidates by preference</li>
+                        <li><strong>Single Transferable Vote (STV):</strong> Multi-member constituencies</li>
+                    </ul>
+
+                    <h4>Reform Debate:</h4>
+                    <ul>
+                        <li><strong>2011 Referendum:</strong> Alternative Vote rejected 68% to 32%</li>
+                        <li><strong>Lib Dems, Greens:</strong> Support PR</li>
+                        <li><strong>Conservatives, Labour:</strong> Benefit from FPTP, oppose change</li>
+                        <li><strong>Status Quo:</strong> Unlikely to change soon</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="collapsible-header">
+                <h3>2019 General Election</h3>
+                <span class="collapsible-icon">▼</span>
+            </div>
+            <div class="collapsible-content">
+                <div class="collapsible-inner">
+                    <h4>Context:</h4>
+                    <ul>
+                        <li>Brexit deadlock - Parliament couldn't agree on deal</li>
+                        <li>Boris Johnson became PM in July 2019</li>
+                        <li>Johnson called election to "Get Brexit Done"</li>
+                        <li>December 12, 2019 - first December election since 1923</li>
+                    </ul>
+
+                    <h4>Results:</h4>
+                    <ul>
+                        <li><strong>Conservative:</strong> 365 seats (+47), 43.6% vote</li>
+                        <li><strong>Labour:</strong> 202 seats (-60), 32.1% vote</li>
+                        <li><strong>SNP:</strong> 48 seats (+13), 3.9% vote</li>
+                        <li><strong>Liberal Democrats:</strong> 11 seats (-1), 11.6% vote</li>
+                        <li><strong>Turnout:</strong> 67.3%</li>
+                    </ul>
+
+                    <h4>Key Outcomes:</h4>
+                    <ul>
+                        <li><strong>Conservative Landslide:</strong> Largest majority since 1987</li>
+                        <li><strong>"Red Wall":</strong> Conservatives won traditional Labour seats in North England</li>
+                        <li><strong>Labour Collapse:</strong> Worst result since 1935</li>
+                        <li><strong>Brexit:</strong> Clear mandate to leave EU</li>
+                        <li><strong>Scotland:</strong> SNP dominance, independence calls strengthened</li>
+                    </ul>
+
+                    <h4>Campaign Issues:</h4>
+                    <p><strong>Conservatives:</strong></p>
+                    <ul>
+                        <li>"Get Brexit Done" - simple, effective message</li>
+                        <li>End uncertainty</li>
+                        <li>Invest in NHS, police, education</li>
+                    </ul>
+
+                    <p><strong>Labour:</strong></p>
+                    <ul>
+                        <li>Nationalization of utilities</li>
+                        <li>Free broadband</li>
+                        <li>Ambiguous on Brexit - second referendum</li>
+                        <li>Massive spending increases</li>
+                    </ul>
+
+                    <h4>Why Did Conservatives Win?</h4>
+                    <ul>
+                        <li><strong>Brexit:</strong> Clear position vs. Labour confusion</li>
+                        <li><strong>Leadership:</strong> Johnson more popular than Corbyn</li>
+                        <li><strong>Red Wall:</strong> Working-class Leave voters switched to Conservatives</li>
+                        <li><strong>Labour Divisions:</strong> Internal conflicts, unpopular leader</li>
+                        <li><strong>Media:</strong> Hostile coverage of Corbyn</li>
+                    </ul>
+
+                    <h4>Aftermath:</h4>
+                    <ul>
+                        <li>Brexit completed January 31, 2020</li>
+                        <li>Jeremy Corbyn resigned as Labour leader</li>
+                        <li>Keir Starmer became new Labour leader</li>
+                        <li>COVID-19 pandemic dominated following years</li>
+                    </ul>
+
+                    <div class="important-note">
+                        <strong>Historic Shift:</strong> The 2019 election represented a realignment of British politics. Traditional class-based voting (working class = Labour, middle class = Conservative) broke down. Brexit replaced class as key dividing line. Conservatives won working-class Leave voters, especially in North.
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Section 15: United Kingdom -->
+        <div class="section" id="united-kingdom">
+            <h2>15. United Kingdom</h2>
+
+            <div class="collapsible-header">
+                <h3>Devolution</h3>
+                <span class="collapsible-icon">▼</span>
+            </div>
+            <div class="collapsible-content">
+                <div class="collapsible-inner">
+                    <h4>What is Devolution?</h4>
+                    <p><span class="key-term">Devolution</span> is the transfer of powers from the UK Parliament in Westminster to regional parliaments/assemblies in Scotland, Wales, and Northern Ireland.</p>
+
+                    <h4>Why Devolution?</h4>
+                    <ul>
+                        <li><strong>Scottish & Welsh Nationalism:</strong> Growing demands for self-government</li>
+                        <li><strong>Northern Ireland Peace Process:</strong> Power-sharing part of Good Friday Agreement</li>
+                        <li><strong>Democratic Deficit:</strong> Regions felt Westminster didn't represent them</li>
+                        <li><strong>Labour Policy:</strong> Tony Blair's Labour government (1997) delivered referendums</li>
+                    </ul>
+
+                    <h4>Devolution Timeline:</h4>
+                    <div class="timeline">
+                        <div class="timeline-item">
+                            <span class="timeline-year">1997:</span> Referendums in Scotland and Wales - both voted Yes
+                        </div>
+                        <div class="timeline-item">
+                            <span class="timeline-year">1998:</span> Good Friday Agreement - Northern Ireland Assembly created
+                        </div>
+                        <div class="timeline-item">
+                            <span class="timeline-year">1999:</span> Scottish Parliament and Welsh Assembly opened
+                        </div>
+                        <div class="timeline-item">
+                            <span class="timeline-year">2000s:</span> Powers gradually expanded
+                        </div>
+                    </div>
+
+                    <h4>Scottish Parliament:</h4>
+                    <ul>
+                        <li><strong>Location:</strong> Holyrood, Edinburgh</li>
+                        <li><strong>Members:</strong> 129 MSPs (Members of Scottish Parliament)</li>
+                        <li><strong>Elected:</strong> Mixed electoral system (FPTP + Proportional)</li>
+                        <li><strong>Powers:</strong> Wide-ranging</li>
+                    </ul>
+
+                    <p><strong>Devolved Powers (Scotland controls):</strong></p>
+                    <ul>
+                        <li>Health (including NHS Scotland)</li>
+                        <li>Education and training</li>
+                        <li>Justice and police</li>
+                        <li>Environment and agriculture</li>
+                        <li>Transport</li>
+                        <li>Housing</li>
+                        <li>Local government</li>
+                        <li>Some taxation powers</li>
+                    </ul>
+
+                    <h4>Welsh Parliament (Senedd):</h4>
+                    <ul>
+                        <li><strong>Location:</strong> Cardiff Bay</li>
+                        <li><strong>Members:</strong> 60 MSs (Members of the Senedd)</li>
+                        <li><strong>Powers:</strong> Originally fewer than Scotland, gradually increased</li>
+                    </ul>
+
+                    <p><strong>Devolved Powers (Wales controls):</strong></p>
+                    <ul>
+                        <li>Health (NHS Wales)</li>
+                        <li>Education</li>
+                        <li>Environment</li>
+                        <li>Transport</li>
+                        <li>Housing</li>
+                        <li>Some taxation powers (since 2018)</li>
+                        <li>Welsh language policy</li>
+                    </ul>
+
+                    <h4>Northern Ireland Assembly:</h4>
+                    <ul>
+                        <li><strong>Location:</strong> Stormont, Belfast</li>
+                        <li><strong>Members:</strong> 90 MLAs (Members of Legislative Assembly)</li>
+                        <li><strong>Special Feature:</strong> Power-sharing - must include both unionist and nationalist parties</li>
+                    </ul>
+
+                    <p><strong>Devolved Powers (Northern Ireland controls):</strong></p>
+                    <ul>
+                        <li>Health</li>
+                        <li>Education</li>
+                        <li>Justice and policing</li>
+                        <li>Agriculture</li>
+                        <li>Environment</li>
+                    </ul>
+
+                    <p><strong>Challenges:</strong></p>
+                    <ul>
+                        <li>Assembly suspended multiple times due to unionist-nationalist tensions</li>
+                        <li>Longest suspension: 2017-2020</li>
+                        <li>Power-sharing difficult to maintain</li>
+                    </ul>
+
+                    <h4>Reserved Powers (Westminster retains):</h4>
+                    <ul>
+                        <li><strong>Foreign Affairs:</strong> International relations, treaties</li>
+                        <li><strong>Defense:</strong> Armed forces, national security</li>
+                        <li><strong>Immigration:</strong> Borders, citizenship</li>
+                        <li><strong>Macroeconomic Policy:</strong> Currency, interest rates</li>
+                        <li><strong>Social Security:</strong> Most welfare benefits</li>
+                        <li><strong>Constitution:</strong> Changes to UK constitution</li>
+                    </ul>
+
+                    <h4>England - No Devolution:</h4>
+                    <ul>
+                        <li>England has no parliament or assembly</li>
+                        <li>Governed directly by UK Parliament</li>
+                        <li><span class="key-term">West Lothian Question:</span> Scottish/Welsh/NI MPs can vote on English-only matters, but English MPs can't vote on devolved Scottish/Welsh/NI matters</li>
+                        <li><strong>EVEL:</strong> "English Votes for English Laws" - attempted solution, now abolished</li>
+                        <li><strong>Regional Assemblies:</strong> Failed referendum in North East England (2004)</li>
+                    </ul>
+
+                    <h4>Impact of Devolution:</h4>
+                    <p><strong>Positive:</strong></p>
+                    <ul>
+                        <li>More responsive government to local needs</li>
+                        <li>Democratic renewal in regions</li>
+                        <li>Policy innovation and experimentation</li>
+                        <li>Reduced support for full independence (initially)</li>
+                    </ul>
+
+                    <p><strong>Negative:</strong></p>
+                    <ul>
+                        <li>Asymmetric - England left out</li>
+                        <li>Constitutional confusion</li>
+                        <li>Increased tensions between nations</li>
+                        <li>Funding disputes (Barnett Formula)</li>
+                        <li>May have increased support for Scottish independence</li>
+                    </ul>
+
+                    <div class="important-note">
+                        <strong>Brexit Complication:</strong> Brexit created major tensions. Scotland and Northern Ireland voted Remain but were taken out of EU. Devolved parliaments had no say in Brexit negotiations, highlighting limits of devolution.
+                    </div>
+                </div>
+            </div>
+
+            <div class="collapsible-header">
+                <h3>Scottish Independence Referendum (2014)</h3>
+                <span class="collapsible-icon">▼</span>
+            </div>
+            <div class="collapsible-content">
+                <div class="collapsible-inner">
+                    <h4>Background:</h4>
+                    <ul>
+                        <li>Scotland has distinct national identity</li>
+                        <li>Historic nation joined England 1707 (Act of Union)</li>
+                        <li>SNP (Scottish National Party) governs Scotland, seeks independence</li>
+                        <li>2011: SNP won majority, promised referendum</li>
+                    </ul>
+
+                    <h4>The Referendum (September 18, 2014):</h4>
+                    <ul>
+                        <li><strong>Question:</strong> "Should Scotland be an independent country?"</li>
+                        <li><strong>Result:</strong> No 55.3%, Yes 44.7%</li>
+                        <li><strong>Turnout:</strong> 84.6% - extremely high</li>
+                        <li><strong>Promise:</strong> "Once in a generation" vote</li>
+                    </ul>
+
+                    <h4>Yes Campaign Arguments (Scottish Independence):</h4>
+                    <ul>
+                        <li><strong>Self-Determination:</strong> Scotland should control own affairs</li>
+                        <li><strong>Oil Wealth:</strong> North Sea oil belongs to Scotland</li>
+                        <li><strong>Different Values:</strong> Scotland more left-wing than England</li>
+                        <li><strong>Democratic Deficit:</strong> Conservatives rule Scotland despite losing there</li>
+                        <li><strong>European Future:</strong> Scotland pro-EU, England more Eurosceptic</li>
+                        <li><strong>National Identity:</strong> Distinct Scottish nation</li>
+                    </ul>
+
+                    <h4>No Campaign Arguments (Better Together):</h4>
+                    <ul>
+                        <li><strong>Economic Risk:</strong> Currency uncertainty, deficit, trade barriers</li>
+                        <li><strong>EU Membership:</strong> Would have to reapply, Spain might veto</li>
+                        <li><strong>Stronger Together:</strong> UK more influential globally</li>
+                        <li><strong>Social Union:</strong> Shared history, family ties</li>
+                        <li><strong>Security:</strong> Defense, intelligence sharing</li>
+                        <li><strong>More Powers:</strong> Promised additional devolution ("The Vow")</li>
+                    </ul>
+
+                    <h4>Key Issues:</h4>
+                    <ul>
+                        <li><span class="key-term">Currency:</span> What would Scotland use? Pound, euro, own currency?</li>
+                        <li><strong>Oil Revenue:</strong> How much, how long would it last?</li>
+                        <li><strong>EU Membership:</strong> Automatic or need to apply?</li>
+                        <li><strong>Border:</strong> Hard border with England?</li>
+                        <li><strong>Pensions, Debt:</strong> How to divide UK assets and liabilities?</li>
+                    </ul>
+
+                    <h4>Aftermath:</h4>
+                    <ul>
+                        <li>SNP membership surged after defeat</li>
+                        <li>2015 election: SNP won 56 of 59 Scottish seats</li>
+                        <li>Scotland Act 2016 granted more powers</li>
+                        <li>Issue not settled - calls for second referendum</li>
+                    </ul>
+
+                    <h4>Brexit Impact:</h4>
+                    <ul>
+                        <li>Scotland voted 62% Remain in 2016 Brexit referendum</li>
+                        <li>Taken out of EU against will</li>
+                        <li>SNP argues circumstances changed, justifying second referendum</li>
+                        <li>UK government refuses, says 2014 was "once in a generation"</li>
+                    </ul>
+
+                    <h4>Current Status:</h4>
+                    <ul>
+                        <li>Polls show roughly 45-55% split, similar to 2014</li>
+                        <li>SNP still dominates Scottish politics</li>
+                        <li>Scottish Parliament voted for second referendum</li>
+                        <li>UK government blocked it (Section 30 order required)</li>
+                        <li>Issue remains contentious and unresolved</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="collapsible-header">
                 <h3>Anglo-Irish Relations (until 1921)</h3>
                 <span class="collapsible-icon">▼</span>
             </div>
