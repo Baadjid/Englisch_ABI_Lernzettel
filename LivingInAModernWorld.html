@@ -1,0 +1,2613 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Living in a Modern World - Englisch Abitur 2026</title>
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --secondary-color: #3498db;
+            --accent-color: #e74c3c;
+            --success-color: #27ae60;
+            --warning-color: #f39c12;
+            --bg-color: #ecf0f1;
+            --card-bg: #ffffff;
+            --text-color: #2c3e50;
+            --border-color: #bdc3c7;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, var(--bg-color) 0%, #d5dbdb 100%);
+            color: var(--text-color);
+            line-height: 1.6;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+            background: var(--card-bg);
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 5px;
+            background: linear-gradient(90deg, var(--secondary-color), var(--success-color), var(--accent-color));
+        }
+
+        .back-button {
+            display: inline-block;
+            padding: 10px 20px;
+            background: var(--secondary-color);
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            transition: all 0.3s ease;
+        }
+
+        .back-button:hover {
+            background: #2980b9;
+            transform: translateY(-2px);
+        }
+
+        .header h1 {
+            color: var(--primary-color);
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+
+        .section {
+            background: var(--card-bg);
+            border-radius: 15px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+            border-left: 5px solid var(--secondary-color);
+        }
+
+        .section h2 {
+            color: var(--primary-color);
+            margin-bottom: 20px;
+            font-size: 1.8em;
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 10px;
+        }
+
+        .section h3 {
+            color: var(--secondary-color);
+            margin-top: 25px;
+            margin-bottom: 15px;
+            font-size: 1.4em;
+        }
+
+        .section h4 {
+            color: var(--primary-color);
+            margin-top: 20px;
+            margin-bottom: 10px;
+            font-size: 1.2em;
+        }
+
+        .section p {
+            margin-bottom: 15px;
+            text-align: justify;
+        }
+
+        .section ul, .section ol {
+            margin-left: 30px;
+            margin-bottom: 15px;
+        }
+
+        .section li {
+            margin-bottom: 8px;
+        }
+
+        .key-term {
+            background: #e3f2fd;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-weight: 600;
+            color: var(--secondary-color);
+        }
+
+        .important-note {
+            background: #fff3cd;
+            border-left: 4px solid var(--warning-color);
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 5px;
+        }
+
+        .quote {
+            background: #f8f9fa;
+            border-left: 4px solid var(--accent-color);
+            padding: 15px;
+            margin: 20px 0;
+            font-style: italic;
+            border-radius: 5px;
+        }
+
+        .timeline {
+            border-left: 3px solid var(--secondary-color);
+            padding-left: 20px;
+            margin: 20px 0;
+        }
+
+        .timeline-item {
+            margin-bottom: 20px;
+            position: relative;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -27px;
+            top: 5px;
+            width: 12px;
+            height: 12px;
+            background: var(--secondary-color);
+            border-radius: 50%;
+            border: 3px solid white;
+        }
+
+        .timeline-year {
+            font-weight: bold;
+            color: var(--accent-color);
+            font-size: 1.1em;
+        }
+
+        .nav-container {
+            background: var(--card-bg);
+            padding: 20px;
+            border-radius: 15px;
+            margin-bottom: 30px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 20px;
+            z-index: 100;
+        }
+
+        .nav-container h3 {
+            color: var(--primary-color);
+            margin-bottom: 15px;
+            font-size: 1.3em;
+        }
+
+        .nav-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 10px;
+        }
+
+        .nav-link {
+            background: linear-gradient(45deg, var(--secondary-color), #2980b9);
+            color: white;
+            padding: 10px 15px;
+            border-radius: 8px;
+            text-decoration: none;
+            text-align: center;
+            transition: all 0.3s ease;
+            font-size: 0.9em;
+            font-weight: 600;
+        }
+
+        .nav-link:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(52, 152, 219, 0.3);
+            background: linear-gradient(45deg, #2980b9, var(--secondary-color));
+        }
+
+        .scroll-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: linear-gradient(45deg, var(--accent-color), #c0392b);
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            cursor: pointer;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+            transition: all 0.3s ease;
+            z-index: 1000;
+            opacity: 0;
+            visibility: hidden;
+        }
+
+        .scroll-top.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .scroll-top:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(231, 76, 60, 0.4);
+        }
+
+        .collapsible-header {
+            background: linear-gradient(135deg, var(--secondary-color), #2980b9);
+            color: white;
+            padding: 15px 20px;
+            cursor: pointer;
+            border-radius: 10px;
+            margin-top: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: all 0.3s ease;
+            user-select: none;
+        }
+
+        .collapsible-header:hover {
+            background: linear-gradient(135deg, #2980b9, var(--secondary-color));
+            transform: translateX(5px);
+        }
+
+        .collapsible-header h3 {
+            margin: 0;
+            color: white;
+            font-size: 1.3em;
+        }
+
+        .collapsible-icon {
+            font-size: 1.5em;
+            transition: transform 0.3s ease;
+        }
+
+        .collapsible-header.active .collapsible-icon {
+            transform: rotate(180deg);
+        }
+
+        .collapsible-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s ease;
+        }
+
+        .collapsible-content.active {
+            max-height: 10000px;
+        }
+
+        .collapsible-inner {
+            padding: 20px 0;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 15px;
+            }
+            
+            .header h1 {
+                font-size: 2em;
+            }
+            
+            .section {
+                padding: 20px;
+            }
+
+            .section h2 {
+                font-size: 1.5em;
+            }
+
+            .nav-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .scroll-top {
+                bottom: 20px;
+                right: 20px;
+                width: 45px;
+                height: 45px;
+            }
+
+            .nav-container {
+                position: relative;
+                top: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <a href="index.html" class="back-button">← Back to Home</a>
+            <h1>🌍 Living in a Modern World</h1>
+            <p>Comprehensive Study Guide for English Abitur 2026</p>
+        </div>
+
+        <div class="nav-container">
+            <h3>📑 Quick Navigation</h3>
+            <div class="nav-grid">
+                <a href="#globalization" class="nav-link">20. Globalization</a>
+                <a href="#technology-media" class="nav-link">21. Technology & Media</a>
+            </div>
+        </div>
+
+      <!-- Section 20: Globalization -->
+        <div class="section" id="globalization">
+            <h2>20. Globalization</h2>
+
+            <div class="collapsible-header">
+                <h3>Pros and Cons of Globalization</h3>
+                <span class="collapsible-icon">▼</span>
+            </div>
+            <div class="collapsible-content">
+                <div class="collapsible-inner">
+                    <h4>What is Globalization?</h4>
+                    <p><span class="key-term">Globalization</span> is the process of increased interconnectedness and interdependence among countries, driven by international trade, investment, technology, and cultural exchange. It involves the movement of goods, services, people, information, and ideas across national borders at an unprecedented scale.</p>
+
+                    <h4>Key Drivers of Globalization:</h4>
+                    <ul>
+                        <li><strong>Technology:</strong> Internet, smartphones, digital communication</li>
+                        <li><strong>Transportation:</strong> Cheaper air travel, container shipping</li>
+                        <li><strong>Trade Liberalization:</strong> Reduced tariffs, free trade agreements</li>
+                        <li><strong>Financial Integration:</strong> Global capital flows</li>
+                        <li><strong>Multinational Corporations:</strong> Companies operating worldwide</li>
+                    </ul>
+
+                    <h4>Arguments FOR Globalization (Pros):</h4>
+                    
+                    <p><strong>1. Economic Growth and Prosperity</strong></p>
+                    <ul>
+                        <li><span class="key-term">Increased Trade:</span> Access to larger markets increases economic growth</li>
+                        <li><span class="key-term">Foreign Investment:</span> Capital flows to where it's most productive</li>
+                        <li><span class="key-term">Economic Efficiency:</span> Countries specialize in what they do best (comparative advantage)</li>
+                        <li><strong>Job Creation:</strong> New industries and employment opportunities</li>
+                        <li><strong>Lower Prices:</strong> Competition and efficient production reduce costs for consumers</li>
+                    </ul>
+
+                    <p><strong>2. Poverty Reduction</strong></p>
+                    <ul>
+                        <li>Lifted hundreds of millions out of poverty, especially in China and India</li>
+                        <li>Provided opportunities in developing countries</li>
+                        <li>Access to global markets for developing world producers</li>
+                        <li>Economic growth in emerging economies</li>
+                    </ul>
+
+                    <p><strong>3. Technology and Innovation</strong></p>
+                    <ul>
+                        <li>Faster spread of new technologies and ideas</li>
+                        <li>Collaboration between researchers worldwide</li>
+                        <li>Access to advanced technologies in developing countries</li>
+                        <li>Increased innovation through competition</li>
+                    </ul>
+
+                    <p><strong>4. Cultural Exchange</strong></p>
+                    <ul>
+                        <li>Greater understanding between cultures</li>
+                        <li>Access to diverse foods, music, art, and ideas</li>
+                        <li>Promotion of human rights and democratic values</li>
+                        <li>Educational opportunities through international cooperation</li>
+                    </ul>
+
+                    <p><strong>5. Peace and Cooperation</strong></p>
+                    <ul>
+                        <li>Economic interdependence reduces likelihood of conflict</li>
+                        <li>"When goods don't cross borders, soldiers will"</li>
+                        <li>International institutions promote cooperation</li>
+                        <li>Shared challenges require global solutions</li>
+                    </ul>
+
+                    <h4>Arguments AGAINST Globalization (Cons):</h4>
+                    
+                    <p><strong>1. Economic Inequality</strong></p>
+                    <ul>
+                        <li><span class="key-term">Wealth Gap:</span> Benefits disproportionately go to wealthy individuals and nations</li>
+                        <li><span class="key-term">Job Losses:</span> Manufacturing jobs move to lower-wage countries</li>
+                        <li><strong>Wage Suppression:</strong> Competition with global labor force lowers wages</li>
+                        <li><strong>Winner Takes All:</strong> Skilled workers benefit; unskilled workers suffer</li>
+                        <li><strong>Exploitation:</strong> Workers in developing countries face poor conditions</li>
+                    </ul>
+
+                    <p><strong>2. Cultural Homogenization</strong></p>
+                    <ul>
+                        <li><span class="key-term">Cultural Imperialism:</span> Western (especially American) culture dominates globally</li>
+                        <li><strong>Loss of Identity:</strong> Local traditions and languages disappear</li>
+                        <li><strong>McDonaldization:</strong> Standardization of culture worldwide</li>
+                        <li><strong>Consumerism:</strong> Traditional values replaced by materialistic culture</li>
+                    </ul>
+
+                    <p><strong>3. Environmental Damage</strong></p>
+                    <ul>
+                        <li><span class="key-term">Increased Pollution:</span> More production and transportation</li>
+                        <li><span class="key-term">Climate Change:</span> Global trade increases carbon emissions</li>
+                        <li><strong>Resource Depletion:</strong> Unsustainable exploitation of natural resources</li>
+                        <li><strong>Race to the Bottom:</strong> Countries lower environmental standards to attract business</li>
+                        <li><strong>Biodiversity Loss:</strong> Habitat destruction for economic development</li>
+                    </ul>
+
+                    <p><strong>4. Loss of National Sovereignty</strong></p>
+                    <ul>
+                        <li>International agreements limit national policy-making</li>
+                        <li>Multinational corporations hold excessive power</li>
+                        <li>Global financial markets constrain government decisions</li>
+                        <li>Inability to control borders and regulate economy</li>
+                    </ul>
+
+                    <p><strong>5. Financial Instability</strong></p>
+                    <ul>
+                        <li><span class="key-term">Contagion Effect:</span> Economic crises spread rapidly (2008 financial crisis)</li>
+                        <li><strong>Volatile Capital Flows:</strong> "Hot money" destabilizes economies</li>
+                        <li><strong>Systemic Risk:</strong> Interconnectedness makes system fragile</li>
+                    </ul>
+
+                    <p><strong>6. Social Problems</strong></p>
+                    <ul>
+                        <li>Increased migration causing social tensions</li>
+                        <li>Brain drain from developing countries</li>
+                        <li>Spread of diseases more rapid</li>
+                        <li>Human trafficking and illegal trade networks</li>
+                    </ul>
+
+                    <div class="important-note">
+                        <strong>Balance and Nuance:</strong> Most economists and scholars recognize both benefits and costs of globalization. The key question is not whether globalization is good or bad in absolute terms, but rather: How can we maximize benefits while minimizing negative consequences? This requires effective regulation, international cooperation, and policies that ensure gains are shared more equitably.
+                    </div>
+
+                    <h4>Different Perspectives:</h4>
+                    <ul>
+                        <li><span class="key-term">Pro-Globalization (Globalists):</span> Free market economists, multinational corporations, liberal internationalists</li>
+                        <li><span class="key-term">Anti-Globalization:</span> Labor unions, environmentalists, cultural preservationists, economic nationalists</li>
+                        <li><span class="key-term">Alter-Globalization:</span> Support globalization but want fairer, more sustainable version</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="collapsible-header">
+                <h3>Poverty as a Global Challenge</h3>
+                <span class="collapsible-icon">▼</span>
+            </div>
+            <div class="collapsible-content">
+                <div class="collapsible-inner">
+                    <h4>Scale of Global Poverty:</h4>
+                    <ul>
+                        <li>Approximately 700 million people live in <span class="key-term">extreme poverty</span> (under $2.15/day)</li>
+                        <li>Down from 1.9 billion in 1990 - significant progress</li>
+                        <li>However, COVID-19 pandemic reversed some gains</li>
+                        <li>About 2 billion live on under $3.65/day</li>
+                        <li>Poverty concentrated in Sub-Saharan Africa and South Asia</li>
+                    </ul>
+
+                    <h4>Causes of Global Poverty:</h4>
+                    
+                    <p><strong>1. Structural Factors:</strong></p>
+                    <ul>
+                        <li><span class="key-term">Historical Legacy:</span> Colonialism extracted resources and destroyed local economies</li>
+                        <li><span class="key-term">Unfair Trade:</span> Developed countries subsidize agriculture; developing countries can't compete</li>
+                        <li><strong>Debt Burden:</strong> Poor countries spend more on debt repayment than healthcare or education</li>
+                        <li><strong>Brain Drain:</strong> Educated people emigrate to wealthy countries</li>
+                        <li><strong>Dependency Theory:</strong> Global economic system keeps poor countries poor</li>
+                    </ul>
+
+                    <p><strong>2. Governance Issues:</strong></p>
+                    <ul>
+                        <li><strong>Corruption:</strong> Resources stolen by elites</li>
+                        <li><strong>Poor Institutions:</strong> Weak rule of law, ineffective government</li>
+                        <li><strong>Conflict:</strong> Wars destroy infrastructure and economies</li>
+                        <li><strong>Lack of Property Rights:</strong> People can't build wealth</li>
+                    </ul>
+
+                    <p><strong>3. Geographic and Environmental Factors:</strong></p>
+                    <ul>
+                        <li><strong>Climate:</strong> Tropical diseases, agricultural challenges</li>
+                        <li><strong>Natural Disasters:</strong> Vulnerability to floods, droughts, earthquakes</li>
+                        <li><strong>Landlocked Countries:</strong> Limited access to trade</li>
+                        <li><strong>Resource Curse:</strong> Natural resources often lead to corruption and conflict</li>
+                    </ul>
+
+                    <p><strong>4. Social and Demographic Factors:</strong></p>
+                    <ul>
+                        <li><strong>Population Growth:</strong> Rapid growth strains resources</li>
+                        <li><strong>Gender Inequality:</strong> Women face discrimination limiting economic participation</li>
+                        <li><strong>Education Gap:</strong> Poor quality education or no access</li>
+                        <li><strong>Health Challenges:</strong> Disease prevents work and economic activity</li>
+                    </ul>
+
+                    <h4>Consequences of Poverty:</h4>
+                    <ul>
+                        <li><strong>Health:</strong> Malnutrition, preventable diseases, high mortality rates</li>
+                        <li><strong>Education:</strong> Children unable to attend school, perpetuating cycle</li>
+                        <li><strong>Child Labor:</strong> 160 million children in labor instead of school</li>
+                        <li><strong>Hunger:</strong> 828 million people chronically undernourished</li>
+                        <li><strong>Migration:</strong> People fleeing poverty seeking opportunities</li>
+                        <li><strong>Conflict:</strong> Poverty creates conditions for violence and extremism</li>
+                        <li><strong>Environmental Degradation:</strong> Desperate people exploit resources unsustainably</li>
+                    </ul>
+
+                    <h4>Solutions and Approaches:</h4>
+                    
+                    <p><strong>1. Foreign Aid and Development Assistance:</strong></p>
+                    <ul>
+                        <li><strong>Pros:</strong> Provides immediate relief, funds infrastructure and education</li>
+                        <li><strong>Cons:</strong> Can create dependency, corruption, may not reach intended recipients</li>
+                        <li><span class="key-term">Effective Aid:</span> Focus on capacity building, not just handouts</li>
+                    </ul>
+
+                    <p><strong>2. Fair Trade and Debt Relief:</strong></p>
+                    <ul>
+                        <li>Eliminate agricultural subsidies in wealthy countries</li>
+                        <li>Cancel debts of poorest nations</li>
+                        <li>Fair prices for goods from developing countries</li>
+                        <li>Technology transfer and investment</li>
+                    </ul>
+
+                    <p><strong>3. Education and Healthcare:</strong></p>
+                    <ul>
+                        <li>Universal primary education</li>
+                        <li>Healthcare infrastructure and vaccination programs</li>
+                        <li>Clean water and sanitation</li>
+                        <li>Empower women through education</li>
+                    </ul>
+
+                    <p><strong>4. Economic Development:</strong></p>
+                    <ul>
+                        <li><span class="key-term">Microfinance:</span> Small loans to entrepreneurs (e.g., Grameen Bank)</li>
+                        <li><strong>Job Creation:</strong> Support for small businesses</li>
+                        <li><strong>Infrastructure:</strong> Roads, electricity, internet access</li>
+                        <li><strong>Agricultural Development:</strong> Better farming techniques and technology</li>
+                    </ul>
+
+                    <p><strong>5. Good Governance:</strong></p>
+                    <ul>
+                        <li>Fight corruption and strengthen institutions</li>
+                        <li>Democracy and rule of law</li>
+                        <li>Property rights and legal systems</li>
+                        <li>Accountable government</li>
+                    </ul>
+
+                    <h4>UN Sustainable Development Goals (SDGs):</h4>
+                    <p>17 goals adopted by all UN member states in 2015, aiming to achieve by 2030:</p>
+                    <ul>
+                        <li><strong>Goal 1:</strong> No Poverty - End poverty in all forms</li>
+                        <li><strong>Goal 2:</strong> Zero Hunger - End hunger, achieve food security</li>
+                        <li><strong>Goal 3:</strong> Good Health - Ensure healthy lives for all</li>
+                        <li><strong>Goal 4:</strong> Quality Education - Inclusive and equitable quality education</li>
+                        <li><strong>Goal 5:</strong> Gender Equality - Achieve gender equality</li>
+                        <li>...and 12 more interconnected goals</li>
+                    </ul>
+
+                    <div class="important-note">
+                        <strong>Progress and Challenges:</strong> Significant progress has been made - extreme poverty rates have been cut in half since 1990. However, progress is uneven, and COVID-19 pandemic has caused major setbacks. Climate change threatens to push millions back into poverty. Sustained, coordinated global action is essential.
+                    </div>
+                </div>
+            </div>
+
+          <div class="collapsible-header">
+                <h3>Migration</h3>
+                <span class="collapsible-icon">▼</span>
+            </div>
+            <div class="collapsible-content">
+                <div class="collapsible-inner">
+                    <h4>Global Migration Overview:</h4>
+                    <ul>
+                        <li>Approximately 281 million international migrants (3.6% of world population)</li>
+                        <li>Number has tripled since 1970</li>
+                        <li>More people migrate internally within countries than internationally</li>
+                        <li>Migration is as old as humanity - people have always moved</li>
+                    </ul>
+
+                    <h4>Types of Migration:</h4>
+                    
+                    <p><strong>1. Economic Migration:</strong></p>
+                    <ul>
+                        <li>People moving for better job opportunities and higher wages</li>
+                        <li>Largest category of international migration</li>
+                        <li>Both skilled workers (brain gain) and unskilled laborers</li>
+                        <li>Often send remittances home (over $700 billion annually)</li>
+                    </ul>
+
+                    <p><strong>2. Forced Migration and Refugees:</strong></p>
+                    <ul>
+                        <li><span class="key-term">Refugees:</span> Fleeing persecution, war, violence</li>
+                        <li><span class="key-term">Internally Displaced Persons (IDPs):</span> Forced from homes but remain in country</li>
+                        <li>Over 100 million forcibly displaced people worldwide</li>
+                        <li>Major crises: Syria, Afghanistan, Venezuela, Myanmar, Ukraine</li>
+                        <li>Protected under 1951 Refugee Convention</li>
+                    </ul>
+
+                    <p><strong>3. Climate Migration:</strong></p>
+                    <ul>
+                        <li>People displaced by environmental changes and disasters</li>
+                        <li>Rising sea levels threatening island nations and coastal areas</li>
+                        <li>Droughts, floods, extreme weather forcing movement</li>
+                        <li>Projected to increase dramatically - potentially 200+ million by 2050</li>
+                        <li>Currently no international legal framework for climate refugees</li>
+                    </ul>
+
+                    <p><strong>4. Family Reunification:</strong></p>
+                    <ul>
+                        <li>Joining family members already in destination country</li>
+                        <li>Important legal pathway in many countries</li>
+                    </ul>
+
+                    <h4>Push and Pull Factors (Global Context):</h4>
+                    
+                    <p><strong>Push Factors (Why people leave):</strong></p>
+                    <ul>
+                        <li>Poverty and lack of economic opportunities</li>
+                        <li>War, violence, political persecution</li>
+                        <li>Natural disasters and environmental degradation</li>
+                        <li>Lack of healthcare and education</li>
+                        <li>Discrimination and human rights violations</li>
+                        <li>Overpopulation and resource scarcity</li>
+                    </ul>
+
+                    <p><strong>Pull Factors (Why people choose destination):</strong></p>
+                    <ul>
+                        <li>Economic opportunities and higher wages</li>
+                        <li>Political stability and security</li>
+                        <li>Better education and healthcare</li>
+                        <li>Family connections and diaspora communities</li>
+                        <li>Democratic freedoms and human rights</li>
+                        <li>Geographic proximity and ease of travel</li>
+                    </ul>
+
+                    <h4>Major Migration Corridors:</h4>
+                    <ul>
+                        <li><strong>Mexico → USA:</strong> Largest migration corridor</li>
+                        <li><strong>Syria → Turkey:</strong> Refugee crisis</li>
+                        <li><strong>India → UAE:</strong> Labor migration</li>
+                        <li><strong>North Africa → Europe:</strong> Mediterranean route</li>
+                        <li><strong>Venezuela → Colombia:</strong> Recent refugee crisis</li>
+                        <li><strong>Rural → Urban:</strong> Internal migration in China, India</li>
+                    </ul>
+
+                    <h4>Impact on Source Countries (Countries migrants leave):</h4>
+                    
+                    <p><strong>Positive Effects:</strong></p>
+                    <ul>
+                        <li><span class="key-term">Remittances:</span> Money sent home supports families and economy</li>
+                        <li><strong>Reduced Unemployment:</strong> Less competition for jobs</li>
+                        <li><strong>Skills Transfer:</strong> Returning migrants bring knowledge and expertise</li>
+                        <li><strong>Diaspora Investment:</strong> Emigrants invest in home country</li>
+                        <li><strong>Political Change:</strong> Pressure from abroad for reforms</li>
+                    </ul>
+
+                    <p><strong>Negative Effects:</strong></p>
+                    <ul>
+                        <li><span class="key-term">Brain Drain:</span> Loss of educated and skilled workers</li>
+                        <li><strong>Family Separation:</strong> Social costs of divided families</li>
+                        <li><strong>Labor Shortage:</strong> Particularly in key sectors like healthcare</li>
+                        <li><strong>Demographic Imbalance:</strong> Often young working-age people leave</li>
+                    </ul>
+
+                    <h4>Impact on Destination Countries (Host countries):</h4>
+                    
+                    <p><strong>Economic Benefits:</strong></p>
+                    <ul>
+                        <li><span class="key-term">Labor Force:</span> Fill workforce gaps, especially low-wage and high-skilled sectors</li>
+                        <li><span class="key-term">Economic Growth:</span> Increase consumption, tax revenue, entrepreneurship</li>
+                        <li><strong>Innovation:</strong> Diverse perspectives drive creativity (many tech companies founded by immigrants)</li>
+                        <li><strong>Demographic Balance:</strong> Help address aging population</li>
+                        <li><strong>Fiscal Contribution:</strong> Studies show immigrants generally contribute more in taxes than receive in benefits</li>
+                    </ul>
+
+                    <p><strong>Cultural Benefits:</strong></p>
+                    <ul>
+                        <li>Cultural diversity and enrichment</li>
+                        <li>International connections and understanding</li>
+                        <li>New foods, music, arts, perspectives</li>
+                    </ul>
+
+                    <p><strong>Challenges and Concerns:</strong></p>
+                    <ul>
+                        <li><span class="key-term">Integration Difficulties:</span> Language barriers, cultural differences</li>
+                        <li><strong>Social Tensions:</strong> Competition for resources, housing, jobs</li>
+                        <li><strong>Short-term Costs:</strong> Initial public services for newcomers</li>
+                        <li><strong>Political Backlash:</strong> Rise of anti-immigrant sentiment and parties</li>
+                        <li><strong>Security Concerns:</strong> Border control, screening challenges</li>
+                    </ul>
+
+                    <h4>Policy Approaches:</h4>
+                    
+                    <p><strong>1. Open Borders Approach:</strong></p>
+                    <ul>
+                        <li>Few restrictions on immigration</li>
+                        <li>Examples: EU internal migration, some historical periods</li>
+                        <li>Maximizes economic benefits but faces political opposition</li>
+                    </ul>
+
+                    <p><strong>2. Selective/Points-Based System:</strong></p>
+                    <ul>
+                        <li>Prioritizes skilled workers who meet criteria</li>
+                        <li>Used by Canada, Australia, UK post-Brexit</li>
+                        <li>Addresses specific labor needs</li>
+                    </ul>
+
+                    <p><strong>3. Restrictive Approach:</strong></p>
+                    <ul>
+                        <li>Strict limits, enforcement, border security</li>
+                        <li>Focus on national security and sovereignty</li>
+                        <li>May include walls, detention, rapid deportation</li>
+                    </ul>
+
+                    <p><strong>4. Humanitarian Approach:</strong></p>
+                    <ul>
+                        <li>Priority for refugees and asylum seekers</li>
+                        <li>Based on international law and moral obligations</li>
+                        <li>Challenges with defining who qualifies</li>
+                    </ul>
+
+                    <h4>International Cooperation:</h4>
+                    <ul>
+                        <li><span class="key-term">UNHCR:</span> UN Refugee Agency protecting and assisting refugees</li>
+                        <li><span class="key-term">IOM:</span> International Organization for Migration</li>
+                        <li><strong>Global Compact on Migration (2018):</strong> Non-binding UN agreement for safe migration</li>
+                        <li><strong>Refugee Resettlement:</strong> Programs to relocate refugees to safe countries</li>
+                        <li><strong>Border Management:</strong> Agreements on returns, border security</li>
+                    </ul>
+
+                    <div class="important-note">
+                        <strong>Future of Migration:</strong> Climate change, conflict, economic inequality, and demographic shifts will likely increase migration pressure. The key challenge is managing migration in ways that respect human rights, address legitimate security concerns, maximize economic benefits, and promote integration. Most experts argue for legal pathways that are flexible enough to meet labor needs while controlled enough to maintain public support.
+                    </div>
+
+                    <h4>Ethical Questions:</h4>
+                    <ul>
+                        <li>Do wealthy nations have obligations to accept refugees?</li>
+                        <li>How to balance national sovereignty with human rights?</li>
+                        <li>Should economic migrants have same rights as refugees?</li>
+                        <li>Who is responsible for climate refugees?</li>
+                        <li>How to ensure fair burden-sharing among nations?</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="collapsible-header">
+                <h3>Environmental Challenges</h3>
+                <span class="collapsible-icon">▼</span>
+            </div>
+            <div class="collapsible-content">
+                <div class="collapsible-inner">
+                    <h4>Major Environmental Challenges:</h4>
+
+                    <p><strong>1. Climate Change</strong></p>
+                    <ul>
+                        <li><span class="key-term">Global Warming:</span> Average temperatures risen 1.1°C since pre-industrial times</li>
+                        <li><span class="key-term">Greenhouse Gases:</span> CO₂, methane, etc. trap heat in atmosphere</li>
+                        <li><strong>Main Causes:</strong>
+                            <ul>
+                                <li>Burning fossil fuels (coal, oil, gas) - 75% of emissions</li>
+                                <li>Deforestation - reduces CO₂ absorption</li>
+                                <li>Agriculture - methane from livestock, fertilizers</li>
+                                <li>Industrial processes</li>
+                            </ul>
+                        </li>
+                        <li><strong>Consequences:</strong>
+                            <ul>
+                                <li>Rising sea levels (threatening coastal cities and islands)</li>
+                                <li>Extreme weather: hurricanes, droughts, floods, heatwaves</li>
+                                <li>Melting glaciers and ice sheets</li>
+                                <li>Ocean acidification</li>
+                                <li>Species extinction</li>
+                                <li>Agricultural disruption and food insecurity</li>
+                                <li>Climate refugees and migration</li>
+                                <li>Economic losses (estimated trillions of dollars)</li>
+                            </ul>
+                        </li>
+                        <li><strong>Tipping Points:</strong> Scientists warn of irreversible changes if warming exceeds 1.5-2°C</li>
+                    </ul>
+
+                    <p><strong>2. Biodiversity Loss and Species Extinction</strong></p>
+                    <ul>
+                        <li>1 million species at risk of extinction</li>
+                        <li>Extinction rate 100-1000x higher than natural background rate</li>
+                        <li><strong>Causes:</strong>
+                            <ul>
+                                <li>Habitat destruction (deforestation, urbanization)</li>
+                                <li>Climate change</li>
+                                <li>Pollution</li>
+                                <li>Overexploitation (overfishing, hunting)</li>
+                                <li>Invasive species</li>
+                            </ul>
+                        </li>
+                        <li><strong>Importance of Biodiversity:</strong>
+                            <ul>
+                                <li>Ecosystem services (pollination, water purification, climate regulation)</li>
+                                <li>Genetic resources for medicine and agriculture</li>
+                                <li>Economic value (tourism, fisheries)</li>
+                                <li>Intrinsic value - right to exist</li>
+                            </ul>
+                        </li>
+                    </ul>
+
+                    <p><strong>3. Deforestation</strong></p>
+                    <ul>
+                        <li>10 million hectares of forest lost annually (size of Iceland)</li>
+                        <li><strong>Amazon Rainforest:</strong> "Lungs of the Earth" - 17% already destroyed</li>
+                        <li><strong>Causes:</strong> Agriculture (cattle ranching, palm oil, soy), logging, mining</li>
+                        <li><strong>Consequences:</strong>
+                            <ul>
+                                <li>Climate change (forests absorb 30% of CO₂ emissions)</li>
+                                <li>Biodiversity loss</li>
+                                <li>Indigenous peoples displaced</li>
+                                <li>Soil erosion and desertification</li>
+                            </ul>
+                        </li>
+                    </ul>
+
+                    <p><strong>4. Ocean Issues</strong></p>
+                    <ul>
+                        <li><span class="key-term">Overfishing:</span> 34% of fish stocks overfished, 60% fully exploited</li>
+                        <li><span class="key-term">Plastic Pollution:</span>
+                            <ul>
+                                <li>8 million tons of plastic enter oceans yearly</li>
+                                <li>Great Pacific Garbage Patch twice the size of Texas</li>
+                                <li>Microplastics in food chain, including humans</li>
+                                <li>Marine animals killed by ingestion and entanglement</li>
+                            </ul>
+                        </li>
+                        <li><strong>Ocean Acidification:</strong> Absorbing CO₂ changes chemistry, threatens coral reefs and shellfish</li>
+                        <li><strong>Dead Zones:</strong> Areas with too little oxygen to support life</li>
+                    </ul>
+
+                    <p><strong>5. Air Pollution</strong></p>
+                    <ul>
+                        <li>9 out of 10 people breathe polluted air</li>
+                        <li>7 million premature deaths annually from air pollution</li>
+                        <li><strong>Sources:</strong> Vehicles, industry, power plants, agriculture, household cooking</li>
+                        <li>Particularly severe in developing countries (Delhi, Beijing)</li>
+                    </ul>
+
+                    <p><strong>6. Water Scarcity and Pollution</strong></p>
+                    <ul>
+                        <li>2 billion people lack access to safe drinking water</li>
+                        <li>Water stress affecting 40% of global population</li>
+                        <li><strong>Causes:</strong> Overconsumption, pollution, climate change, population growth</li>
+                        <li>Agricultural irrigation uses 70% of freshwater</li>
+                        <li>Industrial pollution and sewage contaminate water sources</li>
+                    </ul>
+
+                    <p><strong>7. Soil Degradation and Desertification</strong></p>
+                    <ul>
+                        <li>33% of Earth's soil degraded</li>
+                        <li>Agricultural land becoming unusable</li>
+                        <li>Threatens food security</li>
+                    </ul>
+
+                    <p><strong>8. Resource Depletion</strong></p>
+                    <ul>
+                        <li>Consuming resources faster than Earth can regenerate</li>
+                        <li>"Earth Overshoot Day" - when humanity has used year's resources (currently late July)</li>
+                        <li>Unsustainable consumption in developed nations</li>
+                    </ul>
+
+                    <h4>Who is Most Affected?</h4>
+                    <ul>
+                        <li><strong>Global South:</strong> Poorest countries suffer most despite contributing least to problems</li>
+                        <li><strong>Small Island Nations:</strong> Existential threat from sea level rise</li>
+                        <li><strong>Indigenous Peoples:</strong> Dependent on ecosystems being destroyed</li>
+                        <li><strong>Future Generations:</strong> Will inherit degraded planet</li>
+                        <li><strong>Vulnerable Populations:</strong> Poor, elderly, children more at risk</li>
+                    </ul>
+
+                    <h4>Solutions and Actions:</h4>
+                    
+                    <p><strong>Individual Actions:</strong></p>
+                    <ul>
+                        <li>Reduce energy consumption</li>
+                        <li>Use public transport, bike, walk</li>
+                        <li>Eat less meat (plant-based diet)</li>
+                        <li>Reduce, reuse, recycle</li>
+                        <li>Avoid single-use plastics</li>
+                        <li>Support sustainable companies</li>
+                        <li>Vote for climate-conscious politicians</li>
+                    </ul>
+
+                    <p><strong>Government Policies:</strong></p>
+                    <ul>
+                        <li><span class="key-term">Carbon Pricing:</span> Tax or cap-and-trade systems</li>
+                        <li><strong>Renewable Energy:</strong> Investment in solar, wind, hydroelectric</li>
+                        <li><strong>Protected Areas:</strong> National parks, marine reserves</li>
+                        <li><strong>Regulations:</strong> Emissions standards, pollution controls</li>
+                        <li><strong>Subsidies:</strong> For green technology, electric vehicles</li>
+                        <li><strong>Reforestation:</strong> Tree planting programs</li>
+                    </ul>
+
+                    <p><strong>International Cooperation:</strong></p>
+                    <ul>
+                        <li>Paris Climate Agreement (see next section)</li>
+                        <li>Convention on Biological Diversity</li>
+                        <li>Montreal Protocol (ozone layer - success story!)</li>
+                        <li>Ocean treaties and fishing agreements</li>
+                    </ul>
+
+                    <p><strong>Technological Solutions:</strong></p>
+                    <ul>
+                        <li>Renewable energy technologies (costs dropping rapidly)</li>
+                        <li>Electric vehicles and battery technology</li>
+                        <li>Carbon capture and storage</li>
+                        <li>Sustainable agriculture techniques</li>
+                        <li>Green building and urban planning</li>
+                    </ul>
+
+                    <div class="important-note">
+                        <strong>The Challenge:</strong> Environmental problems are interconnected and require coordinated global action. However, they face obstacles: short-term economic interests, political divisions, free-rider problem (countries benefiting from others' efforts), and tension between development and conservation. Time is running out - the next decade is crucial for avoiding worst outcomes.
+                    </div>
+
+                    <h4>Debates and Controversies:</h4>
+                    <ul>
+                        <li><strong>Economic Growth vs. Environment:</strong> Can we have both, or must we choose?</li>
+                        <li><strong>Individual vs. Systemic Change:</strong> Personal action vs. policy changes</li>
+                        <li><strong>Global North vs. Global South:</strong> Who should pay for solutions and reduce emissions?</li>
+                        <li><strong>Technology:</strong> Can innovation solve problems, or do we need degrowth?</li>
+                        <li><strong>Climate Justice:</strong> Polluters should pay vs. everyone's responsibility</li>
+                    </ul>
+                </div>
+            </div>
+
+          <div class="collapsible-header">
+                <h3>Paris Climate Agreement (2015)</h3>
+                <span class="collapsible-icon">▼</span>
+            </div>
+            <div class="collapsible-content">
+                <div class="collapsible-inner">
+                    <h4>Background and Adoption:</h4>
+                    <ul>
+                        <li>Negotiated at COP21 (21st Conference of Parties) in Paris, December 2015</li>
+                        <li>Adopted by 196 parties (195 countries + European Union)</li>
+                        <li>Entered into force November 2016</li>
+                        <li>First legally binding universal climate agreement</li>
+                        <li>Replaced Kyoto Protocol which was limited in scope</li>
+                    </ul>
+
+                    <h4>Main Goals:</h4>
+                    <ul>
+                        <li><span class="key-term">Temperature Target:</span> Limit global warming to "well below 2°C" above pre-industrial levels, with efforts to limit to 1.5°C</li>
+                        <li><span class="key-term">Peak Emissions:</span> Achieve peak greenhouse gas emissions as soon as possible</li>
+                        <li><span class="key-term">Net Zero:</span> Balance emissions with removals in second half of century</li>
+                        <li><strong>Adaptation:</strong> Increase ability to adapt to climate impacts</li>
+                        <li><strong>Finance:</strong> Wealthy nations provide climate finance to developing countries</li>
+                    </ul>
+
+                    <h4>Key Features and Mechanisms:</h4>
+                    
+                    <p><strong>1. Nationally Determined Contributions (NDCs):</strong></p>
+                    <ul>
+                        <li>Each country sets own emissions reduction targets</li>
+                        <li>Must submit new NDC every 5 years</li>
+                        <li>Each NDC should be more ambitious than previous ("ratchet mechanism")</li>
+                        <li>Countries decide own pathways to achieve goals</li>
+                        <li><strong>Current Problem:</strong> Existing NDCs insufficient to meet 1.5°C target - lead to ~2.7°C warming</li>
+                    </ul>
+
+                    <p><strong>2. Global Stocktake:</strong></p>
+                    <ul>
+                        <li>Every 5 years, assess collective progress</li>
+                        <li>First stocktake completed in 2023</li>
+                        <li>Results inform next round of NDCs</li>
+                    </ul>
+
+                    <p><strong>3. Transparency Framework:</strong></p>
+                    <ul>
+                        <li>Countries must report emissions and progress</li>
+                        <li>International review and verification</li>
+                        <li>Builds trust and accountability</li>
+                    </ul>
+
+                    <p><strong>4. Climate Finance:</strong></p>
+                    <ul>
+                        <li>Developed countries committed to mobilize $100 billion annually for developing countries</li>
+                        <li>Support for both mitigation and adaptation</li>
+                        <li>Goal was to reach $100B by 2020 (achieved in 2022, 2 years late)</li>
+                        <li>New goal being negotiated for post-2025</li>
+                    </ul>
+
+                    <p><strong>5. Loss and Damage:</strong></p>
+                    <ul>
+                        <li>Addresses harm from climate impacts that can't be adapted to</li>
+                        <li>COP27 (2022) established Loss and Damage Fund</li>
+                        <li>Controversial - who pays for climate damages?</li>
+                    </ul>
+
+                    <h4>Major Countries' Commitments (Examples):</h4>
+                    <ul>
+                        <li><strong>European Union:</strong> Net zero by 2050; 55% reduction by 2030 (from 1990 levels)</li>
+                        <li><strong>United States:</strong> Net zero by 2050; 50-52% reduction by 2030 (from 2005 levels)</li>
+                        <li><strong>China:</strong> Peak emissions before 2030; carbon neutral by 2060</li>
+                        <li><strong>India:</strong> 50% renewable energy by 2030; net zero by 2070</li>
+                        <li><strong>United Kingdom:</strong> Net zero by 2050; 68% reduction by 2030</li>
+                    </ul>
+
+                    <h4>Strengths of the Agreement:</h4>
+                    <ul>
+                        <li><span class="key-term">Universal Participation:</span> Nearly every country in the world</li>
+                        <li><strong>Flexibility:</strong> Countries set own targets based on capabilities</li>
+                        <li><strong>Long-term Vision:</strong> Clear goal of limiting warming</li>
+                        <li><strong>Regular Review:</strong> Built-in mechanism for increasing ambition</li>
+                        <li><strong>Inclusivity:</strong> Recognizes different responsibilities and capabilities</li>
+                        <li><strong>Momentum:</strong> Created global movement and pressure for climate action</li>
+                    </ul>
+
+                    <h4>Weaknesses and Criticisms:</h4>
+                    <ul>
+                        <li><span class="key-term">Voluntary Targets:</span> No penalties for not meeting NDCs</li>
+                        <li><span class="key-term">Insufficient Ambition:</span> Current pledges fall far short of 1.5°C target</li>
+                        <li><strong>Lack of Enforcement:</strong> Relies on peer pressure and transparency rather than binding commitments</li>
+                        <li><strong>Slow Progress:</strong> Emissions still rising in many countries</li>
+                        <li><strong>Finance Shortfall:</strong> Developing countries need much more support</li>
+                        <li><strong>Equity Issues:</strong> Debate over historical responsibility vs. current emissions</li>
+                        <li><strong>Loopholes:</strong> Carbon accounting rules allow some gaming of system</li>
+                    </ul>
+
+                    <h4>United States and the Paris Agreement:</h4>
+                    <div class="timeline">
+                        <div class="timeline-item">
+                            <span class="timeline-year">2015:</span> Obama administration helped negotiate and signed agreement
+                        </div>
+                        <div class="timeline-item">
+                            <span class="timeline-year">2017:</span> Trump announced withdrawal, calling it unfair to US
+                        </div>
+                        <div class="timeline-item">
+                            <span class="timeline-year">2020:</span> US officially withdrew (day after 2020 election)
+                        </div>
+                        <div class="timeline-item">
+                            <span class="timeline-year">2021:</span> Biden rejoined on first day in office
+                        </div>
+                    </div>
+
+                    <h4>Progress and Challenges:</h4>
+                    
+                    <p><strong>Positive Developments:</strong></p>
+                    <ul>
+                        <li>Renewable energy costs dropped dramatically</li>
+                        <li>Many countries accelerating phase-out of coal</li>
+                        <li>Corporate commitments to net zero increasing</li>
+                        <li>Electric vehicle adoption growing rapidly</li>
+                        <li>Climate now central to political discourse</li>
+                    </ul>
+
+                    <p><strong>Continuing Problems:</strong></p>
+                    <ul>
+                        <li>Global emissions still rising (though slowing)</li>
+                        <li>1.5°C target increasingly difficult to achieve</li>
+                        <li>Fossil fuel production still expanding</li>
+                        <li>Climate impacts accelerating faster than expected</li>
+                        <li>Political will insufficient in many countries</li>
+                    </ul>
+
+                    <div class="important-note">
+                        <strong>The Reality:</strong> The Paris Agreement is an important diplomatic achievement and provides a framework for climate action. However, it's only as effective as countries make it. Current trajectories point to 2.5-2.7°C warming - devastating for many regions. The agreement's success depends on countries dramatically increasing ambition in this crucial decade. Scientists emphasize we need to cut global emissions by 45% by 2030 to have a chance at 1.5°C.
+                    </div>
+
+                    <h4>Recent Developments:</h4>
+                    <ul>
+                        <li><strong>COP26 Glasgow (2021):</strong> Emphasized 1.5°C goal; countries agreed to "phase down" coal</li>
+                        <li><strong>COP27 Sharm el-Sheikh (2022):</strong> Created Loss and Damage Fund for vulnerable nations</li>
+                        <li><strong>COP28 Dubai (2023):</strong> First Global Stocktake; agreement to "transition away" from fossil fuels</li>
+                        <li><strong>Increasing Recognition:</strong> Need for faster action and more finance</li>
+                    </ul>
+
+                    <h4>Critical Perspectives:</h4>
+                    <ul>
+                        <li><strong>Climate Activists:</strong> Agreement too weak; need binding targets and faster action</li>
+                        <li><strong>Developing Nations:</strong> Want more finance and support from historical emitters</li>
+                        <li><strong>Some Economists:</strong> Carbon pricing would be more effective</li>
+                        <li><strong>Climate Skeptics:</strong> Costs too high; adaptation better than mitigation</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="collapsible-header">
+                <h3>Americanization: Consequences of a Global Culture</h3>
+                <span class="collapsible-icon">▼</span>
+            </div>
+            <div class="collapsible-content">
+                <div class="collapsible-inner">
+                    <h4>What is Americanization?</h4>
+                    <p><span class="key-term">Americanization</span> (also called <span class="key-term">Westernization</span> or <span class="key-term">Cultural Imperialism</span>) refers to the global spread of American culture, values, and lifestyle, often at the expense of local cultures.</p>
+
+                    <h4>Manifestations of Americanization:</h4>
+                    
+                    <p><strong>1. Food and Consumption:</strong></p>
+                    <ul>
+                        <li><span class="key-term">Fast Food:</span> McDonald's, KFC, Starbucks, Subway in almost every country</li>
+                        <li>American brands dominate (Coca-Cola, Pepsi, etc.)</li>
+                        <li>Supermarkets and shopping malls replace traditional markets</li>
+                        <li>24/7 convenience culture</li>
+                        <li><strong>McDonaldization:</strong> Standardization, efficiency, calculability, predictability</li>
+                    </ul>
+
+                    <p><strong>2. Entertainment and Media:</strong></p>
+                    <ul>
+                        <li><strong>Hollywood:</strong> American films dominate global box office</li>
+                        <li><strong>Television:</strong> US shows popular worldwide (Friends, Game of Thrones, Breaking Bad)</li>
+                        <li><strong>Music:</strong> American pop, rock, hip-hop mainstream everywhere</li>
+                        <li><strong>Streaming:</strong> Netflix, Disney+, YouTube spread American content</li>
+                        <li>American celebrities as global icons</li>
+                    </ul>
+
+                    <p><strong>3. Language:</strong></p>
+                    <ul>
+                        <li>English as global lingua franca (see next section)</li>
+                        <li>American English terminology adopted worldwide</li>
+                        <li>Displacement of local languages and expressions</li>
+                    </ul>
+
+                    <p><strong>4. Technology and Internet:</strong></p>
+                    <ul>
+                        <li>Dominated by American companies (Google, Facebook/Meta, Apple, Amazon, Microsoft)</li>
+                        <li>Silicon Valley as tech capital</li>
+                        <li>American tech culture influences globally</li>
+                    </ul>
+
+                    <p><strong>5. Fashion and Lifestyle:</strong></p>
+                    <ul>
+                        <li>Jeans, t-shirts, sneakers - American casual style</li>
+                        <li>American brands (Nike, Gap, Levi's)</li>
+                        <li>Sports: basketball, American football spreading</li>
+                    </ul>
+
+                    <p><strong>6. Business Culture:</strong></p>
+                    <ul>
+                        <li>American management practices</li>
+                        <li>Corporate culture and work ethic</li>
+                        <li>Entrepreneurship and innovation emphasis</li>
+                    </ul>
+
+                    <p><strong>7. Values and Ideology:</strong></p>
+                    <ul>
+                        <li>Individualism over collectivism</li>
+                        <li>Consumerism and materialism</li>
+                        <li>Democracy and capitalism as ideals</li>
+                        <li>American Dream narrative</li>
+                    </ul>
+
+                    <h4>How Americanization Spreads:</h4>
+                    <ul>
+                        <li><strong>Economic Power:</strong> US largest economy; companies have resources to expand globally</li>
+                        <li><strong>Media Dominance:</strong> Hollywood's global reach; US media companies' influence</li>
+                        <li><strong>Military and Political Power:</strong> US bases worldwide; political influence</li>
+                        <li><strong>Technology:</strong> American tech platforms shape global communication</li>
+                        <li><strong>Soft Power:</strong> Attractiveness of American culture and lifestyle</li>
+                        <li><strong>Globalization:</strong> Interconnectedness facilitates cultural flow</li>
+                    </ul>
+
+                    <h4>Arguments SUPPORTING Americanization:</h4>
+                    <ul>
+                        <li><strong>Modernization:</strong> Brings progress, efficiency, and higher living standards</li>
+                        <li><strong>Freedom and Democracy:</strong> Promotes democratic values and individual rights</li>
+                        <li><strong>Innovation:</strong> American entrepreneurial culture drives technological progress</li>
+                        <li><strong>Consumer Benefits:</strong> Access to quality products and entertainment</li>
+                        <li><strong>Common Culture:</strong> Creates shared global culture facilitating communication</li>
+                        <li><strong>Economic Growth:</strong> American business methods improve economies</li>
+                        <li><strong>Choice:</strong> People choose American products because they prefer them</li>
+                    </ul>
+
+                    <h4>Arguments OPPOSING Americanization:</h4>
+                    
+                    <p><strong>1. Cultural Loss:</strong></p>
+                    <ul>
+                        <li><span class="key-term">Cultural Homogenization:</span> Local traditions, languages, customs disappearing</li>
+                        <li>Loss of cultural diversity makes world less interesting</li>
+                        <li>Traditional knowledge and practices lost</li>
+                        <li>Identity crisis for younger generations</li>
+                    </ul>
+
+                    <p><strong>2. Economic Domination:</strong></p>
+                    <ul>
+                        <li>American corporations dominate markets</li>
+                        <li>Profits flow to US; local businesses struggle</li>
+                        <li>Economic dependency on American companies</li>
+                        <li>Exploitation of workers in developing countries</li>
+                    </ul>
+
+                    <p><strong>3. Negative Values:</strong></p>
+                    <ul>
+                        <li><span class="key-term">Consumerism:</span> Excessive materialism and waste</li>
+                        <li><strong>Individualism:</strong> Erodes community bonds and family structures</li>
+                        <li><strong>Superficiality:</strong> Focus on appearance and entertainment over substance</li>
+                        <li><strong>Inequality:</strong> American model creates winners and losers</li>
+                    </ul>
+
+                    <p><strong>4. Health Problems:</strong></p>
+                    <ul>
+                        <li>Fast food culture contributes to obesity epidemic globally</li>
+                        <li>Sedentary lifestyle associated with American habits</li>
+                        <li>Mental health issues from pressure and individualism</li>
+                    </ul>
+
+                    <p><strong>5. Environmental Impact:</strong></p>
+                    <ul>
+                        <li>American consumption patterns unsustainable</li>
+                        <li>Car culture and suburban sprawl models environmentally damaging</li>
+                        <li>Fast fashion and disposable culture create waste</li>
+                    </ul>
+
+                    <p><strong>6. Resentment and Backlash:</strong></p>
+                    <ul>
+                        <li>Perceived as cultural imperialism</li>
+                        <li>Anti-American sentiment in many regions</li>
+                        <li>Nationalist and religious fundamentalist reactions</li>
+                        <li>Desire to preserve local identity</li>
+                    </ul>
+
+                    <h4>Resistance to Americanization:</h4>
+                    <ul>
+                        <li><strong>Cultural Protectionism:</strong> Laws protecting local culture (e.g., French quotas for French films)</li>
+                        <li><strong>Glocalization:</strong> Adapting global products to local tastes (McDonalds with rice in Asia)</li>
+                        <li><strong>Cultural Revival:</strong> Movements to preserve traditional practices</li>
+                        <li><strong>Alternative Models:</strong> Promoting non-American cultural products</li>
+                        <li><strong>Political Resistance:</strong> Governments limiting American influence</li>
+                    </ul>
+
+                    <h4>Nuanced Perspectives:</h4>
+                    
+                    <p><strong>Hybridization:</strong></p>
+                    <ul>
+                        <li>Rather than replacement, cultures often blend American and local elements</li>
+                        <li>Creates new hybrid forms</li>
+                        <li>Example: K-pop combines American and Korean influences</li>
+                        <li>Local cultures adapt and reinterpret American culture</li>
+                    </ul>
+
+                    <p><strong>Active Consumers:</strong></p>
+                    <ul>
+                        <li>People not passive recipients - they choose what to adopt</li>
+                        <li>Can reject, modify, or selectively accept elements</li>
+                        <li>Different meanings in different contexts</li>
+                    </ul>
+
+                    <p><strong>Reverse Flow:</strong></p>
+                    <ul>
+                        <li>Not just one-way: other cultures also influence America</li>
+                        <li>Sushi, yoga, K-pop, Bollywood popular in US</li>
+                        <li>Increasing cultural exchange rather than pure domination</li>
+                    </ul>
+
+                    <div class="important-note">
+                        <strong>Balanced View:</strong> Americanization is a real phenomenon with significant impacts, both positive and negative. However, it's more complex than simple cultural imperialism. People worldwide exercise agency in choosing which aspects to adopt, local cultures show resilience, and cultural exchange is increasingly multidirectional. The key questions are: How can we preserve cultural diversity while embracing beneficial aspects of globalization? How do we ensure cultural exchange is more equitable and reciprocal?
+                    </div>
+
+                    <h4>Case Studies:</h4>
+                    <ul>
+                        <li><strong>France:</strong> Active resistance through cultural protectionism; quotas for French content</li>
+                        <li><strong>Japan:</strong> Adopted American elements but maintained strong cultural identity</li>
+                        <li><strong>Islamic World:</strong> Tension between Western values and Islamic traditions</li>
+                        <li><strong>China:</strong> Selective adoption while maintaining authoritarian political system</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="collapsible-header">
+                <h3>English as a World Language</h3>
+                <span class="collapsible-icon">▼</span>
+            </div>
+            <div class="collapsible-content">
+                <div class="collapsible-inner">
+                    <h4>Scale and Scope:</h4>
+                    <ul>
+                        <li><span class="key-term">Native Speakers:</span> ~400 million (3rd most spoken natively after Mandarin and Spanish)</li>
+                        <li><span class="key-term">Total Speakers:</span> 1.5+ billion people can speak English</li>
+                        <li><span class="key-term">Official Language:</span> In 67 countries</li>
+                        <li><strong>Second Language:</strong> Most common second language worldwide</li>
+                        <li><strong>Internet:</strong> Over 50% of online content in English</li>
+                    </ul>
+
+                    <h4>How English Became a Global Language:</h4>
+                    
+                    <p><strong>1. British Colonialism (18th-20th centuries):</strong></p>
+                    <ul>
+                        <li>British Empire at its peak controlled 25% of world's landmass</li>
+                        <li>English imposed as administrative language in colonies</li>
+                        <li>Spread to North America, Australia, Africa, Asia</li>
+                        <li>Left lasting legacy even after independence</li>
+                    </ul>
+
+                    <p><strong>2. American Power (20th-21st centuries):</strong></p>
+                    <ul>
+                        <li>US emerged as global superpower after WWII</li>
+                        <li>Economic dominance and international trade</li>
+                        <li>Military presence worldwide</li>
+                        <li>Cultural influence through Hollywood and media</li>
+                        <li>Technology sector dominated by US companies</li>
+                    </ul>
+
+                    <p><strong>3. Practical Factors:</strong></p>
+                    <ul>
+                        <li><strong>Simplicity:</strong> No gendered nouns, relatively simple grammar</li>
+                        <li><strong>Flexibility:</strong> Easily absorbs words from other languages</li>
+                        <li><strong>Already Widespread:</strong> Network effect - more speakers make it more valuable to learn</li>
+                    </ul>
+
+                    <h4>Domains Where English Dominates:</h4>
+                    
+                    <p><strong>1. International Business:</strong></p>
+                    <ul>
+                        <li>Language of international trade and commerce</li>
+                        <li>Multinational corporations use English as corporate language</li>
+                        <li>Financial markets operate in English</li>
+                        <li>Business English as specialized skill</li>
+                    </ul>
+
+                    <p><strong>2. Science and Academia:</strong></p>
+                    <ul>
+                        <li>Over 80% of scientific papers published in English</li>
+                        <li>International conferences conducted in English</li>
+                        <li>Pressure on non-native speakers to publish in English</li>
+                        <li>English proficiency required for academic career advancement</li>
+                    </ul>
+
+                    <p><strong>3. Technology and Internet:</strong></p>
+                    <ul>
+                        <li>Programming languages based on English</li>
+                        <li>Tech terminology predominantly English</li>
+                        <li>Silicon Valley's influence</li>
+                        <li>Most popular websites and apps in English</li>
+                    </ul>
+
+                    <p><strong>4. Aviation and Maritime:</strong></p>
+                    <ul>
+                        <li>International pilots required to speak English</li>
+                        <li>Air traffic control uses English globally</li>
+                        <li>Shipping and maritime communication</li>
+                    </ul>
+
+                    <p><strong>5. Diplomacy and International Organizations:</strong></p>
+                    <ul>
+                        <li>One of official languages of UN (with French, Spanish, Russian, Arabic, Chinese)</li>
+                        <li>Working language of many international organizations</li>
+                        <li>International treaties often written in English</li>
+                    </ul>
+
+                    <p><strong>6. Entertainment and Media:</strong></p>
+                    <ul>
+                        <li>Hollywood films distributed globally</li>
+                        <li>Popular music predominantly in English</li>
+                        <li>News agencies (BBC, CNN) broadcast in English</li>
+                    </ul>
+
+                    <p><strong>7. Education:</strong></p>
+                    <ul>
+                        <li>Taught as second language in most countries</li>
+                        <li>Many universities offer programs in English to attract international students</li>
+                        <li>English proficiency exams (TOEFL, IELTS) as gatekeepers</li>
+                    </ul>
+
+                    <h4>Benefits of English as Global Language:</h4>
+                    
+                    <p><strong>1. Communication:</strong></p>
+                    <ul>
+                        <li><span class="key-term">Lingua Franca:</span> Common language enabling global communication</li>
+                        <li>Facilitates international cooperation</li>
+                        <li>Reduces language barriers in business and diplomacy</li>
+                        <li>Makes travel easier</li>
+                    </ul>
+
+                    <p><strong>2. Knowledge Access:</strong></p>
+                    <ul>
+                        <li>Access to vast resources: scientific papers, books, websites</li>
+                        <li>Educational opportunities at top universities</li>
+                        <li>Participation in global conversations and debates</li>
+                    </ul>
+
+                    <p><strong>3. Economic Opportunities:</strong></p>
+                    <ul>
+                        <li>Better job prospects for English speakers</li>
+                        <li>Access to international markets</li>
+                        <li>Career advancement in multinational companies</li>
+                    </ul>
+
+                    <p><strong>4. Efficiency:</strong></p>
+                    <ul>
+                        <li>One common language more efficient than translation</li>
+                        <li>Reduces costs in international business</li>
+                    </ul>
+
+                    <h4>Disadvantages and Criticisms:</h4>
+                    
+                    <p><strong>1. Language Inequality:</strong></p>
+                    <ul>
+                        <li><span class="key-term">Native Speaker Advantage:</span> Unfair advantage in international settings</li>
+                        <li>Non-native speakers must invest time and money learning English</li>
+                        <li>Creates linguistic hierarchy</li>
+                        <li>Native speakers earn more for same work (teaching English)</li>
+                    </ul>
+
+                    <p><strong>2. Language Death:</strong></p>
+                    <ul>
+                        <li>Dominance of English threatens other languages</li>
+                        <li>One language dies every 14 days (many small languages)</li>
+                        <li>Young people choosing English over native languages</li>
+                        <li>Loss of linguistic diversity</li>
+                    </ul>
+
+                    <p><strong>3. Cultural Loss:</strong></p>
+                    <ul>
+                        <li>Language carries culture, history, worldviews</li>
+                        <li>Loss of traditional knowledge encoded in languages</li>
+                        <li>Homogenization of global culture</li>
+                        <li>Difficulty expressing certain concepts across languages</li>
+                    </ul>
+
+                    <p><strong>4. Linguistic Imperialism:</strong></p>
+                    <ul>
+                        <li>English spreads due to power, not intrinsic superiority</li>
+                        <li>Continues colonial legacy</li>
+                        <li>English speakers control discourse and narratives</li>
+                        <li>Cultural values embedded in language</li>
+                    </ul>
+
+                    <p><strong>5. Exclusion:</strong></p>
+                    <ul>
+                        <li>Those without English proficiency excluded from opportunities</li>
+                        <li>Reinforces global inequalities</li>
+                        <li>Developing world disadvantaged</li>
+                        <li>Academic research in other languages marginalized</li>
+                    </ul>
+
+                    <p><strong>6. Cognitive and Identity Issues:</strong></p>
+                    <ul>
+                        <li>Thinking in second language can be limiting</li>
+                        <li>Identity connected to mother tongue</li>
+                        <li>Pressure to abandon native languages</li>
+                    </ul>
+
+                    <h4>Varieties of English:</h4>
+                    <p>English is not monolithic - many varieties exist:</p>
+                    <ul>
+                        <li><strong>British English vs. American English:</strong> Spelling, vocabulary, pronunciation differences</li>
+                        <li><span class="key-term">World Englishes:</span> Indian English, Nigerian English, Singaporean English, etc.</li>
+                        <li><span class="key-term">Lingua Franca English:</span> Simplified version used between non-native speakers</li>
+                        <li><strong>Debates:</strong> Which version is "correct"? Should native speaker norms be standard?</li>
+                    </ul>
+
+                    <h4>Future of English:</h4>
+                    
+                    <p><strong>Will English remain dominant?</strong></p>
+                    <ul>
+                        <li><strong>Factors for continued dominance:</strong>
+                            <ul>
+                                <li>Entrenched position in key domains</li>
+                                <li>Network effects - already valuable because widespread</li>
+                                <li>No clear alternative emerging</li>
+                                <li>Continued US influence</li>
+                            </ul>
+                        </li>
+                        <li><strong>Potential challenges:</strong>
+                            <ul>
+                                <li>Rise of China and Mandarin</li>
+                                <li>Translation technology improving</li>
+                                <li>Nationalist movements promoting local languages</li>
+                                <li>Relative decline of US power</li>
+                            </ul>
+                        </li>
+                    </ul>
+
+                    <p><strong>Alternative Scenarios:</strong></p>
+                    <ul>
+                        <li><strong>Continued Dominance:</strong> English remains sole global lingua franca</li>
+                        <li><strong>Multilingual World:</strong> Multiple languages share roles (English, Mandarin, Spanish, Arabic)</li>
+                        <li><strong>Technology Solution:</strong> Real-time translation eliminates need for common language</li>
+                    </ul>
+
+                    <div class="important-note">
+                        <strong>Balanced Perspective:</strong> English as a global language brings both benefits (communication, opportunity, knowledge access) and costs (inequality, language death, cultural homogenization). The key is recognizing this complexity rather than seeing it as purely positive or negative. Possible solutions include: supporting multilingualism, protecting endangered languages, accepting different varieties of English, and ensuring more equitable language education access.
+                    </div>
+
+                    <h4>Interesting Facts:</h4>
+                    <ul>
+                        <li>English has largest vocabulary of any language (over 170,000 words in use)</li>
+                        <li>Shakespeare contributed over 1,700 words to English</li>
+                        <li>English is official language of the sky (aviation)</li>
+                        <li>More non-native than native English speakers globally</li>
+                        <li>"E" is the most common letter in English</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+      <!-- Section 21: Technology and Media -->
+        <div class="section" id="technology-media">
+            <h2>21. Technology and Media</h2>
+
+            <div class="collapsible-header">
+                <h3>Genetic Engineering</h3>
+                <span class="collapsible-icon">▼</span>
+            </div>
+            <div class="collapsible-content">
+                <div class="collapsible-inner">
+                    <h4>What is Genetic Engineering?</h4>
+                    <p><span class="key-term">Genetic engineering</span> (also called <span class="key-term">genetic modification</span> or <span class="key-term">biotechnology</span>) is the direct manipulation of an organism's DNA to alter its characteristics. Scientists can add, remove, or change genetic material to achieve specific traits.</p>
+
+                    <h4>Key Technologies:</h4>
+                    <ul>
+                        <li><span class="key-term">CRISPR-Cas9:</span> Revolutionary gene-editing tool - acts like "molecular scissors"
+                            <ul>
+                                <li>Precise, affordable, relatively easy to use</li>
+                                <li>Can cut DNA at specific locations</li>
+                                <li>Discovered 2012, transformed field</li>
+                            </ul>
+                        </li>
+                        <li><strong>Gene Therapy:</strong> Treating diseases by inserting, altering, or removing genes</li>
+                        <li><strong>Cloning:</strong> Creating genetic copies (Dolly the sheep, 1996)</li>
+                        <li><strong>Recombinant DNA:</strong> Combining DNA from different sources</li>
+                    </ul>
+
+                    <h4>Applications and Uses:</h4>
+                    
+                    <p><strong>1. Medicine and Healthcare:</strong></p>
+                    <ul>
+                        <li><span class="key-term">Gene Therapy:</span> Treating genetic diseases
+                            <ul>
+                                <li>Sickle cell anemia, cystic fibrosis, certain cancers</li>
+                                <li>Some treatments already approved</li>
+                                <li>Potential to cure previously incurable diseases</li>
+                            </ul>
+                        </li>
+                        <li><strong>Pharmaceuticals:</strong> Producing drugs like insulin using genetically modified bacteria</li>
+                        <li><strong>Vaccines:</strong> Developing new vaccines (COVID-19 mRNA vaccines based on genetic technology)</li>
+                        <li><strong>Diagnostics:</strong> Genetic testing for disease risk</li>
+                        <li><strong>Personalized Medicine:</strong> Treatments tailored to individual genetic profile</li>
+                    </ul>
+
+                    <p><strong>2. Agriculture:</strong></p>
+                    <ul>
+                        <li><span class="key-term">GMO Crops (Genetically Modified Organisms):</span>
+                            <ul>
+                                <li>Pest-resistant crops (Bt corn)</li>
+                                <li>Herbicide-resistant crops (Roundup Ready soybeans)</li>
+                                <li>Drought-tolerant varieties</li>
+                                <li>Enhanced nutrition (Golden Rice with Vitamin A)</li>
+                                <li>Currently: 190 million hectares globally planted with GMOs</li>
+                            </ul>
+                        </li>
+                        <li><strong>Livestock:</strong> Genetically modified animals for meat production, disease resistance</li>
+                        <li><strong>Goals:</strong> Increase yields, reduce pesticide use, address hunger</li>
+                    </ul>
+
+                    <p><strong>3. Research:</strong></p>
+                    <ul>
+                        <li>Understanding gene function and disease mechanisms</li>
+                        <li>Model organisms for studying human biology</li>
+                        <li>Drug development and testing</li>
+                    </ul>
+
+                    <p><strong>4. Industrial Applications:</strong></p>
+                    <ul>
+                        <li>Biofuels produced by modified organisms</li>
+                        <li>Enzymes for manufacturing</li>
+                        <li>Biodegradable plastics</li>
+                    </ul>
+
+                    <p><strong>5. Conservation:</strong></p>
+                    <ul>
+                        <li>Potentially revive extinct species ("de-extinction")</li>
+                        <li>Protect endangered species from diseases</li>
+                        <li>Controversial and highly speculative</li>
+                    </ul>
+
+                    <h4>Controversial Applications:</h4>
+                    
+                    <p><strong>1. Human Genetic Modification:</strong></p>
+                    <ul>
+                        <li><span class="key-term">"Designer Babies":</span> Selecting or modifying traits in embryos
+                            <ul>
+                                <li>Could eliminate genetic diseases</li>
+                                <li>But also choose for intelligence, appearance, etc.</li>
+                                <li>Creates ethical minefield</li>
+                            </ul>
+                        </li>
+                        <li><strong>He Jiankui Case (2018):</strong>
+                            <ul>
+                                <li>Chinese scientist edited genes of twin girls to resist HIV</li>
+                                <li>Worldwide condemnation - violated ethical norms</li>
+                                <li>He imprisoned; experiments deemed dangerous and unethical</li>
+                                <li>Demonstrated both capability and risks</li>
+                            </ul>
+                        </li>
+                        <li><span class="key-term">Germline Editing:</span> Changes passed to future generations (vs. somatic editing affecting only individual)</li>
+                    </ul>
+
+                    <p><strong>2. "Playing God":</strong></p>
+                    <ul>
+                        <li>Religious and philosophical objections to modifying life</li>
+                        <li>Questions about limits of human intervention in nature</li>
+                    </ul>
+
+                    <h4>Benefits and Arguments FOR Genetic Engineering:</h4>
+                    
+                    <p><strong>1. Medical Benefits:</strong></p>
+                    <ul>
+                        <li><strong>Cure Diseases:</strong> Potential to eliminate genetic disorders</li>
+                        <li><strong>Cancer Treatment:</strong> Personalized therapies targeting individual tumors</li>
+                        <li><strong>Save Lives:</strong> Treatments for previously incurable conditions</li>
+                        <li><strong>Reduce Suffering:</strong> Prevent inherited diseases in future generations</li>
+                    </ul>
+
+                    <p><strong>2. Agricultural Benefits:</strong></p>
+                    <ul>
+                        <li><strong>Food Security:</strong> Higher yields feed growing population</li>
+                        <li><strong>Reduced Pesticides:</strong> Pest-resistant crops need fewer chemicals</li>
+                        <li><strong>Climate Adaptation:</strong> Drought and heat resistant varieties</li>
+                        <li><strong>Nutrition:</strong> Biofortified crops combat malnutrition</li>
+                    </ul>
+
+                    <p><strong>3. Environmental Benefits:</strong></p>
+                    <ul>
+                        <li>Less land needed for same food production</li>
+                        <li>Reduced chemical use</li>
+                        <li>Potential to reduce greenhouse gas emissions</li>
+                    </ul>
+
+                    <p><strong>4. Scientific Progress:</strong></p>
+                    <ul>
+                        <li>Better understanding of biology</li>
+                        <li>Foundation for future innovations</li>
+                    </ul>
+
+                    <h4>Risks and Arguments AGAINST Genetic Engineering:</h4>
+                    
+                    <p><strong>1. Safety Concerns:</strong></p>
+                    <ul>
+                        <li><span class="key-term">Unintended Consequences:</span> Genetic changes could have unforeseen effects
+                            <ul>
+                                <li>Off-target effects (changing wrong genes)</li>
+                                <li>Long-term consequences unknown</li>
+                                <li>Germline editing affects all future generations - irreversible</li>
+                            </ul>
+                        </li>
+                        <li><strong>Health Risks:</strong> GMO foods - are they safe to eat? (Most scientists say yes; debate continues)</li>
+                    </ul>
+
+                    <p><strong>2. Environmental Risks:</strong></p>
+                    <ul>
+                        <li><strong>Biodiversity Loss:</strong> GMO crops could crossbreed with wild plants</li>
+                        <li><strong>Superweeds/Superpests:</strong> Resistance develops to modifications</li>
+                        <li><strong>Ecosystem Disruption:</strong> Unforeseen impacts on food chains</li>
+                        <li><strong>Monoculture:</strong> Few GMO varieties replace diverse crops</li>
+                    </ul>
+
+                    <p><strong>3. Ethical Concerns:</strong></p>
+                    <ul>
+                        <li><span class="key-term">"Playing God":</span> Moral objections to altering life</li>
+                        <li><span class="key-term">Human Dignity:</span> Treating humans as products to be designed</li>
+                        <li><strong>Consent:</strong> Unborn children can't consent to genetic modification</li>
+                        <li><strong>Animal Welfare:</strong> Genetic modification of animals may cause suffering</li>
+                        <li><strong>Where to Draw Line?</strong> Treating disease OK, but what about enhancement?</li>
+                    </ul>
+
+                    <p><strong>4. Social and Economic Issues:</strong></p>
+                    <ul>
+                        <li><span class="key-term">Inequality:</span>
+                            <ul>
+                                <li>Only wealthy can afford genetic enhancements</li>
+                                <li>Creates genetic "haves" and "have-nots"</li>
+                                <li>Could entrench existing inequalities biologically</li>
+                            </ul>
+                        </li>
+                        <li><strong>Corporate Control:</strong>
+                            <ul>
+                                <li>Few companies (Monsanto/Bayer) dominate GMO seeds</li>
+                                <li>Patents on life forms</li>
+                                <li>Farmers dependent on corporations for seeds</li>
+                                <li>Profit motive driving genetic modification</li>
+                            </ul>
+                        </li>
+                        <li><strong>Eugenics Concerns:</strong> Could lead to discrimination based on genetics</li>
+                    </ul>
+
+                    <p><strong>5. Regulation and Oversight:</strong></p>
+                    <ul>
+                        <li>Technology advancing faster than regulation</li>
+                        <li>Different standards across countries</li>
+                        <li>Difficult to control misuse</li>
+                        <li>Need for international agreements</li>
+                    </ul>
+
+                    <p><strong>6. Cultural and Religious Objections:</strong></p>
+                    <ul>
+                        <li>Many religions oppose genetic modification</li>
+                        <li>Violates natural order</li>
+                        <li>Concerns about "purity" of creation</li>
+                    </ul>
+
+                    <h4>Regulation and Governance:</h4>
+                    <ul>
+                        <li><strong>Varies by Country:</strong>
+                            <ul>
+                                <li>US: Relatively permissive for GMO crops; stricter for human modification</li>
+                                <li>EU: Strict regulations on GMOs; precautionary principle</li>
+                                <li>China: Mixed - advanced research but crackdown after He Jiankui</li>
+                            </ul>
+                        </li>
+                        <li><strong>International Agreements:</strong> Need for global standards but difficult to achieve</li>
+                        <li><strong>Ethical Review Boards:</strong> Oversee research involving humans</li>
+                    </ul>
+
+                    <div class="important-note">
+                        <strong>The Dilemma:</strong> Genetic engineering offers tremendous potential to cure diseases, feed the world, and improve lives. However, it also poses serious risks and raises profound ethical questions. How do we benefit from the technology while managing risks and ensuring equitable access? Where do we draw ethical lines? These questions have no easy answers and require ongoing societal dialogue.
+                    </div>
+
+                    <h4>Key Debates:</h4>
+                    <ul>
+                        <li><strong>Therapy vs. Enhancement:</strong> Treating disease acceptable, but improving normal traits?</li>
+                        <li><strong>Somatic vs. Germline:</strong> Editing individual OK, but passing changes to offspring?</li>
+                        <li><strong>Precautionary Principle vs. Progress:</strong> Wait for certainty or move forward with caution?</li>
+                        <li><strong>Individual Choice vs. Social Impact:</strong> Personal freedom vs. collective consequences?</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="collapsible-header">
+                <h3>Big Data</h3>
+                <span class="collapsible-icon">▼</span>
+            </div>
+            <div class="collapsible-content">
+                <div class="collapsible-inner">
+                    <h4>What is Big Data?</h4>
+                    <p><span class="key-term">Big Data</span> refers to extremely large datasets that are analyzed computationally to reveal patterns, trends, and associations. It's characterized by the "5 Vs":</p>
+                    <ul>
+                        <li><span class="key-term">Volume:</span> Massive amounts of data (petabytes, exabytes)</li>
+                        <li><span class="key-term">Velocity:</span> Generated at high speed in real-time</li>
+                        <li><span class="key-term">Variety:</span> Different types - text, images, video, sensor data</li>
+                        <li><span class="key-term">Veracity:</span> Variable quality and accuracy</li>
+                        <li><span class="key-term">Value:</span> Must be analyzed to extract insights</li>
+                    </ul>
+
+                    <h4>Sources of Big Data:</h4>
+                    <ul>
+                        <li><strong>Social Media:</strong> Facebook, Twitter, Instagram, TikTok - posts, likes, shares</li>
+                        <li><strong>Internet Activity:</strong> Web searches, browsing history, clicks</li>
+                        <li><strong>Mobile Devices:</strong> Location data, app usage, communications</li>
+                        <li><strong>Internet of Things (IoT):</strong> Smart devices, sensors, wearables</li>
+                        <li><strong>Transactions:</strong> Credit card purchases, online shopping</li>
+                        <li><strong>Public Records:</strong> Government databases, health records</li>
+                        <li><strong>Business Operations:</strong> Customer data, supply chains, employee information</li>
+                        <li><strong>Scientific Research:</strong> Genome sequences, climate data, astronomy</li>
+                    </ul>
+
+                    <h4>How Big Data is Used - Applications:</h4>
+                    
+                    <p><strong>1. Business and Marketing:</strong></p>
+                    <ul>
+                        <li><span class="key-term">Targeted Advertising:</span> Ads based on browsing history, demographics, interests
+                            <ul>
+                                <li>Google, Facebook know your preferences better than you do</li>
+                                <li>Real-time bidding for ad space based on user profile</li>
+                            </ul>
+                        </li>
+                        <li><strong>Customer Analytics:</strong> Understanding behavior, preferences, predicting purchases</li>
+                        <li><strong>Recommendation Systems:</strong> Netflix, Amazon, Spotify suggest content</li>
+                        <li><strong>Pricing:</strong> Dynamic pricing based on demand (Uber surge pricing)</li>
+                        <li><strong>Supply Chain:</strong> Optimize inventory, logistics, delivery</li>
+                    </ul>
+
+                    <p><strong>2. Healthcare:</strong></p>
+                    <ul>
+                        <li><strong>Disease Prevention:</strong> Identifying risk factors, early detection</li>
+                        <li><strong>Personalized Medicine:</strong> Treatments tailored to individual genetic profiles</li>
+                        <li><strong>Drug Development:</strong> Analyzing molecular data to develop new medicines</li>
+                        <li><strong>Epidemic Tracking:</strong> Monitoring disease spread (COVID-19 tracking)</li>
+                        <li><strong>Wearables:</strong> Fitbit, Apple Watch collect health data for analysis</li>
+                    </ul>
+
+                    <p><strong>3. Government and Public Services:</strong></p>
+                    <ul>
+                        <li><strong>Public Safety:</strong> Predictive policing, crime pattern analysis</li>
+                        <li><strong>Urban Planning:</strong> Traffic management, infrastructure optimization</li>
+                        <li><strong>Emergency Response:</strong> Disaster prediction and management</li>
+                        <li><strong>Tax Collection:</strong> Detecting fraud and evasion</li>
+                    </ul>
+
+                    <p><strong>4. Science and Research:</strong></p>
+                    <ul>
+                        <li>Climate modeling and weather prediction</li>
+                        <li>Genomics and personalized medicine</li>
+                        <li>Particle physics and astronomy</li>
+                        <li>Social science research on human behavior</li>
+                    </ul>
+
+                    <p><strong>5. Finance:</strong></p>
+                    <ul>
+                        <li><strong>Fraud Detection:</strong> Identifying suspicious transactions</li>
+                        <li><strong>Risk Assessment:</strong> Credit scores, loan approval</li>
+                        <li><strong>Algorithmic Trading:</strong> High-frequency trading based on data analysis</li>
+                    </ul>
+
+                    <h4>Technologies Enabling Big Data:</h4>
+                    <ul>
+                        <li><span class="key-term">Cloud Computing:</span> Massive storage and processing power</li>
+                        <li><span class="key-term">Machine Learning/AI:</span> Algorithms find patterns humans can't detect</li>
+                        <li><strong>Data Analytics Tools:</strong> Hadoop, Spark, SQL databases</li>
+                        <li><strong>Increased Computing Power:</strong> Faster processors enable analysis</li>
+                    </ul>
+
+                    <h4>Benefits of Big Data:</h4>
+                    
+                    <p><strong>1. Better Decision Making:</strong></p>
+                    <ul>
+                        <li>Evidence-based rather than intuition</li>
+                        <li>Businesses optimize operations</li>
+                        <li>Governments improve public services</li>
+                    </ul>
+
+                    <p><strong>2. Personalization:</strong></p>
+                    <ul>
+                        <li>Services tailored to individual needs</li>
+                        <li>Better user experience</li>
+                        <li>More relevant content and recommendations</li>
+                    </ul>
+
+                    <p><strong>3. Innovation:</strong></p>
+                    <ul>
+                        <li>New products and services based on insights</li>
+                        <li>Scientific breakthroughs</li>
+                        <li>Medical advances</li>
+                    </ul>
+
+                    <p><strong>4. Efficiency:</strong></p>
+                    <ul>
+                        <li>Optimize resources and reduce waste</li>
+                        <li>Faster problem-solving</li>
+                        <li>Cost savings for businesses</li>
+                    </ul>
+
+                    <p><strong>5. Public Good:</strong></p>
+                    <ul>
+                        <li>Disease tracking and prevention</li>
+                        <li>Crime reduction</li>
+                        <li>Disaster response</li>
+                        <li>Climate change research</li>
+                    </ul>
+
+                    <h4>Concerns and Risks:</h4>
+                    
+                    <p><strong>1. Privacy Invasion:</strong></p>
+                    <ul>
+                        <li><span class="key-term">Surveillance:</span> Constant tracking of behavior, location, activities
+                            <ul>
+                                <li>Companies know intimate details about our lives</li>
+                                <li>Government surveillance capabilities</li>
+                                <li>"If you're not paying, you're the product"</li>
+                            </ul>
+                        </li>
+                        <li><strong>Data Breaches:</strong> Personal information stolen and leaked (Equifax, Facebook breaches)</li>
+                        <li><strong>Loss of Anonymity:</strong> Easy to identify individuals from "anonymized" data</li>
+                        <li><strong>Informed Consent:</strong> People don't know what data is collected or how it's used</li>
+                    </ul>
+
+                    <p><strong>2. Discrimination and Bias:</strong></p>
+                    <ul>
+                        <li><span class="key-term">Algorithmic Bias:</span> AI systems reflect and amplify existing biases
+                            <ul>
+                                <li>Facial recognition less accurate for people of color</li>
+                                <li>Credit scores discriminating against minorities</li>
+                                <li>Job algorithms screening out women</li>
+                                <li>Predictive policing targeting minority neighborhoods</li>
+                            </ul>
+                        </li>
+                        <li><strong>Feedback Loops:</strong> Biased data creates biased outcomes, which generates more biased data</li>
+                        <li><strong>Lack of Transparency:</strong> "Black box" algorithms - can't understand how decisions are made</li>
+                    </ul>
+
+                    <p><strong>3. Manipulation:</strong></p>
+                    <ul>
+                        <li><strong>Microtargeting:</strong> Political campaigns use data to manipulate voters</li>
+                        <li><strong>Cambridge Analytica Scandal:</strong> Facebook data used to influence elections</li>
+                        <li><strong>Filter Bubbles:</strong> Algorithms show content confirming existing beliefs</li>
+                        <li><strong>Behavioral Manipulation:</strong> Social media designed to be addictive using data</li>
+                    </ul>
+
+                    <p><strong>4. Security Risks:</strong></p>
+                    <ul>
+                        <li><strong>Hacking:</strong> Massive databases are valuable targets</li>
+                        <li><strong>Data Breaches:</strong> Personal information exposed</li>
+                        <li><strong>Identity Theft:</strong> Stolen data used for fraud</li>
+                    </ul>
+
+                    <p><strong>5. Power Concentration:</strong></p>
+                    <ul>
+                        <li>Few tech giants (Google, Facebook, Amazon) control massive amounts of data</li>
+                        <li>Competitive advantage - new companies can't compete</li>
+                        <li>Governments accumulating surveillance data</li>
+                    </ul>
+
+                    <p><strong>6. Social Control:</strong></p>
+                    <ul>
+                        <li><span class="key-term">Social Credit System:</span> China uses big data to rate citizens
+                            <ul>
+                                <li>Tracks online behavior, purchases, social connections</li>
+                                <li>Low scores restrict travel, employment, education</li>
+                                <li>Dystopian social control</li>
+                            </ul>
+                        </li>
+                        <li><strong>Chilling Effect:</strong> People self-censor knowing they're monitored</li>
+                    </ul>
+
+                    <p><strong>7. Job Displacement:</strong></p>
+                    <ul>
+                        <li>Automation based on data analysis eliminates jobs</li>
+                        <li>AI systems replacing human decision-makers</li>
+                    </ul>
+
+                    <h4>Ethical Questions:</h4>
+                    <ul>
+                        <li>Who owns personal data? Individuals or companies that collect it?</li>
+                        <li>Right to privacy vs. security and innovation?</li>
+                        <li>Should people be able to delete all their data?</li>
+                        <li>How much surveillance is acceptable?</li>
+                        <li>Who's responsible when algorithms make biased decisions?</li>
+                        <li>Should AI be explainable and transparent?</li>
+                    </ul>
+
+                    <h4>Regulation and Protection:</h4>
+                    
+                    <p><strong>1. GDPR (General Data Protection Regulation):</strong></p>
+                    <ul>
+                        <li>European Union law (2018)</li>
+                        <li>Strongest data protection in the world</li>
+                        <li><strong>Key Rights:</strong>
+                            <ul>
+                                <li>Right to know what data is collected</li>
+                                <li>Right to access your data</li>
+                                <li>Right to delete data ("right to be forgotten")</li>
+                                <li>Right to data portability</li>
+                                <li>Consent must be explicit</li>
+                            </ul>
+                        </li>
+                        <li>Heavy fines for violations (up to 4% of global revenue)</li>
+                        <li>Applies to any company serving EU residents</li>
+                    </ul>
+
+                    <p><strong>2. Other Regulations:</strong></p>
+                    <ul>
+                        <li><strong>California Consumer Privacy Act (CCPA):</strong> Similar to GDPR for California</li>
+                        <li><strong>Sectoral Laws:</strong> HIPAA (healthcare), FERPA (education) in US</li>
+                        <li><strong>International Efforts:</strong> Varying levels of protection globally</li>
+                    </ul>
+
+                    <p><strong>3. Self-Protection Measures:</strong></p>
+                    <ul>
+                        <li>Use privacy-focused browsers and search engines</li>
+                        <li>VPNs to hide location</li>
+                        <li>Ad blockers</li>
+                        <li>Read privacy policies (though almost nobody does)</li>
+                        <li>Limit social media sharing</li>
+                        <li>Use strong passwords and two-factor authentication</li>
+                    </ul>
+
+                    <div class="important-note">
+                        <strong>The Trade-off:</strong> Big Data offers tremendous benefits - better services, medical breakthroughs, efficiency, innovation. But it comes with serious privacy and security costs. The challenge is finding the right balance between utilizing data for beneficial purposes while protecting individual rights and preventing misuse. This requires robust regulation, ethical corporate behavior, and informed citizens.
+                    </div>
+
+                    <h4>Future Trends:</h4>
+                    <ul>
+                        <li>Even more data generated (IoT, 5G)</li>
+                        <li>More sophisticated AI analysis</li>
+                        <li>Increased regulation globally</li>
+                        <li>Privacy-preserving technologies (differential privacy, federated learning)</li>
+                        <li>Continued tension between innovation and privacy</li>
+                    </ul>
+                </div>
+            </div>
+
+          <div class="collapsible-header">
+                <h3>Social Media</h3>
+                <span class="collapsible-icon">▼</span>
+            </div>
+            <div class="collapsible-content">
+                <div class="collapsible-inner">
+                    <h4>Overview and Scale:</h4>
+                    <ul>
+                        <li>Over 4.9 billion social media users globally (60%+ of world population)</li>
+                        <li>Average person spends 2.5 hours daily on social media</li>
+                        <li><strong>Major Platforms:</strong>
+                            <ul>
+                                <li>Facebook/Meta: 3 billion users</li>
+                                <li>YouTube: 2.5 billion users</li>
+                                <li>Instagram: 2 billion users</li>
+                                <li>TikTok: 1.5 billion users (fastest growing)</li>
+                                <li>Twitter/X, Snapchat, LinkedIn, Pinterest, others</li>
+                            </ul>
+                        </li>
+                    </ul>
+
+                    <h4>Benefits and Positive Aspects:</h4>
+                    
+                    <p><strong>1. Connection and Communication:</strong></p>
+                    <ul>
+                        <li><strong>Stay in Touch:</strong> Connect with friends and family across distances</li>
+                        <li><strong>Maintain Relationships:</strong> Keep up with people's lives</li>
+                        <li><strong>Reconnect:</strong> Find old friends, classmates</li>
+                        <li><strong>Long-distance Relationships:</strong> Makes separation easier</li>
+                    </ul>
+
+                    <p><strong>2. Information and News:</strong></p>
+                    <ul>
+                        <li>Quick access to breaking news</li>
+                        <li>Diverse perspectives and sources</li>
+                        <li>Citizen journalism - events covered in real-time</li>
+                        <li>Educational content widely available</li>
+                    </ul>
+
+                    <p><strong>3. Self-Expression and Creativity:</strong></p>
+                    <ul>
+                        <li>Platform to share ideas, art, opinions</li>
+                        <li>Find audience for creative work</li>
+                        <li>Build personal brand</li>
+                        <li>Democratic voice - anyone can be heard</li>
+                    </ul>
+
+                    <p><strong>4. Community and Support:</strong></p>
+                    <ul>
+                        <li><strong>Support Groups:</strong> People with similar challenges find each other</li>
+                        <li><strong>Interest Communities:</strong> Connect with people sharing hobbies</li>
+                        <li><strong>Activism:</strong> Organize social movements (#MeToo, #BlackLivesMatter)</li>
+                        <li><strong>Belonging:</strong> Especially important for marginalized groups</li>
+                    </ul>
+
+                    <p><strong>5. Business and Career:</strong></p>
+                    <ul>
+                        <li><strong>Marketing:</strong> Reach customers directly</li>
+                        <li><strong>Networking:</strong> LinkedIn for professional connections</li>
+                        <li><strong>Customer Service:</strong> Direct communication with brands</li>
+                        <li><strong>Influencer Economy:</strong> New career opportunities</li>
+                    </ul>
+
+                    <p><strong>6. Entertainment:</strong></p>
+                    <ul>
+                        <li>Endless content - videos, memes, stories</li>
+                        <li>Free entertainment</li>
+                        <li>Discover new music, shows, trends</li>
+                    </ul>
+
+                    <h4>Problems and Negative Aspects:</h4>
+                    
+                    <p><strong>1. Mental Health Issues:</strong></p>
+                    <ul>
+                        <li><span class="key-term">Depression and Anxiety:</span> Studies link heavy social media use to poor mental health
+                            <ul>
+                                <li>Especially harmful for teenagers</li>
+                                <li>Social comparison causes low self-esteem</li>
+                                <li>FOMO (Fear of Missing Out)</li>
+                            </ul>
+                        </li>
+                        <li><span class="key-term">Body Image Issues:</span>
+                            <ul>
+                                <li>Filtered photos create unrealistic standards</li>
+                                <li>Instagram particularly harmful for young women</li>
+                                <li>Rise in eating disorders</li>
+                            </ul>
+                        </li>
+                        <li><strong>Addiction:</strong> Platforms designed to be addictive
+                            <ul>
+                                <li>Infinite scroll, notifications, likes create dopamine hits</li>
+                                <li>Hard to stop using even when wanting to</li>
+                                <li>Interferes with sleep, work, relationships</li>
+                            </ul>
+                        </li>
+                        <li><strong>Loneliness Paradox:</strong> More "connected" but feel more isolated</li>
+                    </ul>
+
+                    <p><strong>2. Misinformation and Disinformation:</strong></p>
+                    <ul>
+                        <li><span class="key-term">Fake News:</span> False information spreads faster than truth
+                            <ul>
+                                <li>MIT study: False news 70% more likely to be retweeted</li>
+                                <li>Emotional, sensational content spreads most</li>
+                            </ul>
+                        </li>
+                        <li><strong>Conspiracy Theories:</strong> QAnon, anti-vaccine, election denial spread rapidly</li>
+                        <li><strong>Deepfakes:</strong> AI-generated fake videos becoming harder to detect</li>
+                        <li><strong>Echo Chambers:</strong> Algorithms show content confirming existing beliefs</li>
+                    </ul>
+
+                    <p><strong>3. Political Polarization:</strong></p>
+                    <ul>
+                        <li><span class="key-term">Filter Bubbles:</span> Only see perspectives you agree with</li>
+                        <li><strong>Outrage Algorithm:</strong> Divisive content gets more engagement, so platforms promote it</li>
+                        <li><strong>Tribalism:</strong> "Us vs. them" mentality intensified</li>
+                        <li><strong>Radicalization:</strong> People led down extremist rabbit holes</li>
+                        <li><strong>Election Interference:</strong> Foreign governments spread disinformation</li>
+                    </ul>
+
+                    <p><strong>4. Privacy and Surveillance:</strong></p>
+                    <ul>
+                        <li>Massive data collection on users</li>
+                        <li>Tracking across websites and apps</li>
+                        <li>Facial recognition tagging</li>
+                        <li>Cambridge Analytica scandal showed risks</li>
+                        <li>Government surveillance using social media</li>
+                    </ul>
+
+                    <p><strong>5. Cyberbullying and Harassment:</strong></p>
+                    <ul>
+                        <li><strong>Bullying:</strong> Particularly harmful to teenagers
+                            <ul>
+                                <li>24/7 nature - no escape</li>
+                                <li>Public humiliation</li>
+                                <li>Linked to suicide in extreme cases</li>
+                            </ul>
+                        </li>
+                        <li><strong>Harassment:</strong> Women, minorities, public figures face abuse</li>
+                        <li><strong>Cancel Culture:</strong> Mob justice without due process</li>
+                        <li><strong>Doxxing:</strong> Publishing private information</li>
+                    </ul>
+
+                    <p><strong>6. Impact on Democracy:</strong></p>
+                    <ul>
+                        <li>Manipulation of elections</li>
+                        <li>Erosion of shared reality - can't agree on basic facts</li>
+                        <li>Undermines trust in institutions and media</li>
+                        <li>Amplifies extreme voices</li>
+                    </ul>
+
+                    <p><strong>7. Productivity and Attention:</strong></p>
+                    <ul>
+                        <li><strong>Distraction:</strong> Constant interruptions reduce focus</li>
+                        <li><strong>Reduced Attention Span:</strong> Difficulty concentrating on long-form content</li>
+                        <li><strong>Procrastination:</strong> Easy to waste hours scrolling</li>
+                        <li><strong>Sleep Disruption:</strong> Late-night use affects sleep quality</li>
+                    </ul>
+
+                    <p><strong>8. Relationship Problems:</strong></p>
+                    <ul>
+                        <li><strong>Superficial Connections:</strong> Many "friends" but shallow relationships</li>
+                        <li><strong>Jealousy:</strong> Seeing partners interact with others</li>
+                        <li><strong>FOMO:</strong> Anxiety about what others are doing</li>
+                        <li><strong>Phubbing:</strong> Ignoring people in person to check phone</li>
+                        <li><strong>Comparison:</strong> Seeing others' highlight reels creates dissatisfaction</li>
+                    </ul>
+
+                    <h4>Specific Platform Issues:</h4>
+                    
+                    <p><strong>Facebook/Meta:</strong></p>
+                    <ul>
+                        <li>Cambridge Analytica scandal (data misuse)</li>
+                        <li>Amplifying hate speech and violence (Myanmar genocide)</li>
+                        <li>Knowing Instagram harms teens but hiding research</li>
+                        <li>Prioritizing engagement over user wellbeing</li>
+                    </ul>
+
+                    <p><strong>TikTok:</strong></p>
+                    <ul>
+                        <li>Chinese ownership raises national security concerns</li>
+                        <li>Extremely addictive algorithm</li>
+                        <li>Dangerous viral challenges</li>
+                        <li>Youth mental health concerns</li>
+                    </ul>
+
+                    <p><strong>Twitter/X:</strong></p>
+                    <ul>
+                        <li>Harassment and toxic discourse</li>
+                        <li>Amplifies outrage and controversy</li>
+                        <li>Misinformation spreading rapidly</li>
+                        <li>Changes under Musk ownership controversial</li>
+                    </ul>
+
+                    <h4>Content Moderation Challenges:</h4>
+                    <ul>
+                        <li><strong>Scale:</strong> Billions of posts daily - impossible to review all</li>
+                        <li><strong>AI Limitations:</strong> Algorithms make mistakes, miss context</li>
+                        <li><strong>Free Speech Tensions:</strong> Where to draw line?</li>
+                        <li><strong>Cultural Differences:</strong> What's acceptable varies by country</li>
+                        <li><strong>Moderator Trauma:</strong> People reviewing disturbing content suffer psychologically</li>
+                    </ul>
+
+                    <h4>Solutions and Recommendations:</h4>
+                    
+                    <p><strong>1. Individual Actions:</strong></p>
+                    <ul>
+                        <li><strong>Limit Usage:</strong> Set time limits, turn off notifications</li>
+                        <li><strong>Curate Feed:</strong> Unfollow negative accounts, follow positive ones</li>
+                        <li><strong>Fact-check:</strong> Verify information before sharing</li>
+                        <li><strong>Digital Detox:</strong> Regular breaks from social media</li>
+                        <li><strong>Mindful Use:</strong> Ask why you're using it</li>
+                        <li><strong>Privacy Settings:</strong> Limit what platforms can access</li>
+                    </ul>
+
+                    <p><strong>2. Platform Responsibility:</strong></p>
+                    <ul>
+                        <li>Better content moderation</li>
+                        <li>Transparency about algorithms</li>
+                        <li>Reduce addictive features</li>
+                        <li>Combat misinformation more aggressively</li>
+                        <li>Protect children</li>
+                    </ul>
+
+                    <p><strong>3. Regulation:</strong></p>
+                    <ul>
+                        <li>Data protection laws (GDPR)</li>
+                        <li>Age verification for children</li>
+                        <li>Transparency requirements</li>
+                        <li>Antitrust action against monopolies</li>
+                    </ul>
+
+                    <p><strong>4. Education:</strong></p>
+                    <ul>
+                        <li>Media literacy in schools</li>
+                        <li>Teach critical thinking</li>
+                        <li>Awareness of manipulation techniques</li>
+                    </ul>
+
+                    <div class="important-note">
+                        <strong>The Reality:</strong> Social media is not inherently good or bad - it's a powerful tool that amplifies both our best and worst tendencies. It has connected the world and empowered billions, but also enabled harassment, spread lies, and harmed mental health. The key is using it mindfully, demanding better from platforms, and creating regulations that protect users while preserving benefits.
+                    </div>
+
+                    <h4>Debate: Should We Quit Social Media?</h4>
+                    <ul>
+                        <li><strong>Pro-Quitting:</strong> Improves mental health, productivity, relationships; takes power from harmful companies</li>
+                        <li><strong>Against Quitting:</strong> Socially isolating, miss important information, professional disadvantage, can be used positively</li>
+                        <li><strong>Middle Ground:</strong> Use mindfully, limit time, choose platforms carefully</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="collapsible-header">
+                <h3>Power of Media Corporations</h3>
+                <span class="collapsible-icon">▼</span>
+            </div>
+            <div class="collapsible-content">
+                <div class="collapsible-inner">
+                    <h4>Media Ownership Concentration:</h4>
+                    <p>A small number of corporations control most media worldwide, creating unprecedented power over information and culture.</p>
+
+                    <h4>Major Media Conglomerates:</h4>
+                    
+                    <p><strong>Traditional Media Giants:</strong></p>
+                    <ul>
+                        <li><strong>Disney:</strong> ABC, ESPN, Pixar, Marvel, Star Wars, 20th Century, Hulu, Disney+, National Geographic
+                            <ul>
+                                <li>Market value: ~$200 billion</li>
+                                <li>Dominant in entertainment</li>
+                            </ul>
+                        </li>
+                        <li><strong>Comcast/NBCUniversal:</strong> NBC, Universal Pictures, DreamWorks, Sky, theme parks</li>
+                        <li><strong>Warner Bros. Discovery:</strong> HBO, CNN, Warner Bros., Discovery Channel, DC Comics</li>
+                        <li><strong>Paramount Global:</strong> CBS, MTV, Nickelodeon, Paramount Pictures, Paramount+</li>
+                        <li><strong>News Corp:</strong> Fox News, Wall Street Journal, New York Post, HarperCollins</li>
+                    </ul>
+
+                    <p><strong>Tech/New Media Giants (Big Tech):</strong></p>
+                    <ul>
+                        <li><strong>Alphabet/Google:</strong> Search, YouTube, Android, Google Cloud
+                            <ul>
+                                <li>90%+ of search market</li>
+                                <li>YouTube is dominant video platform</li>
+                                <li>Market value: ~$1.8 trillion</li>
+                            </ul>
+                        </li>
+                        <li><strong>Meta (Facebook):</strong> Facebook, Instagram, WhatsApp, Threads
+                            <ul>
+                                <li>3.9 billion combined users</li>
+                                <li>Market value: ~$1 trillion</li>
+                            </ul>
+                        </li>
+                        <li><strong>Amazon:</strong> E-commerce, AWS, Prime Video, Twitch, Whole Foods
+                            <ul>
+                                <li>Cloud computing leader</li>
+                                <li>Growing media presence</li>
+                            </ul>
+                        </li>
+                        <li><strong>Apple:</strong> iPhones, App Store, Apple TV+, Apple Music, services
+                            <ul>
+                                <li>Controls iOS ecosystem</li>
+                                <li>30% commission on apps</li>
+                            </ul>
+                        </li>
+                        <li><strong>Microsoft:</strong> Windows, Xbox, LinkedIn, cloud services</li>
+                        <li><strong>Netflix:</strong> Streaming pioneer, 250+ million subscribers</li>
+                    </ul>
+
+                    <h4>How This Concentration Happened:</h4>
+                    <ul>
+                        <li><strong>Deregulation:</strong> 1996 Telecommunications Act in US allowed more consolidation</li>
+                        <li><strong>Mergers and Acquisitions:</strong> Companies buying competitors and complementary businesses</li>
+                        <li><strong>Network Effects:</strong> Bigger platforms attract more users, creating virtuous cycle</li>
+                        <li><strong>Economies of Scale:</strong> Size brings competitive advantages</li>
+                        <li><strong>First-Mover Advantage:</strong> Early platforms dominate</li>
+                    </ul>
+
+                    <h4>Types of Power These Corporations Wield:</h4>
+                    
+                    <p><strong>1. Gatekeeping Power:</strong></p>
+                    <ul>
+                        <li><span class="key-term">Control What We See:</span> Decide what news, content, information reaches public
+                            <ul>
+                                <li>TV networks choose which stories to cover</li>
+                                <li>Social media algorithms determine what appears in feeds</li>
+                                <li>Google search results influence what people know</li>
+                            </ul>
+                        </li>
+                        <li><strong>Content Creators Dependent:</strong> Musicians, filmmakers, journalists need these platforms to reach audiences</li>
+                    </ul>
+
+                    <p><strong>2. Agenda-Setting Power:</strong></p>
+                    <ul>
+                        <li>Shape public discourse by deciding what's important</li>
+                        <li>Frame issues in particular ways</li>
+                        <li>Influence what people think about</li>
+                        <li>Media coverage affects political priorities</li>
+                    </ul>
+
+                    <p><strong>3. Cultural Influence:</strong></p>
+                    <ul>
+                        <li>Shape values, norms, beauty standards</li>
+                        <li>Define what's "cool" or acceptable</li>
+                        <li>Represent (or don't represent) different groups</li>
+                        <li>Spread certain lifestyles and worldviews</li>
+                    </ul>
+
+                    <p><strong>4. Economic Power:</strong></p>
+                    <ul>
+                        <li>Control massive advertising markets</li>
+                        <li>Determine who gets funded (content creators, businesses)</li>
+                        <li>Set terms for accessing platforms</li>
+                        <li>Extract profits from creator economy</li>
+                    </ul>
+
+                    <p><strong>5. Political Influence:</strong></p>
+                    <ul>
+                        <li><strong>Lobbying:</strong> Spend millions influencing legislation</li>
+                        <li><strong>Campaign Donations:</strong> Support favorable politicians</li>
+                        <li><strong>Media Bias:</strong> News coverage can favor corporate interests</li>
+                        <li><strong>Revolving Door:</strong> Executives move between corporations and government</li>
+                    </ul>
+
+                    <p><strong>6. Data Power:</strong></p>
+                    <ul>
+                        <li>Tech companies especially: massive data on billions of people</li>
+                        <li>Know more about individuals than anyone else</li>
+                        <li>Use data for targeting, predictions, manipulation</li>
+                        <li>Sell data or insights to others</li>
+                    </ul>
+
+                    <h4>Concerns and Criticisms:</h4>
+                    
+                    <p><strong>1. Threat to Democracy:</strong></p>
+                    <ul>
+                        <li><span class="key-term">Concentration of Power:</span> Few corporations control information flow
+                            <ul>
+                                <li>Democracy requires diverse, independent media</li>
+                                <li>Concentrated ownership reduces viewpoint diversity</li>
+                            </ul>
+                        </li>
+                        <li><strong>Propaganda and Manipulation:</strong> Can shape elections and public opinion</li>
+                        <li><strong>Censorship:</strong> Platforms can silence voices</li>
+                    </ul>
+
+                    <p><strong>2. Lack of Diversity:</strong></p>
+                    <ul>
+                        <li><strong>Homogenization:</strong> Same stories, perspectives everywhere</li>
+                        <li><strong>Local News Decline:</strong> Conglomerates cut local coverage</li>
+                        <li><strong>Independent Voices Squeezed:</strong> Hard to compete with giants</li>
+                        <li><strong>Underrepresentation:</strong> Content reflects narrow corporate interests</li>
+                    </ul>
+
+                    <p><strong>3. Profit Over Public Interest:</strong></p>
+                    <ul>
+                        <li><strong>Sensationalism:</strong> Click-bait over substance</li>
+                        <li><strong>Entertainment Over Information:</strong> News becomes entertainment</li>
+                        <li><strong>Advertiser Influence:</strong> Content shaped by advertising revenue</li>
+                        <li><strong>Cost-Cutting:</strong> Less investigative journalism, more cheap content</li>
+                    </ul>
+
+                    <p><strong>4. Market Dominance:</strong></p>
+                    <ul>
+                        <li><span class="key-term">Anti-Competitive Behavior:</span>
+                            <ul>
+                                <li>Google accused of favoring own products in search</li>
+                                <li>Amazon using data to compete with sellers</li>
+                                <li>Facebook buying or copying competitors (Instagram, WhatsApp)</li>
+                                <li>Apple's App Store monopoly</li>
+                            </ul>
+                        </li>
+                        <li><strong>Barriers to Entry:</strong> Startups can't compete with established giants</li>
+                        <li><strong>Innovation Stifled:</strong> Buy or copy instead of compete</li>
+                    </ul>
+
+                    <p><strong>5. Privacy and Surveillance:</strong></p>
+                    <ul>
+                        <li>Collect enormous amounts of personal data</li>
+                        <li>Track behavior across devices and platforms</li>
+                        <li>Sell or share data with third parties</li>
+                        <li>Government surveillance partnerships</li>
+                    </ul>
+
+                    <p><strong>6. Content Moderation Issues:</strong></p>
+                    <ul>
+                        <li>Inconsistent enforcement of rules</li>
+                        <li>Bias in what's allowed vs. censored</li>
+                        <li>Too much power to decide what speech is acceptable</li>
+                        <li>Lack of transparency in decision-making</li>
+                    </ul>
+
+                    <p><strong>7. Labor Exploitation:</strong></p>
+                    <ul>
+                        <li>Amazon warehouse conditions</li>
+                        <li>Gig economy workers without benefits</li>
+                        <li>Content moderators exposed to traumatic material</li>
+                        <li>Anti-union activities</li>
+                    </ul>
+
+                    <h4>Specific Controversies:</h4>
+                    <ul>
+                        <li><strong>Cambridge Analytica (Facebook):</strong> Data misuse for political manipulation</li>
+                        <li><strong>Google Antitrust:</strong> Multiple lawsuits over monopolistic practices</li>
+                        <li><strong>Amazon Market Power:</strong> Accusations of predatory pricing, copying products</li>
+                        <li><strong>TikTok Security:</strong> Chinese government access to data</li>
+                        <li><strong>Twitter/X Content:</strong> Elon Musk's changes to verification, content moderation</li>
+                    </ul>
+
+                    <h4>Arguments in Defense of Media Corporations:</h4>
+                    <ul>
+                        <li><strong>Innovation:</strong> Brought revolutionary products and services</li>
+                        <li><strong>Efficiency:</strong> Size brings economies of scale</li>
+                        <li><strong>Free Services:</strong> Many services free to users (ad-supported)</li>
+                        <li><strong>Consumer Choice:</strong> People choose these platforms voluntarily</li>
+                        <li><strong>Competition:</strong> Still compete with each other</li>
+                        <li><strong>Job Creation:</strong> Employ millions</li>
+                    </ul>
+
+                    <h4>Regulatory Responses and Solutions:</h4>
+                    
+                    <p><strong>1. Antitrust Action:</strong></p>
+                    <ul>
+                        <li>Break up tech giants (proposed but not enacted)</li>
+                        <li>Block anti-competitive mergers</li>
+                        <li>Fine monopolistic behavior</li>
+                        <li>Force interoperability between platforms</li>
+                    </ul>
+
+                    <p><strong>2. Content Regulation:</strong></p>
+                    <ul>
+                        <li><strong>Section 230 Reform:</strong> Change protections for platform content</li>
+                        <li><strong>Transparency Requirements:</strong> Disclose algorithms, content policies</li>
+                        <li><strong>Accountability:</strong> Liability for harmful content</li>
+                    </ul>
+
+                    <p><strong>3. Data Protection:</strong></p>
+                    <ul>
+                        <li>GDPR in Europe (strongest)</li>
+                        <li>Limit data collection and use</li>
+                        <li>User control over personal data</li>
+                        <li>Portability between platforms</li>
+                    </ul>
+
+                    <p><strong>4. Support Alternatives:</strong></p>
+                    <ul>
+                        <li>Public broadcasting funding</li>
+                        <li>Non-profit journalism support</li>
+                        <li>Open-source platforms</li>
+                        <li>Decentralized social media</li>
+                    </ul>
+
+                    <div class="important-note">
+                        <strong>The Challenge:</strong> Media corporations provide valuable services and drive innovation, but their concentration of power poses serious risks to democracy, competition, privacy, and culture. Finding the right balance between enabling innovation and preventing abuse of power is one of the defining challenges of our time. It requires regulatory action, corporate responsibility, and informed citizens who understand these dynamics.
+                    </div>
+
+                    <h4>Individual Actions:</h4>
+                    <ul>
+                        <li>Support independent media and journalism</li>
+                        <li>Use alternative platforms when possible</li>
+                        <li>Be aware of whose content you're consuming</li>
+                        <li>Advocate for stronger regulation</li>
+                        <li>Protect personal data</li>
+                        <li>Media literacy - understand how media works</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Scroll to Top Button -->
+        <div class="scroll-top" id="scrollTop">↑</div>
+
+        <div style="text-align: center; margin-top: 40px; padding: 20px; background: var(--card-bg); border-radius: 15px;">
+            <p style="color: #7f8c8d; margin-bottom: 10px;">
+                📚 This comprehensive guide covers all topics on Globalization and Technology & Media for the English Abitur 2026 examination.
+            </p>
+            <p style="color: #7f8c8d; margin-bottom: 20px;">
+                ✨ Click section headers to expand/collapse content • Use navigation menu to jump to sections • Press 'T' to scroll to top
+            </p>
+            <a href="index.html" class="back-button">← Back to Home</a>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Collapsible sections
+            const collapsibleHeaders = document.querySelectorAll('.collapsible-header');
+            
+            collapsibleHeaders.forEach(header => {
+                header.addEventListener('click', function() {
+                    this.classList.toggle('active');
+                    const content = this.nextElementSibling;
+                    content.classList.toggle('active');
+                });
+            });
+
+            // Smooth scrolling
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    }
+                });
+            });
+
+            // Scroll to top button
+            const scrollTopButton = document.getElementById('scrollTop');
+            
+            window.addEventListener('scroll', function() {
+                if (window.pageYOffset > 300) {
+                    scrollTopButton.classList.add('visible');
+                } else {
+                    scrollTopButton.classList.remove('visible');
+                }
+            });
+            
+            scrollTopButton.addEventListener('click', function() {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            });
+
+            // Keyboard shortcut: Press 'T' to scroll to top
+            document.addEventListener('keydown', function(e) {
+                if ((e.key === 't' || e.key === 'T') && !e.ctrlKey && !e.altKey) {
+                    const active = document.activeElement;
+                    if (active.tagName !== 'INPUT' && active.tagName !== 'TEXTAREA') {
+                        window.scrollTo({ top: 0, behavior: 'smooth' });
+                    }
+                }
+            });
+
+            // Highlight active navigation link
+            const sections = document.querySelectorAll('.section');
+            const navLinks = document.querySelectorAll('.nav-link');
+            
+            const observerOptions = {
+                root: null,
+                rootMargin: '-20% 0px -80% 0px',
+                threshold: 0
+            };
+
+            const observer = new IntersectionObserver(entries => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        navLinks.forEach(link => {
+                            link.style.background = 'linear-gradient(45deg, var(--secondary-color), #2980b9)';
+                        });
+                        
+                        const id = entry.target.getAttribute('id');
+                        const activeLink = document.querySelector(`.nav-link[href="#${id}"]`);
+                        if (activeLink) {
+                            activeLink.style.background = 'linear-gradient(45deg, var(--accent-color), #c0392b)';
+                        }
+                    }
+                });
+            }, observerOptions);
+
+            sections.forEach(section => observer.observe(section));
+
+            console.log('✅ Living in a Modern World Study Guide loaded! Press T to scroll to top.');
+        });
+    </script>
+</body>
+</html>
