@@ -1,0 +1,1660 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Analyzing Non-fictional Texts - Englisch Abitur 2026</title>
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --secondary-color: #3498db;
+            --accent-color: #e74c3c;
+            --success-color: #27ae60;
+            --warning-color: #f39c12;
+            --bg-color: #ecf0f1;
+            --card-bg: #ffffff;
+            --text-color: #2c3e50;
+            --border-color: #bdc3c7;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, var(--bg-color) 0%, #d5dbdb 100%);
+            color: var(--text-color);
+            line-height: 1.6;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+            background: var(--card-bg);
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 5px;
+            background: linear-gradient(90deg, var(--secondary-color), var(--accent-color), var(--success-color));
+        }
+
+        .back-button {
+            display: inline-block;
+            padding: 10px 20px;
+            background: var(--secondary-color);
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            transition: all 0.3s ease;
+        }
+
+        .back-button:hover {
+            background: #2980b9;
+            transform: translateY(-2px);
+        }
+
+        .header h1 {
+            color: var(--primary-color);
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+
+        .section {
+            background: var(--card-bg);
+            border-radius: 15px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+            border-left: 5px solid var(--secondary-color);
+        }
+
+        .section h2 {
+            color: var(--primary-color);
+            margin-bottom: 20px;
+            font-size: 1.8em;
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 10px;
+        }
+
+        .section h3 {
+            color: var(--secondary-color);
+            margin-top: 25px;
+            margin-bottom: 15px;
+            font-size: 1.4em;
+        }
+
+        .section h4 {
+            color: var(--primary-color);
+            margin-top: 20px;
+            margin-bottom: 10px;
+            font-size: 1.2em;
+        }
+
+        .section p {
+            margin-bottom: 15px;
+            text-align: justify;
+        }
+
+        .section ul, .section ol {
+            margin-left: 30px;
+            margin-bottom: 15px;
+        }
+
+        .section li {
+            margin-bottom: 8px;
+        }
+
+        .key-term {
+            background: #e3f2fd;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-weight: 600;
+            color: var(--secondary-color);
+        }
+
+        .important-note {
+            background: #fff3cd;
+            border-left: 4px solid var(--warning-color);
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 5px;
+        }
+
+        .example-box {
+            background: #e8f5e9;
+            border-left: 4px solid var(--success-color);
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 5px;
+        }
+
+        .tip-box {
+            background: #e3f2fd;
+            border-left: 4px solid var(--secondary-color);
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 5px;
+        }
+
+        .quote {
+            background: #f8f9fa;
+            border-left: 4px solid var(--accent-color);
+            padding: 15px;
+            margin: 20px 0;
+            font-style: italic;
+            border-radius: 5px;
+        }
+
+        /* Navigation Menu */
+        .nav-container {
+            background: var(--card-bg);
+            padding: 20px;
+            border-radius: 15px;
+            margin-bottom: 30px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 20px;
+            z-index: 100;
+        }
+
+        .nav-container h3 {
+            color: var(--primary-color);
+            margin-bottom: 15px;
+            font-size: 1.3em;
+        }
+
+        .nav-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 10px;
+        }
+
+        .nav-link {
+            background: linear-gradient(45deg, var(--secondary-color), #2980b9);
+            color: white;
+            padding: 10px 15px;
+            border-radius: 8px;
+            text-decoration: none;
+            text-align: center;
+            transition: all 0.3s ease;
+            font-size: 0.9em;
+            font-weight: 600;
+        }
+
+        .nav-link:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(52, 152, 219, 0.3);
+            background: linear-gradient(45deg, #2980b9, var(--secondary-color));
+        }
+
+        /* Scroll to Top Button */
+        .scroll-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: linear-gradient(45deg, var(--accent-color), #c0392b);
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            cursor: pointer;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+            transition: all 0.3s ease;
+            z-index: 1000;
+            opacity: 0;
+            visibility: hidden;
+        }
+
+        .scroll-top.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .scroll-top:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(231, 76, 60, 0.4);
+        }
+
+        /* Collapsible Sections */
+        .collapsible-header {
+            background: linear-gradient(135deg, var(--secondary-color), #2980b9);
+            color: white;
+            padding: 15px 20px;
+            cursor: pointer;
+            border-radius: 10px;
+            margin-top: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: all 0.3s ease;
+            user-select: none;
+        }
+
+        .collapsible-header:hover {
+            background: linear-gradient(135deg, #2980b9, var(--secondary-color));
+            transform: translateX(5px);
+        }
+
+        .collapsible-header h3 {
+            margin: 0;
+            color: white;
+            font-size: 1.3em;
+        }
+
+        .collapsible-icon {
+            font-size: 1.5em;
+            transition: transform 0.3s ease;
+        }
+
+        .collapsible-header.active .collapsible-icon {
+            transform: rotate(180deg);
+        }
+
+        .collapsible-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s ease;
+        }
+
+        .collapsible-content.active {
+            max-height: 20000px;
+        }
+
+        .collapsible-inner {
+            padding: 20px 0;
+        }
+
+        .step-list {
+            counter-reset: step-counter;
+            list-style: none;
+            margin-left: 0;
+        }
+
+        .step-list li {
+            counter-increment: step-counter;
+            margin-bottom: 25px;
+            padding-left: 50px;
+            position: relative;
+        }
+
+        .step-list li::before {
+            content: counter(step-counter);
+            position: absolute;
+            left: 0;
+            top: 0;
+            background: var(--secondary-color);
+            color: white;
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 1.1em;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            background: white;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        th {
+            background: var(--secondary-color);
+            color: white;
+            padding: 12px;
+            text-align: left;
+            font-weight: 600;
+        }
+
+        td {
+            padding: 12px;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        tr:hover {
+            background: #f8f9fa;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 15px;
+            }
+            
+            .header h1 {
+                font-size: 2em;
+            }
+            
+            .section {
+                padding: 20px;
+            }
+
+            .section h2 {
+                font-size: 1.5em;
+            }
+
+            .nav-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .scroll-top {
+                bottom: 20px;
+                right: 20px;
+                width: 45px;
+                height: 45px;
+            }
+
+            .nav-container {
+                position: relative;
+                top: 0;
+            }
+
+            .step-list li {
+                padding-left: 45px;
+            }
+
+            .step-list li::before {
+                width: 30px;
+                height: 30px;
+                font-size: 1em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <a href="index.html" class="back-button">← Back to Home</a>
+            <h1>📊 Analyzing Non-fictional Texts</h1>
+            <p>Comprehensive Guide for English Abitur 2026</p>
+        </div>
+
+        <!-- Navigation Menu -->
+        <div class="nav-container">
+            <h3>📑 Quick Navigation</h3>
+            <div class="nav-grid">
+                <a href="#cartoons" class="nav-link">1. Analyzing Cartoons</a>
+                <a href="#graphs" class="nav-link">2. Graphs and Charts</a>
+                <a href="#nonfiction" class="nav-link">3. Non-fictional Texts</a>
+            </div>
+        </div>
+
+        <!-- Section 1: Analyzing Cartoons -->
+        <div class="section" id="cartoons">
+            <h2>1. Analyzing Cartoons (Political Cartoons / Editorial Cartoons)</h2>
+
+            <div class="collapsible-header">
+                <h3>What is a Political Cartoon?</h3>
+                <span class="collapsible-icon">▼</span>
+            </div>
+            <div class="collapsible-content">
+                <div class="collapsible-inner">
+                    <p>A <span class="key-term">political cartoon</span> (also called <span class="key-term">editorial cartoon</span>) is a visual commentary that combines art and satire to express opinions about political, social, or cultural issues. Cartoons use humor, exaggeration, and symbolism to critique, persuade, or inform.</p>
+
+                    <h4>Key Characteristics:</h4>
+                    <ul>
+                        <li><strong>Brevity:</strong> Communicates complex ideas quickly</li>
+                        <li><strong>Visual Impact:</strong> Relies on images more than words</li>
+                        <li><strong>Satire and Humor:</strong> Often uses irony, sarcasm, or ridicule</li>
+                        <li><strong>Persuasive Purpose:</strong> Aims to influence public opinion</li>
+                        <li><strong>Topical:</strong> Comments on current events or issues</li>
+                    </ul>
+
+                    <h4>Historical Context:</h4>
+                    <p>Political cartoons have been used since the 18th century as powerful tools for social and political commentary. Famous examples include Thomas Nast's cartoons in the 19th century that helped bring down corrupt politicians, and modern cartoonists who comment on contemporary issues.</p>
+                </div>
+            </div>
+
+            <div class="collapsible-header">
+                <h3>Elements and Techniques of Cartoons</h3>
+                <span class="collapsible-icon">▼</span>
+            </div>
+            <div class="collapsible-content">
+                <div class="collapsible-inner">
+                    <h4>Visual Elements:</h4>
+                    
+                    <p><strong>1. Symbolism</strong></p>
+                    <ul>
+                        <li><span class="key-term">Definition:</span> Objects, animals, or figures representing abstract ideas</li>
+                        <li><strong>Common Symbols:</strong>
+                            <ul>
+                                <li>Uncle Sam = United States</li>
+                                <li>Dove = Peace</li>
+                                <li>Scales = Justice</li>
+                                <li>Elephant = Republican Party (USA)</li>
+                                <li>Donkey = Democratic Party (USA)</li>
+                                <li>Lion = Britain / Courage</li>
+                                <li>Bear = Russia</li>
+                                <li>Dragon = China</li>
+                                <li>Olive branch = Peace</li>
+                                <li>Broken chains = Freedom</li>
+                                <li>Light bulb = Idea</li>
+                                <li>Sinking ship = Failure / Crisis</li>
+                                <li>Bridge = Connection / Cooperation</li>
+                                <li>Wall = Division / Barrier</li>
+                            </ul>
+                        </li>
+                    </ul>
+
+                    <p><strong>2. Exaggeration / Caricature</strong></p>
+                    <ul>
+                        <li>Distorting physical features for emphasis or humor</li>
+                        <li>Making heads oversized, noses prominent, features distinctive</li>
+                        <li>Purpose: Make figures instantly recognizable and emphasize character traits</li>
+                        <li>Can highlight perceived weaknesses or characteristics</li>
+                    </ul>
+
+                    <p><strong>3. Labeling</strong></p>
+                    <ul>
+                        <li>Text directly on objects or characters</li>
+                        <li>Ensures viewer understands what is being represented</li>
+                        <li>Examples: "Wall Street," "Middle Class," "Education Budget"</li>
+                        <li>Makes abstract concepts concrete</li>
+                    </ul>
+
+                    <p><strong>4. Analogy / Comparison</strong></p>
+                    <ul>
+                        <li>Comparing political situation to familiar scenarios</li>
+                        <li>Examples: Politics as a circus, economy as a sinking ship, debate as boxing match</li>
+                        <li>Makes complex issues more relatable</li>
+                    </ul>
+
+                    <p><strong>5. Irony</strong></p>
+                    <ul>
+                        <li>Showing contradiction between appearance and reality</li>
+                        <li>What is shown vs. what is meant</li>
+                        <li>Creates satirical effect</li>
+                        <li>Often reveals hypocrisy or inconsistency</li>
+                    </ul>
+
+                    <p><strong>6. Juxtaposition / Contrast</strong></p>
+                    <ul>
+                        <li>Placing opposing elements side by side</li>
+                        <li>Rich vs. poor, past vs. present, promise vs. reality</li>
+                        <li>Highlights differences and contradictions</li>
+                    </ul>
+
+                    <h4>Literary/Verbal Techniques:</h4>
+                    <ul>
+                        <li><strong>Speech Bubbles:</strong> Character dialogue or thoughts</li>
+                        <li><strong>Captions:</strong> Explanatory text above or below image</li>
+                        <li><strong>Sound Effects:</strong> "BOOM," "CRASH" for dramatic effect</li>
+                        <li><strong>Puns / Wordplay:</strong> Clever use of language for humor</li>
+                        <li><strong>Allusions:</strong> References to historical events, famous quotes, literature, popular culture</li>
+                        <li><strong>Slogans:</strong> Short memorable phrases</li>
+                    </ul>
+
+                    <div class="example-box">
+                        <strong>Example:</strong> A cartoon showing a politician as a puppet with strings labeled "Corporate Donors" uses both <em>symbolism</em> (puppet = controlled person) and <em>labeling</em> to convey that the politician is controlled by wealthy donors.
+                    </div>
+                </div>
+            </div>
+
+            <div class="collapsible-header">
+                <h3>Step-by-Step Analysis Method</h3>
+                <span class="collapsible-icon">▼</span>
+            </div>
+            <div class="collapsible-content">
+                <div class="collapsible-inner">
+                    <ol class="step-list">
+                        <li>
+                            <strong>First Impression / Overview</strong>
+                            <ul>
+                                <li>What do you see at first glance?</li>
+                                <li>What is the general topic/issue?</li>
+                                <li>What is your immediate emotional response?</li>
+                                <li>What stands out most prominently?</li>
+                            </ul>
+                        </li>
+
+                        <li>
+                            <strong>Describe the Visual Elements (Factual Description)</strong>
+                            <ul>
+                                <li>Who or what is depicted? (People, animals, objects)</li>
+                                <li>What are they doing? (Actions, positions, interactions)</li>
+                                <li>Where is the scene set? (Setting, background)</li>
+                                <li>What text is included? (Speech bubbles, captions, labels)</li>
+                                <li>How are elements arranged? (Composition, foreground/background)</li>
+                            </ul>
+                            <div class="tip-box">
+                                <strong>Tip:</strong> Be objective here. Simply describe what you see before interpreting.
+                            </div>
+                        </li>
+
+                        <li>
+                            <strong>Identify Techniques and Symbols</strong>
+                            <ul>
+                                <li>What symbols are used? What do they represent?</li>
+                                <li>Is exaggeration/caricature used? Of whom and how?</li>
+                                <li>Are there labels? What do they clarify?</li>
+                                <li>Is analogy used? What is being compared?</li>
+                                <li>Is there irony or satire? Where?</li>
+                                <li>What contrasts or juxtapositions are present?</li>
+                                <li>Are there allusions to historical events or popular culture?</li>
+                            </ul>
+                        </li>
+
+                        <li>
+                            <strong>Interpret the Message</strong>
+                            <ul>
+                                <li>What is the cartoonist's main point or argument?</li>
+                                <li>What issue is being addressed?</li>
+                                <li>What viewpoint does the cartoonist express?</li>
+                                <li>Is the cartoon critical, supportive, or neutral?</li>
+                                <li>What emotions is it trying to evoke?</li>
+                                <li>Who or what is being criticized or praised?</li>
+                                <li>What change or action might the cartoonist want?</li>
+                            </ul>
+                        </li>
+
+                        <li>
+                            <strong>Consider Context</strong>
+                            <ul>
+                                <li>When was the cartoon published?</li>
+                                <li>What was happening at that time?</li>
+                                <li>Who is the intended audience?</li>
+                                <li>What background knowledge is needed?</li>
+                                <li>What publication or platform was it in?</li>
+                                <li>What political/cultural context is relevant?</li>
+                            </ul>
+                        </li>
+
+                        <li>
+                            <strong>Evaluate Effectiveness</strong>
+                            <ul>
+                                <li>Is the message clear or ambiguous?</li>
+                                <li>Are the techniques effective?</li>
+                                <li>Is it persuasive? Why or why not?</li>
+                                <li>Could it be misinterpreted?</li>
+                                <li>Does it oversimplify complex issues?</li>
+                                <li>Do you agree or disagree with the message?</li>
+                                <li>What are potential criticisms of this cartoon?</li>
+                            </ul>
+                        </li>
+                    </ol>
+                </div>
+            </div>
+
+            <div class="collapsible-header">
+                <h3>Useful Phrases for Cartoon Analysis</h3>
+                <span class="collapsible-icon">▼</span>
+            </div>
+            <div class="collapsible-content">
+                <div class="collapsible-inner">
+                    <h4>Describing What You See:</h4>
+                    <ul>
+                        <li>The cartoon depicts / shows / illustrates / portrays...</li>
+                        <li>In the foreground / background, we can see...</li>
+                        <li>The central figure is...</li>
+                        <li>The cartoon is divided into... sections/panels</li>
+                        <li>On the left/right side, there is...</li>
+                        <li>The setting appears to be...</li>
+                        <li>Prominently displayed is...</li>
+                        <li>At the center of the image...</li>
+                        <li>Surrounding X, we see...</li>
+                    </ul>
+
+                    <h4>Identifying Techniques:</h4>
+                    <ul>
+                        <li>The cartoonist uses symbolism to represent...</li>
+                        <li>The figure of X is exaggerated / caricatured, which emphasizes...</li>
+                        <li>The label "..." clarifies / indicates that...</li>
+                        <li>Through the use of analogy, the cartoonist compares... to...</li>
+                        <li>The irony lies in the fact that...</li>
+                        <li>The cartoon employs satire to criticize / mock...</li>
+                        <li>By juxtaposing... with..., the cartoonist highlights...</li>
+                        <li>The exaggerated features of... draw attention to...</li>
+                        <li>This is an allusion to...</li>
+                    </ul>
+
+                    <h4>Interpreting the Message:</h4>
+                    <ul>
+                        <li>The cartoonist's main point / message is...</li>
+                        <li>This cartoon addresses the issue of...</li>
+                        <li>The underlying message is that...</li>
+                        <li>The cartoonist takes a critical/supportive/satirical stance on...</li>
+                        <li>The cartoon suggests / implies / argues that...</li>
+                        <li>By depicting... in this way, the cartoonist conveys...</li>
+                        <li>The intended effect is to make viewers...</li>
+                        <li>This representation criticizes / mocks / questions...</li>
+                        <li>The cartoon reflects concerns about...</li>
+                    </ul>
+
+                    <h4>Discussing Context:</h4>
+                    <ul>
+                        <li>This cartoon was published during / in the context of...</li>
+                        <li>At the time, there was...</li>
+                        <li>The cartoon responds to recent events such as...</li>
+                        <li>Contemporary audiences would have understood the reference to...</li>
+                        <li>Given the political climate at the time...</li>
+                    </ul>
+
+                    <h4>Evaluating:</h4>
+                    <ul>
+                        <li>The cartoon is effective because...</li>
+                        <li>The message is conveyed clearly / effectively through...</li>
+                        <li>However, the cartoon may be criticized for...</li>
+                        <li>The simplification of... could be seen as problematic</li>
+                        <li>The cartoon succeeds in...</li>
+                        <li>One weakness might be...</li>
+                        <li>While powerful, the cartoon risks...</li>
+                        <li>The use of... strengthens / weakens the message</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="collapsible-header">
+                <h3>Common Pitfalls to Avoid</h3>
+                <span class="collapsible-icon">▼</span>
+            </div>
+            <div class="collapsible-content">
+                <div class="collapsible-inner">
+                    <div class="important-note">
+                        <h4>Don't:</h4>
+                        <ul>
+                            <li>❌ Simply describe without analyzing</li>
+                            <li>❌ Ignore the context and time period</li>
+                            <li>❌ Miss obvious symbols or techniques</li>
+                            <li>❌ Provide only personal opinions without evidence</li>
+                            <li>❌ Overlook text elements (captions, speech bubbles, labels)</li>
+                            <li>❌ Forget to identify the cartoonist's stance</li>
+                            <li>❌ Analyze every tiny detail - focus on significant elements</li>
+                            <li>❌ Assume everyone will interpret it the same way</li>
+                            <li>❌ Confuse describing with interpreting</li>
+                        </ul>
+
+                        <h4>Do:</h4>
+                        <ul>
+                            <li>✓ Balance description with interpretation</li>
+                            <li>✓ Connect visual elements to the message</li>
+                            <li>✓ Use specific evidence from the cartoon</li>
+                            <li>✓ Consider multiple interpretations</li>
+                            <li>✓ Link to broader political/social context</li>
+                            <li>✓ Evaluate the cartoon's effectiveness</li>
+                            <li>✓ Identify the target audience</li>
+                            <li>✓ Consider what knowledge the audience needs</li>
+                            <li>✓ Discuss potential strengths and limitations</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="collapsible-header">
+                <h3>Practice Example Analysis</h3>
+                <span class="collapsible-icon">▼</span>
+            </div>
+            <div class="collapsible-content">
+                <div class="collapsible-inner">
+                    <div class="example-box">
+                        <h4>Sample Cartoon Scenario:</h4>
+                        <p><em>Imagine a cartoon showing a large cruise ship labeled "Economy" sailing smoothly in calm waters. On the deck, wealthy passengers in formal attire are enjoying champagne and luxury. Below deck, in the engine room, workers are frantically bailing out water that's flooding in. The caption reads: "Everything's fine up here!"</em></p>
+
+                        <h4>Sample Analysis:</h4>
+                        
+                        <p><strong>Description:</strong> The cartoon depicts a cruise ship labeled "Economy" with two contrasting scenes. On the upper deck, well-dressed passengers celebrate in luxury, raising champagne glasses. Below deck, in the engine room visible through a cutaway view, workers struggle desperately to bail out water flooding into the ship. The caption "Everything's fine up here!" appears in a speech bubble from one of the upper-deck passengers.</p>
+
+                        <p><strong>Techniques:</strong> The cartoonist employs several powerful techniques. First, <em>analogy</em> is central, comparing the economy to a ship where different social classes experience vastly different realities. The <em>label</em> "Economy" on the ship's hull explicitly clarifies what the vessel represents. <em>Vertical contrast</em> and <em>juxtaposition</em> between the two decks emphasizes stark inequality - luxury above, crisis below. The <em>irony</em> is particularly sharp in the caption "Everything's fine up here!" which demonstrates the wealthy's obliviousness or indifference to the workers' struggles. The contrasting body language - relaxed celebration versus frantic labor - reinforces this divide. The cartoon also uses <em>visual symbolism</em>: the flooding water represents economic crisis, while champagne represents prosperity.</p>
+
+                        <p><strong>Message and Interpretation:</strong> The cartoon delivers a powerful critique of economic inequality and class disconnect. The cartoonist argues that while the wealthy enjoy prosperity and comfort, the working class struggles to keep the entire economic system afloat. The spatial arrangement - wealthy literally above workers - reflects and critiques social hierarchy. The obliviousness of upper-deck passengers to the crisis below suggests that the privileged are disconnected from the struggles of ordinary workers, or worse, are willfully ignorant despite benefiting from their labor. The flooding suggests the economy is in danger, yet those with the power and resources to help remain unconcerned. This could be interpreted as commentary on wealth inequality, trickle-down economics, or the disconnect between Wall Street and Main Street.</p>
+
+                        <p><strong>Context:</strong> This type of cartoon would be particularly relevant during economic crises, times of growing wealth inequality, or when policies favor the wealthy over workers. It could comment on specific events like financial crises, debates over tax policy, or labor disputes.</p>
+
+                        <p><strong>Effectiveness:</strong> The cartoon is highly effective for several reasons. The ship metaphor is universally understood - we all know that if a ship sinks, everyone goes down, regardless of their deck. This creates urgency and highlights interdependence. The visual contrast is immediately striking and requires no explanation. The simplicity of the image allows viewers to grasp the message quickly, while the layers of meaning reward closer analysis. The ironic caption adds emotional impact, potentially evoking anger at injustice or frustration at inequality. However, one could criticize the cartoon for oversimplifying complex economic issues or for being too heavy-handed in its message. The stark division into "wealthy" and "workers" doesn't capture economic complexity, and reasonable people might disagree about whether this represents reality fairly.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Section 2: Graphs and Charts -->
+        <div class="section" id="graphs">
+            <h2>2. Analyzing Graphs and Charts</h2>
+
+            <div class="collapsible-header">
+                <h3>Types of Graphs and Charts</h3>
+                <span class="collapsible-icon">▼</span>
+            </div>
+            <div class="collapsible-content">
+                <div class="collapsible-inner">
+                    <p>Graphs and charts are visual representations of data that help identify patterns, trends, and relationships. Different types serve different purposes.</p>
+
+                    <h4>1. Line Graphs</h4>
+                    <ul>
+                        <li><strong>Purpose:</strong> Show changes over time, trends, and patterns</li>
+                        <li><strong>Best for:</strong> Continuous data, time series, temperature changes, stock prices</li>
+                        <li><strong>Key features:</strong> X-axis (usually time), Y-axis (measured values), plotted points connected by lines</li>
+                        <li><strong>Multiple lines:</strong> Can compare different categories or groups</li>
+                    </ul>
+
+                    <h4>2. Bar Charts / Bar Graphs</h4>
+                    <ul>
+                        <li><strong>Purpose:</strong> Compare quantities across categories</li>
+                        <li><strong>Best for:</strong> Discrete categories, rankings, comparisons between groups</li>
+                        <li><strong>Vertical bars:</strong> Categories on X-axis, values on Y-axis</li>
+                        <li><strong>Horizontal bars:</strong> Categories on Y-axis, values on X-axis</li>
+                        <li><strong>Grouped bars:</strong> Compare multiple categories simultaneously</li>
+                    </ul>
+
+                    <h4>3. Pie Charts</h4>
+                    <ul>
+                        <li><strong>Purpose:</strong> Show proportions and percentages of a whole</li>
+                        <li><strong>Best for:</strong> Composition, showing how parts make up 100%</li>
+                        <li><strong>Limitations:</strong> Difficult to compare many small segments; not good for precise comparisons</li>
+                        <li><strong>Alternatives:</strong> Donut charts (pie with center removed)</li>
+                    </ul>
+
+                    <h4>4. Tables</h4>
+                    <ul>
+                        <li><strong>Purpose:</strong> Present precise numerical data in organized format</li>
+                        <li><strong>Best for:</strong> Detailed information, exact values, multiple variables</li>
+                        <li><strong>Structure:</strong> Rows and columns with clear headers</li>
+                        <li><strong>Advantage:</strong> Allows readers to look up specific values</li>
+                    </ul>
+
+                    <h4>5. Scatter Plots</h4>
+                    <ul>
+                        <li><strong>Purpose:</strong> Show relationships between two variables</li>
+                        <li><strong>Best for:</strong> Identifying correlations, patterns, outliers</li>
+                        <li><strong>Patterns:</strong> Positive correlation, negative correlation, no correlation, clusters</li>
+                    </ul>
+
+                    <h4>6. Histograms</h4>
+                    <ul>
+                        <li><strong>Purpose:</strong> Show distribution of continuous data</li>
+                        <li><strong>Best for:</strong> Frequency distributions, identifying normal distribution, skewness</li>
+                        <li><strong>Similar to:</strong> Bar charts but for continuous data ranges</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="collapsible-header">
+                <h3>Step-by-Step Analysis Method</h3>
+                <span class="collapsible-icon">▼</span>
+            </div>
+            <div class="collapsible-content">
+                <div class="collapsible-inner">
+                    <ol class="step-list">
+                        <li>
+                            <strong>Identify Basic Information</strong>
+                            <ul>
+                                <li>What type of graph/chart is it?</li>
+                                <li>What is the title?</li>
+                                <li>What are the axes labels? (X-axis, Y-axis)</li>
+                                <li>What units are used? (%, dollars, thousands, etc.)</li>
+                                <li>What time period is covered?</li>
+                                <li>What is the source of the data?</li>
+                            </ul>
+                        </li>
+
+                        <li>
+                            <strong>Understand What is Being Shown</strong>
+                            <ul>
+                                <li>What variables are being compared or measured?</li>
+                                <li>What categories or groups are included?</li>
+                                <li>What is the scale? (Does it start at zero? Logarithmic?)</li>
+                                <li>Are there multiple data series? What do different colors/patterns represent?</li>
+                            </ul>
+                        </li>
+
+                        <li>
+                            <strong>Identify Key Features and Patterns</strong>
+                            <ul>
+                                <li><strong>Trends:</strong> Is data increasing, decreasing, or stable?</li>
+                                <li><strong>Peaks and troughs:</strong> Highest and lowest points</li>
+                                <li><strong>Comparisons:</strong> Which category is largest/smallest?</li>
+                                <li><strong>Proportions:</strong> What percentage does each part represent?</li>
+                                <li><strong>Outliers:</strong> Any unusual data points?</li>
+                                <li><strong>Patterns:</strong> Cyclical patterns, seasonality, correlations</li>
+                            </ul>
+                        </li>
+
+                        <li>
+                            <strong>Analyze and Interpret</strong>
+                            <ul>
+                                <li>What does this data tell us?</li>
+                                <li>What conclusions can be drawn?</li>
+                                <li>Are there cause-and-effect relationships?</li>
+                                <li>What might explain the patterns observed?</li>
+                                <li>What are the implications?</li>
+                                <li>Does this support or contradict expectations?</li>
+                            </ul>
+                        </li>
+
+                        <li>
+                            <strong>Consider Context and Limitations</strong>
+                            <ul>
+                                <li>Who collected this data and why?</li>
+                                <li>Is the source reliable and objective?</li>
+                                <li>What information is missing?</li>
+                                <li>Could the presentation be misleading? (manipulated scales, selective data)</li>
+                                <li>What factors might explain the data?</li>
+                                <li>What predictions or projections might be made?</li>
+                            </ul>
+                        </li>
+                    </ol>
+
+                    <div class="tip-box">
+                        <strong>Remember DAIT:</strong>
+                        <ul>
+                            <li><strong>D</strong>escribe - What does the graph show?</li>
+                            <li><strong>A</strong>nalyze - What patterns and trends are visible?</li>
+                            <li><strong>I</strong>nterpret - What does this mean?</li>
+                            <li><strong>T</strong>hink critically - What are limitations and implications?</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="collapsible-header">
+                <h3>Describing Trends and Changes</h3>
+                <span class="collapsible-icon">▼</span>
+            </div>
+            <div class="collapsible-content">
+                <div class="collapsible-inner">
+                    <h4>Upward Trends (Increase):</h4>
+                    <table>
+                        <tr>
+                            <th>Verb</th>
+                            <th>Noun</th>
+                            <th>Example</th>
+                        </tr>
+                        <tr>
+                            <td>rise, increase, grow, climb, go up</td>
+                            <td>rise, increase, growth</td>
+                            <td>Unemployment rose sharply in 2020</td>
+                        </tr>
+                        <tr>
+                            <td>soar, surge, rocket, skyrocket</td>
+                            <td>surge</td>
+                            <td>Prices soared by 50%</td>
+                        </tr>
+                        <tr>
+                            <td>jump, leap</td>
+                            <td>jump, leap</td>
+                            <td>Sales jumped from $100k to $200k</td>
+                        </tr>
+                        <tr>
+                            <td>edge up, inch up, creep up</td>
+                            <td>slight increase</td>
+                            <td>Interest rates edged up by 0.25%</td>
+                        </tr>
+                    </table>
+
+                    <h4>Downward Trends (Decrease):</h4>
+                    <table>
+                        <tr>
+                            <th>Verb</th>
+                            <th>Noun</th>
+                            <th>Example</th>
+                        </tr>
+                        <tr>
+                            <td>fall, decrease, decline, drop, go down</td>
+                            <td>fall, decrease, decline, drop</td>
+                            <td>Profits fell by 15%</td>
+                        </tr>
+                        <tr>
+                            <td>plunge, plummet, tumble, nosedive</td>
+                            <td>plunge</td>
+                            <td>Stock prices plummeted</td>
+                        </tr>
+                        <tr>
+                            <td>dip, slip</td>
+                            <td>dip</td>
+                            <td>Revenue dipped slightly</td>
+                        </tr>
+                    </table>
+
+                    <h4>Stability (No Change):</h4>
+                    <ul>
+                        <li>remain stable / steady / constant / unchanged</li>
+                        <li>stay at the same level</li>
+                        <li>level off / flatten out / plateau</li>
+                        <li>hover around</li>
+                        <li>Example: "Unemployment remained stable at around 5%"</li>
+                    </ul>
+
+                    <h4>Fluctuations:</h4>
+                    <ul>
+                        <li>fluctuate, vary, oscillate</li>
+                        <li>show volatility</li>
+                        <li>peak and trough</li>
+                        <li>Example: "Temperatures fluctuated between 15°C and 25°C"</li>
+                    </ul>
+
+                    <h4>Degree/Speed of Change:</h4>
+                    <table>
+                        <tr>
+                            <th>Speed</th>
+                            <th>Adjective</th>
+                            <th>Adverb</th>
+                        </tr>
+                        <tr>
+                            <td>Fast</td>
+                            <td>sharp, steep, dramatic, rapid, sudden, abrupt</td>
+                            <td>sharply, steeply, dramatically, rapidly, suddenly, abruptly</td>
+                        </tr>
+                        <tr>
+                            <td>Moderate</td>
+                            <td>steady, moderate, significant</td>
+                            <td>steadily, moderately, significantly</td>
+                        </tr>
+                        <tr>
+                            <td>Slow</td>
+                            <td>gradual, slow, slight, marginal</td>
+                            <td>gradually, slowly, slightly, marginally</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+
+            <div class="collapsible-header">
+                <h3>Useful Phrases for Graph Analysis</h3>
+                <span class="collapsible-icon">▼</span>
+            </div>
+            <div class="collapsible-content">
+                <div class="collapsible-inner">
+                    <h4>Introducing the Graph:</h4>
+                    <ul>
+                        <li>The graph/chart/table shows/illustrates/depicts/presents...</li>
+                        <li>According to the graph/chart/table...</li>
+                        <li>The data is taken from / sourced from...</li>
+                        <li>This line graph displays trends in... over the period from... to...</li>
+                        <li>The bar chart compares... across different...</li>
+                        <li>The pie chart breaks down... into...</li>
+                    </ul>
+
+                    <h4>Describing Overall Trends:</h4>
+                    <ul>
+                        <li>Overall, there was a...</li>
+                        <li>In general, the trend shows...</li>
+                        <li>The most striking feature is...</li>
+                        <li>It is clear/evident/apparent that...</li>
+                        <li>One notable pattern is...</li>
+                    </ul>
+
+                    <h4>Highlighting Specific Data:</h4>
+                    <ul>
+                        <li>X accounts for... / represents... / makes up...</li>
+                        <li>The figure for... stood at...</li>
+                        <li>X reached a peak of... in...</li>
+                        <li>The lowest point was...</li>
+                        <li>There was a significant increase/decrease in...</li>
+                        <li>X is considerably higher/lower than Y</li>
+                    </ul>
+
+                    <h4>Making Comparisons:</h4>
+                    <ul>
+                        <li>X is twice as high/large as Y</li>
+                        <li>X is significantly higher/lower than Y</li>
+                        <li>Compared to X, Y...</li>
+                        <li>While X increased, Y decreased</li>
+                        <li>In contrast to X, Y...</li>
+                        <li>Similarly, / Likewise, / By comparison,...</li>
+                    </ul>
+
+                    <h4>Discussing Causes and Effects:</h4>
+                    <ul>
+                        <li>This increase/decrease can be attributed to...</li>
+                        <li>This may be due to / explained by...</li>
+                        <li>One possible reason for this is...</li>
+                        <li>This trend suggests / indicates / reflects...</li>
+                        <li>As a result of..., X has...</li>
+                    </ul>
+
+                    <h4>Drawing Conclusions:</h4>
+                    <ul>
+                        <li>In conclusion, the data shows that...</li>
+                        <li>To sum up, it is evident that...</li>
+                        <li>These figures demonstrate / reveal / suggest that...</li>
+                        <li>The data supports the view that...</li>
+                        <li>Based on this information, we can conclude...</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="collapsible-header">
+                <h3>Recognizing Misleading Graphs</h3>
+                <span class="collapsible-icon">▼</span>
+            </div>
+            <div class="collapsible-content">
+                <div class="collapsible-inner">
+                    <p>Graphs can be manipulated to mislead viewers. Be aware of these common tricks:</p>
+
+                    <h4>1. Manipulated Y-Axis Scale</h4>
+                    <ul>
+                        <li><strong>Trick:</strong> Not starting at zero, or using breaks in the axis</li>
+                        <li><strong>Effect:</strong> Small changes appear dramatic</li>
+                        <li><strong>Example:</strong> A graph showing sales increasing from 98 to 100 units with Y-axis from 95-100 looks like massive growth</li>
+                    </ul>
+
+                    <h4>2. Cherry-Picking Time Periods</h4>
+                    <ul>
+                        <li><strong>Trick:</strong> Selecting specific date ranges that support a narrative</li>
+                        <li><strong>Effect:</strong> Ignores broader context or contradictory trends</li>
+                        <li><strong>Example:</strong> Showing stock performance only during its best month</li>
+                    </ul>
+
+                    <h4>3. Distorted Proportions</h4>
+                    <ul>
+                        <li><strong>Trick:</strong> Using 3D effects or images where larger dimensions don't match data</li>
+                        <li><strong>Effect:</strong> Visual size misleads perception</li>
+                        <li><strong>Example:</strong> Doubling bar height AND width makes it look 4x larger</li>
+                    </ul>
+
+                    <h4>4. Omitting Data</h4>
+                    <ul>
+                        <li><strong>Trick:</strong> Leaving out inconvenient data points or categories</li>
+                        <li><strong>Effect:</strong> Creates false impression</li>
+                        <li><strong>Example:</strong> Only showing successful products, hiding failures</li>
+                    </ul>
+
+                    <h4>5. Correlation vs. Causation</h4>
+                    <ul>
+                        <li><strong>Trick:</strong> Implying that correlation means one thing causes another</li>
+                        <li><strong>Effect:</strong> False conclusions about cause and effect</li>
+                        <li><strong>Example:</strong> Ice cream sales and drowning deaths both increase in summer, but ice cream doesn't cause drowning</li>
+                    </ul>
+
+                    <div class="important-note">
+                        <strong>Always Ask:</strong>
+                        <ul>
+                            <li>Does the Y-axis start at zero?</li>
+                            <li>Is the time period representative?</li>
+                            <li>What data might be missing?</li>
+                            <li>Who created this and what's their agenda?</li>
+                            <li>Are visual proportions accurate?</li>
+                            <li>Does correlation necessarily mean causation?</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="collapsible-header">
+                <h3>Practice Example: Graph Analysis</h3>
+                <span class="collapsible-icon">▼</span>
+            </div>
+            <div class="collapsible-content">
+                <div class="collapsible-inner">
+                    <div class="example-box">
+                        <h4>Sample Scenario:</h4>
+                        <p><em>Imagine a line graph titled "Global CO2 Emissions 1990-2020" with the Y-axis showing millions of tons (ranging from 20,000 to 36,000) and the X-axis showing years. The line starts at around 22,000 in 1990, rises steadily to 28,000 in 2000, continues climbing to 33,000 in 2010, then levels off at around 35,000 by 2020. A note indicates the data is from the International Energy Agency.</em></p>
+
+                        <h4>Sample Analysis:</h4>
+                        
+                        <p><strong>Introduction:</strong> The line graph illustrates global CO2 emissions over a thirty-year period from 1990 to 2020, measured in millions of tons. The data is sourced from the International Energy Agency, a reputable organization monitoring global energy trends.</p>
+
+                        <p><strong>Overall Trend:</strong> The graph shows a clear upward trend in global CO2 emissions throughout most of the period examined. Overall, emissions increased by approximately 60% from 22,000 million tons in 1990 to 35,000 million tons in 2020.</p>
+
+                        <p><strong>Specific Features:</strong> The rate of increase was relatively steady during the 1990s, with emissions rising from 22,000 to approximately 28,000 million tons by 2000. The 2000s witnessed continued growth, reaching 33,000 million tons by 2010. However, a notable change occurred in the 2010-2020 period: while emissions continued to increase, the rate of growth slowed considerably, with the line leveling off to reach 35,000 million tons by 2020. This leveling suggests that the dramatic increases seen in earlier decades may be moderating.</p>
+
+                        <p><strong>Interpretation and Context:</strong> The steady increase in emissions from 1990-2010 likely reflects rapid industrialization, particularly in developing economies like China and India, combined with continued high emissions from developed nations. The slower growth after 2010 may indicate several factors: increased adoption of renewable energy, improved energy efficiency, economic slowdowns in some regions, or international climate agreements like the Paris Agreement (2015) beginning to have modest effects.</p>
+
+                        <p><strong>Critical Evaluation:</strong> While the slowing growth rate in the final decade is encouraging, it's important to note that emissions are still increasing, not decreasing. To limit global warming to 1.5-2°C as targeted by the Paris Agreement, emissions need to decline significantly, not merely slow their growth. The graph reveals the enormous challenge ahead: despite increased awareness and some policy actions, global emissions remain near record highs. Additionally, this graph shows total emissions but doesn't account for population growth; per-capita emissions might tell a different story.</p>
+
+                        <p><strong>Conclusion:</strong> The data demonstrates that while humanity has made some progress in slowing emission growth, current trends remain insufficient to address climate change adequately. Dramatic reductions will be necessary to meet international climate targets.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Section 3: Non-fictional Texts -->
+        <div class="section" id="nonfiction">
+            <h2>3. Analyzing Non-fictional Texts</h2>
+
+            <div class="collapsible-header">
+                <h3>Types of Non-fictional Texts</h3>
+                <span class="collapsible-icon">▼</span>
+            </div>
+            <div class="collapsible-content">
+                <div class="collapsible-inner">
+                    <p>Non-fictional texts are factual writings that inform, persuade, or explain. Understanding the type helps you analyze purpose and techniques.</p>
+
+                    <h4>1. News Articles</h4>
+                    <ul>
+                        <li><strong>Purpose:</strong> Inform readers about current events</li>
+                        <li><strong>Characteristics:</strong> Objective tone, inverted pyramid structure (most important info first), who/what/when/where/why/how</li>
+                        <li><strong>Structure:</strong> Headline, lead paragraph, supporting details, quotes</li>
+                        <li><strong>Language:</strong> Clear, concise, accessible, neutral</li>
+                    </ul>
+
+                    <h4>2. Opinion Pieces / Editorials</h4>
+                    <ul>
+                        <li><strong>Purpose:</strong> Persuade readers, express viewpoint</li>
+                        <li><strong>Characteristics:</strong> Subjective, argumentative, uses evidence and rhetoric</li>
+                        <li><strong>Structure:</strong> Thesis/claim, supporting arguments, counterarguments, conclusion</li>
+                        <li><strong>Language:</strong> Persuasive techniques, emotional appeals, rhetorical questions</li>
+                    </ul>
+
+                    <h4>3. Feature Articles</h4>
+                    <ul>
+                        <li><strong>Purpose:</strong> Provide in-depth coverage of a topic</li>
+                        <li><strong>Characteristics:</strong> Longer, detailed, narrative elements, human interest</li>
+                        <li><strong>Structure:</strong> Engaging opening, detailed body, satisfying conclusion</li>
+                        <li><strong>Language:</strong> More descriptive and literary than news articles</li>
+                    </ul>
+
+                    <h4>4. Speeches</h4>
+                    <ul>
+                        <li><strong>Purpose:</strong> Inform, persuade, or inspire an audience</li>
+                        <li><strong>Characteristics:</strong> Oral delivery, rhetorical devices, direct address</li>
+                        <li><strong>Structure:</strong> Introduction, body with main points, memorable conclusion</li>
+                        <li><strong>Language:</strong> Repetition, parallel structure, emotive language, rhetorical questions</li>
+                    </ul>
+
+                    <h4>5. Reviews</h4>
+                    <ul>
+                        <li><strong>Purpose:</strong> Evaluate and critique (book, film, restaurant, product)</li>
+                        <li><strong>Characteristics:</strong> Both descriptive and evaluative</li>
+                        <li><strong>Structure:</strong> Introduction, summary/description, analysis, evaluation</li>
+                        <li><strong>Language:</strong> Evaluative language, comparisons, specific examples</li>
+                    </ul>
+
+                    <h4>6. Reports</h4>
+                    <ul>
+                        <li><strong>Purpose:</strong> Present findings, data, or research</li>
+                        <li><strong>Characteristics:</strong> Formal, objective, evidence-based</li>
+                        <li><strong>Structure:</strong> Executive summary, methodology, findings, conclusions, recommendations</li>
+                        <li><strong>Language:</strong> Technical, precise, impersonal</li>
+                    </ul>
+
+                    <h4>7. Essays</h4>
+                    <ul>
+                        <li><strong>Purpose:</strong> Explore or argue a topic in depth</li>
+                        <li><strong>Characteristics:</strong> Structured argument, analytical</li>
+                        <li><strong>Structure:</strong> Introduction with thesis, body paragraphs, conclusion</li>
+                        <li><strong>Language:</strong> Formal, academic, varied sentence structure</li>
+                    </ul>
+
+                    <h4>8. Blogs / Online Articles</h4>
+                    <ul>
+                        <li><strong>Purpose:</strong> Inform, entertain, or persuade online audience</li>
+                        <li><strong>Characteristics:</strong> Conversational, often shorter paragraphs, may include multimedia</li>
+                        <li><strong>Structure:</strong> Catchy headline, scannable format with subheadings</li>
+                        <li><strong>Language:</strong> Informal to semi-formal, engaging, direct address</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="collapsible-header">
+                <h3>Step-by-Step Text Analysis Method</h3>
+                <span class="collapsible-icon">▼</span>
+            </div>
+            <div class="collapsible-content">
+                <div class="collapsible-inner">
+                    <ol class="step-list">
+                        <li>
+                            <strong>Identify Context and Purpose</strong>
+                            <ul>
+                                <li><strong>Author:</strong> Who wrote this? What are their credentials/background?</li>
+                                <li><strong>Audience:</strong> Who is this written for?</li>
+                                <li><strong>Purpose:</strong> To inform, persuade, entertain, explain?</li>
+                                <li><strong>Publication:</strong> Where was it published? When?</li>
+                                <li><strong>Text Type:</strong> News article, editorial, speech, etc.?</li>
+                            </ul>
+                        </li>
+
+                        <li>
+                            <strong>Analyze Structure</strong>
+                            <ul>
+                                <li><strong>Introduction:</strong> How does it begin? Hook? Thesis?</li>
+                                <li><strong>Organization:</strong> How are ideas arranged? Logical? Chronological?</li>
+                                <li><strong>Paragraphing:</strong> One idea per paragraph? Clear topic sentences?</li>
+                                <li><strong>Transitions:</strong> How does it move between ideas?</li>
+                                <li><strong>Conclusion:</strong> How does it end? Call to action? Summary?</li>
+                            </ul>
+                        </li>
+
+                        <li>
+                            <strong>Examine Content and Arguments</strong>
+                            <ul>
+                                <li><strong>Main Idea/Thesis:</strong> What is the central claim or message?</li>
+                                <li><strong>Supporting Evidence:</strong> Facts, statistics, examples, expert opinions, anecdotes</li>
+                                <li><strong>Reasoning:</strong> Is the logic sound? Are conclusions justified?</li>
+                                <li><strong>Counterarguments:</strong> Does it acknowledge opposing views?</li>
+                                <li><strong>Bias:</strong> Any one-sided presentation? What's omitted?</li>
+                            </ul>
+                        </li>
+
+                        <li>
+                            <strong>Analyze Language and Style</strong>
+                            <ul>
+                                <li><strong>Tone:</strong> Formal/informal? Serious/humorous? Objective/subjective?</li>
+                                <li><strong>Diction:</strong> Word choice - emotive, neutral, technical?</li>
+                                <li><strong>Sentence Structure:</strong> Simple, complex, varied?</li>
+                                <li><strong>Rhetorical Devices:</strong> Metaphors, repetition, questions, etc.</li>
+                                <li><strong>Register:</strong> Level of formality appropriate for audience?</li>
+                            </ul>
+                        </li>
+
+                        <li>
+                            <strong>Identify Persuasive Techniques</strong>
+                            <ul>
+                                <li><strong>Ethos:</strong> Appeals to credibility and character</li>
+                                <li><strong>Pathos:</strong> Appeals to emotion</li>
+                                <li><strong>Logos:</strong> Appeals to logic and reason</li>
+                                <li><strong>Rhetorical Questions:</strong> Questions that don't require answers</li>
+                                <li><strong>Repetition:</strong> Emphasizing key points</li>
+                                <li><strong>Inclusive Language:</strong> "We," "us" to create unity</li>
+                            </ul>
+                        </li>
+
+                        <li>
+                            <strong>Evaluate Effectiveness</strong>
+                            <ul>
+                                <li>Does it achieve its purpose?</li>
+                                <li>Is the argument convincing? Why or why not?</li>
+                                <li>Are sources reliable and evidence strong?</li>
+                                <li>Is it appropriate for its audience?</li>
+                                <li>What are its strengths and weaknesses?</li>
+                                <li>Do you agree or disagree? Why?</li>
+                            </ul>
+                        </li>
+                    </ol>
+                </div>
+            </div>
+
+            <div class="collapsible-header">
+                <h3>Rhetorical Devices and Persuasive Techniques</h3>
+                <span class="collapsible-icon">▼</span>
+            </div>
+            <div class="collapsible-content">
+                <div class="collapsible-inner">
+                    <h4>Appeals (Aristotle's Rhetorical Triangle):</h4>
+                    
+                    <p><strong>Ethos (Credibility)</strong></p>
+                    <ul>
+                        <li>Establishing authority and trustworthiness</li>
+                        <li>Citing credentials, experience, or expertise</li>
+                        <li>Using authoritative sources</li>
+                        <li>Example: "As a doctor with 20 years of experience..."</li>
+                    </ul>
+
+                    <p><strong>Pathos (Emotion)</strong></p>
+                    <ul>
+                        <li>Appealing to audience's emotions</li>
+                        <li>Using vivid language, anecdotes, imagery</li>
+                        <li>Evoking sympathy, fear, anger, hope, pride</li>
+                        <li>Example: "Imagine a child going to bed hungry every night..."</li>
+                    </ul>
+
+                    <p><strong>Logos (Logic)</strong></p>
+                    <ul>
+                        <li>Using facts, statistics, logical reasoning</li>
+                        <li>Cause-and-effect relationships</li>
+                        <li>Clear structure and evidence</li>
+                        <li>Example: "Studies show that 85% of participants..."</li>
+                    </ul>
+
+                    <h4>Common Rhetorical Devices:</h4>
+
+                    <p><strong>Repetition</strong></p>
+                    <ul>
+                        <li>Repeating words or phrases for emphasis</li>
+                        <li>Example: "We shall fight on the beaches, we shall fight on the landing grounds, we shall fight in the fields..."</li>
+                    </ul>
+
+                    <p><strong>Anaphora</strong></p>
+                    <ul>
+                        <li>Repetition at the beginning of successive sentences/clauses</li>
+                        <li>Example: "I have a dream... I have a dream... I have a dream..."</li>
+                    </ul>
+
+                    <p><strong>Rhetorical Questions</strong></p>
+                    <ul>
+                        <li>Questions asked for effect, not requiring answers</li>
+                        <li>Engage audience, emphasize points</li>
+                        <li>Example: "Are we going to stand by and do nothing?"</li>
+                    </ul>
+
+                    <p><strong>Tricolon / Rule of Three</strong></p>
+                    <ul>
+                        <li>Using three parallel words, phrases, or clauses</li>
+                        <li>Creates rhythm and emphasis</li>
+                        <li>Example: "Life, liberty, and the pursuit of happiness"</li>
+                    </ul>
+
+                    <p><strong>Parallelism</strong></p>
+                    <ul>
+                        <li>Similar grammatical structure in successive phrases</li>
+                        <li>Creates balance and rhythm</li>
+                        <li>Example: "Ask not what your country can do for you—ask what you can do for your country"</li>
+                    </ul>
+
+                    <p><strong>Metaphor / Analogy</strong></p>
+                    <ul>
+                        <li>Comparing two unlike things to clarify or emphasize</li>
+                        <li>Example: "The economy is a sinking ship"</li>
+                    </ul>
+
+                    <p><strong>Hyperbole (Exaggeration)</strong></p>
+                    <ul>
+                        <li>Deliberate exaggeration for emphasis</li>
+                        <li>Example: "I've told you a million times"</li>
+                    </ul>
+
+                    <p><strong>Alliteration</strong></p>
+                    <ul>
+                        <li>Repetition of initial consonant sounds</li>
+                        <li>Creates memorable phrases</li>
+                        <li>Example: "Peace, prosperity, and progress"</li>
+                    </ul>
+
+                    <p><strong>Direct Address</strong></p>
+                    <ul>
+                        <li>Speaking directly to audience: "you," "we," "us"</li>
+                        <li>Creates connection and involvement</li>
+                        <li>Example: "You have the power to change this"</li>
+                    </ul>
+
+                    <p><strong>Contrast / Antithesis</strong></p>
+                    <ul>
+                        <li>Juxtaposing opposite ideas</li>
+                        <li>Highlights differences</li>
+                        <li>Example: "It was the best of times, it was the worst of times"</li>
+                    </ul>
+
+                    <p><strong>Emotive Language</strong></p>
+                    <ul>
+                        <li>Words chosen to evoke emotional response</li>
+                        <li>Example: "Innocent victims" vs. "casualties"</li>
+                    </ul>
+
+                    <p><strong>Inclusive Language</strong></p>
+                    <ul>
+                        <li>Using "we," "our," "us" to create unity</li>
+                        <li>Makes audience feel part of group</li>
+                        <li>Example: "Together, we can achieve..."</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="collapsible-header">
+                <h3>Analyzing Bias and Reliability</h3>
+                <span class="collapsible-icon">▼</span>
+            </div>
+            <div class="collapsible-content">
+                <div class="collapsible-inner">
+                    <h4>Detecting Bias:</h4>
+                    <ul>
+                        <li><strong>Word Choice:</strong> Loaded language favoring one side</li>
+                        <li><strong>Omission:</strong> Leaving out relevant information or perspectives</li>
+                        <li><strong>Source Selection:</strong> Only citing sources that agree with one viewpoint</li>
+                        <li><strong>Placement:</strong> Emphasizing favorable info, burying contrary info</li>
+                        <li><strong>Spin:</strong> Interpreting facts in a particular way</li>
+                    </ul>
+
+                    <h4>Questions to Ask About Sources:</h4>
+                    <ul>
+                        <li><strong>Authority:</strong> Who is the author? What are their qualifications?</li>
+                        <li><strong>Accuracy:</strong> Can the information be verified? Are sources cited?</li>
+                        <li><strong>Objectivity:</strong> What is the author's purpose? Any conflicts of interest?</li>
+                        <li><strong>Currency:</strong> How recent is the information? Still relevant?</li>
+                        <li><strong>Coverage:</strong> Is the topic covered comprehensively or superficially?</li>
+                    </ul>
+
+                    <h4>Types of Evidence:</h4>
+                    <table>
+                        <tr>
+                            <th>Type</th>
+                            <th>Description</th>
+                            <th>Strengths/Weaknesses</th>
+                        </tr>
+                        <tr>
+                            <td>Statistics</td>
+                            <td>Numerical data</td>
+                            <td>Strong if from reliable source; can be manipulated</td>
+                        </tr>
+                        <tr>
+                            <td>Expert Opinion</td>
+                            <td>Views from specialists</td>
+                            <td>Strong if expert is credible; experts can disagree</td>
+                        </tr>
+                        <tr>
+                            <td>Examples/Anecdotes</td>
+                            <td>Individual cases or stories</td>
+                            <td>Engaging but may not be representative</td>
+                        </tr>
+                        <tr>
+                            <td>Research Studies</td>
+                            <td>Scientific/academic findings</td>
+                            <td>Strong if peer-reviewed; can be misinterpreted</td>
+                        </tr>
+                        <tr>
+                            <td>Historical Evidence</td>
+                            <td>Past events and patterns</td>
+                            <td>Provides context; past may not predict future</td>
+                        </tr>
+                    </table>
+
+                    <div class="important-note">
+                        <strong>Red Flags for Unreliable Sources:</strong>
+                        <ul>
+                            <li>No author listed or credentials unclear</li>
+                            <li>Excessive emotional language</li>
+                            <li>No sources cited for claims</li>
+                            <li>Obvious agenda or bias</li>
+                            <li>Outdated information</li>
+                            <li>Grammatical errors and poor quality</li>
+                            <li>Sensational headlines not supported by content</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="collapsible-header">
+                <h3>Useful Phrases for Text Analysis</h3>
+                <span class="collapsible-icon">▼</span>
+            </div>
+            <div class="collapsible-content">
+                <div class="collapsible-inner">
+                    <h4>Introducing the Text:</h4>
+                    <ul>
+                        <li>The article/essay/speech is written by... and was published in...</li>
+                        <li>This text addresses/deals with/focuses on the issue of...</li>
+                        <li>The author's main purpose is to...</li>
+                        <li>The intended audience appears to be...</li>
+                    </ul>
+
+                    <h4>Describing Structure:</h4>
+                    <ul>
+                        <li>The text is structured/organized into... sections/parts</li>
+                        <li>The author begins by... and then proceeds to...</li>
+                        <li>The argument is developed through...</li>
+                        <li>The text follows a logical/chronological progression</li>
+                    </ul>
+
+                    <h4>Analyzing Content:</h4>
+                    <ul>
+                        <li>The author argues/claims/suggests/maintains that...</li>
+                        <li>To support this argument, the author provides/uses/cites...</li>
+                        <li>The main thesis/central idea is...</li>
+                        <li>A key point made is...</li>
+                        <li>The author draws on... to illustrate/demonstrate...</li>
+                    </ul>
+
+                    <h4>Discussing Language:</h4>
+                    <ul>
+                        <li>The tone of the text is formal/informal, objective/subjective...</li>
+                        <li>The author employs/uses emotive/technical/descriptive language</li>
+                        <li>Through the use of metaphors/rhetorical questions, the author...</li>
+                        <li>The repetition of... emphasizes...</li>
+                        <li>The author's word choice/diction suggests/conveys...</li>
+                    </ul>
+
+                    <h4>Identifying Techniques:</h4>
+                    <ul>
+                        <li>The author appeals to emotion/logic/credibility by...</li>
+                        <li>By using rhetorical questions, the author engages...</li>
+                        <li>The inclusive pronouns "we" and "us" create...</li>
+                        <li>The parallel structure of... creates rhythm and emphasis</li>
+                        <li>Through contrast/juxtaposition, the author highlights...</li>
+                    </ul>
+
+                    <h4>Evaluating:</h4>
+                    <ul>
+                        <li>The text is effective/persuasive because...</li>
+                        <li>The argument is convincing due to...</li>
+                        <li>However, the text has some weaknesses, such as...</li>
+                        <li>A potential criticism is...</li>
+                        <li>The author succeeds in.../fails to...</li>
+                        <li>The evidence presented is strong/weak/insufficient</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="collapsible-header">
+                <h3>Practice Example: Text Analysis</h3>
+                <span class="collapsible-icon">▼</span>
+            </div>
+            <div class="collapsible-content">
+                <div class="collapsible-inner">
+                    <div class="example-box">
+                        <h4>Sample Text Excerpt:</h4>
+                        <div class="quote">
+                            "We stand at a crossroads. Behind us lies a century of unprecedented progress, a time when human ingenuity conquered disease, connected the globe, and lifted billions out of poverty. Yet before us stretches a path fraught with peril. Climate change threatens our very existence. Inequality tears at the fabric of our societies. Technology that promised liberation now threatens our privacy, our jobs, even our democracy itself.
+                            
+                            But we are not powerless. We have overcome greater challenges. Our grandparents defeated fascism. Our parents won civil rights. Now it is our turn. The question is not whether we can act—it is whether we will. Will we be the generation that chose comfort over courage? Or will we rise to meet this moment?"
+                        </div>
+                        <p><em>(Imagine this is from an opinion piece about addressing modern challenges, published in a major newspaper, written by a political commentator.)</em></p>
+
+                        <h4>Sample Analysis:</h4>
+                        
+                        <p><strong>Context and Purpose:</strong> This excerpt is from an opinion piece by a political commentator published in a major newspaper, aimed at a general educated audience. The primary purpose is to persuade readers that despite serious contemporary challenges, collective action is both possible and necessary.</p>
+
+                        <p><strong>Structure and Content:</strong> The text is structured around a clear contrast between past and future, organized into three movements: acknowledging past achievements, identifying current threats, and calling for action. The author begins by acknowledging human progress—a strategic concession that builds credibility before introducing problems. This creates balance and prevents the piece from appearing purely pessimistic. The second section catalogs contemporary challenges (climate change, inequality, technology), while the conclusion issues a call to action framed around generational responsibility.</p>
+
+                        <p><strong>Rhetorical Devices and Techniques:</strong> The author employs numerous persuasive techniques. The opening metaphor "We stand at a crossroads" immediately establishes the stakes as a critical decision point. <em>Tricolon</em> (rule of three) appears multiple times: "conquered disease, connected the globe, and lifted billions" and "threatens our privacy, our jobs, even our democracy." This creates rhythm and makes ideas more memorable. The author uses <em>inclusive language</em> ("we," "our," "us") throughout to create unity and shared responsibility. <em>Contrast</em> is central to the structure: "progress" vs. "peril," "behind us" vs. "before us," what "promised" vs. what "threatens." The author appeals to <em>ethos</em> by citing historical precedent ("Our grandparents defeated fascism"), suggesting that overcoming challenges is part of human nature. <em>Rhetorical questions</em> in the conclusion ("The question is not whether we can act—it is whether we will. Will we be the generation that chose comfort over courage?") force readers to confront their own potential inaction. The <em>parallelism</em> of "Will we be... Or will we..." creates a stark choice, while the <em>alliteration</em> in "comfort over courage" makes this binary memorable.</p>
+
+                        <p><strong>Tone and Language:</strong> The tone is urgent yet inspiring, combining warning with hope. The language is elevated and somewhat poetic ("tears at the fabric of our societies," "rise to meet this moment") which lends gravitas to the message. Emotive language appears throughout: "peril," "threatens our very existence," "tears at the fabric." However, this is balanced with rational appeals through concrete examples of problems and historical precedents.</p>
+
+                        <p><strong>Persuasive Strategy:</strong> The author primarily uses <em>pathos</em> (emotional appeal) combined with <em>ethos</em> (credibility through historical reference). The historical examples serve dual purposes: they demonstrate that humanity has overcome existential threats before (logos - logical argument) while also creating emotional resonance through shared cultural memory. The generational framing creates a sense of duty and legacy. By positioning contemporary challenges alongside fascism and civil rights struggles, the author elevates the urgency while suggesting that success is possible.</p>
+
+                        <p><strong>Evaluation:</strong> The text is highly effective in its persuasive goal for several reasons. The balanced opening acknowledges achievements rather than being purely negative, which helps maintain audience engagement. The use of inclusive language and rhetorical questions directly involves readers rather than preaching at them. The historical parallels are powerful because they're widely recognized and emotionally resonant. However, the text has some limitations. The challenges listed are simplified and not analyzed in depth—it's more inspirational than informative. The historical comparisons, while emotionally effective, may not be perfectly analogous to contemporary issues. The binary choice presented ("comfort over courage") is somewhat reductive; real-world action is more nuanced. Additionally, the text identifies problems but doesn't propose specific solutions, which could leave readers inspired but uncertain about concrete steps. Some readers might find the elevated tone manipulative or the generational framing as unfair pressure. Despite these limitations, for its intended purpose—to inspire action and create urgency—the text succeeds through its sophisticated use of rhetorical devices and emotional appeals.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Scroll to Top Button -->
+        <div class="scroll-top" id="scrollTop">↑</div>
+
+        <div style="text-align: center; margin-top: 40px; padding: 20px; background: var(--card-bg); border-radius: 15px;">
+            <p style="color: #7f8c8d; margin-bottom: 10px;">
+                📚 This comprehensive guide covers all essential techniques for analyzing non-fictional texts for the English Abitur 2026 examination.
+            </p>
+            <p style="color: #7f8c8d; margin-bottom: 20px;">
+                ✨ Click section headers to expand/collapse content • Use navigation menu to jump to sections • Press 'T' to scroll to top
+            </p>
+            <a href="index.html" class="back-button">← Back to Home</a>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Collapsible sections
+            const collapsibleHeaders = document.querySelectorAll('.collapsible-header');
+            
+            collapsibleHeaders.forEach(header => {
+                header.addEventListener('click', function() {
+                    this.classList.toggle('active');
+                    const content = this.nextElementSibling;
+                    content.classList.toggle('active');
+                });
+            });
+
+            // Smooth scrolling
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    }
+                });
+            });
+
+            // Scroll to top button
+            const scrollTopButton = document.getElementById('scrollTop');
+            
+            window.addEventListener('scroll', function() {
+                if (window.pageYOffset > 300) {
+                    scrollTopButton.classList.add('visible');
+                } else {
+                    scrollTopButton.classList.remove('visible');
+                }
+            });
+            
+            scrollTopButton.addEventListener('click', function() {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            });
+
+            // Keyboard shortcut: Press 'T' to scroll to top
+            document.addEventListener('keydown', function(e) {
+                if ((e.key === 't' || e.key === 'T') && !e.ctrlKey && !e.altKey) {
+                    const active = document.activeElement;
+                    if (active.tagName !== 'INPUT' && active.tagName !== 'TEXTAREA') {
+                        window.scrollTo({ top: 0, behavior: 'smooth' });
+                    }
+                }
+            });
+
+            // Highlight active navigation link
+            const sections = document.querySelectorAll('.section');
+            const navLinks = document.querySelectorAll('.nav-link');
+            
+            const observerOptions = {
+                root: null,
+                rootMargin: '-20% 0px -80% 0px',
+                threshold: 0
+            };
+
+            const observer = new IntersectionObserver(entries => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        navLinks.forEach(link => {
+                            link.style.background = 'linear-gradient(45deg, var(--secondary-color), #2980b9)';
+                        });
+                        
+                        const id = entry.target.getAttribute('id');
+                        const activeLink = document.querySelector(`.nav-link[href="#${id}"]`);
+                        if (activeLink) {
+                            activeLink.style.background = 'linear-gradient(45deg, var(--accent-color), #c0392b)';
+                        }
+                    }
+                });
+            }, observerOptions);
+
+            sections.forEach(section => observer.observe(section));
+
+            console.log('✅ Analyzing Non-fictional Texts page loaded! Press T to scroll to top.');
+        });
+    </script>
+</body>
+</html>
