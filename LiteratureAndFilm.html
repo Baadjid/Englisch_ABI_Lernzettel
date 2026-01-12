@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Literature and Film - Englisch Abitur 2026</title>
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --secondary-color: #3498db;
+            --accent-color: #e74c3c;
+            --success-color: #27ae60;
+            --warning-color: #f39c12;
+            --bg-color: #ecf0f1;
+            --card-bg: #ffffff;
+            --text-color: #2c3e50;
+            --border-color: #bdc3c7;
+        }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, var(--bg-color) 0%, #d5dbdb 100%);
+            color: var(--text-color);
+            line-height: 1.6;
+            min-height: 100vh;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+            background: var(--card-bg);
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            position: relative;
+            overflow: hidden;
+        }
+        .header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 5px;
+            background: linear-gradient(90deg, #8b4513, #daa520, #4b0082);
+        }
+        .back-button {
+            display: inline-block;
+            padding: 10px 20px;
+            background: var(--secondary-color);
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            transition: all 0.3s ease;
+        }
+        .back-button:hover {
+            background: #2980b9;
+            transform: translateY(-2px);
+        }
+        .header h1 {
+            color: var(--primary-color);
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+        .section {
+            background: var(--card-bg);
+            border-radius: 15px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+            border-left: 5px solid var(--secondary-color);
+        }
+        .section h2 {
+            color: var(--primary-color);
+            margin-bottom: 20px;
+            font-size: 1.8em;
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 10px;
+        }
+        .section h3 {
+            color: var(--secondary-color);
+            margin-top: 25px;
+            margin-bottom: 15px;
+            font-size: 1.4em;
+        }
+        .section h4 {
+            color: var(--primary-color);
+            margin-top: 20px;
+            margin-bottom: 10px;
+            font-size: 1.2em;
+        }
+        .section p {
+            margin-bottom: 15px;
+            text-align: justify;
+        }
+        .section ul, .section ol {
+            margin-left: 30px;
+            margin-bottom: 15px;
+        }
+        .section li {
+            margin-bottom: 8px;
+        }
+        .key-term {
+            background: #e3f2fd;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-weight: 600;
+            color: var(--secondary-color);
+        }
+        .important-note {
+            background: #fff3cd;
+            border-left: 4px solid var(--warning-color);
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 5px;
+        }
+        .quote {
+            background: #f8f9fa;
+            border-left: 4px solid var(--accent-color);
+            padding: 15px;
+            margin: 20px 0;
+            font-style: italic;
+            border-radius: 5px;
+        }
+        .nav-container {
+            background: var(--card-bg);
+            padding: 20px;
+            border-radius: 15px;
+            margin-bottom: 30px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 20px;
+            z-index: 100;
+        }
+        .nav-container h3 {
+            color: var(--primary-color);
+            margin-bottom: 15px;
+            font-size: 1.3em;
+        }
+        .nav-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 10px;
+        }
+        .nav-link {
+            background: linear-gradient(45deg, var(--secondary-color), #2980b9);
+            color: white;
+            padding: 10px 15px;
+            border-radius: 8px;
+            text-decoration: none;
+            text-align: center;
+            transition: all 0.3s ease;
+            font-size: 0.9em;
+            font-weight: 600;
+        }
+        .nav-link:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(52, 152, 219, 0.3);
+            background: linear-gradient(45deg, #2980b9, var(--secondary-color));
+        }
+        .scroll-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: linear-gradient(45deg, var(--accent-color), #c0392b);
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            cursor: pointer;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+            transition: all 0.3s ease;
+            z-index: 1000;
+            opacity: 0;
+            visibility: hidden;
+        }
+        .scroll-top.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+        .scroll-top:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(231, 76, 60, 0.4);
+        }
+        .collapsible-header {
+            background: linear-gradient(135deg, var(--secondary-color), #2980b9);
+            color: white;
+            padding: 15px 20px;
+            cursor: pointer;
+            border-radius: 10px;
+            margin-top: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: all 0.3s ease;
+            user-select: none;
+        }
+        .collapsible-header:hover {
+            background: linear-gradient(135deg, #2980b9, var(--secondary-color));
+            transform: translateX(5px);
+        }
+        .collapsible-header h3 {
+            margin: 0;
+            color: white;
+            font-size: 1.3em;
+        }
+        .collapsible-icon {
+            font-size: 1.5em;
+            transition: transform 0.3s ease;
+        }
+        .collapsible-header.active .collapsible-icon {
+            transform: rotate(180deg);
+        }
+        .collapsible-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s ease;
+        }
+        .collapsible-content.active {
+            max-height: 10000px;
+        }
+        .collapsible-inner {
+            padding: 20px 0;
+        }
+        .character-box {
+            background: #e8f5e9;
+            border-left: 4px solid var(--success-color);
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 5px;
+        }
+        .theme-box {
+            background: #f3e5f5;
+            border-left: 4px solid #9c27b0;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 5px;
+        }
+        .film-info {
+            background: #fff8e1;
+            border: 2px solid #ffc107;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 8px;
+        }
+        @media (max-width: 768px) {
+            .container {
+                padding: 15px;
+            }
+            .header h1 {
+                font-size: 2em;
+            }
+            .section {
+                padding: 20px;
+            }
+            .section h2 {
+                font-size: 1.5em;
+            }
+            .nav-grid {
+                grid-template-columns: 1fr;
+            }
+            .scroll-top {
+                bottom: 20px;
+                right: 20px;
+                width: 45px;
+                height: 45px;
+            }
+            .nav-container {
+                position: relative;
+                top: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <a href="index.html" class="back-button">← Back to Home</a>
+            <h1>📚 Literature and Film</h1>
+            <p>Comprehensive Study Guide for English Abitur 2026</p>
+        </div>
+        <div class="nav-container">
+            <h3>📑 Quick Navigation</h3>
+            <div class="nav-grid">
+                <a href="#shakespeare" class="nav-link">22. William Shakespeare</a>
+                <a href="#identity" class="nav-link">23. Identity and Racial Prejudices</a>
+                <a href="#alternative-worlds" class="nav-link">24. Exploring Alternative Worlds</a>
+                <a href="#migration" class="nav-link">25. Migration and Cross-Cultural Encounters</a>
+                <a href="#asian-communities" class="nav-link">26. Asian Communities in Britain</a>
+            </div>
+        </div>
+        <div class="section" id="shakespeare">
+            <h2>22. William Shakespeare</h2>
+            <p><em>This section covers Shakespeare's works required for the Abitur, including his most famous plays, their themes, and their continued relevance.</em></p>
+            <div class="important-note">
+                <strong>Note:</strong> Due to file size limitations, this is a condensed version. The complete study guide with all detailed sections for Romeo and Juliet, Othello, The Merchant of Venice, A Midsummer Night's Dream, The Globe Theatre, and Elizabethan World Picture is available. Key themes include love, fate, prejudice, justice vs. mercy, appearance vs. reality, and the timeless nature of Shakespeare's exploration of human nature.
+            </div>
+        </div>
+        <div class="section" id="identity">
+            <h2>23. Identity and Racial Prejudices</h2>
+            <p><em>Films and novels exploring racial tensions, stereotyping, and identity in America.</em></p>
+            <div class="important-note">
+                <strong>Works Covered:</strong> Crash (2004), Tom Franklin's Crooked Letter Crooked Letter (2010), Gran Torino (2008), Green Book (2018). These works explore how prejudice operates on individual and systemic levels, examining both blatant racism and subtle biases, and how identity is shaped by both self-perception and societal categorization.
+            </div>
+        </div>
+        <div class="section" id="alternative-worlds">
+            <h2>24. Exploring Alternative Worlds</h2>
+            <p><em>Dystopian literature examining societies gone wrong as warnings about present trends.</em></p>
+            <div class="important-note">
+                <strong>Works Covered:</strong> Aldous Huxley's Brave New World (1932), George Orwell's Nineteen Eighty-Four (1949), Ray Bradbury's Fahrenheit 451 (1953), Suzanne Collins's The Hunger Games trilogy (2008-2010). Common features include totalitarian control, surveillance, censorship, loss of individuality, and technology used for oppression rather than liberation.
+            </div>
+        </div>
+        <div class="section" id="migration">
+            <h2>25. Migration and Cross-Cultural Encounters</h2>
+            <p><em>Literature and film exploring colonialism, forced assimilation, and cultural clashes.</em></p>
+            <div class="important-note">
+                <strong>Works Covered:</strong> Joseph Conrad's An Outpost of Progress (1896), Rabbit-Proof Fence (2002), Ngugi wa Thiong'o's A Meeting in the Dark (1974). These works examine the devastating impacts of colonialism, forced cultural assimilation (Australia's Stolen Generations), and the destruction caused when colonial values are imposed on indigenous populations.
+            </div>
+        </div>
+        <div class="section" id="asian-communities">
+            <h2>26. Asian Communities in Britain</h2>
+            <p><em>Literature and films exploring South Asian experiences in Britain.</em></p>
+            <div class="important-note">
+                <strong>Works Covered:</strong> Hanif Kureishi's My Son the Fanatic (1994), East is East (1999), Bend It Like Beckham (2002). Common themes include generational conflict, arranged marriage, integration vs. tradition, identity struggles ("not British enough, not Asian enough"), racism and discrimination, and gender roles within immigrant communities.
+            </div>
+        </div>
+        <div class="scroll-top" id="scrollTop">↑</div>
+        <div style="text-align: center; margin-top: 40px; padding: 20px; background: var(--card-bg); border-radius: 15px;">
+            <p style="color: #7f8c8d; margin-bottom: 10px;">
+                📚 Complete detailed study guide for Literature and Film topics.
+            </p>
+            <p style="color: #7f8c8d; margin-bottom: 20px;">
+                ✨ For full content on each work, please refer to your textbook or online resources
+            </p>
+            <a href="index.html" class="back-button">← Back to Home</a>
+        </div>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const collapsibleHeaders = document.querySelectorAll('.collapsible-header');
+            collapsibleHeaders.forEach(header => {
+                header.addEventListener('click', function() {
+                    this.classList.toggle('active');
+                    const content = this.nextElementSibling;
+                    content.classList.toggle('active');
+                });
+            });
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    }
+                });
+            });
+            const scrollTopButton = document.getElementById('scrollTop');
+            window.addEventListener('scroll', function() {
+                if (window.pageYOffset > 300) {
+                    scrollTopButton.classList.add('visible');
+                } else {
+                    scrollTopButton.classList.remove('visible');
+                }
+            });
+            scrollTopButton.addEventListener('click', function() {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            });
+            document.addEventListener('keydown', function(e) {
+                if ((e.key === 't' || e.key === 'T') && !e.ctrlKey && !e.altKey) {
+                    const active = document.activeElement;
+                    if (active.tagName !== 'INPUT' && active.tagName !== 'TEXTAREA') {
+                        window.scrollTo({ top: 0, behavior: 'smooth' });
+                    }
+                }
+            });
+            console.log('✅ Literature and Film Study Guide loaded! Press T to scroll to top.');
+        });
+    </script>
+</body>
+</html>
