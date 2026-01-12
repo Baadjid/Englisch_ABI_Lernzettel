@@ -1,0 +1,1769 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Useful Phrases - Englisch Abitur 2026</title>
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --secondary-color: #3498db;
+            --accent-color: #e74c3c;
+            --success-color: #27ae60;
+            --warning-color: #f39c12;
+            --bg-color: #ecf0f1;
+            --card-bg: #ffffff;
+            --text-color: #2c3e50;
+            --border-color: #bdc3c7;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, var(--bg-color) 0%, #d5dbdb 100%);
+            color: var(--text-color);
+            line-height: 1.6;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+            background: var(--card-bg);
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 5px;
+            background: linear-gradient(90deg, var(--secondary-color), var(--accent-color), var(--success-color));
+        }
+
+        .back-button {
+            display: inline-block;
+            padding: 10px 20px;
+            background: var(--secondary-color);
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            transition: all 0.3s ease;
+        }
+
+        .back-button:hover {
+            background: #2980b9;
+            transform: translateY(-2px);
+        }
+
+        .header h1 {
+            color: var(--primary-color);
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+
+        .section {
+            background: var(--card-bg);
+            border-radius: 15px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+            border-left: 5px solid var(--secondary-color);
+        }
+
+        .section h2 {
+            color: var(--primary-color);
+            margin-bottom: 20px;
+            font-size: 1.8em;
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 10px;
+        }
+
+        .section h3 {
+            color: var(--secondary-color);
+            margin-top: 25px;
+            margin-bottom: 15px;
+            font-size: 1.4em;
+        }
+
+        .section h4 {
+            color: var(--primary-color);
+            margin-top: 20px;
+            margin-bottom: 10px;
+            font-size: 1.2em;
+        }
+
+        .section p {
+            margin-bottom: 15px;
+        }
+
+        .section ul {
+            margin-left: 30px;
+            margin-bottom: 15px;
+        }
+
+        .section li {
+            margin-bottom: 8px;
+        }
+
+        .phrase-box {
+            background: #e3f2fd;
+            padding: 10px 15px;
+            border-radius: 6px;
+            margin: 10px 0;
+            border-left: 4px solid var(--secondary-color);
+        }
+
+        .phrase-box strong {
+            color: var(--secondary-color);
+        }
+
+        .example {
+            background: #f8f9fa;
+            padding: 10px 15px;
+            border-radius: 6px;
+            margin: 10px 0;
+            font-style: italic;
+            border-left: 4px solid var(--success-color);
+        }
+
+        .important-note {
+            background: #fff3cd;
+            border-left: 4px solid var(--warning-color);
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 5px;
+        }
+
+        /* Navigation Menu */
+        .nav-container {
+            background: var(--card-bg);
+            padding: 20px;
+            border-radius: 15px;
+            margin-bottom: 30px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 20px;
+            z-index: 100;
+        }
+
+        .nav-container h3 {
+            color: var(--primary-color);
+            margin-bottom: 15px;
+            font-size: 1.3em;
+        }
+
+        .nav-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 10px;
+        }
+
+        .nav-link {
+            background: linear-gradient(45deg, var(--secondary-color), #2980b9);
+            color: white;
+            padding: 10px 15px;
+            border-radius: 8px;
+            text-decoration: none;
+            text-align: center;
+            transition: all 0.3s ease;
+            font-size: 0.9em;
+            font-weight: 600;
+        }
+
+        .nav-link:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(52, 152, 219, 0.3);
+            background: linear-gradient(45deg, #2980b9, var(--secondary-color));
+        }
+
+        /* Scroll to Top Button */
+        .scroll-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: linear-gradient(45deg, var(--accent-color), #c0392b);
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            cursor: pointer;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+            transition: all 0.3s ease;
+            z-index: 1000;
+            opacity: 0;
+            visibility: hidden;
+        }
+
+        .scroll-top.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .scroll-top:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(231, 76, 60, 0.4);
+        }
+
+        /* Collapsible Sections */
+        .collapsible-header {
+            background: linear-gradient(135deg, var(--secondary-color), #2980b9);
+            color: white;
+            padding: 15px 20px;
+            cursor: pointer;
+            border-radius: 10px;
+            margin-top: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: all 0.3s ease;
+            user-select: none;
+        }
+
+        .collapsible-header:hover {
+            background: linear-gradient(135deg, #2980b9, var(--secondary-color));
+            transform: translateX(5px);
+        }
+
+        .collapsible-header h3 {
+            margin: 0;
+            color: white;
+            font-size: 1.3em;
+        }
+
+        .collapsible-icon {
+            font-size: 1.5em;
+            transition: transform 0.3s ease;
+        }
+
+        .collapsible-header.active .collapsible-icon {
+            transform: rotate(180deg);
+        }
+
+        .collapsible-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s ease;
+        }
+
+        .collapsible-content.active {
+            max-height: 10000px;
+        }
+
+        .collapsible-inner {
+            padding: 20px 0;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 15px;
+            }
+            
+            .header h1 {
+                font-size: 2em;
+            }
+            
+            .section {
+                padding: 20px;
+            }
+
+            .section h2 {
+                font-size: 1.5em;
+            }
+
+            .scroll-top {
+                bottom: 20px;
+                right: 20px;
+                width: 45px;
+                height: 45px;
+            }
+
+            .nav-container {
+                position: relative;
+                top: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <a href="index.html" class="back-button">← Back to Home</a>
+            <h1>💭 Useful Phrases</h1>
+            <p>Essential phrases and expressions for English Abitur 2026</p>
+        </div>
+
+        <!-- Navigation Menu -->
+        <div class="nav-container">
+            <h3>📑 Quick Navigation</h3>
+            <div class="nav-grid">
+                <a href="#introducing-opinions" class="nav-link">Introducing Opinions</a>
+                <a href="#agreeing-disagreeing" class="nav-link">Agreeing & Disagreeing</a>
+                <a href="#presenting-arguments" class="nav-link">Presenting Arguments</a>
+                <a href="#analyzing-texts" class="nav-link">Analyzing Texts</a>
+                <a href="#describing-visuals" class="nav-link">Describing Visuals</a>
+                <a href="#discussing-issues" class="nav-link">Discussing Issues</a>
+                <a href="#writing-essays" class="nav-link">Writing Essays</a>
+                <a href="#comparing-contrasting" class="nav-link">Comparing & Contrasting</a>
+                <a href="#cause-effect" class="nav-link">Cause & Effect</a>
+                <a href="#conclusions" class="nav-link">Conclusions</a>
+                <a href="#formal-writing" class="nav-link">Formal Writing</a>
+                <a href="#connectives" class="nav-link">Linking Words</a>
+            </div>
+        </div>
+
+        <!-- Section 1: Introducing Opinions -->
+        <div class="section" id="introducing-opinions">
+            <h2>1. Introducing Opinions and Views</h2>
+
+            <div class="collapsible-header">
+                <h3>Expressing Your Own Opinion</h3>
+                <span class="collapsible-icon">▼</span>
+            </div>
+            <div class="collapsible-content">
+                <div class="collapsible-inner">
+                    <div class="phrase-box">
+                        <strong>In my opinion,</strong> ... / <strong>In my view,</strong> ...
+                    </div>
+                    <div class="example">
+                        In my opinion, social media has both positive and negative effects on society.
+                    </div>
+
+                    <div class="phrase-box">
+                        <strong>From my perspective,</strong> ... / <strong>From my point of view,</strong> ...
+                    </div>
+                    <div class="example">
+                        From my perspective, education is the key to solving many social problems.
+                    </div>
+
+                    <div class="phrase-box">
+                        <strong>I believe / think / feel / consider that</strong> ...
+                    </div>
+                    <div class="example">
+                        I believe that climate change is the most pressing issue of our time.
+                    </div>
+
+                    <div class="phrase-box">
+                        <strong>It seems to me that</strong> ... / <strong>It appears that</strong> ...
+                    </div>
+                    <div class="example">
+                        It seems to me that young people are more politically engaged than previous generations.
+                    </div>
+
+                    <div class="phrase-box">
+                        <strong>I am convinced that</strong> ... / <strong>I am of the opinion that</strong> ...
+                    </div>
+                    <div class="example">
+                        I am convinced that renewable energy will eventually replace fossil fuels.
+                    </div>
+
+                    <div class="phrase-box">
+                        <strong>To my mind,</strong> ... / <strong>As I see it,</strong> ...
+                    </div>
+                    <div class="example">
+                        To my mind, cultural diversity enriches society rather than dividing it.
+                    </div>
+                </div>
+            </div>
+
+            <div class="collapsible-header">
+                <h3>Introducing Others' Opinions</h3>
+                <span class="collapsible-icon">▼</span>
+            </div>
+            <div class="collapsible-content">
+                <div class="collapsible-inner">
+                    <div class="phrase-box">
+                        <strong>According to</strong> (the author/the article/...), ...
+                    </div>
+                    <div class="example">
+                        According to the author, immigration has significantly shaped American culture.
+                    </div>
+
+                    <div class="phrase-box">
+                        <strong>The author argues / claims / suggests / maintains that</strong> ...
+                    </div>
+                    <div class="example">
+                        The author argues that technology has fundamentally changed how we communicate.
+                    </div>
+
+                    <div class="phrase-box">
+                        <strong>The writer points out / emphasizes / highlights that</strong> ...
+                    </div>
+                    <div class="example">
+                        The writer emphasizes that economic inequality remains a major challenge.
+                    </div>
+
+                    <div class="phrase-box">
+                        <strong>It is stated / mentioned / noted that</strong> ...
+                    </div>
+                    <div class="example">
+                        It is stated that over 40 million people live in poverty in the United States.
+                    </div>
+
+                    <div class="phrase-box">
+                        <strong>Some people believe / argue / claim that</strong> ...
+                    </div>
+                    <div class="example">
+                        Some people believe that globalization benefits everyone equally.
+                    </div>
+                </div>
+            </div>
+
+            <div class="collapsible-header">
+                <h3>Expressing Certainty and Doubt</h3>
+                <span class="collapsible-icon">▼</span>
+            </div>
+            <div class="collapsible-content">
+                <div class="collapsible-inner">
+                    <h4>Expressing Certainty:</h4>
+                    <div class="phrase-box">
+                        <strong>Undoubtedly,</strong> ... / <strong>Without doubt,</strong> ... / <strong>Certainly,</strong> ...
+                    </div>
+                    <div class="example">
+                        Undoubtedly, artificial intelligence will transform many industries.
+                    </div>
+
+                    <div class="phrase-box">
+                        <strong>It is clear / obvious / evident that</strong> ...
+                    </div>
+                    <div class="example">
+                        It is clear that climate change is already affecting global weather patterns.
+                    </div>
+
+                    <div class="phrase-box">
+                        <strong>There is no doubt that</strong> ... / <strong>Unquestionably,</strong> ...
+                    </div>
+                    <div class="example">
+                        There is no doubt that education plays a crucial role in social mobility.
+                    </div>
+
+                    <h4>Expressing Doubt or Reservation:</h4>
+                    <div class="phrase-box">
+                        <strong>It is doubtful / questionable / uncertain whether</strong> ...
+                    </div>
+                    <div class="example">
+                        It is doubtful whether current policies will be sufficient to address the crisis.
+                    </div>
+
+                    <div class="phrase-box">
+                        <strong>One might question whether</strong> ... / <strong>It remains to be seen whether</strong> ...
+                    </div>
+                    <div class="example">
+                        It remains to be seen whether these reforms will have the desired effect.
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Section 2: Agreeing and Disagreeing -->
+        <div class="section" id="agreeing-disagreeing">
+            <h2>2. Agreeing and Disagreeing</h2>
+
+            <div class="collapsible-header">
+                <h3>Agreeing</h3>
+                <span class="collapsible-icon">▼</span>
+            </div>
+            <div class="collapsible-content">
+                <div class="collapsible-inner">
+                    <div class="phrase-box">
+                        <strong>I (completely/entirely) agree with</strong> ... / <strong>I share this view.</strong>
+                    </div>
+                    <div class="example">
+                        I completely agree with the author's assessment of the situation.
+                    </div>
+
+                    <div class="phrase-box">
+                        <strong>This argument is convincing / persuasive / valid.</strong>
+                    </div>
+                    <div class="example">
+                        This argument is persuasive because it is supported by statistical evidence.
+                    </div>
+
+                    <div class="phrase-box">
+                        <strong>The author makes a good/valid point when he/she says that</strong> ...
+                    </div>
+                    <div class="example">
+                        The author makes a valid point when she says that social media can spread misinformation.
+                    </div>
+
+                    <div class="phrase-box">
+                        <strong>I support / endorse this viewpoint.</strong>
+                    </div>
+                    <div class="example">
+                        I support this viewpoint as it reflects current scientific consensus.
+                    </div>
+                </div>
+            </div>
+
+            <div class="collapsible-header">
+                <h3>Disagreeing</h3>
+                <span class="collapsible-icon">▼</span>
+            </div>
+            <div class="collapsible-content">
+                <div class="collapsible-inner">
+                    <div class="phrase-box">
+                        <strong>I (completely) disagree with</strong> ... / <strong>I cannot agree with</strong> ...
+                    </div>
+                    <div class="example">
+                        I completely disagree with the notion that technology is inherently harmful.
+                    </div>
+
+                    <div class="phrase-box">
+                        <strong>I find this argument unconvincing / problematic / flawed.</strong>
+                    </div>
+                    <div class="example">
+                        I find this argument unconvincing because it ignores important counterevidence.
+                    </div>
+
+                    <div class="phrase-box">
+                        <strong>This view is questionable / debatable / contested.</strong>
+                    </div>
+                    <div class="example">
+                        This view is questionable given recent research findings.
+                    </div>
+
+                    <div class="phrase-box">
+                        <strong>I take issue with / I object to / I challenge</strong> ...
+                    </div>
+                    <div class="example">
+                        I take issue with the assumption that all immigrants face the same challenges.
+                    </div>
+
+                    <div class="phrase-box">
+                        <strong>Contrary to this claim,</strong> ... / <strong>On the contrary,</strong> ...
+                    </div>
+                    <div class="example">
+                        Contrary to this claim, evidence suggests that diversity strengthens communities.
+                    </div>
+                </div>
+            </div>
+
+            <div class="collapsible-header">
+                <h3>Partial Agreement</h3>
+                <span class="collapsible-icon">▼</span>
+            </div>
+            <div class="collapsible-content">
+                <div class="collapsible-inner">
+                    <div class="phrase-box">
+                        <strong>While I agree that ..., I believe that</strong> ...
+                    </div>
+                    <div class="example">
+                        While I agree that technology has benefits, I believe we must also address its negative impacts.
+                    </div>
+
+                    <div class="phrase-box">
+                        <strong>To some extent / To a certain degree,</strong> ...
+                    </div>
+                    <div class="example">
+                        To some extent, the author is correct about the economic benefits of globalization.
+                    </div>
+
+                    <div class="phrase-box">
+                        <strong>I agree with X, but / however</strong> ...
+                    </div>
+                    <div class="example">
+                        I agree with the first point, but I have reservations about the proposed solution.
+                    </div>
+
+                    <div class="phrase-box">
+                        <strong>This is true / valid, but it should be noted that</strong> ...
+                    </div>
+                    <div class="example">
+                        This is valid, but it should be noted that the situation varies significantly by region.
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Section 3: Presenting Arguments -->
+        <div class="section" id="presenting-arguments">
+            <h2>3. Presenting Arguments and Evidence</h2>
+
+            <div class="collapsible-header">
+                <h3>Making Points</h3>
+                <span class="collapsible-icon">▼</span>
+            </div>
+            <div class="collapsible-content">
+                <div class="collapsible-inner">
+                    <div class="phrase-box">
+                        <strong>First of all, / Firstly, / In the first place,</strong> ...
+                    </div>
+                    <div class="example">
+                        First of all, we must consider the economic implications of this policy.
+                    </div>
+
+                    <div class="phrase-box">
+                        <strong>Secondly, / Furthermore, / Moreover, / In addition,</strong> ...
+                    </div>
+                    <div class="example">
+                        Furthermore, environmental concerns must be taken into account.
+                    </div>
+
+                    <div class="phrase-box">
+                        <strong>Another important point is that</strong> ... / <strong>It should also be mentioned that</strong> ...
+                    </div>
+                    <div class="example">
+                        Another important point is that education levels correlate with economic prosperity.
+                    </div>
+
+                    <div class="phrase-box">
+                        <strong>Finally, / Lastly, / Last but not least,</strong> ...
+                    </div>
+                    <div class="example">
+                        Last but not least, we must consider the human cost of these decisions.
+                    </div>
+                </div>
+            </div>
+
+            <div class="collapsible-header">
+                <h3>Providing Evidence and Examples</h3>
+                <span class="collapsible-icon">▼</span>
+            </div>
+            <div class="collapsible-content">
+                <div class="collapsible-inner">
+                    <div class="phrase-box">
+                        <strong>For example, / For instance, / To illustrate,</strong> ...
+                    </div>
+                    <div class="example">
+                        For example, countries with strong social safety nets tend to have lower poverty rates.
+                    </div>
+
+                    <div class="phrase-box">
+                        <strong>This can be seen in / This is evident in / This is illustrated by</strong> ...
+                    </div>
+                    <div class="example">
+                        This is evident in the rising number of climate-related disasters.
+                    </div>
+
+                    <div class="phrase-box">
+                        <strong>Evidence suggests that / Research shows that / Studies indicate that</strong> ...
+                    </div>
+                    <div class="example">
+                        Research shows that bilingual education benefits cognitive development.
+                    </div>
+
+                    <div class="phrase-box">
+                        <strong>A good example of this is</strong> ... / <strong>A case in point is</strong> ...
+                    </div>
+                    <div class="example">
+                        A case in point is the success of renewable energy programs in Scandinavia.
+                    </div>
+
+                    <div class="phrase-box">
+                        <strong>Statistics reveal that / Data shows that / Figures indicate that</strong> ...
+                    </div>
+                    <div class="example">
+                        Statistics reveal that income inequality has increased significantly over the past decades.
+                    </div>
+                </div>
+            </div>
+
+            <div class="collapsible-header">
+                <h3>Emphasizing and Highlighting</h3>
+                <span class="collapsible-icon">▼</span>
+            </div>
+            <div class="collapsible-content">
+                <div class="collapsible-inner">
+                    <div class="phrase-box">
+                        <strong>It is important / essential / crucial to note that</strong> ...
+                    </div>
+                    <div class="example">
+                        It is crucial to note that correlation does not imply causation.
+                    </div>
+
+                    <div class="phrase-box">
+                        <strong>Particularly / Especially / Most importantly,</strong> ...
+                    </div>
+                    <div class="example">
+                        Most importantly, these policies must be sustainable in the long term.
+                    </div>
+
+                    <div class="phrase-box">
+                        <strong>What is striking / remarkable / noteworthy is that</strong> ...
+                    </div>
+                    <div class="example">
+                        What is striking is that this problem affects both developed and developing nations.
+                    </div>
+
+                    <div class="phrase-box">
+                        <strong>It should be emphasized / stressed / highlighted that</strong> ...
+                    </div>
+                    <div class="example">
+                        It should be emphasized that education alone cannot solve all social problems.
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Section 4: Analyzing Texts -->
+        <div class="section" id="analyzing-texts">
+            <h2>4. Analyzing Texts</h2>
+
+            <div class="collapsible-header">
+                <h3>Introducing the Text</h3>
+                <span class="collapsible-icon">▼</span>
+            </div>
+            <div class="collapsible-content">
+                <div class="collapsible-inner">
+                    <div class="phrase-box">
+                        <strong>The text/article/extract titled "..." by ... deals with / focuses on / examines</strong> ...
+                    </div>
+                    <div class="example">
+                        The article titled "Climate Justice" by Sarah Green examines the disproportionate impact of climate change on developing nations.
+                    </div>
+
+                    <div class="phrase-box">
+                        <strong>The author discusses / explores / addresses the issue of</strong> ...
+                    </div>
+                    <div class="example">
+                        The author addresses the issue of racial inequality in the American criminal justice system.
+                    </div>
+
+                    <div class="phrase-box">
+                        <strong>The text was published in ... on ... and is aimed at</strong> ...
+                    </div>
+                    <div class="example">
+                        The text was published in The Guardian on March 15, 2024, and is aimed at a general readership.
+                    </div>
+
+                    <div class="phrase-box">
+                        <strong>The central theme / main topic of the text is</strong> ...
+                    </div>
+                    <div class="example">
+                        The central theme of the text is the tension between national security and personal freedom.
+                    </div>
+                </div>
+            </div>
+
+            <div class="collapsible-header">
+                <h3>Analyzing Structure and Organization</h3>
+                <span class="collapsible-icon">▼</span>
+            </div>
+            <div class="collapsible-content">
+                <div class="collapsible-inner">
+                    <div class="phrase-box">
+                        <strong>The text is divided into / consists of / is structured in</strong> ...
+                    </div>
+                    <div class="example">
+                        The text is divided into three main sections, each addressing a different aspect of immigration policy.
+                    </div>
+
+                    <div class="phrase-box">
+                        <strong>In the opening paragraph, the author</strong> ...
+                    </div>
+                    <div class="example">
+                        In the opening paragraph, the author establishes the urgency of the climate crisis.
+                    </div>
+
+                    <div class="phrase-box">
+                        <strong>The author begins by / starts with / introduces the topic by</strong> ...
+                    </div>
+                    <div class="example">
+                        The author begins by presenting a personal anecdote that illustrates the broader issue.
+                    </div>
+
+                    <div class="phrase-box">
+                        <strong>The text moves on to / proceeds to / continues by</strong> ...
+                    </div>
+                    <div class="example">
+                        The text proceeds to examine the historical roots of the current situation.
+                    </div>
+
+                    <div class="phrase-box">
+                        <strong>In conclusion, / Finally, / To sum up, the author</strong> ...
+                    </div>
+                    <div class="example">
+                        In conclusion, the author calls for immediate action to address these challenges.
+                    </div>
+                </div>
+            </div>
+
+            <div class="collapsible-header">
+                <h3>Analyzing Language and Style</h3>
+                <span class="collapsible-icon">▼</span>
+            </div>
+            <div class="collapsible-content">
+                <div class="collapsible-inner">
+                    <div class="phrase-box">
+                        <strong>The author uses / employs / makes use of</strong> ...
+                    </div>
+                    <div class="example">
+                        The author employs rhetorical questions to engage the reader and prompt reflection.
+                    </div>
+
+                    <div class="phrase-box">
+                        <strong>The tone of the text is</strong> (formal/informal/objective/subjective/critical/satirical/humorous/serious)
+                    </div>
+                    <div class="example">
+                        The tone of the text is critical yet balanced, presenting multiple perspectives.
+                    </div>
+
+                    <div class="phrase-box">
+                        <strong>The language is</strong> (descriptive/emotive/technical/accessible/complex/persuasive)
+                    </div>
+                    <div class="example">
+                        The language is accessible yet sophisticated, making complex ideas understandable.
+                    </div>
+
+                    <div class="phrase-box">
+                        <strong>The author appeals to / evokes / creates</strong> ...
+                    </div>
+                    <div class="example">
+                        The author appeals to the reader's sense of justice and moral responsibility.
+                    </div>
+
+                    <div class="phrase-box">
+                        <strong>Through the use of metaphors/imagery/statistics/anecdotes, the author</strong> ...
+                    </div>
+                    <div class="example">
+                        Through the use of vivid imagery, the author brings the human cost of the crisis to life.
+                    </div>
+                </div>
+            </div>
+
+            <div class="collapsible-header">
+                <h3>Identifying Author's Purpose and Intention</h3>
+                <span class="collapsible-icon">▼</span>
+            </div>
+            <div class="collapsible-content">
+                <div class="collapsible-inner">
+                    <div class="phrase-box">
+                        <strong>The author's purpose is to inform / persuade / entertain / criticize / warn</strong> ...
+                    </div>
+                    <div class="example">
+                        The author's purpose is to persuade readers that urgent climate action is necessary.
+                    </div>
+
+                    <div class="phrase-box">
+                        <strong>The author intends to / aims to / seeks to</strong> ...
+                    </div>
+                    <div class="example">
+                        The author seeks to raise awareness about the plight of refugees.
+                    </div>
+
+                    <div class="phrase-box">
+                        <strong>By doing this, the author hopes to / wants to / attempts to</strong> ...
+                    </div>
+                    <div class="example">
+                        By presenting these statistics, the author wants to shock readers into action.
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Section 5: Describing Visuals -->
+        <div class="section" id="describing-visuals">
+            <h2>5. Describing Visuals (Graphs, Charts, Cartoons)</h2>
+
+            <div class="collapsible-header">
+                <h3>General Description</h3>
+                <span class="collapsible-icon">▼</span>
+            </div>
+            <div class="collapsible-content">
+                <div class="collapsible-inner">
+                    <div class="phrase-box">
+                        <strong>The graph/chart/diagram shows / illustrates / depicts / displays</strong> ...
+                    </div>
+                    <div class="example">
+                        The graph shows the steady increase in global temperatures over the past century.
+                    </div>
+
+                    <div class="phrase-box">
+                        <strong>The cartoon portrays / represents / satirizes</strong> ...
+                    </div>
+                    <div class="example">
+                        The cartoon satirizes politicians' failure to address climate change.
+                    </div>
+
+                    <div class="phrase-box">
+                        <strong>According to the chart/graph, / As can be seen from the diagram,</strong> ...
+                    </div>
+                    <div class="example">
+                        As can be seen from the diagram, unemployment rates vary significantly by education level.
+                    </div>
+
+                    <div class="phrase-box">
+                        <strong>The visual presents data on / provides information about / compares</strong> ...
+                    </div>
+                    <div class="example">
+                        The visual compares carbon emissions across different countries.
+                    </div>
+                </div>
+            </div>
+
+            <div class="collapsible-header">
+                <h3>Describing Trends</h3>
+                <span class="collapsible-icon">▼</span>
+            </div>
+            <div class="collapsible-content">
+                <div class="collapsible-inner">
+                    <div class="phrase-box">
+                        <strong>There is a sharp/steady/gradual/dramatic increase/rise/growth in</strong> ...
+                    </div>
+                    <div class="example">
+                        There is a dramatic increase in the number of people using renewable energy.
+                    </div>
+
+                    <div class="phrase-box">
+                        <strong>There has been a decline/decrease/fall/drop in</strong> ...
+                    </div>
+                    <div class="example">
+                        There has been a steady decline in manufacturing jobs over the past decades.
+                    </div>
+
+                    <div class="phrase-box">
+                        <strong>The figure remains stable / stays constant / fluctuates / peaks at</strong> ...
+                    </div>
+                    <div class="example">
+                        The figure remains stable throughout the 1990s before increasing sharply.
+                    </div>
+
+                    <div class="phrase-box">
+                        <strong>X doubled/tripled / X rose/fell from ... to ... / X increased/decreased by</strong> ...
+                    </div>
+                    <div class="example">
+                        Immigration rates increased by 15% between 2010 and 2020.
+                    </div>
+                </div>
+            </div>
+
+            <div class="collapsible-header">
+                <h3>Describing Cartoons</h3>
+                <span class="collapsible-icon">▼</span>
+            </div>
+            <div class="collapsible-content">
+                <div class="collapsible-inner">
+                    <div class="phrase-box">
+                        <strong>The cartoon consists of ... / In the foreground/background, we can see</strong> ...
+                    </div>
+                    <div class="example">
+                        In the foreground, we can see a politician with his head in the sand.
+                    </div>
+
+                    <div class="phrase-box">
+                        <strong>The figure/character represents / symbolizes / stands for</strong> ...
+                    </div>
+                    <div class="example">
+                        The character symbolizes the average citizen struggling with rising costs.
+                    </div>
+
+                    <div class="phrase-box">
+                        <strong>The cartoonist uses exaggeration/irony/satire to</strong> ...
+                    </div>
+                    <div class="example">
+                        The cartoonist uses exaggeration to highlight the absurdity of the situation.
+                    </div>
+
+                    <div class="phrase-box">
+                        <strong>The caption reads / says / states:</strong> "..."
+                    </div>
+                    <div class="example">
+                        The caption reads: "Meanwhile, in Washington..." adding another layer of irony.
+                    </div>
+
+                    <div class="phrase-box">
+                        <strong>The message/point of the cartoon is that</strong> ...
+                    </div>
+                    <div class="example">
+                        The message of the cartoon is that political leaders are ignoring obvious problems.
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Section 6: Discussing Issues -->
+        <div class="section" id="discussing-issues">
+            <h2>6. Discussing Issues and Problems</h2>
+
+            <div class="collapsible-header">
+                <h3>Identifying Problems</h3>
+                <span class="collapsible-icon">▼</span>
+            </div>
+            <div class="collapsible-content">
+                <div class="collapsible-inner">
+                    <div class="phrase-box">
+                        <strong>One of the main/major/key problems/issues/challenges is</strong> ...
+                    </div>
+                    <div class="example">
+                        One of the major challenges is ensuring equal access to quality education.
+                    </div>
+
+                    <div class="phrase-box">
+                        <strong>A significant concern is / A pressing issue is</strong> ...
+                    </div>
+                    <div class="example">
+                        A pressing issue is the growing wealth gap between rich and poor.
+                    </div>
+
+                    <div class="phrase-box">
+                        <strong>This raises the question of / This brings up the issue of</strong> ...
+                    </div>
+                    <div class="example">
+                        This raises the question of how to balance security with individual freedom.
+                    </div>
+
+                    <div class="phrase-box">
+                        <strong>There are concerns about / There is controversy surrounding</strong> ...
+                    </div>
+                    <div class="example">
+                        There is controversy surrounding the use of surveillance technology.
+                    </div>
+                </div>
+            </div>
+
+            <div class="collapsible-header">
+                <h3>Discussing Advantages and Disadvantages</h3>
+                <span class="collapsible-icon">▼</span>
+            </div>
+            <div class="collapsible-content">
+                <div class="collapsible-inner">
+                    <div class="phrase-box">
+                        <strong>One advantage/benefit of ... is that</strong> ...
+                    </div>
+                    <div class="example">
+                        One advantage of globalization is increased economic interconnection.
+                    </div>
+
+                    <div class="phrase-box">
+                        <strong>A major/significant drawback/disadvantage is</strong> ...
+                    </div>
+                    <div class="example">
+                        A significant drawback is the loss of local jobs to overseas competition.
+                    </div>
+
+                    <div class="phrase-box">
+                        <strong>On the one hand, ... On the other hand,</strong> ...
+                    </div>
+                    <div class="example">
+                        On the one hand, technology connects people. On the other hand, it can create isolation.
+                    </div>
+
+                    <div class="phrase-box">
+                        <strong>While ... has its merits, it also has serious drawbacks</strong>
+                    </div>
+                    <div class="example">
+                        While social media has its merits in connecting people, it also has serious drawbacks in terms of privacy.
+                    </div>
+                </div>
+            </div>
+
+            <div class="collapsible-header">
+                <h3>Proposing Solutions</h3>
+                <span class="collapsible-icon">▼</span>
+            </div>
+            <div class="collapsible-content">
+                <div class="collapsible-inner">
+                    <div class="phrase-box">
+                        <strong>A possible solution would be to</strong> ... / <strong>One way to address this is to</strong> ...
+                    </div>
+                    <div class="example">
+                        A possible solution would be to invest more heavily in renewable energy infrastructure.
+                    </div>
+
+                    <div class="phrase-box">
+                        <strong>This problem could be solved/tackled/addressed by</strong> ...
+                    </div>
+                    <div class="example">
+                        This problem could be addressed by implementing stricter environmental regulations.
+                    </div>
+
+                    <div class="phrase-box">
+                        <strong>It is necessary/essential/vital to</strong> ...
+                    </div>
+                    <div class="example">
+                        It is essential to ensure that all citizens have access to affordable healthcare.
+                    </div>
+
+                    <div class="phrase-box">
+                        <strong>Steps should be taken to / Measures must be implemented to</strong> ...
+                    </div>
+                    <div class="example">
+                        Steps should be taken to reduce carbon emissions significantly by 2030.
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Section 7: Writing Essays -->
+        <div class="section" id="writing-essays">
+            <h2>7. Writing Essays and Compositions</h2>
+
+            <div class="collapsible-header">
+                <h3>Introduction Phrases</h3>
+                <span class="collapsible-icon">▼</span>
+            </div>
+            <div class="collapsible-content">
+                <div class="collapsible-inner">
+                    <div class="phrase-box">
+                        <strong>In recent years, / Over the past decades, / Nowadays,</strong> ...
+                    </div>
+                    <div class="example">
+                        In recent years, climate change has become an increasingly urgent concern.
+                    </div>
+
+                    <div class="phrase-box">
+                        <strong>It is widely acknowledged/recognized that</strong> ...
+                    </div>
+                    <div class="example">
+                        It is widely acknowledged that education is crucial for economic development.
+                    </div>
+
+                    <div class="phrase-box">
+                        <strong>The question of whether ... has been a topic of much debate</strong>
+                    </div>
+                    <div class="example">
+                        The question of whether technology improves or harms society has been a topic of much debate.
+                    </div>
+
+                    <div class="phrase-box">
+                        <strong>This essay will discuss/examine/explore/analyze</strong> ...
+                    </div>
+                    <div class="example">
+                        This essay will examine the causes and consequences of income inequality.
+                    </div>
+                </div>
+            </div>
+
+            <div class="collapsible-header">
+                <h3>Developing Paragraphs</h3>
+                <span class="collapsible-icon">▼</span>
+            </div>
+            <div class="collapsible-content">
+                <div class="collapsible-inner">
+                    <div class="phrase-box">
+                        <strong>To begin with, / To start with, / Initially,</strong> ...
+                    </div>
+                    <div class="example">
+                        To begin with, we must understand the historical context of the issue.
+                    </div>
+
+                    <div class="phrase-box">
+                        <strong>With regard to / Concerning / Regarding</strong> ...
+                    </div>
+                    <div class="example">
+                        Regarding environmental policy, there are several competing approaches.
+                    </div>
+
+                    <div class="phrase-box">
+                        <strong>Moving on to / Turning to / Let us now consider</strong> ...
+                    </div>
+                    <div class="example">
+                        Moving on to economic factors, we see that inequality has risen dramatically.
+                    </div>
+                </div>
+            </div>
+
+            <div class="collapsible-header">
+                <h3>Concluding an Essay</h3>
+                <span class="collapsible-icon">▼</span>
+            </div>
+            <div class="collapsible-content">
+                <div class="collapsible-inner">
+                    <div class="phrase-box">
+                        <strong>To conclude, / In conclusion, / To sum up,</strong> ...
+                    </div>
+                    <div class="example">
+                        In conclusion, addressing climate change requires coordinated global action.
+                    </div>
+
+                    <div class="phrase-box">
+                        <strong>Taking everything into account, / All things considered,</strong> ...
+                    </div>
+                    <div class="example">
+                        All things considered, the benefits of immigration outweigh the challenges.
+                    </div>
+
+                    <div class="phrase-box">
+                        <strong>The evidence suggests that / It can be concluded that</strong> ...
+                    </div>
+                    <div class="example">
+                        The evidence suggests that early intervention programs significantly improve outcomes.
+                    </div>
+
+                    <div class="phrase-box">
+                        <strong>Looking to the future, / In the long term,</strong> ...
+                    </div>
+                    <div class="example">
+                        Looking to the future, sustainable policies will be essential for survival.
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Section 8: Comparing and Contrasting -->
+        <div class="section" id="comparing-contrasting">
+            <h2>8. Comparing and Contrasting</h2>
+
+            <div class="collapsible-header">
+                <h3>Showing Similarities</h3>
+                <span class="collapsible-icon">▼</span>
+            </div>
+            <div class="collapsible-content">
+                <div class="collapsible-inner">
+                    <div class="phrase-box">
+                        <strong>Similarly, / Likewise, / In the same way,</strong> ...
+                    </div>
+                    <div class="example">
+                        Similarly, both countries face challenges integrating immigrant populations.
+                    </div>
+
+                    <div class="phrase-box">
+                        <strong>Both X and Y / X as well as Y</strong> ...
+                    </div>
+                    <div class="example">
+                        Both the United States and Great Britain have struggled with racial inequality.
+                    </div>
+
+                    <div class="phrase-box">
+                        <strong>X is similar to Y in that / X resembles Y in</strong> ...
+                    </div>
+                    <div class="example">
+                        The American Civil Rights Movement is similar to South African anti-apartheid struggle in its use of nonviolent resistance.
+                    </div>
+
+                    <div class="phrase-box">
+                        <strong>X and Y have ... in common / X shares ... with Y</strong>
+                    </div>
+                    <div class="example">
+                        Developed nations have rising inequality in common.
+                    </div>
+                </div>
+            </div>
+
+            <div class="collapsible-header">
+                <h3>Showing Differences</h3>
+                <span class="collapsible-icon">▼</span>
+            </div>
+            <div class="collapsible-content">
+                <div class="collapsible-inner">
+                    <div class="phrase-box">
+                        <strong>However, / In contrast, / On the contrary,</strong> ...
+                    </div>
+                    <div class="example">
+                        However, the approaches to healthcare differ significantly between the two countries.
+                    </div>
+
+                    <div class="phrase-box">
+                        <strong>Whereas / While X ..., Y ...</strong>
+                    </div>
+                    <div class="example">
+                        Whereas Europe has universal healthcare, the United States relies on a private system.
+                    </div>
+
+                    <div class="phrase-box">
+                        <strong>Unlike X, Y ... / In contrast to X, Y ...</strong>
+                    </div>
+                    <div class="example">
+                        Unlike previous generations, today's young people are digital natives.
+                    </div>
+
+                    <div class="phrase-box">
+                        <strong>X differs from Y in that / The difference between X and Y is</strong> ...
+                    </div>
+                    <div class="example">
+                        The difference between the two approaches is that one prioritizes individual freedom while the other emphasizes collective welfare.
+                    </div>
+
+                    <div class="phrase-box">
+                        <strong>On the one hand ... on the other hand</strong> ...
+                    </div>
+                    <div class="example">
+                        On the one hand, globalization creates opportunities; on the other hand, it can increase inequality.
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Section 9: Cause and Effect -->
+        <div class="section" id="cause-effect">
+            <h2>9. Expressing Cause and Effect</h2>
+
+            <div class="collapsible-header">
+                <h3>Indicating Causes</h3>
+                <span class="collapsible-icon">▼</span>
+            </div>
+            <div class="collapsible-content">
+                <div class="collapsible-inner">
+                    <div class="phrase-box">
+                        <strong>Because of / Due to / Owing to</strong> ...
+                    </div>
+                    <div class="example">
+                        Due to climate change, extreme weather events are becoming more frequent.
+                    </div>
+
+                    <div class="phrase-box">
+                        <strong>This is caused by / This results from / This stems from</strong> ...
+                    </div>
+                    <div class="example">
+                        This inequality stems from historical patterns of discrimination.
+                    </div>
+
+                    <div class="phrase-box">
+                        <strong>The reason for ... is that / ... can be attributed to</strong> ...
+                    </div>
+                    <div class="example">
+                        The reason for increased migration is that economic opportunities are unevenly distributed.
+                    </div>
+
+                    <div class="phrase-box">
+                        <strong>As a result of / As a consequence of</strong> ...
+                    </div>
+                    <div class="example">
+                        As a result of globalization, cultures are increasingly interconnected.
+                    </div>
+                </div>
+            </div>
+
+            <div class="collapsible-header">
+                <h3>Indicating Effects</h3>
+                <span class="collapsible-icon">▼</span>
+            </div>
+            <div class="collapsible-content">
+                <div class="collapsible-inner">
+                    <div class="phrase-box">
+                        <strong>Therefore, / Thus, / Consequently, / As a result,</strong> ...
+                    </div>
+                    <div class="example">
+                        Therefore, immediate action is required to prevent further damage.
+                    </div>
+
+                    <div class="phrase-box">
+                        <strong>This leads to / This results in / This causes</strong> ...
+                    </div>
+                    <div class="example">
+                        This leads to increased social tensions and political instability.
+                    </div>
+
+                    <div class="phrase-box">
+                        <strong>The effect/consequence/result of ... is that</strong> ...
+                    </div>
+                    <div class="example">
+                        The consequence of ignoring these warnings is that problems will worsen.
+                    </div>
+
+                    <div class="phrase-box">
+                        <strong>This has led to / This has resulted in / This has given rise to</strong> ...
+                    </div>
+                    <div class="example">
+                        This has led to a fundamental transformation of the workplace.
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Section 10: Conclusions -->
+        <div class="section" id="conclusions">
+            <h2>10. Drawing Conclusions and Making Recommendations</h2>
+
+            <div class="collapsible-header">
+                <h3>Summarizing</h3>
+                <span class="collapsible-icon">▼</span>
+            </div>
+            <div class="collapsible-content">
+                <div class="collapsible-inner">
+                    <div class="phrase-box">
+                        <strong>In summary, / To summarize, / In brief,</strong> ...
+                    </div>
+                    <div class="example">
+                        In summary, the issue is complex and requires multifaceted solutions.
+                    </div>
+
+                    <div class="phrase-box">
+                        <strong>The main points are / The key findings are</strong> ...
+                    </div>
+                    <div class="example">
+                        The key findings are that education and economic opportunity are closely linked.
+                    </div>
+
+                    <div class="phrase-box">
+                        <strong>What emerges from this is / What becomes clear is</strong> ...
+                    </div>
+                    <div class="example">
+                        What becomes clear is that sustainable development requires balancing economic and environmental needs.
+                    </div>
+                </div>
+            </div>
+
+            <div class="collapsible-header">
+                <h3>Making Recommendations</h3>
+                <span class="collapsible-icon">▼</span>
+            </div>
+            <div class="collapsible-content">
+                <div class="collapsible-inner">
+                    <div class="phrase-box">
+                        <strong>It is recommended that / It is advisable to / It would be beneficial to</strong> ...
+                    </div>
+                    <div class="example">
+                        It is recommended that governments invest in renewable energy infrastructure.
+                    </div>
+
+                    <div class="phrase-box">
+                        <strong>Action should be taken to / Efforts should be made to</strong> ...
+                    </div>
+                    <div class="example">
+                        Efforts should be made to ensure equal access to education for all children.
+                    </div>
+
+                    <div class="phrase-box">
+                        <strong>There is a need for / What is needed is</strong> ...
+                    </div>
+                    <div class="example">
+                        What is needed is a comprehensive approach addressing both causes and symptoms.
+                    </div>
+                </div>
+            </div>
+
+            <div class="collapsible-header">
+                <h3>Looking to the Future</h3>
+                <span class="collapsible-icon">▼</span>
+            </div>
+            <div class="collapsible-content">
+                <div class="collapsible-inner">
+                    <div class="phrase-box">
+                        <strong>In the future, / In the long run, / In the coming years,</strong> ...
+                    </div>
+                    <div class="example">
+                        In the coming years, artificial intelligence will transform many industries.
+                    </div>
+
+                    <div class="phrase-box">
+                        <strong>If current trends continue, / Unless action is taken,</strong> ...
+                    </div>
+                    <div class="example">
+                        Unless action is taken, inequality will continue to widen.
+                    </div>
+
+                    <div class="phrase-box">
+                        <strong>It remains to be seen whether / Only time will tell if</strong> ...
+                    </div>
+                    <div class="example">
+                        It remains to be seen whether these policies will achieve their intended goals.
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Section 11: Formal Writing -->
+        <div class="section" id="formal-writing">
+            <h2>11. Formal Writing and Letters</h2>
+
+            <div class="collapsible-header">
+                <h3>Letter Opening</h3>
+                <span class="collapsible-icon">▼</span>
+            </div>
+            <div class="collapsible-content">
+                <div class="collapsible-inner">
+                    <div class="phrase-box">
+                        <strong>Dear Sir/Madam,</strong> (if you don't know the name)
+                    </div>
+                    <div class="phrase-box">
+                        <strong>Dear Mr./Ms./Dr. [Name],</strong> (if you know the name)
+                    </div>
+                    <div class="phrase-box">
+                        <strong>I am writing to / I am writing in response to / I am writing with regard to</strong> ...
+                    </div>
+                    <div class="example">
+                        I am writing to express my concern about the proposed policy changes.
+                    </div>
+                </div>
+            </div>
+
+            <div class="collapsible-header">
+                <h3>Making Requests</h3>
+                <span class="collapsible-icon">▼</span>
+            </div>
+            <div class="collapsible-content">
+                <div class="collapsible-inner">
+                    <div class="phrase-box">
+                        <strong>I would appreciate it if / I would be grateful if</strong> ...
+                    </div>
+                    <div class="example">
+                        I would appreciate it if you could provide further information about this matter.
+                    </div>
+
+                    <div class="phrase-box">
+                        <strong>Could you please / Would it be possible to</strong> ...
+                    </div>
+                    <div class="example">
+                        Would it be possible to arrange a meeting to discuss this issue?
+                    </div>
+                </div>
+            </div>
+
+            <div class="collapsible-header">
+                <h3>Letter Closing</h3>
+                <span class="collapsible-icon">▼</span>
+            </div>
+            <div class="collapsible-content">
+                <div class="collapsible-inner">
+                    <div class="phrase-box">
+                        <strong>I look forward to hearing from you.</strong>
+                    </div>
+                    <div class="phrase-box">
+                        <strong>Thank you for your time and consideration.</strong>
+                    </div>
+                    <div class="phrase-box">
+                        <strong>Please do not hesitate to contact me if you need further information.</strong>
+                    </div>
+                    <div class="phrase-box">
+                        <strong>Yours faithfully,</strong> (if you started with Dear Sir/Madam)
+                    </div>
+                    <div class="phrase-box">
+                        <strong>Yours sincerely,</strong> (if you used the person's name)
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Section 12: Connectives and Linking Words -->
+        <div class="section" id="connectives">
+            <h2>12. Connectives and Linking Words</h2>
+
+            <div class="collapsible-header">
+                <h3>Adding Information</h3>
+                <span class="collapsible-icon">▼</span>
+            </div>
+            <div class="collapsible-content">
+                <div class="collapsible-inner">
+                    <div class="phrase-box">
+                        <strong>Furthermore, / Moreover, / In addition, / Additionally, / Besides,</strong>
+                    </div>
+                    <div class="phrase-box">
+                        <strong>What is more, / Not only ... but also, / As well as,</strong>
+                    </div>
+                </div>
+            </div>
+
+            <div class="collapsible-header">
+                <h3>Contrasting</h3>
+                <span class="collapsible-icon">▼</span>
+            </div>
+            <div class="collapsible-content">
+                <div class="collapsible-inner">
+                    <div class="phrase-box">
+                        <strong>However, / Nevertheless, / Nonetheless, / Yet,</strong>
+                    </div>
+                    <div class="phrase-box">
+                        <strong>On the contrary, / In contrast, / Conversely, / Although, / Even though,</strong>
+                    </div>
+                    <div class="phrase-box">
+                        <strong>Despite / In spite of, / Regardless of,</strong>
+                    </div>
+                </div>
+            </div>
+
+            <div class="collapsible-header">
+                <h3>Showing Results</h3>
+                <span class="collapsible-icon">▼</span>
+            </div>
+            <div class="collapsible-content">
+                <div class="collapsible-inner">
+                    <div class="phrase-box">
+                        <strong>Therefore, / Thus, / Hence, / Consequently, / As a result,</strong>
+                    </div>
+                    <div class="phrase-box">
+                        <strong>For this reason, / That is why, / Accordingly,</strong>
+                    </div>
+                </div>
+            </div>
+
+            <div class="collapsible-header">
+                <h3>Sequencing</h3>
+                <span class="collapsible-icon">▼</span>
+            </div>
+            <div class="collapsible-content">
+                <div class="collapsible-inner">
+                    <div class="phrase-box">
+                        <strong>First(ly), / Second(ly), / Third(ly), / Finally,</strong>
+                    </div>
+                    <div class="phrase-box">
+                        <strong>To begin with, / Next, / Then, / Subsequently, / Eventually,</strong>
+                    </div>
+                    <div class="phrase-box">
+                        <strong>In the first place, / First and foremost, / Last but not least,</strong>
+                    </div>
+                </div>
+            </div>
+
+            <div class="collapsible-header">
+                <h3>Giving Examples</h3>
+                <span class="collapsible-icon">▼</span>
+            </div>
+            <div class="collapsible-content">
+                <div class="collapsible-inner">
+                    <div class="phrase-box">
+                        <strong>For example, / For instance, / Such as, / Like,</strong>
+                    </div>
+                    <div class="phrase-box">
+                        <strong>To illustrate, / As an illustration, / Namely, / In particular,</strong>
+                    </div>
+                </div>
+            </div>
+
+            <div class="collapsible-header">
+                <h3>Clarifying and Rephrasing</h3>
+                <span class="collapsible-icon">▼</span>
+            </div>
+            <div class="collapsible-content">
+                <div class="collapsible-inner">
+                    <div class="phrase-box">
+                        <strong>In other words, / That is to say, / To put it differently,</strong>
+                    </div>
+                    <div class="phrase-box">
+                        <strong>More specifically, / To be more precise, / To clarify,</strong>
+                    </div>
+                </div>
+            </div>
+
+            <div class="collapsible-header">
+                <h3>Emphasizing</h3>
+                <span class="collapsible-icon">▼</span>
+            </div>
+            <div class="collapsible-content">
+                <div class="collapsible-inner">
+                    <div class="phrase-box">
+                        <strong>Indeed, / In fact, / Actually, / Certainly,</strong>
+                    </div>
+                    <div class="phrase-box">
+                        <strong>Undoubtedly, / Clearly, / Obviously, / Particularly, / Especially,</strong>
+                    </div>
+                    <div class="phrase-box">
+                        <strong>Above all, / Most importantly, / Significantly,</strong>
+                    </div>
+                </div>
+            </div>
+
+            <div class="collapsible-header">
+                <h3>Conceding a Point</h3>
+                <span class="collapsible-icon">▼</span>
+            </div>
+            <div class="collapsible-content">
+                <div class="collapsible-inner">
+                    <div class="phrase-box">
+                        <strong>Admittedly, / It is true that, / Of course, / Naturally,</strong>
+                    </div>
+                    <div class="phrase-box">
+                        <strong>Granted, / While it may be true that,</strong>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Scroll to Top Button -->
+        <div class="scroll-top" id="scrollTop">↑</div>
+
+        <div style="text-align: center; margin-top: 40px; padding: 20px; background: var(--card-bg); border-radius: 15px;">
+            <p style="color: #7f8c8d; margin-bottom: 10px;">
+                📚 Master these phrases to excel in your English Abitur 2026 examination!
+            </p>
+            <p style="color: #7f8c8d; margin-bottom: 20px;">
+                ✨ Click section headers to expand/collapse content • Use navigation menu to jump to sections • Press 'T' to scroll to top
+            </p>
+            <a href="index.html" class="back-button">← Back to Home</a>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Collapsible sections
+            const collapsibleHeaders = document.querySelectorAll('.collapsible-header');
+            
+            collapsibleHeaders.forEach(header => {
+                header.addEventListener('click', function() {
+                    this.classList.toggle('active');
+                    const content = this.nextElementSibling;
+                    content.classList.toggle('active');
+                });
+            });
+
+            // Smooth scrolling
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    }
+                });
+            });
+
+            // Scroll to top button
+            const scrollTopButton = document.getElementById('scrollTop');
+            
+            window.addEventListener('scroll', function() {
+                if (window.pageYOffset > 300) {
+                    scrollTopButton.classList.add('visible');
+                } else {
+                    scrollTopButton.classList.remove('visible');
+                }
+            });
+            
+            scrollTopButton.addEventListener('click', function() {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            });
+
+            // Keyboard shortcut: Press 'T' to scroll to top
+            document.addEventListener('keydown', function(e) {
+                if ((e.key === 't' || e.key === 'T') && !e.ctrlKey && !e.altKey) {
+                    const active = document.activeElement;
+                    if (active.tagName !== 'INPUT' && active.tagName !== 'TEXTAREA') {
+                        window.scrollTo({ top: 0, behavior: 'smooth' });
+                    }
+                }
+            });
+
+            // Highlight active navigation link
+            const sections = document.querySelectorAll('.section');
+            const navLinks = document.querySelectorAll('.nav-link');
+            
+            const observerOptions = {
+                root: null,
+                rootMargin: '-20% 0px -80% 0px',
+                threshold: 0
+            };
+
+            const observer = new IntersectionObserver(entries => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        navLinks.forEach(link => {
+                            link.style.background = 'linear-gradient(45deg, var(--secondary-color), #2980b9)';
+                        });
+                        
+                        const id = entry.target.getAttribute('id');
+                        const activeLink = document.querySelector(`.nav-link[href="#${id}"]`);
+                        if (activeLink) {
+                            activeLink.style.background = 'linear-gradient(45deg, var(--accent-color), #c0392b)';
+                        }
+                    }
+                });
+            }, observerOptions);
+
+            sections.forEach(section => observer.observe(section));
+
+            console.log('✅ Useful Phrases Guide loaded! Press T to scroll to top.');
+        });
+    </script>
+</body>
+</html>
