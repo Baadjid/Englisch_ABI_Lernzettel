@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Analyzing Fictional Texts - Englisch Abitur 2026</title>
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --secondary-color: #3498db;
+            --accent-color: #e74c3c;
+            --success-color: #27ae60;
+            --warning-color: #f39c12;
+            --bg-color: #ecf0f1;
+            --card-bg: #ffffff;
+            --text-color: #2c3e50;
+            --border-color: #bdc3c7;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, var(--bg-color) 0%, #d5dbdb 100%);
+            color: var(--text-color);
+            line-height: 1.6;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+            background: var(--card-bg);
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 5px;
+            background: linear-gradient(90deg, var(--secondary-color), var(--accent-color), var(--success-color));
+        }
+
+        .back-button {
+            display: inline-block;
+            padding: 10px 20px;
+            background: var(--secondary-color);
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            transition: all 0.3s ease;
+        }
+
+        .back-button:hover {
+            background: #2980b9;
+            transform: translateY(-2px);
+        }
+
+        .header h1 {
+            color: var(--primary-color);
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+
+        .section {
+            background: var(--card-bg);
+            border-radius: 15px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+            border-left: 5px solid var(--secondary-color);
+        }
+
+        .section h2 {
+            color: var(--primary-color);
+            margin-bottom: 20px;
+            font-size: 1.8em;
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 10px;
+        }
+
+        .section h3 {
+            color: var(--secondary-color);
+            margin-top: 25px;
+            margin-bottom: 15px;
+            font-size: 1.4em;
+        }
+
+        .section h4 {
+            color: var(--primary-color);
+            margin-top: 20px;
+            margin-bottom: 10px;
+            font-size: 1.2em;
+        }
+
+        .section p {
+            margin-bottom: 15px;
+            text-align: justify;
+        }
+
+        .section ul, .section ol {
+            margin-left: 30px;
+            margin-bottom: 15px;
+        }
+
+        .section li {
+            margin-bottom: 8px;
+        }
+
+        .key-term {
+            background: #e3f2fd;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-weight: 600;
+            color: var(--secondary-color);
+        }
+
+        .important-note {
+            background: #fff3cd;
+            border-left: 4px solid var(--warning-color);
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 5px;
+        }
+
+        .example-box {
+            background: #e8f5e9;
+            border-left: 4px solid var(--success-color);
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 5px;
+        }
+
+        .quote {
+            background: #f8f9fa;
+            border-left: 4px solid var(--accent-color);
+            padding: 15px;
+            margin: 20px 0;
+            font-style: italic;
+            border-radius: 5px;
+        }
+
+        .nav-container {
+            background: var(--card-bg);
+            padding: 20px;
+            border-radius: 15px;
+            margin-bottom: 30px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 20px;
+            z-index: 100;
+        }
+
+        .nav-container h3 {
+            color: var(--primary-color);
+            margin-bottom: 15px;
+            font-size: 1.3em;
+        }
+
+        .nav-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 10px;
+        }
+
+        .nav-link {
+            background: linear-gradient(45deg, var(--secondary-color), #2980b9);
+            color: white;
+            padding: 10px 15px;
+            border-radius: 8px;
+            text-decoration: none;
+            text-align: center;
+            transition: all 0.3s ease;
+            font-size: 0.9em;
+            font-weight: 600;
+        }
+
+        .nav-link:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(52, 152, 219, 0.3);
+            background: linear-gradient(45deg, #2980b9, var(--secondary-color));
+        }
+
+        .scroll-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: linear-gradient(45deg, var(--accent-color), #c0392b);
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            cursor: pointer;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+            transition: all 0.3s ease;
+            z-index: 1000;
+            opacity: 0;
+            visibility: hidden;
+        }
+
+        .scroll-top.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .scroll-top:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(231, 76, 60, 0.4);
+        }
+
+        .collapsible-header {
+            background: linear-gradient(135deg, var(--secondary-color), #2980b9);
+            color: white;
+            padding: 15px 20px;
+            cursor: pointer;
+            border-radius: 10px;
+            margin-top: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: all 0.3s ease;
+            user-select: none;
+        }
+
+        .collapsible-header:hover {
+            background: linear-gradient(135deg, #2980b9, var(--secondary-color));
+            transform: translateX(5px);
+        }
+
+        .collapsible-header h3 {
+            margin: 0;
+            color: white;
+            font-size: 1.3em;
+        }
+
+        .collapsible-icon {
+            font-size: 1.5em;
+            transition: transform 0.3s ease;
+        }
+
+        .collapsible-header.active .collapsible-icon {
+            transform: rotate(180deg);
+        }
+
+        .collapsible-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s ease;
+        }
+
+        .collapsible-content.active {
+            max-height: 15000px;
+        }
+
+        .collapsible-inner {
+            padding: 20px 0;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+
+        th, td {
+            border: 1px solid var(--border-color);
+            padding: 12px;
+            text-align: left;
+        }
+
+        th {
+            background: var(--secondary-color);
+            color: white;
+            font-weight: 600;
+        }
+
+        tr:nth-child(even) {
+            background: #f8f9fa;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 15px;
+            }
+            
+            .header h1 {
+                font-size: 2em;
+            }
+            
+            .section {
+                padding: 20px;
+            }
+
+            .section h2 {
+                font-size: 1.5em;
+            }
+
+            .scroll-top {
+                bottom: 20px;
+                right: 20px;
+                width: 45px;
+                height: 45px;
+            }
+
+            .nav-container {
+                position: relative;
+                top: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <a href="index.html" class="back-button">← Back to Home</a>
+            <h1>📖 Analyzing Fictional Texts</h1>
+            <p>Comprehensive Guide for English Abitur 2026</p>
+        </div>
+
+        <!-- Navigation Menu -->
+        <div class="nav-container">
+            <h3>📑 Quick Navigation</h3>
+            <div class="nav-grid">
+                <a href="#setting" class="nav-link">Setting</a>
+                <a href="#structure" class="nav-link">Structure of a Classical Drama</a>
+                <a href="#ending" class="nav-link">Ending</a>
+                <a href="#characterization" class="nav-link">Characterization</a>
+                <a href="#stylistic-devices" class="nav-link">Stylistic Devices</a>
+                <a href="#narrative-perspective" class="nav-link">Narrative Perspective</a>
+            </div>
+        </div>
+
+        <!-- Section 1: Setting -->
+        <div class="section" id="setting">
+            <h2>Setting</h2>
+
+            <div class="collapsible-header">
+                <h3>What is Setting?</h3>
+                <span class="collapsible-icon">▼</span>
+            </div>
+            <div class="collapsible-content">
+                <div class="collapsible-inner">
+                    <p>The <span class="key-term">setting</span> refers to the time and place where a story occurs. It creates the context and atmosphere for the narrative and can significantly influence characters, plot, and themes.</p>
+
+                    <h4>Components of Setting:</h4>
+                    <ul>
+                        <li><span class="key-term">Time:</span> Historical period, season, time of day</li>
+                        <li><span class="key-term">Place:</span> Geographic location, specific locations (city, house, room)</li>
+                        <li><span class="key-term">Social Environment:</span> Cultural, political, economic conditions</li>
+                        <li><span class="key-term">Atmosphere/Mood:</span> The feeling created by the setting</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="collapsible-header">
+                <h3>Types of Setting</h3>
+                <span class="collapsible-icon">▼</span>
+            </div>
+            <div class="collapsible-content">
+                <div class="collapsible-inner">
+                    <h4>Temporal Setting (Time):</h4>
+                    <ul>
+                        <li><strong>Historical Period:</strong> Victorian Era, WWII, future dystopia</li>
+                        <li><strong>Season:</strong> Winter's harshness, spring's renewal</li>
+                        <li><strong>Time of Day:</strong> Dawn (new beginnings), midnight (danger, secrets)</li>
+                        <li><strong>Duration:</strong> Single day, entire lifetime, generations</li>
+                    </ul>
+
+                    <h4>Spatial Setting (Place):</h4>
+                    <ul>
+                        <li><strong>Geographic:</strong> Country, region, city vs. countryside</li>
+                        <li><strong>Specific Locations:</strong> House, school, battlefield</li>
+                        <li><strong>Real vs. Fictional:</strong> London vs. Middle-earth</li>
+                        <li><strong>Interior vs. Exterior:</strong> Confined spaces vs. open landscapes</li>
+                    </ul>
+
+                    <h4>Social Setting:</h4>
+                    <ul>
+                        <li><strong>Class Structure:</strong> Aristocracy, working class, poverty</li>
+                        <li><strong>Cultural Norms:</strong> Traditions, values, expectations</li>
+                        <li><strong>Political Climate:</strong> Democracy, dictatorship, revolution</li>
+                        <li><strong>Economic Conditions:</strong> Prosperity, depression, inequality</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="collapsible-header">
+                <h3>Functions of Setting</h3>
+                <span class="collapsible-icon">▼</span>
+            </div>
+            <div class="collapsible-content">
+                <div class="collapsible-inner">
+                    <h4>1. Establishing Atmosphere/Mood:</h4>
+                    <ul>
+                        <li><strong>Gothic:</strong> Gloomy castles, storms create suspense and fear</li>
+                        <li><strong>Romantic:</strong> Beautiful landscapes reflect emotions</li>
+                        <li><strong>Oppressive:</strong> Confined spaces increase tension</li>
+                    </ul>
+
+                    <div class="example-box">
+                        <strong>Example:</strong> In Wuthering Heights, the wild Yorkshire moors mirror the passionate, untamed nature of the characters.
+                    </div>
+
+                    <h4>2. Reflecting Character:</h4>
+                    <ul>
+                        <li>Settings can mirror characters' internal states</li>
+                        <li>Characters' homes reveal personality traits</li>
+                        <li>Relationship between character and environment shows values</li>
+                    </ul>
+
+                    <h4>3. Creating Conflict:</h4>
+                    <ul>
+                        <li><span class="key-term">Man vs. Nature:</span> Harsh environments challenge survival</li>
+                        <li><span class="key-term">Man vs. Society:</span> Social settings create restrictions</li>
+                        <li><strong>Cultural Clash:</strong> Different settings represent competing values</li>
+                    </ul>
+
+                    <h4>4. Symbolism:</h4>
+                    <ul>
+                        <li>Settings can represent abstract concepts</li>
+                        <li><strong>Gardens:</strong> Paradise, innocence, cultivation</li>
+                        <li><strong>Wilderness:</strong> Freedom, danger, the unknown</li>
+                        <li><strong>Cities:</strong> Civilization, corruption, opportunity</li>
+                    </ul>
+
+                    <h4>5. Historical/Social Commentary:</h4>
+                    <ul>
+                        <li>Realistic settings critique society</li>
+                        <li>Historical settings comment on past/present</li>
+                        <li>Settings expose injustice, inequality</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="collapsible-header">
+                <h3>Analyzing Setting</h3>
+                <span class="collapsible-icon">▼</span>
+            </div>
+            <div class="collapsible-content">
+                <div class="collapsible-inner">
+                    <h4>Questions to Ask:</h4>
+                    <ul>
+                        <li>When and where does the story take place?</li>
+                        <li>How detailed is the description of the setting?</li>
+                        <li>What atmosphere/mood does the setting create?</li>
+                        <li>How does the setting influence characters' behavior?</li>
+                        <li>Does the setting change throughout the story? Why?</li>
+                        <li>What symbolic meaning might the setting have?</li>
+                        <li>How does the setting relate to the themes?</li>
+                        <li>Is the setting realistic, fantastical, or symbolic?</li>
+                    </ul>
+
+                    <h4>Useful Vocabulary for Analysis:</h4>
+                    <table>
+                        <tr>
+                            <th>Aspect</th>
+                            <th>Vocabulary</th>
+                        </tr>
+                        <tr>
+                            <td>Atmosphere</td>
+                            <td>ominous, oppressive, serene, melancholic, vibrant, gloomy, idyllic, hostile</td>
+                        </tr>
+                        <tr>
+                            <td>Time</td>
+                            <td>contemporary, historical, timeless, cyclical, linear progression</td>
+                        </tr>
+                        <tr>
+                            <td>Place</td>
+                            <td>isolated, claustrophobic, expansive, exotic, familiar, urban, rural</td>
+                        </tr>
+                        <tr>
+                            <td>Function</td>
+                            <td>symbolizes, reflects, foreshadows, contrasts with, reinforces, mirrors</td>
+                        </tr>
+                    </table>
+
+                    <div class="important-note">
+                        <strong>Analysis Tip:</strong> Always connect setting analysis to other elements (character, plot, theme). Ask: "How does this setting contribute to the overall meaning of the work?"
+                    </div>
+                </div>
+            </div>
+
+            <div class="collapsible-header">
+                <h3>Examples from Literature</h3>
+                <span class="collapsible-icon">▼</span>
+            </div>
+            <div class="collapsible-content">
+                <div class="collapsible-inner">
+                    <h4>Romeo and Juliet (Verona, Italy):</h4>
+                    <ul>
+                        <li><strong>Public vs. Private:</strong> Violence in streets vs. intimacy in Juliet's balcony</li>
+                        <li><strong>Day vs. Night:</strong> Danger in daylight (feuding), safety in darkness (love)</li>
+                        <li><strong>Social Structure:</strong> Families' status creates conflict</li>
+                    </ul>
+
+                    <h4>Nineteen Eighty-Four (Oceania/London):</h4>
+                    <ul>
+                        <li><strong>Totalitarian Setting:</strong> Constant surveillance, propaganda everywhere</li>
+                        <li><strong>Decaying London:</strong> Reflects deterioration of humanity and freedom</li>
+                        <li><strong>Ministry Buildings:</strong> Ironically named to show government control</li>
+                    </ul>
+
+                    <h4>The Great Gatsby (1920s New York):</h4>
+                    <ul>
+                        <li><strong>East Egg vs. West Egg:</strong> Old money vs. new money</li>
+                        <li><strong>Valley of Ashes:</strong> Moral decay, forgotten working class</li>
+                        <li><strong>Gatsby's Mansion:</strong> Excessive wealth masking emptiness</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
