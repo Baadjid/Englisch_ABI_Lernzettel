@@ -1,0 +1,1000 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grammar Exercises - Englisch Abitur 2026</title>
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --secondary-color: #3498db;
+            --accent-color: #e74c3c;
+            --success-color: #27ae60;
+            --warning-color: #f39c12;
+            --bg-color: #ecf0f1;
+            --card-bg: #ffffff;
+            --text-color: #2c3e50;
+            --border-color: #bdc3c7;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, var(--bg-color) 0%, #d5dbdb 100%);
+            color: var(--text-color);
+            line-height: 1.6;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+            background: var(--card-bg);
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 5px;
+            background: linear-gradient(90deg, var(--secondary-color), var(--accent-color), var(--success-color));
+        }
+
+        .back-button {
+            display: inline-block;
+            padding: 10px 20px;
+            background: var(--secondary-color);
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            transition: all 0.3s ease;
+        }
+
+        .back-button:hover {
+            background: #2980b9;
+            transform: translateY(-2px);
+        }
+
+        .header h1 {
+            color: var(--primary-color);
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+
+        .important-note {
+            background: #fff3cd;
+            border-left: 4px solid var(--warning-color);
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 8px;
+        }
+
+        .important-note h3 {
+            color: var(--warning-color);
+            margin-bottom: 10px;
+        }
+
+        .important-note ol {
+            margin-left: 20px;
+            margin-top: 10px;
+        }
+
+        .important-note li {
+            margin-bottom: 8px;
+        }
+
+        .section {
+            background: var(--card-bg);
+            border-radius: 15px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+            border-left: 5px solid var(--secondary-color);
+        }
+
+        .section h2 {
+            color: var(--primary-color);
+            margin-bottom: 20px;
+            font-size: 1.8em;
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 10px;
+        }
+
+        .section h3 {
+            color: var(--secondary-color);
+            margin-top: 25px;
+            margin-bottom: 15px;
+            font-size: 1.4em;
+        }
+
+        .week-label {
+            display: inline-block;
+            background: linear-gradient(45deg, var(--success-color), #229954);
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.9em;
+            font-weight: 600;
+            margin-left: 10px;
+        }
+
+        .exercise-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+            gap: 12px;
+            margin: 20px 0;
+        }
+
+        .exercise-link {
+            display: block;
+            padding: 12px;
+            background: linear-gradient(135deg, #3498db, #2980b9);
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            text-align: center;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 3px 10px rgba(52, 152, 219, 0.2);
+        }
+
+        .exercise-link:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(52, 152, 219, 0.4);
+            background: linear-gradient(135deg, #2980b9, #3498db);
+        }
+
+        .exercise-link:active {
+            transform: translateY(-1px);
+        }
+
+        .completed {
+            background: linear-gradient(135deg, #95a5a6, #7f8c8d) !important;
+            opacity: 0.6;
+        }
+
+        .completed:hover {
+            background: linear-gradient(135deg, #7f8c8d, #95a5a6) !important;
+        }
+
+        .nav-container {
+            background: var(--card-bg);
+            padding: 20px;
+            border-radius: 15px;
+            margin-bottom: 30px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 20px;
+            z-index: 100;
+        }
+
+        .nav-container h3 {
+            color: var(--primary-color);
+            margin-bottom: 15px;
+            font-size: 1.3em;
+        }
+
+        .nav-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 10px;
+        }
+
+        .nav-link {
+            background: linear-gradient(45deg, var(--secondary-color), #2980b9);
+            color: white;
+            padding: 10px 15px;
+            border-radius: 8px;
+            text-decoration: none;
+            text-align: center;
+            transition: all 0.3s ease;
+            font-size: 0.9em;
+            font-weight: 600;
+        }
+
+        .nav-link:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(52, 152, 219, 0.3);
+            background: linear-gradient(45deg, #2980b9, var(--secondary-color));
+        }
+
+        .scroll-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: linear-gradient(45deg, var(--accent-color), #c0392b);
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            cursor: pointer;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+            transition: all 0.3s ease;
+            z-index: 1000;
+            opacity: 0;
+            visibility: hidden;
+        }
+
+        .scroll-top.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .scroll-top:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(231, 76, 60, 0.4);
+        }
+
+        .progress-container {
+            background: var(--card-bg);
+            padding: 20px;
+            border-radius: 15px;
+            margin-bottom: 30px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+        }
+
+        .progress-bar {
+            width: 100%;
+            height: 30px;
+            background: #ecf0f1;
+            border-radius: 15px;
+            overflow: hidden;
+            margin-top: 10px;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, var(--success-color), #229954);
+            transition: width 0.5s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 600;
+            font-size: 0.9em;
+        }
+
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .stat-box {
+            background: linear-gradient(135deg, #3498db, #2980b9);
+            color: white;
+            padding: 15px;
+            border-radius: 10px;
+            text-align: center;
+        }
+
+        .stat-box h4 {
+            font-size: 2em;
+            margin-bottom: 5px;
+        }
+
+        .stat-box p {
+            font-size: 0.9em;
+            opacity: 0.9;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 15px;
+            }
+            
+            .header h1 {
+                font-size: 2em;
+            }
+            
+            .section {
+                padding: 20px;
+            }
+
+            .exercise-grid {
+                grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
+                gap: 8px;
+            }
+
+            .nav-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .scroll-top {
+                bottom: 20px;
+                right: 20px;
+                width: 45px;
+                height: 45px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <a href="index.html" class="back-button">← Back to Home</a>
+            <h1>📝 Grammar Exercises</h1>
+            <p>Complete grammar exercises from englisch-hilfen.de for Abitur 2026</p>
+        </div>
+
+        <!-- Progress Tracking -->
+        <div class="progress-container">
+            <h3 style="color: var(--primary-color); margin-bottom: 10px;">📊 Your Progress</h3>
+            <div class="progress-bar">
+                <div class="progress-fill" id="progressFill" style="width: 0%;">0%</div>
+            </div>
+            <div class="stats">
+                <div class="stat-box">
+                    <h4 id="completedCount">0</h4>
+                    <p>Completed</p>
+                </div>
+                <div class="stat-box" style="background: linear-gradient(135deg, var(--warning-color), #e67e22);">
+                    <h4 id="remainingCount">0</h4>
+                    <p>Remaining</p>
+                </div>
+                <div class="stat-box" style="background: linear-gradient(135deg, var(--success-color), #229954);">
+                    <h4 id="totalCount">0</h4>
+                    <p>Total</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Important Instructions -->
+        <div class="important-note">
+            <h3>⚠️ Important Instructions</h3>
+            <ol>
+                <li>Go to <strong>www.englisch-hilfen.de</strong></li>
+                <li>Use the <strong>"SUCHE"</strong> button in the top left corner of the website</li>
+                <li>Enter one of the following numbers and do the according exercise</li>
+            </ol>
+            <p style="margin-top: 15px;"><strong>READ WHAT YOU HAVE TO DO!!!!!!!!!!!!</strong></p>
+            <p style="margin-top: 10px;">Find out what is the correct answer and why it is correct.</p>
+            <p style="margin-top: 10px; color: var(--accent-color); font-weight: 600;">PLEASE TRY TO UNDERSTAND THE MISTAKES YOU MAKE!!!!</p>
+            <p style="margin-top: 15px; font-style: italic;">💡 Solltest du weitere Erklärungen zu einem grammatischen Thema brauchen, sieh bitte selbst unter "Grammatik-Erläuterungen" nach. Linke Seite unter "Grammatik und Vokabeln"</p>
+            <p style="margin-top: 10px; font-weight: 600; color: var(--success-color);">📅 Empfehlung: 2 Themen pro Woche</p>
+        </div>
+
+        <!-- Navigation Menu -->
+        <div class="nav-container">
+            <h3>📑 Quick Navigation</h3>
+            <div class="nav-grid">
+                <a href="#tenses" class="nav-link">English Tenses</a>
+                <a href="#tense-comparison" class="nav-link">Tense Comparison</a>
+                <a href="#tense-shifts" class="nav-link">Tense Shifts</a>
+                <a href="#other-grammar" class="nav-link">Other Grammar Topics</a>
+            </div>
+        </div>
+        <!-- Section 1: English Tenses -->
+        <div class="section" id="tenses">
+            <h2>1. English Tenses</h2>
+
+            <h3>Simple Present <span class="week-label">Week 1</span></h3>
+            <div class="exercise-grid">
+                <a href="https://www.englisch-hilfen.de/4010" target="_blank" class="exercise-link" data-id="4010">4010</a>
+                <a href="https://www.englisch-hilfen.de/4012" target="_blank" class="exercise-link" data-id="4012">4012</a>
+                <a href="https://www.englisch-hilfen.de/4018" target="_blank" class="exercise-link" data-id="4018">4018</a>
+                <a href="https://www.englisch-hilfen.de/1312" target="_blank" class="exercise-link" data-id="1312">1312</a>
+                <a href="https://www.englisch-hilfen.de/1314" target="_blank" class="exercise-link" data-id="1314">1314</a>
+                <a href="https://www.englisch-hilfen.de/4044" target="_blank" class="exercise-link" data-id="4044">4044</a>
+                <a href="https://www.englisch-hilfen.de/4046" target="_blank" class="exercise-link" data-id="4046">4046</a>
+                <a href="https://www.englisch-hilfen.de/4014" target="_blank" class="exercise-link" data-id="4014">4014</a>
+                <a href="https://www.englisch-hilfen.de/4016" target="_blank" class="exercise-link" data-id="4016">4016</a>
+                <a href="https://www.englisch-hilfen.de/4026" target="_blank" class="exercise-link" data-id="4026">4026</a>
+                <a href="https://www.englisch-hilfen.de/4656" target="_blank" class="exercise-link" data-id="4656">4656</a>
+                <a href="https://www.englisch-hilfen.de/4030" target="_blank" class="exercise-link" data-id="4030">4030</a>
+                <a href="https://www.englisch-hilfen.de/4660" target="_blank" class="exercise-link" data-id="4660">4660</a>
+                <a href="https://www.englisch-hilfen.de/4034" target="_blank" class="exercise-link" data-id="4034">4034</a>
+                <a href="https://www.englisch-hilfen.de/4022" target="_blank" class="exercise-link" data-id="4022">4022</a>
+                <a href="https://www.englisch-hilfen.de/4036" target="_blank" class="exercise-link" data-id="4036">4036</a>
+                <a href="https://www.englisch-hilfen.de/4024" target="_blank" class="exercise-link" data-id="4024">4024</a>
+                <a href="https://www.englisch-hilfen.de/4042" target="_blank" class="exercise-link" data-id="4042">4042</a>
+                <a href="https://www.englisch-hilfen.de/4038" target="_blank" class="exercise-link" data-id="4038">4038</a>
+                <a href="https://www.englisch-hilfen.de/4040" target="_blank" class="exercise-link" data-id="4040">4040</a>
+            </div>
+
+            <h3>Present Progressive <span class="week-label">Week 2</span></h3>
+            <div class="exercise-grid">
+                <a href="https://www.englisch-hilfen.de/4050" target="_blank" class="exercise-link" data-id="4050">4050</a>
+                <a href="https://www.englisch-hilfen.de/4166" target="_blank" class="exercise-link" data-id="4166">4166</a>
+                <a href="https://www.englisch-hilfen.de/4052" target="_blank" class="exercise-link" data-id="4052">4052</a>
+                <a href="https://www.englisch-hilfen.de/4058" target="_blank" class="exercise-link" data-id="4058">4058</a>
+                <a href="https://www.englisch-hilfen.de/4056" target="_blank" class="exercise-link" data-id="4056">4056</a>
+                <a href="https://www.englisch-hilfen.de/4060" target="_blank" class="exercise-link" data-id="4060">4060</a>
+                <a href="https://www.englisch-hilfen.de/4664" target="_blank" class="exercise-link" data-id="4664">4664</a>
+                <a href="https://www.englisch-hilfen.de/4666" target="_blank" class="exercise-link" data-id="4666">4666</a>
+                <a href="https://www.englisch-hilfen.de/4062" target="_blank" class="exercise-link" data-id="4062">4062</a>
+                <a href="https://www.englisch-hilfen.de/4064" target="_blank" class="exercise-link" data-id="4064">4064</a>
+                <a href="https://www.englisch-hilfen.de/4668" target="_blank" class="exercise-link" data-id="4668">4668</a>
+                <a href="https://www.englisch-hilfen.de/1310" target="_blank" class="exercise-link" data-id="1310">1310</a>
+                <a href="https://www.englisch-hilfen.de/1370" target="_blank" class="exercise-link" data-id="1370">1370</a>
+                <a href="https://www.englisch-hilfen.de/4070" target="_blank" class="exercise-link" data-id="4070">4070</a>
+                <a href="https://www.englisch-hilfen.de/4072" target="_blank" class="exercise-link" data-id="4072">4072</a>
+                <a href="https://www.englisch-hilfen.de/4074" target="_blank" class="exercise-link" data-id="4074">4074</a>
+            </div>
+
+            <h3>Simple Past (Irregular Verbs)</h3>
+            <div class="exercise-grid">
+                <a href="https://www.englisch-hilfen.de/4110" target="_blank" class="exercise-link" data-id="4110">4110</a>
+                <a href="https://www.englisch-hilfen.de/4130" target="_blank" class="exercise-link" data-id="4130">4130</a>
+                <a href="https://www.englisch-hilfen.de/4112" target="_blank" class="exercise-link" data-id="4112">4112</a>
+                <a href="https://www.englisch-hilfen.de/4672" target="_blank" class="exercise-link" data-id="4672">4672</a>
+                <a href="https://www.englisch-hilfen.de/3616" target="_blank" class="exercise-link" data-id="3616">3616</a>
+                <a href="https://www.englisch-hilfen.de/4118" target="_blank" class="exercise-link" data-id="4118">4118</a>
+                <a href="https://www.englisch-hilfen.de/1372" target="_blank" class="exercise-link" data-id="1372">1372</a>
+                <a href="https://www.englisch-hilfen.de/1374" target="_blank" class="exercise-link" data-id="1374">1374</a>
+                <a href="https://www.englisch-hilfen.de/4114" target="_blank" class="exercise-link" data-id="4114">4114</a>
+                <a href="https://www.englisch-hilfen.de/4116" target="_blank" class="exercise-link" data-id="4116">4116</a>
+                <a href="https://www.englisch-hilfen.de/4126" target="_blank" class="exercise-link" data-id="4126">4126</a>
+                <a href="https://www.englisch-hilfen.de/4128" target="_blank" class="exercise-link" data-id="4128">4128</a>
+                <a href="https://www.englisch-hilfen.de/4122" target="_blank" class="exercise-link" data-id="4122">4122</a>
+                <a href="https://www.englisch-hilfen.de/4124" target="_blank" class="exercise-link" data-id="4124">4124</a>
+            </div>
+
+            <h3>Past Progressive</h3>
+            <div class="exercise-grid">
+                <a href="https://www.englisch-hilfen.de/4310" target="_blank" class="exercise-link" data-id="4310">4310</a>
+                <a href="https://www.englisch-hilfen.de/4312" target="_blank" class="exercise-link" data-id="4312">4312</a>
+                <a href="https://www.englisch-hilfen.de/4314" target="_blank" class="exercise-link" data-id="4314">4314</a>
+                <a href="https://www.englisch-hilfen.de/1362" target="_blank" class="exercise-link" data-id="1362">1362</a>
+                <a href="https://www.englisch-hilfen.de/1364" target="_blank" class="exercise-link" data-id="1364">1364</a>
+                <a href="https://www.englisch-hilfen.de/4318" target="_blank" class="exercise-link" data-id="4318">4318</a>
+                <a href="https://www.englisch-hilfen.de/4320" target="_blank" class="exercise-link" data-id="4320">4320</a>
+            </div>
+
+            <h3>Present Perfect <span class="week-label">Week 5</span></h3>
+            <div class="exercise-grid">
+                <a href="https://www.englisch-hilfen.de/4164" target="_blank" class="exercise-link" data-id="4164">4164</a>
+                <a href="https://www.englisch-hilfen.de/4150" target="_blank" class="exercise-link" data-id="4150">4150</a>
+                <a href="https://www.englisch-hilfen.de/4152" target="_blank" class="exercise-link" data-id="4152">4152</a>
+                <a href="https://www.englisch-hilfen.de/4154" target="_blank" class="exercise-link" data-id="4154">4154</a>
+                <a href="https://www.englisch-hilfen.de/4156" target="_blank" class="exercise-link" data-id="4156">4156</a>
+                <a href="https://www.englisch-hilfen.de/1366" target="_blank" class="exercise-link" data-id="1366">1366</a>
+                <a href="https://www.englisch-hilfen.de/1368" target="_blank" class="exercise-link" data-id="1368">1368</a>
+                <a href="https://www.englisch-hilfen.de/4160" target="_blank" class="exercise-link" data-id="4160">4160</a>
+                <a href="https://www.englisch-hilfen.de/4162" target="_blank" class="exercise-link" data-id="4162">4162</a>
+                <a href="https://www.englisch-hilfen.de/4158" target="_blank" class="exercise-link" data-id="4158">4158</a>
+            </div>
+
+            <h3>Present Perfect Progressive</h3>
+            <div class="exercise-grid">
+                <a href="https://www.englisch-hilfen.de/4322" target="_blank" class="exercise-link" data-id="4322">4322</a>
+                <a href="https://www.englisch-hilfen.de/4324" target="_blank" class="exercise-link" data-id="4324">4324</a>
+                <a href="https://www.englisch-hilfen.de/4326" target="_blank" class="exercise-link" data-id="4326">4326</a>
+                <a href="https://www.englisch-hilfen.de/4328" target="_blank" class="exercise-link" data-id="4328">4328</a>
+            </div>
+
+            <h3>Past Perfect <span class="week-label">Week 1</span></h3>
+            <div class="exercise-grid">
+                <a href="https://www.englisch-hilfen.de/4250" target="_blank" class="exercise-link" data-id="4250">4250</a>
+                <a href="https://www.englisch-hilfen.de/4252" target="_blank" class="exercise-link" data-id="4252">4252</a>
+                <a href="https://www.englisch-hilfen.de/1398" target="_blank" class="exercise-link" data-id="1398">1398</a>
+                <a href="https://www.englisch-hilfen.de/4254" target="_blank" class="exercise-link" data-id="4254">4254</a>
+            </div>
+
+            <h3>Will-Future <span class="week-label">Week 1</span></h3>
+            <div class="exercise-grid">
+                <a href="https://www.englisch-hilfen.de/4340" target="_blank" class="exercise-link" data-id="4340">4340</a>
+                <a href="https://www.englisch-hilfen.de/4342" target="_blank" class="exercise-link" data-id="4342">4342</a>
+                <a href="https://www.englisch-hilfen.de/1376" target="_blank" class="exercise-link" data-id="1376">1376</a>
+                <a href="https://www.englisch-hilfen.de/1378" target="_blank" class="exercise-link" data-id="1378">1378</a>
+                <a href="https://www.englisch-hilfen.de/4214" target="_blank" class="exercise-link" data-id="4214">4214</a>
+                <a href="https://www.englisch-hilfen.de/4216" target="_blank" class="exercise-link" data-id="4216">4216</a>
+                <a href="https://www.englisch-hilfen.de/4446" target="_blank" class="exercise-link" data-id="4446">4446</a>
+            </div>
+
+            <h3>Going-to Future</h3>
+            <div class="exercise-grid">
+                <a href="https://www.englisch-hilfen.de/4222" target="_blank" class="exercise-link" data-id="4222">4222</a>
+                <a href="https://www.englisch-hilfen.de/4224" target="_blank" class="exercise-link" data-id="4224">4224</a>
+                <a href="https://www.englisch-hilfen.de/1358" target="_blank" class="exercise-link" data-id="1358">1358</a>
+                <a href="https://www.englisch-hilfen.de/1360" target="_blank" class="exercise-link" data-id="1360">1360</a>
+                <a href="https://www.englisch-hilfen.de/4226" target="_blank" class="exercise-link" data-id="4226">4226</a>
+                <a href="https://www.englisch-hilfen.de/4228" target="_blank" class="exercise-link" data-id="4228">4228</a>
+                <a href="https://www.englisch-hilfen.de/4446" target="_blank" class="exercise-link" data-id="4446">4446</a>
+            </div>
+
+            <h3>Mixed Tenses <span class="week-label">Week 5</span></h3>
+            <div class="exercise-grid">
+                <a href="https://www.englisch-hilfen.de/4410" target="_blank" class="exercise-link" data-id="4410">4410</a>
+                <a href="https://www.englisch-hilfen.de/4412" target="_blank" class="exercise-link" data-id="4412">4412</a>
+                <a href="https://www.englisch-hilfen.de/4414" target="_blank" class="exercise-link" data-id="4414">4414</a>
+                <a href="https://www.englisch-hilfen.de/4462" target="_blank" class="exercise-link" data-id="4462">4462</a>
+                <a href="https://www.englisch-hilfen.de/3458" target="_blank" class="exercise-link" data-id="3458">3458</a>
+                <a href="https://www.englisch-hilfen.de/4452" target="_blank" class="exercise-link" data-id="4452">4452</a>
+                <a href="https://www.englisch-hilfen.de/4466" target="_blank" class="exercise-link" data-id="4466">4466</a>
+                <a href="https://www.englisch-hilfen.de/4456" target="_blank" class="exercise-link" data-id="4456">4456</a>
+                <a href="https://www.englisch-hilfen.de/4450" target="_blank" class="exercise-link" data-id="4450">4450</a>
+                <a href="https://www.englisch-hilfen.de/4464" target="_blank" class="exercise-link" data-id="4464">4464</a>
+                <a href="https://www.englisch-hilfen.de/4450" target="_blank" class="exercise-link" data-id="4450">4450</a>
+                <a href="https://www.englisch-hilfen.de/4454" target="_blank" class="exercise-link" data-id="4454">4454</a>
+                <a href="https://www.englisch-hilfen.de/4408" target="_blank" class="exercise-link" data-id="4408">4408</a>
+                <a href="https://www.englisch-hilfen.de/4650" target="_blank" class="exercise-link" data-id="4650">4650</a>
+                <a href="https://www.englisch-hilfen.de/4652" target="_blank" class="exercise-link" data-id="4652">4652</a>
+                <a href="https://www.englisch-hilfen.de/4610" target="_blank" class="exercise-link" data-id="4610">4610</a>
+                <a href="https://www.englisch-hilfen.de/2440" target="_blank" class="exercise-link" data-id="2440">2440</a>
+                <a href="https://www.englisch-hilfen.de/4616" target="_blank" class="exercise-link" data-id="4616">4616</a>
+                <a href="https://www.englisch-hilfen.de/4618" target="_blank" class="exercise-link" data-id="4618">4618</a>
+                <a href="https://www.englisch-hilfen.de/4620" target="_blank" class="exercise-link" data-id="4620">4620</a>
+                <a href="https://www.englisch-hilfen.de/4622" target="_blank" class="exercise-link" data-id="4622">4622</a>
+                <a href="https://www.englisch-hilfen.de/1352" target="_blank" class="exercise-link" data-id="1352">1352</a>
+                <a href="https://www.englisch-hilfen.de/3646" target="_blank" class="exercise-link" data-id="3646">3646</a>
+                <a href="https://www.englisch-hilfen.de/1400" target="_blank" class="exercise-link" data-id="1400">1400</a>
+                <a href="https://www.englisch-hilfen.de/2342" target="_blank" class="exercise-link" data-id="2342">2342</a>
+                <a href="https://www.englisch-hilfen.de/4668" target="_blank" class="exercise-link" data-id="4668">4668</a>
+                <a href="https://www.englisch-hilfen.de/1622" target="_blank" class="exercise-link" data-id="1622">1622</a>
+                <a href="https://www.englisch-hilfen.de/4626" target="_blank" class="exercise-link" data-id="4626">4626</a>
+                <a href="https://www.englisch-hilfen.de/4628" target="_blank" class="exercise-link" data-id="4628">4628</a>
+                <a href="https://www.englisch-hilfen.de/4642" target="_blank" class="exercise-link" data-id="4642">4642</a>
+                <a href="https://www.englisch-hilfen.de/4624" target="_blank" class="exercise-link" data-id="4624">4624</a>
+                <a href="https://www.englisch-hilfen.de/4620" target="_blank" class="exercise-link" data-id="4620">4620</a>
+                <a href="https://www.englisch-hilfen.de/4632" target="_blank" class="exercise-link" data-id="4632">4632</a>
+                <a href="https://www.englisch-hilfen.de/4634" target="_blank" class="exercise-link" data-id="4634">4634</a>
+                <a href="https://www.englisch-hilfen.de/4636" target="_blank" class="exercise-link" data-id="4636">4636</a>
+                <a href="https://www.englisch-hilfen.de/4644" target="_blank" class="exercise-link" data-id="4644">4644</a>
+                <a href="https://www.englisch-hilfen.de/4638" target="_blank" class="exercise-link" data-id="4638">4638</a>
+                <a href="https://www.englisch-hilfen.de/4640" target="_blank" class="exercise-link" data-id="4640">4640</a>
+                <a href="https://www.englisch-hilfen.de/4670" target="_blank" class="exercise-link" data-id="4670">4670</a>
+                <a href="https://www.englisch-hilfen.de/4636" target="_blank" class="exercise-link" data-id="4636">4636</a>
+            </div>
+
+        </div>
+
+        <!-- Section 2: Gegenüberstellung (Tense Comparison) -->
+        <div class="section" id="tense-comparison">
+            <h2>2. Gegenüberstellung von Zeitformen (Tense Comparison)</h2>
+            <div class="exercise-grid">
+                <a href="https://www.englisch-hilfen.de/4370" target="_blank" class="exercise-link" data-id="4370">4370</a>
+                <a href="https://www.englisch-hilfen.de/4442" target="_blank" class="exercise-link" data-id="4442">4442</a>
+                <a href="https://www.englisch-hilfen.de/4438" target="_blank" class="exercise-link" data-id="4438">4438</a>
+                <a href="https://www.englisch-hilfen.de/4440" target="_blank" class="exercise-link" data-id="4440">4440</a>
+                <a href="https://www.englisch-hilfen.de/4410" target="_blank" class="exercise-link" data-id="4410">4410</a>
+                <a href="https://www.englisch-hilfen.de/4426" target="_blank" class="exercise-link" data-id="4426">4426</a>
+                <a href="https://www.englisch-hilfen.de/4428" target="_blank" class="exercise-link" data-id="4428">4428</a>
+                <a href="https://www.englisch-hilfen.de/4418" target="_blank" class="exercise-link" data-id="4418">4418</a>
+                <a href="https://www.englisch-hilfen.de/4436" target="_blank" class="exercise-link" data-id="4436">4436</a>
+                <a href="https://www.englisch-hilfen.de/4422" target="_blank" class="exercise-link" data-id="4422">4422</a>
+                <a href="https://www.englisch-hilfen.de/4424" target="_blank" class="exercise-link" data-id="4424">4424</a>
+                <a href="https://www.englisch-hilfen.de/4430" target="_blank" class="exercise-link" data-id="4430">4430</a>
+                <a href="https://www.englisch-hilfen.de/4432" target="_blank" class="exercise-link" data-id="4432">4432</a>
+            </div>
+        </div>
+
+        <!-- Section 3: Verschiebung von Zeitformen -->
+        <div class="section" id="tense-shifts">
+            <h2>3. Verschiebung von Zeitformen (Tense Shifts) <span class="week-label">Week 6</span></h2>
+            <div class="exercise-grid">
+                <a href="https://www.englisch-hilfen.de/4548" target="_blank" class="exercise-link" data-id="4548">4548</a>
+                <a href="https://www.englisch-hilfen.de/4546" target="_blank" class="exercise-link" data-id="4546">4546</a>
+                <a href="https://www.englisch-hilfen.de/4518" target="_blank" class="exercise-link" data-id="4518">4518</a>
+                <a href="https://www.englisch-hilfen.de/4522" target="_blank" class="exercise-link" data-id="4522">4522</a>
+                <a href="https://www.englisch-hilfen.de/4524" target="_blank" class="exercise-link" data-id="4524">4524</a>
+                <a href="https://www.englisch-hilfen.de/4538" target="_blank" class="exercise-link" data-id="4538">4538</a>
+                <a href="https://www.englisch-hilfen.de/4544" target="_blank" class="exercise-link" data-id="4544">4544</a>
+                <a href="https://www.englisch-hilfen.de/4542" target="_blank" class="exercise-link" data-id="4542">4542</a>
+                <a href="https://www.englisch-hilfen.de/4510" target="_blank" class="exercise-link" data-id="4510">4510</a>
+                <a href="https://www.englisch-hilfen.de/4514" target="_blank" class="exercise-link" data-id="4514">4514</a>
+                <a href="https://www.englisch-hilfen.de/4516" target="_blank" class="exercise-link" data-id="4516">4516</a>
+                <a href="https://www.englisch-hilfen.de/4526" target="_blank" class="exercise-link" data-id="4526">4526</a>
+                <a href="https://www.englisch-hilfen.de/4534" target="_blank" class="exercise-link" data-id="4534">4534</a>
+                <a href="https://www.englisch-hilfen.de/4536" target="_blank" class="exercise-link" data-id="4536">4536</a>
+                <a href="https://www.englisch-hilfen.de/4530" target="_blank" class="exercise-link" data-id="4530">4530</a>
+            </div>
+        </div>
+
+        <!-- Section 4: Other Grammar Topics -->
+        <div class="section" id="other-grammar">
+            <h2>4. Other Grammar Topics</h2>
+
+            <h3>Mengenangaben <span class="week-label">much, many, some, ...</span></h3>
+            <div class="exercise-grid">
+                <a href="https://www.englisch-hilfen.de/2436" target="_blank" class="exercise-link" data-id="2436">2436</a>
+                <a href="https://www.englisch-hilfen.de/2410" target="_blank" class="exercise-link" data-id="2410">2410</a>
+                <a href="https://www.englisch-hilfen.de/2412" target="_blank" class="exercise-link" data-id="2412">2412</a>
+                <a href="https://www.englisch-hilfen.de/2438" target="_blank" class="exercise-link" data-id="2438">2438</a>
+                <a href="https://www.englisch-hilfen.de/2416" target="_blank" class="exercise-link" data-id="2416">2416</a>
+                <a href="https://www.englisch-hilfen.de/2418" target="_blank" class="exercise-link" data-id="2418">2418</a>
+                <a href="https://www.englisch-hilfen.de/2420" target="_blank" class="exercise-link" data-id="2420">2420</a>
+                <a href="https://www.englisch-hilfen.de/2422" target="_blank" class="exercise-link" data-id="2422">2422</a>
+                <a href="https://www.englisch-hilfen.de/2426" target="_blank" class="exercise-link" data-id="2426">2426</a>
+            </div>
+
+            <h3>Prepositions <span class="week-label">Week 7</span></h3>
+            <div class="exercise-grid">
+                <a href="https://www.englisch-hilfen.de/3016" target="_blank" class="exercise-link" data-id="3016">3016</a>
+                <a href="https://www.englisch-hilfen.de/3022" target="_blank" class="exercise-link" data-id="3022">3022</a>
+                <a href="https://www.englisch-hilfen.de/3028" target="_blank" class="exercise-link" data-id="3028">3028</a>
+                <a href="https://www.englisch-hilfen.de/3030" target="_blank" class="exercise-link" data-id="3030">3030</a>
+                <a href="https://www.englisch-hilfen.de/3032" target="_blank" class="exercise-link" data-id="3032">3032</a>
+                <a href="https://www.englisch-hilfen.de/3040" target="_blank" class="exercise-link" data-id="3040">3040</a>
+                <a href="https://www.englisch-hilfen.de/3026" target="_blank" class="exercise-link" data-id="3026">3026</a>
+            </div>
+
+            <h3>Satzbau <span class="week-label">Word Order</span></h3>
+            <div class="exercise-grid">
+                <a href="https://www.englisch-hilfen.de/3328" target="_blank" class="exercise-link" data-id="3328">3328</a>
+                <a href="https://www.englisch-hilfen.de/3326" target="_blank" class="exercise-link" data-id="3326">3326</a>
+                <a href="https://www.englisch-hilfen.de/3334" target="_blank" class="exercise-link" data-id="3334">3334</a>
+                <a href="https://www.englisch-hilfen.de/3336" target="_blank" class="exercise-link" data-id="3336">3336</a>
+                <a href="https://www.englisch-hilfen.de/3346" target="_blank" class="exercise-link" data-id="3346">3346</a>
+                <a href="https://www.englisch-hilfen.de/3348" target="_blank" class="exercise-link" data-id="3348">3348</a>
+                <a href="https://www.englisch-hilfen.de/3340" target="_blank" class="exercise-link" data-id="3340">3340</a>
+                <a href="https://www.englisch-hilfen.de/3342" target="_blank" class="exercise-link" data-id="3342">3342</a>
+                <a href="https://www.englisch-hilfen.de/3344" target="_blank" class="exercise-link" data-id="3344">3344</a>
+                <a href="https://www.englisch-hilfen.de/3324" target="_blank" class="exercise-link" data-id="3324">3324</a>
+                <a href="https://www.englisch-hilfen.de/3320" target="_blank" class="exercise-link" data-id="3320">3320</a>
+                <a href="https://www.englisch-hilfen.de/3322" target="_blank" class="exercise-link" data-id="3322">3322</a>
+                <a href="https://www.englisch-hilfen.de/3310" target="_blank" class="exercise-link" data-id="3310">3310</a>
+                <a href="https://www.englisch-hilfen.de/3312" target="_blank" class="exercise-link" data-id="3312">3312</a>
+                <a href="https://www.englisch-hilfen.de/3328" target="_blank" class="exercise-link" data-id="3328">3328</a>
+                <a href="https://www.englisch-hilfen.de/3318" target="_blank" class="exercise-link" data-id="3318">3318</a>
+                <a href="https://www.englisch-hilfen.de/3330" target="_blank" class="exercise-link" data-id="3330">3330</a>
+                <a href="https://www.englisch-hilfen.de/3332" target="_blank" class="exercise-link" data-id="3332">3332</a>
+            </div>
+
+            <h3>Hilfsverben <span class="week-label">Auxiliary Verbs</span></h3>
+            <div class="exercise-grid">
+                <a href="https://www.englisch-hilfen.de/1710" target="_blank" class="exercise-link" data-id="1710">1710</a>
+                <a href="https://www.englisch-hilfen.de/1712" target="_blank" class="exercise-link" data-id="1712">1712</a>
+                <a href="https://www.englisch-hilfen.de/1714" target="_blank" class="exercise-link" data-id="1714">1714</a>
+                <a href="https://www.englisch-hilfen.de/1792" target="_blank" class="exercise-link" data-id="1792">1792</a>
+                <a href="https://www.englisch-hilfen.de/1794" target="_blank" class="exercise-link" data-id="1794">1794</a>
+                <a href="https://www.englisch-hilfen.de/1796" target="_blank" class="exercise-link" data-id="1796">1796</a>
+                <a href="https://www.englisch-hilfen.de/1762" target="_blank" class="exercise-link" data-id="1762">1762</a>
+                <a href="https://www.englisch-hilfen.de/1804" target="_blank" class="exercise-link" data-id="1804">1804</a>
+                <a href="https://www.englisch-hilfen.de/1758" target="_blank" class="exercise-link" data-id="1758">1758</a>
+                <a href="https://www.englisch-hilfen.de/1760" target="_blank" class="exercise-link" data-id="1760">1760</a>
+                <a href="https://www.englisch-hilfen.de/1744" target="_blank" class="exercise-link" data-id="1744">1744</a>
+            </div>
+
+            <h3>Adjektive und Adverbien <span class="week-label">Week 1</span></h3>
+            <div class="exercise-grid">
+                <a href="https://www.englisch-hilfen.de/1070" target="_blank" class="exercise-link" data-id="1070">1070</a>
+                <a href="https://www.englisch-hilfen.de/1074" target="_blank" class="exercise-link" data-id="1074">1074</a>
+                <a href="https://www.englisch-hilfen.de/1044" target="_blank" class="exercise-link" data-id="1044">1044</a>
+                <a href="https://www.englisch-hilfen.de/1010" target="_blank" class="exercise-link" data-id="1010">1010</a>
+                <a href="https://www.englisch-hilfen.de/1052" target="_blank" class="exercise-link" data-id="1052">1052</a>
+                <a href="https://www.englisch-hilfen.de/1012" target="_blank" class="exercise-link" data-id="1012">1012</a>
+                <a href="https://www.englisch-hilfen.de/1022" target="_blank" class="exercise-link" data-id="1022">1022</a>
+                <a href="https://www.englisch-hilfen.de/1030" target="_blank" class="exercise-link" data-id="1030">1030</a>
+                <a href="https://www.englisch-hilfen.de/1076" target="_blank" class="exercise-link" data-id="1076">1076</a>
+                <a href="https://www.englisch-hilfen.de/1040" target="_blank" class="exercise-link" data-id="1040">1040</a>
+                <a href="https://www.englisch-hilfen.de/1042" target="_blank" class="exercise-link" data-id="1042">1042</a>
+                <a href="https://www.englisch-hilfen.de/1056" target="_blank" class="exercise-link" data-id="1056">1056</a>
+                <a href="https://www.englisch-hilfen.de/1058" target="_blank" class="exercise-link" data-id="1058">1058</a>
+                <a href="https://www.englisch-hilfen.de/1024" target="_blank" class="exercise-link" data-id="1024">1024</a>
+                <a href="https://www.englisch-hilfen.de/1064" target="_blank" class="exercise-link" data-id="1064">1064</a>
+                <a href="https://www.englisch-hilfen.de/1068" target="_blank" class="exercise-link" data-id="1068">1068</a>
+                <a href="https://www.englisch-hilfen.de/1016" target="_blank" class="exercise-link" data-id="1016">1016</a>
+                <a href="https://www.englisch-hilfen.de/1060" target="_blank" class="exercise-link" data-id="1060">1060</a>
+                <a href="https://www.englisch-hilfen.de/1032" target="_blank" class="exercise-link" data-id="1032">1032</a>
+                <a href="https://www.englisch-hilfen.de/1038" target="_blank" class="exercise-link" data-id="1038">1038</a>
+                <a href="https://www.englisch-hilfen.de/1048" target="_blank" class="exercise-link" data-id="1048">1048</a>
+            </div>
+
+            <h3>Gerund und Infinitiv <span class="week-label">Week 4</span></h3>
+            <div class="exercise-grid">
+                <a href="https://www.englisch-hilfen.de/1612" target="_blank" class="exercise-link" data-id="1612">1612</a>
+                <a href="https://www.englisch-hilfen.de/1624" target="_blank" class="exercise-link" data-id="1624">1624</a>
+                <a href="https://www.englisch-hilfen.de/1618" target="_blank" class="exercise-link" data-id="1618">1618</a>
+                <a href="https://www.englisch-hilfen.de/1628" target="_blank" class="exercise-link" data-id="1628">1628</a>
+                <a href="https://www.englisch-hilfen.de/1614" target="_blank" class="exercise-link" data-id="1614">1614</a>
+                <a href="https://www.englisch-hilfen.de/1616" target="_blank" class="exercise-link" data-id="1616">1616</a>
+                <a href="https://www.englisch-hilfen.de/1622" target="_blank" class="exercise-link" data-id="1622">1622</a>
+                <a href="https://www.englisch-hilfen.de/1610" target="_blank" class="exercise-link" data-id="1610">1610</a>
+            </div>
+
+            <h3>Conditional (if-Sätze)</h3>
+            <div class="exercise-grid">
+                <a href="https://www.englisch-hilfen.de/2010" target="_blank" class="exercise-link" data-id="2010">2010</a>
+                <a href="https://www.englisch-hilfen.de/2012" target="_blank" class="exercise-link" data-id="2012">2012</a>
+                <a href="https://www.englisch-hilfen.de/2014" target="_blank" class="exercise-link" data-id="2014">2014</a>
+                <a href="https://www.englisch-hilfen.de/2016" target="_blank" class="exercise-link" data-id="2016">2016</a>
+                <a href="https://www.englisch-hilfen.de/2018" target="_blank" class="exercise-link" data-id="2018">2018</a>
+                <a href="https://www.englisch-hilfen.de/2022" target="_blank" class="exercise-link" data-id="2022">2022</a>
+                <a href="https://www.englisch-hilfen.de/2024" target="_blank" class="exercise-link" data-id="2024">2024</a>
+                <a href="https://www.englisch-hilfen.de/2026" target="_blank" class="exercise-link" data-id="2026">2026</a>
+                <a href="https://www.englisch-hilfen.de/2028" target="_blank" class="exercise-link" data-id="2028">2028</a>
+                <a href="https://www.englisch-hilfen.de/2030" target="_blank" class="exercise-link" data-id="2030">2030</a>
+                <a href="https://www.englisch-hilfen.de/2032" target="_blank" class="exercise-link" data-id="2032">2032</a>
+                <a href="https://www.englisch-hilfen.de/2034" target="_blank" class="exercise-link" data-id="2034">2034</a>
+                <a href="https://www.englisch-hilfen.de/2044" target="_blank" class="exercise-link" data-id="2044">2044</a>
+                <a href="https://www.englisch-hilfen.de/2046" target="_blank" class="exercise-link" data-id="2046">2046</a>
+                <a href="https://www.englisch-hilfen.de/2048" target="_blank" class="exercise-link" data-id="2048">2048</a>
+                <a href="https://www.englisch-hilfen.de/2050" target="_blank" class="exercise-link" data-id="2050">2050</a>
+                <a href="https://www.englisch-hilfen.de/2052" target="_blank" class="exercise-link" data-id="2052">2052</a>
+                <a href="https://www.englisch-hilfen.de/2054" target="_blank" class="exercise-link" data-id="2054">2054</a>
+                <a href="https://www.englisch-hilfen.de/2020" target="_blank" class="exercise-link" data-id="2020">2020</a>
+                <a href="https://www.englisch-hilfen.de/2066" target="_blank" class="exercise-link" data-id="2066">2066</a>
+                <a href="https://www.englisch-hilfen.de/2036" target="_blank" class="exercise-link" data-id="2036">2036</a>
+                <a href="https://www.englisch-hilfen.de/2038" target="_blank" class="exercise-link" data-id="2038">2038</a>
+                <a href="https://www.englisch-hilfen.de/2040" target="_blank" class="exercise-link" data-id="2040">2040</a>
+                <a href="https://www.englisch-hilfen.de/2058" target="_blank" class="exercise-link" data-id="2058">2058</a>
+                <a href="https://www.englisch-hilfen.de/2060" target="_blank" class="exercise-link" data-id="2060">2060</a>
+                <a href="https://www.englisch-hilfen.de/2062" target="_blank" class="exercise-link" data-id="2062">2062</a>
+                <a href="https://www.englisch-hilfen.de/2064" target="_blank" class="exercise-link" data-id="2064">2064</a>
+                <a href="https://www.englisch-hilfen.de/2068" target="_blank" class="exercise-link" data-id="2068">2068</a>
+            </div>
+
+            <h3>Indirekte Rede <span class="week-label">Reported Speech</span></h3>
+            <div class="exercise-grid">
+                <a href="https://www.englisch-hilfen.de/2310" target="_blank" class="exercise-link" data-id="2310">2310</a>
+                <a href="https://www.englisch-hilfen.de/2312" target="_blank" class="exercise-link" data-id="2312">2312</a>
+                <a href="https://www.englisch-hilfen.de/2322" target="_blank" class="exercise-link" data-id="2322">2322</a>
+                <a href="https://www.englisch-hilfen.de/234" target="_blank" class="exercise-link" data-id="234">234</a>
+                <a href="https://www.englisch-hilfen.de/2326" target="_blank" class="exercise-link" data-id="2326">2326</a>
+                <a href="https://www.englisch-hilfen.de/2328" target="_blank" class="exercise-link" data-id="2328">2328</a>
+                <a href="https://www.englisch-hilfen.de/2318" target="_blank" class="exercise-link" data-id="2318">2318</a>
+                <a href="https://www.englisch-hilfen.de/2316" target="_blank" class="exercise-link" data-id="2316">2316</a>
+                <a href="https://www.englisch-hilfen.de/2314" target="_blank" class="exercise-link" data-id="2314">2314</a>
+                <a href="https://www.englisch-hilfen.de/2320" target="_blank" class="exercise-link" data-id="2320">2320</a>
+            </div>
+
+            <h3>Passiv <span class="week-label">Passive Voice</span></h3>
+            <div class="exercise-grid">
+                <a href="https://www.englisch-hilfen.de/2710" target="_blank" class="exercise-link" data-id="2710">2710</a>
+                <a href="https://www.englisch-hilfen.de/2712" target="_blank" class="exercise-link" data-id="2712">2712</a>
+                <a href="https://www.englisch-hilfen.de/2714" target="_blank" class="exercise-link" data-id="2714">2714</a>
+                <a href="https://www.englisch-hilfen.de/2724" target="_blank" class="exercise-link" data-id="2724">2724</a>
+                <a href="https://www.englisch-hilfen.de/1408" target="_blank" class="exercise-link" data-id="1408">1408</a>
+                <a href="https://www.englisch-hilfen.de/1410" target="_blank" class="exercise-link" data-id="1410">1410</a>
+                <a href="https://www.englisch-hilfen.de/2720" target="_blank" class="exercise-link" data-id="2720">2720</a>
+                <a href="https://www.englisch-hilfen.de/2730" target="_blank" class="exercise-link" data-id="2730">2730</a>
+                <a href="https://www.englisch-hilfen.de/2728" target="_blank" class="exercise-link" data-id="2728">2728</a>
+                <a href="https://www.englisch-hilfen.de/2726" target="_blank" class="exercise-link" data-id="2726">2726</a>
+                <a href="https://www.englisch-hilfen.de/2716" target="_blank" class="exercise-link" data-id="2716">2716</a>
+                <a href="https://www.englisch-hilfen.de/2718" target="_blank" class="exercise-link" data-id="2718">2718</a>
+                <a href="https://www.englisch-hilfen.de/2722" target="_blank" class="exercise-link" data-id="2722">2722</a>
+                <a href="https://www.englisch-hilfen.de/2736" target="_blank" class="exercise-link" data-id="2736">2736</a>
+                <a href="https://www.englisch-hilfen.de/2738" target="_blank" class="exercise-link" data-id="2738">2738</a>
+                <a href="https://www.englisch-hilfen.de/2740" target="_blank" class="exercise-link" data-id="2740">2740</a>
+                <a href="https://www.englisch-hilfen.de/2742" target="_blank" class="exercise-link" data-id="2742">2742</a>
+                <a href="https://www.englisch-hilfen.de/2732" target="_blank" class="exercise-link" data-id="2732">2732</a>
+                <a href="https://www.englisch-hilfen.de/2734" target="_blank" class="exercise-link" data-id="2734">2734</a>
+            </div>
+
+            <h3>Pronomen <span class="week-label">Pronouns</span></h3>
+            <div class="exercise-grid">
+                <a href="https://www.englisch-hilfen.de/3124" target="_blank" class="exercise-link" data-id="3124">3124</a>
+                <a href="https://www.englisch-hilfen.de/3134" target="_blank" class="exercise-link" data-id="3134">3134</a>
+                <a href="https://www.englisch-hilfen.de/3110" target="_blank" class="exercise-link" data-id="3110">3110</a>
+                <a href="https://www.englisch-hilfen.de/3112" target="_blank" class="exercise-link" data-id="3112">3112</a>
+                <a href="https://www.englisch-hilfen.de/3168" target="_blank" class="exercise-link" data-id="3168">3168</a>
+                <a href="https://www.englisch-hilfen.de/3162" target="_blank" class="exercise-link" data-id="3162">3162</a>
+                <a href="https://www.englisch-hilfen.de/3116" target="_blank" class="exercise-link" data-id="3116">3116</a>
+                <a href="https://www.englisch-hilfen.de/3118" target="_blank" class="exercise-link" data-id="3118">3118</a>
+                <a href="https://www.englisch-hilfen.de/3164" target="_blank" class="exercise-link" data-id="3164">3164</a>
+                <a href="https://www.englisch-hilfen.de/3120" target="_blank" class="exercise-link" data-id="3120">3120</a>
+                <a href="https://www.englisch-hilfen.de/3122" target="_blank" class="exercise-link" data-id="3122">3122</a>
+                <a href="https://www.englisch-hilfen.de/3126" target="_blank" class="exercise-link" data-id="3126">3126</a>
+                <a href="https://www.englisch-hilfen.de/3128" target="_blank" class="exercise-link" data-id="3128">3128</a>
+                <a href="https://www.englisch-hilfen.de/3130" target="_blank" class="exercise-link" data-id="3130">3130</a>
+                <a href="https://www.englisch-hilfen.de/3132" target="_blank" class="exercise-link" data-id="3132">3132</a>
+                <a href="https://www.englisch-hilfen.de/3166" target="_blank" class="exercise-link" data-id="3166">3166</a>
+                <a href="https://www.englisch-hilfen.de/3152" target="_blank" class="exercise-link" data-id="3152">3152</a>
+                <a href="https://www.englisch-hilfen.de/3154" target="_blank" class="exercise-link" data-id="3154">3154</a>
+                <a href="https://www.englisch-hilfen.de/3156" target="_blank" class="exercise-link" data-id="3156">3156</a>
+                <a href="https://www.englisch-hilfen.de/3158" target="_blank" class="exercise-link" data-id="3158">3158</a>
+                <a href="https://www.englisch-hilfen.de/3146" target="_blank" class="exercise-link" data-id="3146">3146</a>
+                <a href="https://www.englisch-hilfen.de/3150" target="_blank" class="exercise-link" data-id="3150">3150</a>
+                <a href="https://www.englisch-hilfen.de/3136" target="_blank" class="exercise-link" data-id="3136">3136</a>
+                <a href="https://www.englisch-hilfen.de/3138" target="_blank" class="exercise-link" data-id="3138">3138</a>
+                <a href="https://www.englisch-hilfen.de/3160" target="_blank" class="exercise-link" data-id="3160">3160</a>
+                <a href="https://www.englisch-hilfen.de/3140" target="_blank" class="exercise-link" data-id="3140">3140</a>
+                <a href="https://www.englisch-hilfen.de/3142" target="_blank" class="exercise-link" data-id="3142">3142</a>
+                <a href="https://www.englisch-hilfen.de/3144" target="_blank" class="exercise-link" data-id="3144">3144</a>
+            </div>
+
+            <h3>Substantive, Plural, s-Genitive, one</h3>
+            <div class="exercise-grid">
+                <a href="https://www.englisch-hilfen.de/3454" target="_blank" class="exercise-link" data-id="3454">3454</a>
+                <a href="https://www.englisch-hilfen.de/3466" target="_blank" class="exercise-link" data-id="3466">3466</a>
+                <a href="https://www.englisch-hilfen.de/3436" target="_blank" class="exercise-link" data-id="3436">3436</a>
+                <a href="https://www.englisch-hilfen.de/3438" target="_blank" class="exercise-link" data-id="3438">3438</a>
+                <a href="https://www.englisch-hilfen.de/3450" target="_blank" class="exercise-link" data-id="3450">3450</a>
+                <a href="https://www.englisch-hilfen.de/3452" target="_blank" class="exercise-link" data-id="3452">3452</a>
+                <a href="https://www.englisch-hilfen.de/3440" target="_blank" class="exercise-link" data-id="3440">3440</a>
+                <a href="https://www.englisch-hilfen.de/347" target="_blank" class="exercise-link" data-id="347">347</a>
+                <a href="https://www.englisch-hilfen.de/3474" target="_blank" class="exercise-link" data-id="3474">3474</a>
+                <a href="https://www.englisch-hilfen.de/3476" target="_blank" class="exercise-link" data-id="3476">3476</a>
+                <a href="https://www.englisch-hilfen.de/3426" target="_blank" class="exercise-link" data-id="3426">3426</a>
+                <a href="https://www.englisch-hilfen.de/3428" target="_blank" class="exercise-link" data-id="3428">3428</a>
+                <a href="https://www.englisch-hilfen.de/3432" target="_blank" class="exercise-link" data-id="3432">3432</a>
+                <a href="https://www.englisch-hilfen.de/3434" target="_blank" class="exercise-link" data-id="3434">3434</a>
+                <a href="https://www.englisch-hilfen.de/3456" target="_blank" class="exercise-link" data-id="3456">3456</a>
+                <a href="https://www.englisch-hilfen.de/3468" target="_blank" class="exercise-link" data-id="3468">3468</a>
+                <a href="https://www.englisch-hilfen.de/3410" target="_blank" class="exercise-link" data-id="3410">3410</a>
+                <a href="https://www.englisch-hilfen.de/3412" target="_blank" class="exercise-link" data-id="3412">3412</a>
+                <a href="https://www.englisch-hilfen.de/3442" target="_blank" class="exercise-link" data-id="3442">3442</a>
+                <a href="https://www.englisch-hilfen.de/3414" target="_blank" class="exercise-link" data-id="3414">3414</a>
+                <a href="https://www.englisch-hilfen.de/3444" target="_blank" class="exercise-link" data-id="3444">3444</a>
+                <a href="https://www.englisch-hilfen.de/3458" target="_blank" class="exercise-link" data-id="3458">3458</a>
+                <a href="https://www.englisch-hilfen.de/3472" target="_blank" class="exercise-link" data-id="3472">3472</a>
+                <a href="https://www.englisch-hilfen.de/3416" target="_blank" class="exercise-link" data-id="3416">3416</a>
+                <a href="https://www.englisch-hilfen.de/3460" target="_blank" class="exercise-link" data-id="3460">3460</a>
+                <a href="https://www.englisch-hilfen.de/3462" target="_blank" class="exercise-link" data-id="3462">3462</a>
+                <a href="https://www.englisch-hilfen.de/3422" target="_blank" class="exercise-link" data-id="3422">3422</a>
+                <a href="https://www.englisch-hilfen.de/3418" target="_blank" class="exercise-link" data-id="3418">3418</a>
+                <a href="https://www.englisch-hilfen.de/3420" target="_blank" class="exercise-link" data-id="3420">3420</a>
+                <a href="https://www.englisch-hilfen.de/3446" target="_blank" class="exercise-link" data-id="3446">3446</a>
+                <a href="https://www.englisch-hilfen.de/3448" target="_blank" class="exercise-link" data-id="3448">3448</a>
+                <a href="https://www.englisch-hilfen.de/3464" target="_blank" class="exercise-link" data-id="3464">3464</a>
+                <a href="https://www.englisch-hilfen.de/3470" target="_blank" class="exercise-link" data-id="3470">3470</a>
+            </div>
+
+            <h3>Unregelmäßige Verben <span class="week-label">Irregular Verbs</span></h3>
+            <div class="exercise-grid">
+                <a href="https://www.englisch-hilfen.de/3622" target="_blank" class="exercise-link" data-id="3622">3622</a>
+                <a href="https://www.englisch-hilfen.de/3624" target="_blank" class="exercise-link" data-id="3624">3624</a>
+                <a href="https://www.englisch-hilfen.de/3626" target="_blank" class="exercise-link" data-id="3626">3626</a>
+                <a href="https://www.englisch-hilfen.de/3638" target="_blank" class="exercise-link" data-id="3638">3638</a>
+                <a href="https://www.englisch-hilfen.de/3640" target="_blank" class="exercise-link" data-id="3640">3640</a>
+                <a href="https://www.englisch-hilfen.de/3646" target="_blank" class="exercise-link" data-id="3646">3646</a>
+                <a href="https://www.englisch-hilfen.de/3648" target="_blank" class="exercise-link" data-id="3648">3648</a>
+                <a href="https://www.englisch-hilfen.de/3650" target="_blank" class="exercise-link" data-id="3650">3650</a>
+                <a href="https://www.englisch-hilfen.de/3652" target="_blank" class="exercise-link" data-id="3652">3652</a>
+                <a href="https://www.englisch-hilfen.de/3654" target="_blank" class="exercise-link" data-id="3654">3654</a>
+                <a href="https://www.englisch-hilfen.de/3658" target="_blank" class="exercise-link" data-id="3658">3658</a>
+                <a href="https://www.englisch-hilfen.de/3666" target="_blank" class="exercise-link" data-id="3666">3666</a>
+                <a href="https://www.englisch-hilfen.de/3672" target="_blank" class="exercise-link" data-id="3672">3672</a>
+                <a href="https://www.englisch-hilfen.de/3674" target="_blank" class="exercise-link" data-id="3674">3674</a>
+                <a href="https://www.englisch-hilfen.de/3676" target="_blank" class="exercise-link" data-id="3676">3676</a>
+                <a href="https://www.englisch-hilfen.de/3678" target="_blank" class="exercise-link" data-id="3678">3678</a>
+                <a href="https://www.englisch-hilfen.de/3684" target="_blank" class="exercise-link" data-id="3684">3684</a>
+                <a href="https://www.englisch-hilfen.de/3686" target="_blank" class="exercise-link" data-id="3686">3686</a>
+                <a href="https://www.englisch-hilfen.de/3690" target="_blank" class="exercise-link" data-id="3690">3690</a>
+                <a href="https://www.englisch-hilfen.de/3694" target="_blank" class="exercise-link" data-id="3694">3694</a>
+                <a href="https://www.englisch-hilfen.de/3698" target="_blank" class="exercise-link" data-id="3698">3698</a>
+                <a href="https://www.englisch-hilfen.de/3700" target="_blank" class="exercise-link" data-id="3700">3700</a>
+                <a href="https://www.englisch-hilfen.de/3702" target="_blank" class="exercise-link" data-id="3702">3702</a>
+                <a href="https://www.englisch-hilfen.de/3704" target="_blank" class="exercise-link" data-id="3704">3704</a>
+                <a href="https://www.englisch-hilfen.de/3708" target="_blank" class="exercise-link" data-id="3708">3708</a>
+                <a href="https://www.englisch-hilfen.de/3712" target="_blank" class="exercise-link" data-id="3712">3712</a>
+                <a href="https://www.englisch-hilfen.de/3714" target="_blank" class="exercise-link" data-id="3714">3714</a>
+                <a href="https://www.englisch-hilfen.de/3718" target="_blank" class="exercise-link" data-id="3718">3718</a>
+                <a href="https://www.englisch-hilfen.de/3720" target="_blank" class="exercise-link" data-id="3720">3720</a>
+                <a href="https://www.englisch-hilfen.de/3726" target="_blank" class="exercise-link" data-id="3726">3726</a>
+            </div>
+
+        </div>
+
+        <!-- Scroll to Top Button -->
+        <div class="scroll-top" id="scrollTop">↑</div>
+
+        <div style="text-align: center; margin-top: 40px; padding: 20px; background: var(--card-bg); border-radius: 15px;">
+            <p style="color: #7f8c8d; margin-bottom: 10px;">
+                📚 Complete all grammar exercises to master English for your Abitur 2026!
+            </p>
+            <p style="color: #7f8c8d; margin-bottom: 20px;">
+                💡 Tip: Click on any exercise link to open it in a new tab on englisch-hilfen.de
+            </p>
+            <p style="color: #7f8c8d; margin-bottom: 20px;">
+                ✅ Click on completed exercises to mark them as done and track your progress!
+            </p>
+            <a href="index.html" class="back-button">← Back to Home</a>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const exerciseLinks = document.querySelectorAll('.exercise-link');
+            const completedCount = document.getElementById('completedCount');
+            const remainingCount = document.getElementById('remainingCount');
+            const totalCount = document.getElementById('totalCount');
+            const progressFill = document.getElementById('progressFill');
+
+            // Load completed exercises from localStorage
+            let completedExercises = JSON.parse(localStorage.getItem('completedGrammarExercises') || '[]');
+
+            // Update total count
+            totalCount.textContent = exerciseLinks.length;
+
+            // Function to update progress
+            function updateProgress() {
+                const completed = completedExercises.length;
+                const total = exerciseLinks.length;
+                const remaining = total - completed;
+                const percentage = Math.round((completed / total) * 100);
+
+                completedCount.textContent = completed;
+                remainingCount.textContent = remaining;
+                progressFill.style.width = percentage + '%';
+                progressFill.textContent = percentage + '%';
+            }
+
+            // Mark already completed exercises
+            exerciseLinks.forEach(link => {
+                const id = link.getAttribute('data-id');
+                if (completedExercises.includes(id)) {
+                    link.classList.add('completed');
+                }
+
+                // Add click handler to track clicks (but don't prevent default)
+                link.addEventListener('click', function(e) {
+                    const exerciseId = this.getAttribute('data-id');
+                    
+                    // Toggle completion state
+                    setTimeout(() => {
+                        if (completedExercises.includes(exerciseId)) {
+                            completedExercises = completedExercises.filter(id => id !== exerciseId);
+                            this.classList.remove('completed');
+                        } else {
+                            completedExercises.push(exerciseId);
+                            this.classList.add('completed');
+                        }
+                        
+                        // Save to localStorage
+                        localStorage.setItem('completedGrammarExercises', JSON.stringify(completedExercises));
+                        updateProgress();
+                    }, 100);
+                });
+            });
+
+            // Initial progress update
+            updateProgress();
+
+            // Smooth scrolling for navigation
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    }
+                });
+            });
+
+            // Scroll to top button
+            const scrollTopButton = document.getElementById('scrollTop');
+            
+            window.addEventListener('scroll', function() {
+                if (window.pageYOffset > 300) {
+                    scrollTopButton.classList.add('visible');
+                } else {
+                    scrollTopButton.classList.remove('visible');
+                }
+            });
+            
+            scrollTopButton.addEventListener('click', function() {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            });
+
+            // Keyboard shortcut: Press 'T' to scroll to top
+            document.addEventListener('keydown', function(e) {
+                if ((e.key === 't' || e.key === 'T') && !e.ctrlKey && !e.altKey) {
+                    const active = document.activeElement;
+                    if (active.tagName !== 'INPUT' && active.tagName !== 'TEXTAREA') {
+                        window.scrollTo({ top: 0, behavior: 'smooth' });
+                    }
+                }
+            });
+
+            console.log('✅ Grammar Exercises loaded! Total exercises:', exerciseLinks.length);
+            console.log('📊 Completed:', completedExercises.length);
+        });
+    </script>
+</body>
+</html>
